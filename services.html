@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/sales-notifications.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/whatsapp.css">
@@ -54,55 +55,6 @@
         "@type": "Organization",
         "name": "Amazon Ads Expert",
         "url": "https://amazonadsexpert.com/"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Amazon Seller Growth Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Amazon PPC Management",
-              "description": "Campaign strategy, keyword targeting, bid optimization and budget management focused on profitable growth."
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "Custom",
-              "priceCurrency": "INR"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Amazon Listing Optimization",
-              "description": "SEO-focused titles, bullet points, descriptions and backend keywords optimized to improve visibility and conversion."
-            },
-            "price": "700",
-            "priceCurrency": "INR"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Amazon Image Creation & A+ Content",
-              "description": "5-6 premium product images plus conversion-focused Amazon A+ Content designed to communicate your product value clearly."
-            },
-            "price": "2999",
-            "priceCurrency": "INR"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Amazon Review Growth Support",
-              "description": "Amazon-compliant review-request and customer engagement support designed to help brands build authentic customer feedback."
-            },
-            "price": "200",
-            "priceCurrency": "INR"
-          }
-        ]
       }
     }
     </script>
@@ -159,134 +111,205 @@
     <div class="services-hero-container">
         <div class="hero-status-tag">
             <span class="hero-status-dot"></span>
-            SPN VERIFIED AMAZON AGENCY & SERVICES MATRIX
+            SPN VERIFIED AMAZON AGENCY & 18 FULL-STACK SERVICES
         </div>
         <h1 class="services-hero-title">
-            Amazon scaling & <span class="highlight-blue">marketplace services</span>
+            Amazon Services Built to <span class="highlight-blue">Grow Your Brand</span>
         </h1>
         <p class="services-hero-subtitle">
-            Start with Amazon growth, PPC, advertising, catalog optimization, and Seller Central operations — then expand across Flipkart, quick commerce, GeM, and global marketplaces.
+            From Amazon PPC and listing optimization to high-converting creatives, keyword research, and storefront design — we help brands improve visibility, conversions, and sales.
         </p>
 
         <!-- LIVE SEARCH INPUT BAR -->
         <div class="services-search-wrapper">
             <span class="services-search-icon">🔍</span>
-            <input type="text" id="serviceSearchInput" class="services-search-input" placeholder="Search any service (e.g. PPC, Listing, A+ Content, Reviews, Storefront)...">
+            <input type="text" id="serviceSearchInput" class="services-search-input" placeholder="Search 18 services (e.g. PPC Audit, Keyword Research, A+, Backend SEO, Packages)...">
         </div>
 
         <!-- CATEGORY SELECTOR PILLS -->
         <div class="services-category-pills">
-            <button class="category-pill-btn active" data-filter="all">All Services</button>
-            <button class="category-pill-btn" data-filter="growth">Amazon Growth</button>
-            <button class="category-pill-btn" data-filter="marketing">Amazon Marketing</button>
+            <button class="category-pill-btn active" data-filter="all">All Services (18)</button>
             <button class="category-pill-btn" data-filter="ppc">Amazon PPC</button>
-            <button class="category-pill-btn" data-filter="listing">Listing SEO</button>
-            <button class="category-pill-btn" data-filter="creative">A+ & Creatives</button>
-            <button class="category-pill-btn" data-filter="qcommerce">Quick Commerce</button>
+            <button class="category-pill-btn" data-filter="listing">Listing & SEO</button>
+            <button class="category-pill-btn" data-filter="creative">Creatives & A+</button>
+            <button class="category-pill-btn" data-filter="audit">Audits & Setup</button>
         </div>
     </div>
 </section>
 
 
 <!-- =========================================================
-     ADVANCED SERVICES MATRIX GRID
+     FEATURED CURATED PACKAGES SECTION (3 SIMPLE PACKAGES)
+========================================================= -->
+<section class="curated-packages-section">
+    <div class="curated-packages-container">
+        <h2 class="packages-section-title">Curated Amazon Growth Packages</h2>
+        <p class="packages-section-subtitle">
+            Instead of choosing individual services, get everything your Amazon product needs in one complete bundle.
+        </p>
+
+        <div class="packages-grid">
+            <!-- 🟢 STARTER PACKAGE -->
+            <div class="package-card">
+                <div>
+                    <div class="package-icon">🟢</div>
+                    <div class="package-name">Amazon Starter</div>
+                    <div class="package-tagline">For new sellers launching products on Amazon.</div>
+
+                    <div class="package-price-box">
+                        <div class="package-price">₹1,999</div>
+                        <div class="package-price-subtext">One-time complete setup</div>
+                    </div>
+
+                    <ul class="package-list">
+                        <li>Keyword research</li>
+                        <li>Listing audit & recommendations</li>
+                        <li>Title + 5 Bullet points optimization</li>
+                        <li>Backend SEO term optimization</li>
+                        <li>Competitor snapshot</li>
+                    </ul>
+                </div>
+                <button class="package-cta-btn" onclick="openSingleServiceModal('Amazon Starter Package', '₹1,999', 1999)">
+                    Book Starter Package →
+                </button>
+            </div>
+
+            <!-- 🔵 GROWTH PACKAGE (FEATURED) -->
+            <div class="package-card featured">
+                <span class="package-badge">MOST POPULAR</span>
+                <div>
+                    <div class="package-icon">🔵</div>
+                    <div class="package-name">Amazon Growth</div>
+                    <div class="package-tagline">For sellers already getting traffic who want maximum sales.</div>
+
+                    <div class="package-price-box">
+                        <div class="package-price">₹4,999</div>
+                        <div class="package-price-subtext">Full conversion & traffic engine</div>
+                    </div>
+
+                    <ul class="package-list">
+                        <li>Complete listing optimization</li>
+                        <li>In-depth keyword & competitor research</li>
+                        <li>6 high-converting product gallery images</li>
+                        <li>Backend SEO & search terms</li>
+                        <li>Basic A+ Content layout design</li>
+                    </ul>
+                </div>
+                <button class="package-cta-btn" onclick="openSingleServiceModal('Amazon Growth Package', '₹4,999', 4999)">
+                    Book Growth Package →
+                </button>
+            </div>
+
+            <!-- 🎯 FREE MINI AUDIT -->
+            <div class="package-card">
+                <div>
+                    <div class="package-icon">🎯</div>
+                    <div class="package-name">FREE PPC Mini Audit</div>
+                    <div class="package-tagline">Find out where your Amazon ad spend is leaking — FREE.</div>
+
+                    <div class="package-price-box">
+                        <div class="package-price" style="color: #10b981;">₹0</div>
+                        <div class="package-price-subtext">Limited slots available this week</div>
+                    </div>
+
+                    <ul class="package-list">
+                        <li>Campaign structure check</li>
+                        <li>Wasted-spend & negative check</li>
+                        <li>High-intent keyword opportunities</li>
+                        <li>ACOS / ROAS efficiency overview</li>
+                        <li>3–5 actionable recommendations</li>
+                    </ul>
+                </div>
+                <button class="package-cta-btn free-btn" onclick="openSingleServiceModal('FREE Amazon PPC Mini Audit', 'FREE (₹0)', 0)">
+                    Get My Free Audit →
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     LAUNCH OFFER 20% DISCOUNT SECTION
+========================================================= -->
+<section class="launch-offer-section">
+    <div class="launch-offer-container">
+        <div class="launch-offer-box">
+            <h2 class="launch-title">🚀 Special Launch Offer — 20% OFF Your First Service</h2>
+            <p class="launch-subtitle">Limited to the first 10 Amazon seller accounts only.</p>
+
+            <table class="launch-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Regular Price</th>
+                        <th>Launch Discount Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Listing Optimization</strong></td>
+                        <td><span class="old-price">₹700</span></td>
+                        <td><span class="launch-price">₹599 / Listing</span></td>
+                        <td><button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Listing Optimization (Launch Offer)', '₹599', 599)">Claim ₹599 →</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Keyword Research</strong></td>
+                        <td><span class="old-price">₹999</span></td>
+                        <td><span class="launch-price">₹799 / Product</span></td>
+                        <td><button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Keyword Research (Launch Offer)', '₹799', 799)">Claim ₹799 →</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>PPC Audit</strong></td>
+                        <td><span class="old-price">₹1,499</span></td>
+                        <td><span class="launch-price">₹1,199 / Account</span></td>
+                        <td><button class="service-ref-arrow-btn" onclick="openSingleServiceModal('PPC Audit (Launch Offer)', '₹1,199', 1199)">Claim ₹1,199 →</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>A+ Content Design</strong></td>
+                        <td><span class="old-price">₹1,999</span></td>
+                        <td><span class="launch-price">₹1,699 / Product</span></td>
+                        <td><button class="service-ref-arrow-btn" onclick="openSingleServiceModal('A+ Content Design (Launch Offer)', '₹1,699', 1699)">Claim ₹1,699 →</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>6 Product Images Design</strong></td>
+                        <td><span class="old-price">₹2,499</span></td>
+                        <td><span class="launch-price">₹2,099 / Pack</span></td>
+                        <td><button class="service-ref-arrow-btn" onclick="openSingleServiceModal('6 Product Images (Launch Offer)', '₹2,099', 2099)">Claim ₹2,099 →</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     ADVANCED SERVICES MATRIX GRID (18 INDIVIDUAL SERVICES)
 ========================================================= -->
 <section class="services-main-section">
     <div class="services-container">
 
         <div class="services-grid-header">
-            <div class="grid-results-count" id="resultsCounter">Showing 8 Active Amazon Services</div>
+            <div class="grid-results-count" id="resultsCounter">Showing 18 Active Amazon Services</div>
             <div style="font-size: 13.5px; color: #64748b; font-weight: 600;">
-                💡 <em>Tip: Click <strong>[+ Bundle]</strong> on multiple cards to unlock up to 20% bundle discount!</em>
+                💡 <em>Tip: Select multiple services via <strong>[+ Bundle]</strong> for automatic 15-20% discount calculation!</em>
             </div>
         </div>
 
         <div class="services-ref-grid" id="servicesGrid">
 
-            <!-- CARD 01: AMAZON AGENCY (SPN VERIFIED) -->
-            <article class="service-ref-card" data-category="growth" data-name="Amazon Agency (SPN Verified)" data-price="45000">
-                <div>
-                    <div class="service-ref-top">
-                        <div class="service-ref-icon-box">🏅</div>
-                        <span class="service-badge-pill verified">SPN VERIFIED</span>
-                    </div>
-
-                    <h2 class="service-ref-title">Amazon Agency (SPN Verified)</h2>
-                    <p class="service-ref-desc">
-                        India's leading Amazon agency — 500+ brands, ₹1000Cr+ GMV managed across top seller central accounts.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">500+ Brands Scaled</span>
-                        <span class="service-feature-tag">Full Catalog Audit</span>
-                        <span class="service-feature-tag">FBA Management</span>
-                    </div>
-                </div>
-
-                <div class="service-ref-bottom">
-                    <div class="service-price-wrapper">
-                        <span class="service-ref-price">Starts at ₹45,000 / mo</span>
-                        <span class="service-price-subtext">Custom seller roadmap</span>
-                    </div>
-                    <div class="card-action-btns">
-                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Agency (SPN Verified)', 45000)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Agency (SPN Verified)', 'Starts at ₹45,000 / mo')">Book Call ↗</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CARD 02: AMAZON MARKETING AGENCY -->
-            <article class="service-ref-card" data-category="marketing" data-name="Amazon Marketing Agency" data-price="50000">
-                <div>
-                    <div class="service-ref-top">
-                        <div class="service-ref-icon-box">🛒</div>
-                        <span class="service-badge-pill verified">FEATURED</span>
-                    </div>
-
-                    <h2 class="service-ref-title">Amazon Marketing Agency</h2>
-                    <p class="service-ref-desc">
-                        SPN-verified full-stack Amazon growth with conversion creatives, Sponsored Ads & brand storefront scaling.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">Full-Stack Growth</span>
-                        <span class="service-feature-tag">Storefront Design</span>
-                        <span class="service-feature-tag">Brand Registry</span>
-                    </div>
-                </div>
-
-                <div class="service-ref-bottom">
-                    <div class="service-price-wrapper">
-                        <span class="service-ref-price">Starts at ₹50,000 / mo</span>
-                        <span class="service-price-subtext">Complete marketing suite</span>
-                    </div>
-                    <div class="card-action-btns">
-                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Marketing Agency', 50000)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Marketing Agency', 'Starts at ₹50,000 / mo')">Book Call ↗</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CARD 03: AMAZON PPC MANAGEMENT -->
+            <!-- 01: AMAZON PPC MANAGEMENT -->
             <article class="service-ref-card" data-category="ppc" data-name="Amazon PPC Management" data-price="25000">
                 <div>
                     <div class="service-ref-top">
                         <div class="service-ref-icon-box">📈</div>
-                        <span class="service-badge-pill popular">MOST POPULAR</span>
+                        <span class="service-badge-pill popular">POPULAR</span>
                     </div>
-
-                    <h2 class="service-ref-title">Amazon PPC Management</h2>
-                    <p class="service-ref-desc">
-                        Scale Amazon sales with data-driven PPC. Campaign strategy, keyword targeting, bid optimization and TACOS reduction.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">Sponsored Products</span>
-                        <span class="service-feature-tag">Negative Harvesting</span>
-                        <span class="service-feature-tag">TACOS Control</span>
-                    </div>
+                    <h3 class="service-ref-title">01. Amazon PPC Management</h3>
+                    <p class="service-ref-desc">Scale Amazon sales with data-driven PPC. Campaign strategy, keyword targeting, bid optimization and budget management focused on profitable growth.</p>
                 </div>
-
                 <div class="service-ref-bottom">
                     <div class="service-price-wrapper">
                         <span class="service-ref-price">Custom — Book a Call</span>
@@ -294,95 +317,65 @@
                     </div>
                     <div class="card-action-btns">
                         <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon PPC Management', 25000)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon PPC Management', 'Custom Pricing')">Book Call ↗</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon PPC Management', 'Custom Pricing', 25000)">Book Call →</button>
                     </div>
                 </div>
             </article>
 
-            <!-- CARD 04: PRODUCT LISTING OPTIMIZATION -->
-            <article class="service-ref-card" data-category="listing" data-name="Product Listing Optimization" data-price="700">
+            <!-- 02: AMAZON LISTING OPTIMIZATION -->
+            <article class="service-ref-card" data-category="listing" data-name="Amazon Listing Optimization" data-price="700">
                 <div>
                     <div class="service-ref-top">
                         <div class="service-ref-icon-box">⚡</div>
                         <span class="service-badge-pill verified">HIGH CONVERSION</span>
                     </div>
-
-                    <h2 class="service-ref-title">Product Listing Optimization</h2>
-                    <p class="service-ref-desc">
-                        SEO-driven titles, bullet points, HTML descriptions & backend keywords optimized to improve visibility and conversion.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">Helium10 Keywords</span>
-                        <span class="service-feature-tag">5 Benefit Bullets</span>
-                        <span class="service-feature-tag">Variations Included</span>
-                    </div>
+                    <h3 class="service-ref-title">02. Amazon Listing Optimization</h3>
+                    <p class="service-ref-desc">SEO-focused titles, bullet points, descriptions and backend keywords optimized to improve visibility and conversion. All color & size variations included.</p>
                 </div>
-
                 <div class="service-ref-bottom">
                     <div class="service-price-wrapper">
                         <span class="service-ref-price">₹700 / Listing</span>
                         <span class="service-price-subtext">All variations included</span>
                     </div>
                     <div class="card-action-btns">
-                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Product Listing Optimization', 700)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Product Listing Optimization', '₹700 / Listing')">Book Call ↗</button>
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Listing Optimization', 700)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Listing Optimization', '₹700 / Listing', 700)">Book Call →</button>
                     </div>
                 </div>
             </article>
 
-            <!-- CARD 05: AMAZON IMAGE CREATION & A+ CONTENT -->
+            <!-- 03: AMAZON IMAGE CREATION & A+ CONTENT -->
             <article class="service-ref-card" data-category="creative" data-name="Amazon Image Creation & A+ Content" data-price="2999">
                 <div>
                     <div class="service-ref-top">
                         <div class="service-ref-icon-box">🎨</div>
-                        <span class="service-badge-pill verified">FEATURED CREATIVE</span>
+                        <span class="service-badge-pill verified">FEATURED</span>
                     </div>
-
-                    <h2 class="service-ref-title">Amazon Image Creation & A+ Content</h2>
-                    <p class="service-ref-desc">
-                        5–6 premium product gallery images plus conversion-focused Amazon A+ Content designed to communicate value clearly.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">3D Hero Render</span>
-                        <span class="service-feature-tag">Infographics</span>
-                        <span class="service-feature-tag">Full A+ Layout</span>
-                    </div>
+                    <h3 class="service-ref-title">03. Amazon Image Creation & A+ Content</h3>
+                    <p class="service-ref-desc">5–6 premium product gallery images plus conversion-focused Amazon A+ Content designed to communicate value clearly.</p>
                 </div>
-
                 <div class="service-ref-bottom">
                     <div class="service-price-wrapper">
                         <span class="service-ref-price">₹2,999 / Product</span>
-                        <span class="service-price-note">5-6 images + A+ design</span>
+                        <span class="service-price-subtext">5-6 images + A+ design</span>
                     </div>
                     <div class="card-action-btns">
-                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Image & A+ Content', 2999)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Image Creation & A+ Content', '₹2,999 / Product')">Book Call ↗</button>
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Image Creation & A+ Content', 2999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Image Creation & A+ Content', '₹2,999 / Product', 2999)">Book Call →</button>
                     </div>
                 </div>
             </article>
 
-            <!-- CARD 06: AMAZON REVIEW GROWTH SUPPORT -->
+            <!-- 04: AMAZON REVIEW GROWTH SUPPORT -->
             <article class="service-ref-card" data-category="growth" data-name="Amazon Review Growth Support" data-price="200">
                 <div>
                     <div class="service-ref-top">
                         <div class="service-ref-icon-box">⭐</div>
-                        <span class="service-badge-pill verified">TOS COMPLIANT</span>
+                        <span class="service-badge-pill verified">TOS SAFE</span>
                     </div>
-
-                    <h2 class="service-ref-title">Amazon Review Growth Support</h2>
-                    <p class="service-ref-desc">
-                        Amazon-compliant review-request automation and customer engagement support designed to build authentic feedback.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">100% TOS Safe</span>
-                        <span class="service-feature-tag">Vine Setup</span>
-                        <span class="service-feature-tag">Insert Card Audit</span>
-                    </div>
+                    <h3 class="service-ref-title">04. Amazon Review Growth Support</h3>
+                    <p class="service-ref-desc">Amazon-compliant review-request automation and customer engagement support designed to help brands build authentic feedback.</p>
                 </div>
-
                 <div class="service-ref-bottom">
                     <div class="service-price-wrapper">
                         <span class="service-ref-price">Starting at ₹200</span>
@@ -390,71 +383,302 @@
                     </div>
                     <div class="card-action-btns">
                         <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Review Growth Support', 200)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Review Growth Support', 'Starting at ₹200')">Book Call ↗</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Review Growth Support', 'Starting at ₹200', 200)">Book Call →</button>
                     </div>
                 </div>
             </article>
 
-            <!-- CARD 07: AMAZON STORE MANAGEMENT -->
-            <article class="service-ref-card" data-category="growth" data-name="Amazon Store Management" data-price="40000">
+            <!-- 05: AMAZON PRODUCT RESEARCH -->
+            <article class="service-ref-card" data-category="audit" data-name="Amazon Product Research" data-price="1499">
                 <div>
                     <div class="service-ref-top">
-                        <div class="service-ref-icon-box">🏪</div>
-                        <span class="service-badge-pill verified">FULL STORE</span>
+                        <div class="service-ref-icon-box">🔍</div>
                     </div>
-
-                    <h2 class="service-ref-title">Amazon Store Management</h2>
-                    <p class="service-ref-desc">
-                        End-to-end Amazon store operations, inventory health, case log resolutions, and listing suppression fixes.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">Catalog Health</span>
-                        <span class="service-feature-tag">FBA Restock Alerts</span>
-                        <span class="service-feature-tag">Case Logs</span>
-                    </div>
+                    <h3 class="service-ref-title">05. Amazon Product Research</h3>
+                    <p class="service-ref-desc">Find products with real market potential. Demand assessment, competitor analysis, and opportunity research to help sellers make data decisions.</p>
                 </div>
-
                 <div class="service-ref-bottom">
                     <div class="service-price-wrapper">
-                        <span class="service-ref-price">Starts at ₹40,000 / mo</span>
-                        <span class="service-price-subtext">Complete account operations</span>
+                        <span class="service-ref-price">Starting at ₹1,499 / Product</span>
+                        <span class="service-price-subtext">Deep market analysis</span>
                     </div>
                     <div class="card-action-btns">
-                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Store Management', 40000)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Store Management', 'Starts at ₹40,000 / mo')">Book Call ↗</button>
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Product Research', 1499)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Product Research', '₹1,499 / Product', 1499)">Book Call →</button>
                     </div>
                 </div>
             </article>
 
-            <!-- CARD 08: QUICK COMMERCE ACTIVATION -->
-            <article class="service-ref-card" data-category="qcommerce" data-name="Quick Commerce Activation" data-price="25000">
+            <!-- 06: AMAZON KEYWORD RESEARCH -->
+            <article class="service-ref-card" data-category="listing" data-name="Amazon Keyword Research" data-price="999">
                 <div>
                     <div class="service-ref-top">
-                        <div class="service-ref-icon-box">🌐</div>
-                        <span class="service-badge-pill verified">MULTI-CHANNEL</span>
+                        <div class="service-ref-icon-box">🎯</div>
                     </div>
-
-                    <h2 class="service-ref-title">Quick Commerce Activation</h2>
-                    <p class="service-ref-desc">
-                        Complete onboarding and catalog setup across Blinkit, Zepto, Flipkart, GeM, and global marketplaces.
-                    </p>
-
-                    <div class="service-ref-features">
-                        <span class="service-feature-tag">Blinkit & Zepto</span>
-                        <span class="service-feature-tag">Flipkart Minutes</span>
-                        <span class="service-feature-tag">GeM Portal</span>
-                    </div>
+                    <h3 class="service-ref-title">06. Amazon Keyword Research</h3>
+                    <p class="service-ref-desc">In-depth keyword research using search-volume, competition and relevance analysis to identify high-potential keywords for your products.</p>
                 </div>
-
                 <div class="service-ref-bottom">
                     <div class="service-price-wrapper">
-                        <span class="service-ref-price">Starts at ₹25,000</span>
-                        <span class="service-price-subtext">One-time multi-platform setup</span>
+                        <span class="service-ref-price">₹999 / Product</span>
+                        <span class="service-price-subtext">Primary, secondary & long-tail</span>
                     </div>
                     <div class="card-action-btns">
-                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Quick Commerce Activation', 25000)">+ Bundle</button>
-                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Quick Commerce Activation', 'Starts at ₹25,000')">Book Call ↗</button>
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Keyword Research', 999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Keyword Research', '₹999 / Product', 999)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 07: AMAZON COMPETITOR ANALYSIS -->
+            <article class="service-ref-card" data-category="audit" data-name="Amazon Competitor Analysis" data-price="1499">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">📊</div>
+                    </div>
+                    <h3 class="service-ref-title">07. Amazon Competitor Analysis</h3>
+                    <p class="service-ref-desc">Analyze competitor listings, pricing, keywords, reviews, positioning, images and advertising strategy to identify growth opportunities.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">Starting at ₹1,499 / Product</span>
+                        <span class="service-price-subtext">Competitor gap report</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Competitor Analysis', 1499)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Competitor Analysis', '₹1,499 / Product', 1499)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 08: AMAZON PRODUCT LISTING AUDIT -->
+            <article class="service-ref-card" data-category="listing" data-name="Amazon Product Listing Audit" data-price="799">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🩺</div>
+                    </div>
+                    <h3 class="service-ref-title">08. Amazon Product Listing Audit</h3>
+                    <p class="service-ref-desc">A detailed audit of your title, bullets, description, keywords, images, A+ Content, reviews and overall conversion potential.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">₹799 / Listing</span>
+                        <span class="service-price-subtext">Actionable optimization report</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Product Listing Audit', 799)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Product Listing Audit', '₹799 / Listing', 799)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 09: AMAZON PPC AUDIT -->
+            <article class="service-ref-card" data-category="ppc" data-name="Amazon PPC Audit" data-price="1499">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🔎</div>
+                    </div>
+                    <h3 class="service-ref-title">09. Amazon PPC Audit</h3>
+                    <p class="service-ref-desc">Complete review of campaigns, search terms, bids, budgets, ACOS, ROAS and wasted spend with actionable optimization recommendations.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">₹1,499 / Account</span>
+                        <span class="service-price-subtext">Stop wasted ad spend</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon PPC Audit', 1499)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon PPC Audit', '₹1,499 / Account', 1499)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 10: AMAZON PPC CAMPAIGN SETUP -->
+            <article class="service-ref-card" data-category="ppc" data-name="Amazon PPC Campaign Setup" data-price="1999">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🚀</div>
+                    </div>
+                    <h3 class="service-ref-title">10. Amazon PPC Campaign Setup</h3>
+                    <p class="service-ref-desc">Campaign creation, keyword targeting, match types, negative keywords, bidding strategy and initial budget setup built for growth.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">Starting at ₹1,999 / Product</span>
+                        <span class="service-price-subtext">Complete campaign architecture</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon PPC Campaign Setup', 1999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon PPC Campaign Setup', '₹1,999 / Product', 1999)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 11: AMAZON PPC OPTIMIZATION -->
+            <article class="service-ref-card" data-category="ppc" data-name="Amazon PPC Optimization" data-price="4999">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">⚙️</div>
+                    </div>
+                    <h3 class="service-ref-title">11. Amazon PPC Optimization</h3>
+                    <p class="service-ref-desc">Ongoing campaign monitoring, bid adjustments, search-term optimization, negative keywords and budget allocation based on performance.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">Starting at ₹4,999 / Month</span>
+                        <span class="service-price-subtext">Active monitoring & bid management</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon PPC Optimization', 4999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon PPC Optimization', '₹4,999 / Month', 4999)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 12: AMAZON A+ CONTENT DESIGN -->
+            <article class="service-ref-card" data-category="creative" data-name="Amazon A+ Content Design" data-price="1999">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">✨</div>
+                    </div>
+                    <h3 class="service-ref-title">12. Amazon A+ Content Design</h3>
+                    <p class="service-ref-desc">Premium A+ Content layouts designed to communicate product benefits, build trust and improve the shopping experience.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">₹1,999 / Product</span>
+                        <span class="service-price-subtext">High-converting graphics</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon A+ Content Design', 1999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon A+ Content Design', '₹1,999 / Product', 1999)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 13: AMAZON STOREFRONT DESIGN -->
+            <article class="service-ref-card" data-category="creative" data-name="Amazon Storefront Design" data-price="3999">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🏬</div>
+                    </div>
+                    <h3 class="service-ref-title">13. Amazon Storefront Design</h3>
+                    <p class="service-ref-desc">Custom Amazon Storefront structure, category organization, brand messaging and visual layout designed around your product portfolio.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">Starting at ₹3,999 / Store</span>
+                        <span class="service-price-subtext">Brand store layout</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Storefront Design', 3999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Storefront Design', '₹3,999 / Store', 3999)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 14: AMAZON PRODUCT IMAGE DESIGN -->
+            <article class="service-ref-card" data-category="creative" data-name="Amazon Product Image Design" data-price="2499">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🖼️</div>
+                    </div>
+                    <h3 class="service-ref-title">14. Amazon Product Image Design</h3>
+                    <p class="service-ref-desc">Professional product image design including infographics, feature highlights, comparison graphics and lifestyle-style creatives.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">₹499 / Image (₹2,499 / 6 Pack)</span>
+                        <span class="service-price-subtext">Infographics & gallery pack</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Product Image Design (6 Pack)', 2499)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Product Image Design (6 Pack)', '₹2,499 / 6 Images', 2499)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 15: AMAZON BACKEND SEO -->
+            <article class="service-ref-card" data-category="listing" data-name="Amazon Backend SEO" data-price="699">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🔑</div>
+                    </div>
+                    <h3 class="service-ref-title">15. Amazon Backend SEO</h3>
+                    <p class="service-ref-desc">Backend search terms, subject matter, relevant attributes and hidden keyword opportunities optimized to improve discoverability.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">₹699 / Listing</span>
+                        <span class="service-price-subtext">Hidden keyword indexing</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Backend SEO', 699)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Backend SEO', '₹699 / Listing', 699)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 16: AMAZON ACCOUNT HEALTH SUPPORT -->
+            <article class="service-ref-card" data-category="audit" data-name="Amazon Account Health Support" data-price="999">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🛡️</div>
+                    </div>
+                    <h3 class="service-ref-title">16. Amazon Account Health Support</h3>
+                    <p class="service-ref-desc">Support with identifying listing issues, account-health concerns, policy-related issues and documentation requirements.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">Starting at ₹999 / Issue</span>
+                        <span class="service-price-subtext">Policy compliance help</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Account Health Support', 999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Account Health Support', '₹999 / Issue', 999)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 17: AMAZON VARIATION SETUP -->
+            <article class="service-ref-card" data-category="listing" data-name="Amazon Variation Setup" data-price="799">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">🔀</div>
+                    </div>
+                    <h3 class="service-ref-title">17. Amazon Variation Setup</h3>
+                    <p class="service-ref-desc">Parent-child variation setup and optimization for size, color, style or other eligible product variations on Seller Central.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">Starting at ₹799 / Parent</span>
+                        <span class="service-price-subtext">Parent-child catalog setup</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Amazon Variation Setup', 799)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Amazon Variation Setup', '₹799 / Parent Listing', 799)">Book Call →</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 18: AMAZON BRAND STORE & LISTING PACKAGE -->
+            <article class="service-ref-card" data-category="creative" data-name="Amazon Brand Store & Listing Package" data-price="5999">
+                <div>
+                    <div class="service-ref-top">
+                        <div class="service-ref-icon-box">💎</div>
+                        <span class="service-badge-pill verified">PREMIUM</span>
+                    </div>
+                    <h3 class="service-ref-title">18. Brand Store & Listing Suite</h3>
+                    <p class="service-ref-desc">Includes Listing optimization, Keyword research, Product image optimization, A+ Content, Backend SEO, & Competitor analysis.</p>
+                </div>
+                <div class="service-ref-bottom">
+                    <div class="service-price-wrapper">
+                        <span class="service-ref-price">Starting at ₹5,999 / Product</span>
+                        <span class="service-price-subtext">Complete marketplace stack</span>
+                    </div>
+                    <div class="card-action-btns">
+                        <button class="bundle-checkbox-btn" onclick="toggleBundle(this, 'Brand Store & Listing Package', 5999)">+ Bundle</button>
+                        <button class="service-ref-arrow-btn" onclick="openSingleServiceModal('Brand Store & Listing Package', '₹5,999 / Product', 5999)">Book Call →</button>
                     </div>
                 </div>
             </article>
@@ -497,7 +721,7 @@
                     <span class="calc-pill">4.2x Est. ROAS</span>
                     <span class="calc-pill">ACOS ~18.5%</span>
                 </div>
-                <button class="calc-cta-btn" onclick="openSingleServiceModal('Custom Amazon PPC Audit & ROAS Strategy Call', 'Custom Audit')">
+                <button class="calc-cta-btn" onclick="openSingleServiceModal('Custom Amazon PPC Audit & ROAS Strategy Call', 'Custom Audit', 0)">
                     Book Call & Claim ROAS Strategy ↗
                 </button>
             </div>
@@ -544,13 +768,13 @@
 
 
 <!-- =========================================================
-     MODAL POPUP FOR QUICK SERVICE CONSULTATION (WHATSAPP + EMAIL DIRECT)
+     MODAL POPUP FOR QUICK SERVICE CONSULTATION
 ========================================================= -->
 <div class="service-modal-overlay" id="serviceModalOverlay">
     <div class="service-modal-card">
         <button class="modal-close-btn" onclick="closeServiceModal()">&times;</button>
         <h3 class="modal-title" id="modalServiceName">Book a Strategy Session</h3>
-        <p class="modal-subtitle" id="modalServiceSubtitle">Fill in your details below. Your request will be sent to anmolpokhriyal3200@gmail.com & opened directly on WhatsApp.</p>
+        <p class="modal-subtitle" id="modalServiceSubtitle">Fill in your details below. Your session booking will be dispatched & opened directly on WhatsApp.</p>
 
         <form id="modalBookingForm" class="modal-form" novalidate>
             <input type="hidden" id="modalServiceField" name="serviceName" value="Amazon Service">
@@ -588,7 +812,7 @@
 
 
 <!-- =========================================================
-     EXECUTIVE SEO FOOTER (MAIN SITE FOOTER)
+     FOOTER
 ========================================================= -->
 <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
 
@@ -613,25 +837,6 @@
                     <p class="footer-tagline" itemprop="description">
                         Full-stack E-commerce PPC agency helping brands scale on marketplaces in India and abroad since 2016.
                     </p>
-
-                    <div class="footer-socials" aria-label="Social Media Links">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter" class="social-icon">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-icon">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        </a>
-                    </div>
-
-                    <a href="index.html#contact" class="footer-profile-link">
-                        View our DesignRush profile ↗
-                    </a>
                 </div>
             </div>
 
@@ -644,8 +849,6 @@
                     <li><a href="services.html">Transparent Pricing</a></li>
                     <li><a href="case-studies.html">Case Studies</a></li>
                     <li><a href="about.html">Knowledge Base</a></li>
-                    <li><a href="index.html#problem">All Calculators & Tools →</a></li>
-                    <li><a href="index.html#contact">Embed Our Calculators</a></li>
                 </ul>
             </div>
 
@@ -679,9 +882,7 @@
                 <ul class="footer-links">
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="about.html#founder">Our Founder</a></li>
-                    <li><a href="about.html">Careers</a></li>
                     <li><a href="index.html#results">Our Brands</a></li>
-                    <li><a href="about.html">Press & Media</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
@@ -694,14 +895,6 @@
             <p class="footer-meta-info">
                 Amazon Ads Expert · D-34, Sector-11, Noida, Uttar Pradesh 201301, India · +91-8433232647 · contact@amazonadsexpert.com
             </p>
-
-            <div class="footer-legal-links">
-                <a href="#" class="legal-pill">Cancellation Policy</a>
-                <a href="#" class="legal-pill">Refund Policy</a>
-                <a href="#" class="legal-pill">Privacy Policy</a>
-                <a href="#" class="legal-pill">Terms & Conditions</a>
-                <a href="sitemap.xml" class="legal-pill">Sitemap</a>
-            </div>
         </div>
 
 
@@ -721,41 +914,35 @@
 
 <!-- WHATSAPP FLOATING CHAT WIDGET -->
 <div class="whatsapp-widget-container" id="whatsappWidget">
-    <div class="whatsapp-chat-box" id="whatsappChatBox" aria-hidden="true" role="dialog" aria-labelledby="waChatTitle">
+    <div class="whatsapp-chat-box" id="whatsappChatBox" aria-hidden="true" role="dialog">
         <button class="whatsapp-close-btn" id="whatsappCloseBtn" aria-label="Close WhatsApp chat">&times;</button>
         <div class="whatsapp-header">
             <div class="whatsapp-header-title">
-                <svg class="whatsapp-title-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                </svg>
-                <h3 id="waChatTitle">Chat with us on WhatsApp</h3>
+                <h3>Chat with us on WhatsApp</h3>
             </div>
-            <p class="whatsapp-subtitle">Share your details (all optional) so our team can follow up.</p>
+            <p class="whatsapp-subtitle">Share your details so our team can follow up.</p>
         </div>
 
         <form class="whatsapp-form" id="whatsappForm" action="javascript:void(0);">
             <div class="wa-form-group">
                 <label for="waName">Name</label>
-                <input type="text" id="waName" placeholder="Your name" class="wa-input" autocomplete="name">
+                <input type="text" id="waName" placeholder="Your name" class="wa-input">
             </div>
             <div class="wa-form-group">
                 <label for="waMobile">Mobile</label>
-                <input type="tel" id="waMobile" placeholder="+91 98xxxxxxxx" class="wa-input" autocomplete="tel">
+                <input type="tel" id="waMobile" placeholder="+91 98xxxxxxxx" class="wa-input">
             </div>
             <div class="wa-form-group">
                 <label for="waEmail">Email</label>
-                <input type="email" id="waEmail" placeholder="you@brand.com" class="wa-input" autocomplete="email">
+                <input type="email" id="waEmail" placeholder="you@brand.com" class="wa-input">
             </div>
             <button type="submit" class="whatsapp-submit-btn">
-                <svg class="wa-btn-svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                </svg>
                 <span>Continue to WhatsApp</span>
             </button>
         </form>
     </div>
 
-    <button class="whatsapp-trigger-btn" id="whatsappTriggerBtn" aria-label="Open WhatsApp Chat" aria-expanded="false">
+    <button class="whatsapp-trigger-btn" id="whatsappTriggerBtn" aria-label="Open WhatsApp Chat">
         <svg class="whatsapp-trigger-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
         </svg>
@@ -765,12 +952,15 @@
 
 <!-- JAVASCRIPT LIBRARIES & HANDLERS -->
 <script src="js/navbar.js"></script>
+<script src="js/sales-notifications.js"></script>
+
 <script>
 let selectedBundle = [];
 let currentModalContext = {
     isBundle: false,
     serviceTitle: 'Amazon Service',
-    priceText: ''
+    priceText: '',
+    singlePrice: 0
 };
 
 function toggleBundle(btn, serviceName, price) {
@@ -793,10 +983,13 @@ function updateBundleBar() {
 
     if (selectedBundle.length >= 2) {
         let discount = selectedBundle.length >= 3 ? 20 : 15;
-        text.innerText = `${selectedBundle.length} Services Selected — ${discount}% BUNDLE DISCOUNT UNLOCKED!`;
+        let subtotal = selectedBundle.reduce((sum, item) => sum + item.price, 0);
+        let finalTotal = Math.round(subtotal * (1 - discount / 100));
+
+        text.innerText = `${selectedBundle.length} Services Selected — ${discount}% OFF! Total: ₹${finalTotal.toLocaleString('en-IN')}`;
         bar.classList.add('active');
     } else if (selectedBundle.length === 1) {
-        text.innerText = `1 Service Selected — Add 1 more for 15% OFF!`;
+        text.innerText = `1 Service Selected (₹${selectedBundle[0].price.toLocaleString('en-IN')}) — Add 1 more for 15% OFF!`;
         bar.classList.add('active');
     } else {
         bar.classList.remove('active');
@@ -806,25 +999,30 @@ function updateBundleBar() {
 function openBundleModal() {
     const names = selectedBundle.map(s => s.name).join(', ');
     const discount = selectedBundle.length >= 3 ? 20 : 15;
-    
+    const subtotal = selectedBundle.reduce((sum, item) => sum + item.price, 0);
+    const finalTotal = Math.round(subtotal * (1 - discount / 100));
+
     currentModalContext = {
         isBundle: true,
         serviceTitle: `Bundle Package (${selectedBundle.length} Services: ${names})`,
         discountPercent: discount,
+        subtotal: subtotal,
+        finalTotal: finalTotal,
         servicesList: selectedBundle
     };
 
-    document.getElementById('modalServiceName').innerText = `🎁 Custom Bundle Booking (${discount}% OFF)`;
+    document.getElementById('modalServiceName').innerText = `🎁 Custom Bundle Deal (${discount}% OFF)`;
     document.getElementById('modalServiceField').value = currentModalContext.serviceTitle;
     document.getElementById('modalIsBundleField').value = 'true';
     document.getElementById('serviceModalOverlay').classList.add('active');
 }
 
-function openSingleServiceModal(serviceTitle, priceText) {
+function openSingleServiceModal(serviceTitle, priceText, priceNum) {
     currentModalContext = {
         isBundle: false,
         serviceTitle: serviceTitle,
-        priceText: priceText
+        priceText: priceText,
+        singlePrice: priceNum || 0
     };
 
     document.getElementById('modalServiceName').innerText = serviceTitle;
@@ -902,7 +1100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // MODAL FORM SUBMIT -> EMAIL DISPATCH + WHATSAPP ORDER RECEIPT
+    // MODAL FORM SUBMIT -> DISPATCH DUAL EMAIL + FORMAT WHATSAPP ORDER RECEIPT
     document.getElementById('modalBookingForm').addEventListener('submit', async function(e) {
         e.preventDefault();
 
@@ -919,57 +1117,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const originalBtnHtml = submitBtn.innerHTML;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Processing Order... ⌛</span>';
+        submitBtn.innerHTML = '<span>Sending Order... ⌛</span>';
 
-        let orderTypeLabel = 'SINGLE SERVICE SESSION BOOKING';
+        let orderTypeLabel = 'SINGLE SERVICE BOOKING';
         let servicesListFormatted = '';
+        let pricingSummary = '';
 
         if (currentModalContext.isBundle) {
-            orderTypeLabel = `CUSTOM BUNDLE PACKAGE (${currentModalContext.discountPercent}% DISCOUNT DEAL)`;
-            servicesListFormatted = currentModalContext.servicesList.map(s => `  • ${s.name} [₹${s.price.toLocaleString('en-IN')}]`).join('\n');
+            orderTypeLabel = `BUNDLED PACKAGE DEAL (${currentModalContext.discountPercent}% DISCOUNT APPLIED)`;
+            servicesListFormatted = currentModalContext.servicesList.map(s => `  • ${s.name} - ₹${s.price.toLocaleString('en-IN')}`).join('\n');
+            pricingSummary = `Subtotal: ₹${currentModalContext.subtotal.toLocaleString('en-IN')}\nDiscount: ${currentModalContext.discountPercent}%\nFINAL ORDER TOTAL: ₹${currentModalContext.finalTotal.toLocaleString('en-IN')}`;
         } else {
-            servicesListFormatted = `  • ${currentModalContext.serviceTitle} (${currentModalContext.priceText || 'Custom Price'})`;
+            servicesListFormatted = `  • ${currentModalContext.serviceTitle}`;
+            pricingSummary = `PRICE: ${currentModalContext.priceText || 'Custom'}`;
         }
 
-        // 1. DISPATCH EMAIL TO ANMOLPOKHRIYAL3200@GMAIL.COM VIA FORMSUBMIT
-        try {
-            const params = new URLSearchParams();
-            params.append('Order_Type', orderTypeLabel);
-            params.append('Requested_Services', currentModalContext.serviceTitle);
-            params.append('Services_Breakdown', servicesListFormatted);
-            params.append('Client_Name', fullName);
-            params.append('Client_Email', email);
-            params.append('Client_Phone', phone);
-            params.append('ASIN_Store_Link', asin);
-            params.append('_subject', `📦 NEW SERVICE ORDER & SESSION BOOKING: ${fullName} (${currentModalContext.isBundle ? 'BUNDLE DEAL' : 'SINGLE SERVICE'})`);
-            params.append('_template', 'table');
-            params.append('_captcha', 'false');
+        // 1. DUAL BACKGROUND EMAIL DISPATCH (anmolpokhriyal3200@gmail.com & pokhriyalmansi378@gmail.com)
+        const emailTargets = [
+            'anmolpokhriyal3200@gmail.com',
+            'pokhriyalmansi378@gmail.com'
+        ];
 
-            await fetch('https://formsubmit.co/ajax/anmolpokhriyal3200@gmail.com', {
+        const params = new URLSearchParams();
+        params.append('Order_Type', orderTypeLabel);
+        params.append('Requested_Services', currentModalContext.serviceTitle);
+        params.append('Services_Breakdown', servicesListFormatted);
+        params.append('Pricing_Summary', pricingSummary);
+        params.append('Client_Name', fullName);
+        params.append('Client_Email', email);
+        params.append('Client_Phone', phone);
+        params.append('ASIN_Store_Link', asin);
+        params.append('_subject', `⚡ NEW AMAZON ORDER & SESSION BOOKING: ${fullName} (${currentModalContext.isBundle ? 'BUNDLE DEAL' : 'SINGLE SERVICE'})`);
+        params.append('_template', 'table');
+        params.append('_captcha', 'false');
+
+        // Fire HTTP POST requests to both email addresses asynchronously
+        emailTargets.forEach(targetEmail => {
+            fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Accept': 'application/json'
                 },
                 body: params.toString()
-            });
-        } catch (err) {
-            console.log('Email notice dispatch:', err);
-        }
+            }).catch(err => console.log('Background email dispatch notice:', err));
+        });
 
-        // 2. FORMAT OFFICIAL WHATSAPP ORDER RECEIPT
-        let waMessage = `🚨 *NEW SERVICE ORDER & STRATEGY SESSION REQUEST* 🚨\n` +
+        // 2. FORMAT WHATSAPP ORDER RECEIPT WITH EXACT PRICING
+        let waMessage = `🚨 *NEW SERVICE ORDER & SESSION BOOKING* 🚨\n` +
                         `--------------------------------------------------\n` +
-                        `📋 *BOOKING TYPE:* ${orderTypeLabel}\n\n` +
-                        `🛒 *REQUESTED SERVICES:* \n${servicesListFormatted}\n\n` +
+                        `📋 *ORDER TYPE:* ${orderTypeLabel}\n\n` +
+                        `🛒 *SELECTED SERVICES:* \n${servicesListFormatted}\n\n` +
+                        `💰 *PRICING DETAILS:*\n${pricingSummary}\n\n` +
                         `👤 *CLIENT DETAILS:*\n` +
                         `• Full Name: ${fullName}\n` +
                         `• Email: ${email}\n` +
                         `• Phone/WhatsApp: ${phone}\n` +
-                        `• ASIN / Store Link: ${asin}\n\n` +
-                        `📩 *Email Dispatch:* Sent to anmolpokhriyal3200@gmail.com\n` +
+                        `• ASIN / Store Link: ${asin}\n` +
                         `--------------------------------------------------\n` +
-                        `Hi Team! Please confirm my session booking and service strategy roadmap.`;
+                        `Hi Team! Please confirm my order and book my strategy session.`;
 
         const waUrl = `https://wa.me/918433232647?text=${encodeURIComponent(waMessage)}`;
 
