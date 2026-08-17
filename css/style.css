@@ -2546,7 +2546,7 @@ footer {
 
 
 /* =========================================================
-   ADVANCED INDEX FAQ SECTION (CLEAN LIGHT ACCORDION)
+   ADVANCED INDEX FAQ SECTION (ULTRA-SMOOTH ACCORDION)
 ========================================================= */
 
 .index-faq-section {
@@ -2613,8 +2613,11 @@ footer {
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.35s ease;
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    will-change: height;
 }
 
 .index-faq-item:hover {
@@ -2660,6 +2663,7 @@ footer {
     flex-grow: 1;
     line-height: 1.35;
     letter-spacing: -0.2px;
+    transition: color 0.3s ease;
 }
 
 .index-faq-item[open] .faq-q-text {
@@ -2678,7 +2682,7 @@ footer {
     justify-content: center;
     border-radius: 50%;
     background: #f1f5f9;
-    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease;
     flex-shrink: 0;
 }
 
@@ -2689,13 +2693,19 @@ footer {
 }
 
 .index-faq-answer-content {
-    padding: 0 24px 24px 74px;
+    padding: 16px 24px 24px 74px;
     color: #475569;
     font-size: 16px;
     line-height: 1.7;
     border-top: 1px solid #f1f5f9;
-    margin-top: -4px;
-    padding-top: 16px;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.index-faq-item[open] .index-faq-answer-content {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .index-faq-answer-content p {
@@ -2713,7 +2723,7 @@ footer {
     }
 
     .index-faq-answer-content {
-        padding: 0 16px 20px 16px;
+        padding: 14px 16px 20px 16px;
     }
 
     .faq-num-pill {
