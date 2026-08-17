@@ -1,0 +1,300 @@
+/* =========================================================
+   NEW ABOUT US SECTION (REF MATCHED & FLUENT SPACING)
+   File: css/about_section.css
+========================================================= */
+
+.about-ref-section {
+    position: relative;
+    background: #ffffff;
+    padding: 60px 24px;
+    color: #0f172a;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.about-ref-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* LEFT IMAGE COLUMN WITH FLOATING EXPERT CARD */
+.about-ref-visual {
+    position: relative;
+}
+
+.about-main-img-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: #e2e8f0;
+}
+
+.about-main-img-wrapper img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-main-img-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+/* FLOATING TEAM STATUS BADGE OVERLAY */
+.about-floating-status-card {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 18px;
+    padding: 18px 22px 14px;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    min-width: 240px;
+    z-index: 3;
+}
+
+.status-header-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.status-green-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+}
+
+.status-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.status-sub {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* ANIMATED GRAPH SPARKLINE SVG */
+.status-graph-svg {
+    width: 100%;
+    height: 26px;
+    stroke: #2563eb;
+    stroke-width: 2.5;
+    fill: none;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawGraph 3s ease forwards infinite;
+}
+
+@keyframes drawGraph {
+    0% { stroke-dashoffset: 200; }
+    50%, 100% { stroke-dashoffset: 0; }
+}
+
+/* RIGHT CONTENT COLUMN */
+.about-ref-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.about-tag-blue {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #2563eb;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.about-ref-title {
+    font-size: clamp(30px, 3.4vw, 42px);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -1px;
+    color: #0f172a;
+    margin-bottom: 18px;
+}
+
+.about-ref-title .highlight-blue {
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-ref-description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+.about-ref-description p {
+    margin-bottom: 12px;
+}
+
+.about-ref-description strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* CHECKLIST GRID */
+.about-checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+    margin-bottom: 24px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.check-icon-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.15);
+    color: #059669;
+    display: grid;
+    place-items: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* 4 STAT CARDS ROW */
+.about-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.about-stat-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px 12px;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.02);
+    transition: all 0.3s ease;
+}
+
+.about-stat-card:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+}
+
+.stat-card-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+    margin-bottom: 2px;
+    letter-spacing: -0.5px;
+}
+
+.stat-card-label {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* START YOUR GROWTH JOURNEY ACTION LINK */
+.start-growth-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: fit-content;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.start-growth-link:hover {
+    color: #1d4ed8;
+    transform: translateX(6px);
+}
+
+.start-growth-arrow {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.start-growth-link:hover .start-growth-arrow {
+    transform: translateX(4px);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+    .about-ref-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .about-ref-visual {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+    
+    .about-floating-status-card {
+        right: 10px;
+        bottom: -15px;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-ref-section {
+        padding: 45px 16px;
+    }
+    
+    .about-checklist-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .about-main-img-wrapper img {
+        height: 320px;
+    }
+}

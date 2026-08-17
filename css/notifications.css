@@ -1,0 +1,193 @@
+/* =========================================================
+   FLOATING NOTIFICATIONS (TOP-RIGHT BELOW NAVBAR)
+   File: css/notifications.css
+========================================================= */
+
+.notification-toast {
+
+    position: fixed;
+
+    top: 78px;
+
+    right: 24px;
+
+    z-index: 999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(16px) saturate(180%);
+
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+    border: 1px solid rgba(226, 232, 240, 0.9);
+
+    border-left: 4px solid #2563eb;
+
+    border-radius: 14px;
+
+    padding: 12px 16px;
+
+    box-shadow:
+        0 12px 30px -5px rgba(15, 23, 42, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+
+    max-width: 320px;
+
+    width: calc(100vw - 32px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-12px) scale(0.96);
+
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    pointer-events: auto;
+
+}
+
+
+.notification-toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0) scale(1);
+
+}
+
+
+.toast-avatar {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+
+    flex-shrink: 0;
+
+}
+
+
+.toast-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.toast-title {
+
+    font-size: 12.5px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+    line-height: 1.35;
+
+    margin: 0 0 2px 0;
+
+}
+
+
+.toast-time {
+
+    font-family: DM Mono, monospace;
+
+    font-size: 10px;
+
+    color: #64748b;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+}
+
+
+.toast-time-dot {
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+}
+
+
+.toast-close {
+
+    border: 0;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    padding: 2px 4px;
+
+    border-radius: 6px;
+
+    line-height: 1;
+
+    transition: color 0.2s ease;
+
+}
+
+
+.toast-close:hover {
+
+    color: #0f172a;
+
+}
+
+
+@media (max-width: 560px) {
+
+    .notification-toast {
+
+        top: 66px;
+
+        right: 16px;
+
+        max-width: calc(100vw - 32px);
+
+    }
+
+}

@@ -1,0 +1,241 @@
+/* =========================================================
+   PIXEL-PERFECT COMPARISON TABLE (MATCHING REFERENCE UI)
+   File: css/comparison.css
+========================================================= */
+
+.comparison-section {
+    position: relative;
+    background: #ffffff;
+    padding: 80px 24px;
+    color: #0f172a;
+    overflow: hidden;
+}
+
+.comparison-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* HEADER */
+.comparison-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 44px;
+}
+
+.comparison-title {
+    font-size: clamp(32px, 3.8vw, 44px);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -1.2px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.comparison-title .highlight-blue {
+    color: #2563eb;
+}
+
+.comparison-subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+
+/* TABLE CONTAINER CARD */
+.comparison-table-card {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px -10px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+}
+
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    min-width: 760px;
+}
+
+/* COLUMN WIDTH SPECIFICATIONS FOR PERFECT ALIGNMENT */
+.comparison-table col.col-feature {
+    width: 40%;
+}
+
+.comparison-table col.col-brand {
+    width: 20%;
+}
+
+.comparison-table col.col-diy {
+    width: 20%;
+}
+
+.comparison-table col.col-agency {
+    width: 20%;
+}
+
+/* HEADER STYLING */
+.comparison-table th {
+    padding: 20px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #475569;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.comparison-table th.th-feature {
+    text-align: left;
+    color: #0f172a;
+}
+
+.comparison-table th.th-center {
+    text-align: center;
+}
+
+/* HIGHLIGHTED BRAND COLUMN (AMAZON ADS EXPERT) */
+.comparison-table .col-highlight {
+    background: rgba(239, 246, 255, 0.65);
+    text-align: center;
+}
+
+.comparison-table th.col-highlight {
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* TABLE BODY ROWS */
+.comparison-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.comparison-table td.td-feature {
+    text-align: left;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.comparison-table td.td-center {
+    text-align: center;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tr:hover td {
+    background-color: rgba(248, 250, 252, 0.7);
+}
+
+.comparison-table tr:hover td.col-highlight {
+    background-color: rgba(239, 246, 255, 0.9);
+}
+
+/* CIRCULAR CHECK & CROSS BADGES (MATCHING REFERENCE UI EXACTLY) */
+.badge-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.badge-cross {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #ef4444;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.badge-text-gray {
+    font-size: 13.5px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.badge-text-dash {
+    font-size: 15px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* TABLE CARD FOOTER CTA */
+.table-card-footer {
+    padding: 22px 28px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.table-footer-text {
+    font-size: 14.5px;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.table-footer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    transition: all 0.3s ease;
+}
+
+.table-footer-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 640px) {
+    .comparison-section {
+        padding: 50px 16px;
+    }
+    .comparison-table th,
+    .comparison-table td {
+        padding: 14px 16px;
+    }
+    .table-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

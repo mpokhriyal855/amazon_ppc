@@ -1,0 +1,525 @@
+/* =========================================================
+   HIGH-CONTRAST DARK TECH 3D FLIP TESTIMONIAL CARDS
+   File: css/testimonials.css
+========================================================= */
+
+.testimonials-section {
+    position: relative;
+    background: linear-gradient(rgb(8, 12, 20) 0%, rgb(15, 23, 42) 100%);
+    color: #f8fafc;
+    padding: 70px 24px 75px;
+    overflow: hidden;
+}
+
+/* Background Grid Lines (Checks matching website grid) */
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(216, 223, 233, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 223, 233, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Soft Ambient Glow Orbs */
+.orb-glow-1 {
+    position: absolute;
+    top: -100px;
+    left: 15%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.13) 0%, rgba(8, 12, 20, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(40px);
+}
+
+.orb-glow-2 {
+    position: absolute;
+    bottom: -100px;
+    right: 10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.11) 0%, rgba(8, 12, 20, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(40px);
+}
+
+.testimonials-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* HEADER */
+.testimonials-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 48px;
+}
+
+.section-tag-orange {
+    font-family: 'DM Mono', monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #f59e0b;
+    text-transform: uppercase;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    padding: 7px 20px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.12);
+}
+
+.testimonials-title {
+    font-size: clamp(32px, 3.8vw, 46px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.testimonials-title .highlight-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.testimonials-subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #94a3b8;
+    max-width: 660px;
+    margin: 0 auto 28px;
+}
+
+/* PILLS ROW (DARK GLASS) */
+.testimonials-pills-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pill-badge-glass {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f1f5f9;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill-badge-glass:hover {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(96, 165, 250, 0.5);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 3D CARDS GRID */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+/* 3D FLIP CONTAINER */
+.testimonial-flip-card {
+    background-color: transparent;
+    height: 440px;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.testimonial-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* FLIP ON HOVER OR ACTIVE CLASS */
+.testimonial-flip-card:hover .testimonial-flip-inner,
+.testimonial-flip-card.is-flipped .testimonial-flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* FRONT & BACK CARD FACES */
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 22px;
+    padding: 26px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* CARD FRONT STYLING (DARK GLASS WITH GLOWING BORDER) */
+.card-front {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 41, 59, 0.65) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-flip-card:hover .card-front {
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* CARD BACK STYLING (REVEAL SIDE) */
+.card-back {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.92) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transform: rotateY(180deg);
+    color: #f8fafc;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* CARD TOP HEADER */
+.card-top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.testimonial-quote-icon {
+    width: 24px;
+    height: 24px;
+    fill: rgba(96, 165, 250, 0.5);
+}
+
+.testimonial-stars {
+    color: #fbbf24;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+/* VERIFIED TAG */
+.verified-client-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    width: fit-content;
+}
+
+.verified-dot {
+    width: 6px;
+    height: 6px;
+    background: #34d399;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #34d399;
+}
+
+.testimonial-text {
+    font-size: 13.8px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0 0 14px 0;
+    flex-grow: 1;
+    font-weight: 400;
+}
+
+.testimonial-text strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* FLIP HINT BADGE */
+.flip-hint-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.testimonial-flip-card:hover .flip-hint-badge {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* AUTHOR FOOTER */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.author-avatar-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-amit {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border: 1.5px solid rgba(96, 165, 250, 0.5);
+}
+
+.avatar-rahul {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    border: 1.5px solid rgba(52, 211, 153, 0.5);
+}
+
+.avatar-neha {
+    background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+    border: 1.5px solid rgba(251, 191, 36, 0.5);
+}
+
+.avatar-karan {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    border: 1.5px solid rgba(167, 139, 250, 0.5);
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.author-name-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.author-name {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+    font-style: normal;
+}
+
+.author-check {
+    width: 14px;
+    height: 14px;
+    fill: #38bdf8;
+}
+
+.author-role {
+    font-size: 11.5px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* =========================================================
+   BACK CARD ELEMENTS (METRICS REVEAL)
+========================================================= */
+
+.back-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.back-title-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #f59e0b;
+    text-transform: uppercase;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 3px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.back-verified-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #34d399;
+}
+
+/* METRICS STACK */
+.metrics-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.metric-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 7px 12px;
+    border-radius: 12px;
+}
+
+.metric-label {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.metric-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #60a5fa;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
+}
+
+.metric-value.highlight-gold {
+    color: #fbbf24;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+.metric-value.highlight-green {
+    color: #34d399;
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+}
+
+/* IMPACT SUMMARY BOX */
+.impact-summary-box {
+    background: rgba(0, 0, 0, 0.35);
+    border-left: 3px solid #f59e0b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.impact-summary-text {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #e2e8f0;
+    margin: 0;
+    font-style: italic;
+}
+
+.back-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-author-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.back-flip-icon {
+    font-size: 11px;
+    color: #93c5fd;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1150px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    .testimonial-flip-card {
+        height: 430px;
+    }
+}
+
+@media (max-width: 640px) {
+    .testimonials-section {
+        padding: 50px 16px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .testimonial-flip-card {
+        height: 435px;
+    }
+
+    .testimonials-pills-row {
+        gap: 8px;
+    }
+    
+    .pill-badge-glass {
+        font-size: 13px;
+        padding: 8px 16px;
+        width: 100%;
+        justify-content: center;
+    }
+}

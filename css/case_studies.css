@@ -1,0 +1,599 @@
+/* =========================================================
+   ALTERNATING LIGHT-DARK RHYTHM CASE STUDIES STYLESHEET
+   Rhythm: Dark Hero -> White with Checks Grid -> Dark FAQ -> White Form -> Dark Footer
+   File: css/case_studies.css
+========================================================= */
+
+/* GLOBAL BASE & ZERO TOP GAP FIX */
+body.case-studies-page {
+    background: #080c14;
+    margin: 0;
+    padding: 0;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   SECTION 1: DARK HERO HEADER
+========================================================= */
+.case-studies-hero {
+    position: relative;
+    background: linear-gradient(180deg, #080c14 0%, #0f172a 100%);
+    padding: 100px 24px 50px;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.case-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.case-orb-1 {
+    position: absolute;
+    top: -100px;
+    left: 15%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(8, 12, 20, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+}
+
+.case-studies-hero-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.case-hero-tag {
+    font-family: 'DM Mono', monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #60a5fa;
+    text-transform: uppercase;
+    background: rgba(59, 130, 246, 0.14);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    padding: 6px 20px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 18px rgba(59, 130, 246, 0.2);
+}
+
+.case-hero-title {
+    font-size: clamp(34px, 4.4vw, 54px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.case-hero-title .highlight-blue {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #34d399 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.case-hero-subtitle {
+    font-size: 17px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    max-width: 780px;
+    margin: 0 auto 28px;
+}
+
+.case-summary-pills {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.case-summary-pill {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px);
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+/* =========================================================
+   SECTION 2: WHITE WITH CHECKS GRID (MAIN CASE CARDS)
+========================================================= */
+
+.case-studies-main {
+    background: #ffffff;
+    background-image: 
+        linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 85px 24px;
+    position: relative;
+}
+
+.section-intro-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 50px;
+}
+
+.section-tag-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2563eb;
+    text-transform: uppercase;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 5px 16px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.section-h2-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.8px;
+    margin-bottom: 12px;
+}
+
+.section-h2-sub {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.case-studies-grid {
+    max-width: 1260px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+}
+
+/* 3D ELEVATED WHITE CARD */
+.tilt-card-3d {
+    background: #ffffff;
+    border-radius: 28px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 18px 45px -10px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.02);
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.tilt-card-3d:hover {
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: 0 30px 65px -12px rgba(37, 99, 235, 0.22), 0 10px 25px -5px rgba(15, 23, 42, 0.06);
+}
+
+.case-card-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.case-category-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+    text-transform: uppercase;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 5px 16px;
+    border-radius: 50px;
+}
+
+.case-card-num-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    font-weight: 800;
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 4px 14px;
+    border-radius: 50px;
+}
+
+.case-card-headline {
+    font-size: 23px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+
+.case-sparkline-wrapper {
+    margin-bottom: 20px;
+}
+
+.case-card-graph-svg {
+    width: 100%;
+    height: 40px;
+    stroke: #2563eb;
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: drawGraph 3.5s ease forwards infinite;
+}
+
+@keyframes drawGraph {
+    0% { stroke-dashoffset: 300; }
+    50%, 100% { stroke-dashoffset: 0; }
+}
+
+.case-content-box {
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+}
+
+.case-content-box.challenge-box {
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    border-left: 4px solid #ef4444;
+}
+
+.case-content-box.solution-box {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-left: 4px solid #2563eb;
+}
+
+.box-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.challenge-box .box-title { color: #dc2626; }
+.solution-box .box-title { color: #1d4ed8; }
+
+.box-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #334155;
+    margin: 0;
+}
+
+.case-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.metric-card-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.metric-card-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 3px;
+}
+
+.metric-card-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.metric-card-val.highlight-green { color: #059669; }
+.metric-card-val.highlight-gold { color: #d97706; }
+.metric-card-val.highlight-blue { color: #2563eb; }
+
+.case-btn-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14.5px;
+    font-weight: 700;
+    padding: 14px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.case-btn-cta:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.38);
+    color: #ffffff;
+}
+
+/* =========================================================
+   SECTION 3: DARK FAQ SECTION
+========================================================= */
+
+.case-faq-section {
+    background: #0f172a;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 85px 24px;
+    color: #ffffff;
+}
+
+.faq-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.faq-section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+}
+
+.faq-section-header .section-tag-sub {
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.14);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.faq-section-header .section-h2-title {
+    color: #ffffff;
+}
+
+.faq-section-header .section-h2-sub {
+    color: #94a3b8;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.faq-card-item {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 26px;
+    backdrop-filter: blur(16px);
+}
+
+.faq-question {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.faq-icon {
+    color: #38bdf8;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.faq-answer {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* =========================================================
+   SECTION 4: WHITE FORM SECTION (MATCHING USER REFERENCE)
+========================================================= */
+
+.case-cta-form-section {
+    background: #ffffff;
+    background-image: 
+        linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 90px 24px;
+    color: #0f172a;
+}
+
+.case-cta-container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.case-cta-pill-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 6px 18px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.case-cta-main-heading {
+    font-size: clamp(30px, 3.8vw, 44px);
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+}
+
+.case-cta-sub-text {
+    font-size: 16.5px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+/* INNER FORM CARD MATCHING REFERENCE SCREENSHOT */
+.case-form-card-glass {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.05);
+    padding: 38px;
+}
+
+.form-card-header-title {
+    font-size: 21px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.form-card-header-sub {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+.case-form-group {
+    margin-bottom: 18px;
+}
+
+.case-form-input {
+    width: 100%;
+    height: 48px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0 16px;
+    font-size: 14.5px;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.case-form-input::placeholder {
+    color: #94a3b8;
+}
+
+.case-form-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.case-form-textarea {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.25s ease;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.case-form-textarea::placeholder {
+    color: #94a3b8;
+}
+
+.case-form-textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.case-form-submit-btn {
+    width: 100%;
+    height: 52px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 18px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.case-form-submit-btn:hover {
+    background: #1d4ed8;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.42);
+}
+
+.case-form-footer-caption {
+    text-align: center;
+    font-size: 12.5px;
+    color: #94a3b8;
+    margin-top: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .case-studies-grid,
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .case-studies-hero {
+        padding: 90px 16px 35px;
+    }
+    
+    .case-form-card-glass {
+        padding: 20px;
+        border-radius: 20px;
+    }
+}
