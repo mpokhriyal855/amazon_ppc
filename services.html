@@ -157,7 +157,7 @@
 ========================================================= -->
 <section class="services-hero-section">
     <div class="services-hero-container">
-        <div class="section-label">
+        <div class="services-badge-tag">
             ⚡ COMPREHENSIVE AMAZON GROWTH SERVICES
         </div>
         <h1 class="services-hero-title">
@@ -167,14 +167,13 @@
             From Amazon PPC and listing optimization to high converting creatives, we help brands improve visibility, conversions and sales on Amazon.
         </p>
 
-        <!-- CATEGORY SELECTOR PILLS -->
+        <!-- INTERACTIVE CATEGORY SELECTOR PILLS -->
         <div class="services-category-pills">
-            <a href="#core-services" class="category-pill active">All Services</a>
-            <a href="#ppc-management" class="category-pill">Amazon PPC</a>
-            <a href="#listing-optimization" class="category-pill">Listing Optimization</a>
-            <a href="#aplus-creative" class="category-pill">A+ Content & Images</a>
-            <a href="#review-support" class="category-pill">Review Growth</a>
-            <a href="#additional-services" class="category-pill">Full Store Management</a>
+            <button class="category-pill-btn active" data-filter="all">All Services</button>
+            <button class="category-pill-btn" data-filter="ppc">Amazon PPC</button>
+            <button class="category-pill-btn" data-filter="listing">Listing Optimization</button>
+            <button class="category-pill-btn" data-filter="creative">A+ Content & Images</button>
+            <button class="category-pill-btn" data-filter="review">Review Growth</button>
         </div>
     </div>
 </section>
@@ -189,7 +188,7 @@
         <div class="services-grid-wrapper">
 
             <!-- 01. AMAZON PPC MANAGEMENT -->
-            <article class="service-card-advanced" id="ppc-management" itemscope itemtype="http://schema.org/Service">
+            <article class="service-card-advanced" data-category="ppc" id="ppc-management" itemscope itemtype="http://schema.org/Service">
                 <div>
                     <div class="service-card-top">
                         <span class="service-num-pill">01</span>
@@ -228,7 +227,7 @@
                         <span class="service-price-amount">Custom</span>
                         <span class="service-price-note">Tailored to your monthly ad spend & scale</span>
                     </div>
-                    <div style="display: flex; gap: 10px;">
+                    <div class="service-card-actions">
                         <a href="index.html#contact" class="service-cta-btn">Book a Call →</a>
                         <a href="index.html#results" class="service-cta-secondary">View Results</a>
                     </div>
@@ -236,7 +235,7 @@
             </article>
 
             <!-- 02. AMAZON LISTING OPTIMIZATION -->
-            <article class="service-card-advanced" id="listing-optimization" itemscope itemtype="http://schema.org/Service">
+            <article class="service-card-advanced" data-category="listing" id="listing-optimization" itemscope itemtype="http://schema.org/Service">
                 <div>
                     <div class="service-card-top">
                         <span class="service-num-pill">02</span>
@@ -280,7 +279,7 @@
             </article>
 
             <!-- 03. AMAZON IMAGE CREATION & A+ CONTENT -->
-            <article class="service-card-advanced" id="aplus-creative" itemscope itemtype="http://schema.org/Service">
+            <article class="service-card-advanced" data-category="creative" id="aplus-creative" itemscope itemtype="http://schema.org/Service">
                 <div>
                     <div class="service-card-top">
                         <span class="service-num-pill">03</span>
@@ -324,7 +323,7 @@
             </article>
 
             <!-- 04. AMAZON REVIEW GROWTH SUPPORT -->
-            <article class="service-card-advanced" id="review-support" itemscope itemtype="http://schema.org/Service">
+            <article class="service-card-advanced" data-category="review" id="review-support" itemscope itemtype="http://schema.org/Service">
                 <div>
                     <div class="service-card-top">
                         <span class="service-num-pill">04</span>
@@ -378,14 +377,14 @@
 ========================================================= -->
 <section class="services-extra-section" id="additional-services">
     <div class="services-container">
-        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <div class="services-extra-header">
             <div class="section-label">
                 EXPANDED AGENTIC SOLUTIONS
             </div>
-            <h2 style="font-size: 32px; font-weight: 800; color: #0f172a; margin: 12px 0 8px;">
+            <h2 class="services-extra-title">
                 End-to-End Amazon Marketplace Operations
             </h2>
-            <p style="color: #64748b; font-size: 16px;">
+            <p class="services-extra-desc">
                 Looking for full-service store management or multi-channel marketplace scaling?
             </p>
         </div>
@@ -477,46 +476,46 @@
 
 
 <!-- =========================================================
-     SERVICE ORDER & CONSULTATION FORM SECTION
+     SERVICE ORDER & CONSULTATION FORM SECTION (CLEAN STYLED)
 ========================================================= -->
-<section class="contact-section-advanced" id="book-service">
-    <div class="contact-container">
+<section class="services-booking-section" id="book-service">
+    <div class="services-booking-container">
 
-        <!-- LEFT COLUMN HEADER -->
-        <div class="contact-info">
-            <div class="section-label" style="display:inline-block; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#2563eb; background:rgba(37,99,235,0.06); border:1px solid rgba(37,99,235,0.2); padding:6px 14px; border-radius:50px; margin-bottom:16px;">
+        <!-- LEFT COLUMN INFO -->
+        <div>
+            <div class="section-label">
                 START YOUR GROWTH
             </div>
 
-            <h2 class="contact-title" style="font-size: 34px; font-weight:800; color:#0f172a; margin-bottom:16px;">
+            <h2 class="booking-info-title">
                 Ready to Scale Your <span class="highlight-blue">Amazon Brand?</span>
             </h2>
 
-            <p style="font-size:16px; color:#475569; line-height:1.65; margin-bottom:28px;">
+            <p class="booking-info-desc">
                 Select your service of interest below or request a custom Amazon audit. Our team will review your account and get back to you within 24 hours.
             </p>
 
-            <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:24px; box-shadow:0 4px 16px rgba(15,23,42,0.03);">
-                <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
-                    <div style="width:40px; height:40px; border-radius:10px; background:#eff6ff; color:#2563eb; display:flex; align-items:center; justify-content:center; font-weight:700;">⚡</div>
+            <div class="booking-trust-card">
+                <div class="trust-item">
+                    <div class="trust-icon-box">⚡</div>
                     <div>
-                        <strong style="display:block; color:#0f172a;">Fast Turnaround</strong>
-                        <span style="font-size:13.5px; color:#64748b;">Listings completed in 48-72 hours</span>
+                        <strong class="trust-title">Fast Turnaround</strong>
+                        <span class="trust-desc">Listings & A+ Content completed in 48–72 hours</span>
                     </div>
                 </div>
-                <div style="display:flex; align-items:center; gap:14px;">
-                    <div style="width:40px; height:40px; border-radius:10px; background:#ecfdf5; color:#059669; display:flex; align-items:center; justify-content:center; font-weight:700;">🛡️</div>
+                <div class="trust-item">
+                    <div class="trust-icon-box green">🛡️</div>
                     <div>
-                        <strong style="display:block; color:#0f172a;">100% Amazon TOS Compliant</strong>
-                        <span style="font-size:13.5px; color:#64748b;">Safe, verified optimization tactics</span>
+                        <strong class="trust-title">100% Amazon TOS Compliant</strong>
+                        <span class="trust-desc">Safe, verified optimization and white-hat strategies</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- RIGHT FORM CARD -->
-        <div class="contact-card">
-            <h3 class="contact-card-title">Select Service & Contact Details</h3>
+        <div class="booking-form-card">
+            <h3 class="booking-form-title">Select Service & Contact Details</h3>
 
             <form id="serviceBookingForm" novalidate>
 
@@ -584,11 +583,11 @@
         <p class="copyright">
             © 2026 Amazon Ads Expert. All rights reserved. Profitability-first Amazon PPC management & seller growth agency.
         </p>
-        <div class="footer-links" style="display:flex; gap:16px;">
-            <a href="index.html" style="color:#64748b; text-decoration:none; font-size:14px;">Home</a>
-            <a href="services.html" style="color:#2563eb; text-decoration:none; font-size:14px; font-weight:600;">Services</a>
-            <a href="about.html" style="color:#64748b; text-decoration:none; font-size:14px;">About</a>
-            <a href="index.html#contact" style="color:#64748b; text-decoration:none; font-size:14px;">Audit</a>
+        <div class="services-footer-links">
+            <a href="index.html" class="services-footer-link">Home</a>
+            <a href="services.html" class="services-footer-link active">Services</a>
+            <a href="about.html" class="services-footer-link">About</a>
+            <a href="index.html#contact" class="services-footer-link">Audit</a>
         </div>
     </div>
 </footer>
@@ -619,19 +618,46 @@ function selectServiceOption(serviceName) {
     }
 }
 
-document.getElementById('serviceBookingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '<span>Submitting Request...</span>';
-    btn.disabled = true;
+document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Filter Tabs
+    const filterBtns = document.querySelectorAll('.category-pill-btn');
+    const serviceCards = document.querySelectorAll('.service-card-advanced');
 
-    setTimeout(() => {
-        alert('Thank you! Your Amazon service request has been received. We will contact you within 24 hours.');
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-        this.reset();
-    }, 1200);
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            serviceCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hidden-card');
+                } else {
+                    card.classList.add('hidden-card');
+                }
+            });
+        });
+    });
+
+    // Form submission
+    const form = document.getElementById('serviceBookingForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span>Submitting Request...</span>';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert('Thank you! Your Amazon service request has been received. We will contact you within 24 hours.');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                this.reset();
+            }, 1200);
+        });
+    }
 });
 </script>
 

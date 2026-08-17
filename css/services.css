@@ -17,11 +17,11 @@
 }
 
 .services-hero-container {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
-.services-hero-section .section-label {
+.services-badge-tag {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -62,7 +62,7 @@
     margin: 0 auto 36px;
 }
 
-/* CATEGORY TABS (REF SCREENSHOT STYLING) */
+/* CATEGORY TABS (REF SCREENSHOT STYLING WITH JS FILTERING) */
 .services-category-pills {
     display: flex;
     align-items: center;
@@ -72,33 +72,33 @@
     margin-top: 10px;
 }
 
-.category-pill {
+.category-pill-btn {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: #475569;
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    padding: 9px 20px;
+    padding: 10px 22px;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
-    text-decoration: none;
+    outline: none;
 }
 
-.category-pill:hover {
+.category-pill-btn:hover {
     color: #2563eb;
     border-color: #93c5fd;
     background: #eff6ff;
     transform: translateY(-2px);
 }
 
-.category-pill.active {
+.category-pill-btn.active {
     color: #1d4ed8;
     background: #eff6ff;
-    border-color: #3b82f6;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+    border-color: #2563eb;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
 }
 
 /* MAIN SERVICES GRID SECTION */
@@ -131,6 +131,10 @@
     position: relative;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+}
+
+.service-card-advanced.hidden-card {
+    display: none !important;
 }
 
 .service-card-advanced:hover {
@@ -270,6 +274,12 @@
     margin-top: 2px;
 }
 
+.service-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 /* CTA BUTTONS IN CARD */
 .service-cta-btn {
     display: inline-flex;
@@ -311,11 +321,30 @@
     color: #1d4ed8;
 }
 
-/* EXTRA SERVICES SECTION GRID (8 CARD MATRIX) */
+/* EXTRA SERVICES SECTION GRID */
 .services-extra-section {
     padding: 90px 24px;
     background: #ffffff;
     border-top: 1px solid #f1f5f9;
+}
+
+.services-extra-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-extra-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 12px 0 8px;
+    letter-spacing: -0.5px;
+}
+
+.services-extra-desc {
+    color: #64748b;
+    font-size: 16px;
 }
 
 .services-extra-grid {
@@ -448,6 +477,119 @@
     border-radius: 6px;
 }
 
+/* CLEAN MODERN BOOKING SECTION (NO INLINE STYLES) */
+.services-booking-section {
+    padding: 95px 24px;
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+}
+
+.services-booking-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.booking-info-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -1px;
+    margin: 14px 0 16px;
+    line-height: 1.2;
+}
+
+.booking-info-desc {
+    font-size: 16.5px;
+    color: #475569;
+    line-height: 1.65;
+    margin-bottom: 28px;
+}
+
+.booking-trust-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.trust-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.trust-icon-box.green {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.trust-title {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.trust-desc {
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+.booking-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.05);
+}
+
+.booking-form-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 22px;
+    letter-spacing: -0.4px;
+}
+
+.services-footer-links {
+    display: flex;
+    gap: 18px;
+}
+
+.services-footer-link {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.services-footer-link:hover,
+.services-footer-link.active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
 /* RESPONSIVE LAYOUT */
 @media (max-width: 1024px) {
     .services-grid-wrapper {
@@ -456,6 +598,11 @@
 
     .services-extra-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-booking-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
     }
 }
 
@@ -475,5 +622,9 @@
 
     .seo-rich-article {
         padding: 28px 20px;
+    }
+
+    .booking-form-card {
+        padding: 24px 20px;
     }
 }
