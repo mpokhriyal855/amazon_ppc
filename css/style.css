@@ -2546,18 +2546,18 @@ footer {
 
 
 /* =========================================================
-   ADVANCED INDEX FAQ SECTION (DARK GLASS EXECUTIVE ACCORDION)
+   ADVANCED INDEX FAQ SECTION (CLEAN LIGHT ACCORDION)
 ========================================================= */
 
 .index-faq-section {
     padding: 95px 24px;
-    background: #080c14;
+    background: #ffffff;
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%),
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
     position: relative;
 }
 
@@ -2573,22 +2573,22 @@ footer {
 }
 
 .index-faq-header .section-label {
-    color: #60a5fa;
-    border-color: rgba(96, 165, 250, 0.25);
-    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.2);
+    background: rgba(37, 99, 235, 0.06);
 }
 
 .index-faq-title {
     font-size: clamp(32px, 4vw, 48px);
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     letter-spacing: -1.2px;
     margin: 16px 0 14px;
     line-height: 1.15;
 }
 
 .index-faq-title .highlight-blue {
-    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #38bdf8 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #0284c7 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -2596,7 +2596,7 @@ footer {
 
 .index-faq-subtitle {
     font-size: 16.5px;
-    color: #94a3b8;
+    color: #64748b;
     line-height: 1.65;
     margin: 0;
 }
@@ -2609,24 +2609,22 @@ footer {
 }
 
 .index-faq-item {
-    background: rgba(15, 23, 42, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
 }
 
 .index-faq-item:hover {
-    border-color: rgba(96, 165, 250, 0.35);
-    background: rgba(15, 23, 42, 0.85);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: #93c5fd;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
 }
 
 .index-faq-item[open] {
-    border-color: rgba(96, 165, 250, 0.5);
-    background: rgba(15, 23, 42, 0.95);
-    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.15);
+    border-color: #2563eb;
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
 }
 
 .index-faq-question-btn {
@@ -2647,9 +2645,9 @@ footer {
     font-family: 'DM Mono', monospace;
     font-size: 12px;
     font-weight: 700;
-    color: #60a5fa;
-    background: rgba(37, 99, 235, 0.15);
-    border: 1px solid rgba(96, 165, 250, 0.25);
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
     padding: 5px 12px;
     border-radius: 8px;
     flex-shrink: 0;
@@ -2658,44 +2656,44 @@ footer {
 .faq-q-text {
     font-size: 17.5px;
     font-weight: 700;
-    color: #f8fafc;
+    color: #0f172a;
     flex-grow: 1;
     line-height: 1.35;
     letter-spacing: -0.2px;
 }
 
 .index-faq-item[open] .faq-q-text {
-    color: #60a5fa;
+    color: #2563eb;
 }
 
 .faq-toggle-icon {
     font-family: 'DM Mono', monospace;
     font-size: 20px;
     font-weight: 700;
-    color: #94a3b8;
+    color: #64748b;
     width: 28px;
     height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: #f1f5f9;
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
     flex-shrink: 0;
 }
 
 .index-faq-item[open] .faq-toggle-icon {
     transform: rotate(45deg);
-    background: rgba(96, 165, 250, 0.2);
-    color: #60a5fa;
+    background: #dbeafe;
+    color: #2563eb;
 }
 
 .index-faq-answer-content {
     padding: 0 24px 24px 74px;
-    color: #cbd5e1;
+    color: #475569;
     font-size: 16px;
     line-height: 1.7;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-top: 1px solid #f1f5f9;
     margin-top: -4px;
     padding-top: 16px;
 }
