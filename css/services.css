@@ -2,14 +2,14 @@
    ADVANCED HIGH-TECH SERVICES PAGE STYLESHEET - AMAZON ADS EXPERT
 ========================================================= */
 
-/* HERO SECTION WITH CLEAN COMPACT SPACING */
+/* HERO SECTION WITH GENEROUS PADDING & CLEAN GRID BACKGROUND */
 .services-hero-section {
-    padding: 35px 24px 15px;
+    padding: 100px 24px 50px;
     background: #ffffff;
     background-image: 
-        radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.12) 0%, transparent 65%),
-        linear-gradient(rgba(216, 223, 233, 0.45) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(216, 223, 233, 0.45) 1px, transparent 1px);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 60%),
+        linear-gradient(rgba(216, 223, 233, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 223, 233, 0.4) 1px, transparent 1px);
     background-size: 100% 100%, 40px 40px, 40px 40px;
     border-bottom: 1px solid #e2e8f0;
     text-align: center;
@@ -98,20 +98,10 @@
     color: #475569;
     line-height: 1.6;
     max-width: 780px;
-    margin: 0 auto 12px;
+    margin: 0 auto;
 }
 
-/* FILTER BOX CONTAINER INSIDE MAIN SECTION */
-.services-filter-box {
-    margin-bottom: 24px;
-    background: #ffffff;
-    padding: 24px 28px;
-    border-radius: 24px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-}
-
-/* LIVE SEARCH BAR */
+/* LIVE SEARCH BAR IN MAIN SECTION */
 .services-search-wrapper {
     max-width: 620px;
     margin: 0 auto 20px;
@@ -492,9 +482,9 @@
 
 /* HIGH-TECH ROAS & ACOS CALCULATOR SECTION */
 .services-calc-section {
-    padding: 35px 24px;
-    background: #0b1329;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 45px 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
 }
 
 .services-calc-container {
@@ -630,12 +620,12 @@
     box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
 }
 
-/* METRICS TRUST BANNER */
+/* METRICS TRUST BANNER (LIGHT BACKGROUND) */
 .services-trust-banner {
-    padding: 24px 24px;
-    background: #0f172a;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px 24px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .trust-metrics-grid {
@@ -643,29 +633,35 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 20px;
     text-align: center;
 }
 
 .trust-metric-box {
-    padding: 18px 14px;
-    background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 22px 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
-    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+    transition: transform 0.25s ease;
+}
+
+.trust-metric-box:hover {
+    transform: translateY(-3px);
+    border-color: #93c5fd;
 }
 
 .trust-metric-num {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 800;
-    color: #38bdf8;
+    color: #2563eb;
     letter-spacing: -1px;
 }
 
 .trust-metric-label {
-    font-size: 12.5px;
+    font-size: 13.5px;
     font-weight: 600;
-    color: #94a3b8;
+    color: #475569;
     margin-top: 4px;
 }
 
@@ -978,22 +974,23 @@
 
 /* LAUNCH OFFER TABLE SECTION */
 .launch-offer-section {
-    padding: 35px 24px 35px;
-    background: #f8fafc;
+    padding: 45px 24px;
+    background: #ffffff;
     border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .launch-offer-container {
-    max-width: 900px;
+    max-width: 920px;
     margin: 0 auto;
 }
 
 .launch-offer-box {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    border-radius: 20px;
-    padding: 30px 28px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(56, 189, 248, 0.06) 100%);
+    border: 1.5px solid rgba(37, 99, 235, 0.18);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.05);
+    border-radius: 24px;
+    padding: 36px 32px;
     text-align: center;
 }
 
