@@ -21,15 +21,15 @@
 /* BACKGROUND GLOW ORBS */
 .hero-glow-orb {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.14) 0%, transparent 70%);
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
-    filter: blur(40px);
+    filter: blur(50px);
 }
 
 .services-hero-container {
@@ -472,94 +472,143 @@
     box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
 }
 
-/* INTERACTIVE ROAS CALCULATOR SECTION */
+/* HIGH-TECH ROAS & ACOS CALCULATOR SECTION */
 .services-calc-section {
-    padding: 85px 24px;
+    padding: 80px 24px;
     background: #ffffff;
     border-top: 1px solid #f1f5f9;
 }
 
 .services-calc-container {
-    max-width: 1000px;
+    max-width: 1060px;
     margin: 0 auto;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     border-radius: 24px;
-    padding: 48px;
+    padding: 50px 44px;
     color: #ffffff;
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.18);
     position: relative;
     overflow: hidden;
 }
 
 .calc-glow-bg {
     position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, transparent 70%);
+    top: -80px;
+    right: -80px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
     pointer-events: none;
+    filter: blur(40px);
 }
 
 .calc-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 44px;
     align-items: center;
     position: relative;
     z-index: 2;
 }
 
 .calc-title {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 800;
     letter-spacing: -0.8px;
     margin-bottom: 12px;
+    color: #ffffff;
+    line-height: 1.2;
 }
 
 .calc-subtitle {
-    font-size: 15px;
+    font-size: 15.5px;
     color: #94a3b8;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    line-height: 1.65;
+    margin-bottom: 28px;
 }
 
 .calc-slider-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 24px 26px;
 }
 
 .slider-label {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    align-items: center;
+    font-size: 15px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    color: #e2e8f0;
 }
 
 .calc-range-input {
     width: 100%;
-    accent-color: #2563eb;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    accent-color: #38bdf8;
     cursor: pointer;
+    outline: none;
 }
 
 .calc-result-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    padding: 32px;
+    padding: 34px 28px;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .calc-result-num {
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 800;
     color: #38bdf8;
-    letter-spacing: -1px;
-    margin: 8px 0;
+    letter-spacing: -1.2px;
+    margin: 10px 0 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.calc-breakdown-pills {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.calc-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.calc-cta-btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.calc-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
 }
 
 /* METRICS TRUST BANNER */
@@ -600,15 +649,17 @@
     margin-top: 4px;
 }
 
-/* MODAL DRAWER FOR QUICK SERVICE REQUEST */
+/* =========================================================
+   STUNNING MODAL FORM STYLING (FIXES UNSTYLED INPUTS ISSUE)
+========================================================= */
 .service-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.65);
-    backdrop-filter: blur(8px);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -628,9 +679,9 @@
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 24px;
-    max-width: 540px;
+    max-width: 520px;
     width: 100%;
-    padding: 36px;
+    padding: 36px 34px;
     box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
     position: relative;
     transform: translateY(20px);
@@ -647,8 +698,8 @@
     right: 22px;
     background: #f1f5f9;
     border: none;
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     font-size: 20px;
     color: #64748b;
@@ -676,6 +727,72 @@
     font-size: 14.5px;
     color: #64748b;
     margin-bottom: 24px;
+}
+
+/* FORM ELEMENTS STYLING */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    text-align: left;
+}
+
+.modal-form-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.modal-form-input {
+    width: 100%;
+    padding: 13px 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #0f172a;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.modal-form-input:focus {
+    background: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.modal-whatsapp-submit-btn {
+    width: 100%;
+    padding: 15px 24px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+    margin-top: 6px;
+}
+
+.modal-whatsapp-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
 }
 
 /* RESPONSIVE */
