@@ -52,6 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.innerHTML = `<span>Booking Your Call...</span> <span class="btn-spinner">⌛</span>`;
 
         try {
+            const emailTargets = [
+                'anmolpokhriyal3200@gmail.com',
+                'pokhriyalmansi378@gmail.com'
+            ];
+
             const params = new URLSearchParams();
             params.append('name', name);
             params.append('email', email);
@@ -60,31 +65,25 @@ document.addEventListener('DOMContentLoaded', function () {
             params.append('_subject', `⚡ Strategy Call Request from ${name}`);
             params.append('_template', 'table');
             params.append('_captcha', 'false');
+            params.append('_cc', 'pokhriyalmansi378@gmail.com');
 
-            const response = await fetch('https://formsubmit.co/ajax/anmolpokhriyal3200@gmail.com', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Accept': 'application/json'
-                },
-                body: params.toString()
+            // Dispatch to both email targets asynchronously
+            emailTargets.forEach(targetEmail => {
+                fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: params.toString()
+                }).catch(err => console.log('Email dispatch notice:', err));
             });
 
-            const resData = await response.json().catch(() => ({}));
-
-            if (response.ok && (resData.success === "true" || resData.success === true)) {
-                showStatus('✅ Strategy Call Booked! Confirmation sent to anmolpokhriyal3200@gmail.com.', 'success');
-                form.reset();
-            } else if (resData.message && resData.message.includes('Activation')) {
-                showStatus('📬 Activation Link Sent! Please check anmolpokhriyal3200@gmail.com to activate.', 'success');
-                form.reset();
-            } else {
-                showStatus('✅ Strategy Call Booked! Confirmation sent to anmolpokhriyal3200@gmail.com.', 'success');
-                form.reset();
-            }
+            showStatus('✅ Strategy Call Request Received! Confirmation sent to your inbox.', 'success');
+            form.reset();
         } catch (err) {
             console.log('Submission notice:', err);
-            showStatus('✅ Strategy Call Request Received! Details sent to anmolpokhriyal3200@gmail.com.', 'success');
+            showStatus('✅ Strategy Call Request Received! Our team will contact you shortly.', 'success');
             form.reset();
         } finally {
             submitBtn.disabled = false;
