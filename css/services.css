@@ -4,7 +4,7 @@
 
 /* HERO SECTION WITH DYNAMIC VIBRANT LIGHT-TECH MESH GLOW */
 .services-hero-section {
-    padding: 130px 24px 75px;
+    padding: 100px 24px 45px;
     background: #f8fafc;
     background-image: 
         radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.18) 0%, transparent 65%),
@@ -184,7 +184,7 @@
 
 /* MAIN SERVICES GRID SECTION */
 .services-main-section {
-    padding: 70px 24px 100px;
+    padding: 45px 24px 70px;
     background: #f8fafc;
     position: relative;
 }
@@ -807,7 +807,7 @@
 
 /* CURATED PACKAGES SECTION */
 .curated-packages-section {
-    padding: 80px 24px 60px;
+    padding: 55px 24px 45px;
     background: #0f172a;
     color: #ffffff;
     position: relative;
@@ -968,7 +968,7 @@
 
 /* LAUNCH OFFER TABLE SECTION */
 .launch-offer-section {
-    padding: 60px 24px 80px;
+    padding: 45px 24px 50px;
     background: #ffffff;
 }
 

@@ -109,10 +109,6 @@
 <section class="services-hero-section">
     <div class="hero-glow-orb"></div>
     <div class="services-hero-container">
-        <div class="hero-status-tag">
-            <span class="hero-status-dot"></span>
-            SPN VERIFIED AMAZON AGENCY & 18 FULL-STACK SERVICES
-        </div>
         <h1 class="services-hero-title">
             Amazon Services Built to <span class="highlight-blue">Grow Your Brand</span>
         </h1>
@@ -292,7 +288,6 @@
     <div class="services-container">
 
         <div class="services-grid-header">
-            <div class="grid-results-count" id="resultsCounter">Showing 18 Active Amazon Services</div>
             <div style="font-size: 13.5px; color: #64748b; font-weight: 600;">
                 💡 <em>Tip: Select multiple services via <strong>[+ Bundle]</strong> for automatic 15-20% discount calculation!</em>
             </div>
@@ -1063,7 +1058,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        resultsCounter.innerText = `Showing ${visibleCount} Active Amazon Services`;
+        if (resultsCounter) {
+            resultsCounter.innerText = `Showing ${visibleCount} Active Amazon Services`;
+        }
     }
 
     if (searchInput) {
