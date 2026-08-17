@@ -480,11 +480,17 @@
     box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
 }
 
-/* HIGH-TECH ROAS & ACOS CALCULATOR SECTION */
+/* HIGH-TECH ROAS & ACOS CALCULATOR SECTION (RICH DARK THEME) */
 .services-calc-section {
-    padding: 45px 24px;
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
+    padding: 55px 24px;
+    background: #080d1a;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 65%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .services-calc-container {
@@ -972,26 +978,70 @@
     box-shadow: 0 10px 24px rgba(16, 185, 129, 0.4);
 }
 
-/* LAUNCH OFFER TABLE SECTION */
+/* LAUNCH OFFER TABLE SECTION WITH UNIQUE LIGHT TECH THEME */
 .launch-offer-section {
-    padding: 45px 24px;
-    background: #ffffff;
+    padding: 50px 24px;
+    background: linear-gradient(135deg, #f8fafc 0%, #edf4ff 50%, #f0fdf4 100%);
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.launch-ambient-orb {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 70%);
+    filter: blur(50px);
+    pointer-events: none;
 }
 
 .launch-offer-container {
-    max-width: 920px;
+    max-width: 940px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .launch-offer-box {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(56, 189, 248, 0.06) 100%);
-    border: 1.5px solid rgba(37, 99, 235, 0.18);
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.05);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 15px 45px rgba(37, 99, 235, 0.07);
     border-radius: 24px;
-    padding: 36px 32px;
+    padding: 38px 34px;
     text-align: center;
+}
+
+.launch-spots-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c2410c;
+    background: #fff7ed;
+    border: 1px solid #ffedd5;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(194, 65, 12, 0.08);
+}
+
+.launch-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ea580c;
+    box-shadow: 0 0 8px #ea580c;
+    animation: pulseDot 1.5s infinite;
 }
 
 .launch-title {
@@ -1001,17 +1051,33 @@
     margin-bottom: 8px;
 }
 
+.highlight-launch {
+    background: linear-gradient(135deg, #2563eb 0%, #059669 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .launch-subtitle {
     font-size: 15px;
     color: #64748b;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
+}
+
+.table-responsive {
+    overflow-x: auto;
 }
 
 .launch-table {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 24px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 10px;
     text-align: left;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
 }
 
 .launch-table th {
@@ -1019,19 +1085,29 @@
     color: #0f172a;
     font-size: 13.5px;
     font-weight: 700;
-    padding: 12px 16px;
+    padding: 14px 18px;
     border-bottom: 2px solid #e2e8f0;
 }
 
 .launch-table td {
-    padding: 12px 16px;
+    padding: 14px 18px;
     border-bottom: 1px solid #f1f5f9;
     font-size: 14px;
     color: #334155;
+    vertical-align: middle;
 }
 
-.launch-table tr:hover {
-    background: rgba(37, 99, 235, 0.02);
+.launch-table tr:last-child td {
+    border-bottom: none;
+}
+
+.launch-table tr:hover td {
+    background: rgba(37, 99, 235, 0.03);
+}
+
+.table-service-icon {
+    margin-right: 6px;
+    font-size: 15px;
 }
 
 .old-price {
@@ -1043,6 +1119,33 @@
 .launch-price {
     color: #2563eb;
     font-weight: 800;
+    font-size: 15px;
+}
+
+.save-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 50px;
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    margin-left: 6px;
+}
+
+.launch-claim-btn {
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    color: #ffffff !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25) !important;
+}
+
+.launch-claim-btn:hover {
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4) !important;
+    transform: translateY(-2px) !important;
 }
 
 /* RESPONSIVE */
