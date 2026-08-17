@@ -2543,3 +2543,183 @@ footer {
     }
 
 }
+
+
+/* =========================================================
+   ADVANCED INDEX FAQ SECTION (DARK GLASS EXECUTIVE ACCORDION)
+========================================================= */
+
+.index-faq-section {
+    padding: 95px 24px;
+    background: #080c14;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+}
+
+.index-faq-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.index-faq-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 50px;
+}
+
+.index-faq-header .section-label {
+    color: #60a5fa;
+    border-color: rgba(96, 165, 250, 0.25);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.index-faq-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -1.2px;
+    margin: 16px 0 14px;
+    line-height: 1.15;
+}
+
+.index-faq-title .highlight-blue {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.index-faq-subtitle {
+    font-size: 16.5px;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ACCORDION WRAPPER */
+.index-faq-accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.index-faq-item {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(12px);
+}
+
+.index-faq-item:hover {
+    border-color: rgba(96, 165, 250, 0.35);
+    background: rgba(15, 23, 42, 0.85);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.index-faq-item[open] {
+    border-color: rgba(96, 165, 250, 0.5);
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.15);
+}
+
+.index-faq-question-btn {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.index-faq-question-btn::-webkit-details-marker {
+    display: none;
+}
+
+.faq-num-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #60a5fa;
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    padding: 5px 12px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.faq-q-text {
+    font-size: 17.5px;
+    font-weight: 700;
+    color: #f8fafc;
+    flex-grow: 1;
+    line-height: 1.35;
+    letter-spacing: -0.2px;
+}
+
+.index-faq-item[open] .faq-q-text {
+    color: #60a5fa;
+}
+
+.faq-toggle-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: #94a3b8;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.index-faq-item[open] .faq-toggle-icon {
+    transform: rotate(45deg);
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+}
+
+.index-faq-answer-content {
+    padding: 0 24px 24px 74px;
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    margin-top: -4px;
+    padding-top: 16px;
+}
+
+.index-faq-answer-content p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .index-faq-question-btn {
+        padding: 18px 16px;
+        gap: 12px;
+    }
+
+    .faq-q-text {
+        font-size: 15.5px;
+    }
+
+    .index-faq-answer-content {
+        padding: 0 16px 20px 16px;
+    }
+
+    .faq-num-pill {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
