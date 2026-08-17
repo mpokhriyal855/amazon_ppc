@@ -2,9 +2,9 @@
    ADVANCED HIGH-TECH SERVICES PAGE STYLESHEET - AMAZON ADS EXPERT
 ========================================================= */
 
-/* HERO SECTION WITH CLEAN SITE GRID THEME */
+/* HERO SECTION WITH CLEAN COMPACT SPACING */
 .services-hero-section {
-    padding: 60px 24px 25px;
+    padding: 35px 24px 15px;
     background: #ffffff;
     background-image: 
         radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.12) 0%, transparent 65%),
@@ -94,17 +94,27 @@
 }
 
 .services-hero-subtitle {
-    font-size: 18px;
+    font-size: 17px;
     color: #475569;
-    line-height: 1.65;
+    line-height: 1.6;
     max-width: 780px;
-    margin: 0 auto 32px;
+    margin: 0 auto 12px;
 }
 
-/* LIVE SEARCH BAR IN HERO */
+/* FILTER BOX CONTAINER INSIDE MAIN SECTION */
+.services-filter-box {
+    margin-bottom: 24px;
+    background: #ffffff;
+    padding: 24px 28px;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+/* LIVE SEARCH BAR */
 .services-search-wrapper {
-    max-width: 580px;
-    margin: 0 auto 28px;
+    max-width: 620px;
+    margin: 0 auto 20px;
     position: relative;
 }
 
@@ -482,19 +492,20 @@
 
 /* HIGH-TECH ROAS & ACOS CALCULATOR SECTION */
 .services-calc-section {
-    padding: 80px 24px;
-    background: #ffffff;
-    border-top: 1px solid #f1f5f9;
+    padding: 35px 24px;
+    background: #0b1329;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .services-calc-container {
     max-width: 1060px;
     margin: 0 auto;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid rgba(56, 189, 248, 0.25);
     border-radius: 24px;
-    padding: 50px 44px;
+    padding: 36px 36px;
     color: #ffffff;
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.18);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
 }
@@ -520,26 +531,26 @@
 }
 
 .calc-title {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 800;
     letter-spacing: -0.8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: #ffffff;
     line-height: 1.2;
 }
 
 .calc-subtitle {
-    font-size: 15.5px;
+    font-size: 14.5px;
     color: #94a3b8;
-    line-height: 1.65;
-    margin-bottom: 28px;
+    line-height: 1.6;
+    margin-bottom: 22px;
 }
 
 .calc-slider-box {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 18px;
-    padding: 24px 26px;
+    padding: 20px 22px;
 }
 
 .slider-label {
@@ -567,17 +578,17 @@
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    padding: 34px 28px;
+    padding: 28px 24px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .calc-result-num {
-    font-size: 44px;
+    font-size: 40px;
     font-weight: 800;
     color: #38bdf8;
     letter-spacing: -1.2px;
-    margin: 10px 0 6px;
+    margin: 8px 0 6px;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -585,7 +596,7 @@
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .calc-pill {
@@ -601,9 +612,9 @@
 
 .calc-cta-btn {
     width: 100%;
-    padding: 14px 24px;
+    padding: 13px 20px;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 800;
     color: #ffffff;
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
@@ -621,9 +632,10 @@
 
 /* METRICS TRUST BANNER */
 .services-trust-banner {
-    padding: 60px 24px;
-    background: #f8fafc;
-    border-top: 1px solid #f1f5f9;
+    padding: 24px 24px;
+    background: #0f172a;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .trust-metrics-grid {
@@ -631,29 +643,29 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 16px;
     text-align: center;
 }
 
 .trust-metric-box {
-    padding: 22px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    padding: 18px 14px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    backdrop-filter: blur(12px);
 }
 
 .trust-metric-num {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 800;
-    color: #2563eb;
+    color: #38bdf8;
     letter-spacing: -1px;
 }
 
 .trust-metric-label {
-    font-size: 13.5px;
+    font-size: 12.5px;
     font-weight: 600;
-    color: #64748b;
+    color: #94a3b8;
     margin-top: 4px;
 }
 
