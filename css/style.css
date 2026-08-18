@@ -1508,11 +1508,13 @@ a {
 
     font-family: DM Mono, monospace;
 
-    font-size: 9px;
+    font-size: 11px;
 
-    letter-spacing: 1.4px;
+    font-weight: 700;
 
-    color: #718098;
+    letter-spacing: 1.5px;
+
+    color: #1e293b;
 
 }
 
