@@ -1,5 +1,5 @@
 /* =========================================================
-   LIVE SALES & BOOKING NOTIFICATION WIDGET - AMAZON ADS EXPERT
+   LIVE SALES & BOOKING NOTIFICATION WIDGET - PPC GROWTH EXPERT
    File: js/sales-notifications.js
 ========================================================= */
 

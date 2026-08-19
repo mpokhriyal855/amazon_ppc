@@ -35,6 +35,8 @@
                         const stepTime = Math.abs(Math.floor(duration / target));
 
 
+                        const noComma = el.getAttribute("data-nocomma") === "true";
+
                         const timer = setInterval(() => {
 
                             count += Math.ceil(target / 40);
@@ -47,7 +49,9 @@
 
                             }
 
-                            el.textContent = prefix + count.toLocaleString() + suffix;
+                            const formattedCount = noComma ? count : count.toLocaleString();
+
+                            el.textContent = prefix + formattedCount + suffix;
 
                         }, 35);
 

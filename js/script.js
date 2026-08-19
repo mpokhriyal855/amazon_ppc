@@ -1,5 +1,5 @@
 /* =========================================================
-   AMAZON ADS EXPERT
+   PPC GROWTH EXPERT
    Main JavaScript
 ========================================================= */
 
@@ -450,3 +450,50 @@ if (document.readyState === "loading") {
     setTimeout(typeEffect, 500);
 
 }
+
+
+/* =========================================================
+   SMOOTH FAQ ACCORDION TRANSITIONS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const faqSummaries = document.querySelectorAll(".abt-faq-item summary");
+
+    faqSummaries.forEach(summary => {
+        summary.addEventListener("click", (e) => {
+            const details = summary.parentElement;
+            const answer = details.querySelector(".abt-faq-answer");
+
+            if (!answer) return;
+
+            if (details.hasAttribute("open")) {
+                e.preventDefault();
+                answer.style.gridTemplateRows = "0fr";
+                answer.style.opacity = "0";
+
+                setTimeout(() => {
+                    details.removeAttribute("open");
+                    answer.style.gridTemplateRows = "";
+                    answer.style.opacity = "";
+                }, 350);
+            } else {
+                document.querySelectorAll(".abt-faq-item[open]").forEach(otherDetails => {
+                    if (otherDetails !== details) {
+                        const otherAnswer = otherDetails.querySelector(".abt-faq-answer");
+                        if (otherAnswer) {
+                            otherAnswer.style.gridTemplateRows = "0fr";
+                            otherAnswer.style.opacity = "0";
+                            setTimeout(() => {
+                                otherDetails.removeAttribute("open");
+                                otherAnswer.style.gridTemplateRows = "";
+                                otherAnswer.style.opacity = "";
+                            }, 350);
+                        } else {
+                            otherDetails.removeAttribute("open");
+                        }
+                    }
+                });
+            }
+        });
+    });
+});

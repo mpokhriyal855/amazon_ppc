@@ -1,10 +1,10 @@
 /* =========================================================
-   ADVANCED HIGH-TECH SERVICES PAGE STYLESHEET - AMAZON ADS EXPERT
+   ADVANCED HIGH-TECH SERVICES PAGE STYLESHEET - PPC GROWTH EXPERT
 ========================================================= */
 
 /* HERO SECTION WITH GENEROUS PADDING & CLEAN GRID BACKGROUND */
 .services-hero-section {
-    padding: 100px 24px 50px;
+    padding: 30px 24px 50px;
     background: #ffffff;
     background-image: 
         radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 60%),
@@ -227,6 +227,7 @@
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
     overflow: hidden;
+    scroll-margin-top: 100px;
 }
 
 .service-ref-card.hidden-card {

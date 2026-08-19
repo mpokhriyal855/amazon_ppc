@@ -19,23 +19,23 @@
 
     gap: 12px;
 
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.78);
 
-    backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(190%);
 
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(190%);
 
-    border: 1px solid rgba(226, 232, 240, 0.9);
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
 
     border-left: 4px solid #2563eb;
 
-    border-radius: 14px;
+    border-radius: 20px;
 
-    padding: 12px 16px;
+    padding: 12px 18px;
 
     box-shadow:
-        0 12px 30px -5px rgba(15, 23, 42, 0.12),
-        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+        0 16px 36px -6px rgba(15, 23, 42, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.9) inset;
 
     max-width: 320px;
 
@@ -51,6 +51,28 @@
 
     pointer-events: auto;
 
+}
+
+
+/* =========================================================
+   FLOATING BADGE UP-DOWN ANIMATION
+========================================================= */
+
+@keyframes floatBadge {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.float-badge-anim-1 {
+    animation: floatBadge 3.6s ease-in-out infinite;
+}
+
+.float-badge-anim-2 {
+    animation: floatBadge 3.6s ease-in-out infinite 1.8s;
 }
 
 

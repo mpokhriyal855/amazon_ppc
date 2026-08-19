@@ -106,25 +106,31 @@
     margin: 0 auto 28px;
 }
 
-/* PILLS ROW (DARK GLASS) */
+/* PILLS ROW (DARK GLASS - SINGLE LINE DISPLAY) */
 .testimonials-pills-row {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 12px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    width: 100%;
+    margin-bottom: 36px;
 }
 
 .pill-badge-glass {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 7px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #f1f5f9;
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 600;
-    padding: 8px 20px;
+    padding: 8px 18px;
     border-radius: 50px;
+    white-space: nowrap;
+    flex-shrink: 0;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -132,11 +138,11 @@
 }
 
 .pill-badge-glass:hover {
-    background: rgba(30, 41, 59, 0.85);
-    border-color: rgba(96, 165, 250, 0.5);
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(96, 165, 250, 0.6);
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* 3D CARDS GRID */
@@ -514,12 +520,17 @@
 
     .testimonials-pills-row {
         gap: 8px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
     }
     
     .pill-badge-glass {
-        font-size: 13px;
-        padding: 8px 16px;
-        width: 100%;
+        font-size: 12.5px;
+        padding: 7px 14px;
+        width: auto;
         justify-content: center;
     }
 }

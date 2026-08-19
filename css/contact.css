@@ -5,7 +5,7 @@
 
 .contact-main-wrapper {
 
-    padding-top: 100px;
+    padding-top: 30px;
 
     min-height: 80vh;
 
@@ -264,6 +264,8 @@
 
     flex-wrap: wrap;
 
+    width: 100%;
+
 }
 
 
@@ -273,13 +275,13 @@
 
     align-items: center;
 
-    gap: 14px;
+    gap: 12px;
 
     background: rgba(15, 23, 42, 0.6);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
 
-    padding: 12px 18px;
+    padding: 12px 16px;
 
     border-radius: 16px;
 
@@ -289,9 +291,22 @@
 
     transition: all 0.3s ease;
 
-    flex: 1;
+    flex: 1 1 200px;
 
-    min-width: 200px;
+    min-width: 0;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+.contact-card-link > div {
+
+    min-width: 0;
+
+    flex: 1;
 
 }
 
@@ -327,6 +342,8 @@
 
     font-size: 18px;
 
+    flex-shrink: 0;
+
 }
 
 
@@ -342,6 +359,8 @@
 
     color: #64748b;
 
+    margin-bottom: 2px;
+
 }
 
 
@@ -349,11 +368,17 @@
 
     display: block;
 
-    font-size: 13.5px;
+    font-size: 13px;
 
     font-weight: 700;
 
     color: #f8fafc;
+
+    word-break: break-all;
+
+    overflow-wrap: anywhere;
+
+    line-height: 1.35;
 
 }
 

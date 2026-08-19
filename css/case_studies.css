@@ -20,7 +20,7 @@ body.case-studies-page {
 .case-studies-hero {
     position: relative;
     background: linear-gradient(180deg, #080c14 0%, #0f172a 100%);
-    padding: 100px 24px 50px;
+    padding: 30px 24px 50px;
     color: #ffffff;
     text-align: center;
     overflow: hidden;
@@ -589,7 +589,7 @@ body.case-studies-page {
 
 @media (max-width: 640px) {
     .case-studies-hero {
-        padding: 90px 16px 35px;
+        padding: 30px 16px 35px;
     }
     
     .case-form-card-glass {
