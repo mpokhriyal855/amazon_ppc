@@ -1,4 +1,27 @@
+# PPC Growth Expert Robots.txt
+# Optimized for Google Search, Bing, GEO (Generative Engine Optimization) & AI Answer Engines
+
 User-agent: *
 Allow: /
 
+# Explicitly Allow AI & LLM Search Crawlers for Maximum GEO / AEO Visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap Index Location
 Sitemap: https://ppcgrowthexpert.com/sitemap.xml
