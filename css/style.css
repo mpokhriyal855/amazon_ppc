@@ -1716,15 +1716,21 @@ a {
 .results-header {
     text-align: center;
     max-width: 760px;
-    margin: 0 auto 24px;
+    margin: 0 auto 28px;
 }
 
+.results-header .section-label {
+    margin-bottom: 8px !important;
+}
+
+.results-header .results-main-title,
 .results-main-title {
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(28px, 3.5vw, 42px);
     font-weight: 800;
     color: #0f172a;
-    letter-spacing: -1.2px;
-    margin: 8px 0 2px;
+    letter-spacing: -1px;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
     line-height: 1.15;
 }
 
@@ -1736,10 +1742,11 @@ a {
 }
 
 .results-sub-text {
-    font-size: 16.5px;
+    font-size: 15.5px;
     color: #64748b;
-    line-height: 1.6;
-    margin: 0;
+    line-height: 1.5;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 /* TRANSFORMATION CARDS GRID */
