@@ -25,17 +25,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentIndex = 0;
 
+    // Security: HTML entity encoder to prevent XSS
+    function sanitizeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
     function showNextNotification() {
         const item = notifications[currentIndex];
         currentIndex = (currentIndex + 1) % notifications.length;
 
-        const firstLetter = item.name.charAt(0);
+        const firstLetter = sanitizeHTML(item.name.charAt(0));
+        const safeName = sanitizeHTML(item.name);
+        const safeCity = sanitizeHTML(item.city);
+        const safeService = sanitizeHTML(item.service);
+        const safeTime = sanitizeHTML(item.time);
         const cardHtml = `
             <div class="sales-notification-card" id="activeNotifyCard">
                 <div class="sales-avatar-circle">${firstLetter}</div>
                 <div class="sales-notify-content">
-                    <div class="sales-notify-title"><strong>${item.name}</strong> (${item.city}) booked <strong>${item.service}</strong></div>
-                    <div class="sales-notify-time">⚡ Verified Order · ${item.time}</div>
+                    <div class="sales-notify-title"><strong>${safeName}</strong> (${safeCity}) booked <strong>${safeService}</strong></div>
+                    <div class="sales-notify-time">⚡ Verified Order · ${safeTime}</div>
                 </div>
                 <button class="sales-notify-close" onclick="closeNotifyCard()">&times;</button>
             </div>

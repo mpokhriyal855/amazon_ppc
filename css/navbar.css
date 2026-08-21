@@ -467,20 +467,91 @@
 
 
     .navbar-container {
-
         top: 6px;
-
         padding: 0 12px;
-
+        position: relative;
     }
 
-
     .navbar {
-
         height: 54px;
+        padding: 0 10px 0 14px;
+    }
 
-        padding: 0 12px 0 16px;
+    .mobile-toggle.is-active {
+        background: #0f172a !important;
+        color: #38bdf8 !important;
+        border-color: rgba(56, 189, 248, 0.5) !important;
+        box-shadow: 0 0 15px rgba(37, 99, 235, 0.4) !important;
+        transform: rotate(90deg);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    }
 
+    .nav-btn {
+        padding: 6px 13px !important;
+        font-size: 11px !important;
+        gap: 4px !important;
+        border-radius: 50px !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-btn-arrow {
+        font-size: 11px !important;
+    }
+
+    .nav-links.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 62px;
+        left: 12px;
+        right: 12px;
+        background: linear-gradient(145deg, rgba(15, 23, 42, 0.97) 0%, rgba(30, 41, 59, 0.98) 100%);
+        backdrop-filter: blur(30px) saturate(200%);
+        -webkit-backdrop-filter: blur(30px) saturate(200%);
+        border: 1.5px solid rgba(56, 189, 248, 0.35);
+        border-radius: 24px;
+        padding: 18px 14px;
+        gap: 8px;
+        box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(37, 99, 235, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        animation: mobileNavSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        z-index: 1001;
+    }
+
+    @keyframes mobileNavSlide {
+        from {
+            opacity: 0;
+            transform: translateY(-16px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .nav-links.mobile-open .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 13px 20px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #e2e8f0;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.25s ease;
+    }
+
+    .nav-links.mobile-open .nav-item:active {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        transform: scale(0.98);
+    }
+
+    .nav-links.mobile-open .nav-item.active {
+        background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
     }
 
 }

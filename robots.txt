@@ -4,6 +4,14 @@
 User-agent: *
 Allow: /
 
+# Security: Block access to sensitive files and directories
+Disallow: /.git/
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /config/
+Disallow: /node_modules/
+Disallow: /*.log$
+
 # Explicitly Allow AI & LLM Search Crawlers for Maximum GEO / AEO Visibility
 User-agent: GPTBot
 Allow: /

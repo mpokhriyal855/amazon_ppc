@@ -109,23 +109,80 @@ setTimeout(
    MOBILE MENU
 ========================================================= */
 
-const mobileToggle =
-    document.getElementById("mobileToggle") || document.getElementById("mobileMenu");
+window.toggleMobileNav = function(e) {
+    if (e) e.stopPropagation();
+    const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
+    const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
+    if (!mobileToggle || !navLinks) return;
 
-const navLinks =
-    document.getElementById("navLinks") || document.querySelector(".navigation");
-
-
-mobileToggle?.addEventListener(
-    "click",
-    () => {
-
-        navLinks?.classList.toggle(
-            "mobile-open"
-        );
-
+    const isOpen = navLinks.classList.contains("mobile-open");
+    if (isOpen) {
+        navLinks.classList.remove("mobile-open");
+        mobileToggle.classList.remove("is-active");
+        mobileToggle.setAttribute("aria-expanded", "false");
+        mobileToggle.innerHTML = "☰";
+    } else {
+        navLinks.classList.add("mobile-open");
+        mobileToggle.classList.add("is-active");
+        mobileToggle.setAttribute("aria-expanded", "true");
+        mobileToggle.innerHTML = "✕";
     }
-);
+};
+
+window.closeMobileNav = function() {
+    const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
+    const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
+    if (navLinks && navLinks.classList.contains("mobile-open")) {
+        navLinks.classList.remove("mobile-open");
+        if (mobileToggle) {
+            mobileToggle.classList.remove("is-active");
+            mobileToggle.setAttribute("aria-expanded", "false");
+            mobileToggle.innerHTML = "☰";
+        }
+    }
+};
+
+function initMobileMenuSystem() {
+    const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
+    const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
+
+    if (!navLinks) return;
+
+    // Auto-close menu when clicking any link inside the nav menu
+    const links = navLinks.querySelectorAll("a");
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            window.closeMobileNav();
+        });
+    });
+
+    // Auto-close menu when clicking outside the menu / toggle
+    document.addEventListener("click", (e) => {
+        if (navLinks.classList.contains("mobile-open")) {
+            if (!navLinks.contains(e.target) && mobileToggle && !mobileToggle.contains(e.target)) {
+                window.closeMobileNav();
+            }
+        }
+    });
+            if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+                window.closeMobileNav();
+            }
+        }
+    });
+
+    // Auto-close menu on ESC key press
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            window.closeMobileNav();
+        }
+    });
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMobileMenuSystem);
+} else {
+    initMobileMenuSystem();
+}
 
 
 
@@ -373,9 +430,8 @@ const typingElement = document.getElementById("typingText");
 
 const wordsToType = [
     "Profitable Growth.",
-    "Scalable Revenue.",
-    "Higher ROAS.",
-    "Lower ACoS."
+    "Reduce ACoS.",
+    "Maximize ROAS."
 ];
 
 
@@ -496,4 +552,98 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+});
+
+/* =========================================================
+   SMART MOBILE ACCORDION / COLLAPSE SYSTEM FOR DENSE GRIDS
+   Reduces vertical scroll on mobile and reveals content smoothly with buttons.
+========================================================= */
+
+function initMobileCollapseSystem() {
+    if (window.innerWidth > 768) return;
+
+    // Selector definitions for long mobile grids across the site
+    const targetGridSelectors = [
+        { selector: '.problem-grid', initialCount: 3, label: 'Problem Areas' },
+        { selector: '.services-ref-grid', initialCount: 3, label: 'Services' },
+        { selector: '.service-cards-container', initialCount: 2, label: 'Packages' },
+        { selector: '.testimonials-grid', initialCount: 2, label: 'Testimonials' },
+        { selector: '.index-faq-accordion-wrapper', initialCount: 3, label: 'FAQs' },
+        { selector: '.abt-why-grid', initialCount: 3, label: 'Highlights' },
+        { selector: '.abt-help-grid', initialCount: 2, label: 'Seller Types' },
+        { selector: '.abt-tools-grid', initialCount: 6, label: 'Tools & Tech Stack' },
+        { selector: '.case-faq-section .faq-grid', initialCount: 2, label: 'FAQs' },
+        { selector: '.abt-faq-list', initialCount: 3, label: 'FAQs' },
+        { selector: '.case-studies-grid', initialCount: 2, label: 'Case Studies' },
+        { selector: '.reviews-grid', initialCount: 2, label: 'Reviews' }
+    ];
+
+    targetGridSelectors.forEach(({ selector, initialCount, label }) => {
+        const containers = document.querySelectorAll(selector);
+
+        containers.forEach(container => {
+            if (container.dataset.mobileCollapseInit === 'true') return;
+
+            // Direct children items
+            const children = Array.from(container.children).filter(child => !child.classList.contains('mobile-expand-wrapper'));
+
+            if (children.length <= initialCount) return;
+
+            container.dataset.mobileCollapseInit = 'true';
+            container.classList.add('mobile-collapsible-active');
+
+            // Tag hidden items
+            children.forEach((child, index) => {
+                if (index >= initialCount) {
+                    child.classList.add('mobile-hidden-item');
+                }
+            });
+
+            // Create Show More / Less button
+            const wrapper = document.createElement('div');
+            wrapper.className = 'mobile-expand-wrapper';
+
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'mobile-expand-btn';
+            const hiddenCount = children.length - initialCount;
+            button.innerHTML = `<span>Show ${hiddenCount} More ${label}</span> <span class="mobile-expand-icon">↓</span>`;
+
+            wrapper.appendChild(button);
+
+            // Append after container
+            if (container.nextSibling) {
+                container.parentNode.insertBefore(wrapper, container.nextSibling);
+            } else {
+                container.parentNode.appendChild(wrapper);
+            }
+
+            button.addEventListener('click', function () {
+                const isExpanded = container.classList.contains('is-expanded');
+
+                if (isExpanded) {
+                    container.classList.remove('is-expanded');
+                    button.classList.remove('is-open');
+                    button.innerHTML = `<span>Show ${hiddenCount} More ${label}</span> <span class="mobile-expand-icon">↓</span>`;
+                    container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    container.classList.add('is-expanded');
+                    button.classList.add('is-open');
+                    button.innerHTML = `<span>Show Less</span> <span class="mobile-expand-icon">↓</span>`;
+                }
+            });
+        });
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileCollapseSystem);
+} else {
+    initMobileCollapseSystem();
+}
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 768) {
+        initMobileCollapseSystem();
+    }
 });

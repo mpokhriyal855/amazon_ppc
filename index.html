@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
     <title>PPC Growth Expert | Data-Driven Amazon PPC Management Agency</title>
 
     <meta name="description"
-        content="Scale your Amazon revenue and lower ACOS with expert Amazon PPC management. Data-driven campaign optimization, search term harvesting, and profitability first.">
+        content="Scale your Amazon revenue and lower ACoS with expert Amazon PPC management. Data-driven campaign optimization and profitability first.">
     <meta name="keywords"
-        content="Amazon PPC, Amazon Ads, Amazon Advertising, PPC Management, Amazon Growth, ACOS Optimization, Sponsored Products, Amazon Agency, TACOS Reduction">
+        content="Amazon PPC, Amazon Ads, Amazon Advertising, PPC Management, Amazon Growth, ACoS Optimization, Sponsored Products, Amazon Agency, TACoS Reduction">
     <meta name="author" content="PPC Growth Expert">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
     <!-- CANONICAL URL -->
     <link rel="canonical" href="https://ppcgrowthexpert.com/">
@@ -22,7 +28,7 @@
     <meta property="og:url" content="https://ppcgrowthexpert.com/">
     <meta property="og:title" content="PPC Growth Expert | Data-Driven Amazon PPC Management Agency">
     <meta property="og:description"
-        content="Scale your Amazon revenue and lower ACOS with expert Amazon PPC management. Data-driven campaign optimization, search term harvesting, and profitability first.">
+        content="Scale your Amazon revenue and lower ACoS with expert Amazon PPC management. Data-driven campaign optimization and profitability first.">
     <meta property="og:image" content="https://ppcgrowthexpert.com/images/founder.png">
     <meta property="og:site_name" content="PPC Growth Expert">
     <meta property="og:locale" content="en_US">
@@ -32,7 +38,7 @@
     <meta name="twitter:url" content="https://ppcgrowthexpert.com/">
     <meta name="twitter:title" content="PPC Growth Expert | Data-Driven Amazon PPC Management Agency">
     <meta name="twitter:description"
-        content="Scale your Amazon revenue and lower ACOS with expert Amazon PPC management. Data-driven campaign optimization, search term harvesting, and profitability first.">
+        content="Scale your Amazon revenue and lower ACoS with expert Amazon PPC management. Data-driven campaign optimization and profitability first.">
     <meta name="twitter:image" content="https://ppcgrowthexpert.com/images/founder.png">
 
     <!-- PRECONNECT FOR PERFORMANCE -->
@@ -105,12 +111,13 @@
                     Audit Open
                 </div>
 
-                <a href="#hero-audit-form" class="nav-btn" onclick="document.getElementById('hero-audit-form')?.scrollIntoView({behavior:'smooth'}); setTimeout(()=>document.getElementById('heroContactName')?.focus({preventScroll:true}), 500); return false;">
+                <a href="#hero-audit-form" class="nav-btn"
+                    onclick="document.getElementById('hero-audit-form')?.scrollIntoView({behavior:'smooth'}); setTimeout(()=>document.getElementById('heroContactName')?.focus({preventScroll:true}), 500); return false;">
                     <span>Free Audit</span>
                     <span class="nav-btn-arrow">→</span>
                 </a>
 
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)" aria-label="Toggle navigation">
                     ☰
                 </button>
             </div>
@@ -139,34 +146,36 @@
 
             </div>
 
-
             <h1>
-
-                Turn Amazon Ad
+                Amazon PPC
                 <br>
-                Spend Into
+                Management
+                <br>
+                Services in India
+                <br>
+                Turn Ad Spend Into
                 <br>
                 <span class="typing-container">
                     <span class="gradient-text typing-text" id="typingText">Profitable Growth.</span><span
                         class="typing-cursor">|</span>
                 </span>
-
             </h1>
 
 
             <p class="hero-description">
 
-                Strategic Amazon PPC management built to improve profitability, scale sales and strengthen organic
-                rankings — driven by search term data, not guesswork.
+                Grow your Amazon sales with data-driven PPC management built to reduce wasted ad spend, improve ROAS,
+                lower ACoS, and scale profitable growth
 
             </p>
 
 
             <div class="hero-buttons">
 
-                <a href="#hero-audit-form" class="primary-button" onclick="document.getElementById('hero-audit-form')?.scrollIntoView({behavior:'smooth'}); setTimeout(()=>document.getElementById('heroContactName')?.focus({preventScroll:true}), 500); return false;">
+                <a href="#hero-audit-form" class="primary-button"
+                    onclick="document.getElementById('hero-audit-form')?.scrollIntoView({behavior:'smooth'}); setTimeout(()=>document.getElementById('heroContactName')?.focus({preventScroll:true}), 500); return false;">
 
-                    Get a Free Audit
+                    Get Your Free Amazon PPC Audit
 
                     <span>→</span>
 
@@ -226,21 +235,21 @@
                     style="position: absolute; inset: -20px; background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.25) 0%, rgba(56, 189, 248, 0.15) 50%, transparent 75%); filter: blur(35px); border-radius: 40px; pointer-events: none; z-index: 1;">
                 </div>
 
-                <!-- FLOATING BADGE TOP LEFT -->
-                <div class="float-badge-anim-1"
-                    style="position: absolute; top: -14px; left: -8px; z-index: 10; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; padding: 7px 16px; border-radius: 50px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.5px; box-shadow: 0 10px 22px -4px rgba(16, 185, 129, 0.45); display: flex; align-items: center; gap: 6px; border: 2px solid #ffffff;">
-                    <span>📈 +45% Avg ROAS</span>
-                </div>
-
-                <!-- FLOATING BADGE BOTTOM RIGHT -->
-                <div class="float-badge-anim-2"
-                    style="position: absolute; bottom: -14px; right: -8px; z-index: 10; background: #ffffff; color: #1e293b; padding: 8px 18px; border-radius: 50px; font-size: 11.5px; font-weight: 700; box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.2); display: flex; align-items: center; gap: 6px; border: 1.5px solid rgba(226, 232, 240, 0.95);">
-                    <span style="color: #f59e0b;">⭐ 4.9/5</span>
-                    <span style="color: #64748b; font-weight: 600;">(100+ Brands)</span>
-                </div>
-
                 <div class="hero-form-card"
                     style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(241, 245, 255, 0.92) 100%); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); border: 2px solid rgba(255, 255, 255, 1); border-radius: 28px; padding: 38px 34px; box-shadow: 0 25px 70px -15px rgba(37, 99, 235, 0.18), 0 0 0 1px rgba(37, 99, 235, 0.08), inset 0 1px 1px #ffffff; position: relative; z-index: 5;">
+
+                    <!-- FLOATING BADGE TOP LEFT -->
+                    <div class="float-badge-anim-1"
+                        style="position: absolute; top: -14px; left: -8px; z-index: 10; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; padding: 7px 16px; border-radius: 50px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.5px; box-shadow: 0 10px 22px -4px rgba(16, 185, 129, 0.45); display: flex; align-items: center; gap: 6px; border: 2px solid #ffffff;">
+                        <span>📈 +45% Avg ROAS</span>
+                    </div>
+
+                    <!-- FLOATING BADGE BOTTOM RIGHT ON THE FORM -->
+                    <div class="float-badge-anim-2"
+                        style="position: absolute; bottom: -14px; right: -8px; z-index: 10; background: #ffffff; color: #1e293b; padding: 8px 18px; border-radius: 50px; font-size: 11.5px; font-weight: 700; box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.2); display: flex; align-items: center; gap: 6px; border: 1.5px solid rgba(226, 232, 240, 0.95);">
+                        <span style="color: #f59e0b;">⭐ 4.7/5</span>
+                        <span style="color: #64748b; font-weight: 600;">(100+ Brands)</span>
+                    </div>
 
                     <!-- TOP PULSING BADGE -->
                     <div
@@ -265,6 +274,7 @@
                     <!-- FORM -->
                     <form id="heroStrategyForm" class="contact-strategy-form" action="javascript:void(0);" method="POST"
                         style="display: flex; flex-direction: column; gap: 16px;">
+                        <input type="hidden" name="_to" value="anmolpokhriyal3200@gmail.com">
 
                         <!-- NAME INPUT WITH ICON -->
                         <div class="form-group" style="margin: 0; text-align: left;">
@@ -368,6 +378,18 @@
 
                     </form>
                 </div>
+
+                <!-- TRUST BADGES STRIPS BELOW HERO FORM -->
+                <div class="hero-trust-strips">
+                    <div class="trust-strip-row">
+                        <span class="trust-pill-item">⭐ 4.7/5 Client Rating</span>
+                        <span class="trust-pill-item">📈 100+ Brands Managed</span>
+                    </div>
+                    <div class="trust-strip-row">
+                        <span class="trust-pill-item">💰 Performance-Focused PPC</span>
+                        <span class="trust-pill-item">🤝 Long-Term Client Partnerships</span>
+                    </div>
+                </div>
             </div>
 
             <!-- ORIGINAL GRAPH DASHBOARD (COMMENTED DOWN FOR NOW)
@@ -443,7 +465,7 @@
                     </div>
                     <div class="mini-card">
                         <div class="mini-card-top">
-                            <small>ACOS</small>
+                            <small>ACoS</small>
                             <strong class="green-text">14.2%</strong>
                         </div>
                         <svg viewBox="0 0 220 60">
@@ -515,7 +537,9 @@
                 </h2>
 
                 <p class="problem-subtitle">
-                    More Amazon traffic doesn't always mean more profitable growth. Poor campaign structure, inefficient bidding, irrelevant search terms, and weak optimization can cause <strong>wasted Amazon PPC spend, rising ACoS, and declining profitability</strong>.
+                    More Amazon traffic doesn't always mean more profitable growth. Poor campaign structure, inefficient
+                    bidding, irrelevant search terms, and weak optimization can cause <strong>wasted Amazon PPC spend,
+                        rising ACOS, and declining profitability</strong>.
                 </p>
 
                 <p class="problem-subtitle" style="margin-top: 14px;">
@@ -540,7 +564,8 @@
                         </svg>
                     </div>
                     <h3>Poor Amazon PPC Campaign Structure</h3>
-                    <p>Auto, broad, phrase, and exact match campaigns compete with each other, making performance difficult to measure and causing budget leakage.</p>
+                    <p>Auto, broad, phrase, and exact match campaigns compete with each other, making performance
+                        difficult to measure and causing budget leakage.</p>
                 </div>
 
                 <!-- Card 2 -->
@@ -549,7 +574,8 @@
                         <span class="icon-symbol">$</span>
                     </div>
                     <h3>Wasted Amazon PPC Spend</h3>
-                    <p>Ad budgets are spent on search terms that generate clicks but fail to generate profitable conversions, increasing <strong>ACoS without meaningful revenue growth</strong>.</p>
+                    <p>Ad budgets are spent on search terms that generate clicks but fail to generate profitable
+                        conversions, increasing <strong>ACOS without meaningful revenue growth</strong>.</p>
                 </div>
 
                 <!-- Card 3 -->
@@ -558,7 +584,8 @@
                         <span class="icon-symbol">?</span>
                     </div>
                     <h3>Irrelevant Search Terms</h3>
-                    <p>Broad-match and automatic campaigns can attract low-intent or irrelevant searches that consume budget without contributing to profitable sales.</p>
+                    <p>Broad-match and automatic campaigns can attract low-intent or irrelevant searches that consume
+                        budget without contributing to profitable sales.</p>
                 </div>
 
                 <!-- Card 4 -->
@@ -570,8 +597,9 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65" />
                         </svg>
                     </div>
-                    <h3>Weak Keyword Harvesting</h3>
-                    <p>High-converting search terms remain buried inside automatic or broad campaigns instead of being identified, isolated, and scaled through targeted campaigns.</p>
+                    <h3>Missed High-Converting Keywords</h3>
+                    <p>High-converting search terms often remain buried inside automatic or broad campaigns instead of being
+                        identified, isolated, and scaled through targeted campaigns.</p>
                 </div>
 
                 <!-- Card 5 -->
@@ -583,8 +611,9 @@
                             <polyline points="12 6 12 12 16 14" />
                         </svg>
                     </div>
-                    <h3>Incorrect Bid Optimization</h3>
-                    <p>Bids are often set once and left unchanged, despite changes in conversion rate, competition, placement performance, and profitability.</p>
+                    <h3>Poor Amazon PPC Bid Optimization</h3>
+                    <p>Bids are often set once and left unchanged, despite changes in conversion rate, competition,
+                        placement performance, and profitability.</p>
                 </div>
 
                 <!-- Card 6 -->
@@ -597,7 +626,8 @@
                         </svg>
                     </div>
                     <h3>No Negative Keyword Strategy</h3>
-                    <p>Irrelevant or consistently unprofitable search terms continue consuming advertising budget because they aren't properly identified and added as negative keywords.</p>
+                    <p>Irrelevant or consistently unprofitable search terms continue consuming advertising budget
+                        because they aren't properly identified and added as negative keywords.</p>
                 </div>
 
                 <!-- Card 7 -->
@@ -611,7 +641,8 @@
                         </svg>
                     </div>
                     <h3>Poor Placement Optimization</h3>
-                    <p>Top-of-search, rest-of-search, and product-page placements can perform very differently. Applying the same bidding strategy across every placement can lead to inefficient ad spend.</p>
+                    <p>Top-of-search, rest-of-search, and product-page placements can perform very differently. Applying
+                        the same bidding strategy across every placement can lead to inefficient ad spend.</p>
                 </div>
 
                 <!-- Card 8 -->
@@ -620,7 +651,8 @@
                         <span class="icon-symbol">B</span>
                     </div>
                     <h3>Overdependence on Branded Keywords</h3>
-                    <p>Strong advertising performance can sometimes be misleading when a large proportion of ad sales come from branded searches that may have converted organically anyway.</p>
+                    <p>Strong advertising performance can sometimes be misleading when a large proportion of ad sales
+                        come from branded searches that may have converted organically anyway.</p>
                 </div>
 
                 <!-- Card 9 -->
@@ -633,17 +665,25 @@
                         </svg>
                     </div>
                     <h3>Scaling Without Profitability</h3>
-                    <p>Increasing Amazon PPC spend without monitoring <strong>ACoS, TACoS, ROAS, conversion rate, and incremental sales</strong> can increase revenue while simultaneously reducing overall profitability.</p>
+                    <p>Increasing Amazon PPC spend without monitoring <strong>ACOS, TACOS, ROAS, conversion rate, and
+                            incremental sales</strong> can increase revenue while simultaneously reducing overall
+                        profitability.</p>
                 </div>
 
             </div>
 
             <!-- RESULT CONCLUSION BLOCK -->
-            <div class="problem-conclusion" style="margin-top: 48px; padding: 28px 32px; background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 18px; text-align: center;">
-                <h3 style="font-size: 22px; font-weight: 800; color: #ffffff; margin-bottom: 10px;">The Result?</h3>
-                <p style="font-size: 15px; color: #94a3b8; max-width: 800px; margin: 0 auto 12px; line-height: 1.6;">More ad spend doesn't automatically create more growth.</p>
-                <p style="font-size: 15px; color: #e2e8f0; max-width: 850px; margin: 0 auto; line-height: 1.6; font-weight: 500;">
-                    A profitable Amazon PPC strategy requires the right <strong>campaign structure, keyword targeting, bidding strategy, search-term optimization, negative keyword management, placement optimization, and continuous performance analysis</strong>.
+            <div class="problem-conclusion"
+                style="margin-top: 48px; padding: 28px 32px; background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 18px; text-align: center;">
+                <h3 style="font-size: 22px; font-weight: 800; color: #ffffff; margin-bottom: 10px;">What Happens When Amazon PPC Isn't Properly Optimized?</h3>
+                <p style="font-size: 15px; color: #94a3b8; max-width: 800px; margin: 0 auto 12px; line-height: 1.6;">
+                    More ad spend doesn't automatically create more growth.</p>
+                <p
+                    style="font-size: 15px; color: #e2e8f0; max-width: 850px; margin: 0 auto; line-height: 1.6; font-weight: 500;">
+                    Poorly optimized Amazon PPC campaigns can <strong>waste advertising budget, increase ACOS, reduce
+                        ROAS, and limit profitable sales growth</strong>. Effective Amazon PPC management focuses on
+                    <strong>campaign structure, keyword targeting, bid optimization, search-term analysis, and budget
+                        allocation</strong> to improve advertising efficiency.
                 </p>
             </div>
 
@@ -664,11 +704,12 @@
         </div>
 
         <h2>
-            Everything Your Amazon <span>Growth Engine</span> Needs.
+            Amazon PPC & <span>Growth Services</span> for Brands in India
         </h2>
 
         <p class="services-intro-text">
-            From Amazon PPC management to listing optimization and full-account growth, PPC Growth Expert helps Amazon brands build a more profitable and scalable marketplace presence.
+            From Amazon PPC management and listing optimization to full-account growth, PPCGrowthExpert helps Amazon
+            brands improve profitability, increase conversions, and build a scalable presence on Amazon.
         </p>
 
         <div class="service-grid">
@@ -680,12 +721,14 @@
                 </div>
 
                 <h3 itemprop="name">
-                    Amazon PPC Management
+                    Amazon PPC Management Services
                 </h3>
 
                 <p itemprop="description">
                     <strong>Turn Amazon ad spend into profitable growth.</strong><br>
-                    End-to-end Amazon PPC management including campaign structure, keyword research, Sponsored Products, Sponsored Brands, Sponsored Display, bid optimization, search-term harvesting, negative keyword management, placement optimization, and continuous ACoS, TACoS, and ROAS improvement.
+                    End-to-end Amazon PPC management including campaign structure, keyword research, Sponsored Products,
+                    Sponsored Brands, Sponsored Display, bid optimization, search-term harvesting, negative keyword
+                    management, placement optimization, and continuous optimization of ACOS, TACOS, and ROAS.
                 </p>
 
             </div>
@@ -698,12 +741,14 @@
                 </div>
 
                 <h3 itemprop="name">
-                    Amazon Listing &amp; SEO Optimization
+                    Amazon Listing Optimization
                 </h3>
 
                 <p itemprop="description">
                     <strong>Turn Amazon traffic into more conversions.</strong><br>
-                    Conversion-focused Amazon listing optimization covering keyword research, SEO-optimized titles and bullet points, product descriptions, backend search terms, image strategy, and A+ Content designed to improve organic visibility and conversion rates.
+                    Conversion-focused Amazon listing optimization covering keyword research, SEO-optimized titles and
+                    bullet points, product descriptions, backend search terms, image strategy, and A+ Content designed
+                    to improve organic visibility and conversion rates.
                 </p>
 
             </div>
@@ -716,12 +761,14 @@
                 </div>
 
                 <h3 itemprop="name">
-                    Full Amazon Account Growth
+                    Amazon Account Growth & Strategy
                 </h3>
 
                 <p itemprop="description">
                     <strong>Build a stronger Amazon business beyond advertising.</strong><br>
-                    A complete Amazon growth strategy covering Seller Central account management, PPC performance, listing optimization, revenue planning, profitability analysis, and scalable marketplace growth strategies.
+                    A complete Amazon growth strategy covering Seller Central account management, PPC performance,
+                    listing optimization, revenue planning, profitability analysis, and scalable marketplace growth
+                    strategies.
                 </p>
 
             </div>
@@ -752,13 +799,13 @@
             <!-- HEADER -->
             <div class="results-header">
                 <div class="section-label">
-                    PROVEN RESULTS
+                    Amazon PPC Case Study
                 </div>
                 <h2 class="results-main-title" itemprop="name">
-                    From Rising Ad Costs to <span class="highlight-blue">Profitable Amazon Growth</span>
+                    From Rising Ad Costs to <span class="highlight-blue">Profitable  Growth</span>
                 </h2>
                 <p class="results-sub-text" itemprop="description">
-                    See how a structured Amazon PPC strategy and continuous campaign optimization helped improve advertising efficiency while significantly increasing overall Amazon sales.
+                    See how a structured Amazon PPC strategy, campaign restructuring, and continuous optimization helped increase Amazon sales while significantly improving advertising efficiency.
                 </p>
             </div>
 
@@ -766,17 +813,24 @@
             <div class="transformation-cards-grid">
 
                 <!-- CARD 1: MONTHLY SALES -->
-                <div class="transform-card">
+                <!-- <div class="transform-card">
                     <div class="transform-card-header">MONTHLY AMAZON SALES</div>
                     <div class="transform-before-val">₹60 Lakh</div>
                     <div class="transform-arrow">↓</div>
                     <div class="transform-after-val">₹2.78 Cr</div>
                     <div class="transform-card-sub">+363% growth in monthly sales</div>
+                </div> -->
+                <div class="transform-card"> 
+                    <div class="transform-card-header">MONTHLY AMAZON SALES</div> 
+                    <div class="transform-before-val">₹60 Lakh</div> 
+                    <div class="transform-arrow">↓</div> 
+                    <div class="transform-after-val">₹2.78 Cr</div> 
+                    <div class="transform-card-sub">+363% growth in monthly sales · 12 months</div> 
                 </div>
 
-                <!-- CARD 2: PPC ACOS -->
+                <!-- CARD 2: PPC ACoS -->
                 <div class="transform-card">
-                    <div class="transform-card-header">PPC ACOS</div>
+                    <div class="transform-card-header">PPC ACoS</div>
                     <div class="transform-before-val">42%</div>
                     <div class="transform-arrow">↓</div>
                     <div class="transform-after-val highlight-blue">14%</div>
@@ -841,11 +895,54 @@
                         </div>
                         <div class="context-meta-item">
                             <span class="meta-label">Strategy:</span>
-                            <span class="meta-val">Campaign restructuring + keyword harvesting + placement bid management</span>
+                            <span class="meta-val">Campaign restructuring + keyword harvesting + placement bid
+                                management</span>
                         </div>
                     </div>
                 </div>
 
+            </div>
+
+            <!-- ULTRA ADVANCED AEO SUMMARY CARD (DARK TECH GLASSMORPHISM) -->
+            <div class="aeo-advanced-card reveal">
+                <div class="aeo-glow-bg"></div>
+                <div class="aeo-card-inner">
+                    <div class="aeo-top-bar">
+                        <div class="aeo-impact-tag">
+                            ✨ KEY PERFORMANCE OUTCOME
+                        </div>
+                    </div>
+
+                    <div class="aeo-content-body">
+                        <div class="aeo-main-info">
+                            <h3 class="aeo-heading">
+                                What Was <span class="aeo-gradient-text">the Result?</span>
+                            </h3>
+                            <p class="aeo-paragraph">
+                                After restructuring the Amazon PPC account and optimizing keyword targeting, bids, budgets, and placements, monthly Amazon sales increased from <span class="aeo-highlight-blue">₹60 lakh to ₹2.78 crore</span> while PPC ACoS decreased from <span class="aeo-highlight-green">42% to 14%</span>. PPC-driven orders also increased from <span class="aeo-highlight-blue">2,400 to 11,120</span> during the measurement period.
+                            </p>
+                        </div>
+
+                        <!-- MINI STAT MATRIX -->
+                        <div class="aeo-stat-matrix">
+                            <div class="aeo-mini-stat">
+                                <span class="stat-label">REVENUE IMPACT</span>
+                                <span class="stat-value green">₹60L → ₹2.78Cr</span>
+                                <span class="stat-sub">+363% Sales Growth</span>
+                            </div>
+                            <div class="aeo-mini-stat">
+                                <span class="stat-label">ACOS REDUCTION</span>
+                                <span class="stat-value blue">42% → 14%</span>
+                                <span class="stat-sub">-28% Points Drop</span>
+                            </div>
+                            <div class="aeo-mini-stat">
+                                <span class="stat-label">PPC ORDERS</span>
+                                <span class="stat-value purple">2,400 → 11,120</span>
+                                <span class="stat-sub">+363% Order Volume</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -866,9 +963,13 @@
             </div>
 
             <h2>
-                A smarter way to
-                <span>scale.</span>
+                Our Amazon PPC Management
+                <span>Process</span>
             </h2>
+
+            <p class="process-subtitle">
+                Our Amazon PPC management process combines account auditing, data-driven strategy, continuous optimization, and profitable scaling to improve advertising efficiency and drive sustainable Amazon growth.
+            </p>
 
 
             <div class="process-grid">
@@ -976,24 +1077,19 @@
             <!-- RIGHT CONTENT COLUMN -->
             <div class="about-ref-content">
                 <div class="about-tag-blue">
-                    ABOUT US
+                    About Anmol Pokhriyal — Amazon PPC Expert
                 </div>
 
                 <h2 class="about-ref-title">
-                    We turn marketplace complexity into <span class="highlight-blue">compounding growth</span>
+                    Turning Amazon marketplace complexity into <span class="highlight-blue">profitable, compounding growth</span>
                 </h2>
 
                 <div class="about-ref-description" itemprop="description">
                     <p>
-                        With <strong>more than 5 years of experience</strong> in Amazon Seller Central, Amazon Vendor
-                        Central, Amazon PPC (Sponsored Products, Sponsored Brands, Sponsored Display), and full-funnel
-                        account management, <strong>Anmol Pokhriyal</strong> is an independent Amazon PPC expert who
-                        helps brands make their ad spend work for them.
+                        With <strong>more than 5 years of experience</strong> across Amazon Seller Central, Amazon Vendor Central, and Amazon PPC—including Sponsored Products, Sponsored Brands, and Sponsored Display—<strong>Anmol Pokhriyal</strong> is an independent Amazon PPC expert helping brands improve advertising performance and build profitable growth on Amazon.
                     </p>
                     <p>
-                        Anmol has managed <strong>more than ₹5 crore ad spend</strong>, driving brand revenues from
-                        <strong>0 to ₹100Cr+</strong> with a proven ROAS of <strong>5x and above</strong>. When you
-                        decide to work with Anmol, he takes over your account personally day in and day out.
+                        Across client accounts, Anmol has managed <strong>more than ₹5 crore</strong> in Amazon advertising spend and contributed to revenue growth exceeding <strong>₹100 crore</strong>, with campaigns achieving ROAS of <strong>5x and above</strong>.
                     </p>
                 </div>
 
@@ -1009,7 +1105,7 @@
                     </div>
                     <div class="checklist-item">
                         <div class="check-icon-circle">✓</div>
-                        <span>Data-driven ACOS/TACOS optimization</span>
+                        <span>Data-driven ACoS/TACoS optimization</span>
                     </div>
                 </div>
 
@@ -1029,14 +1125,45 @@
                     </div>
                     <div class="about-stat-card">
                         <div class="stat-card-num">5+</div>
-                        <div class="stat-card-label">Years Growth</div>
+                        <div class="stat-card-label">Years experience</div>
                     </div>
                 </div>
 
                 <!-- START YOUR GROWTH JOURNEY ACTION LINK -->
                 <a href="#contact" class="start-growth-link" id="startGrowthBtn">
-                    Start your growth journey <span class="start-growth-arrow">→</span>
+                    Get Your Free Amazon PPC Audit  <span class="start-growth-arrow">→</span>
                 </a>
+
+                <!-- COMPACT ANIMATED AEO AGENCY CARD -->
+                <div class="aeo-hero-card compact reveal">
+                    <div class="aeo-border-glow"></div>
+                    <div class="aeo-card-content">
+                        <!-- TOP BADGE ROW -->
+                        <div class="aeo-card-top-row">
+                            <div class="aeo-verified-pill">
+                                ✦ VERIFIED OVERVIEW
+                            </div>
+                        </div>
+
+                        <!-- QUESTION & ANSWER HEADER -->
+                        <div class="aeo-header-block">
+                            <h3 class="aeo-question-title">
+                                What Does <span class="aeo-animated-gradient">PPCGrowthExpert Do?</span>
+                            </h3>
+                            <p class="aeo-answer-paragraph">
+                                <strong>PPCGrowthExpert</strong> provides Amazon PPC management and growth services for brands selling on Amazon. Services include PPC campaign management, keyword and search-term optimization, bid management, listing optimization, and broader Amazon account growth strategies focused on improving profitability and scaling sales.
+                            </p>
+                        </div>
+
+                        <!-- COMPACT PILL STRIP -->
+                        <div class="aeo-compact-pills">
+                            <span class="aeo-pill-tag">⚡ PPC Management</span>
+                            <span class="aeo-pill-tag">🎯 Keyword Harvesting</span>
+                            <span class="aeo-pill-tag">📈 Bid Optimization</span>
+                            <span class="aeo-pill-tag">🛍️ Account Growth</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -1059,7 +1186,7 @@
                     ✦ CLIENT TESTIMONIALS
                 </div>
                 <h2 class="testimonials-title">
-                    What Our <span class="highlight-text">Clients Say</span>
+                    Amazon PPC <span class="highlight-text">Client Testimonials</span>
                 </h2>
 
                 <div class="testimonials-pills-row">
@@ -1452,7 +1579,7 @@
             <!-- HEADER -->
             <div class="comparison-header">
                 <h2 class="comparison-title">
-                    Why Choose <span class="highlight-blue">PPC Growth Expert</span>?
+                    Why Choose <span class="highlight-blue">PPCGrowthExpert</span> for Amazon PPC Management?
                 </h2>
                 <p class="comparison-subtitle">
                     See how our personalized 1-on-1 Amazon PPC management compares against doing it yourself or hiring a
@@ -1539,12 +1666,12 @@
                                 <td class="td-center"><span class="badge-text-dash">—</span></td>
                                 <td class="td-center"><span class="badge-text-gray">Varies</span></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td class="td-feature">No Large Agency Overhead</td>
                                 <td class="col-highlight td-center"><span class="badge-check">✓</span></td>
                                 <td class="td-center"><span class="badge-check">✓</span></td>
                                 <td class="td-center"><span class="badge-cross">✕</span></td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td class="td-feature">Personalized Strategy</td>
                                 <td class="col-highlight td-center"><span class="badge-check">✓</span></td>
@@ -1588,11 +1715,11 @@
                     </div>
 
                     <h2 class="contact-main-title">
-                        Let's Grow Your <span class="gradient-text">Brand</span>
+                        Let's Grow Your <span class="gradient-text">Amazon Brand</span>
                     </h2>
 
                     <p class="contact-sub-text">
-                        Share your details and our team will contact you with the right next step.
+                        Tell us about your Amazon business, and we'll review your requirements and recommend the right PPC growth strategy.
                     </p>
 
                     <!-- FEATURE PILLS -->
@@ -1607,7 +1734,7 @@
                         </div>
                         <div class="feature-pill-item">
                             <span class="pill-icon">🎯</span>
-                            <span>Priority response from our team</span>
+                            <span>Priority response from Anmol </span>
                         </div>
                     </div>
 
@@ -1645,6 +1772,7 @@
 
                         <form id="bottomStrategyForm" class="contact-strategy-form" action="javascript:void(0);"
                             method="POST">
+                            <input type="hidden" name="_to" value="anmolpokhriyal3200@gmail.com">
 
                             <div class="form-field-group">
                                 <label for="bottomContactName">
@@ -1703,7 +1831,7 @@
                             </div>
 
                             <button type="submit" id="bottomBookCallBtn" class="book-strategy-btn">
-                                <span class="btn-text">Book Strategy Call</span>
+                                <span class="btn-text">Get Your Free Amazon PPC Audit</span>
                                 <span class="btn-arrow">→</span>
                             </button>
 
@@ -1760,10 +1888,10 @@
     },
     {
       "@type": "Question",
-      "name": "Will you focus only on reducing ACOS?",
+      "name": "Will you focus only on reducing ACoS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. A low ACOS doesn't automatically mean the account is healthy. If reducing ACOS also reduces sales and growth, it may not be the right strategy. We look at ACOS alongside ROAS, TACOS, sales growth, ad orders and overall account performance to find the right balance between efficiency and scale."
+        "text": "No. A low ACoS doesn't automatically mean the account is healthy. If reducing ACoS also reduces sales and growth, it may not be the right strategy. We look at ACoS alongside ROAS, TACoS, sales growth, ad orders and overall account performance to find the right balance between efficiency and scale."
       }
     },
     {
@@ -1787,7 +1915,7 @@
       "name": "How do you decide which campaigns should get more budget?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We don't increase budgets just because a campaign is spending. We look at sales, conversion rate, ACOS/ROAS, search-term quality, available impression share and the campaign's role in the overall account. Strong campaigns get room to grow, while inefficient spend is controlled or redirected."
+        "text": "We don't increase budgets just because a campaign is spending. We look at sales, conversion rate, ACoS/ROAS, search-term quality, available impression share and the campaign's role in the overall account. Strong campaigns get room to grow, while inefficient spend is controlled or redirected."
       }
     },
     {
@@ -1824,10 +1952,10 @@
     },
     {
       "@type": "Question",
-      "name": "Do you guarantee a specific ACOS or sales number?",
+      "name": "Do you guarantee a specific ACoS or sales number?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. We don't believe in promising a fixed sales or ACOS number before understanding the account and market. Amazon performance depends on factors such as competition, pricing, conversion rate, inventory and demand. What we can control is the strategy, execution, optimization and how efficiently we manage the advertising budget."
+        "text": "No. We don't believe in promising a fixed sales or ACoS number before understanding the account and market. Amazon performance depends on factors such as competition, pricing, conversion rate, inventory and demand. What we can control is the strategy, execution, optimization and how efficiently we manage the advertising budget."
       }
     },
     {
@@ -1867,11 +1995,10 @@
                     FAQ
                 </div>
                 <h2 class="index-faq-title">
-                    Frequently Asked <span class="highlight-blue">Questions</span>
+                    Frequently Asked <span class="highlight-blue">Questions</span> About Amazon PPC Management
                 </h2>
                 <p class="index-faq-subtitle">
-                    Clear, transparent answers to common questions about campaign optimization, ACOS management, scaling
-                    strategies, and working together.
+                    Clear answers to common questions about Amazon PPC management, campaign optimization, ACOS, scaling strategies, and working with PPCGrowthExpert.
                 </p>
             </div>
 
@@ -1937,14 +2064,14 @@
                     itemtype="http://schema.org/Question">
                     <summary class="index-faq-question-btn">
                         <div class="faq-num-pill">04</div>
-                        <span class="faq-q-text" itemprop="name">Will you focus only on reducing ACOS?</span>
+                        <span class="faq-q-text" itemprop="name">Will you focus only on reducing ACoS?</span>
                         <span class="faq-toggle-icon">+</span>
                     </summary>
                     <div class="index-faq-answer-content" itemprop="acceptedAnswer" itemscope
                         itemtype="http://schema.org/Answer">
-                        <p itemprop="text">No. A low ACOS doesn't automatically mean the account is healthy. If reducing
-                            ACOS also reduces sales and growth, it may not be the right strategy. We look at ACOS
-                            alongside ROAS, TACOS, sales growth, ad orders and overall account performance to find the
+                        <p itemprop="text">No. A low ACoS doesn't automatically mean the account is healthy. If reducing
+                            ACoS also reduces sales and growth, it may not be the right strategy. We look at ACoS
+                            alongside ROAS, TACoS, sales growth, ad orders and overall account performance to find the
                             right balance between efficiency and scale.</p>
                     </div>
                 </details>
@@ -1997,7 +2124,7 @@
                     <div class="index-faq-answer-content" itemprop="acceptedAnswer" itemscope
                         itemtype="http://schema.org/Answer">
                         <p itemprop="text">We don't increase budgets just because a campaign is spending. We look at
-                            sales, conversion rate, ACOS/ROAS, search-term quality, available impression share and the
+                            sales, conversion rate, ACoS/ROAS, search-term quality, available impression share and the
                             campaign's role in the overall account. Strong campaigns get room to grow, while inefficient
                             spend is controlled or redirected.</p>
                     </div>
@@ -2080,13 +2207,13 @@
                     itemtype="http://schema.org/Question">
                     <summary class="index-faq-question-btn">
                         <div class="faq-num-pill">12</div>
-                        <span class="faq-q-text" itemprop="name">Do you guarantee a specific ACOS or sales
+                        <span class="faq-q-text" itemprop="name">Do you guarantee a specific ACoS or sales
                             number?</span>
                         <span class="faq-toggle-icon">+</span>
                     </summary>
                     <div class="index-faq-answer-content" itemprop="acceptedAnswer" itemscope
                         itemtype="http://schema.org/Answer">
-                        <p itemprop="text">No. We don't believe in promising a fixed sales or ACOS number before
+                        <p itemprop="text">No. We don't believe in promising a fixed sales or ACoS number before
                             understanding the account and market. Amazon performance depends on factors such as
                             competition, pricing, conversion rate, inventory and demand. What we can control is the
                             strategy, execution, optimization and how efficiently we manage the advertising budget.</p>
@@ -2289,20 +2416,37 @@
                             </span>
                         </a>
 
+                        <p class="footer-sub-tagline">
+                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
+                        </p>
+
                         <p class="footer-tagline" itemprop="description">
-                            PPC Growth Expert — Independent Amazon PPC Specialist helping brands scale sales, improve
-                            ROAS, and grow profitably through data-driven advertising.
+                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
                         </p>
 
                         <div class="footer-socials" aria-label="Social Media Links">
-                            <a href="https://wa.me/916397607291" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            <a href="https://wa.me/916397607291" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                                class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                                </svg>
                             </a>
-                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener" aria-label="Instagram" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer"
+                                aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
                             </a>
-                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios"
+                                target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -2313,12 +2457,12 @@
                 <div class="footer-col">
                     <h3 class="footer-heading">SERVICES</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html#service-ppc-management">Amazon PPC Management</a></li>
+                        <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
                         <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
-                        <li><a href="services.html#service-image-aplus">Image Creation &amp; A+ Content</a></li>
-                        <li><a href="services.html#service-review-growth">Review Growth Support</a></li>
-                        <li><a href="services.html#service-product-research">Product Research</a></li>
-                        <li><a href="services.html#service-keyword-research">Keyword Research</a></li>
+                        <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                        <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                        <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
+                        <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
                     </ul>
                 </div>
 
@@ -2332,8 +2476,7 @@
                             <div class="contact-icon-pill">📍</div>
                             <div>
                                 <span itemprop="addressLocality">Noida</span>,<br>
-                                <span itemprop="addressRegion">Uttar Pradesh</span> <span
-                                    itemprop="postalCode">201301</span>
+                                <span itemprop="addressRegion">Uttar Pradesh</span>
                             </div>
                         </li>
                         <li>
@@ -2366,7 +2509,7 @@
             <!-- MIDDLE BAR -->
             <div class="footer-middle">
                 <p class="footer-meta-info">
-                    PPC Growth Expert · Noida, Uttar Pradesh 201301, India · +91 63976 07291 ·
+                    PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 ·
                     anmolpokhriyal3200@gmail.com
                 </p>
             </div>
@@ -2394,7 +2537,7 @@
       "@id": "https://ppcgrowthexpert.com/#website",
       "url": "https://ppcgrowthexpert.com/",
       "name": "PPC Growth Expert",
-      "description": "Data-driven Amazon PPC management agency scaling brand revenue and optimizing ACOS.",
+      "description": "Data-driven Amazon PPC management agency scaling brand revenue and optimizing ACoS.",
       "publisher": {
         "@id": "https://ppcgrowthexpert.com/#organization"
       }
@@ -2546,6 +2689,8 @@
         </button>
     </div>
 
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/testimonials.js"></script>
     <script src="js/whatsapp.js"></script>
 

@@ -1,0 +1,89 @@
+# =========================================================
+#  SECURITY: Never commit sensitive files to GitHub
+# =========================================================
+
+# Environment variables & secrets
+.env
+.env.*
+.env.local
+.env.production
+.env.staging
+*.env
+
+# API keys & credentials files
+api_keys.*
+credentials.*
+secrets.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# AWS
+.aws/
+aws-credentials
+aws-config
+
+# GitHub tokens
+.github-token
+*.token
+
+# Database
+*.sql
+*.sqlite
+*.db
+database.yml
+db-config.*
+
+# Private certificates & SSH keys
+*.key
+*.pem
+id_rsa
+id_ed25519
+*.ppk
+
+# Passwords & auth files
+passwords.*
+auth.*
+.htpasswd
+
+# =========================================================
+#  GENERAL: Dev & build artifacts
+# =========================================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+
+# Build output (if any)
+dist/
+build/
+.cache/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. STAGE CATEGORY SWITCHER DATA
     const caseData = {
         gaming: {
-            title: "Gaming Peripherals — 42% to 14% ACOS Reduction",
+            title: "Gaming Peripherals — 42% to 14% ACoS Reduction",
             badge: "🎮 Gaming Peripherals",
             acos: "42% → 14%",
             sales: "+78%",

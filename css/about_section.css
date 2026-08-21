@@ -262,6 +262,234 @@
     transform: translateX(4px);
 }
 
+/* =========================================================
+   NEXT-LEVEL FUTURISTIC ANIMATED AEO CARD
+========================================================= */
+.aeo-hero-card {
+    margin-top: 32px;
+    position: relative;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.6), rgba(99, 102, 241, 0.4), rgba(52, 211, 153, 0.5));
+    background-size: 200% 200%;
+    animation: gradientBorderRotate 6s ease infinite;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25), 0 0 35px rgba(56, 189, 248, 0.15);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+@keyframes gradientBorderRotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.aeo-hero-card:hover {
+    transform: translateY(-6px) scale(1.005);
+    box-shadow: 0 30px 65px rgba(15, 23, 42, 0.35), 0 0 50px rgba(56, 189, 248, 0.3);
+}
+
+.aeo-border-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12), transparent 60%);
+    pointer-events: none;
+}
+
+.aeo-card-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 22px;
+    padding: 32px 36px;
+}
+
+.aeo-card-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.aeo-sonar-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #4ade80;
+    letter-spacing: 0.9px;
+}
+
+.sonar-ring {
+    position: absolute;
+    left: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.4);
+    animation: sonarPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes sonarPing {
+    75%, 100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+.sonar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    position: relative;
+    z-index: 2;
+}
+
+.aeo-verified-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.6px;
+}
+
+.aeo-header-block {
+    margin-bottom: 24px;
+}
+
+.aeo-question-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin: 0 0 12px;
+}
+
+.aeo-animated-gradient {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
+    background-size: 200% 200%;
+    animation: textGradientShift 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes textGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.aeo-answer-paragraph {
+    font-size: 15px;
+    line-height: 1.72;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.aeo-answer-paragraph strong {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+/* =========================================================
+   COMPACT ANIMATED AEO CARD
+========================================================= */
+.aeo-hero-card.compact {
+    margin-top: 20px;
+    border-radius: 18px;
+    padding: 1.5px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16), 0 0 24px rgba(56, 189, 248, 0.12);
+}
+
+.aeo-hero-card.compact .aeo-card-content {
+    border-radius: 16.5px;
+    padding: 20px 24px;
+}
+
+.aeo-hero-card.compact .aeo-card-top-row {
+    margin-bottom: 10px;
+    gap: 8px;
+}
+
+.aeo-hero-card.compact .aeo-sonar-badge {
+    padding: 3px 12px;
+    font-size: 10px;
+    gap: 8px;
+}
+
+.aeo-hero-card.compact .sonar-ring {
+    left: 10px;
+    width: 8px;
+    height: 8px;
+}
+
+.aeo-hero-card.compact .sonar-dot {
+    width: 6px;
+    height: 6px;
+}
+
+.aeo-hero-card.compact .aeo-verified-pill {
+    font-size: 10px;
+}
+
+.aeo-hero-card.compact .aeo-header-block {
+    margin-bottom: 14px;
+}
+
+.aeo-hero-card.compact .aeo-question-title {
+    font-size: 17px;
+    margin: 0 0 6px;
+    letter-spacing: -0.3px;
+}
+
+.aeo-hero-card.compact .aeo-answer-paragraph {
+    font-size: 13.5px;
+    line-height: 1.58;
+}
+
+/* COMPACT PILL TAG STRIP */
+.aeo-compact-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.aeo-pill-tag {
+    background: rgba(30, 41, 59, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 4px 12px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #94a3b8;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+}
+
+.aeo-pill-tag:hover {
+    background: rgba(56, 189, 248, 0.16);
+    border-color: rgba(56, 189, 248, 0.45);
+    color: #38bdf8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(56, 189, 248, 0.12);
+}
+
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
     .about-ref-container {

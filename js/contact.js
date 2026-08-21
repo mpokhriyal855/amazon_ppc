@@ -6,6 +6,23 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Security: HTML entity encoder to prevent XSS in dynamic content
+    function sanitizeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    // Security: Basic email format validation
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Security: Basic phone validation (digits, spaces, +, -, min 7 chars)
+    function isValidPhone(phone) {
+        return /^[\d\s+\-().]{7,20}$/.test(phone);
+    }
+
     // Helper: Floating Top Glass Toast Notification
     function showSuccessToast(name) {
         let toast = document.getElementById('strategySuccessToast');
@@ -45,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div style="flex: 1; min-width: 0;">
                 <div style="font-size: 14.5px; font-weight: 800; color: #047857; line-height: 1.25;">Strategy Call Booked!</div>
                 <div style="font-size: 12px; color: #334155; font-weight: 600; margin-top: 3px; line-height: 1.35;">
-                    Thank you <strong>${name}</strong>! We will reach out on WhatsApp &amp; Email within 2 hours.
+                    Thank you <strong>${sanitizeHTML(name)}</strong>! We will reach out on WhatsApp &amp; Email within 2 hours.
                 </div>
             </div>
             <button type="button" style="border:0; background:transparent; color:#94a3b8; font-size:18px; cursor:pointer; padding:0 4px;" onclick="this.parentElement.style.opacity='0'; this.parentElement.style.transform='translateY(-20px) scale(0.95)';">&times;</button>
@@ -129,6 +146,44 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!email && emailInput) missingFields.push(emailInput);
             if (!phone && phoneInput) missingFields.push(phoneInput);
 
+            // Security: Validate email format
+            if (email && !isValidEmail(email)) {
+                if (emailInput) {
+                    emailInput.style.borderColor = '#ef4444';
+                    emailInput.style.boxShadow = '0 0 0 4px rgba(239, 68, 68, 0.15)';
+                }
+                if (statusMsg) {
+                    statusMsg.innerHTML = `
+                        <div style="background: rgba(254, 242, 242, 0.95); border: 1.5px solid #fca5a5; border-radius: 12px; padding: 10px 14px; text-align: center; color: #b91c1c; font-size: 12.5px; font-weight: 700; margin-top: 8px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);">
+                            ⚠️ Please enter a valid email address.
+                        </div>
+                    `;
+                    statusMsg.className = 'form-status-msg error';
+                    statusMsg.style.display = 'block';
+                }
+                if (emailInput) emailInput.focus();
+                return;
+            }
+
+            // Security: Validate phone format
+            if (phone && !isValidPhone(phone)) {
+                if (phoneInput) {
+                    phoneInput.style.borderColor = '#ef4444';
+                    phoneInput.style.boxShadow = '0 0 0 4px rgba(239, 68, 68, 0.15)';
+                }
+                if (statusMsg) {
+                    statusMsg.innerHTML = `
+                        <div style="background: rgba(254, 242, 242, 0.95); border: 1.5px solid #fca5a5; border-radius: 12px; padding: 10px 14px; text-align: center; color: #b91c1c; font-size: 12.5px; font-weight: 700; margin-top: 8px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);">
+                            ⚠️ Please enter a valid phone number.
+                        </div>
+                    `;
+                    statusMsg.className = 'form-status-msg error';
+                    statusMsg.style.display = 'block';
+                }
+                if (phoneInput) phoneInput.focus();
+                return;
+            }
+
             if (missingFields.length > 0) {
                 missingFields.forEach(input => {
                     input.style.borderColor = '#ef4444';
@@ -167,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             try {
                 const emailTargets = [
-                    // 'anmolpokhriyal3200@gmail.com', // Commented out
+                    'anmolpokhriyal3200@gmail.com',
                     'pokhriyalmansi378@gmail.com'
                 ];
 
