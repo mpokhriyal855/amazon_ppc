@@ -37,9 +37,9 @@
 
 .about-main-img-wrapper img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 681 / 1024;
+    height: 440px;
     object-fit: cover;
+    object-position: center 20%;
     display: block;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -524,7 +524,6 @@
     }
     
     .about-main-img-wrapper img {
-        height: auto;
-        aspect-ratio: 681 / 1024;
+        height: 320px;
     }
 }
