@@ -927,10 +927,12 @@
 }
 
 .package-price .old-price {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     text-decoration: line-through;
-    color: #64748b;
+    text-decoration-color: #ef4444;
+    color: #cbd5e1;
+    opacity: 0.85;
 }
 
 .package-price-subtext {
