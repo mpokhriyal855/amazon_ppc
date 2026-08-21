@@ -921,6 +921,16 @@
     font-size: 34px;
     font-weight: 800;
     color: #38bdf8;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.package-price .old-price {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: line-through;
+    color: #64748b;
 }
 
 .package-price-subtext {
