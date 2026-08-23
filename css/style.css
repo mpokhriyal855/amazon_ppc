@@ -3245,10 +3245,19 @@ footer {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.3) !important;
     }
 
-    /* ADVANCED MOBILE VISUAL AESTHETICS */
-    body {
+    /* GLOBAL MOBILE OVERFLOW & ZOOM LOCK FIX */
+    html, body {
+        max-width: 100vw !important;
         overflow-x: hidden !important;
-        width: 100%;
+        width: 100% !important;
+        position: relative;
+        touch-action: manipulation;
+    }
+
+    section, header, footer, main {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
     }
 
     /* HERO PROOF 100+ BRANDS AND 100 CR+ GMV IN ONE LINE ON MOBILE */
