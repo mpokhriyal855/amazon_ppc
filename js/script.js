@@ -164,11 +164,6 @@ function initMobileMenuSystem() {
             }
         }
     });
-            if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
-                window.closeMobileNav();
-            }
-        }
-    });
 
     // Auto-close menu on ESC key press
     document.addEventListener("keydown", (e) => {
@@ -426,86 +421,54 @@ if (reducedMotion.matches) {
    TYPEWRITER EFFECT FOR HERO HEADLINE
 ========================================================= */
 
-const typingElement = document.getElementById("typingText");
+(function initTypewriter() {
+    const wordsToType = [
+        "Reduce ACOS.",
+        "Profitable Growth.",
+        "Maximize ROAS."
+    ];
 
-const wordsToType = [
-    "Reduce ACOS.",
-    "Profitable Growth.",
-    "Maximize ROAS."
-];
+    let wordIndex = 0;
+    let charIndex = wordsToType[0].length;
+    let isDeleting = true;
 
+    function typeEffect() {
+        const typingElement = document.getElementById("typingText");
+        if (!typingElement) return;
 
-let wordIndex = 0;
+        const currentWord = wordsToType[wordIndex];
 
-let charIndex = 0;
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
 
-let isDeleting = false;
+        const currentSubstr = currentWord.substring(0, charIndex);
+        typingElement.textContent = currentSubstr || "\u00A0";
 
+        let typeSpeed = isDeleting ? 35 : 75;
 
-function typeEffect() {
+        if (!isDeleting && charIndex === currentWord.length) {
+            typeSpeed = 2200;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % wordsToType.length;
+            typeSpeed = 350;
+        }
 
-    if (!typingElement) return;
+        setTimeout(typeEffect, typeSpeed);
+    }
 
-
-    const currentWord = wordsToType[wordIndex];
-
-
-    if (isDeleting) {
-
-        charIndex--;
-
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeEffect, 1800);
+        });
     } else {
-
-        charIndex++;
-
+        setTimeout(typeEffect, 1800);
     }
-
-
-    const currentSubstr = currentWord.substring(0, charIndex);
-
-    /* Use non-breaking space when empty to prevent layout height collapse */
-
-    typingElement.textContent = currentSubstr || "\u00A0";
-
-
-    let typeSpeed = isDeleting ? 35 : 75;
-
-
-    if (!isDeleting && charIndex === currentWord.length) {
-
-        typeSpeed = 2200;
-
-        isDeleting = true;
-
-    } else if (isDeleting && charIndex === 0) {
-
-        isDeleting = false;
-
-        wordIndex = (wordIndex + 1) % wordsToType.length;
-
-        typeSpeed = 350;
-
-    }
-
-
-    setTimeout(typeEffect, typeSpeed);
-
-}
-
-
-if (document.readyState === "loading") {
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-        setTimeout(typeEffect, 500);
-
-    });
-
-} else {
-
-    setTimeout(typeEffect, 500);
-
-}
+})();
 
 
 /* =========================================================
