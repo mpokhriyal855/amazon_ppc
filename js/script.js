@@ -429,8 +429,8 @@ if (reducedMotion.matches) {
 const typingElement = document.getElementById("typingText");
 
 const wordsToType = [
-    "Profitable Growth.",
     "Reduce ACOS.",
+    "Profitable Growth.",
     "Maximize ROAS."
 ];
 
