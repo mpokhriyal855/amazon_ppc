@@ -430,7 +430,7 @@ const typingElement = document.getElementById("typingText");
 
 const wordsToType = [
     "Profitable Growth.",
-    "Reduce ACoS.",
+    "Reduce ACOS.",
     "Maximize ROAS."
 ];
 

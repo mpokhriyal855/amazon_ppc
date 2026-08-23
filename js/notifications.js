@@ -15,7 +15,7 @@
 
         { title: "D2C Brand hit ₹12L monthly PPC sales", time: "8 minutes ago", initial: "📈" },
 
-        { title: "Beauty Brand reduced ACoS from 34% to 14%", time: "12 minutes ago", initial: "✨" },
+        { title: "Beauty Brand reduced ACOS from 34% to 14%", time: "12 minutes ago", initial: "✨" },
 
         { title: "PPC Growth Audit delivered to Amazon Seller", time: "15 minutes ago", initial: "🎯" }
 
