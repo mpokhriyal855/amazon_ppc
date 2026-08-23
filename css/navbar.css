@@ -460,9 +460,11 @@
 
 
     .mobile-toggle {
-
         display: grid;
-
+        z-index: 100000 !important;
+        pointer-events: auto !important;
+        position: relative;
+        touch-action: manipulation;
     }
 
 
@@ -470,11 +472,14 @@
         top: 6px;
         padding: 0 12px;
         position: relative;
+        z-index: 99999 !important;
+        overflow: visible !important;
     }
 
     .navbar {
         height: 54px;
         padding: 0 10px 0 14px;
+        overflow: visible !important;
     }
 
     .mobile-toggle.is-active {
@@ -514,7 +519,7 @@
         gap: 8px;
         box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(37, 99, 235, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
         animation: mobileNavSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        z-index: 1001;
+        z-index: 100001 !important;
     }
 
     @keyframes mobileNavSlide {

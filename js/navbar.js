@@ -48,19 +48,34 @@
         }
     };
 
-    // Global Event Delegation for clicks
-    document.addEventListener("click", function(e) {
+    // Global Event Delegation for clicks and touch
+    let lastToggleTime = 0;
+    function handleToggleEvent(e) {
         const toggleBtn = e.target.closest("#mobileToggle, .mobile-toggle");
-        const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
-
-        // 1. Click on Mobile Toggle Button
         if (toggleBtn) {
+            const now = Date.now();
+            if (now - lastToggleTime < 300) return; // Prevent double trigger on mobile
+            lastToggleTime = now;
+            
             e.preventDefault();
             e.stopPropagation();
             window.toggleMobileNav(e);
-            return;
+            return true;
         }
+        return false;
+    }
 
+    document.addEventListener("pointerdown", function(e) {
+        const toggleBtn = e.target.closest("#mobileToggle, .mobile-toggle");
+        if (toggleBtn) {
+            handleToggleEvent(e);
+        }
+    }, { passive: false });
+
+    document.addEventListener("click", function(e) {
+        if (handleToggleEvent(e)) return;
+
+        const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         if (!navLinks) return;
 
         // 2. Click on link inside Nav Links
