@@ -211,70 +211,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 statusMsg.innerHTML = '';
             }
 
-            // UI Loading State on Button
-            const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
-            const originalBtnBg = submitBtn ? submitBtn.style.background : '';
-
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = `<span>Booking Your Call...</span> <span class="btn-spinner">⌛</span>`;
             }
 
             try {
-                // GOOGLE CLOUD RECAPTCHA / RECAPTCHA ENTERPRISE TOKEN GENERATION
-                let recaptchaToken = '';
-                const siteKey = window.RECAPTCHA_SITE_KEY || '';
-
-                if (siteKey && (window.grecaptcha || window.grecaptcha?.enterprise)) {
-                    try {
-                        recaptchaToken = await new Promise((resolve) => {
-                            const gc = window.grecaptcha?.enterprise || window.grecaptcha;
-                            if (gc && typeof gc.ready === 'function') {
-                                gc.ready(function () {
-                                    gc.execute(siteKey, { action: 'submit_contact' })
-                                        .then(token => resolve(token))
-                                        .catch(() => resolve(''));
-                                });
-                            } else {
-                                resolve('');
-                            }
-                        });
-                    } catch (rcErr) {
-                        console.log('reCAPTCHA assessment notice:', rcErr);
-                    }
-                }
-
-                const emailTargets = [
-                    'anmolpokhriyal3200@gmail.com',
-                    'pokhriyalmansi378@gmail.com'
-                ];
-
                 const params = new URLSearchParams();
                 params.append('name', name);
                 params.append('email', email);
                 params.append('phone', phone);
                 params.append('message', message || 'No additional message provided');
                 params.append('_subject', `⚡ Strategy Call Request from ${name}`);
-                params.append('_template', 'table');
-                
-                if (recaptchaToken) {
-                    params.append('g-recaptcha-response', recaptchaToken);
-                    params.append('recaptcha_assessment_token', recaptchaToken);
-                } else {
-                    params.append('_captcha', 'false');
-                }
 
-                // Dispatch to email target
-                emailTargets.forEach(targetEmail => {
-                    fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                            'Accept': 'application/json'
-                        },
-                        body: params.toString()
-                    }).catch(err => console.log('Email dispatch notice:', err));
-                });
+                // Dispatch to secure PHP Mailjet backend
+                fetch('api/contact.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: params.toString()
+                }).catch(err => console.log('Email dispatch notice:', err));
 
                 // Show top floating toast (does not alter form height at all)
                 showSuccessToast(name);

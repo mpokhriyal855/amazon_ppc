@@ -57,12 +57,6 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/whatsapp.css">
 
-    <!-- GOOGLE RECAPTCHA FRAUD DEFENSE -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeR8ZUtAAAAAM-5o0vgas6P9qTTz5E7gqI0KFFa" async defer></script>
-    <script>
-        window.RECAPTCHA_SITE_KEY = "6LeR8ZUtAAAAAM-5o0vgas6P9qTTz5E7gqI0KFFa";
-    </script>
-
     <!-- STRUCTURED DATA (SCHEMA.ORG BREADCRUMBLIST FOR SEO RICH RESULTS) -->
     <script type="application/ld+json">
     {
@@ -1018,12 +1012,7 @@
                     pricingSummary = `PRICE: ${currentModalContext.priceText || 'Custom'}`;
                 }
 
-                // 1. DUAL BACKGROUND EMAIL DISPATCH (anmolpokhriyal3200@gmail.com & pokhriyalmansi378@gmail.com)
-                const emailTargets = [
-                    'anmolpokhriyal3200@gmail.com',
-                    'pokhriyalmansi378@gmail.com'
-                ];
-
+                // 1. DUAL BACKGROUND EMAIL DISPATCH VIA MAILJET PHP ENDPOINT
                 const params = new URLSearchParams();
                 params.append('Order_Type', orderTypeLabel);
                 params.append('Requested_Services', currentModalContext.serviceTitle);
@@ -1037,17 +1026,15 @@
                 params.append('_template', 'table');
                 params.append('_captcha', 'false');
 
-                // Fire HTTP POST requests to both email addresses asynchronously
-                emailTargets.forEach(targetEmail => {
-                    fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                            'Accept': 'application/json'
-                        },
-                        body: params.toString()
-                    }).catch(err => console.log('Background email dispatch notice:', err));
-                });
+                // Fire HTTP POST request to secure PHP Mailjet endpoint
+                fetch('api/contact.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Accept': 'application/json'
+                    },
+                    body: params.toString()
+                }).catch(err => console.log('Background email dispatch notice:', err));
 
                 // 2. FORMAT WHATSAPP ORDER RECEIPT WITH EXACT PRICING
                 let waMessage = `🚨 *NEW SERVICE ORDER & SESSION BOOKING* 🚨\n` +
