@@ -3295,7 +3295,7 @@ footer {
     /* COMPACT HERO FORM ON MOBILE */
     #hero-audit-form {
         margin-top: 24px !important;
-        margin-bottom: 42px !important;
+        margin-bottom: 12px !important;
         position: relative !important;
     }
 
@@ -3453,7 +3453,7 @@ footer {
     }
 
     .hero-right {
-        padding: 0 0 24px 0 !important;
+        padding: 0 !important;
         margin-top: 0 !important;
     }
 
@@ -3461,8 +3461,8 @@ footer {
         display: flex !important;
         flex-direction: column;
         gap: 6px;
-        margin-top: 10px;
-        margin-bottom: 5px;
+        margin-top: 26px !important;
+        margin-bottom: 0 !important;
         width: 100%;
         align-items: center;
     }
