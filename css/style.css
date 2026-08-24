@@ -3293,6 +3293,25 @@ footer {
     }
 
     /* COMPACT HERO FORM ON MOBILE */
+    #hero-audit-form {
+        margin-top: 24px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .float-badge-anim-1 {
+        top: -12px !important;
+        left: 4px !important;
+        font-size: 10.5px !important;
+        padding: 5px 12px !important;
+    }
+
+    .float-badge-anim-2 {
+        bottom: -12px !important;
+        right: 4px !important;
+        font-size: 10.5px !important;
+        padding: 6px 14px !important;
+    }
+
     .hero-form-card, .contact-card-glass, .case-form-card-glass, .roas-calc-card {
         border-radius: 20px !important;
         padding: 20px 16px !important;
