@@ -226,6 +226,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     'pokhriyalmansi378@gmail.com'
                 ];
 
+                // Google reCAPTCHA Token Handling (if loaded on window)
+                let recaptchaToken = '';
+                if (typeof window.grecaptcha !== 'undefined' && typeof window.grecaptcha.execute === 'function') {
+                    try {
+                        const siteKey = window.RECAPTCHA_SITE_KEY || '6Ld_PUBLIC_SITE_KEY_HERE';
+                        recaptchaToken = await window.grecaptcha.execute(siteKey, { action: 'submit_lead' });
+                    } catch (recaptchaErr) {
+                        console.log('reCAPTCHA execution note:', recaptchaErr);
+                    }
+                }
+
                 const params = new URLSearchParams();
                 params.append('name', name);
                 params.append('email', email);
@@ -233,7 +244,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 params.append('message', message || 'No additional message provided');
                 params.append('_subject', `⚡ Strategy Call Request from ${name}`);
                 params.append('_template', 'table');
-                params.append('_captcha', 'false');
+                params.append('_captcha', 'true');
+                if (recaptchaToken) {
+                    params.append('g-recaptcha-response', recaptchaToken);
+                }
 
                 // Dispatch to email target
                 emailTargets.forEach(targetEmail => {
