@@ -3295,7 +3295,7 @@ footer {
     /* COMPACT HERO FORM ON MOBILE */
     #hero-audit-form {
         margin-top: 24px !important;
-        margin-bottom: 34px !important;
+        margin-bottom: 42px !important;
         position: relative !important;
     }
 
@@ -3315,7 +3315,14 @@ footer {
         z-index: 15 !important;
     }
 
-    .hero-form-card, .contact-card-glass, .case-form-card-glass, .roas-calc-card {
+    .hero-form-card {
+        border-radius: 20px !important;
+        padding: 22px 18px 28px 18px !important;
+        border: 1.5px solid rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 15px 45px -10px rgba(37, 99, 235, 0.15) !important;
+    }
+
+    .contact-card-glass, .case-form-card-glass, .roas-calc-card {
         border-radius: 20px !important;
         padding: 20px 16px !important;
         border: 1.5px solid rgba(255, 255, 255, 0.9) !important;
@@ -3446,7 +3453,7 @@ footer {
     }
 
     .hero-right {
-        padding: 0 0 16px 0 !important;
+        padding: 0 0 24px 0 !important;
         margin-top: 0 !important;
     }
 
