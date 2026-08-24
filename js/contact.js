@@ -104,12 +104,30 @@ document.addEventListener('DOMContentLoaded', function () {
     // Attach submit handlers to ALL strategy call / contact forms on the page
     const forms = document.querySelectorAll('form');
 
-    forms.forEach(form => {
+    forms.forEach((form, idx) => {
         const isStrategyForm = form.classList.contains('contact-strategy-form') || 
                                form.classList.contains('case-strategy-form') || 
                                (form.id && (form.id.includes('Strategy') || form.id.includes('contact')));
 
         if (!isStrategyForm) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const siteKey = window.RECAPTCHA_SITE_KEY || '6LeR8ZUtAAAAAM-5o0vgas6P9qTTz5E7gqI0KFFa';
+
+        // Auto-inject visible reCAPTCHA Checkbox widget above submit button
+        if (submitBtn && siteKey && !form.querySelector('.g-recaptcha')) {
+            const recaptchaWrapper = document.createElement('div');
+            recaptchaWrapper.className = 'recaptcha-widget-wrapper';
+            recaptchaWrapper.style.cssText = 'margin: 14px 0; display: flex; justify-content: center; overflow: hidden; max-width: 100%;';
+            
+            const recaptchaDiv = document.createElement('div');
+            recaptchaDiv.className = 'g-recaptcha';
+            recaptchaDiv.setAttribute('data-sitekey', siteKey);
+            recaptchaDiv.id = `g-recaptcha-${idx}`;
+            
+            recaptchaWrapper.appendChild(recaptchaDiv);
+            submitBtn.parentNode.insertBefore(recaptchaWrapper, submitBtn);
+        }
 
         let isSubmitting = false;
 
@@ -124,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const emailInput = form.querySelector('input[name="email"]');
             const phoneInput = form.querySelector('input[name="phone"]');
             const messageInput = form.querySelector('textarea[name="message"], input[name="message"]');
-            const submitBtn = form.querySelector('button[type="submit"]');
+            const currentSubmitBtn = form.querySelector('button[type="submit"]');
             
             let statusMsg = form.querySelector('.form-status-msg');
 
@@ -202,6 +220,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
+            // VISIBLE RECAPTCHA CHECKBOX VALIDATION
+            let recaptchaToken = '';
+            if (window.grecaptcha) {
+                // First check if user filled visible checkbox widget
+                try {
+                    const recaptchaWidget = form.querySelector('.g-recaptcha');
+                    if (recaptchaWidget && typeof grecaptcha.getResponse === 'function') {
+                        // Check if widget has response
+                        recaptchaToken = grecaptcha.getResponse();
+                    }
+                } catch (e) {
+                    console.log('reCAPTCHA widget check:', e);
+                }
+
+                // If visible checkbox is not ticked, ask user to tick it
+                if (!recaptchaToken && form.querySelector('.g-recaptcha')) {
+                    if (statusMsg) {
+                        statusMsg.innerHTML = `
+                            <div style="background: rgba(254, 242, 242, 0.95); border: 1.5px solid #fca5a5; border-radius: 12px; padding: 10px 14px; text-align: center; color: #b91c1c; font-size: 12.5px; font-weight: 700; margin-top: 8px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);">
+                                🤖 Please check the "I'm not a robot" reCAPTCHA box above.
+                            </div>
+                        `;
+                        statusMsg.className = 'form-status-msg error';
+                        statusMsg.style.display = 'block';
+                    }
+                    return;
+                }
+            }
+
             // Lock submit state
             isSubmitting = true;
 
@@ -212,20 +259,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // UI Loading State on Button
-            const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
-            const originalBtnBg = submitBtn ? submitBtn.style.background : '';
-
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = `<span>Booking Your Call...</span> <span class="btn-spinner">⌛</span>`;
+            if (currentSubmitBtn) {
+                currentSubmitBtn.disabled = true;
+                currentSubmitBtn.innerHTML = `<span>Booking Your Call...</span> <span class="btn-spinner">⌛</span>`;
             }
 
             try {
-                // GOOGLE CLOUD RECAPTCHA / RECAPTCHA ENTERPRISE TOKEN GENERATION
-                let recaptchaToken = '';
-                const siteKey = window.RECAPTCHA_SITE_KEY || '';
-
-                if (siteKey && (window.grecaptcha || window.grecaptcha?.enterprise)) {
+                // If token wasn't fetched from checkbox, fallback to execute
+                if (!recaptchaToken && siteKey && (window.grecaptcha || window.grecaptcha?.enterprise)) {
                     try {
                         recaptchaToken = await new Promise((resolve) => {
                             const gc = window.grecaptcha?.enterprise || window.grecaptcha;
