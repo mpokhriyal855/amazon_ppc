@@ -75,15 +75,9 @@
     document.addEventListener("click", function(e) {
         if (handleToggleEvent(e)) return;
 
-        // Dropdown toggle click handling
+        // Dropdown toggle click handling (inline onclick handles toggle; prevent double toggle)
         const dropdownTrigger = e.target.closest('.nav-dropdown-trigger');
         if (dropdownTrigger) {
-            e.preventDefault();
-            e.stopPropagation();
-            const parentDropdown = dropdownTrigger.closest('.nav-dropdown');
-            if (parentDropdown) {
-                parentDropdown.classList.toggle('is-open');
-            }
             return;
         }
 
