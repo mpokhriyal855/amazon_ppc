@@ -205,7 +205,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // Lock submit state
             isSubmitting = true;
 
-            // Hide any inline status message so form height never increases
+            // Save original button state before changing it
+            const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+            const originalBtnBg = submitBtn ? submitBtn.style.background : '';
+
+            // Hide existing status message
             if (statusMsg) {
                 statusMsg.style.display = 'none';
                 statusMsg.innerHTML = '';
@@ -213,52 +217,108 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = `<span>Booking Your Call...</span> <span class="btn-spinner">⌛</span>`;
+                submitBtn.innerHTML =
+                    `<span>Booking Your Call...</span> <span class="btn-spinner">⌛</span>`;
             }
 
             try {
+
                 const params = new URLSearchParams();
+
                 params.append('name', name);
                 params.append('email', email);
                 params.append('phone', phone);
-                params.append('message', message || 'No additional message provided');
-                params.append('_subject', `⚡ Strategy Call Request from ${name}`);
+                params.append(
+                    'message',
+                    message || 'No additional message provided'
+                );
 
-                // Dispatch to secure PHP Mailjet backend
-                fetch('api/contact.php', {
+                const response = await fetch('/api/contact.php', {
+
                     method: 'POST',
+
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
                         'Accept': 'application/json'
                     },
+
                     body: params.toString()
-                }).catch(err => console.log('Email dispatch notice:', err));
+                });
 
-                // Show top floating toast (does not alter form height at all)
-                showSuccessToast(name);
+                let result;
 
-                // Show success state on the button itself
-                if (submitBtn) {
-                    submitBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-                    submitBtn.innerHTML = `<span>✓ Strategy Call Booked!</span>`;
+                try {
+                    result = await response.json();
+                } catch (jsonError) {
+                    throw new Error('Invalid response from server.');
                 }
 
-                // Reset form fields cleanly after 2 seconds
+                if (!response.ok || !result.success) {
+                    throw new Error(
+                        result.message || 'Unable to submit your request.'
+                    );
+                }
+
+                /*
+                |--------------------------------------------------------------------------
+                | Real success
+                |--------------------------------------------------------------------------
+                */
+
+                showSuccessToast(name);
+
+                if (submitBtn) {
+                    submitBtn.style.background =
+                        'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+
+                    submitBtn.innerHTML =
+                        `<span>✓ Strategy Call Booked!</span>`;
+                }
+
                 setTimeout(() => {
                     form.reset();
                 }, 2000);
 
             } catch (err) {
-                console.log('Submission notice:', err);
+
+                console.error('Contact form submission error:', err);
+
+                if (statusMsg) {
+
+                    statusMsg.innerHTML = `
+                        <div style="
+                            background: rgba(254, 242, 242, 0.95);
+                            border: 1.5px solid #fca5a5;
+                            border-radius: 12px;
+                            padding: 10px 14px;
+                            text-align: center;
+                            color: #b91c1c;
+                            font-size: 12.5px;
+                            font-weight: 700;
+                            margin-top: 8px;
+                            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
+                        ">
+                            ⚠️ We couldn't submit your request.
+                            Please try again or contact us directly.
+                        </div>
+                    `;
+
+                    statusMsg.className = 'form-status-msg error';
+                    statusMsg.style.display = 'block';
+                }
+
             } finally {
-                // Restore button state after 3.5 seconds
+
                 setTimeout(() => {
+
                     if (submitBtn) {
                         submitBtn.disabled = false;
                         submitBtn.style.background = originalBtnBg;
                         submitBtn.innerHTML = originalBtnHTML;
                     }
+
                     isSubmitting = false;
+
                 }, 3500);
             }
         });
