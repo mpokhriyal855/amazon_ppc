@@ -561,6 +561,23 @@
 
 }
 
+@media (max-width: 1200px) {
+    .nav-item, .nav-dropdown-trigger {
+        padding: 6px 11px;
+        font-size: 12.5px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .nav-item, .nav-dropdown-trigger {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    .status-pill {
+        display: none;
+    }
+}
+
 /* NAVBAR DROPDOWN STYLES */
 .nav-dropdown {
     position: relative;
@@ -609,12 +626,13 @@
 /* BLUE DROPDOWN MENU MATCHING REFERENCE SCREENSHOT */
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
     background: #3182ce; /* Sleek corporate blue matching user screenshot */
     border-radius: 8px;
-    box-shadow: 0 14px 35px -5px rgba(15, 23, 42, 0.3);
-    min-width: 260px;
+    box-shadow: 0 14px 35px -5px rgba(15, 23, 42, 0.35);
+    min-width: 250px;
     display: none;
     flex-direction: column;
     z-index: 100000;
@@ -626,10 +644,10 @@
 .dropdown-menu::before {
     content: "";
     position: absolute;
-    top: -10px;
+    top: -14px;
     left: 0;
     right: 0;
-    height: 10px;
+    height: 14px;
     background: transparent;
 }
 
@@ -642,11 +660,11 @@
 @keyframes dropdownFade {
     from {
         opacity: 0;
-        transform: translateY(-6px);
+        transform: translateX(-50%) translateY(-6px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(0);
     }
 }
 
@@ -692,11 +710,17 @@
 
     .dropdown-menu {
         position: static;
+        transform: none;
         width: 100%;
         min-width: unset;
         box-shadow: none;
         background: #3182ce;
         border-radius: 12px;
         margin-top: 8px;
+    }
+    
+    @keyframes dropdownFade {
+        from { opacity: 1; transform: none; }
+        to { opacity: 1; transform: none; }
     }
 }
