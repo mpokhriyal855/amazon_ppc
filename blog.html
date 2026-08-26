@@ -11,16 +11,20 @@
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 
     <!-- SEO TITLE & METADATA -->
-    <title>Amazon PPC Blog & Insights | Amazon Ads Expert</title>
+    <title>Amazon PPC & Growth Knowledge Hub | PPC Growth Expert</title>
     <meta name="description"
-        content="Read the latest Amazon PPC strategies, ACoS reduction guides, and advertising insights by Amazon Ads Expert Anmol Pokhriyal.">
+        content="Explore practical Amazon PPC strategies, ACoS reduction guides, listing optimization tactics, and marketplace growth insights by Amazon Ads Expert Anmol Pokhriyal.">
     <meta name="keywords"
-        content="Amazon PPC Blog, Amazon Advertising Insights, Lower ACoS Guide, Amazon PPC Strategy 2026">
-    <meta name="author" content="PPC Growth Expert">
+        content="Amazon PPC Blog, Amazon Growth Knowledge Hub, Lower ACoS Guide, Amazon Advertising Insights 2026, TACoS vs ACoS">
+    <meta name="author" content="Anmol Pokhriyal">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- CANONICAL URL -->
+    <!-- CANONICAL URL & OPEN GRAPH -->
     <link rel="canonical" href="https://ppcgrowthexpert.com/blog.html">
+    <meta property="og:title" content="Amazon PPC & Growth Knowledge Hub | PPC Growth Expert">
+    <meta property="og:description" content="Data-driven strategies, experiments & insights for scaling profitably on Amazon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ppcgrowthexpert.com/blog.html">
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,145 +36,25 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="css/style.css?v=v17">
     <link rel="stylesheet" href="css/navbar.css?v=v12">
-    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="css/blog.css?v=v1">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/whatsapp.css">
 
-    <style>
-        .blog-hero {
-            position: relative;
-            padding: 140px 24px 70px;
-            background: #090d16;
-            color: #ffffff;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .blog-hero-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .blog-hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(37, 99, 235, 0.12);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            color: #60a5fa;
-            font-size: 13px;
-            font-weight: 700;
-            padding: 6px 16px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .blog-hero-title {
-            font-size: clamp(32px, 5vw, 52px);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .blog-hero-title .highlight-blue {
-            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .blog-hero-subtitle {
-            font-size: 17px;
-            color: #94a3b8;
-            max-width: 680px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .blog-main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 24px 100px;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .blog-card {
-            background: #ffffff;
-            border: 1px solid rgba(226, 232, 240, 0.9);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.12);
-        }
-
-        .blog-category {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 700;
-            color: #2563eb;
-            background: rgba(37, 99, 235, 0.08);
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .blog-card-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0f172a;
-            line-height: 1.4;
-            margin-bottom: 12px;
-        }
-
-        .blog-card-excerpt {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .blog-card-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 12.5px;
-            color: #94a3b8;
-            font-weight: 600;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 16px;
-        }
-
-        .blog-read-more {
-            color: #2563eb;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .blog-read-more:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <!-- STRUCTURED DATA SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Amazon PPC & Growth Knowledge Hub",
+      "description": "Strategies, experiments & insights for scaling on Amazon.",
+      "url": "https://ppcgrowthexpert.com/blog.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "PPC Growth Expert",
+        "url": "https://ppcgrowthexpert.com"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -234,74 +118,337 @@
         </header>
     </div>
 
-    <!-- HERO HEADER -->
+    <!-- =========================================================
+         BLOG HERO HEADER & FEATURED ARTICLE
+    ========================================================= -->
     <header class="blog-hero">
+        <div class="blog-hero-glow"></div>
         <div class="blog-hero-container">
-            <div class="blog-hero-tag">
-                ✦ INSIGHTS &amp; ARTICLES
+
+            <div class="blog-hero-top">
+                <div class="blog-badge-tag">
+                    ✦ AMAZON GROWTH LIBRARY
+                </div>
+                <h1 class="blog-hero-title">
+                    Strategies, Experiments &amp; Insights for <span class="gradient-text">Scaling on Amazon</span>
+                </h1>
+                <p class="blog-hero-subtitle">
+                    Practical Amazon PPC, listing optimization, marketplace strategy and growth insights built from real campaign experience.
+                </p>
             </div>
-            <h1 class="blog-hero-title">
-                Amazon PPC Insights &amp; <span class="highlight-blue">Growth Strategies</span>
-            </h1>
-            <p class="blog-hero-subtitle">
-                Expert tips, campaign optimization strategies, and actionable guides to lower your ACoS and scale revenue profitably on Amazon.
-            </p>
+
+            <!-- FEATURED ARTICLE HERO CARD (MATCHING REFERENCE IMAGE 1) -->
+            <article class="featured-hero-card" data-category="amazon ppc" data-tags="acos, campaign strategy, bid optimization">
+                <div class="featured-visual">
+                    <!-- CUSTOM EDITORIAL SVG DATA GRAPHIC -->
+                    <svg viewBox="0 0 450 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="450" height="200" rx="12" fill="#0b1329" />
+                        <path d="M 30 150 Q 120 140, 200 80 T 420 30" stroke="#38bdf8" stroke-width="3.5" fill="none" />
+                        <path d="M 30 150 Q 120 140, 200 80 T 420 30 L 420 180 L 30 180 Z" fill="url(#gradHero)" opacity="0.15" />
+                        <path d="M 30 60 Q 150 120, 250 140 T 420 160" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="4 4" fill="none" />
+                        <circle cx="200" cy="80" r="6" fill="#38bdf8" />
+                        <circle cx="420" cy="30" r="6" fill="#10b981" />
+                        <text x="215" y="75" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="12" font-weight="700">Revenue +184%</text>
+                        <text x="330" y="145" fill="#ef4444" font-family="Plus Jakarta Sans" font-size="11" font-weight="700">ACoS 42% → 14%</text>
+                        <defs>
+                            <linearGradient id="gradHero" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#0b1329" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="featured-content">
+                    <div>
+                        <div class="featured-meta-top">
+                            <span class="category-pill">AMAZON PPC</span>
+                            <span class="publish-date">August 2026</span>
+                        </div>
+                        <h2 class="featured-title">
+                            <a href="blog-reduce-amazon-acos.html">How to Reduce Amazon ACoS Without Killing Sales</a>
+                        </h2>
+                        <p class="featured-description">
+                            Harvest negative exact search terms, isolate branded performance, and optimize bids by placement to eliminate wasted spend while scaling organic keyword rank.
+                        </p>
+                    </div>
+
+                    <div class="featured-author-row">
+                        <div class="author-info">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Anmol Pokhriyal" class="author-avatar">
+                            <div>
+                                <span class="author-name">Anmol Pokhriyal</span>
+                                <span class="read-time">8 min read</span>
+                            </div>
+                        </div>
+
+                        <a href="blog-reduce-amazon-acos.html" class="read-article-btn">
+                            <span>Read Strategy</span> →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
         </div>
     </header>
 
-    <!-- MAIN BLOG GRID -->
-    <main class="blog-main">
-        <div class="blog-grid">
+    <!-- =========================================================
+         SEARCH & CATEGORY FILTER SYSTEM
+    ========================================================= -->
+    <section class="blog-controls-section">
+        <div class="blog-controls-container">
 
-            <!-- BLOG ARTICLE 1 -->
-            <article class="blog-card">
-                <div>
-                    <span class="blog-category">PPC Strategy</span>
-                    <h2 class="blog-card-title">How to Cut Wasted Amazon PPC Spend &amp; Lower ACoS Fast</h2>
-                    <p class="blog-card-excerpt">
-                        Learn how to harvest negative exact search terms, optimize bids by placement, and eliminate unprofitable keyword drain in 30 days.
-                    </p>
-                </div>
-                <div class="blog-card-meta">
-                    <span>5 min read</span>
-                    <a href="#" class="blog-read-more">Read Article →</a>
-                </div>
-            </article>
+            <!-- SEARCH BAR -->
+            <div class="search-box-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="blogSearchInput" class="search-input" placeholder="Search Amazon PPC strategies, guides, calculators and insights..." aria-label="Search Amazon PPC strategies">
+            </div>
 
-            <!-- BLOG ARTICLE 2 -->
-            <article class="blog-card">
-                <div>
-                    <span class="blog-category">Campaign Structure</span>
-                    <h2 class="blog-card-title">Branded vs Non-Branded PPC: The Right Way to Structure Campaigns</h2>
-                    <p class="blog-card-excerpt">
-                        Stop inflating your performance metrics. Discover why isolating branded keywords is critical for realistic TACoS tracking.
-                    </p>
-                </div>
-                <div class="blog-card-meta">
-                    <span>7 min read</span>
-                    <a href="#" class="blog-read-more">Read Article →</a>
-                </div>
-            </article>
-
-            <!-- BLOG ARTICLE 3 -->
-            <article class="blog-card">
-                <div>
-                    <span class="blog-category">ASIN Tiering</span>
-                    <h2 class="blog-card-title">Hero SKU Budgeting: How to Maximize PPC ROAS Across Catalog</h2>
-                    <p class="blog-card-excerpt">
-                        Why uniform bidding hurts catalog growth and how tiering products into Hero, Growth, and Defensive categories scales total GMV.
-                    </p>
-                </div>
-                <div class="blog-card-meta">
-                    <span>6 min read</span>
-                    <a href="#" class="blog-read-more">Read Article →</a>
-                </div>
-            </article>
+            <!-- CATEGORY CHIPS -->
+            <div class="categories-scroll-wrapper" id="categoryChipsWrapper">
+                <button class="category-chip active" data-category="all">All Strategies</button>
+                <button class="category-chip" data-category="amazon ppc">Amazon PPC</button>
+                <button class="category-chip" data-category="acos optimization">ACoS Optimization</button>
+                <button class="category-chip" data-category="roas">ROAS Growth</button>
+                <button class="category-chip" data-category="keyword research">Keyword Research</button>
+                <button class="category-chip" data-category="listing optimization">Listing Optimization</button>
+                <button class="category-chip" data-category="campaign strategy">Campaign Strategy</button>
+                <button class="category-chip" data-category="case studies">Case Studies</button>
+                <button class="category-chip" data-category="ai for amazon">AI for Amazon</button>
+                <button class="category-chip" data-category="amazon seller central">Seller Central</button>
+            </div>
 
         </div>
+    </section>
+
+    <!-- =========================================================
+         EXPLORE BY GOAL SECTION
+    ========================================================= -->
+    <section class="goals-section">
+        <div class="section-heading-sm">DYNAMIC GOAL SELECTOR</div>
+        <h2 class="section-title">What are you trying to improve?</h2>
+        <div class="goals-grid">
+            <div class="goal-card" data-goal-category="acos optimization">📉 Lower My ACoS</div>
+            <div class="goal-card" data-goal-category="roas">🚀 Increase Amazon Sales</div>
+            <div class="goal-card" data-goal-category="amazon ppc">🎯 Fix Wasted Ad Spend</div>
+            <div class="goal-card" data-goal-category="keyword research">🔍 Find Winning Keywords</div>
+            <div class="goal-card" data-goal-category="listing optimization">⚡ Improve Listing CVR</div>
+            <div class="goal-card" data-goal-category="campaign strategy">📊 Scale Campaign Structure</div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         MAIN ARTICLE GRID ("LATEST STRATEGIES")
+    ========================================================= -->
+    <main class="blog-content-area" id="latestStrategies">
+
+        <!-- EMPTY SEARCH STATE -->
+        <div class="empty-search-state" id="emptySearchState" style="display: none;">
+            <div class="empty-search-title">No strategy found for that search yet.</div>
+            <div class="empty-search-sub">Have a specific Amazon PPC problem you want us to break down?</div>
+            <a href="#topicRecommendation" class="read-article-btn">Suggest This Topic →</a>
+        </div>
+
+        <div class="articles-grid" id="articlesGrid">
+
+            <!-- ARTICLE 1 -->
+            <article class="article-card" data-category="acos optimization" data-tags="acos, spend, negatives, bidding">
+                <div class="article-card-image">
+                    <svg viewBox="0 0 320 160" width="100%" height="100%">
+                        <rect width="320" height="160" fill="#0f172a"/>
+                        <path d="M20 130 C100 130, 150 40, 300 20" stroke="#38bdf8" stroke-width="3" fill="none"/>
+                        <circle cx="300" cy="20" r="5" fill="#38bdf8"/>
+                        <text x="30" y="40" fill="#94a3b8" font-family="DM Mono" font-size="11">Wasted Spend: -45%</text>
+                    </svg>
+                </div>
+                <div class="article-card-body">
+                    <div>
+                        <span class="article-card-badge">ACoS Optimization</span>
+                        <h2 class="article-card-title">
+                            <a href="blog-reduce-amazon-acos.html">7 Reasons Your Amazon ACoS Is Increasing &amp; How to Fix It</a>
+                        </h2>
+                        <p class="article-card-excerpt">
+                            Discover the 7 hidden bid leakage points, auto-campaign broad cannibalization, and placement over-bidding driving up your ad costs.
+                        </p>
+                    </div>
+                    <div class="article-card-footer">
+                        <div class="article-author-mini">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Anmol Pokhriyal" class="article-author-avatar-mini">
+                            <span>Anmol P. · 6 min</span>
+                        </div>
+                        <a href="blog-reduce-amazon-acos.html" class="article-card-link">Read <span>→</span></a>
+                    </div>
+                </article>
+
+            <!-- ARTICLE 2 -->
+            <article class="article-card" data-category="campaign strategy" data-tags="campaign structure, exact, broad, match types">
+                <div class="article-card-image">
+                    <svg viewBox="0 0 320 160" width="100%" height="100%">
+                        <rect width="320" height="160" fill="#090e1a"/>
+                        <rect x="30" y="30" width="80" height="40" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+                        <rect x="140" y="30" width="80" height="40" rx="6" fill="#1e293b" stroke="#2563eb"/>
+                        <rect x="250" y="30" width="50" height="40" rx="6" fill="#1e293b" stroke="#10b981"/>
+                        <text x="45" y="55" fill="#38bdf8" font-family="DM Mono" font-size="10">Auto</text>
+                        <text x="155" y="55" fill="#60a5fa" font-family="DM Mono" font-size="10">Exact</text>
+                        <text x="260" y="55" fill="#10b981" font-family="DM Mono" font-size="10">DSP</text>
+                    </svg>
+                </div>
+                <div class="article-card-body">
+                    <div>
+                        <span class="article-card-badge">Campaign Strategy</span>
+                        <h2 class="article-card-title">
+                            <a href="blog-reduce-amazon-acos.html">Branded vs Non-Branded PPC: The Ideal Campaign Architecture</a>
+                        </h2>
+                        <p class="article-card-excerpt">
+                            Isolating organic brand equity from non-branded conquesting for true TACoS visibility and accurate profitability metrics.
+                        </p>
+                    </div>
+                    <div class="article-card-footer">
+                        <div class="article-author-mini">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Anmol Pokhriyal" class="article-author-avatar-mini">
+                            <span>Anmol P. · 7 min</span>
+                        </div>
+                        <a href="blog-reduce-amazon-acos.html" class="article-card-link">Read <span>→</span></a>
+                    </div>
+                </article>
+
+            <!-- ARTICLE 3 -->
+            <article class="article-card" data-category="case studies" data-tags="case study, revenue, scaling, gmv">
+                <div class="article-card-image">
+                    <svg viewBox="0 0 320 160" width="100%" height="100%">
+                        <rect width="320" height="160" fill="#0b1120"/>
+                        <text x="30" y="70" fill="#10b981" font-family="Plus Jakarta Sans" font-size="22" font-weight="800">₹60L → ₹2.78Cr</text>
+                        <text x="30" y="100" fill="#94a3b8" font-family="DM Mono" font-size="12">Scaling Case Study</text>
+                    </svg>
+                </div>
+                <div class="article-card-body">
+                    <div>
+                        <span class="article-card-badge">Case Studies</span>
+                        <h2 class="article-card-title">
+                            <a href="blog-reduce-amazon-acos.html">How Amazon Revenue Scaled From ₹60L to ₹2.78Cr in 90 Days</a>
+                        </h2>
+                        <p class="article-card-excerpt">
+                            Full breakdown of keyword harvesting rules, top-of-search multiplier strategies, and inventory-aligned ad budget controls.
+                        </p>
+                    </div>
+                    <div class="article-card-footer">
+                        <div class="article-author-mini">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Anmol Pokhriyal" class="article-author-avatar-mini">
+                            <span>Anmol P. · 9 min</span>
+                        </div>
+                        <a href="blog-reduce-amazon-acos.html" class="article-card-link">Read <span>→</span></a>
+                    </div>
+                </article>
+
+            <!-- ARTICLE 4 -->
+            <article class="article-card" data-category="keyword research" data-tags="keywords, search terms, negative exact, harvesting">
+                <div class="article-card-image">
+                    <svg viewBox="0 0 320 160" width="100%" height="100%">
+                        <rect width="320" height="160" fill="#0f172a"/>
+                        <circle cx="160" cy="80" r="45" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                        <circle cx="160" cy="80" r="25" fill="none" stroke="#2563eb" stroke-width="2"/>
+                        <circle cx="160" cy="80" r="8" fill="#10b981"/>
+                    </svg>
+                </div>
+                <div class="article-card-body">
+                    <div>
+                        <span class="article-card-badge">Keyword Research</span>
+                        <h2 class="article-card-title">
+                            <a href="blog-reduce-amazon-acos.html">Automated Search Term Harvesting: Broad to Exact Funneling</a>
+                        </h2>
+                        <p class="article-card-excerpt">
+                            Stop manually reviewing search term reports. Build a high-converting keyword isolation strategy that scales profitable queries.
+                        </p>
+                    </div>
+                    <div class="article-card-footer">
+                        <div class="article-author-mini">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Anmol Pokhriyal" class="article-author-avatar-mini">
+                            <span>Anmol P. · 5 min</span>
+                        </div>
+                        <a href="blog-reduce-amazon-acos.html" class="article-card-link">Read <span>→</span></a>
+                    </div>
+                </article>
+
+            <!-- ARTICLE 5 -->
+            <article class="article-card" data-category="ai for amazon" data-tags="ai, amc, amazon marketing cloud, claude">
+                <div class="article-card-image">
+                    <svg viewBox="0 0 320 160" width="100%" height="100%">
+                        <rect width="320" height="160" fill="#090e1a"/>
+                        <path d="M60 120 L160 40 L260 120 Z" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+                        <circle cx="160" cy="40" r="6" fill="#38bdf8"/>
+                        <text x="110" y="140" fill="#94a3b8" font-family="DM Mono" font-size="11">AMC AI Analytics</text>
+                    </svg>
+                </div>
+                <div class="article-card-body">
+                    <div>
+                        <span class="article-card-badge">AI for Amazon</span>
+                        <h2 class="article-card-title">
+                            <a href="blog-reduce-amazon-acos.html">How AI Agents &amp; AMC Data Stack Are Transforming Bidding</a>
+                        </h2>
+                        <p class="article-card-excerpt">
+                            Leveraging Amazon Marketing Cloud (AMC) SQL queries with AI agents to optimize repeat purchase rate and long-term customer lifetime value.
+                        </p>
+                    </div>
+                    <div class="article-card-footer">
+                        <div class="article-author-mini">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Anmol Pokhriyal" class="article-author-avatar-mini">
+                            <span>Anmol P. · 8 min</span>
+                        </div>
+                        <a href="blog-reduce-amazon-acos.html" class="article-card-link">Read <span>→</span></a>
+                    </div>
+                </article>
+
+            <!-- ARTICLE 6 -->
+            <article class="article-card" data-category="listing optimization" data-tags="listing, cvr, title, images, a+ content">
+                <div class="article-card-image">
+                    <svg viewBox="0 0 320 160" width="100%" height="100%">
+                        <rect width="320" height="160" fill="#0b1120"/>
+                        <rect x="40" y="40" width="240" height="80" rx="8" fill="#1e293b" stroke="#38bdf8"/>
+                        <text x="60" y="85" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="16" font-weight="700">Listing CVR +32%</text>
+                    </svg>
+                </div>
+                <div class="article-card-body">
+                    <div>
+                        <span class="article-card-badge">Listing Optimization</span>
+                        <h2 class="article-card-title">
+                            <a href="blog-reduce-amazon-acos.html">High-CVR Amazon Listing Framework: Main Image to A+ Content</a>
+                        </h2>
+                        <p class="article-card-excerpt">
+                            High ad spend won't save a low-converting product listing. Learn the visual storytelling framework that increases units per session.
+                        </p>
+                    </div>
+                    <div class="article-card-footer">
+                        <div class="article-author-mini">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Anmol Pokhriyal" class="article-author-avatar-mini">
+                            <span>Anmol P. · 6 min</span>
+                        </div>
+                        <a href="blog-reduce-amazon-acos.html" class="article-card-link">Read <span>→</span></a>
+                    </div>
+                </article>
+
+        </div>
+
+        <!-- =========================================================
+             "WHAT SHOULD WE COVER NEXT?" RECOMMENDATION BOX
+        ========================================================= -->
+        <section class="topic-recommendation-box" id="topicRecommendation">
+            <div class="topic-rec-header">
+                <div class="section-heading-sm" style="color: #38bdf8;">COMMUNITY INPUT</div>
+                <h2 class="topic-rec-title">What should we cover next?</h2>
+                <p class="topic-rec-desc">Have a specific Amazon PPC problem or marketplace topic you want us to break down in our next deep dive guide?</p>
+            </div>
+            <form class="topic-rec-form" id="topicRecForm">
+                <input type="text" class="topic-rec-input" placeholder="Suggest a topic (e.g. Scaling broad match without high ACoS)..." required aria-label="Topic suggestion">
+                <button type="submit" class="topic-rec-btn">Send Recommendation →</button>
+            </form>
+            <div id="topicRecSuccess" style="display: none; text-align: center; color: #10b981; font-weight: 700; margin-top: 14px;"></div>
+        </section>
+
     </main>
 
-    <!-- EXECUTIVE FOOTER -->
+    <!-- =========================================================
+         EXECUTIVE FOOTER
+    ========================================================= -->
     <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
         <div class="footer-container">
             <div class="footer-grid">
@@ -387,6 +534,7 @@
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/blog.js?v=v1"></script>
 </body>
 
 </html>
