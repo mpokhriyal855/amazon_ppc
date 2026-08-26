@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Swiggy Instamart Profit Calculator | Amazon Ads Expert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v17">
+    <link rel="stylesheet" href="css/navbar.css?v=v11">
+    <link rel="stylesheet" href="css/swiggy-instamart-calculator.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <!-- EXECUTIVE NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="index.html#process" class="nav-item">Process</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-item nav-dropdown-trigger" onclick="event.preventDefault(); this.parentElement.classList.toggle('is-open');">
+                        Resources <span class="dropdown-arrow">▾</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="flipkart-profit-calculator.html" class="dropdown-link">Flipkart Profit Calculator</a>
+                        <a href="blinkit-profit-calculator.html" class="dropdown-link">Blinkit Profit Calculator</a>
+                        <a href="amazon-profit-calculator.html" class="dropdown-link">Amazon Profit Calculator</a>
+                        <a href="meesho-profit-calculator.html" class="dropdown-link">Meesho Profit Calculator</a>
+                        <a href="zepto-profit-calculator.html" class="dropdown-link">Zepto Profit Calculator</a>
+                        <a href="swiggy-instamart-profit-calculator.html" class="dropdown-link">Swiggy Instamart Profit Calculator</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#contact" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
+
+    <!-- HERO -->
+    <section class="calc-hero">
+        <h1 class="calc-hero-title">Swiggy Instamart <span class="highlight-orange">Profit Calculator</span></h1>
+        <p>Calculate your product margins and seller net profit on Swiggy Instamart quick commerce.</p>
+    </section>
+
+    <!-- CALCULATOR CONTENT -->
+    <main class="calc-container">
+        <div class="calc-card">
+            <form id="swiggyCalcForm">
+                <div class="calc-form-group">
+                    <label for="swiggySp">Selling Price (₹)</label>
+                    <input type="number" id="swiggySp" placeholder="e.g. 249" required>
+                </div>
+                <div class="calc-form-group">
+                    <label for="swiggyCogs">Cost of Goods (₹)</label>
+                    <input type="number" id="swiggyCogs" placeholder="e.g. 90" required>
+                </div>
+                <button type="submit" class="calc-btn">Calculate Swiggy Instamart Profit</button>
+            </form>
+            <div id="swiggyCalcResult" class="calc-result" style="display:none;"></div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>PPC Growth Expert · Swiggy Instamart Profit Calculator</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/swiggy-instamart-calculator.js"></script>
+</body>
+
+</html>
