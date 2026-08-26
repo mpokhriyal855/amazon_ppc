@@ -233,6 +233,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     message || 'No additional message provided'
                 );
 
+                const controller = new AbortController();
+
+                const timeoutId = setTimeout(() => {
+                    controller.abort();
+                }, 20000);
+
                 const response = await fetch('/api/contact.php', {
 
                     method: 'POST',
@@ -242,8 +248,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         'Accept': 'application/json'
                     },
 
-                    body: params.toString()
+                    body: params.toString(),
+                    signal: controller.signal
                 });
+
+                clearTimeout(timeoutId);
 
                 let result;
 
