@@ -97,13 +97,13 @@
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         if (!navLinks) return;
 
-        // Click on normal page link inside Nav Links (closes mobile nav)
+        // 2. Click on normal link inside Nav Links
         if (navLinks.contains(e.target) && e.target.closest("a:not(.nav-dropdown-trigger)")) {
             window.closeMobileNav();
             return;
         }
 
-        // Click outside Nav Links when open
+        // 3. Click outside Nav Links when open
         if (navLinks.classList.contains("mobile-open")) {
             if (!navLinks.contains(e.target)) {
                 window.closeMobileNav();
