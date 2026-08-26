@@ -1,0 +1,179 @@
+/* =========================================================
+   RESOURCES DROPDOWN — NAVBAR ADDON
+   File: css/resources-dropdown.css
+   Matches existing glass navbar theme
+========================================================= */
+
+/* DROPDOWN WRAPPER */
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown-trigger {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    transition: transform 0.25s ease;
+    display: inline-block;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* DROPDOWN MENU */
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    min-width: 260px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 16px;
+    box-shadow:
+        0 20px 50px -12px rgba(15, 23, 42, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1100;
+    pointer-events: none;
+}
+
+.nav-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.97);
+    border-left: 1px solid rgba(226, 232, 240, 0.9);
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 3px 0 0 0;
+}
+
+/* Hover bridge to keep dropdown open */
+.nav-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 16px;
+    display: none;
+}
+
+.nav-dropdown:hover::after {
+    display: block;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: all;
+}
+
+/* DROPDOWN LINKS */
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-link:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(56, 189, 248, 0.06) 100%);
+    color: #2563eb;
+    transform: translateX(3px);
+}
+
+.dropdown-icon {
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(241, 245, 249, 0.8);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.dropdown-link:hover .dropdown-icon {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+
+/* ============ MOBILE DROPDOWN ============ */
+@media (max-width: 768px) {
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        box-shadow: none;
+        border: 1px solid rgba(226, 232, 240, 0.5);
+        background: rgba(241, 245, 249, 0.6);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        min-width: unset;
+        width: 100%;
+        padding: 6px;
+        border-radius: 12px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .nav-dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .nav-dropdown::after {
+        display: none !important;
+    }
+
+    .dropdown-link {
+        font-size: 13px;
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+
+    .dropdown-link:hover {
+        transform: none;
+    }
+
+    .dropdown-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+    }
+}

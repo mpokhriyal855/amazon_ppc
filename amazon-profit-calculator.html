@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazon Profit Calculator India – Amazon Fees, FBA, Easy Ship &amp; PPC</title>
+    <meta name="description" content="Free Amazon Profit Calculator to calculate Amazon fees, FBA, Easy Ship, advertising costs, returns, net profit, margin, break-even ACOS and maximum CPC.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-profit-calculator.html">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amazon Profit Calculator India – Amazon Fees, FBA, Easy Ship &amp; PPC">
+    <meta property="og:description" content="Calculate Amazon fees, FBA, Easy Ship, advertising, returns and net profit — then see your break-even ACOS and maximum CPC.">
+    <meta property="og:url" content="https://ppcgrowthexpert.com/amazon-profit-calculator.html">
+    <meta property="og:site_name" content="PPC Growth Expert">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amazon Profit Calculator – Know Your Real Amazon Profit">
+    <meta name="twitter:description" content="Amazon fees, FBA, Easy Ship, PPC, returns, net profit, break-even ACOS and maximum CPC in one calculator.">
+    
+    <!-- PRECONNECT FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/style.css?v=v17">
+    <link rel="stylesheet" href="css/navbar.css?v=v11">
+    <link rel="stylesheet" href="css/resources-dropdown.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+</head>
+<body>
+
+    <!-- DYNAMIC NAVBAR HEADER -->
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar-placeholder').innerHTML = html;
+            });
+    </script>
+
+    <!-- HERO SECTION -->
+    <header class="hero-calc">
+      <div class="calc-wrap">
+        <span class="eyebrow">Amazon Profit Calculator</span>
+        <h1>Amazon Profit Calculator – Calculate Your Real Amazon Profit</h1>
+        <p class="lede">Calculate Amazon fees, FBA, Easy Ship, advertising, returns and net profit — then see your break-even ACOS and maximum CPC.</p>
+        <div class="trust">
+          <span class="pill"><span class="dot"></span> Built for Amazon sellers and PPC professionals</span>
+          <span class="pill">FBA &middot; Easy Ship &middot; Self Ship</span>
+          <span class="pill">No sign-up. Nothing stored.</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN APP CALCULATOR -->
+    <main class="app">
+      <div class="calc-wrap">
+        <div class="grid">
+
+          <!-- ============ INPUT COLUMN ============ -->
+          <form class="stack" id="calcForm" novalidate action="javascript:void(0);">
+
+            <!-- STEP 1 -->
+            <section class="card" aria-labelledby="s1h">
+              <div class="step-head">
+                <span class="step-no" aria-hidden="true">1</span>
+                <div>
+                  <div class="step-title" id="s1h">Product &amp; selling</div>
+                  <div class="step-sub">What you sell it for, and what it costs you</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="fields">
+                  <div class="field">
+                    <label for="sellingPrice">Selling price (incl. GST)
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: selling price">i<span class="bubble">The price the customer pays on Amazon, before any coupon or discount you fund yourself.</span></span>
+                    </label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="sellingPrice" min="0" step="1" inputmode="decimal" value="999" aria-describedby="sellingPriceHint"></div>
+                    <span class="hint" id="sellingPriceHint">Per unit</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="productCost">Product cost
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: product cost">i<span class="bubble">Your product purchase/manufacturing cost per unit.</span></span>
+                    </label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="productCost" min="0" step="1" inputmode="decimal" value="400"></div>
+                    <span class="hint">Landed cost per unit</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="category">Category
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: category">i<span class="bubble">Category decides the referral fee percentage. Fee assumptions are configurable — verify your exact category slab in Seller Central.</span></span>
+                    </label>
+                    <select id="category"></select>
+                    <span class="hint" id="referralHint">Referral fee slab loads here</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="weight">Product weight</label>
+                    <div class="inp has-suffix"><input type="number" id="weight" min="0" step="1" inputmode="decimal" value="450"><span class="adorn right" id="weightUnitLbl">g</span></div>
+                    <span class="hint"><label class="sr-only" for="weightUnit">Weight unit</label>
+                      <select id="weightUnit" style="padding:4px 26px 4px 8px;font-size:12px;width:auto;display:inline-block;background-position:right 8px center">
+                        <option value="g">grams</option><option value="kg">kilograms</option>
+                      </select> — dead weight of the packed unit</span>
+                  </div>
+
+                  <fieldset class="field full">
+                    <legend class="legend">Fulfillment method
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: fulfillment method">i<span class="bubble">FBA: Amazon stores and ships. Easy Ship: you pack, Amazon picks up and delivers. Self Ship: you arrange delivery yourself.</span></span>
+                    </legend>
+                    <div class="seg" role="radiogroup" aria-label="Fulfillment method">
+                      <input type="radio" name="fulfillment" id="ff-fba" value="fba" checked><label for="ff-fba">FBA</label>
+                      <input type="radio" name="fulfillment" id="ff-easy" value="easyship"><label for="ff-easy">Easy Ship</label>
+                      <input type="radio" name="fulfillment" id="ff-self" value="selfship"><label for="ff-self">Self Ship</label>
+                    </div>
+                  </fieldset>
+
+                  <div class="field" id="zoneField">
+                    <label for="zone">Shipping zone
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: shipping zone">i<span class="bubble">Local: same city. Regional: same region/state cluster. National: rest of India. Longer distance costs more.</span></span>
+                    </label>
+                    <select id="zone">
+                      <option value="local">Local</option>
+                      <option value="regional" selected>Regional</option>
+                      <option value="national">National</option>
+                    </select>
+                  </div>
+
+                  <div class="field" id="sellerShipField" hidden>
+                    <label for="sellerShipping">Your shipping cost
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: seller shipping cost">i<span class="bubble">What your courier actually charges you per order, including any fuel or COD surcharge.</span></span>
+                    </label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="sellerShipping" min="0" step="1" inputmode="decimal" value="70"></div>
+                    <span class="hint">Self Ship only</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="packagingCost">Packaging cost</label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="packagingCost" min="0" step="1" inputmode="decimal" value="15"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="otherProductCost">Other product cost
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: other product cost">i<span class="bubble">Anything else that scales per unit: inward freight, QC, labelling, inserts.</span></span>
+                    </label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="otherProductCost" min="0" step="1" inputmode="decimal" value="10"></div>
+                  </div>
+
+                  <details class="collapsible full" id="dimsWrap">
+                    <summary style="display:flex;align-items:center;gap:8px;padding:10px 0;font-size:13.5px;font-weight:600;color:var(--ink-2)">
+                      Dimensions (optional — improves FBA estimate) <span class="chev">&#9662;</span>
+                    </summary>
+                    <div class="fields" style="margin-top:6px">
+                      <div class="field"><label for="lenCm">Length (cm)</label><input type="number" id="lenCm" min="0" step="0.1" inputmode="decimal" placeholder="0"></div>
+                      <div class="field"><label for="widCm">Width (cm)</label><input type="number" id="widCm" min="0" step="0.1" inputmode="decimal" placeholder="0"></div>
+                      <div class="field"><label for="hgtCm">Height (cm)</label><input type="number" id="hgtCm" min="0" step="0.1" inputmode="decimal" placeholder="0"></div>
+                      <div class="field"><span class="hint full" style="align-self:end">Used for volumetric weight (L&times;W&times;H &divide; 5000) and FBA storage volume.</span></div>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </section>
+
+            <!-- STEP 2 -->
+            <section class="card" aria-labelledby="s2h">
+              <div class="step-head">
+                <span class="step-no" aria-hidden="true">2</span>
+                <div>
+                  <div class="step-title" id="s2h">Amazon fulfillment &amp; fees</div>
+                  <div class="step-sub">Calculated from your inputs — adjust the assumptions if you have exact numbers</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="ledger" id="feeLedger"><!-- injected by JS --></div>
+
+                <details class="collapsible" style="margin-top:14px">
+                  <summary style="display:flex;align-items:center;gap:8px;padding:10px 0;font-size:13.5px;font-weight:600;color:var(--ink-2)">
+                    Adjust fee assumptions <span class="chev">&#9662;</span>
+                  </summary>
+                  <div class="fields" style="margin-top:8px">
+                    <div class="field" id="storageField">
+                      <label for="storageMonths">Storage duration (months)
+                        <span class="tip" tabindex="0" role="note" aria-label="Help: storage duration">i<span class="bubble">Average months a unit sits in an Amazon fulfilment centre before it sells. Set 0 to exclude storage cost.</span></span>
+                      </label>
+                      <input type="number" id="storageMonths" min="0" step="0.5" inputmode="decimal" value="1">
+                    </div>
+                    <div class="field">
+                      <label for="gstOnFees">GST on Amazon fees (%)</label>
+                      <div class="inp has-suffix"><input type="number" id="gstOnFees" min="0" max="28" step="0.5" inputmode="decimal" value="18"><span class="adorn right">%</span></div>
+                    </div>
+                    <div class="field">
+                      <label for="otherAmazonCharges">Other Amazon charges</label>
+                      <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="otherAmazonCharges" min="0" step="1" inputmode="decimal" value="0"></div>
+                      <span class="hint">Removal, labelling, long-term storage etc.</span>
+                    </div>
+                    <div class="field">
+                      <label for="gstCredit">Claim GST input credit on fees?
+                        <span class="tip" tabindex="0" role="note" aria-label="Help: GST input credit">i<span class="bubble">GST-registered sellers usually claim input tax credit on Amazon fees, so it is not a real cost. Choose "Yes" to exclude it from profit.</span></span>
+                      </label>
+                      <select id="gstCredit"><option value="no" selected>No — treat GST as a cost</option><option value="yes">Yes — exclude GST from profit</option></select>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </section>
+
+            <!-- STEP 3 -->
+            <section class="card" aria-labelledby="s3h">
+              <div class="step-head">
+                <span class="step-no" aria-hidden="true">3</span>
+                <div>
+                  <div class="step-title" id="s3h">Advertising</div>
+                  <div class="step-sub">Where most Amazon margin quietly disappears</div>
+                </div>
+              </div>
+              <div class="step-body">
+                <div class="fields">
+                  <div class="field">
+                    <label for="expectedAcos">Expected ACOS
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: expected ACOS">i<span class="bubble">Ad spend as a percentage of ad sales. Take it from your Sponsored Products report for this ASIN.</span></span>
+                    </label>
+                    <div class="inp has-suffix"><input type="number" id="expectedAcos" min="0" step="0.5" inputmode="decimal" value="20"><span class="adorn right">%</span></div>
+                  </div>
+                  <div class="field">
+                    <label for="avgCpc">Average CPC</label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="avgCpc" min="0" step="0.5" inputmode="decimal" value="10"></div>
+                  </div>
+                  <div class="field">
+                    <label for="cvr">Conversion rate
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: conversion rate">i<span class="bubble">Ad orders &divide; ad clicks. On Amazon India, 5–12% is common for a well-optimised listing.</span></span>
+                    </label>
+                    <div class="inp has-suffix"><input type="number" id="cvr" min="0" max="100" step="0.1" inputmode="decimal" value="8"><span class="adorn right">%</span></div>
+                  </div>
+                  <div class="field">
+                    <label for="desiredMargin">Desired net margin after ads
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: desired margin">i<span class="bubble">The profit you want to keep after every cost including advertising. This drives your Target ACOS and Maximum CPC.</span></span>
+                    </label>
+                    <div class="inp has-suffix"><input type="number" id="desiredMargin" min="0" max="100" step="0.5" inputmode="decimal" value="15"><span class="adorn right">%</span></div>
+                  </div>
+                  <div class="field">
+                    <label for="dailyBudget">Daily ad budget <span class="hint" style="font-weight:400">optional</span></label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="dailyBudget" min="0" step="50" inputmode="decimal" value="1000"></div>
+                  </div>
+                  <div class="field">
+                    <label for="monthlyRevenue">Monthly total revenue <span class="hint" style="font-weight:400">optional</span>
+                      <span class="tip" tabindex="0" role="note" aria-label="Help: monthly revenue">i<span class="bubble">Ads + organic sales for the month. Needed for a realistic TACOS. Leave blank and TACOS is estimated from ACOS alone.</span></span>
+                    </label>
+                    <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="monthlyRevenue" min="0" step="1000" inputmode="decimal" placeholder="e.g. 500000"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- STEP 4 -->
+            <section class="card" aria-labelledby="s4h">
+              <details class="collapsible" open>
+                <summary class="step-head">
+                  <span class="step-no" aria-hidden="true">4</span>
+                  <div>
+                    <div class="step-title" id="s4h">Returns &amp; other costs</div>
+                    <div class="step-sub">The line most sellers forget</div>
+                  </div>
+                  <span class="chev">&#9662;</span>
+                </summary>
+                <div class="step-body">
+                  <div class="fields">
+                    <div class="field">
+                      <label for="returnRate">Return rate</label>
+                      <div class="inp has-suffix"><input type="number" id="returnRate" min="0" max="100" step="0.5" inputmode="decimal" value="5"><span class="adorn right">%</span></div>
+                      <span class="hint">Returns &divide; orders</span>
+                    </div>
+                    <div class="field">
+                      <label for="returnCost">Return cost per returned order
+                        <span class="tip" tabindex="0" role="note" aria-label="Help: return cost">i<span class="bubble">Return shipping and handling you pay when one order comes back.</span></span>
+                      </label>
+                      <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="returnCost" min="0" step="1" inputmode="decimal" value="80"></div>
+                    </div>
+                    <div class="field">
+                      <label for="refundLoss">Refund / unsellable loss per return
+                        <span class="tip" tabindex="0" role="note" aria-label="Help: refund loss">i<span class="bubble">Value lost when a returned unit cannot be resold at full price — damaged packaging, opened box, write-off.</span></span>
+                      </label>
+                      <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="refundLoss" min="0" step="1" inputmode="decimal" value="60"></div>
+                    </div>
+                    <div class="field">
+                      <label for="otherLoss">Other loss per unit sold</label>
+                      <div class="inp has-prefix"><span class="adorn">&#8377;</span><input type="number" id="otherLoss" min="0" step="1" inputmode="decimal" value="0"></div>
+                      <span class="hint">Coupons, shrinkage, misc.</span>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </section>
+
+            <div class="btn-row" style="padding:0 2px 4px">
+              <button type="button" class="btn btn-primary" id="btnCalc">Calculate my Amazon profit</button>
+              <button type="button" class="btn btn-ghost" id="btnExample">Use example data</button>
+              <button type="button" class="btn btn-ghost" id="btnReset">Reset calculator</button>
+            </div>
+          </form>
+
+          <!-- ============ RESULT COLUMN ============ -->
+          <aside class="stack" id="results" aria-live="polite">
+            <section class="card" aria-labelledby="resh">
+              <div class="result-head">
+                <h2 id="resh">Your profitability</h2>
+                <span class="chip" id="fulfilChip">FBA</span>
+              </div>
+
+              <div id="alertBox" class="alerts" style="padding:14px 20px 0;margin:0"></div>
+
+              <div class="headline-metric">
+                <div class="cap">Net profit per unit</div>
+                <div class="big num pos" id="netProfit">&#8377;0</div>
+                <div class="sub">Net margin <strong class="num" id="netMargin">0%</strong> &middot; after fees, product cost, ads and returns</div>
+              </div>
+
+              <div class="section-cap">Unit economics</div>
+              <div class="metrics">
+                <div class="metric"><div class="k">Selling price</div><div class="v num" id="mSelling">&#8377;0</div></div>
+                <div class="metric"><div class="k">Product cost</div><div class="v num" id="mProduct">&#8377;0</div><div class="n" id="mProductPct"></div></div>
+                <div class="metric"><div class="k">Amazon fees</div><div class="v num" id="mFees">&#8377;0</div><div class="n" id="mFeesPct"></div></div>
+                <div class="metric"><div class="k">Advertising cost</div><div class="v num" id="mAds">&#8377;0</div><div class="n" id="mAdsPct"></div></div>
+                <div class="metric"><div class="k">Return / loss cost</div><div class="v num" id="mReturns">&#8377;0</div><div class="n" id="mReturnsPct"></div></div>
+                <div class="metric"><div class="k">Profit before ads</div><div class="v num" id="mPreAd">&#8377;0</div><div class="n">contribution margin</div></div>
+              </div>
+
+              <div class="section-cap">PPC economics</div>
+              <div class="metrics">
+                <div class="metric">
+                  <div class="k">Break-even ACOS <span class="tip" tabindex="0" role="note" aria-label="Help: break-even ACOS">i<span class="bubble">The maximum advertising cost percentage you can afford before your product reaches approximately &#8377;0 profit.</span></span></div>
+                  <div class="v num" id="mBeAcos">0%</div>
+                </div>
+                <div class="metric">
+                  <div class="k">Target ACOS <span class="tip" tabindex="0" role="note" aria-label="Help: target ACOS">i<span class="bubble">The ACOS that still leaves your desired net margin: break-even ACOS minus desired margin.</span></span></div>
+                  <div class="v num" id="mTgtAcos">0%</div>
+                </div>
+                <div class="metric">
+                  <div class="k">Maximum CPC <span class="tip" tabindex="0" role="note" aria-label="Help: maximum CPC">i<span class="bubble">Estimated maximum CPC you can afford while staying within your target ACOS at your current conversion rate.</span></span></div>
+                  <div class="v num" id="mMaxCpc">&#8377;0</div>
+                  <div class="n" id="mMaxCpcNote"></div>
+                </div>
+                <div class="metric">
+                  <div class="k">Required CVR <span class="tip" tabindex="0" role="note" aria-label="Help: required conversion rate">i<span class="bubble">The conversion rate you need at your current CPC to hold your target ACOS.</span></span></div>
+                  <div class="v num" id="mReqCvr">0%</div>
+                  <div class="n" id="mReqCvrNote"></div>
+                </div>
+                <div class="metric">
+                  <div class="k">Estimated TACOS <span class="tip" tabindex="0" role="note" aria-label="Help: TACOS">i<span class="bubble">Ad spend as a percentage of total (ad + organic) sales. Estimated from your inputs — not your actual account-level TACOS.</span></span></div>
+                  <div class="v num" id="mTacos">0%</div>
+                  <div class="n" id="mTacosNote"></div>
+                </div>
+                <div class="metric"><div class="k">Profit after PPC</div><div class="v num" id="mAfterPpc">&#8377;0</div><div class="n">per unit</div></div>
+              </div>
+
+              <div class="score g" id="scoreBox">
+                <div class="badge" id="scoreIcon" aria-hidden="true">&#128994;</div>
+                <div>
+                  <div class="st" id="scoreTitle">Healthy</div>
+                  <div class="sx" id="scoreText">Enter your numbers to see your profitability status.</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card card-pad" aria-labelledby="whereh">
+              <h2 id="whereh" style="font-size:16.5px;margin-bottom:4px">Where your money goes</h2>
+              <p class="hint" style="margin-bottom:12px">Every rupee of your &#8377;<span class="num" id="wmgPrice">999</span> selling price</p>
+              <div class="alloc" id="allocBar"></div>
+              <div class="donut-wrap">
+                <div class="donut">
+                  <svg width="150" height="150" viewBox="0 0 150 150" role="img" aria-labelledby="donutTitle">
+                    <title id="donutTitle">Cost and profit split of the selling price</title>
+                    <g id="donutSegs" transform="rotate(-90 75 75)"></g>
+                    <text x="75" y="70" text-anchor="middle" class="donut-center" style="font-size:19px;fill:var(--ink)" id="donutVal">0%</text>
+                    <text x="75" y="88" text-anchor="middle" style="font-size:10.5px;fill:var(--muted-2);font-family:var(--body)" id="donutLbl">net margin</text>
+                  </svg>
+                </div>
+                <div class="alloc-legend" style="flex:1 1 220px" id="allocLegend"></div>
+              </div>
+            </section>
+
+            <section class="card card-pad" aria-labelledby="rech">
+              <h2 id="rech" style="font-size:16.5px;margin-bottom:12px">What to fix first</h2>
+              <ul class="recs" id="recList"></ul>
+            </section>
+          </aside>
+        </div><!-- /grid -->
+
+        <!-- ============ WHAT-IF SCENARIOS ============ -->
+        <section class="card card-pad" style="margin-top:20px" aria-labelledby="wifh">
+          <h2 id="wifh" style="font-size:20px;margin-bottom:4px">What if you change your numbers?</h2>
+          <p class="hint" style="margin-bottom:18px">Move a slider to model a scenario. Your saved inputs above stay untouched.</p>
+          <div class="slider-grid">
+            <div class="slider-field">
+              <div class="top"><label for="sfPrice">Selling price</label><span class="rv" id="sfPriceVal">&#8377;999</span></div>
+              <input type="range" id="sfPrice" min="0" max="100" value="50" aria-describedby="sfPriceVal">
+            </div>
+            <div class="slider-field">
+              <div class="top"><label for="sfAcos">ACOS</label><span class="rv" id="sfAcosVal">20%</span></div>
+              <input type="range" id="sfAcos" min="0" max="100" step="0.5" value="20" aria-describedby="sfAcosVal">
+            </div>
+            <div class="slider-field">
+              <div class="top"><label for="sfCpc">Average CPC</label><span class="rv" id="sfCpcVal">&#8377;10</span></div>
+              <input type="range" id="sfCpc" min="0" max="100" value="33" aria-describedby="sfCpcVal">
+            </div>
+            <div class="slider-field">
+              <div class="top"><label for="sfCvr">Conversion rate</label><span class="rv" id="sfCvrVal">8%</span></div>
+              <input type="range" id="sfCvr" min="0" max="30" step="0.1" value="8" aria-describedby="sfCvrVal">
+            </div>
+          </div>
+          <div class="tbl-scroll" style="margin-top:20px">
+            <table>
+              <caption class="sr-only">Scenario comparison of profit and PPC metrics</caption>
+              <thead><tr><th scope="col">Scenario</th><th scope="col">Net profit</th><th scope="col">Net margin</th><th scope="col">Break-even ACOS</th><th scope="col">Max CPC</th><th scope="col">Required CVR</th></tr></thead>
+              <tbody id="scenarioRows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="grid" style="margin-top:20px">
+          <!-- PRICE OPTIMISATION -->
+          <section class="card card-pad" aria-labelledby="poh">
+            <h2 id="poh" style="font-size:20px;margin-bottom:4px">What selling price gives you better profit?</h2>
+            <p class="hint" style="margin-bottom:16px">Enter the net margin you want. We solve for the lowest price that gets you there, keeping every other input the same.</p>
+            <div class="fields">
+              <div class="field">
+                <label for="targetPriceMargin">Desired net margin</label>
+                <div class="inp has-suffix"><input type="number" id="targetPriceMargin" min="0" max="90" step="1" inputmode="decimal" value="20"><span class="adorn right">%</span></div>
+              </div>
+              <div class="field" style="justify-content:flex-end">
+                <span class="hint">Referral and closing fees re-calculate at each price, so the answer accounts for slab changes.</span>
+              </div>
+            </div>
+            <div style="margin-top:16px;padding:16px;background:var(--amber-wash);border:1px solid #F6DFBB;border-radius:var(--radius-sm)">
+              <div class="cap" style="font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--amber-ink)">Estimated minimum selling price</div>
+              <div class="num" style="font-size:30px;font-weight:600;margin-top:4px" id="optPrice">&#8377;0</div>
+              <div class="hint" id="optNote" style="margin-top:4px">—</div>
+            </div>
+          </section>
+
+          <!-- BUDGET INSIGHT -->
+          <section class="card card-pad" aria-labelledby="bih">
+            <h2 id="bih" style="font-size:20px;margin-bottom:4px">How much can you spend on PPC?</h2>
+            <p class="hint" style="margin-bottom:14px">Estimated from your daily budget, CPC, conversion rate and selling price.</p>
+            <div class="ledger" id="budgetLedger"></div>
+            <p class="hint" id="budgetVerdict" style="margin-top:12px"></p>
+          </section>
+        </div>
+
+        <!-- LEAD GEN CTA -->
+        <section class="cta-band" style="margin-top:20px">
+          <div>
+            <h2>Want to improve your Amazon PPC profitability?</h2>
+            <p>Your calculator shows your profitability. Our Amazon PPC audit identifies where your advertising budget is being wasted and where you can improve ACOS and sales.</p>
+          </div>
+          <div class="btn-row" style="flex:0 0 auto">
+            <a class="btn btn-primary" href="index.html#contact">Get a free Amazon PPC audit &rarr;</a>
+            <a class="btn btn-ghost" href="services.html">Explore Amazon PPC management &rarr;</a>
+          </div>
+        </section>
+
+        <p class="disclaimer" style="margin-top:20px">
+          <strong>Important:</strong> This calculator provides estimates based on the information entered and configurable fee assumptions. Amazon fees may vary based on category, selling price, fulfillment method, product dimensions, weight, shipping zone and Amazon's current fee structure. Always verify final charges in Seller Central before making business decisions.
+          <br><br><strong>Fee assumptions last updated:</strong> <span id="feeUpdated">—</span>. These are example, configurable fee assumptions — not a live feed of official Amazon rates.
+        </p>
+      </div>
+    </main>
+
+    <!-- CONTENT SECTIONS BELOW TOOL -->
+    <section class="calc-section tint">
+      <div class="calc-wrap">
+        <div class="prose">
+          <h2>What is an Amazon Profit Calculator?</h2>
+          <div class="answer"><strong>Direct answer:</strong> An Amazon Profit Calculator is a tool that subtracts Amazon selling fees, fulfillment costs, product cost, advertising spend and return losses from your selling price to show the net profit and net margin you actually keep on each unit sold.</div>
+          <p>Most sellers know their selling price and their product cost. The gap between those two numbers feels like profit — and it almost never is. Between the two sit a referral fee, a closing fee, a fulfillment fee, GST on those fees, packaging, return shipping and, on a competitive marketplace, advertising. An Amazon seller calculator exists to make that gap visible before you commit to a price, a launch or a PPC budget.</p>
+          <p>This tool goes one step beyond a standard Amazon fee calculator. It also answers the question that decides whether a product can survive on Amazon at all: <em>after all of that, how much of my selling price is still available to spend on ads?</em> That number is your break-even ACOS, and it is the single most useful figure an Amazon PPC manager works with.</p>
+
+          <h2>How to calculate Amazon seller profit</h2>
+          <div class="answer"><strong>Formula:</strong> Net Profit = Selling Price − Product Cost − Amazon Fees − Advertising Cost − Return/Loss Cost − Other Costs.</div>
+          <div class="formula">
+Net Profit    = Selling Price − Product Cost − Amazon Fees − Ad Cost − Returns − Other<br>
+Net Margin    = <b>Net Profit ÷ Selling Price × 100</b><br>
+Contribution  = Selling Price − everything except advertising
+          </div>
+          <p>Work in this order and the maths stays honest:</p>
+          <ol>
+            <li><strong>Start with the price the customer pays.</strong> Not your MRP, not the pre-discount price — the actual transacting price.</li>
+            <li><strong>Remove product-side costs:</strong> landed unit cost, packaging, inward freight, labelling.</li>
+            <li><strong>Remove Amazon fees:</strong> referral, closing, fulfillment, storage, plus GST on those fees if you cannot claim input credit.</li>
+            <li><strong>Remove return losses:</strong> return rate × (return shipping + unsellable value).</li>
+            <li><strong>What remains is your contribution margin</strong> — the money advertising is allowed to eat.</li>
+            <li><strong>Remove advertising last.</strong> What survives is real net profit per unit.</li>
+          </ol>
+          <p>Advertising is deliberately last. It is the only cost on the list you can change tomorrow morning, which is why it deserves its own decision rather than being buried in a blended cost figure.</p>
+
+          <h2>What Amazon fees affect your profit?</h2>
+          <p>An Amazon selling fee calculator has to handle four fee families. Rates vary by category, price slab, weight and zone, so treat the numbers in the tool as configurable assumptions and confirm your own in Seller Central.</p>
+          <div class="tbl-scroll">
+            <table>
+              <thead><tr><th scope="col">Fee</th><th scope="col">What it is</th><th scope="col">Driven by</th></tr></thead>
+              <tbody>
+                <tr><td>Referral fee</td><td>Amazon's commission on the sale</td><td>Category and price slab</td></tr>
+                <tr><td>Closing fee</td><td>Fixed fee per order</td><td>Price slab and fulfillment method</td></tr>
+                <tr><td>Fulfillment fee</td><td>Pick, pack and delivery</td><td>Weight, size tier, shipping zone</td></tr>
+                <tr><td>Storage fee</td><td>Space your stock occupies</td><td>Volume × months stored (FBA)</td></tr>
+                <tr><td>GST on fees</td><td>Tax charged on Amazon's fees</td><td>Applicable GST rate</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Two details cost sellers real money. First, referral fee percentages usually change at price thresholds, so a ₹1,010 price can carry a materially higher fee than ₹990. Second, if you are GST-registered you generally claim input credit on Amazon's fees — the calculator lets you switch GST between "cost" and "recoverable" so your margin is not understated.</p>
+
+          <h2>How does Amazon FBA affect profit?</h2>
+          <p>With Fulfillment by Amazon you hand over storage, picking, packing, delivery and most return handling. You pay for it through a pick &amp; pack component, a weight handling component that scales with the heavier of dead weight or volumetric weight, and a storage charge for every month the unit sits in the fulfillment centre.</p>
+          <p>FBA usually improves conversion rate through Prime badging and faster delivery promises, and a higher conversion rate directly raises the CPC you can afford. So an Amazon FBA calculator that only compares fees will mislead you. Model it properly: compare FBA fees <em>and</em> the conversion rate FBA earns you against Easy Ship fees at your current conversion rate. Slow-moving stock is where FBA turns expensive — storage compounds monthly while the referral fee does not.</p>
+
+          <h2>How does Amazon Easy Ship affect profit?</h2>
+          <p>With Easy Ship you hold and pack the stock yourself, and Amazon collects from your location and delivers to the customer. You avoid storage fees entirely and pay a weight- and zone-based shipping fee instead of the full FBA stack. The trade-offs are operational: your packing quality drives your damage returns, and you carry the working capital of inventory sitting at your own warehouse.</p>
+          <p>As a rough rule, Easy Ship tends to suit low-velocity, bulky or seasonal products, while FBA suits fast-moving, compact, high-repeat items. Run both through the calculator with the same product and read the break-even ACOS for each — that comparison is more decisive than the fee difference alone.</p>
+
+          <h2>How is Amazon PPC cost included in profit?</h2>
+          <p>Advertising enters unit economics as a percentage of revenue, not as a fixed rupee amount. If your ACOS is 20%, then ₹200 of every ₹1,000 in ad-driven sales goes to Amazon Ads. In this Amazon PPC calculator, per-unit ad cost is calculated as:</p>
+          <div class="formula">Ad Cost per unit = <b>Selling Price × ACOS ÷ 100</b></div>
+          <p>This assumes the unit was sold through advertising. In a real account, some sales are organic, so blended ad cost per unit sold is lower than ACOS suggests — which is exactly what TACOS measures. Use the strict version for launch planning and pricing decisions: it is the conservative case, and a product that survives it will survive reality.</p>
+
+          <h2>What is break-even ACOS?</h2>
+          <div class="answer"><strong>Direct answer:</strong> Break-even ACOS is the maximum percentage of sales that can be spent on Amazon advertising before advertising reduces the product's profit to approximately zero.</div>
+          <div class="formula">Break-even ACOS = <b>(Profit before advertising ÷ Selling Price) × 100</b></div>
+          <p>Worked example: a ₹1,000 product with ₹700 of non-advertising costs leaves ₹300 of contribution. Break-even ACOS is 300 ÷ 1,000 = <strong>30%</strong>. Spend 30% of sales on ads and you make roughly nothing. Spend 45% and you are buying orders at a loss, no matter how good the sales chart looks.</p>
+          <p>This single number decides your bidding posture. Above roughly 30% break-even ACOS you have room to compete on high-intent keywords. Below 15%, advertising can only work on tightly targeted, high-converting terms — and the answer is usually to fix price, cost or conversion rate before spending more. A structured <a href="index.html#contact">Amazon PPC audit</a> normally starts here rather than with bids.</p>
+
+          <h2>How do you calculate maximum CPC?</h2>
+          <div class="answer"><strong>Formula:</strong> Maximum CPC = Selling Price × Target ACOS × Conversion Rate.</div>
+          <div class="formula">Max CPC = <b>1,000 × 20% × 10% = ₹20</b></div>
+          <p>Read it as a chain: a click is only worth what it converts into. At a 10% conversion rate, ten clicks produce one order worth ₹1,000; if you are allowed to spend 20% of that, you have ₹200 for ten clicks — ₹20 per click. Halve the conversion rate to 5% and your maximum CPC halves to ₹10, with nothing else changed.</p>
+
+          <h2>What is TACOS?</h2>
+          <div class="answer"><strong>Direct answer:</strong> TACOS (Total Advertising Cost of Sales) is ad spend divided by total revenue — ads plus organic — expressed as a percentage. ACOS judges the campaign; TACOS judges the business.</div>
+          <div class="formula">TACOS = <b>(Ad Spend ÷ Total Sales) × 100</b></div>
+          <p>A healthy scaling brand often shows steady or rising ACOS with falling TACOS: advertising is buying rank and reviews, and organic sales are compounding underneath. Rising TACOS with flat revenue is the warning sign — you are renting sales rather than building them.</p>
+
+          <h2>How do returns affect Amazon profit?</h2>
+          <p>A return costs more than the refund. You lose the return shipping, you may lose the unit if it comes back unsellable, and the labour of processing it is real even when it is invisible. Model it per unit sold:</p>
+          <div class="formula">Return cost per unit sold = <b>Return Rate × (Return Shipping + Unsellable Loss)</b></div>
+
+          <h2>Amazon Profit Calculator example</h2>
+          <p>A ₹999 product in a mid-fee category, sold on FBA, with ₹400 product cost:</p>
+          <div class="tbl-scroll">
+            <table>
+              <thead><tr><th scope="col">Line</th><th scope="col">Amount</th><th scope="col">Share of price</th></tr></thead>
+              <tbody>
+                <tr><td>Selling price</td><td>₹999</td><td>100%</td></tr>
+                <tr><td>Product + packaging cost</td><td>₹425</td><td>42.5%</td></tr>
+                <tr><td>Amazon fees (referral, closing, FBA, GST)</td><td>₹230</td><td>23.0%</td></tr>
+                <tr><td>Returns at 5%</td><td>₹7</td><td>0.7%</td></tr>
+                <tr><td><strong>Contribution before ads</strong></td><td><strong>₹337</strong></td><td><strong>33.7% = break-even ACOS</strong></td></tr>
+                <tr><td>Advertising at 20% ACOS</td><td>₹200</td><td>20.0%</td></tr>
+                <tr><td><strong>Net profit</strong></td><td><strong>₹137</strong></td><td><strong>13.7% net margin</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section">
+      <div class="calc-wrap">
+        <h2 style="text-align:center;margin-bottom:6px">Amazon Profit Calculator — FAQs</h2>
+        <p class="hint" style="text-align:center;margin-bottom:26px">Short answers to what Amazon sellers ask most about fees, ACOS and profit.</p>
+        <div class="faq-grid">
+          <div>
+            <details class="faq"><summary>What is an Amazon Profit Calculator?</summary><div class="a">A tool that subtracts Amazon fees, fulfillment costs, product cost, advertising and return losses from your selling price to show net profit and net margin per unit.</div></details>
+            <details class="faq"><summary>How do I calculate Amazon profit?</summary><div class="a">Net Profit = Selling Price − Product Cost − Amazon Fees − Advertising Cost − Return Loss − Other Costs. Divide by selling price for net margin.</div></details>
+            <details class="faq"><summary>What fees does Amazon charge sellers?</summary><div class="a">Mainly a referral fee (category-based commission), a closing fee (fixed per order), a fulfillment fee (FBA or Easy Ship), storage fees for FBA, and GST on those fees.</div></details>
+            <details class="faq"><summary>How does Amazon FBA affect profit?</summary><div class="a">FBA adds pick &amp; pack, weight handling and storage fees, but usually lifts conversion rate through Prime delivery — which raises the CPC you can afford.</div></details>
+            <details class="faq"><summary>How does Easy Ship affect Amazon profit?</summary><div class="a">Easy Ship removes storage fees and charges a weight- and zone-based shipping fee. You keep inventory and packing in-house, so your working capital and damage rate matter more.</div></details>
+          </div>
+          <div>
+            <details class="faq"><summary>What is break-even ACOS?</summary><div class="a">The maximum share of sales you can spend on ads before profit reaches approximately zero. Above it, every advertised order loses money.</div></details>
+            <details class="faq"><summary>What is TACOS?</summary><div class="a">Total Advertising Cost of Sales: ad spend ÷ total (ad + organic) sales × 100. Falling TACOS while revenue grows is the sign of healthy scaling.</div></details>
+            <details class="faq"><summary>How do I calculate maximum CPC?</summary><div class="a">Maximum CPC = Selling Price × Target ACOS × Conversion Rate. At ₹1,000, 20% target ACOS and 10% CVR, your ceiling is ₹20 per click.</div></details>
+            <details class="faq"><summary>What conversion rate do I need for profitable Amazon PPC?</summary><div class="a">Required CVR = CPC ÷ (Selling Price × Target ACOS). Higher CVR allows higher CPC bids while holding your target margin.</div></details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DYNAMIC FOOTER -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+
+    <!-- WHATSAPP FLOATING WIDGET -->
+    <div id="whatsapp-placeholder"></div>
+    <script>
+        fetch('whatsapp.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('whatsapp-placeholder').innerHTML = html;
+            });
+    </script>
+
+    <!-- SCRIPTS -->
+    <script src="js/navbar.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/whatsapp.js"></script>
+
+</body>
+</html>
