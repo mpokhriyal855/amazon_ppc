@@ -75,16 +75,35 @@
     document.addEventListener("click", function(e) {
         if (handleToggleEvent(e)) return;
 
+        // Dropdown toggle click handling
+        const dropdownTrigger = e.target.closest('.nav-dropdown-trigger');
+        if (dropdownTrigger) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentDropdown = dropdownTrigger.closest('.nav-dropdown');
+            if (parentDropdown) {
+                parentDropdown.classList.toggle('is-open');
+            }
+            return;
+        }
+
+        // Close dropdown when clicking outside
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+            if (!d.contains(e.target)) {
+                d.classList.remove('is-open');
+            }
+        });
+
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         if (!navLinks) return;
 
-        // 2. Click on link inside Nav Links
-        if (navLinks.contains(e.target) && e.target.closest("a")) {
+        // Click on normal page link inside Nav Links (closes mobile nav)
+        if (navLinks.contains(e.target) && e.target.closest("a:not(.nav-dropdown-trigger)")) {
             window.closeMobileNav();
             return;
         }
 
-        // 3. Click outside Nav Links when open
+        // Click outside Nav Links when open
         if (navLinks.classList.contains("mobile-open")) {
             if (!navLinks.contains(e.target)) {
                 window.closeMobileNav();
