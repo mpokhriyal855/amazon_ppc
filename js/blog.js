@@ -89,6 +89,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sortAndPromoteArticles();
 
+    // --- AUTO-BROADCAST NEW BLOGS TO SUBSCRIBERS ---
+    if (window.fetch) {
+        fetch('auto_notify.php')
+            .then(res => res.json())
+            .then(data => {
+                if (data.newly_broadcasted && data.newly_broadcasted.length > 0) {
+                    console.log('Automated newsletter broadcast fired:', data.newly_broadcasted);
+                }
+            })
+            .catch(() => {});
+    }
+
     // --- 2. INSTANT SEARCH & CATEGORY FILTERING ---
     const searchInput = document.getElementById("blogSearchInput");
     const categoryChips = document.querySelectorAll(".category-chip");
