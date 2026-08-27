@@ -67,20 +67,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             file_put_contents($file, json_encode($existing, JSON_PRETTY_PRINT));
         }
 
-        // Send Email Notification to Site Owner
-        $to = "anmolpokhriyal3200@gmail.com";
-        $subject = "🎉 New Amazon PPC Newsletter Subscriber: " . $email;
-        $message = "Great news! You have a new blog subscriber:\n\n"
+        // 1. Send Email Notification to Site Owner
+        $toAdmin = "anmolpokhriyal3200@gmail.com";
+        $adminSubject = "🎉 New Amazon PPC Newsletter Subscriber: " . $email;
+        $adminMessage = "Great news! You have a new blog subscriber:\n\n"
                  . "Subscriber Email: " . $email . "\n"
                  . "Subscribed At: " . date('Y-m-d H:i:s T') . "\n"
                  . "Source URL: " . (isset($input['url']) ? $input['url'] : 'Blog Sidebar') . "\n\n"
                  . "Total Active Subscribers: " . count($existing) . "\n"
                  . "Stored in: subscribers.json on your server.";
-        $headers = "From: no-reply@" . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'ppcgrowthexpert.com') . "\r\n" .
-                   "Reply-To: " . $email . "\r\n" .
-                   "X-Mailer: PHP/" . phpversion();
+        $adminHeaders = "From: no-reply@" . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'ppcgrowthexpert.com') . "\r\n" .
+                       "Reply-To: " . $email . "\r\n" .
+                       "X-Mailer: PHP/" . phpversion();
 
-        @mail($to, $subject, $message, $headers);
+        @mail($toAdmin, $adminSubject, $adminMessage, $adminHeaders);
+
+        // 2. Send Welcome Confirmation Email to Subscriber
+        $subSubject = "✨ Welcome to PPC Growth Expert - Amazon PPC & Growth Insights";
+        $subHtml = '
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <style>
+                body { font-family: "Segoe UI", Arial, sans-serif; background-color: #f4f6f9; color: #1e293b; margin: 0; padding: 20px; }
+                .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+                .header { background: #0b1329; color: #ffffff; padding: 28px 24px; text-align: center; }
+                .header h2 { margin: 0; font-size: 20px; font-weight: 800; color: #38bdf8; letter-spacing: 0.5px; }
+                .content { padding: 32px 28px; }
+                .title { font-size: 20px; font-weight: 800; color: #0f172a; margin-top: 0; line-height: 1.35; }
+                .excerpt { font-size: 14.5px; color: #475569; line-height: 1.6; margin-bottom: 24px; }
+                .btn-wrapper { text-align: center; margin: 28px 0 20px; }
+                .btn { background: linear-gradient(135deg, #1877ff 0%, #00b4d8 100%); color: #ffffff !important; padding: 12px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; font-size: 14px; }
+                .footer { background: #f8fafc; padding: 18px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h2>PPC GROWTH EXPERT</h2>
+                    <p style="margin: 4px 0 0; font-size: 13px; color: #94a3b8;">Amazon Advertising & Growth Insights</p>
+                </div>
+                <div class="content">
+                    <h1 class="title">You\'re Subscribed! 🎉</h1>
+                    <p class="excerpt">
+                        Thank you for subscribing to Amazon Growth Insights by PPC Growth Expert. Every week, we share practical Amazon PPC strategies, ACoS reduction guides, search term tactics, and listing optimization experiments.
+                    </p>
+                    <p class="excerpt">
+                        Check out our latest published strategy guide below:
+                    </p>
+                    <div class="btn-wrapper">
+                        <a href="https://ppcgrowthexpert.com/blog-amazon-ppc-clicks-no-sales.html" class="btn" target="_blank">Read Latest Amazon PPC Guide →</a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <p style="margin: 0 0 6px;">PPC Growth Expert · Founded by Anmol Pokhriyal</p>
+                    <p style="margin: 0;">You received this email because you subscribed on ppcgrowthexpert.com</p>
+                </div>
+            </div>
+        </body>
+        </html>';
+
+        $subHeaders  = "MIME-Version: 1.0\r\n";
+        $subHeaders .= "Content-type: text/html; charset=UTF-8\r\n";
+        $subHeaders .= "From: PPC Growth Expert <anmolpokhriyal3200@gmail.com>\r\n";
+        $subHeaders .= "Reply-To: anmolpokhriyal3200@gmail.com\r\n";
+        $subHeaders .= "X-Mailer: PHP/" . phpversion();
+
+        @mail($email, $subSubject, $subHtml, $subHeaders);
 
         echo json_encode([
             "status" => "success",
