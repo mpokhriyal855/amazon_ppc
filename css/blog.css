@@ -193,12 +193,12 @@ html, body {
 .featured-hero-card {
     display: grid;
     grid-template-columns: 1.1fr 1.5fr !important;
-    gap: 32px;
+    gap: 28px;
     background: #0f172a !important;
     border: 1.5px solid rgba(56, 189, 248, 0.3) !important;
     border-radius: 20px;
-    padding: 68px 38px 74px !important;
-    min-height: 440px !important;
+    padding: 32px 30px 36px !important;
+    min-height: 330px !important;
     box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.25);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     align-items: center;
@@ -233,11 +233,11 @@ html, body {
 .featured-visual {
     background: linear-gradient(145deg, #090e1a 0%, #1e293b 100%) !important;
     border-radius: 16px;
-    padding: 24px;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    min-height: 350px !important;
+    min-height: 260px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -471,14 +471,14 @@ html, body {
 /* --- GOALS / WHAT ARE YOU TRYING TO IMPROVE SECTION (WHITE LIGHT THEME) --- */
 .goals-section {
     background: #ffffff !important;
-    padding: 40px 24px 10px !important;
+    padding: 36px 24px 20px !important;
     border-bottom: 1px solid #f1f5f9;
 }
 
-.goals-section > div,
 .goals-container {
-    max-width: 1320px;
-    margin: 0 auto;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    width: 100%;
 }
 
 .section-heading-sm {
