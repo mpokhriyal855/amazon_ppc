@@ -30,11 +30,19 @@ $candidatePrivateDirs = array_unique([
     rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\') . '/../private'
 ]);
 
+$configNames = ['mail-config.php', 'main_config.php', 'mail_config.php', 'config.php'];
+
 $privateDir = null;
+$configPath = null;
+
 foreach ($candidatePrivateDirs as $dir) {
-    if ($dir && file_exists($dir . '/mail-config.php')) {
-        $privateDir = $dir;
-        break;
+    if (!$dir || !is_dir($dir)) continue;
+    foreach ($configNames as $cName) {
+        if (file_exists($dir . '/' . $cName)) {
+            $privateDir = $dir;
+            $configPath = $dir . '/' . $cName;
+            break 2;
+        }
     }
 }
 
@@ -42,24 +50,33 @@ if (!$privateDir) {
     $privateDir = $candidatePrivateDirs[0];
 }
 
-$configPath = $privateDir . '/mail-config.php';
-$exceptionPath = $privateDir . '/phpmailer/Exception.php';
-$phpMailerPath = $privateDir . '/phpmailer/PHPMailer.php';
-$smtpPath = $privateDir . '/phpmailer/SMTP.php';
+// Support PHPMailer files in /private/phpmailer/ OR directly in /private/
+$exceptionPath = file_exists($privateDir . '/phpmailer/Exception.php') 
+    ? $privateDir . '/phpmailer/Exception.php' 
+    : $privateDir . '/Exception.php';
+
+$phpMailerPath = file_exists($privateDir . '/phpmailer/PHPMailer.php') 
+    ? $privateDir . '/phpmailer/PHPMailer.php' 
+    : $privateDir . '/PHPMailer.php';
+
+$smtpPath = file_exists($privateDir . '/phpmailer/SMTP.php') 
+    ? $privateDir . '/phpmailer/SMTP.php' 
+    : $privateDir . '/SMTP.php';
 
 if (
+    !$configPath ||
     !file_exists($configPath) ||
     !file_exists($exceptionPath) ||
     !file_exists($phpMailerPath) ||
     !file_exists($smtpPath)
 ) {
-    error_log('Contact form error: Missing configuration in ' . $privateDir);
+    error_log('Contact form error: Missing configuration or PHPMailer in ' . $privateDir);
 
     http_response_code(500);
 
     echo json_encode([
         'success' => false,
-        'message' => 'Private mail configuration missing. Please create mail-config.php and phpmailer in: ' . $privateDir
+        'message' => 'Private mail configuration missing. Please verify main_config.php (or mail-config.php) and PHPMailer files exist in: ' . $privateDir
     ]);
 
     exit;
@@ -201,14 +218,24 @@ try {
     $mail->Username = $config['smtp_username'];
     $mail->Password = $config['smtp_password'];
 
-    $port = (int)($config['smtp_port'] ?? 465);
+    $port = (int)($config['smtp_port'] ?? 587);
     $mail->Port = $port;
 
     if ($port === 587) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->SMTPAutoTLS = true;
     } else {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     }
+
+    // Bypass SSL peer verification mismatches on cPanel / GoDaddy relay
+    $mail->SMTPOptions = [
+        'ssl' => [
+            'verify_peer'       => false,
+            'verify_peer_name'  => false,
+            'allow_self_signed' => true
+        ]
+    ];
 
     $mail->CharSet = 'UTF-8';
 
