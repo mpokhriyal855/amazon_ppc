@@ -234,32 +234,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 );
 
                 const controller = new AbortController();
-
                 const timeoutId = setTimeout(() => {
                     controller.abort();
-                }, 20000);
+                }, 25000);
 
-                const response = await fetch('/api/contact.php', {
+                let response;
+                const endpoints = ['api/contact.php', '/api/contact.php', 'contact.php'];
 
-                    method: 'POST',
+                for (const endpoint of endpoints) {
+                    try {
+                        const res = await fetch(endpoint, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                                'Accept': 'application/json'
+                            },
+                            body: params.toString(),
+                            signal: controller.signal
+                        });
 
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-                        'Accept': 'application/json'
-                    },
-
-                    body: params.toString(),
-                    signal: controller.signal
-                });
+                        if (res.status !== 404) {
+                            response = res;
+                            break;
+                        }
+                    } catch (fetchErr) {
+                        if (fetchErr.name === 'AbortError') throw fetchErr;
+                    }
+                }
 
                 clearTimeout(timeoutId);
 
-                let result;
+                if (!response) {
+                    throw new Error('404: Contact form backend (api/contact.php) not found on server.');
+                }
 
+                let result;
                 try {
                     result = await response.json();
                 } catch (jsonError) {
-                    throw new Error('Invalid response from server.');
+                    throw new Error('Invalid JSON response from server (Status ' + response.status + ').');
                 }
 
                 if (!response.ok || !result.success) {
@@ -292,6 +305,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 console.error('Contact form submission error:', err);
 
+                const errorText = err.name === 'AbortError' 
+                    ? 'Request timed out. Please try again.' 
+                    : (err.message || "We couldn't submit your request.");
+
                 if (statusMsg) {
 
                     statusMsg.innerHTML = `
@@ -307,8 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             margin-top: 8px;
                             box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1);
                         ">
-                            ⚠️ We couldn't submit your request.
-                            Please try again or contact us directly.
+                            ⚠️ ${sanitizeHTML(errorText)}
                         </div>
                     `;
 
