@@ -207,6 +207,10 @@ $safeMessage = htmlspecialchars(
 |--------------------------------------------------------------------------
 */
 
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
     $mail->Timeout = 8; // 8 second socket timeout to prevent long hangs
 
     $primaryHost = $config['smtp_host'] ?? 'smtp.titan.email';
