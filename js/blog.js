@@ -280,38 +280,78 @@ document.addEventListener("DOMContentLoaded", function () {
     const communityTopicsList = document.getElementById("communityTopicsList");
 
     const defaultTopics = [
-        { title: "Scaling Broad Match Without ACoS Spikes", votes: 42 },
-        { title: "Amazon DSP vs Sponsored Display Strategy", votes: 38 },
-        { title: "How to Tackle Listing Hijackers & Buy Box Losses", votes: 29 },
-        { title: "A+ Content Conversion Rate Optimization", votes: 25 }
+        { title: "Scaling Broad Match Without ACoS Spikes", votes: 42, isUser: false },
+        { title: "Amazon DSP vs Sponsored Display Strategy", votes: 38, isUser: false },
+        { title: "How to Tackle Listing Hijackers & Buy Box Losses", votes: 29, isUser: false },
+        { title: "A+ Content Conversion Rate Optimization", votes: 25, isUser: false }
     ];
 
-    function renderCommunityTopics() {
-        if (!communityTopicsList) return;
-        let storedTopics = [];
+    async function fetchServerTopics() {
         try {
-            storedTopics = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
+            const res = await fetch("save_topic.php");
+            if (res.ok) {
+                const serverData = await res.json();
+                if (Array.isArray(serverData) && serverData.length > 0) {
+                    return serverData;
+                }
+            }
         } catch (e) { }
 
-        // Normalize stored topics structure
-        const formattedUserTopics = storedTopics.map(t => {
-            if (typeof t === "string") return { title: t, votes: 1, isUser: true };
-            return { ...t, isUser: true };
+        // Fallback to static topics.json
+        try {
+            const resStatic = await fetch("topics.json");
+            if (resStatic.ok) {
+                const staticData = await resStatic.json();
+                if (Array.isArray(staticData) && staticData.length > 0) {
+                    return staticData;
+                }
+            }
+        } catch (e) { }
+
+        return null;
+    }
+
+    async function renderCommunityTopics() {
+        if (!communityTopicsList) return;
+
+        let localTopics = [];
+        try {
+            localTopics = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
+        } catch (e) { }
+
+        let serverTopics = await fetchServerTopics();
+        let combinedTopics = [];
+
+        if (serverTopics) {
+            combinedTopics = serverTopics;
+        } else {
+            combinedTopics = [...defaultTopics];
+        }
+
+        // Merge local device submissions at top if not already present
+        localTopics.forEach(loc => {
+            const titleStr = typeof loc === 'string' ? loc : loc.title;
+            const exists = combinedTopics.some(s => (typeof s === 'string' ? s : s.title).toLowerCase() === titleStr.toLowerCase());
+            if (!exists) {
+                combinedTopics.unshift({ title: titleStr, votes: 1, isUser: true });
+            }
         });
 
-        // Display user submitted topics FIRST at the top of the roadmap list
-        const allTopics = [...formattedUserTopics, ...defaultTopics];
         communityTopicsList.innerHTML = "";
 
-        allTopics.forEach(t => {
+        combinedTopics.forEach(t => {
+            const isUser = t.isUser || t.is_user || false;
+            const titleText = typeof t === "string" ? t : t.title;
+            const voteVal = t.votes || 1;
+
             const chip = document.createElement("div");
-            chip.className = "community-topic-chip" + (t.isUser ? " user-submitted-topic" : "");
-            if (t.isUser) {
+            chip.className = "community-topic-chip" + (isUser ? " user-submitted-topic" : "");
+            if (isUser) {
                 chip.style.borderColor = "#0284c7";
                 chip.style.backgroundColor = "#e0f2fe";
                 chip.style.color = "#0369a1";
             }
-            chip.innerHTML = `<span>${t.isUser ? "✨" : "💡"} ${escapeHTML(t.title)}</span> <span class="vote-count">+${t.votes || 1}</span>`;
+            chip.innerHTML = `<span>${isUser ? "✨" : "💡"} ${escapeHTML(titleText)}</span> <span class="vote-count">+${voteVal}</span>`;
             communityTopicsList.appendChild(chip);
         });
     }
@@ -324,12 +364,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderCommunityTopics();
 
-    // Global Admin Helper: Site Owner can type getSubmittedTopics() in console or call it to view all recommendations sent
-    window.getSubmittedTopics = function () {
+    // Global Admin Helper: Site Owner can call window.getSubmittedTopics() to view all recommendations
+    window.getSubmittedTopics = async function () {
         try {
-            const topics = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
-            console.table(topics);
-            return topics;
+            const server = await fetchServerTopics();
+            const local = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
+            console.log("=== SERVER TOPICS ===");
+            console.table(server);
+            console.log("=== LOCAL TOPICS ===");
+            console.table(local);
+            return { server, local };
         } catch (e) {
             return [];
         }
@@ -344,44 +388,56 @@ document.addEventListener("DOMContentLoaded", function () {
             if (input && input.value.trim().length > 0) {
                 const newTopicTitle = input.value.trim();
 
-                // 1. SAVE LOCALLY (Persists permanently across page refreshes)
+                // 1. PERSIST IN LOCALSTORAGE (Device level persistence)
                 let stored = [];
                 try {
                     stored = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
                 } catch (e) { }
 
-                // Avoid exact duplicate spam
                 const alreadyExists = stored.some(t => (typeof t === 'string' ? t : t.title).toLowerCase() === newTopicTitle.toLowerCase());
                 if (!alreadyExists) {
-                    stored.unshift({ title: newTopicTitle, votes: 1, date: new Date().toLocaleDateString() });
+                    stored.unshift({ title: newTopicTitle, votes: 1, date: new Date().toLocaleDateString(), isUser: true });
                     try {
                         localStorage.setItem("ppc_user_recommended_topics", JSON.stringify(stored));
                     } catch (e) { }
                 }
 
-                // 2. DISPATCH TO OWNER (Sends email notification to owner via Formspree / endpoint so site owner sees recommendations)
+                // 2. SAVE TO SERVER FILE (cPanel PHP Backend saves to topics.json so all visitors see it!)
                 try {
-                    fetch("https://formspree.io/f/xanywyop", {
+                    fetch("save_topic.php", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-                            form_type: "Topic Recommendation Submission",
-                            suggested_topic: newTopicTitle,
-                            submitted_at: new Date().toISOString(),
-                            page_url: window.location.href
+                            topic: newTopicTitle,
+                            url: window.location.href
                         })
-                    }).catch(function() {
-                        // Background fallback notification attempt
-                        console.log("Topic logged locally and prepared for dispatch.");
-                    });
+                    }).catch(function() {});
                 } catch (err) { }
 
-                // 3. RENDER DYNAMICALLY AT TOP OF ROADMAP
+                // 3. SEND DIRECT EMAIL ALERT TO OWNER (FormSubmit AJAX API)
+                try {
+                    fetch("https://formsubmit.co/ajax/anmolpokhriyal3200@gmail.com", {
+                        method: "POST",
+                        headers: { 
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify({
+                            _subject: "🔥 New Blog Recommendation: " + newTopicTitle,
+                            Suggested_Topic: newTopicTitle,
+                            Submitted_At: new Date().toLocaleString(),
+                            Page_URL: window.location.href,
+                            Note: "User submitted a recommendation on your Amazon PPC blog."
+                        })
+                    }).catch(function() {});
+                } catch (err) { }
+
+                // 4. IMMEDIATELY RENDER DYNAMICALLY AT TOP OF ROADMAP
                 renderCommunityTopics();
 
                 if (topicMessage) {
                     topicMessage.style.display = "block";
-                    topicMessage.innerHTML = "✓ <strong>Thank you!</strong> Your recommendation <em>\"" + escapeHTML(newTopicTitle) + "\"</em> has been added live to our roadmap below and sent to our editorial team.";
+                    topicMessage.innerHTML = "✓ <strong>Thank you!</strong> Your recommendation <em>\"" + escapeHTML(newTopicTitle) + "\"</em> has been added live to our community roadmap below and sent directly to our email!";
                 }
                 topicForm.reset();
             }
