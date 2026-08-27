@@ -1797,6 +1797,8 @@ body.blog-page-body {
 
 /* FAQ ACCORDION TRANSITIONS */
 details summary {
+/* FAQ Accordion Styling & Transitions */
+details summary {
     list-style: none !important;
 }
 details summary::-webkit-details-marker {
@@ -1813,4 +1815,43 @@ details summary::-webkit-details-marker {
 details[open] summary .faq-icon {
     transform: rotate(45deg) !important;
 }
+
+/* FAQ Accordion Smooth Content Transition & Light Theme */
+details[name="faq-accordion"] {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 14px 18px !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+    overflow: hidden !important;
+}
+details[name="faq-accordion"] summary {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    user-select: none !important;
+}
+details[name="faq-accordion"] p {
+    margin: 10px 0 0 !important;
+    font-size: 13.5px !important;
+    color: #334155 !important;
+    line-height: 1.6 !important;
+}
+details[name="faq-accordion"][open] p {
+    animation: faqSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+@keyframes faqSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
