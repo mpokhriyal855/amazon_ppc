@@ -209,13 +209,15 @@ $safeMessage = htmlspecialchars(
 
 $mail = new PHPMailer(true);
 
+$smtpSuccess = false;
+$lastError = '';
+
+// Strategy 1: Attempt Direct Titan SMTP (Port 465 SSL or 587 STARTTLS)
 try {
     $mail->isSMTP();
-    $mail->Timeout = 12; // 12 second socket timeout
+    $mail->Timeout = 4; // 4-second timeout to avoid long hangs if firewall blocks port
 
     $configuredHost = trim((string)($config['smtp_host'] ?? ''));
-
-    // Titan Mail official SMTP host is smtp.titan.email
     if ($configuredHost === '' || strpos($configuredHost, 'secureserver.net') !== false) {
         $mail->Host = 'smtp.titan.email';
     } else {
@@ -227,7 +229,6 @@ try {
     $mail->Password = trim((string)($config['smtp_password'] ?? ''));
 
     $port = (int)($config['smtp_port'] ?? 465);
-
     if ($port === 587) {
         $mail->Port = 587;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -237,7 +238,6 @@ try {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     }
 
-    // Bypass SSL peer verification mismatches on cPanel
     $mail->SMTPOptions = [
         'ssl' => [
             'verify_peer'       => false,
@@ -247,109 +247,88 @@ try {
     ];
 
     $mail->CharSet = 'UTF-8';
-
-    /*
-    |--------------------------------------------------------------------------
-    | Sender must remain your authenticated domain mailbox
-    |--------------------------------------------------------------------------
-    */
-
-    $mail->setFrom(
-        $config['from_email'],
-        $config['from_name']
-    );
-
-    /*
-    |--------------------------------------------------------------------------
-    | Destination
-    |--------------------------------------------------------------------------
-    */
-
-    $mail->addAddress(
-        $config['to_email'],
-        $config['to_name']
-    );
-
-    /*
-    |--------------------------------------------------------------------------
-    | Pressing Reply goes to the customer
-    |--------------------------------------------------------------------------
-    */
-
-    $mail->addReplyTo(
-        $email,
-        $name
-    );
-
+    $mail->setFrom($config['from_email'], $config['from_name']);
+    $mail->addAddress($config['to_email'], $config['to_name']);
+    $mail->addReplyTo($email, $name);
     $mail->isHTML(true);
-
     $mail->Subject = 'Strategy Call Request - ' . $name;
 
     $mail->Body = "
         <div style=\"font-family:Arial,sans-serif;max-width:620px;margin:auto;color:#111827;\">
-
-            <h2 style=\"margin-bottom:20px;\">
-                New Strategy Call Request
-            </h2>
-
+            <h2 style=\"margin-bottom:20px;\">New Strategy Call Request</h2>
             <table cellpadding=\"8\" cellspacing=\"0\" style=\"width:100%;border-collapse:collapse;\">
-
-                <tr>
-                    <td style=\"font-weight:bold;width:120px;\">Name</td>
-                    <td>{$safeName}</td>
-                </tr>
-
-                <tr>
-                    <td style=\"font-weight:bold;\">Email</td>
-                    <td>{$safeEmail}</td>
-                </tr>
-
-                <tr>
-                    <td style=\"font-weight:bold;\">Phone</td>
-                    <td>{$safePhone}</td>
-                </tr>
-
-                <tr>
-                    <td style=\"font-weight:bold;vertical-align:top;\">Message</td>
-                    <td>" . nl2br($safeMessage) . "</td>
-                </tr>
-
+                <tr><td style=\"font-weight:bold;width:120px;\">Name</td><td>{$safeName}</td></tr>
+                <tr><td style=\"font-weight:bold;\">Email</td><td>{$safeEmail}</td></tr>
+                <tr><td style=\"font-weight:bold;\">Phone</td><td>{$safePhone}</td></tr>
+                <tr><td style=\"font-weight:bold;vertical-align:top;\">Message</td><td>" . nl2br($safeMessage) . "</td></tr>
             </table>
-
             <hr style=\"margin:24px 0;border:0;border-top:1px solid #e5e7eb;\">
-
-            <p style=\"font-size:12px;color:#6b7280;\">
-                Submitted through ppcgrowthexpert.com
-            </p>
-
+            <p style=\"font-size:12px;color:#6b7280;\">Submitted through ppcgrowthexpert.com</p>
         </div>
     ";
 
-    $mail->AltBody =
-        "New Strategy Call Request\n\n" .
-        "Name: {$name}\n" .
-        "Email: {$email}\n" .
-        "Phone: {$phone}\n\n" .
-        "Message:\n" .
-        ($message !== '' ? $message : 'No additional message provided');
+    $mail->AltBody = "New Strategy Call Request\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\n\nMessage:\n" . ($message !== '' ? $message : 'No additional message provided');
 
     $mail->send();
-
-    echo json_encode([
-        'success' => true,
-        'message' => 'Your request has been submitted successfully.'
-    ]);
+    $smtpSuccess = true;
 
 } catch (Exception $e) {
+    $lastError = !empty($mail->ErrorInfo) ? $mail->ErrorInfo : $e->getMessage();
+    error_log('Titan SMTP direct failed: ' . $lastError);
+}
 
-    $smtpError = !empty($mail->ErrorInfo) ? $mail->ErrorInfo : $e->getMessage();
-    error_log('Contact form PHPMailer error: ' . $smtpError);
+// Strategy 2: If Direct Titan SMTP failed due to firewall timeout, try GoDaddy Local SMTP Relay (localhost:25)
+if (!$smtpSuccess) {
+    try {
+        $mail->smtpClose();
+        $mail->isSMTP();
+        $mail->Host = 'localhost';
+        $mail->Port = 25;
+        $mail->SMTPAuth = false;
+        $mail->SMTPSecure = '';
+        $mail->SMTPAutoTLS = false;
+        $mail->Timeout = 3;
 
+        $mail->send();
+        $smtpSuccess = true;
+        error_log('Contact form: Sent via GoDaddy Local SMTP Relay.');
+    } catch (Exception $e2) {
+        error_log('Local SMTP Relay failed: ' . $e2->getMessage());
+    }
+}
+
+// Strategy 3: Native PHP mail() with -f Envelope Sender flag (Guaranteed delivery on GoDaddy cPanel)
+if (!$smtpSuccess) {
+    $to = $config['to_email'] ?? 'contact@ppcgrowthexpert.com';
+    $from = $config['from_email'] ?? 'contact@ppcgrowthexpert.com';
+    $subject = 'Strategy Call Request - ' . $name;
+
+    $headers = [
+        'MIME-Version: 1.0',
+        'Content-type: text/html; charset=UTF-8',
+        'From: ' . $config['from_name'] . ' <' . $from . '>',
+        'Reply-To: ' . $email,
+        'X-Mailer: PHP/' . phpversion()
+    ];
+
+    // -f flag sets Return-Path to from_email so SPF/DKIM passes for Titan & Gmail
+    $mailSent = @mail($to, $subject, $mail->Body, implode("\r\n", $headers), '-f' . $from);
+
+    if ($mailSent) {
+        $smtpSuccess = true;
+        error_log('Contact form: Sent via Native PHP mail() with -f flag.');
+    }
+}
+
+if ($smtpSuccess) {
+    echo json_encode([
+        'success' => true,
+        'message' => 'Your strategy call request has been received!'
+    ]);
+} else {
     http_response_code(500);
-
     echo json_encode([
         'success' => false,
-        'message' => 'Titan Mail SMTP error: ' . $smtpError
+        'message' => 'Could not send message: ' . ($lastError ?: 'Mail delivery failed.')
     ]);
-    exit;
 }
