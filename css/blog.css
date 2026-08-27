@@ -1718,12 +1718,12 @@ body.blog-page-body {
 
 /* STAT CARD EXTENSIONS */
 .stat-card-box {
-    background: #0f172a !important;
-    border: 1px solid rgba(56, 189, 248, 0.25) !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
     border-radius: 14px !important;
     padding: 18px !important;
     text-align: center !important;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
 }
 
 .stat-card-value {
@@ -1734,8 +1734,8 @@ body.blog-page-body {
 
 .stat-card-label {
     font-size: 12px !important;
-    color: #94a3b8 !important;
-    font-weight: 600 !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
     margin-top: 4px !important;
 }
 
