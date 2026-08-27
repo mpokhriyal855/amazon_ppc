@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 |--------------------------------------------------------------------------
 */
 
-$homeDirectory = dirname($_SERVER['DOCUMENT_ROOT']);
+$docRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\');
+$homeDirectory = dirname($docRoot);
 
 $configPath = $homeDirectory . '/private/mail-config.php';
 
@@ -37,13 +38,13 @@ if (
     !file_exists($phpMailerPath) ||
     !file_exists($smtpPath)
 ) {
-    error_log('Contact form: required mail files are missing.');
+    error_log('Contact form: required mail config or PHPMailer files are missing in ' . $homeDirectory . '/private/');
 
     http_response_code(500);
 
     echo json_encode([
         'success' => false,
-        'message' => 'Email service configuration error.'
+        'message' => 'Email service configuration error. Please ensure private/mail-config.php and private/phpmailer exist.'
     ]);
 
     exit;
@@ -185,8 +186,14 @@ try {
     $mail->Username = $config['smtp_username'];
     $mail->Password = $config['smtp_password'];
 
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = (int)$config['smtp_port'];
+    $port = (int)($config['smtp_port'] ?? 465);
+    $mail->Port = $port;
+
+    if ($port === 587) {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    } else {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    }
 
     $mail->CharSet = 'UTF-8';
 
