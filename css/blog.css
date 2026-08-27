@@ -1741,9 +1741,9 @@ body.blog-page-body {
 
 /* DIAGNOSTIC OPTION & PRIMARY CTA EXTENSIONS */
 .diagnostic-option {
-    background: #0f172a !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    color: #cbd5e1 !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #334155 !important;
     padding: 10px 16px !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
@@ -1753,16 +1753,22 @@ body.blog-page-body {
 }
 
 .diagnostic-option:hover {
-    border-color: #38bdf8 !important;
-    color: #ffffff !important;
-    background: rgba(56, 189, 248, 0.1) !important;
+    border-color: #0284c7 !important;
+    color: #0284c7 !important;
+    background: #e0f2fe !important;
 }
 
 .diagnostic-option.active {
-    background: #0f172a !important;
-    border-color: #38bdf8 !important;
-    color: #38bdf8 !important;
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25) !important;
+    background: #0284c7 !important;
+    border-color: #0284c7 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2) !important;
+}
+
+.diagnostic-option.active:hover {
+    background: #0369a1 !important;
+    border-color: #0369a1 !important;
+    color: #ffffff !important;
 }
 
 .primary-cta-btn {

@@ -839,11 +839,11 @@
                     <p>Select the performance pattern that best describes your campaign to identify the root cause:</p>
 
                     <div style="display:flex; flex-wrap:wrap; gap:10px; margin:20px 0;" id="wasteDiagnosticSelector">
-                        <button type="button" class="diagnostic-option active" data-result="low-impressions" style="background:#0284c7; border:1px solid #0284c7; color:#fff; padding:10px 16px; border-radius:8px; font-weight:600; cursor:pointer;">Low Impressions</button>
-                        <button type="button" class="diagnostic-option" data-result="low-clicks" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#334155; padding:10px 16px; border-radius:8px; font-weight:600; cursor:pointer;">High Impressions + Low Clicks</button>
-                        <button type="button" class="diagnostic-option" data-result="no-orders" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#334155; padding:10px 16px; border-radius:8px; font-weight:600; cursor:pointer;">High Clicks + No Orders</button>
-                        <button type="button" class="diagnostic-option" data-result="poor-roas" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#334155; padding:10px 16px; border-radius:8px; font-weight:600; cursor:pointer;">Good Conversion + Poor ROAS</button>
-                        <button type="button" class="diagnostic-option" data-result="irrelevant" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#334155; padding:10px 16px; border-radius:8px; font-weight:600; cursor:pointer;">High Spend + Irrelevant Traffic</button>
+                        <button type="button" class="diagnostic-option active" data-result="low-impressions">Low Impressions</button>
+                        <button type="button" class="diagnostic-option" data-result="low-clicks">High Impressions + Low Clicks</button>
+                        <button type="button" class="diagnostic-option" data-result="no-orders">High Clicks + No Orders</button>
+                        <button type="button" class="diagnostic-option" data-result="poor-roas">Good Conversion + Poor ROAS</button>
+                        <button type="button" class="diagnostic-option" data-result="irrelevant">High Spend + Irrelevant Traffic</button>
                     </div>
 
                     <div id="diagnosticOutput" style="background:#f8fafc; border:1px solid #0284c7; border-radius:12px; padding:20px; color:#1e293b; font-size:15px; margin-bottom:24px;" aria-live="polite">
@@ -1467,15 +1467,8 @@
             diagnosisButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     diagnosisButtons.forEach(function(btn) {
-                        btn.style.background = '#f1f5f9';
-                        btn.style.borderColor = '#cbd5e1';
-                        btn.style.color = '#334155';
                         btn.classList.remove('active');
                     });
-
-                    button.style.background = '#0284c7';
-                    button.style.borderColor = '#0284c7';
-                    button.style.color = '#ffffff';
                     button.classList.add('active');
 
                     const key = button.getAttribute('data-result');
