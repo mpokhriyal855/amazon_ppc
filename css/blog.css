@@ -1,34 +1,38 @@
-/* =========================================================
-   PPC GROWTH EXPERT - KNOWLEDGE HUB & BLOG STYLESHEET
-   File: css/blog.css
-   Pure CSS for Blog Landing Page and Single Article Layouts
-========================================================= */
+/* --- GLOBAL BODY BACKGROUND & GRID OVERRIDE FOR BLOG (DARK TECH THEME) --- */
+html, body {
+    background-color: #090e1a !important;
+    background: #090e1a !important;
+    color: #f8fafc !important;
+}
 
-/* --- GLOBAL BACKGROUND GRID & GLOW FOR BLOG --- */
+/* Hide light background-grid from style.css on blog pages */
+.background-grid {
+    display: none !important;
+}
+
+/* --- GLOBAL DARK BACKGROUND GRID & GLOW FOR BLOG --- */
 .blog-background-grid {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: -2 !important;
     background-image:
-        linear-gradient(rgba(56, 189, 248, 0.09) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.09) 1px, transparent 1px);
-    background-size: 36px 36px;
-    pointer-events: none;
-    mask-image: radial-gradient(circle at 50% 30%, black 0%, transparent 85%);
-    -webkit-mask-image: radial-gradient(circle at 50% 30%, black 0%, transparent 85%);
+        linear-gradient(rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.07) 1px, transparent 1px) !important;
+    background-size: 36px 36px !important;
+    pointer-events: none !important;
 }
 
 .blog-ambient-glow {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 900px;
-    height: 500px;
-    background: radial-gradient(ellipse at top, rgba(37, 99, 235, 0.3) 0%, rgba(56, 189, 248, 0.12) 50%, transparent 75%);
-    filter: blur(75px);
-    pointer-events: none;
-    z-index: 1;
+    position: fixed !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 1000px !important;
+    height: 600px !important;
+    background: radial-gradient(ellipse at top, rgba(37, 99, 235, 0.25) 0%, rgba(56, 189, 248, 0.1) 50%, transparent 80%) !important;
+    filter: blur(90px) !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
 }
 
 /* --- READING PROGRESS BAR --- */
