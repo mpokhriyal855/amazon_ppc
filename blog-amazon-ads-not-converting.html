@@ -71,57 +71,66 @@
 
 <body>
 
+    <!-- READING PROGRESS BAR -->
+    <div class="article-progress-bar" id="articleProgressBar"></div>
+
     <!-- =========================================================
-         NAVIGATION BAR
+         EXECUTIVE NAVBAR
     ========================================================= -->
-    <header class="site-header">
-        <div class="nav-container">
-            <a href="index.html" class="brand-logo">
-                <span class="logo-text">PPC GROWTH <span class="logo-highlight">EXPERT</span></span>
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <div class="logo-badge">
+                    <div class="logo-symbol"></div>
+                </div>
+                <span class="logo-text">
+                    PPC <span class="highlight">Growth</span> Expert
+                </span>
             </a>
 
-            <nav class="nav-menu" id="navMenu">
+            <!-- NAVIGATION LINKS -->
+            <nav class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="services.html" class="nav-item">Services</a>
                 <a href="case-studies.html" class="nav-item">Case Studies</a>
-                <a href="about.html" class="nav-item">About Us</a>
-                
-                <!-- RESOURCES DROPDOWN -->
-                <div class="nav-item dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle active" id="resourcesDropdownBtn">
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-item nav-dropdown-trigger" onclick="event.preventDefault(); this.parentElement.classList.toggle('is-open');">
                         Resources <span class="dropdown-arrow">▾</span>
                     </a>
-                    <div class="dropdown-menu" id="resourcesDropdownMenu">
-                        <a href="blog.html" class="dropdown-item active">
-                            <div class="dropdown-icon">📝</div>
-                            <div>
-                                <div class="dropdown-title">Blog &amp; Guides</div>
-                                <div class="dropdown-desc">Practical Amazon PPC strategies &amp; insights</div>
-                            </div>
-                        </a>
-                        <a href="amazon-profit-calculator.html" class="dropdown-item">
-                            <div class="dropdown-icon">🧮</div>
-                            <div>
-                                <div class="dropdown-title">FBA Profit Calculator</div>
-                                <div class="dropdown-desc">Calculate net margins, fees &amp; break-even ACoS</div>
-                            </div>
-                        </a>
+                    <div class="dropdown-menu">
+                        <a href="flipkart-profit-calculator.html" class="dropdown-link">Flipkart Profit Calculator</a>
+                        <a href="blinkit-profit-calculator.html" class="dropdown-link">Blinkit Profit Calculator</a>
+                        <a href="amazon-profit-calculator.html" class="dropdown-link">Amazon Profit Calculator</a>
+                        <a href="meesho-profit-calculator.html" class="dropdown-link">Meesho Profit Calculator</a>
+                        <a href="zepto-profit-calculator.html" class="dropdown-link">Zepto Profit Calculator</a>
+                        <a href="swiggy-instamart-profit-calculator.html" class="dropdown-link">Swiggy Instamart Profit Calculator</a>
                     </div>
                 </div>
-
-                <a href="contact.html" class="nav-item">Contact Us</a>
+                <a href="blog.html" class="nav-item active">Blog</a>
+                <a href="index.html#contact" class="nav-item">Contact</a>
             </nav>
 
+            <!-- RIGHT ACTION BUTTONS -->
             <div class="nav-actions">
-                <a href="index.html#contact" class="btn-primary-sm">Get Free Audit</a>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    Audit Open
+                </div>
+
+                <a href="index.html#contact" class="nav-btn">
+                    <span>Free Audit</span>
+                    <span class="nav-btn-arrow">→</span>
+                </a>
+
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)" aria-label="Toggle navigation">
+                    ☰
                 </button>
             </div>
-        </div>
-    </header>
+        </header>
+    </div>
 
     <!-- =========================================================
          ARTICLE CONTAINER & HEADER
@@ -635,8 +644,9 @@
     </footer>
 
     <!-- SCRIPTS -->
+    <script src="js/script.js?v=v27"></script>
     <script src="js/navbar.js?v=v41"></script>
-    <script src="js/blog.js?v=v42"></script>
+    <script src="js/blog.js?v=v46"></script>
 
 </body>
 
