@@ -207,12 +207,17 @@ $safeMessage = htmlspecialchars(
 |--------------------------------------------------------------------------
 */
 
-$mail = new PHPMailer(true);
+    $mail->Timeout = 8; // 8 second socket timeout to prevent long hangs
 
-try {
-    $mail->isSMTP();
+    $primaryHost = $config['smtp_host'] ?? 'smtp.titan.email';
+    // If user configured GoDaddy workspace host for a Titan email, auto-alias to Titan's server
+    if (strpos($primaryHost, 'secureserver.net') !== false && strpos($config['smtp_username'] ?? '', '@') !== false) {
+        $hostsToTry = [$primaryHost, 'smtp.titan.email', 'ssl://smtp.titan.email:465'];
+    } else {
+        $hostsToTry = [$primaryHost, 'smtp.titan.email'];
+    }
 
-    $mail->Host = $config['smtp_host'];
+    $mail->Host = implode(';', array_unique($hostsToTry));
     $mail->SMTPAuth = true;
 
     $mail->Username = $config['smtp_username'];
@@ -333,15 +338,34 @@ try {
 
 } catch (Exception $e) {
 
-    error_log(
-        'Contact form PHPMailer error: ' .
-        $mail->ErrorInfo
-    );
+    error_log('Contact form PHPMailer error: ' . $mail->ErrorInfo . ' - Exception: ' . $e->getMessage());
+
+    // Fallback: Attempt native PHP mail() if SMTP server is blocked or unreachable
+    $to = $config['to_email'] ?? 'contact@ppcgrowthexpert.com';
+    $subject = 'Strategy Call Request - ' . $name;
+    $headers = [
+        'MIME-Version: 1.0',
+        'Content-type: text/html; charset=UTF-8',
+        'From: ' . ($config['from_email'] ?? 'contact@ppcgrowthexpert.com'),
+        'Reply-To: ' . $email,
+        'X-Mailer: PHP/' . phpversion()
+    ];
+
+    $fallbackSent = @mail($to, $subject, $mail->Body, implode("\r\n", $headers));
+
+    if ($fallbackSent) {
+        error_log('Contact form: Fallback native mail() succeeded.');
+        echo json_encode([
+            'success' => true,
+            'message' => 'Your request has been submitted successfully.'
+        ]);
+        exit;
+    }
 
     http_response_code(500);
 
     echo json_encode([
         'success' => false,
-        'message' => 'We could not send your request right now. Please try again.'
+        'message' => 'Mailer error: ' . ($mail->ErrorInfo ?: $e->getMessage())
     ]);
 }
