@@ -260,11 +260,52 @@ if (function_exists('fastcgi_finish_request')) {
 ignore_user_abort(true);
 set_time_limit(30);
 
-// Strategy 1 (Native PHP mail() with -f Return-Path)
 $to = $config['to_email'] ?? 'contact@ppcgrowthexpert.com';
 $from = $config['from_email'] ?? 'contact@ppcgrowthexpert.com';
 $subject = 'Strategy Call Request - ' . $name;
 
+// Strategy 1 (Background Direct Titan SMTP): Pushes email directly to Titan Inbox in 1-2 seconds
+try {
+    $mail->isSMTP();
+    $mail->Timeout = 6;
+
+    $configuredHost = trim((string)($config['smtp_host'] ?? ''));
+    if ($configuredHost === '' || strpos($configuredHost, 'secureserver.net') !== false || $configuredHost === 'localhost') {
+        $mail->Host = 'smtp.titan.email';
+    } else {
+        $mail->Host = $configuredHost;
+    }
+
+    $mail->SMTPAuth = true;
+    $mail->Username = trim((string)($config['smtp_username'] ?? ''));
+    $mail->Password = trim((string)($config['smtp_password'] ?? ''));
+
+    $port = (int)($config['smtp_port'] ?? 465);
+    if ($port === 587) {
+        $mail->Port = 587;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->SMTPAutoTLS = true;
+    } else {
+        $mail->Port = 465;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    }
+
+    $mail->SMTPOptions = [
+        'ssl' => [
+            'verify_peer'       => false,
+            'verify_peer_name'  => false,
+            'allow_self_signed' => true
+        ]
+    ];
+
+    $mail->send();
+    error_log('Contact form: Background Direct Titan SMTP delivery succeeded.');
+    exit;
+} catch (Exception $eDirect) {
+    error_log('Background Titan Direct SMTP failed: ' . $eDirect->getMessage() . ' - Falling back to local mail handler.');
+}
+
+// Strategy 2 (Background Fallback): Native PHP mail() with -f Return-Path
 $headers = [
     'MIME-Version: 1.0',
     'Content-type: text/html; charset=UTF-8',
@@ -281,8 +322,9 @@ if ($mailSent) {
     exit;
 }
 
-// Strategy 2 (Fallback): Explicit IPv4 Local SMTP Relay (127.0.0.1:25)
+// Strategy 3 (Fallback 2): Explicit IPv4 Local SMTP Relay (127.0.0.1:25)
 try {
+    $mail->smtpClose();
     $mail->isSMTP();
     $mail->Host = '127.0.0.1';
     $mail->Port = 25;
