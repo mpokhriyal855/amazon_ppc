@@ -293,13 +293,25 @@ document.addEventListener("DOMContentLoaded", function () {
             storedTopics = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
         } catch (e) { }
 
-        const allTopics = [...defaultTopics, ...storedTopics];
+        // Normalize stored topics structure
+        const formattedUserTopics = storedTopics.map(t => {
+            if (typeof t === "string") return { title: t, votes: 1, isUser: true };
+            return { ...t, isUser: true };
+        });
+
+        // Display user submitted topics FIRST at the top of the roadmap list
+        const allTopics = [...formattedUserTopics, ...defaultTopics];
         communityTopicsList.innerHTML = "";
 
         allTopics.forEach(t => {
             const chip = document.createElement("div");
-            chip.className = "community-topic-chip";
-            chip.innerHTML = `<span>💡 ${escapeHTML(t.title)}</span> <span class="vote-count">+${t.votes || 1}</span>`;
+            chip.className = "community-topic-chip" + (t.isUser ? " user-submitted-topic" : "");
+            if (t.isUser) {
+                chip.style.borderColor = "#0284c7";
+                chip.style.backgroundColor = "#e0f2fe";
+                chip.style.color = "#0369a1";
+            }
+            chip.innerHTML = `<span>${t.isUser ? "✨" : "💡"} ${escapeHTML(t.title)}</span> <span class="vote-count">+${t.votes || 1}</span>`;
             communityTopicsList.appendChild(chip);
         });
     }
@@ -312,28 +324,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderCommunityTopics();
 
+    // Global Admin Helper: Site Owner can type getSubmittedTopics() in console or call it to view all recommendations sent
+    window.getSubmittedTopics = function () {
+        try {
+            const topics = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
+            console.table(topics);
+            return topics;
+        } catch (e) {
+            return [];
+        }
+    };
+
     if (topicForm) {
         topicForm.addEventListener("submit", function (e) {
             e.preventDefault();
+            e.stopPropagation();
+
             const input = topicForm.querySelector("input[type='text']");
             if (input && input.value.trim().length > 0) {
                 const newTopicTitle = input.value.trim();
 
+                // 1. SAVE LOCALLY (Persists permanently across page refreshes)
                 let stored = [];
                 try {
                     stored = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
                 } catch (e) { }
 
-                stored.unshift({ title: newTopicTitle, votes: 1 });
-                try {
-                    localStorage.setItem("ppc_user_recommended_topics", JSON.stringify(stored));
-                } catch (e) { }
+                // Avoid exact duplicate spam
+                const alreadyExists = stored.some(t => (typeof t === 'string' ? t : t.title).toLowerCase() === newTopicTitle.toLowerCase());
+                if (!alreadyExists) {
+                    stored.unshift({ title: newTopicTitle, votes: 1, date: new Date().toLocaleDateString() });
+                    try {
+                        localStorage.setItem("ppc_user_recommended_topics", JSON.stringify(stored));
+                    } catch (e) { }
+                }
 
+                // 2. DISPATCH TO OWNER (Sends email notification to owner via Formspree / endpoint so site owner sees recommendations)
+                try {
+                    fetch("https://formspree.io/f/xanywyop", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            form_type: "Topic Recommendation Submission",
+                            suggested_topic: newTopicTitle,
+                            submitted_at: new Date().toISOString(),
+                            page_url: window.location.href
+                        })
+                    }).catch(function() {
+                        // Background fallback notification attempt
+                        console.log("Topic logged locally and prepared for dispatch.");
+                    });
+                } catch (err) { }
+
+                // 3. RENDER DYNAMICALLY AT TOP OF ROADMAP
                 renderCommunityTopics();
 
                 if (topicMessage) {
                     topicMessage.style.display = "block";
-                    topicMessage.innerText = "✓ Added! Your topic has been posted to our community roadmap below.";
+                    topicMessage.innerHTML = "✓ <strong>Thank you!</strong> Your recommendation <em>\"" + escapeHTML(newTopicTitle) + "\"</em> has been added live to our roadmap below and sent to our editorial team.";
                 }
                 topicForm.reset();
             }

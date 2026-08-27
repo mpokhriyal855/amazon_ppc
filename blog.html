@@ -479,9 +479,9 @@
                 <p class="topic-rec-desc">Submit your Amazon PPC challenge below. Your request will be added live to our community roadmap for our upcoming deep dives.</p>
             </div>
 
-            <form class="topic-rec-form" id="topicRecForm">
-                <input type="text" class="topic-rec-input" placeholder="Suggest a topic (e.g. Scaling broad match without high ACoS)..." required aria-label="Topic suggestion">
-                <button type="submit" class="topic-rec-btn">Submit Recommendation →</button>
+            <form class="topic-rec-form" id="topicRecForm" action="javascript:void(0);" method="POST">
+                <input type="text" class="topic-rec-input" id="topicRecInput" placeholder="Suggest a topic (e.g. Scaling broad match without high ACoS)..." required aria-label="Topic suggestion">
+                <button type="submit" class="topic-rec-btn" id="topicRecBtn">Submit Recommendation →</button>
             </form>
             
             <div id="topicRecSuccess" style="display: none; text-align: center; color: #10b981; font-weight: 700; margin-bottom: 16px;"></div>
@@ -585,7 +585,7 @@
     <!-- SCRIPTS -->
     <script src="js/script.js?v=v27"></script>
     <script src="js/navbar.js?v=v27"></script>
-    <script src="js/blog.js?v=v27"></script>
+    <script src="js/blog.js?v=v43"></script>
 </body>
 
 </html>
