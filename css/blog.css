@@ -1,7 +1,7 @@
 /* --- GLOBAL BODY BACKGROUND & TOP GAP FIX --- */
 html, body {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
+    background-color: #080c14 !important;
+    background: #080c14 !important;
     color: #1e293b !important;
     margin: 0;
     padding: 0;
@@ -185,7 +185,7 @@ html, body {
     font-family: 'DM Mono', monospace;
 }
 
-/* --- FEATURED HERO ARTICLE CARD (EXPANDED TOP AND BOTTOM SIZE WITH 1.1FR 1.5FR GRID) --- */
+/* --- FEATURED HERO ARTICLE CARD (EXPANDED HEIGHT WITH 1.1FR 1.5FR GRID) --- */
 .featured-hero-wrapper {
     margin-bottom: 36px;
 }
@@ -197,8 +197,8 @@ html, body {
     background: #0f172a !important;
     border: 1.5px solid rgba(56, 189, 248, 0.3) !important;
     border-radius: 20px;
-    padding: 32px 30px 36px !important;
-    min-height: 330px !important;
+    padding: 34px 30px 38px !important;
+    min-height: 350px !important;
     box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.25);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     align-items: center;
@@ -237,7 +237,7 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    min-height: 260px !important;
+    min-height: 280px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
