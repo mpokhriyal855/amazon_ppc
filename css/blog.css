@@ -197,7 +197,7 @@ body.blog-page-body {
 
 .featured-hero-card {
     display: grid;
-    grid-template-columns: 1.1fr 1.5fr !important;
+    grid-template-columns: 1fr 1.75fr !important;
     gap: 28px;
     background: #0f172a !important;
     border: 1.5px solid rgba(56, 189, 248, 0.3) !important;
@@ -210,6 +210,7 @@ body.blog-page-body {
     position: relative;
     overflow: hidden;
     color: #ffffff !important;
+    width: 100% !important;
 }
 
 .featured-badge-overlay {
@@ -262,6 +263,10 @@ body.blog-page-body {
     margin-bottom: 12px;
 }
 
+.featured-meta-top .publish-date {
+    color: #cbd5e1 !important;
+}
+
 .category-pill {
     display: inline-block;
     font-family: 'DM Mono', monospace;
@@ -277,10 +282,10 @@ body.blog-page-body {
 }
 
 .publish-date {
-    font-size: 12.5px !important;
-    color: #cbd5e1 !important;
+    font-size: 13px !important;
+    color: #475569 !important;
     font-weight: 600 !important;
-    font-family: 'DM Mono', monospace;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
 .featured-title {
