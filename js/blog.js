@@ -57,6 +57,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (featuredLink) {
             featuredLink.href = newestArticle.getAttribute("data-url") || "blog-reduce-amazon-acos.html";
         }
+        const featuredBadgeOverlay = featuredCard.querySelector(".featured-badge-overlay");
+        const featuredReadTime = featuredCard.querySelector(".read-time");
+        if (featuredBadgeOverlay) {
+            featuredBadgeOverlay.innerText = (newestArticle.getAttribute("data-category") || "AMAZON PPC").toUpperCase();
+        }
+        if (featuredReadTime) {
+            const rt = newestArticle.getAttribute("data-readtime");
+            if (rt) featuredReadTime.innerText = rt + (rt.includes("read") ? "" : " read");
+        }
         featuredCard.setAttribute("data-category", newestArticle.getAttribute("data-category") || "amazon ppc");
         featuredCard.setAttribute("data-tags", newestArticle.getAttribute("data-tags") || "");
         featuredCard.setAttribute("data-title", newestArticle.getAttribute("data-title") || "");
