@@ -1,14 +1,15 @@
-/* --- GLOBAL BODY BACKGROUND & GRID FOR BLOG (LIGHT THEME MATCHING MAIN SITE) --- */
+/* --- GLOBAL BODY BACKGROUND & TOP GAP FIX --- */
 html, body {
-    background-color: #f8fafc !important;
-    background: #f8fafc !important;
+    background-color: #080c14 !important;
+    background: #080c14 !important;
     color: #1e293b !important;
+    margin: 0;
+    padding: 0;
 }
 
 /* Ensure background-grid from style.css shows nicely */
 .background-grid {
-    display: block !important;
-    opacity: 0.6;
+    display: none !important;
 }
 
 .blog-background-grid {
@@ -16,16 +17,7 @@ html, body {
 }
 
 .blog-ambient-glow {
-    position: fixed !important;
-    top: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 1000px !important;
-    height: 600px !important;
-    background: radial-gradient(ellipse at top, rgba(37, 99, 235, 0.08) 0%, rgba(56, 189, 248, 0.04) 50%, transparent 80%) !important;
-    filter: blur(90px) !important;
-    pointer-events: none !important;
-    z-index: -1 !important;
+    display: none !important;
 }
 
 /* --- READING PROGRESS BAR --- */
@@ -40,32 +32,38 @@ html, body {
     transition: width 0.1s linear;
 }
 
-/* --- HERO SECTION & BREADCRUMBS (DARK GRID BACKGROUND CONTAINING HERO & FEATURED CARD) --- */
+/* --- HERO SECTION & BREADCRUMBS (MATCHING CASE-STUDIES.HTML HERO LAYOUT) --- */
 .blog-hero {
     position: relative;
-    padding: 130px 24px 50px !important;
-    background-color: #070b14 !important;
-    background-image:
-        linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px) !important;
-    background-size: 36px 36px !important;
+    background: linear-gradient(180deg, #080c14 0%, #0f172a 100%) !important;
+    padding: 30px 24px 45px !important;
     color: #ffffff !important;
     overflow: hidden;
-    border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15) !important;
 }
 
-.blog-hero::before {
-    content: "";
+.case-grid-bg {
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1000px;
-    height: 500px;
-    background: radial-gradient(ellipse at top, rgba(37, 99, 235, 0.25) 0%, rgba(56, 189, 248, 0.1) 50%, transparent 80%);
-    filter: blur(80px);
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.85;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
+}
+
+.case-orb-1 {
+    position: absolute;
+    top: -100px;
+    left: 15%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(8, 12, 20, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
 }
 
 .blog-hero-container {
@@ -78,17 +76,17 @@ html, body {
 .blog-hero-top {
     text-align: center;
     max-width: 840px;
-    margin: 0 auto 36px;
+    margin: 0 auto 30px;
 }
 
-/* --- TOP-LEFT BREADCRUMB (MATCHING CASE-STUDIES.HTML) --- */
+/* --- TOP-LEFT BREADCRUMB (EXACTLY MATCHING CASE-STUDIES.HTML) --- */
 .breadcrumbs-bar {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 13.5px;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 20px !important;
     text-align: left;
 }
 
