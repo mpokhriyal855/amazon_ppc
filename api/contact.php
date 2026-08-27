@@ -23,14 +23,29 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 |--------------------------------------------------------------------------
 */
 
-$docRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\');
-$homeDirectory = dirname($docRoot);
+$candidatePrivateDirs = array_unique([
+    dirname(rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\')) . '/private',
+    realpath(__DIR__ . '/../../private') ?: (__DIR__ . '/../../private'),
+    realpath(__DIR__ . '/../private') ?: (__DIR__ . '/../private'),
+    rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/\\') . '/../private'
+]);
 
-$configPath = $homeDirectory . '/private/mail-config.php';
+$privateDir = null;
+foreach ($candidatePrivateDirs as $dir) {
+    if ($dir && file_exists($dir . '/mail-config.php')) {
+        $privateDir = $dir;
+        break;
+    }
+}
 
-$exceptionPath = $homeDirectory . '/private/phpmailer/Exception.php';
-$phpMailerPath = $homeDirectory . '/private/phpmailer/PHPMailer.php';
-$smtpPath = $homeDirectory . '/private/phpmailer/SMTP.php';
+if (!$privateDir) {
+    $privateDir = $candidatePrivateDirs[0];
+}
+
+$configPath = $privateDir . '/mail-config.php';
+$exceptionPath = $privateDir . '/phpmailer/Exception.php';
+$phpMailerPath = $privateDir . '/phpmailer/PHPMailer.php';
+$smtpPath = $privateDir . '/phpmailer/SMTP.php';
 
 if (
     !file_exists($configPath) ||
@@ -38,13 +53,13 @@ if (
     !file_exists($phpMailerPath) ||
     !file_exists($smtpPath)
 ) {
-    error_log('Contact form: required mail config or PHPMailer files are missing in ' . $homeDirectory . '/private/');
+    error_log('Contact form error: Missing configuration in ' . $privateDir);
 
     http_response_code(500);
 
     echo json_encode([
         'success' => false,
-        'message' => 'Email service configuration error. Please ensure private/mail-config.php and private/phpmailer exist.'
+        'message' => 'Private mail configuration missing. Please create mail-config.php and phpmailer in: ' . $privateDir
     ]);
 
     exit;
