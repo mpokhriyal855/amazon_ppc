@@ -236,66 +236,44 @@ $mail->Body = "
 
 $mail->AltBody = "New Strategy Call Request\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\n\nMessage:\n" . ($message !== '' ? $message : 'No additional message provided');
 
-// Strategy 1 (Lightning Fast): Try GoDaddy Local SMTP Relay (localhost:25) - Responds in < 0.1 seconds
-try {
-    $mail->isSMTP();
-    $mail->Host = 'localhost';
-    $mail->Port = 25;
-    $mail->SMTPAuth = false;
-    $mail->SMTPSecure = '';
-    $mail->SMTPAutoTLS = false;
-    $mail->Timeout = 2; // 2-second timeout
+// Strategy 1 (Instant - < 0.1 seconds): Native PHP mail() with -f Return-Path
+$to = $config['to_email'] ?? 'contact@ppcgrowthexpert.com';
+$from = $config['from_email'] ?? 'contact@ppcgrowthexpert.com';
+$subject = 'Strategy Call Request - ' . $name;
 
-    $mail->send();
+$headers = [
+    'MIME-Version: 1.0',
+    'Content-type: text/html; charset=UTF-8',
+    'From: ' . $config['from_name'] . ' <' . $from . '>',
+    'Reply-To: ' . $email,
+    'X-Mailer: PHP/' . phpversion()
+];
+
+// -f flag forces envelope sender so cPanel Exim delivers directly to Titan / Gmail with valid SPF
+$mailSent = @mail($to, $subject, $mail->Body, implode("\r\n", $headers), '-f' . $from);
+
+if ($mailSent) {
     $smtpSuccess = true;
-    error_log('Contact form: Fast delivery via GoDaddy Local SMTP Relay.');
-} catch (Exception $e1) {
-    $lastError = $e1->getMessage();
-    error_log('Local SMTP Relay failed: ' . $lastError);
+    error_log('Contact form: Instant delivery via Native PHP mail() with -f flag.');
 }
 
-// Strategy 2: Attempt Direct Titan SMTP (Port 465 SSL or 587 STARTTLS) if configured explicitly
+// Strategy 2 (Fallback): Explicit IPv4 Local SMTP Relay (127.0.0.1:25)
 if (!$smtpSuccess) {
     try {
-        $mail->smtpClose();
         $mail->isSMTP();
-        $mail->Timeout = 3;
-
-        $configuredHost = trim((string)($config['smtp_host'] ?? ''));
-        if ($configuredHost === '' || strpos($configuredHost, 'secureserver.net') !== false || $configuredHost === 'localhost') {
-            $mail->Host = 'smtp.titan.email';
-        } else {
-            $mail->Host = $configuredHost;
-        }
-
-        $mail->SMTPAuth = true;
-        $mail->Username = trim((string)($config['smtp_username'] ?? ''));
-        $mail->Password = trim((string)($config['smtp_password'] ?? ''));
-
-        $port = (int)($config['smtp_port'] ?? 465);
-        if ($port === 587) {
-            $mail->Port = 587;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->SMTPAutoTLS = true;
-        } else {
-            $mail->Port = 465;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        }
-
-        $mail->SMTPOptions = [
-            'ssl' => [
-                'verify_peer'       => false,
-                'verify_peer_name'  => false,
-                'allow_self_signed' => true
-            ]
-        ];
+        $mail->Host = '127.0.0.1'; // Use explicit IPv4 IP to avoid 15s IPv6 ::1 DNS lookup timeout
+        $mail->Port = 25;
+        $mail->SMTPAuth = false;
+        $mail->SMTPSecure = '';
+        $mail->SMTPAutoTLS = false;
+        $mail->Timeout = 2;
 
         $mail->send();
         $smtpSuccess = true;
-        error_log('Contact form: Sent via Titan Direct SMTP.');
-    } catch (Exception $e2) {
-        $lastError = !empty($mail->ErrorInfo) ? $mail->ErrorInfo : $e2->getMessage();
-        error_log('Titan SMTP direct failed: ' . $lastError);
+        error_log('Contact form: Sent via 127.0.0.1 Local SMTP Relay.');
+    } catch (Exception $e1) {
+        $lastError = $e1->getMessage();
+        error_log('Local 127.0.0.1 SMTP Relay failed: ' . $lastError);
     }
 }
 
