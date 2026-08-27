@@ -866,27 +866,27 @@ html, body {
 }
 
 .btn-action-icon {
-    background: #ffffff !important;
-    border: 1px solid #cbd5e1 !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-radius: 50px !important;
     padding: 8px 18px !important;
     font-size: 13px !important;
     font-weight: 600 !important;
-    color: #334155 !important;
+    color: #cbd5e1 !important;
     cursor: pointer !important;
     transition: all 0.2s ease;
 }
 
 .btn-action-icon:hover {
-    background: #f1f5f9;
-    color: #2563eb;
-    border-color: #2563eb;
+    background: rgba(56, 189, 248, 0.15) !important;
+    color: #38bdf8 !important;
+    border-color: rgba(56, 189, 248, 0.4) !important;
 }
 
 .btn-action-icon.saved {
-    background: rgba(37, 99, 235, 0.1);
-    color: #2563eb;
-    border-color: #2563eb;
+    background: rgba(37, 99, 235, 0.25) !important;
+    color: #38bdf8 !important;
+    border-color: #38bdf8 !important;
 }
 
 /* HERO GRAPHIC CONTAINER */
