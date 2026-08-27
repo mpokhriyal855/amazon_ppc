@@ -1151,197 +1151,200 @@ body.blog-page-body {
     letter-spacing: 0.5px;
 }
 
-/* INTERACTIVE CALCULATOR CARD */
+/* INTERACTIVE CALCULATOR CARD (LIGHT THEME) */
 .mini-calc-card {
-    background: #0f172a;
-    border: 1.5px solid rgba(56, 189, 248, 0.3);
-    border-radius: 16px;
-    padding: 28px;
-    color: #ffffff;
-    margin: 32px 0;
-    box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.5);
+    background: #f8fafc !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 16px !important;
+    padding: 28px !important;
+    color: #0f172a !important;
+    margin: 32px 0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
 }
 
 .mini-calc-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 6px;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 6px !important;
 }
 
 .mini-calc-desc {
-    font-size: 13.5px;
-    color: #94a3b8;
-    margin-bottom: 20px;
+    font-size: 13.5px !important;
+    color: #475569 !important;
+    margin-bottom: 20px !important;
 }
 
 .mini-calc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 20px !important;
 }
 
 .calc-input-group label {
-    display: block;
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    font-weight: 700;
-    color: #38bdf8;
-    margin-bottom: 6px;
+    display: block !important;
+    font-family: 'DM Mono', monospace !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    color: #0284c7 !important;
+    margin-bottom: 6px !important;
 }
 
 .calc-input-group input {
-    width: 100%;
-    padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 600;
-    outline: none;
+    width: 100% !important;
+    padding: 12px 14px !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    color: #0f172a !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    outline: none !important;
 }
 
 .calc-input-group input:focus {
-    border-color: #38bdf8;
-    background: rgba(255, 255, 255, 0.12);
+    border-color: #0284c7 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
 }
 
 .calc-result-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 14px;
-    text-align: center;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    padding: 14px !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
 }
 
 .calc-result-val {
-    font-size: 26px;
-    font-weight: 800;
-    color: #38bdf8;
-    font-family: 'DM Mono', monospace;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #0284c7 !important;
+    font-family: 'DM Mono', monospace !important;
 }
 
 .calc-result-lbl {
-    font-size: 10px;
-    color: #94a3b8;
-    font-weight: 700;
-    font-family: 'DM Mono', monospace;
-    margin-top: 4px;
+    font-size: 10px !important;
+    color: #64748b !important;
+    font-weight: 700 !important;
+    font-family: 'DM Mono', monospace !important;
+    margin-top: 4px !important;
 }
 
-/* CHECKLIST CARD */
+/* CHECKLIST CARD (LIGHT THEME) */
 .checklist-card {
-    background: #0f172a !important;
-    border: 1px solid rgba(56, 189, 248, 0.25) !important;
-    border-radius: 16px;
-    padding: 24px;
-    margin: 32px 0;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.3);
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    margin: 32px 0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
 }
 
 .checklist-title {
-    font-size: 18px;
-    font-weight: 800;
-    color: #ffffff !important;
-    margin-bottom: 16px;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 16px !important;
 }
 
 .checklist-items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
 }
 
 .checklist-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 13.5px;
-    color: #cbd5e1 !important;
-    font-weight: 500;
-    cursor: pointer;
-    user-select: none;
-    padding: 6px 10px;
-    border-radius: 8px;
-    transition: background 0.2s ease;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-size: 13.5px !important;
+    color: #334155 !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    padding: 6px 10px !important;
+    border-radius: 8px !important;
+    transition: background 0.2s ease !important;
 }
 
 .checklist-item:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: #f1f5f9 !important;
 }
 
 .checklist-checkbox {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-    border: 2px solid rgba(56, 189, 248, 0.4) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 800;
-    color: #ffffff;
-    flex-shrink: 0;
-    transition: all 0.2s ease;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 6px !important;
+    border: 2px solid #cbd5e1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    flex-shrink: 0 !important;
+    transition: all 0.2s ease !important;
 }
 
 .checklist-item.checked .checklist-checkbox {
     background: #10b981 !important;
     border-color: #10b981 !important;
+    color: #ffffff !important;
 }
 
 .checklist-item.checked span {
-    text-decoration: line-through;
-    color: #64748b !important;
+    text-decoration: line-through !important;
+    color: #94a3b8 !important;
 }
 
-/* SERVICE CTA CARD */
+/* SERVICE CTA CARD (LIGHT THEME) */
 .service-cta-card {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border: 1.5px solid rgba(56, 189, 248, 0.3);
-    border-radius: 18px;
-    padding: 28px;
-    color: #ffffff;
-    text-align: center;
-    margin: 40px 0;
-    box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.4);
+    background: #f8fafc !important;
+    border: 1.5px solid #0284c7 !important;
+    border-radius: 18px !important;
+    padding: 28px !important;
+    color: #0f172a !important;
+    text-align: center !important;
+    margin: 40px 0 !important;
+    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08) !important;
 }
 
 .service-cta-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 8px;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin-bottom: 8px !important;
 }
 
 .service-cta-desc {
-    font-size: 14px;
-    color: #cbd5e1;
-    max-width: 520px;
-    margin: 0 auto 20px;
-    line-height: 1.5;
+    font-size: 14px !important;
+    color: #334155 !important;
+    max-width: 520px !important;
+    margin: 0 auto 20px !important;
+    line-height: 1.5 !important;
 }
 
 .service-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #1877ff 0%, #00b4d8 100%);
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 12px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 6px 20px rgba(24, 119, 255, 0.4);
-    transition: all 0.25s ease;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, #1877ff 0%, #00b4d8 100%) !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 12px 24px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 20px rgba(24, 119, 255, 0.3) !important;
+    transition: all 0.25s ease !important;
 }
 
 .service-cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(24, 119, 255, 0.6);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(24, 119, 255, 0.5) !important;
 }
 
 /* AUTHOR BIO CARD */
