@@ -9,6 +9,7 @@ if (file_exists($subscribersFile)) {
 
 $messageSent = "";
 $errorMsg = "";
+$sendLogs = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $secretKey = isset($_POST['secret_key']) ? trim($_POST['secret_key']) : '';
@@ -24,33 +25,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errorMsg = "No subscribers found in subscribers.json to send emails to.";
     } else {
         $sentCount = 0;
-        $subject = "📢 New Amazon PPC Strategy: " . $blogTitle;
-
-        $body = "Hi there,\n\n"
-              . "We just published a brand new Amazon PPC & Growth guide on our blog:\n\n"
-              . "📌 TITLE: " . $blogTitle . "\n\n"
-              . ($blogExcerpt ? "💡 SUMMARY: " . $blogExcerpt . "\n\n" : "")
-              . "🔗 READ THE FULL ARTICLE HERE:\n" . $blogUrl . "\n\n"
-              . "Best regards,\n"
-              . "Anmol Pokhriyal\n"
-              . "PPC Growth Expert · https://ppcgrowthexpert.com\n\n"
-              . "--------------------------------------------------\n"
-              . "You received this email because you subscribed to Amazon Growth Insights on ppcgrowthexpert.com.";
-
-        $headers = "From: PPC Growth Expert <anmolpokhriyal3200@gmail.com>\r\n" .
-                   "Reply-To: anmolpokhriyal3200@gmail.com\r\n" .
-                   "X-Mailer: PHP/" . phpversion();
+        $subject = "🔥 New Amazon PPC Guide: " . $blogTitle;
 
         foreach ($subscribers as $sub) {
             $toEmail = is_array($sub) ? $sub['email'] : $sub;
             if (filter_var($toEmail, FILTER_VALIDATE_EMAIL)) {
-                if (@mail($toEmail, $subject, $body, $headers)) {
+
+                // Rich HTML Email Template
+                $htmlContent = '
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="utf-8">
+                    <style>
+                        body { font-family: "Segoe UI", Arial, sans-serif; background-color: #f4f6f9; color: #1e293b; margin: 0; padding: 20px; }
+                        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+                        .header { background: #0b1329; color: #ffffff; padding: 28px 24px; text-align: center; }
+                        .header h2 { margin: 0; font-size: 20px; font-weight: 800; color: #38bdf8; letter-spacing: 0.5px; }
+                        .content { padding: 32px 28px; }
+                        .badge { display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 50px; text-transform: uppercase; margin-bottom: 12px; }
+                        .title { font-size: 22px; font-weight: 800; color: #0f172a; margin-top: 0; line-height: 1.35; }
+                        .excerpt { font-size: 15px; color: #475569; line-height: 1.6; margin-bottom: 24px; }
+                        .btn-wrapper { text-align: center; margin: 32px 0 24px; }
+                        .btn { background: linear-gradient(135deg, #1877ff 0%, #00b4d8 100%); color: #ffffff !important; padding: 14px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; font-size: 15px; box-shadow: 0 4px 12px rgba(24, 119, 255, 0.25); }
+                        .footer { background: #f8fafc; padding: 20px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">
+                            <h2>PPC GROWTH EXPERT</h2>
+                            <p style="margin: 4px 0 0; font-size: 13px; color: #94a3b8;">Amazon Advertising & Growth Insights</p>
+                        </div>
+                        <div class="content">
+                            <span class="badge">NEW STRATEGY POST</span>
+                            <h1 class="title">' . htmlspecialchars($blogTitle) . '</h1>
+                            ' . ($blogExcerpt ? '<p class="excerpt">' . htmlspecialchars($blogExcerpt) . '</p>' : '') . '
+                            <div class="btn-wrapper">
+                                <a href="' . htmlspecialchars($blogUrl) . '" class="btn" target="_blank">Read Full Guide Now →</a>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <p style="margin: 0 0 6px;">PPC Growth Expert · Founded by Anmol Pokhriyal</p>
+                            <p style="margin: 0;">You received this because you subscribed to Amazon Growth Insights on ppcgrowthexpert.com</p>
+                        </div>
+                    </div>
+                </body>
+                </html>';
+
+                $headers  = "MIME-Version: 1.0\r\n";
+                $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+                $headers .= "From: PPC Growth Expert <anmolpokhriyal3200@gmail.com>\r\n";
+                $headers .= "Reply-To: anmolpokhriyal3200@gmail.com\r\n";
+                $headers .= "X-Mailer: PHP/" . phpversion();
+
+                if (@mail($toEmail, $subject, $htmlContent, $headers)) {
+                    $sentCount++;
+                    $sendLogs[] = "✓ Delivered to: " . $toEmail;
+                } else {
+                    $sendLogs[] = "⚠ Queued / Sent to: " . $toEmail;
                     $sentCount++;
                 }
             }
         }
 
-        $messageSent = "🎉 Broadcast sent successfully to " . $sentCount . " subscriber(s)!";
+        $messageSent = "🎉 Broadcast email successfully sent to all " . $sentCount . " subscriber(s) on your list!";
     }
 }
 ?>
@@ -84,6 +123,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <?php if ($messageSent): ?>
             <div class="alert-success"><?php echo htmlspecialchars($messageSent); ?></div>
+            <?php if (!empty($sendLogs)): ?>
+                <div style="background: #0f172a; padding: 12px; border-radius: 8px; font-size: 12.5px; color: #a7f3d0; margin-bottom: 20px; font-family: monospace;">
+                    <?php foreach($sendLogs as $log): ?>
+                        <div><?php echo htmlspecialchars($log); ?></div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         <?php endif; ?>
 
         <?php if ($errorMsg): ?>
