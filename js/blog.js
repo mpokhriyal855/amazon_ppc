@@ -517,4 +517,60 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // --- 11. NEWSLETTER SUBSCRIPTION SYSTEM ---
+    const newsletterForms = document.querySelectorAll(".newsletter-form, #newsletterForm");
+    newsletterForms.forEach(form => {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const emailInput = form.querySelector("input[type='email']");
+            const successDiv = form.parentElement.querySelector("#newsletterSuccess") || document.getElementById("newsletterSuccess");
+            const btn = form.querySelector("button[type='submit']");
+
+            if (emailInput && emailInput.value.trim()) {
+                const subEmail = emailInput.value.trim();
+
+                if (btn) btn.disabled = true;
+
+                // 1. Send to Server Endpoint (subscribers.json)
+                try {
+                    fetch("subscribe.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            email: subEmail,
+                            url: window.location.href
+                        })
+                    }).catch(function() {});
+                } catch (err) { }
+
+                // 2. Backup Dispatch via FormSubmit
+                try {
+                    fetch("https://formsubmit.co/ajax/anmolpokhriyal3200@gmail.com", {
+                        method: "POST",
+                        headers: { 
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify({
+                            _subject: "🎉 New Newsletter Subscriber: " + subEmail,
+                            Subscriber_Email: subEmail,
+                            Subscribed_At: new Date().toLocaleString(),
+                            Page_URL: window.location.href
+                        })
+                    }).catch(function() {});
+                } catch (err) { }
+
+                if (successDiv) {
+                    successDiv.style.display = "block";
+                    successDiv.innerHTML = "✓ <strong>Subscribed!</strong> You're added to our weekly Amazon growth insights.";
+                }
+
+                form.reset();
+                if (btn) btn.disabled = false;
+            }
+        });
+    });
+
 });

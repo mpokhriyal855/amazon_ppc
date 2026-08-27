@@ -1039,10 +1039,11 @@
                     <p class="newsletter-text">
                         One practical Amazon PPC strategy in your inbox every week. No spam. Just actionable growth insights.
                     </p>
-                    <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-                        <input type="email" class="newsletter-input" placeholder="Your work email address..." required aria-label="Work email address">
-                        <button type="submit" class="newsletter-btn">Subscribe →</button>
+                    <form class="newsletter-form" id="newsletterForm" action="javascript:void(0);" method="POST">
+                        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Your work email address..." required aria-label="Work email address">
+                        <button type="submit" class="newsletter-btn" id="newsletterBtn">Subscribe →</button>
                     </form>
+                    <div id="newsletterSuccess" style="display: none; color: #10b981; font-weight: 700; font-size: 13px; margin-top: 10px; text-align: center;"></div>
                 </div>
 
             </aside>
@@ -1139,7 +1140,7 @@
     <!-- SCRIPTS -->
     <script src="js/script.js?v=v27"></script>
     <script src="js/navbar.js?v=v27"></script>
-    <script src="js/blog.js?v=v27"></script>
+    <script src="js/blog.js?v=v46"></script>
 </body>
 
 </html>
