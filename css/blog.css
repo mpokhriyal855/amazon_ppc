@@ -1540,3 +1540,248 @@ body.blog-page-body {
 .newsletter-btn:hover {
     box-shadow: 0 6px 18px rgba(24, 119, 255, 0.4);
 }
+
+/* =========================================================
+   ARTICLE SIDEBAR COLUMN & CUSTOM WIDGET EXTENSIONS
+   ========================================================= */
+.article-sidebar-col {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.author-card-widget {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-author-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.sidebar-author-avatar {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid #1877ff !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+
+.sidebar-author-name {
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin: 0 0 2px 0 !important;
+}
+
+.sidebar-author-title {
+    font-size: 12px !important;
+    color: #1877ff !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+.sidebar-author-bio {
+    font-size: 13px !important;
+    color: #475569 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 12px !important;
+}
+
+.sidebar-author-link {
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: #1877ff !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.sidebar-author-link:hover {
+    color: #0096c7 !important;
+}
+
+/* AUDIT CTA SIDEBAR WIDGET */
+.audit-cta-widget {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border: 1.5px solid rgba(56, 189, 248, 0.3) !important;
+    border-radius: 16px;
+    padding: 22px;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+}
+
+.audit-widget-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 800;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 3px 10px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.audit-widget-title {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+}
+
+.audit-widget-desc {
+    font-size: 13px !important;
+    color: #cbd5e1 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+}
+
+.audit-widget-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, #1877ff 0%, #00b4d8 100%) !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 11px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(24, 119, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+.audit-widget-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(24, 119, 255, 0.45);
+}
+
+/* RELATED POSTS WIDGET */
+.related-posts-widget {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.related-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.related-post-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.related-post-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    color: #1877ff !important;
+    font-weight: 700;
+}
+
+.related-post-title {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+    transition: color 0.2s ease;
+}
+
+.related-post-item:hover .related-post-title {
+    color: #1877ff !important;
+}
+
+.related-post-date {
+    font-size: 11px !important;
+    color: #64748b !important;
+}
+
+/* STAT CARD EXTENSIONS */
+.stat-card-box {
+    background: #0f172a !important;
+    border: 1px solid rgba(56, 189, 248, 0.25) !important;
+    border-radius: 14px !important;
+    padding: 18px !important;
+    text-align: center !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3) !important;
+}
+
+.stat-card-value {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    font-family: 'DM Mono', monospace !important;
+}
+
+.stat-card-label {
+    font-size: 12px !important;
+    color: #94a3b8 !important;
+    font-weight: 600 !important;
+    margin-top: 4px !important;
+}
+
+/* DIAGNOSTIC OPTION & PRIMARY CTA EXTENSIONS */
+.diagnostic-option {
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #cbd5e1 !important;
+    padding: 10px 16px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 13.5px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.diagnostic-option:hover {
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    background: rgba(56, 189, 248, 0.1) !important;
+}
+
+.diagnostic-option.active {
+    background: #0f172a !important;
+    border-color: #38bdf8 !important;
+    color: #38bdf8 !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25) !important;
+}
+
+.primary-cta-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, #1877ff 0%, #00b4d8 100%) !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 13px 26px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 20px rgba(24, 119, 255, 0.4) !important;
+    transition: all 0.25s ease !important;
+}
+
+.primary-cta-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(24, 119, 255, 0.6) !important;
+}
+
