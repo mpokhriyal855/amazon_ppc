@@ -1791,3 +1791,22 @@ body.blog-page-body {
     box-shadow: 0 10px 25px rgba(24, 119, 255, 0.6) !important;
 }
 
+/* FAQ ACCORDION TRANSITIONS */
+details summary {
+    list-style: none !important;
+}
+details summary::-webkit-details-marker {
+    display: none !important;
+}
+.faq-icon {
+    display: inline-block !important;
+    color: #0284c7 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    transition: transform 0.3s ease !important;
+}
+details[open] summary .faq-icon {
+    transform: rotate(45deg) !important;
+}
+
