@@ -1,7 +1,7 @@
 /* --- GLOBAL BODY BACKGROUND & TOP GAP FIX --- */
 html, body {
-    background-color: #080c14 !important;
-    background: #080c14 !important;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
     color: #1e293b !important;
     margin: 0;
     padding: 0;
@@ -197,8 +197,8 @@ html, body {
     background: #0f172a !important;
     border: 1.5px solid rgba(56, 189, 248, 0.3) !important;
     border-radius: 20px;
-    padding: 48px 36px 54px !important;
-    min-height: 390px !important;
+    padding: 68px 38px 74px !important;
+    min-height: 440px !important;
     box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.25);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     align-items: center;
@@ -237,11 +237,7 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    min-height: 310px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    min-height: 350px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
