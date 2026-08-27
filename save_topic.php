@@ -52,17 +52,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $existing = $defaultTopics;
         }
 
-        // Check for duplicates
-        $alreadyExists = false;
-        foreach ($existing as $item) {
+        // Check if topic exists: if so, increment votes! If not, prepend new topic.
+        $foundIndex = -1;
+        foreach ($existing as $index => $item) {
             $t = is_array($item) ? $item['title'] : $item;
             if (strcasecmp($t, $newTopic) === 0) {
-                $alreadyExists = true;
+                $foundIndex = $index;
                 break;
             }
         }
 
-        if (!$alreadyExists) {
+        if ($foundIndex !== -1) {
+            $currentVotes = isset($existing[$foundIndex]['votes']) ? (int)$existing[$foundIndex]['votes'] : 1;
+            $existing[$foundIndex]['votes'] = $currentVotes + 1;
+        } else {
             // Unshift new recommendation to top of list
             array_unshift($existing, [
                 "title" => $newTopic,
@@ -70,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "isUser" => true,
                 "date" => date('Y-m-d H:i:s')
             ]);
-            file_put_contents($file, json_encode($existing, JSON_PRETTY_PRINT));
         }
+        file_put_contents($file, json_encode($existing, JSON_PRETTY_PRINT));
 
         // Send Email Notification to Site Owner
         $to = "anmolpokhriyal3200@gmail.com";

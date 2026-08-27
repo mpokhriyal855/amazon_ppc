@@ -394,15 +394,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     stored = JSON.parse(localStorage.getItem("ppc_user_recommended_topics")) || [];
                 } catch (e) { }
 
-                const alreadyExists = stored.some(t => (typeof t === 'string' ? t : t.title).toLowerCase() === newTopicTitle.toLowerCase());
-                if (!alreadyExists) {
+                const foundIndex = stored.findIndex(t => (typeof t === 'string' ? t : t.title).toLowerCase() === newTopicTitle.toLowerCase());
+                if (foundIndex !== -1) {
+                    if (typeof stored[foundIndex] === 'object') {
+                        stored[foundIndex].votes = (stored[foundIndex].votes || 1) + 1;
+                    }
+                } else {
                     stored.unshift({ title: newTopicTitle, votes: 1, date: new Date().toLocaleDateString(), isUser: true });
-                    try {
-                        localStorage.setItem("ppc_user_recommended_topics", JSON.stringify(stored));
-                    } catch (e) { }
                 }
+                try {
+                    localStorage.setItem("ppc_user_recommended_topics", JSON.stringify(stored));
+                } catch (e) { }
 
-                // 2. SAVE TO SERVER FILE (cPanel PHP Backend saves to topics.json so all visitors see it!)
+                // 2. SAVE TO SERVER FILE & INCREMENT VOTES ON SERVER
                 try {
                     fetch("save_topic.php", {
                         method: "POST",
@@ -411,6 +415,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             topic: newTopicTitle,
                             url: window.location.href
                         })
+                    }).then(function(res) { return res.json(); }).then(function(data) {
+                        if (data && data.status === "success") {
+                            renderCommunityTopics();
+                        }
                     }).catch(function() {});
                 } catch (err) { }
 
