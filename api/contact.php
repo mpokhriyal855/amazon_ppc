@@ -212,88 +212,90 @@ $mail = new PHPMailer(true);
 $smtpSuccess = false;
 $lastError = '';
 
-// Strategy 1: Attempt Direct Titan SMTP (Port 465 SSL or 587 STARTTLS)
+// Prepare HTML body and headers
+$mail->CharSet = 'UTF-8';
+$mail->setFrom($config['from_email'], $config['from_name']);
+$mail->addAddress($config['to_email'], $config['to_name']);
+$mail->addReplyTo($email, $name);
+$mail->isHTML(true);
+$mail->Subject = 'Strategy Call Request - ' . $name;
+
+$mail->Body = "
+    <div style=\"font-family:Arial,sans-serif;max-width:620px;margin:auto;color:#111827;\">
+        <h2 style=\"margin-bottom:20px;\">New Strategy Call Request</h2>
+        <table cellpadding=\"8\" cellspacing=\"0\" style=\"width:100%;border-collapse:collapse;\">
+            <tr><td style=\"font-weight:bold;width:120px;\">Name</td><td>{$safeName}</td></tr>
+            <tr><td style=\"font-weight:bold;\">Email</td><td>{$safeEmail}</td></tr>
+            <tr><td style=\"font-weight:bold;\">Phone</td><td>{$safePhone}</td></tr>
+            <tr><td style=\"font-weight:bold;vertical-align:top;\">Message</td><td>" . nl2br($safeMessage) . "</td></tr>
+        </table>
+        <hr style=\"margin:24px 0;border:0;border-top:1px solid #e5e7eb;\">
+        <p style=\"font-size:12px;color:#6b7280;\">Submitted through ppcgrowthexpert.com</p>
+    </div>
+";
+
+$mail->AltBody = "New Strategy Call Request\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\n\nMessage:\n" . ($message !== '' ? $message : 'No additional message provided');
+
+// Strategy 1 (Lightning Fast): Try GoDaddy Local SMTP Relay (localhost:25) - Responds in < 0.1 seconds
 try {
     $mail->isSMTP();
-    $mail->Timeout = 4; // 4-second timeout to avoid long hangs if firewall blocks port
-
-    $configuredHost = trim((string)($config['smtp_host'] ?? ''));
-    if ($configuredHost === '' || strpos($configuredHost, 'secureserver.net') !== false) {
-        $mail->Host = 'smtp.titan.email';
-    } else {
-        $mail->Host = $configuredHost;
-    }
-
-    $mail->SMTPAuth = true;
-    $mail->Username = trim((string)($config['smtp_username'] ?? ''));
-    $mail->Password = trim((string)($config['smtp_password'] ?? ''));
-
-    $port = (int)($config['smtp_port'] ?? 465);
-    if ($port === 587) {
-        $mail->Port = 587;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->SMTPAutoTLS = true;
-    } else {
-        $mail->Port = 465;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    }
-
-    $mail->SMTPOptions = [
-        'ssl' => [
-            'verify_peer'       => false,
-            'verify_peer_name'  => false,
-            'allow_self_signed' => true
-        ]
-    ];
-
-    $mail->CharSet = 'UTF-8';
-    $mail->setFrom($config['from_email'], $config['from_name']);
-    $mail->addAddress($config['to_email'], $config['to_name']);
-    $mail->addReplyTo($email, $name);
-    $mail->isHTML(true);
-    $mail->Subject = 'Strategy Call Request - ' . $name;
-
-    $mail->Body = "
-        <div style=\"font-family:Arial,sans-serif;max-width:620px;margin:auto;color:#111827;\">
-            <h2 style=\"margin-bottom:20px;\">New Strategy Call Request</h2>
-            <table cellpadding=\"8\" cellspacing=\"0\" style=\"width:100%;border-collapse:collapse;\">
-                <tr><td style=\"font-weight:bold;width:120px;\">Name</td><td>{$safeName}</td></tr>
-                <tr><td style=\"font-weight:bold;\">Email</td><td>{$safeEmail}</td></tr>
-                <tr><td style=\"font-weight:bold;\">Phone</td><td>{$safePhone}</td></tr>
-                <tr><td style=\"font-weight:bold;vertical-align:top;\">Message</td><td>" . nl2br($safeMessage) . "</td></tr>
-            </table>
-            <hr style=\"margin:24px 0;border:0;border-top:1px solid #e5e7eb;\">
-            <p style=\"font-size:12px;color:#6b7280;\">Submitted through ppcgrowthexpert.com</p>
-        </div>
-    ";
-
-    $mail->AltBody = "New Strategy Call Request\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\n\nMessage:\n" . ($message !== '' ? $message : 'No additional message provided');
+    $mail->Host = 'localhost';
+    $mail->Port = 25;
+    $mail->SMTPAuth = false;
+    $mail->SMTPSecure = '';
+    $mail->SMTPAutoTLS = false;
+    $mail->Timeout = 2; // 2-second timeout
 
     $mail->send();
     $smtpSuccess = true;
-
-} catch (Exception $e) {
-    $lastError = !empty($mail->ErrorInfo) ? $mail->ErrorInfo : $e->getMessage();
-    error_log('Titan SMTP direct failed: ' . $lastError);
+    error_log('Contact form: Fast delivery via GoDaddy Local SMTP Relay.');
+} catch (Exception $e1) {
+    $lastError = $e1->getMessage();
+    error_log('Local SMTP Relay failed: ' . $lastError);
 }
 
-// Strategy 2: If Direct Titan SMTP failed due to firewall timeout, try GoDaddy Local SMTP Relay (localhost:25)
+// Strategy 2: Attempt Direct Titan SMTP (Port 465 SSL or 587 STARTTLS) if configured explicitly
 if (!$smtpSuccess) {
     try {
         $mail->smtpClose();
         $mail->isSMTP();
-        $mail->Host = 'localhost';
-        $mail->Port = 25;
-        $mail->SMTPAuth = false;
-        $mail->SMTPSecure = '';
-        $mail->SMTPAutoTLS = false;
         $mail->Timeout = 3;
+
+        $configuredHost = trim((string)($config['smtp_host'] ?? ''));
+        if ($configuredHost === '' || strpos($configuredHost, 'secureserver.net') !== false || $configuredHost === 'localhost') {
+            $mail->Host = 'smtp.titan.email';
+        } else {
+            $mail->Host = $configuredHost;
+        }
+
+        $mail->SMTPAuth = true;
+        $mail->Username = trim((string)($config['smtp_username'] ?? ''));
+        $mail->Password = trim((string)($config['smtp_password'] ?? ''));
+
+        $port = (int)($config['smtp_port'] ?? 465);
+        if ($port === 587) {
+            $mail->Port = 587;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->SMTPAutoTLS = true;
+        } else {
+            $mail->Port = 465;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        }
+
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer'       => false,
+                'verify_peer_name'  => false,
+                'allow_self_signed' => true
+            ]
+        ];
 
         $mail->send();
         $smtpSuccess = true;
-        error_log('Contact form: Sent via GoDaddy Local SMTP Relay.');
+        error_log('Contact form: Sent via Titan Direct SMTP.');
     } catch (Exception $e2) {
-        error_log('Local SMTP Relay failed: ' . $e2->getMessage());
+        $lastError = !empty($mail->ErrorInfo) ? $mail->ErrorInfo : $e2->getMessage();
+        error_log('Titan SMTP direct failed: ' . $lastError);
     }
 }
 
