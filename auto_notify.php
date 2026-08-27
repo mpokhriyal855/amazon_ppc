@@ -32,8 +32,9 @@ $newlyNotified = [];
 foreach ($blogFiles as $file) {
     $filename = basename($file);
 
-    // Skip if this blog has already been broadcasted
-    if (in_array($filename, $sentBlogs)) {
+    // Skip if this blog has already been broadcasted (unless ?force=1 is passed)
+    $forceResend = isset($_GET['force']) && $_GET['force'] === '1';
+    if (in_array($filename, $sentBlogs) && !$forceResend) {
         continue;
     }
 
