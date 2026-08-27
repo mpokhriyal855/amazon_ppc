@@ -211,33 +211,33 @@ $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
-    $mail->Timeout = 8; // 8 second socket timeout to prevent long hangs
+    $mail->Timeout = 12; // 12 second socket timeout
 
-    $primaryHost = $config['smtp_host'] ?? 'smtp.titan.email';
-    // If user configured GoDaddy workspace host for a Titan email, auto-alias to Titan's server
-    if (strpos($primaryHost, 'secureserver.net') !== false && strpos($config['smtp_username'] ?? '', '@') !== false) {
-        $hostsToTry = [$primaryHost, 'smtp.titan.email', 'ssl://smtp.titan.email:465'];
+    $configuredHost = trim((string)($config['smtp_host'] ?? ''));
+
+    // Titan Mail official SMTP host is smtp.titan.email
+    if ($configuredHost === '' || strpos($configuredHost, 'secureserver.net') !== false) {
+        $mail->Host = 'smtp.titan.email';
     } else {
-        $hostsToTry = [$primaryHost, 'smtp.titan.email'];
+        $mail->Host = $configuredHost;
     }
 
-    $mail->Host = implode(';', array_unique($hostsToTry));
     $mail->SMTPAuth = true;
+    $mail->Username = trim((string)($config['smtp_username'] ?? ''));
+    $mail->Password = trim((string)($config['smtp_password'] ?? ''));
 
-    $mail->Username = $config['smtp_username'];
-    $mail->Password = $config['smtp_password'];
-
-    $port = (int)($config['smtp_port'] ?? 587);
-    $mail->Port = $port;
+    $port = (int)($config['smtp_port'] ?? 465);
 
     if ($port === 587) {
+        $mail->Port = 587;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->SMTPAutoTLS = true;
     } else {
+        $mail->Port = 465;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     }
 
-    // Bypass SSL peer verification mismatches on cPanel / GoDaddy relay
+    // Bypass SSL peer verification mismatches on cPanel
     $mail->SMTPOptions = [
         'ssl' => [
             'verify_peer'       => false,
@@ -342,34 +342,14 @@ try {
 
 } catch (Exception $e) {
 
-    error_log('Contact form PHPMailer error: ' . $mail->ErrorInfo . ' - Exception: ' . $e->getMessage());
-
-    // Fallback: Attempt native PHP mail() if SMTP server is blocked or unreachable
-    $to = $config['to_email'] ?? 'contact@ppcgrowthexpert.com';
-    $subject = 'Strategy Call Request - ' . $name;
-    $headers = [
-        'MIME-Version: 1.0',
-        'Content-type: text/html; charset=UTF-8',
-        'From: ' . ($config['from_email'] ?? 'contact@ppcgrowthexpert.com'),
-        'Reply-To: ' . $email,
-        'X-Mailer: PHP/' . phpversion()
-    ];
-
-    $fallbackSent = @mail($to, $subject, $mail->Body, implode("\r\n", $headers));
-
-    if ($fallbackSent) {
-        error_log('Contact form: Fallback native mail() succeeded.');
-        echo json_encode([
-            'success' => true,
-            'message' => 'Your request has been submitted successfully.'
-        ]);
-        exit;
-    }
+    $smtpError = !empty($mail->ErrorInfo) ? $mail->ErrorInfo : $e->getMessage();
+    error_log('Contact form PHPMailer error: ' . $smtpError);
 
     http_response_code(500);
 
     echo json_encode([
         'success' => false,
-        'message' => 'Mailer error: ' . ($mail->ErrorInfo ?: $e->getMessage())
+        'message' => 'Titan Mail SMTP error: ' . $smtpError
     ]);
+    exit;
 }
