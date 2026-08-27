@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Target ACoS & Bid Calculator | Amazon Bid Planning Tool</title>
+    <meta name="description" content="Estimate a practical CPC and maximum keyword bid based on your selling price, conversion rate and target ACoS threshold.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-target-acos-bid-calculator.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v41">
+    <link rel="stylesheet" href="css/navbar.css?v=v41">
+    <link rel="stylesheet" href="css/resources.css?v=v1">
+    <link rel="stylesheet" href="css/footer.css?v=v41">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Target ACoS & Bid Calculator",
+      "url": "https://ppcgrowthexpert.com/amazon-target-acos-bid-calculator.html",
+      "description": "Calculate target CPC bids for Amazon PPC.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Measure clicks turning into orders</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Calculate average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Measure ad click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Compare ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS Calculator</span><span class="mega-item-desc">Max ACoS before margin loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Estimate working monthly budget</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target ACoS &amp; Bid Calculator</span><span class="mega-item-desc">Estimate practical CPC &amp; bid</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
+
+    <div class="resources-page-container">
+
+        <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> /
+            <a href="resources.html">Resources</a> /
+            <span>Target ACoS &amp; Bid Calculator</span>
+        </nav>
+
+        <section class="resources-hero">
+            <div class="hero-eyebrow">✦ AMAZON PPC CALCULATOR</div>
+            <h1 class="hero-title">Target ACoS &amp; Bid Calculator</h1>
+            <p class="hero-description">Estimate a practical CPC or bid ceiling using your target ACoS, conversion rate and unit price.</p>
+            <div class="trust-strip">
+                <div class="trust-item"><span class="check-icon">✓</span> Instant result</div>
+                <div class="trust-item"><span class="check-icon">✓</span> No sign-up required</div>
+                <div class="trust-item"><span class="check-icon">✓</span> Free to use</div>
+            </div>
+        </section>
+
+        <section class="calculator-app-wrapper">
+            <div class="calc-inputs-col">
+                <h3 style="margin:0 0 10px 0; font-size:18px;">Product &amp; Target Metrics</h3>
+                <div class="input-group">
+                    <label class="input-label" for="bidPrice">Selling Price (₹)</label>
+                    <input type="number" id="bidPrice" class="calc-input-field" placeholder="e.g. 1999" min="0" step="any">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="bidCvrPct">Expected Conversion Rate (%)</label>
+                    <input type="number" id="bidCvrPct" class="calc-input-field" value="10" min="0" step="any">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="bidAcosPct">Target ACoS (%)</label>
+                    <input type="number" id="bidAcosPct" class="calc-input-field" value="25" min="0" step="any">
+                </div>
+                <div class="calc-action-row">
+                    <button type="button" class="btn-calc-submit">Estimate Bid →</button>
+                    <button type="button" class="btn-calc-reset">Reset</button>
+                </div>
+            </div>
+
+            <div class="calc-results-col" aria-live="polite">
+                <div class="result-main-box">
+                    <div class="result-main-label">ESTIMATED MAXIMUM CPC / BID</div>
+                    <div class="result-main-value" id="bidResultVal">₹0.00</div>
+                    <div class="result-main-sub" id="bidSubText">Enter product selling price and conversion rate to estimate target bid.</div>
+                </div>
+
+                <div class="result-metrics-grid">
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">ALLOWABLE AD SPEND / ORDER</div>
+                        <div class="mini-stat-val" id="bidSpendOrderVal">₹0.00</div>
+                    </div>
+                </div>
+
+                <div class="result-guidance-box">
+                    <div class="result-guidance-title">What does this mean?</div>
+                    This is the maximum CPC bid you can pay to hit your target ACoS goal based on your current listing conversion rate.
+                </div>
+            </div>
+        </section>
+
+        <article class="calc-educational-prose">
+            <h2>How to Calculate Your Target Keyword Bid</h2>
+            <p>Setting keyword bids based on competitor guesses often leads to overbidding. Calculating bid ceilings mathematically protects profit margins.</p>
+
+            <h2>Formula:</h2>
+            <div style="background:#f1f5f9; padding:12px 18px; border-radius:10px; font-family:'DM Mono', monospace; font-weight:700; margin-bottom:16px;">
+                Max CPC Bid = (Selling Price × Target ACoS %) × (Conversion Rate %)
+            </div>
+        </article>
+
+        <section class="related-calculators-section">
+            <div class="section-header">
+                <div class="section-eyebrow">RELATED TOOLS</div>
+                <h2 class="section-title">Explore Related PPC Calculators</h2>
+            </div>
+            <div class="calculators-grid">
+                <a href="amazon-acos-calculator.html" class="calc-card">
+                    <div class="calc-card-top"><div class="calc-card-header"><div class="calc-card-icon">📊</div><span class="calc-card-category">EFFICIENCY</span></div><h3 class="calc-card-title">Amazon ACoS Calculator</h3><p class="calc-card-desc">Calculate campaign ACoS.</p></div>
+                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate ACoS →</span></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="resources-audit-cta">
+            <div class="hero-eyebrow" style="color:#e0f2fe;">✦ NEED A DEEPER ANALYSIS?</div>
+            <h2>Need Algorithmic Bid Optimization?</h2>
+            <p>Our Amazon PPC experts build programmatic bid adjustment models to maintain optimal keyword bids across 1,000+ targets.</p>
+            <div class="cta-btn-group">
+                <a href="contact.html" class="btn-cta-primary">Request an Amazon PPC Audit →</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 PPC Growth Expert. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js?v=v27"></script>
+    <script src="js/navbar.js?v=v27"></script>
+    <script src="js/calculators.js?v=v1"></script>
+</body>
+
+</html>
