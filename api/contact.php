@@ -236,7 +236,31 @@ $mail->Body = "
 
 $mail->AltBody = "New Strategy Call Request\n\nName: {$name}\nEmail: {$email}\nPhone: {$phone}\n\nMessage:\n" . ($message !== '' ? $message : 'No additional message provided');
 
-// Strategy 1 (Instant - < 0.1 seconds): Native PHP mail() with -f Return-Path
+// 1. Immediately return HTTP 200 response to browser in < 50ms
+ob_start();
+echo json_encode([
+    'success' => true,
+    'message' => 'Your strategy call request has been received!'
+]);
+$size = ob_get_length();
+
+header('Content-Length: ' . $size);
+header('Connection: close');
+header('Content-Encoding: none');
+
+ob_end_flush();
+@ob_flush();
+flush();
+
+if (function_exists('fastcgi_finish_request')) {
+    fastcgi_finish_request();
+}
+
+// 2. Perform background email dispatch without holding up the browser UI
+ignore_user_abort(true);
+set_time_limit(30);
+
+// Strategy 1 (Native PHP mail() with -f Return-Path)
 $to = $config['to_email'] ?? 'contact@ppcgrowthexpert.com';
 $from = $config['from_email'] ?? 'contact@ppcgrowthexpert.com';
 $subject = 'Strategy Call Request - ' . $name;
@@ -253,62 +277,22 @@ $headers = [
 $mailSent = @mail($to, $subject, $mail->Body, implode("\r\n", $headers), '-f' . $from);
 
 if ($mailSent) {
-    $smtpSuccess = true;
-    error_log('Contact form: Instant delivery via Native PHP mail() with -f flag.');
+    error_log('Contact form: Background delivery via Native PHP mail().');
+    exit;
 }
 
 // Strategy 2 (Fallback): Explicit IPv4 Local SMTP Relay (127.0.0.1:25)
-if (!$smtpSuccess) {
-    try {
-        $mail->isSMTP();
-        $mail->Host = '127.0.0.1'; // Use explicit IPv4 IP to avoid 15s IPv6 ::1 DNS lookup timeout
-        $mail->Port = 25;
-        $mail->SMTPAuth = false;
-        $mail->SMTPSecure = '';
-        $mail->SMTPAutoTLS = false;
-        $mail->Timeout = 2;
+try {
+    $mail->isSMTP();
+    $mail->Host = '127.0.0.1';
+    $mail->Port = 25;
+    $mail->SMTPAuth = false;
+    $mail->SMTPSecure = '';
+    $mail->SMTPAutoTLS = false;
+    $mail->Timeout = 3;
 
-        $mail->send();
-        $smtpSuccess = true;
-        error_log('Contact form: Sent via 127.0.0.1 Local SMTP Relay.');
-    } catch (Exception $e1) {
-        $lastError = $e1->getMessage();
-        error_log('Local 127.0.0.1 SMTP Relay failed: ' . $lastError);
-    }
-}
-
-// Strategy 3: Native PHP mail() with -f Envelope Sender flag (Guaranteed delivery on GoDaddy cPanel)
-if (!$smtpSuccess) {
-    $to = $config['to_email'] ?? 'contact@ppcgrowthexpert.com';
-    $from = $config['from_email'] ?? 'contact@ppcgrowthexpert.com';
-    $subject = 'Strategy Call Request - ' . $name;
-
-    $headers = [
-        'MIME-Version: 1.0',
-        'Content-type: text/html; charset=UTF-8',
-        'From: ' . $config['from_name'] . ' <' . $from . '>',
-        'Reply-To: ' . $email,
-        'X-Mailer: PHP/' . phpversion()
-    ];
-
-    // -f flag sets Return-Path to from_email so SPF/DKIM passes for Titan & Gmail
-    $mailSent = @mail($to, $subject, $mail->Body, implode("\r\n", $headers), '-f' . $from);
-
-    if ($mailSent) {
-        $smtpSuccess = true;
-        error_log('Contact form: Sent via Native PHP mail() with -f flag.');
-    }
-}
-
-if ($smtpSuccess) {
-    echo json_encode([
-        'success' => true,
-        'message' => 'Your strategy call request has been received!'
-    ]);
-} else {
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'message' => 'Could not send message: ' . ($lastError ?: 'Mail delivery failed.')
-    ]);
+    $mail->send();
+    error_log('Contact form: Background delivery via 127.0.0.1 Local SMTP Relay.');
+} catch (Exception $e1) {
+    error_log('Background SMTP Relay failed: ' . $e1->getMessage());
 }
