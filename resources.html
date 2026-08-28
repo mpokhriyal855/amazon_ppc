@@ -39,7 +39,7 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="css/style.css?v=v41">
     <link rel="stylesheet" href="css/navbar.css?v=v42">
-    <link rel="stylesheet" href="css/resources.css?v=v7">
+    <link rel="stylesheet" href="css/resources.css?v=v8">
     <link rel="stylesheet" href="css/footer.css?v=v41">
     <link rel="stylesheet" href="css/whatsapp.css">
 
@@ -208,7 +208,7 @@
     </div>
 
     <!-- =========================================================
-         1. CLEAN LIGHT HERO SECTION (MATCHING SERVICES HERO)
+         1. CLEAN LIGHT HERO SECTION
     ========================================================= -->
     <section class="resources-hero-section">
         <div class="resources-hero-container">
@@ -248,12 +248,11 @@
     </section>
 
     <!-- =========================================================
-         2. FULL-WIDTH DARK CALCULATOR SECTION (MATCHING SERVICES PACKAGES)
+         2. FULL-WIDTH DARK CALCULATOR SECTION (REDUCED TOP PADDING, NO EYEBROW)
     ========================================================= -->
     <section id="calculatorGridSection" class="resources-dark-calc-section">
         <div class="resources-calc-container">
             <div class="section-header text-center">
-                <div class="section-eyebrow">PPC CALCULATORS</div>
                 <h2 class="section-title">Choose a Calculator</h2>
                 <p class="section-desc">Select a tool based on the Amazon PPC decision you're trying to make.</p>
             </div>
@@ -409,12 +408,10 @@
     </section>
 
     <!-- =========================================================
-         3. LIGHT BODY SECTIONS CONTAINER
+         3. FULL-WIDTH TOOL FINDER SECTION
     ========================================================= -->
-    <div class="resources-page-container">
-
-        <!-- "NOT SURE WHICH TOOL?" INTERACTIVE SECTION -->
-        <section class="tool-finder-section">
+    <section class="resources-tool-finder-section">
+        <div class="resources-section-container">
             <div class="section-header">
                 <div class="section-eyebrow">TOOL FINDER</div>
                 <h2 class="section-title">Not Sure Which Calculator You Need?</h2>
@@ -440,39 +437,49 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FEATURED TOOL (BREAK-EVEN ACOS) -->
-        <section class="featured-tool-section">
-            <div class="featured-tool-left">
-                <div class="hero-eyebrow">✦ FEATURED CALCULATOR</div>
-                <h2>Know Your Break-Even ACoS</h2>
-                <p>Understand how much advertising cost your product can support before ad spend starts consuming the available contribution margin.</p>
-                <a href="amazon-break-even-acos-calculator.html" class="btn-cta-primary" style="display:inline-block;">Open Break-Even Calculator →</a>
+    <!-- =========================================================
+         4. FULL-WIDTH FEATURED CALCULATOR SECTION (DARK TECH PANEL)
+    ========================================================= -->
+    <section class="resources-featured-section">
+        <div class="resources-section-container">
+            <div class="featured-tool-grid">
+                <div class="featured-tool-left">
+                    <div class="hero-eyebrow">✦ FEATURED CALCULATOR</div>
+                    <h2>Know Your Break-Even ACoS</h2>
+                    <p>Understand how much advertising cost your product can support before ad spend starts consuming the available contribution margin.</p>
+                    <a href="amazon-break-even-acos-calculator.html" class="btn-cta-primary" style="display:inline-block;">Open Break-Even Calculator →</a>
+                </div>
+
+                <div class="featured-preview-box">
+                    <div class="preview-row">
+                        <span class="preview-label">Selling Price</span>
+                        <span class="preview-val">₹1,499.00</span>
+                    </div>
+                    <div class="preview-row">
+                        <span class="preview-label">Product Cost + FBA Fees</span>
+                        <span class="preview-val">₹974.35</span>
+                    </div>
+                    <div class="preview-row">
+                        <span class="preview-label">Contribution Margin</span>
+                        <span class="preview-val">₹524.65</span>
+                    </div>
+                    <div class="preview-row">
+                        <span class="preview-label">Break-Even ACoS</span>
+                        <span class="preview-val highlight-val">35.00%</span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="featured-preview-box">
-                <div class="preview-row">
-                    <span class="preview-label">Selling Price</span>
-                    <span class="preview-val">₹1,499.00</span>
-                </div>
-                <div class="preview-row">
-                    <span class="preview-label">Product Cost + FBA Fees</span>
-                    <span class="preview-val">₹974.35</span>
-                </div>
-                <div class="preview-row">
-                    <span class="preview-label">Contribution Margin</span>
-                    <span class="preview-val">₹524.65</span>
-                </div>
-                <div class="preview-row">
-                    <span class="preview-label">Break-Even ACoS</span>
-                    <span class="preview-val highlight-val">35.00%</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ULTRA ADVANCED PPC FORMULAS CHEAT SHEET -->
-        <section class="formulas-section">
+    <!-- =========================================================
+         5. FULL-WIDTH FORMULAS CHEAT SHEET SECTION
+    ========================================================= -->
+    <section class="resources-formulas-section">
+        <div class="resources-section-container">
             <div class="section-header">
                 <div class="section-eyebrow">CHEAT SHEET</div>
                 <h2 class="section-title">Amazon PPC Metrics &amp; Formulas at a Glance</h2>
@@ -564,10 +571,14 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- WHY USE THESE TOOLS -->
-        <section style="margin-bottom:60px;">
+    <!-- =========================================================
+         6. FULL-WIDTH WHY USE SECTION
+    ========================================================= -->
+    <section class="resources-why-section">
+        <div class="resources-section-container">
             <div class="section-header">
                 <div class="section-eyebrow">BUILT FOR SELLERS</div>
                 <h2 class="section-title">Built for Better PPC Decisions</h2>
@@ -590,10 +601,14 @@
                     <p class="why-card-desc">Estimate required budgets and target bid ranges before launching or scaling Amazon PPC campaigns.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) -->
-        <section class="faq-section">
+    <!-- =========================================================
+         7. FULL-WIDTH FAQ SECTION
+    ========================================================= -->
+    <section class="resources-faq-section">
+        <div class="resources-section-container">
             <div class="section-header">
                 <div class="section-eyebrow">FAQ</div>
                 <h2 class="section-title">Frequently Asked Questions</h2>
@@ -641,23 +656,28 @@
                     </div>
                 </details>
             </div>
-        </section>
-
-        <!-- FREE PPC AUDIT CALL TO ACTION -->
-        <section class="resources-audit-cta">
-            <div class="hero-eyebrow" style="background:rgba(255,255,255,0.15); color:#ffffff; border-color:rgba(255,255,255,0.3);">✦ WANT US TO OPTIMIZE YOUR PPC?</div>
-            <h2>Get a Free Amazon PPC Audit &amp; Growth Strategy</h2>
-            <p>Uncover wasted ad spend, negative keyword opportunities, and bid optimization strategies customized for your Amazon products.</p>
-            <div class="cta-btn-group">
-                <a href="index.html#contact" class="btn-cta-primary">Claim Free PPC Audit →</a>
-                <a href="services.html" class="btn-cta-secondary">Explore Managed Services</a>
-            </div>
-        </section>
-
-    </div>
+        </div>
+    </section>
 
     <!-- =========================================================
-         GLOBAL FOOTER (STANDARDIZED EXECUTIVE FOOTER)
+         8. FULL-WIDTH FREE AUDIT CTA SECTION
+    ========================================================= -->
+    <section class="resources-audit-cta-section">
+        <div class="resources-section-container">
+            <div class="resources-audit-cta">
+                <div class="hero-eyebrow" style="background:rgba(255,255,255,0.15); color:#ffffff; border-color:rgba(255,255,255,0.3);">✦ WANT US TO OPTIMIZE YOUR PPC?</div>
+                <h2>Get a Free Amazon PPC Audit &amp; Growth Strategy</h2>
+                <p>Uncover wasted ad spend, negative keyword opportunities, and bid optimization strategies customized for your Amazon products.</p>
+                <div class="cta-btn-group">
+                    <a href="index.html#contact" class="btn-cta-primary">Claim Free PPC Audit →</a>
+                    <a href="services.html" class="btn-cta-secondary">Explore Managed Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         GLOBAL FOOTER
     ========================================================= -->
     <div id="footer-placeholder"></div>
 
@@ -665,7 +685,7 @@
     <script src="js/navbar.js?v=v42"></script>
     <script src="js/footer.js?v=v41"></script>
     <script src="js/whatsapp.js"></script>
-    <script src="js/resources.js?v=v7"></script>
+    <script src="js/resources.js?v=v8"></script>
 
 </body>
 </html>
