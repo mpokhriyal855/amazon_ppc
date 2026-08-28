@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon Coupon ROI Calculator | Break-Even Promotion Model</title>
+    <meta name="description" content="Calculate how Amazon coupons and seller clip discounts affect margin per unit and how many incremental orders are required to break even.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-coupon-roi-calculator.html">
+
+    <!-- FONTS & STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v41">
+    <link rel="stylesheet" href="css/navbar.css?v=v42">
+    <link rel="stylesheet" href="css/resources.css?v=v19">
+    <link rel="stylesheet" href="css/footer.css?v=v41">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Amazon Coupon ROI Calculator",
+      "url": "https://ppcgrowthexpert.com/amazon-coupon-roi-calculator.html",
+      "description": "Calculate promotional ROI, clip coupon redemption fees, and incremental break-even orders.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- BACKGROUND GRID & GLOW -->
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <!-- NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="resources-page-container">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> /
+            <a href="resources.html">Resources</a> /
+            <span>Amazon Coupon ROI Calculator</span>
+        </nav>
+
+        <!-- HERO -->
+        <section class="resources-hero">
+            <div class="hero-eyebrow">✦ PROMOTION PROFITABILITY</div>
+            <h1 class="hero-title">Amazon Coupon ROI Calculator</h1>
+            <p class="hero-description">Estimate how a coupon or discount affects contribution per order and whether the promotion generates enough incremental orders to justify its cost.</p>
+        </section>
+
+        <!-- CALCULATOR APP WRAPPER -->
+        <section class="calculator-app-wrapper">
+            <!-- LEFT INPUTS COL -->
+            <div class="calc-inputs-col">
+                <h3>Coupon Promotion Inputs</h3>
+                <div class="input-group">
+                    <label class="input-label" for="cpnPrice">Normal Selling Price (₹)</label>
+                    <input type="number" id="cpnPrice" class="calc-input-field" value="1500" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="cpnDiscount">Coupon Value (₹)</label>
+                    <input type="number" id="cpnDiscount" class="calc-input-field" value="150" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="cpnCogs">Product Cost / COGS (₹)</label>
+                    <input type="number" id="cpnCogs" class="calc-input-field" value="450" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="cpnFees">Amazon Fees (₹)</label>
+                    <input type="number" id="cpnFees" class="calc-input-field" value="250" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="cpnRedeemFee">Coupon Redemption Fee (₹)</label>
+                    <input type="number" id="cpnRedeemFee" class="calc-input-field" value="35" min="0">
+                </div>
+                <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                    <div class="input-group">
+                        <label class="input-label" for="cpnBaseOrders">Baseline Monthly Orders</label>
+                        <input type="number" id="cpnBaseOrders" class="calc-input-field" value="100" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="cpnExpOrders">Exp. Promotion Orders</label>
+                        <input type="number" id="cpnExpOrders" class="calc-input-field" value="140" min="0">
+                    </div>
+                </div>
+
+                <div class="calc-action-row">
+                    <button type="button" class="btn-calc-submit" id="btnCalcCpn">Calculate Coupon ROI →</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetCpn">Reset</button>
+                </div>
+            </div>
+
+            <!-- RIGHT RESULTS COL -->
+            <div class="calc-results-col" aria-live="polite">
+                <div class="result-main-box">
+                    <div class="result-main-label">BREAK-EVEN INCREMENTAL ORDERS NEEDED</div>
+                    <div class="result-main-value" id="cpnBreakEvenOrdersVal">+28 Orders</div>
+                    <div class="result-main-sub" id="cpnSubText">To match baseline non-discounted profit</div>
+                </div>
+
+                <div class="result-metrics-grid">
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">DISCOUNTED PRICE</div>
+                        <div class="mini-stat-val" id="cpnDiscPriceVal">₹1,350</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">MARGIN BEFORE COUPON</div>
+                        <div class="mini-stat-val" id="cpnMargBeforeVal">₹800 (53.3%)</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">MARGIN AFTER COUPON</div>
+                        <div class="mini-stat-val" id="cpnMargAfterVal">₹615 (45.6%)</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">ESTIMATED PROMO NET PROFIT</div>
+                        <div class="mini-stat-val" id="cpnNetProfitVal">₹86,100</div>
+                    </div>
+                </div>
+
+                <div class="result-guidance-box">
+                    <div class="result-guidance-title">Promotional Impact Analysis</div>
+                    <div id="cpnGuidanceText">
+                        Your baseline profit is <strong>₹80,000</strong> (100 orders @ ₹800). At ₹615 profit per coupon order, you need at least <strong>128 total orders (+28 incremental)</strong> to break even. Expected 140 orders yields <strong>₹86,100 (+₹6,100 extra net profit)</strong>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIT CTA BANNER -->
+        <section class="resources-audit-cta">
+            <h2>Want To Scale Sales With High-ROI Promotions?</h2>
+            <p>We combine strategic Amazon green clip coupons with targeted Sponsored Products campaigns to maximize conversion rate lifts.</p>
+            <a href="contact.html" class="btn-cta-primary">Audit Your Amazon Promotion Strategy →</a>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© 2026 PPC Growth Expert. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+
+            function calcCpn() {
+                const price = parseFloat(document.getElementById('cpnPrice').value) || 0;
+                const discount = parseFloat(document.getElementById('cpnDiscount').value) || 0;
+                const cogs = parseFloat(document.getElementById('cpnCogs').value) || 0;
+                const fees = parseFloat(document.getElementById('cpnFees').value) || 0;
+                const redeemFee = parseFloat(document.getElementById('cpnRedeemFee').value) || 0;
+                const baseOrders = parseFloat(document.getElementById('cpnBaseOrders').value) || 0;
+                const expOrders = parseFloat(document.getElementById('cpnExpOrders').value) || 0;
+
+                const discPrice = Math.max(0, price - discount);
+                const margBefore = price - (cogs + fees);
+                const margAfter = discPrice - (cogs + fees + redeemFee);
+
+                const baseTotalProfit = margBefore * baseOrders;
+                const totalReqOrders = margAfter > 0 ? Math.ceil(baseTotalProfit / margAfter) : 0;
+                const breakEvenInc = Math.max(0, totalReqOrders - baseOrders);
+
+                const expTotalProfit = margAfter * expOrders;
+                const profitDiff = expTotalProfit - baseTotalProfit;
+
+                document.getElementById('cpnBreakEvenOrdersVal').innerText = '+' + breakEvenInc + ' Orders';
+                document.getElementById('cpnSubText').innerText = `Needs ${totalReqOrders} total coupon orders to match baseline profit`;
+                document.getElementById('cpnDiscPriceVal').innerText = fmt.format(discPrice);
+                document.getElementById('cpnMargBeforeVal').innerText = fmt.format(margBefore);
+                document.getElementById('cpnMargAfterVal').innerText = fmt.format(margAfter);
+                document.getElementById('cpnNetProfitVal').innerText = fmt.format(expTotalProfit);
+
+                document.getElementById('cpnGuidanceText').innerHTML = `Baseline profit is <strong>${fmt.format(baseTotalProfit)}</strong>. At ${fmt.format(margAfter)} profit/order, you need <strong>${totalReqOrders} total orders (+${breakEvenInc} extra)</strong> to break even. Expected ${expOrders} orders yields <strong>${fmt.format(expTotalProfit)} (${profitDiff >= 0 ? '+' : ''}${fmt.format(profitDiff)})</strong>.`;
+            }
+
+            document.querySelectorAll('#cpnPrice, #cpnDiscount, #cpnCogs, #cpnFees, #cpnRedeemFee, #cpnBaseOrders, #cpnExpOrders').forEach(el => {
+                el.addEventListener('input', calcCpn);
+            });
+            document.getElementById('btnCalcCpn').addEventListener('click', calcCpn);
+            document.getElementById('btnResetCpn').addEventListener('click', function() {
+                document.getElementById('cpnPrice').value = 1500;
+                document.getElementById('cpnDiscount').value = 150;
+                document.getElementById('cpnCogs').value = 450;
+                document.getElementById('cpnFees').value = 250;
+                document.getElementById('cpnRedeemFee').value = 35;
+                document.getElementById('cpnBaseOrders').value = 100;
+                document.getElementById('cpnExpOrders').value = 140;
+                calcCpn();
+            });
+
+            calcCpn();
+        });
+    </script>
+</body>
+</html>

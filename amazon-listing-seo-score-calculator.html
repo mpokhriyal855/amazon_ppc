@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon Listing SEO Score Calculator | Diagnostic Keyword Audit</title>
+    <meta name="description" content="Audit your Amazon product listing SEO readiness score (0-100) based on title structure, bullet points, backend keywords, image count, and A+ content.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-listing-seo-score-calculator.html">
+
+    <!-- FONTS & STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v41">
+    <link rel="stylesheet" href="css/navbar.css?v=v42">
+    <link rel="stylesheet" href="css/resources.css?v=v19">
+    <link rel="stylesheet" href="css/footer.css?v=v41">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Amazon Listing SEO Score Calculator",
+      "url": "https://ppcgrowthexpert.com/amazon-listing-seo-score-calculator.html",
+      "description": "Diagnostic SEO score calculator for Amazon product titles, bullets, backend keywords, and assets.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- BACKGROUND GRID & GLOW -->
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <!-- NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="resources-page-container">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> /
+            <a href="resources.html">Resources</a> /
+            <span>Amazon Listing SEO Score Calculator</span>
+        </nav>
+
+        <!-- HERO -->
+        <section class="resources-hero">
+            <div class="hero-eyebrow">✦ LISTING SEO DIAGNOSTIC</div>
+            <h1 class="hero-title">Amazon Listing SEO Score Calculator</h1>
+            <p class="hero-description">Score the SEO readiness of an Amazon product listing using title structure, bullets, keyword coverage, images and key listing elements.</p>
+        </section>
+
+        <!-- CALCULATOR APP WRAPPER -->
+        <section class="calculator-app-wrapper">
+            <!-- LEFT INPUTS COL -->
+            <div class="calc-inputs-col">
+                <h3>Listing Content &amp; Keywords</h3>
+                <div class="input-group">
+                    <label class="input-label" for="seoTitle">Product Title</label>
+                    <input type="text" id="seoTitle" class="calc-input-field" value="Stainless Steel Water Bottle 1000ml Vacuum Insulated Leak Proof Flask" placeholder="Paste product title...">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="seoPrimaryKw">Primary Focus Keyword</label>
+                    <input type="text" id="seoPrimaryKw" class="calc-input-field" value="Water Bottle 1000ml" placeholder="e.g. Water Bottle 1000ml">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="seoBullets">Bullet Points (Paste all bullets)</label>
+                    <textarea id="seoBullets" class="calc-input-field" rows="3" style="height:auto;" placeholder="Bullet 1... Bullet 2... Bullet 3...">• 24 HOURS COLD: Double wall vacuum insulation keeps beverages cold for 24 hrs.
+• PREMIUM STEEL: Crafted from 18/8 food-grade stainless steel BPA free.
+• LEAKPROOF CAP: Ergonomic lid with silicone seal for spill-free gym usage.
+• 1000ML CAPACITY: Perfect thermos flask for gym, office, sports, and travel.
+• DURABLE COATING: Powder coated matte finish for easy sweat-proof grip.</textarea>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="seoBackendKw">Backend Search Terms</label>
+                    <input type="text" id="seoBackendKw" class="calc-input-field" value="thermos gym flask cold drink sports shaker" placeholder="Backend search terms...">
+                </div>
+                <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <div class="input-group">
+                        <label class="input-label" for="seoImages">Images Count</label>
+                        <input type="number" id="seoImages" class="calc-input-field" value="6" min="1" max="9">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="seoAplus">A+ Content?</label>
+                        <select id="seoAplus" class="calc-input-field">
+                            <option value="yes" selected>Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="seoBrandStore">Brand Store?</label>
+                        <select id="seoBrandStore" class="calc-input-field">
+                            <option value="yes" selected>Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calc-action-row">
+                    <button type="button" class="btn-calc-submit" id="btnCalcSeo">Score Listing SEO →</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetSeo">Reset</button>
+                </div>
+            </div>
+
+            <!-- RIGHT RESULTS COL -->
+            <div class="calc-results-col" aria-live="polite">
+                <div class="result-main-box">
+                    <div class="result-main-label">LISTING SEO SCORE</div>
+                    <div class="result-main-value" id="seoScoreVal">88 / 100</div>
+                    <div class="result-main-sub" id="seoGradeText">Grade A - Strong Keyword Optimization</div>
+                </div>
+
+                <div class="result-metrics-grid">
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">TITLE QUALITY</div>
+                        <div class="mini-stat-val" id="seoTitleScore">18 / 20</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">BULLET COVERAGE</div>
+                        <div class="mini-stat-val" id="seoBulletScore">20 / 20</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">KEYWORD DENSITY</div>
+                        <div class="mini-stat-val" id="seoKwScore">20 / 20</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">ASSETS &amp; IMAGES</div>
+                        <div class="mini-stat-val" id="seoAssetScore">30 / 40</div>
+                    </div>
+                </div>
+
+                <div class="result-guidance-box">
+                    <div class="result-guidance-title">Top 3 Recommended Action Items</div>
+                    <div id="seoRecsText">
+                        1. Add 1 more main image to reach the 7-image Amazon benchmark.<br>
+                        2. Expand backend keywords with long-tail search volume.<br>
+                        3. Ensure primary keyword is within the first 60 characters of the title.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIT CTA BANNER -->
+        <section class="resources-audit-cta">
+            <h2>Want a Professional Amazon Listing Audit?</h2>
+            <p>Our team optimizes product titles, bullet points, A+ content, and PPC search terms to maximize BSR rank.</p>
+            <a href="contact.html" class="btn-cta-primary">Request an Amazon Listing Audit →</a>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© 2026 PPC Growth Expert. Diagnostic score based on listing inputs.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function calcSeo() {
+                const title = document.getElementById('seoTitle').value.trim();
+                const primaryKw = document.getElementById('seoPrimaryKw').value.trim().toLowerCase();
+                const bullets = document.getElementById('seoBullets').value.trim();
+                const backendKw = document.getElementById('seoBackendKw').value.trim();
+                const images = parseInt(document.getElementById('seoImages').value) || 0;
+                const aplus = document.getElementById('seoAplus').value;
+                const brandStore = document.getElementById('seoBrandStore').value;
+
+                let titleScore = 0;
+                if (title.length >= 60) titleScore += 8;
+                else if (title.length > 20) titleScore += 5;
+                if (primaryKw && title.toLowerCase().includes(primaryKw)) titleScore += 10;
+                if (title.length <= 150) titleScore += 2;
+                titleScore = Math.min(20, titleScore);
+
+                let bulletScore = 0;
+                const bulletCount = (bullets.match(/•|\n/g) || []).length + 1;
+                if (bulletCount >= 5) bulletScore += 10;
+                else bulletScore += bulletCount * 2;
+                if (primaryKw && bullets.toLowerCase().includes(primaryKw)) bulletScore += 10;
+                bulletScore = Math.min(20, bulletScore);
+
+                let kwScore = 0;
+                if (backendKw.length > 20) kwScore += 10;
+                else if (backendKw.length > 0) kwScore += 5;
+                if (primaryKw) kwScore += 10;
+                kwScore = Math.min(20, kwScore);
+
+                let assetScore = 0;
+                if (images >= 7) assetScore += 20;
+                else if (images >= 5) assetScore += 14;
+                else assetScore += images * 2;
+                if (aplus === 'yes') assetScore += 10;
+                if (brandStore === 'yes') assetScore += 10;
+                assetScore = Math.min(40, assetScore);
+
+                const totalScore = titleScore + bulletScore + kwScore + assetScore;
+
+                document.getElementById('seoScoreVal').innerText = totalScore + ' / 100';
+                document.getElementById('seoTitleScore').innerText = titleScore + ' / 20';
+                document.getElementById('seoBulletScore').innerText = bulletScore + ' / 20';
+                document.getElementById('seoKwScore').innerText = kwScore + ' / 20';
+                document.getElementById('seoAssetScore').innerText = assetScore + ' / 40';
+
+                let grade = totalScore >= 85 ? 'Grade A - Excellent Indexing Readiness' : (totalScore >= 70 ? 'Grade B - Good, Minor Optimizations Needed' : 'Grade C - Needs Search Optimization');
+                document.getElementById('seoGradeText').innerText = grade;
+
+                let recs = [];
+                if (images < 7) recs.push(`Add ${7 - images} more image(s) to reach Amazon's 7-image conversion standard.`);
+                if (aplus === 'no') recs.push('Publish Brand A+ Content to boost conversion rate by 5-10%.');
+                if (!primaryKw || !title.toLowerCase().includes(primaryKw)) recs.push('Place primary focus keyword near the front of product title.');
+                if (recs.length < 3) recs.push('Fill all 249 bytes of backend search terms with relevant long-tail phrases.');
+
+                document.getElementById('seoRecsText').innerHTML = recs.slice(0, 3).map((r, i) => `${i + 1}. ${r}`).join('<br>');
+            }
+
+            document.querySelectorAll('#seoTitle, #seoPrimaryKw, #seoBullets, #seoBackendKw, #seoImages, #seoAplus, #seoBrandStore').forEach(el => {
+                el.addEventListener('input', calcSeo);
+                el.addEventListener('change', calcSeo);
+            });
+            document.getElementById('btnCalcSeo').addEventListener('click', calcSeo);
+
+            calcSeo();
+        });
+    </script>
+</body>
+</html>

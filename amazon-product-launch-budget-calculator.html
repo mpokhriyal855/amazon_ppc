@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon Product Launch Budget Calculator | New Product Launch Planner</title>
+    <meta name="description" content="Calculate total launch investment required for an Amazon India product including launch PPC budget, photography, A+ content, coupons, and Vine review promotions.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-product-launch-budget-calculator.html">
+
+    <!-- FONTS & STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v41">
+    <link rel="stylesheet" href="css/navbar.css?v=v42">
+    <link rel="stylesheet" href="css/resources.css?v=v19">
+    <link rel="stylesheet" href="css/footer.css?v=v41">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Amazon Product Launch Budget Calculator",
+      "url": "https://ppcgrowthexpert.com/amazon-product-launch-budget-calculator.html",
+      "description": "Calculate marketing and advertising launch budget required for new Amazon product launches.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- BACKGROUND GRID & GLOW -->
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <!-- NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="resources-page-container">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> /
+            <a href="resources.html">Resources</a> /
+            <span>Amazon Product Launch Budget Calculator</span>
+        </nav>
+
+        <!-- HERO -->
+        <section class="resources-hero">
+            <div class="hero-eyebrow">✦ PRODUCT LAUNCH MODELER</div>
+            <h1 class="hero-title">Amazon Product Launch Budget Calculator</h1>
+            <p class="hero-description">Estimate the marketing and advertising investment required for an Amazon product launch based on launch duration, PPC assumptions, creative costs and promotional budget.</p>
+        </section>
+
+        <!-- CALCULATOR APP WRAPPER -->
+        <section class="calculator-app-wrapper">
+            <!-- LEFT INPUTS COL -->
+            <div class="calc-inputs-col">
+                <h3>Launch Expense Inputs</h3>
+                <div class="input-group">
+                    <label class="input-label" for="lchDuration">Launch Period (Days)</label>
+                    <input type="number" id="lchDuration" class="calc-input-field" value="30" min="1">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="lchDailyPpc">Daily Launch PPC Budget (₹)</label>
+                    <input type="number" id="lchDailyPpc" class="calc-input-field" value="2000" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="lchPhoto">Photography &amp; Creative Assets (₹)</label>
+                    <input type="number" id="lchPhoto" class="calc-input-field" value="15000" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="lchAplus">A+ Content Design (₹)</label>
+                    <input type="number" id="lchAplus" class="calc-input-field" value="8000" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="lchCoupon">Coupon &amp; Discount Budget (₹)</label>
+                    <input type="number" id="lchCoupon" class="calc-input-field" value="10000" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="lchVine">Sampling &amp; Vine Review Cost (₹)</label>
+                    <input type="number" id="lchVine" class="calc-input-field" value="12000" min="0">
+                </div>
+                <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                    <div class="input-group">
+                        <label class="input-label" for="lchCpc">Est. Category CPC (₹)</label>
+                        <input type="number" id="lchCpc" class="calc-input-field" value="25" placeholder="Optional">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="lchCvr">Est. Conversion Rate (%)</label>
+                        <input type="number" id="lchCvr" class="calc-input-field" value="12" placeholder="Optional">
+                    </div>
+                </div>
+
+                <div class="calc-action-row">
+                    <button type="button" class="btn-calc-submit" id="btnCalcLch">Calculate Launch Budget →</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetLch">Reset</button>
+                </div>
+            </div>
+
+            <!-- RIGHT RESULTS COL -->
+            <div class="calc-results-col" aria-live="polite">
+                <div class="result-main-box">
+                    <div class="result-main-label">TOTAL LAUNCH MARKETING BUDGET</div>
+                    <div class="result-main-value" id="lchTotalVal">₹1,05,000</div>
+                    <div class="result-main-sub" id="lchSubText">Includes PPC, Creative, &amp; Promotions</div>
+                </div>
+
+                <div class="result-metrics-grid">
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">TOTAL PPC SPEND</div>
+                        <div class="mini-stat-val" id="lchPpcVal">₹60,000</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">CREATIVE SPEND</div>
+                        <div class="mini-stat-val" id="lchCreativeVal">₹23,000</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">PROMOTIONAL SPEND</div>
+                        <div class="mini-stat-val" id="lchPromoVal">₹22,000</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">EST. LAUNCH ORDERS</div>
+                        <div class="mini-stat-val" id="lchOrdersVal">288 Orders</div>
+                    </div>
+                </div>
+
+                <div class="result-guidance-box">
+                    <div class="result-guidance-title">Launch Forecast Overview</div>
+                    <div id="lchGuidanceText">
+                        Allocating <strong>₹60,000 in launch PPC (57.1% share)</strong> alongside ₹23,000 creative and ₹22,000 coupons is projected to generate ~2,400 clicks and <strong>288 initial orders</strong>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIT CTA BANNER -->
+        <section class="resources-audit-cta">
+            <h2>Launching a New Amazon India Product?</h2>
+            <p>We build tailored Amazon Product Launch PPC Strategies designed to accelerate BSR keyword indexing and initial review velocity.</p>
+            <a href="contact.html" class="btn-cta-primary">Plan Your Product Launch Strategy →</a>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© 2026 PPC Growth Expert. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+
+            function calcLch() {
+                const duration = parseFloat(document.getElementById('lchDuration').value) || 30;
+                const dailyPpc = parseFloat(document.getElementById('lchDailyPpc').value) || 0;
+                const photo = parseFloat(document.getElementById('lchPhoto').value) || 0;
+                const aplus = parseFloat(document.getElementById('lchAplus').value) || 0;
+                const coupon = parseFloat(document.getElementById('lchCoupon').value) || 0;
+                const vine = parseFloat(document.getElementById('lchVine').value) || 0;
+                const cpc = parseFloat(document.getElementById('lchCpc').value) || 0;
+                const cvr = parseFloat(document.getElementById('lchCvr').value) || 0;
+
+                const ppcTotal = dailyPpc * duration;
+                const creativeTotal = photo + aplus;
+                const promoTotal = coupon + vine;
+                const totalLaunchBud = ppcTotal + creativeTotal + promoTotal;
+                const ppcShare = totalLaunchBud > 0 ? (ppcTotal / totalLaunchBud) * 100 : 0;
+
+                const clicks = cpc > 0 ? ppcTotal / cpc : 0;
+                const orders = (clicks > 0 && cvr > 0) ? Math.round(clicks * (cvr / 100)) : 0;
+
+                document.getElementById('lchTotalVal').innerText = fmt.format(totalLaunchBud);
+                document.getElementById('lchPpcVal').innerText = fmt.format(ppcTotal);
+                document.getElementById('lchCreativeVal').innerText = fmt.format(creativeTotal);
+                document.getElementById('lchPromoVal').innerText = fmt.format(promoTotal);
+                document.getElementById('lchOrdersVal').innerText = orders > 0 ? orders + ' Orders' : 'N/A';
+
+                document.getElementById('lchGuidanceText').innerHTML = `Allocating <strong>${fmt.format(ppcTotal)} in launch PPC (${ppcShare.toFixed(1)}% share)</strong> over ${duration} days with ${fmt.format(creativeTotal)} creative & ${fmt.format(promoTotal)} promo budget.`;
+            }
+
+            document.querySelectorAll('#lchDuration, #lchDailyPpc, #lchPhoto, #lchAplus, #lchCoupon, #lchVine, #lchCpc, #lchCvr').forEach(el => {
+                el.addEventListener('input', calcLch);
+            });
+            document.getElementById('btnCalcLch').addEventListener('click', calcLch);
+            document.getElementById('btnResetLch').addEventListener('click', function() {
+                document.getElementById('lchDuration').value = 30;
+                document.getElementById('lchDailyPpc').value = 2000;
+                document.getElementById('lchPhoto').value = 15000;
+                document.getElementById('lchAplus').value = 8000;
+                document.getElementById('lchCoupon').value = 10000;
+                document.getElementById('lchVine').value = 12000;
+                document.getElementById('lchCpc').value = 25;
+                document.getElementById('lchCvr').value = 12;
+                calcLch();
+            });
+
+            calcLch();
+        });
+    </script>
+</body>
+</html>

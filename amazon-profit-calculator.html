@@ -4,24 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Amazon Profit Calculator | Amazon Ads Expert</title>
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon Profit Calculator India | Calculate Net Margin & FBA Fees</title>
+    <meta name="description" content="Calculate your Amazon India net profit per unit, margin %, and ROI after referral fees, closing fees, FBA fulfilment, storage, packaging, and PPC ad spend.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-profit-calculator.html">
+
+    <!-- FONTS & STYLES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=v17">
-    <link rel="stylesheet" href="css/navbar.css?v=v12">
-    <link rel="stylesheet" href="css/amazon-calculator.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v41">
+    <link rel="stylesheet" href="css/navbar.css?v=v42">
+    <link rel="stylesheet" href="css/resources.css?v=v19">
+    <link rel="stylesheet" href="css/footer.css?v=v41">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Amazon Profit Calculator India",
+      "url": "https://ppcgrowthexpert.com/amazon-profit-calculator.html",
+      "description": "Calculate Amazon India product profitability, FBA fees, net margin, and ROI.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
 </head>
 
 <body>
-    <!-- EXECUTIVE NAVBAR -->
+
+    <!-- BACKGROUND GRID & GLOW -->
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <!-- NAVBAR -->
     <div class="navbar-container" id="navbarContainer">
         <header class="navbar">
             <a href="index.html" class="logo">
                 <div class="logo-badge"><div class="logo-symbol"></div></div>
                 <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
             </a>
+
             <nav class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="services.html" class="nav-item">Services</a>
@@ -29,63 +56,313 @@
                 <a href="index.html#results" class="nav-item">Results</a>
                 <a href="about.html" class="nav-item">About</a>
                 <div class="nav-dropdown">
-                    <a href="#" class="nav-item nav-dropdown-trigger" onclick="event.preventDefault(); this.parentElement.classList.toggle('is-open');">
-                        Resources <span class="dropdown-arrow">▾</span>
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
                     </a>
-                    <div class="dropdown-menu">
-                        <a href="flipkart-profit-calculator.html" class="dropdown-link">Flipkart Profit Calculator</a>
-                        <a href="blinkit-profit-calculator.html" class="dropdown-link">Blinkit Profit Calculator</a>
-                        <a href="amazon-profit-calculator.html" class="dropdown-link">Amazon Profit Calculator</a>
-                        <a href="meesho-profit-calculator.html" class="dropdown-link">Meesho Profit Calculator</a>
-                        <a href="zepto-profit-calculator.html" class="dropdown-link">Zepto Profit Calculator</a>
-                        <a href="swiggy-instamart-profit-calculator.html" class="dropdown-link">Swiggy Instamart Profit Calculator</a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
                     </div>
                 </div>
                 <a href="blog.html" class="nav-item">Blog</a>
-                <a href="index.html#contact" class="nav-item">Contact</a>
+                <a href="contact.html" class="nav-item">Contact</a>
             </nav>
+
             <div class="nav-actions">
-                <a href="index.html#contact" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
                 <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
             </div>
         </header>
     </div>
 
-    <!-- HERO -->
-    <section class="calc-hero">
-        <h1 class="calc-hero-title">Amazon <span class="highlight-orange">Profit Calculator</span></h1>
-        <p>Calculate your Amazon FBA referral fees, closing fees, and net profit margins.</p>
-    </section>
+    <!-- MAIN CONTAINER -->
+    <div class="resources-page-container">
 
-    <!-- CALCULATOR CONTENT -->
-    <main class="calc-container">
-        <div class="calc-card">
-            <form id="amazonCalcForm">
-                <div class="calc-form-group">
-                    <label for="amazonSp">Selling Price (₹)</label>
-                    <input type="number" id="amazonSp" placeholder="e.g. 1499" required>
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> /
+            <a href="resources.html">Resources</a> /
+            <span>Amazon Profit Calculator India</span>
+        </nav>
+
+        <!-- HERO -->
+        <section class="resources-hero">
+            <div class="hero-eyebrow">✦ AMAZON SELLER CALCULATOR</div>
+            <h1 class="hero-title">Amazon Profit Calculator India</h1>
+            <p class="hero-description">Estimate your Amazon India product profit after product cost, referral fees, fulfilment costs, advertising spend and other variable expenses.</p>
+        </section>
+
+        <!-- CALCULATOR APP WRAPPER -->
+        <section class="calculator-app-wrapper">
+            <!-- LEFT INPUTS COL -->
+            <div class="calc-inputs-col">
+                <h3>Product & Cost Inputs</h3>
+                <div class="input-group">
+                    <label class="input-label" for="profSp">Selling Price (₹)</label>
+                    <input type="number" id="profSp" class="calc-input-field" placeholder="e.g. 1499" value="1499" min="0">
                 </div>
-                <div class="calc-form-group">
-                    <label for="amazonCogs">Cost of Goods (₹)</label>
-                    <input type="number" id="amazonCogs" placeholder="e.g. 450" required>
+                <div class="input-group">
+                    <label class="input-label" for="profCogs">Product Cost / COGS (₹)</label>
+                    <input type="number" id="profCogs" class="calc-input-field" placeholder="e.g. 400" value="400" min="0">
                 </div>
-                <button type="submit" class="calc-btn">Calculate Amazon Profit</button>
-            </form>
-            <div id="amazonCalcResult" class="calc-result" style="display:none;"></div>
-        </div>
-    </main>
+                <div class="input-group">
+                    <label class="input-label" for="profRefPct">Referral Fee (% of Selling Price)</label>
+                    <input type="number" id="profRefPct" class="calc-input-field" placeholder="e.g. 12" value="12" min="0" max="100">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="profClosing">Closing Fee (₹)</label>
+                    <input type="number" id="profClosing" class="calc-input-field" placeholder="e.g. 25" value="25" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="profFba">FBA / Fulfilment Fee (₹)</label>
+                    <input type="number" id="profFba" class="calc-input-field" placeholder="e.g. 85" value="85" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="profAdSpend">Advertising Spend per Sale (₹)</label>
+                    <input type="number" id="profAdSpend" class="calc-input-field" placeholder="e.g. 150" value="150" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="profShipping">Inbound Shipping & Packaging (₹)</label>
+                    <input type="number" id="profShipping" class="calc-input-field" placeholder="e.g. 35" value="35" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="profOther">GST & Other Variable Costs (₹)</label>
+                    <input type="number" id="profOther" class="calc-input-field" placeholder="e.g. 50" value="50" min="0">
+                </div>
+                <div class="calc-action-row">
+                    <button type="button" class="btn-calc-submit" id="btnCalculateProf">Calculate Net Profit →</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetProf">Reset</button>
+                </div>
+            </div>
+
+            <!-- RIGHT RESULTS COL -->
+            <div class="calc-results-col" aria-live="polite">
+                <div class="result-main-box">
+                    <div class="result-main-label">NET PROFIT PER UNIT</div>
+                    <div class="result-main-value" id="profNetVal">₹574</div>
+                    <div class="result-main-sub" id="profSubText">After all entered Amazon fees & variable costs.</div>
+                </div>
+
+                <div class="result-metrics-grid">
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">PROFIT MARGIN</div>
+                        <div class="mini-stat-val" id="profMarginVal">38.29%</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">ROI ON COGS</div>
+                        <div class="mini-stat-val" id="profRoiVal">143.50%</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">TOTAL AMAZON FEES</div>
+                        <div class="mini-stat-val" id="profFeesVal">₹289.88</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">TOTAL VARIABLE COST</div>
+                        <div class="mini-stat-val" id="profTotalCostVal">₹924.88</div>
+                    </div>
+                </div>
+
+                <div class="result-visual-bar-wrapper">
+                    <div class="visual-bar-labels">
+                        <span>Cost Share Breakdown</span>
+                        <span id="profShareLabel">Profit: 38.3%</span>
+                    </div>
+                    <div class="visual-bar-track">
+                        <div class="visual-bar-fill-ad" id="profBarAd" style="width: 61.7%;"></div>
+                        <div class="visual-bar-fill-rem" id="profBarProf" style="width: 38.3%;"></div>
+                    </div>
+                </div>
+
+                <div class="result-guidance-box">
+                    <div class="result-guidance-title">What This Means</div>
+                    <div id="profGuidanceText">After the costs entered, you retain approximately <strong>₹574 per unit</strong> before fixed business expenses and income tax.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATIONAL GUIDE -->
+        <article class="calc-educational-prose">
+            <h2>How Amazon India Profitability Is Calculated</h2>
+            <p>Selling on Amazon India requires factoring in multiple fee slabs, product manufacturing costs, logistics, and PPC spend to understand true unit economics.</p>
+
+            <div class="formula-code-box">
+                Net Profit = Selling Price - (COGS + Referral Fee + Closing Fee + FBA Fee + Ad Spend + Shipping + Tax)
+            </div>
+
+            <h2>Key Cost Components Explained</h2>
+            <ul>
+                <li><strong>Referral Fee:</strong> Category-based commission charged by Amazon (typically 5% to 18%).</li>
+                <li><strong>Closing Fee:</strong> Fee based on selling price slabs.</li>
+                <li><strong>FBA Fulfilment Fee:</strong> Weight and dimension-based pick, pack, and delivery cost.</li>
+                <li><strong>Ad Spend per Sale:</strong> Your Amazon PPC cost to generate a purchase (ACoS × Selling Price).</li>
+            </ul>
+
+            <!-- COLLAPSIBLE ASSUMPTIONS PANEL -->
+            <details class="faq-item" style="margin-top:24px;">
+                <summary>How this calculation works &amp; assumptions <span class="faq-icon">+</span></summary>
+                <div class="faq-answer">
+                    This model calculates unit contribution margin based on user-entered costs. It assumes all variable costs per unit are accounted for and does not include fixed overhead costs like software subscriptions or staff salaries.
+                </div>
+            </details>
+        </article>
+
+        <!-- RELATED CALCULATORS -->
+        <section class="related-calculators-section">
+            <div class="section-header">
+                <div class="section-eyebrow">EXPLORE RELATED TOOLS</div>
+                <h2 class="section-title">Amazon India Seller Toolkit</h2>
+            </div>
+            <div class="calculators-grid">
+                <a href="amazon-fba-fee-calculator.html" class="calc-card">
+                    <div class="calc-card-header">
+                        <span class="calc-card-icon">🚚</span>
+                        <span class="calc-card-category">FULFILMENT</span>
+                    </div>
+                    <h3 class="calc-card-title">Amazon FBA Fee Calculator</h3>
+                    <p class="calc-card-desc">Estimate Amazon fulfilment-related costs using product weight and dimensions.</p>
+                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate FBA Fees →</span></div>
+                </a>
+                <a href="amazon-break-even-acos-calculator.html" class="calc-card">
+                    <div class="calc-card-header">
+                        <span class="calc-card-icon">⚖️</span>
+                        <span class="calc-card-category">PPC SAFETY</span>
+                    </div>
+                    <h3 class="calc-card-title">Break-Even ACoS Calculator</h3>
+                    <p class="calc-card-desc">Find your profit margin limit before ad spend eats profits.</p>
+                    <div class="calc-card-footer"><span class="calc-btn-link">Find Break-Even ACoS →</span></div>
+                </a>
+                <a href="amazon-coupon-roi-calculator.html" class="calc-card">
+                    <div class="calc-card-header">
+                        <span class="calc-card-icon">🎟️</span>
+                        <span class="calc-card-category">PROMOTIONS</span>
+                    </div>
+                    <h3 class="calc-card-title">Coupon ROI Calculator</h3>
+                    <p class="calc-card-desc">Calculate incremental orders needed to justify seller coupons.</p>
+                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate Coupon ROI →</span></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQS -->
+        <section class="faq-section">
+            <div class="section-header">
+                <div class="section-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+                <h2 class="section-title">Amazon India Profitability FAQs</h2>
+            </div>
+            <div class="faq-accordion-list">
+                <details class="faq-item">
+                    <summary>What is a good net profit margin on Amazon India? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">A healthy Amazon India net margin typically ranges between 15% and 25% after PPC advertising and Amazon fees.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Does this include GST input credit? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">You can enter net GST cost or zero if you claim 100% input tax credit (ITC) on Amazon marketplace fee invoices.</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- AUDIT CTA BANNER -->
+        <section class="resources-audit-cta">
+            <h2>Want to Maximize Your Amazon India Profit Margins?</h2>
+            <p>Get a comprehensive Amazon PPC &amp; Margin Audit to eliminate wasted ad spend and scale your profitable sales velocity.</p>
+            <a href="contact.html" class="btn-cta-primary">Request an Amazon PPC Audit →</a>
+        </section>
+
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-bottom">
-                <p>PPC Growth Expert · Amazon Seller Profit Calculator</p>
+                <p>© 2026 PPC Growth Expert. All rights reserved. Results are estimates based on user inputs.</p>
             </div>
         </div>
     </footer>
 
+    <!-- SCRIPT -->
     <script src="js/navbar.js"></script>
-    <script src="js/amazon-calculator.js"></script>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+            
+            function calcProfit() {
+                const sp = parseFloat(document.getElementById('profSp').value) || 0;
+                const cogs = parseFloat(document.getElementById('profCogs').value) || 0;
+                const refPct = parseFloat(document.getElementById('profRefPct').value) || 0;
+                const closing = parseFloat(document.getElementById('profClosing').value) || 0;
+                const fba = parseFloat(document.getElementById('profFba').value) || 0;
+                const adSpend = parseFloat(document.getElementById('profAdSpend').value) || 0;
+                const shipping = parseFloat(document.getElementById('profShipping').value) || 0;
+                const other = parseFloat(document.getElementById('profOther').value) || 0;
 
+                const referralFee = sp * (refPct / 100);
+                const amzFees = referralFee + closing + fba;
+                const totalCost = cogs + amzFees + adSpend + shipping + other;
+                const netProfit = sp - totalCost;
+                const margin = sp > 0 ? (netProfit / sp) * 100 : 0;
+                const roi = cogs > 0 ? (netProfit / cogs) * 100 : 0;
+
+                document.getElementById('profNetVal').innerText = fmt.format(netProfit);
+                document.getElementById('profMarginVal').innerText = margin.toFixed(2) + '%';
+                document.getElementById('profRoiVal').innerText = roi.toFixed(2) + '%';
+                document.getElementById('profFeesVal').innerText = fmt.format(amzFees);
+                document.getElementById('profTotalCostVal').innerText = fmt.format(totalCost);
+
+                const costPct = Math.min(100, Math.max(0, (totalCost / (sp || 1)) * 100));
+                const profPct = Math.max(0, 100 - costPct);
+                
+                document.getElementById('profBarAd').style.width = costPct.toFixed(1) + '%';
+                document.getElementById('profBarProf').style.width = profPct.toFixed(1) + '%';
+                document.getElementById('profShareLabel').innerText = 'Profit: ' + margin.toFixed(1) + '%';
+                
+                document.getElementById('profGuidanceText').innerHTML = `After the costs entered, you retain approximately <strong>${fmt.format(netProfit)} per unit</strong> (${margin.toFixed(1)}% margin) before fixed overhead.`;
+            }
+
+            document.querySelectorAll('#profSp, #profCogs, #profRefPct, #profClosing, #profFba, #profAdSpend, #profShipping, #profOther').forEach(el => {
+                el.addEventListener('input', calcProfit);
+            });
+            document.getElementById('btnCalculateProf').addEventListener('click', calcProfit);
+            document.getElementById('btnResetProf').addEventListener('click', function() {
+                document.getElementById('profSp').value = 1499;
+                document.getElementById('profCogs').value = 400;
+                document.getElementById('profRefPct').value = 12;
+                document.getElementById('profClosing').value = 25;
+                document.getElementById('profFba').value = 85;
+                document.getElementById('profAdSpend').value = 150;
+                document.getElementById('profShipping').value = 35;
+                document.getElementById('profOther').value = 50;
+                calcProfit();
+            });
+
+            calcProfit();
+        });
+    </script>
+</body>
 </html>

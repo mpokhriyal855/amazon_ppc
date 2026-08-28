@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon FBA Storage Fee Calculator | Inventory Volume & Cost Exposure</title>
+    <meta name="description" content="Calculate Amazon FBA inventory storage costs based on product dimensions, unit quantity, duration, and monthly storage rates.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-fba-storage-fee-calculator.html">
+
+    <!-- FONTS & STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v41">
+    <link rel="stylesheet" href="css/navbar.css?v=v42">
+    <link rel="stylesheet" href="css/resources.css?v=v19">
+    <link rel="stylesheet" href="css/footer.css?v=v41">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Amazon FBA Storage Fee Calculator",
+      "url": "https://ppcgrowthexpert.com/amazon-fba-storage-fee-calculator.html",
+      "description": "Calculate Amazon FBA storage cost exposure, inventory cubic volume, and months of cover.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- BACKGROUND GRID & GLOW -->
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <!-- NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="resources-page-container">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> /
+            <a href="resources.html">Resources</a> /
+            <span>Amazon FBA Storage Fee Calculator</span>
+        </nav>
+
+        <!-- HERO -->
+        <section class="resources-hero">
+            <div class="hero-eyebrow">✦ INVENTORY STORAGE ESTIMATOR</div>
+            <h1 class="hero-title">Amazon FBA Storage Fee Calculator</h1>
+            <p class="hero-description">Estimate how much FBA inventory storage could cost based on product dimensions, quantity, storage duration and applicable storage rates.</p>
+        </section>
+
+        <!-- CALCULATOR APP WRAPPER -->
+        <section class="calculator-app-wrapper">
+            <!-- LEFT INPUTS COL -->
+            <div class="calc-inputs-col">
+                <h3>Inventory & Volume Inputs</h3>
+                <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <div class="input-group">
+                        <label class="input-label" for="stgLen">Length (cm)</label>
+                        <input type="number" id="stgLen" class="calc-input-field" value="25" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="stgWid">Width (cm)</label>
+                        <input type="number" id="stgWid" class="calc-input-field" value="18" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="stgHgt">Height (cm)</label>
+                        <input type="number" id="stgHgt" class="calc-input-field" value="10" min="0">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="stgQty">Total Units Stored</label>
+                    <input type="number" id="stgQty" class="calc-input-field" value="500" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="stgMonths">Storage Duration (Months)</label>
+                    <input type="number" id="stgMonths" class="calc-input-field" value="3" min="1">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="stgRate">Storage Rate (₹ per cu. ft. per month)</label>
+                    <input type="number" id="stgRate" class="calc-input-field" value="45" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="stgSalesVel">Monthly Sales Velocity (Units/mo)</label>
+                    <input type="number" id="stgSalesVel" class="calc-input-field" value="125" placeholder="Optional" min="0">
+                </div>
+
+                <div class="calc-action-row">
+                    <button type="button" class="btn-calc-submit" id="btnCalcStg">Calculate Storage Cost →</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetStg">Reset</button>
+                </div>
+            </div>
+
+            <!-- RIGHT RESULTS COL -->
+            <div class="calc-results-col" aria-live="polite">
+                <div class="result-main-box">
+                    <div class="result-main-label">TOTAL STORAGE COST</div>
+                    <div class="result-main-value" id="stgTotalVal">₹10,718</div>
+                    <div class="result-main-sub" id="stgSubText">For 500 units over 3 months</div>
+                </div>
+
+                <div class="result-metrics-grid">
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">MONTHLY COST</div>
+                        <div class="mini-stat-val" id="stgMonthlyVal">₹3,572.63</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">COST PER UNIT</div>
+                        <div class="mini-stat-val" id="stgPerUnitVal">₹21.44</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">TOTAL VOLUME</div>
+                        <div class="mini-stat-val" id="stgVolumeVal">79.39 cu.ft.</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">INVENTORY COVER</div>
+                        <div class="mini-stat-val" id="stgCoverVal">4.0 Months</div>
+                    </div>
+                </div>
+
+                <div class="result-guidance-box">
+                    <div class="result-guidance-title">Storage Cost Exposure</div>
+                    <div id="stgGuidanceText">
+                        At a sales velocity of 125 units/month, your 500 units represent <strong>4.0 months of cover</strong>. High inventory cover increases storage exposure.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIT CTA BANNER -->
+        <section class="resources-audit-cta">
+            <h2>Slow-Moving FBA Inventory Eating Profits?</h2>
+            <p>We help Amazon India sellers accelerate sales velocity through targeted PPC campaigns to reduce long-term storage fees.</p>
+            <a href="contact.html" class="btn-cta-primary">Audit Your PPC & Inventory Velocity →</a>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© 2026 PPC Growth Expert. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+
+            function calcStg() {
+                const len = parseFloat(document.getElementById('stgLen').value) || 0;
+                const wid = parseFloat(document.getElementById('stgWid').value) || 0;
+                const hgt = parseFloat(document.getElementById('stgHgt').value) || 0;
+                const qty = parseFloat(document.getElementById('stgQty').value) || 0;
+                const months = parseFloat(document.getElementById('stgMonths').value) || 1;
+                const rate = parseFloat(document.getElementById('stgRate').value) || 0;
+                const vel = parseFloat(document.getElementById('stgSalesVel').value) || 0;
+
+                const unitCuFt = (len * wid * hgt) / 28316.8466; // cm3 to cu ft
+                const totalCuFt = unitCuFt * qty;
+                const monthlyCost = totalCuFt * rate;
+                const totalCost = monthlyCost * months;
+                const costPerUnit = qty > 0 ? totalCost / qty : 0;
+                const cover = vel > 0 ? (qty / vel).toFixed(1) + ' Months' : 'N/A';
+
+                document.getElementById('stgTotalVal').innerText = fmt.format(totalCost);
+                document.getElementById('stgSubText').innerText = `For ${qty} units over ${months} month(s)`;
+                document.getElementById('stgMonthlyVal').innerText = fmt.format(monthlyCost);
+                document.getElementById('stgPerUnitVal').innerText = fmt.format(costPerUnit);
+                document.getElementById('stgVolumeVal').innerText = totalCuFt.toFixed(2) + ' cu.ft.';
+                document.getElementById('stgCoverVal').innerText = cover;
+
+                document.getElementById('stgGuidanceText').innerHTML = vel > 0 
+                    ? `At <strong>${vel} units/month</strong> sales velocity, your ${qty} units equal <strong>${cover} of cover</strong> with ${fmt.format(totalCost)} total storage fee.`
+                    : `Your ${qty} units occupy <strong>${totalCuFt.toFixed(2)} cu.ft.</strong> incurring ${fmt.format(monthlyCost)} monthly storage fee.`;
+            }
+
+            document.querySelectorAll('#stgLen, #stgWid, #stgHgt, #stgQty, #stgMonths, #stgRate, #stgSalesVel').forEach(el => {
+                el.addEventListener('input', calcStg);
+            });
+            document.getElementById('btnCalcStg').addEventListener('click', calcStg);
+            document.getElementById('btnResetStg').addEventListener('click', function() {
+                document.getElementById('stgLen').value = 25;
+                document.getElementById('stgWid').value = 18;
+                document.getElementById('stgHgt').value = 10;
+                document.getElementById('stgQty').value = 500;
+                document.getElementById('stgMonths').value = 3;
+                document.getElementById('stgRate').value = 45;
+                document.getElementById('stgSalesVel').value = 125;
+                calcStg();
+            });
+
+            calcStg();
+        });
+    </script>
+</body>
+</html>

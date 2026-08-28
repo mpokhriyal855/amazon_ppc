@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon Advertising ROI Calculator | True Net Return on Ad Spend</title>
+    <meta name="description" content="Calculate your true Amazon Advertising ROI after product cost and Amazon marketplace fees. Understand the difference between ROAS and net Advertising ROI.">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-advertising-roi-calculator.html">
+
+    <!-- FONTS & STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=v41">
+    <link rel="stylesheet" href="css/navbar.css?v=v42">
+    <link rel="stylesheet" href="css/resources.css?v=v19">
+    <link rel="stylesheet" href="css/footer.css?v=v41">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Amazon Advertising ROI Calculator",
+      "url": "https://ppcgrowthexpert.com/amazon-advertising-roi-calculator.html",
+      "description": "Calculate true Amazon Advertising ROI considering product contribution, marketplace fees, and ad spend.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- BACKGROUND GRID & GLOW -->
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <!-- NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="resources-page-container">
+
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb-nav">
+            <a href="index.html">Home</a> /
+            <a href="resources.html">Resources</a> /
+            <span>Amazon Advertising ROI Calculator</span>
+        </nav>
+
+        <!-- HERO -->
+        <section class="resources-hero">
+            <div class="hero-eyebrow">✦ PPC PROFITABILITY METRIC</div>
+            <h1 class="hero-title">Amazon Advertising ROI Calculator</h1>
+            <p class="hero-description">Estimate the net profit return generated by your Amazon advertising after considering ad spend, COGS, and marketplace contribution.</p>
+        </section>
+
+        <!-- CALCULATOR APP WRAPPER -->
+        <section class="calculator-app-wrapper">
+            <!-- LEFT INPUTS COL -->
+            <div class="calc-inputs-col">
+                <h3>Campaign & Contribution Inputs</h3>
+                <div class="input-group">
+                    <label class="input-label" for="roiAdSpend">Ad Spend (₹)</label>
+                    <input type="number" id="roiAdSpend" class="calc-input-field" value="25000" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="roiAdSales">Ad Sales Generated (₹)</label>
+                    <input type="number" id="roiAdSales" class="calc-input-field" value="125000" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="roiCogsPct">Product Cost / COGS (% of Sales)</label>
+                    <input type="number" id="roiCogsPct" class="calc-input-field" value="30" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="roiFeesPct">Amazon Fees & Shipping (% of Sales)</label>
+                    <input type="number" id="roiFeesPct" class="calc-input-field" value="25" min="0">
+                </div>
+                <div class="input-group">
+                    <label class="input-label" for="roiOrders">Total Attributed Orders</label>
+                    <input type="number" id="roiOrders" class="calc-input-field" value="100" placeholder="Optional" min="0">
+                </div>
+
+                <div class="calc-action-row">
+                    <button type="button" class="btn-calc-submit" id="btnCalcRoi">Calculate Ad ROI →</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetRoi">Reset</button>
+                </div>
+            </div>
+
+            <!-- RIGHT RESULTS COL -->
+            <div class="calc-results-col" aria-live="polite">
+                <div class="result-main-box">
+                    <div class="result-main-label">ADVERTISING ROI</div>
+                    <div class="result-main-value" id="roiPctVal">125.00%</div>
+                    <div class="result-main-sub" id="roiSubText">Net profit generated per ₹100 of ad spend</div>
+                </div>
+
+                <div class="result-metrics-grid">
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">TOPLINE ROAS</div>
+                        <div class="mini-stat-val" id="roiRoasVal">5.00x</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">NET PROFIT AFTER ADS</div>
+                        <div class="mini-stat-val" id="roiNetProfVal">₹31,250</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">CONTRIBUTION BEFORE ADS</div>
+                        <div class="mini-stat-val" id="roiContribVal">₹56,250</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">COST PER ORDER</div>
+                        <div class="mini-stat-val" id="roiCpoVal">₹250.00</div>
+                    </div>
+                </div>
+
+                <div class="result-guidance-box">
+                    <div class="result-guidance-title">ROAS vs. True ROI</div>
+                    <div id="roiGuidanceText">
+                        While your top-line ROAS is <strong>5.00x</strong> (ACoS 20%), after product COGS and Amazon fees, your actual net ad return is <strong>125.00% ROI</strong> (generating ₹31,250 net profit).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATIONAL GUIDE -->
+        <article class="calc-educational-prose">
+            <h2>Why ROAS Is Not The Same As Advertising ROI</h2>
+            <p>ROAS measures gross revenue divided by ad spend. However, revenue is not profit. Advertising ROI measures the net profit generated relative to the ad spend invested.</p>
+            <div class="formula-code-box">
+                Advertising ROI = (Net Profit Attributable After All Variable Costs & Ads ÷ Ad Spend) × 100
+            </div>
+        </article>
+
+        <!-- AUDIT CTA BANNER -->
+        <section class="resources-audit-cta">
+            <h2>Want To Scale Profitable Ad Returns?</h2>
+            <p>We build margin-driven PPC strategies designed to maximize net ROI, not just artificial top-line ROAS.</p>
+            <a href="contact.html" class="btn-cta-primary">Request an Ad ROI Audit →</a>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>© 2026 PPC Growth Expert. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+
+            function calcRoi() {
+                const spend = parseFloat(document.getElementById('roiAdSpend').value) || 0;
+                const sales = parseFloat(document.getElementById('roiAdSales').value) || 0;
+                const cogsPct = parseFloat(document.getElementById('roiCogsPct').value) || 0;
+                const feesPct = parseFloat(document.getElementById('roiFeesPct').value) || 0;
+                const orders = parseFloat(document.getElementById('roiOrders').value) || 0;
+
+                const roas = spend > 0 ? sales / spend : 0;
+                const cogs = sales * (cogsPct / 100);
+                const fees = sales * (feesPct / 100);
+                const contrib = sales - (cogs + fees);
+                const netProfit = contrib - spend;
+                const roiPct = spend > 0 ? (netProfit / spend) * 100 : 0;
+                const cpo = orders > 0 ? spend / orders : 0;
+
+                document.getElementById('roiPctVal').innerText = roiPct.toFixed(2) + '%';
+                document.getElementById('roiRoasVal').innerText = roas.toFixed(2) + 'x';
+                document.getElementById('roiNetProfVal').innerText = fmt.format(netProfit);
+                document.getElementById('roiContribVal').innerText = fmt.format(contrib);
+                document.getElementById('roiCpoVal').innerText = orders > 0 ? fmt.format(cpo) : 'N/A';
+
+                document.getElementById('roiGuidanceText').innerHTML = `While top-line ROAS is <strong>${roas.toFixed(2)}x</strong>, after COGS (${cogsPct}%) and fees (${feesPct}%), your actual net return is <strong>${roiPct.toFixed(2)}% ROI</strong> (${fmt.format(netProfit)} net profit).`;
+            }
+
+            document.querySelectorAll('#roiAdSpend, #roiAdSales, #roiCogsPct, #roiFeesPct, #roiOrders').forEach(el => {
+                el.addEventListener('input', calcRoi);
+            });
+            document.getElementById('btnCalcRoi').addEventListener('click', calcRoi);
+            document.getElementById('btnResetRoi').addEventListener('click', function() {
+                document.getElementById('roiAdSpend').value = 25000;
+                document.getElementById('roiAdSales').value = 125000;
+                document.getElementById('roiCogsPct').value = 30;
+                document.getElementById('roiFeesPct').value = 25;
+                document.getElementById('roiOrders').value = 100;
+                calcRoi();
+            });
+
+            calcRoi();
+        });
+    </script>
+</body>
+</html>
