@@ -102,6 +102,22 @@ function initResourcesPage() {
             });
         });
     }
+
+    /* 3. FAQ ACCORDION SINGLE OPEN WITH SMOOTH TRANSITION */
+    const faqItems = document.querySelectorAll(".resources-faq-section details");
+    if (faqItems.length > 0) {
+        faqItems.forEach(function (targetItem) {
+            targetItem.addEventListener("toggle", function () {
+                if (this.open) {
+                    faqItems.forEach(function (item) {
+                        if (item !== targetItem && item.open) {
+                            item.removeAttribute("open");
+                        }
+                    });
+                }
+            });
+        });
+    }
 }
 
 // Execute immediately if DOM is ready, else wait
