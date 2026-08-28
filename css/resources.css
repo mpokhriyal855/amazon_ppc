@@ -1,7 +1,7 @@
 /* =========================================================
    PPC GROWTH EXPERT - RESOURCES & CALCULATORS STYLESHEET
    File: css/resources.css
-   Theme: Ultra-Advanced Light & Dark Executive Tech Design
+   Theme: Light Page with Dark Executive Calculators Section
 ========================================================= */
 
 /* ROOT DESIGN TOKENS */
@@ -29,7 +29,7 @@ body {
     background-image: 
         linear-gradient(rgba(226, 232, 240, 0.6) 1px, transparent 1px),
         linear-gradient(90deg, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.05), transparent 70%);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06), transparent 70%);
     background-size: 40px 40px, 40px 40px, 100% 100%;
     color: var(--res-text-main);
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -47,14 +47,14 @@ body {
     padding: 30px 20px 80px 20px;
 }
 
-/* BREADCRUMB */
+/* BREADCRUMB NAV */
 .breadcrumb-nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13.5px;
+    font-size: 14px;
     color: var(--res-text-muted);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     font-weight: 500;
 }
 
@@ -74,74 +74,69 @@ body {
 }
 
 /* =========================================================
-   HERO SECTION (DARK EXECUTIVE HIGHLIGHT CONTAINER)
+   HERO SECTION (CLEAN LIGHT SECTION ON GRID BACKGROUND)
 ========================================================= */
 .resources-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    border-radius: 24px;
-    padding: 48px 44px;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18), 0 0 35px rgba(37, 99, 235, 0.12);
-    margin-bottom: 44px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 10px 0 36px 0;
+    box-shadow: none;
+    margin-bottom: 36px;
     position: relative;
-    overflow: hidden;
-}
-
-.resources-hero::after {
-    content: '';
-    position: absolute;
-    top: -120px;
-    right: -120px;
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, transparent 70%);
-    pointer-events: none;
 }
 
 .hero-eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11.5px;
     font-weight: 700;
-    color: #38bdf8;
+    color: #2563eb;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     display: inline-block;
-    background: rgba(56, 189, 248, 0.12);
-    padding: 5px 14px;
+    background: rgba(37, 99, 235, 0.08);
+    padding: 6px 16px;
     border-radius: 30px;
-    border: 1px solid rgba(56, 189, 248, 0.25);
+    border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .hero-title {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -1px;
+    color: #0f172a;
+    letter-spacing: -1.2px;
     margin: 0 0 16px 0;
     line-height: 1.2;
 }
 
+.hero-title .highlight-blue {
+    color: #2563eb;
+    background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .hero-description {
-    font-size: 16.5px;
-    color: #cbd5e1;
-    max-width: 840px;
-    margin: 0 0 26px 0;
+    font-size: 17px;
+    color: #475569;
+    max-width: 860px;
+    margin: 0 0 24px 0;
     line-height: 1.65;
 }
 
-/* TRUST STRIP INSIDE DARK HERO */
+/* TRUST STRIP (LIGHT CLEAN MODE) */
 .hero-trust-strip,
 .resources-hero .trust-strip {
     background: transparent !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-top: 1px solid #e2e8f0 !important;
     border-bottom: none !important;
     padding: 20px 0 0 0 !important;
     margin-bottom: 24px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 24px !important;
+    gap: 28px !important;
     flex-wrap: wrap !important;
 }
 
@@ -152,7 +147,7 @@ body {
     gap: 8px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
-    color: #f1f5f9 !important;
+    color: #334155 !important;
     background: transparent !important;
     padding: 0 !important;
     border: none !important;
@@ -166,14 +161,14 @@ body {
 
 /* QUICK TOOL FINDER CHIPS */
 .quick-finder-wrapper {
-    margin-top: 24px;
+    margin-top: 28px;
 }
 
 .quick-finder-title {
     font-size: 12px;
     font-weight: 700;
-    color: #94a3b8;
-    margin-bottom: 12px;
+    color: #64748b;
+    margin-bottom: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -186,72 +181,91 @@ body {
 }
 
 .chip-btn {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #cbd5e1;
-    padding: 9px 20px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    color: #334155;
+    padding: 10px 22px;
     border-radius: 50px;
-    font-size: 13.5px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .chip-btn:hover,
 .chip-btn.active {
-    background: linear-gradient(135deg, #2563eb, #0284c7);
+    background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
     color: #ffffff;
-    border-color: #38bdf8;
-    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+    border-color: #2563eb;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
 }
 
 /* =========================================================
-   SECTION HEADERS
+   CALCULATOR DIRECTORY SECTION (DARK EXECUTIVE SECTION)
 ========================================================= */
-.section-header {
-    margin-bottom: 28px;
+#calculatorGridSection {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 26px;
+    padding: 48px 40px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18), 0 0 35px rgba(37, 99, 235, 0.12);
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
 }
 
-.section-eyebrow {
+#calculatorGridSection::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+#calculatorGridSection .section-header {
+    margin-bottom: 32px;
+}
+
+#calculatorGridSection .section-eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11.5px;
     font-weight: 700;
-    color: var(--res-accent);
+    color: #38bdf8;
     letter-spacing: 1.6px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
-.section-title {
-    font-size: 30px;
+#calculatorGridSection .section-title {
+    font-size: 32px;
     font-weight: 800;
-    color: var(--res-text-main);
+    color: #ffffff;
     margin: 0 0 8px 0;
     letter-spacing: -0.5px;
 }
 
-.section-desc {
-    font-size: 15.5px;
-    color: var(--res-text-muted);
+#calculatorGridSection .section-desc {
+    font-size: 16px;
+    color: #cbd5e1;
     margin: 0;
 }
 
-/* =========================================================
-   CALCULATOR CARDS GRID (PRISTINE LIGHT CARDS)
-========================================================= */
+/* CALCULATOR CARDS GRID INSIDE DARK CONTAINER */
 .calculators-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 24px;
-    margin-bottom: 60px;
 }
 
 .calc-card {
-    background: #ffffff;
-    border: 1px solid var(--res-border);
-    border-radius: var(--res-radius);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
     padding: 28px;
-    box-shadow: var(--res-shadow);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -264,8 +278,9 @@ body {
 
 .calc-card:hover {
     transform: translateY(-6px);
-    border-color: var(--res-border-hover);
-    box-shadow: var(--res-shadow-hover);
+    border-color: #38bdf8;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(56, 189, 248, 0.2);
 }
 
 .calc-card-top {
@@ -283,23 +298,22 @@ body {
     width: 46px;
     height: 46px;
     border-radius: 12px;
-    background: #0f172a;
-    border: 1px solid #1e293b;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.3);
     color: #38bdf8;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
 }
 
 .calc-card-category {
     font-family: 'DM Mono', monospace;
     font-size: 10.5px;
     font-weight: 700;
-    color: #2563eb;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
+    color: #60a5fa;
+    background: rgba(37, 99, 235, 0.25);
+    border: 1px solid rgba(96, 165, 250, 0.3);
     padding: 4px 12px;
     border-radius: 50px;
     letter-spacing: 0.5px;
@@ -308,34 +322,34 @@ body {
 .calc-card-title {
     font-size: 20px;
     font-weight: 800;
-    color: var(--res-text-main);
+    color: #ffffff;
     margin: 0 0 10px 0;
     line-height: 1.3;
 }
 
 .calc-card-desc {
     font-size: 14px;
-    color: #475569;
+    color: #cbd5e1;
     margin: 0 0 18px 0;
     line-height: 1.55;
 }
 
 .calc-card-bestfor {
     font-size: 12.5px;
-    color: #334155;
-    background: #f8fafc;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.08);
     padding: 8px 14px;
     border-radius: 10px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .calc-card-bestfor strong {
-    color: var(--res-text-main);
+    color: #ffffff;
 }
 
 .calc-card-footer {
     padding-top: 18px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .calc-btn-link {
@@ -344,17 +358,17 @@ body {
     gap: 6px;
     font-size: 14px;
     font-weight: 800;
-    color: var(--res-accent);
+    color: #38bdf8;
     transition: all 0.25s ease;
 }
 
 .calc-card:hover .calc-btn-link {
-    color: #0284c7;
+    color: #60a5fa;
     transform: translateX(5px);
 }
 
 /* =========================================================
-   INTERACTIVE TOOL FINDER SECTION
+   INTERACTIVE TOOL FINDER SECTION (PRISTINE WHITE CARD)
 ========================================================= */
 .tool-finder-section {
     background: #ffffff;
@@ -363,6 +377,30 @@ body {
     padding: 40px;
     box-shadow: var(--res-shadow);
     margin-bottom: 60px;
+}
+
+.tool-finder-section .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--res-accent);
+    letter-spacing: 1.6px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.tool-finder-section .section-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--res-text-main);
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.tool-finder-section .section-desc {
+    font-size: 15.5px;
+    color: var(--res-text-muted);
+    margin: 0;
 }
 
 .problem-chips-grid {
@@ -554,7 +592,7 @@ body {
 }
 
 /* =========================================================
-   QUICK FORMULAS & WHY USE
+   QUICK FORMULAS & WHY USE (LIGHT WHITE CARDS)
 ========================================================= */
 .formulas-grid {
     display: grid;
@@ -1052,15 +1090,19 @@ body {
 ========================================================= */
 @media (max-width: 768px) {
     .resources-hero {
-        padding: 32px 20px;
+        padding: 10px 0 24px 0;
     }
 
     .hero-title {
-        font-size: 28px;
+        font-size: 30px;
     }
 
     .hero-description {
-        font-size: 14.5px;
+        font-size: 15px;
+    }
+
+    #calculatorGridSection {
+        padding: 30px 20px;
     }
 
     .calculators-grid {
