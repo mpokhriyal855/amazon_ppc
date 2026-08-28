@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const acosSales = document.getElementById("acosSales");
     const acosResultVal = document.getElementById("acosResultVal");
     const acosRoasVal = document.getElementById("acosRoasVal");
+    const acosRemVal = document.getElementById("acosRemVal");
     const acosSubText = document.getElementById("acosSubText");
     const acosBarAd = document.getElementById("acosBarAd");
     const acosBarRem = document.getElementById("acosBarRem");
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (sales <= 0 || spend <= 0) {
             if (acosResultVal) acosResultVal.innerText = "0.00%";
             if (acosRoasVal) acosRoasVal.innerText = "0.00x";
+            if (acosRemVal) acosRemVal.innerText = "100.00%";
             if (acosSubText) acosSubText.innerText = "Enter ad spend and ad sales to calculate ACoS.";
             if (acosBarAd) acosBarAd.style.width = "0%";
             if (acosBarRem) acosBarRem.style.width = "100%";
@@ -59,13 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (acosResultVal) acosResultVal.innerText = formatPct(acos);
         if (acosRoasVal) acosRoasVal.innerText = formatNum(roas) + "x";
+        if (acosRemVal) acosRemVal.innerText = formatPct(remPct);
         if (acosSubText) acosSubText.innerText = `${formatCurr(spend)} of ad spend generated ${formatCurr(sales)} in sales.`;
 
         if (acosBarAd) acosBarAd.style.width = Math.min(100, acos) + "%";
         if (acosBarRem) acosBarRem.style.width = Math.min(100, remPct) + "%";
 
         if (acosAdviceBox) {
-            acosAdviceBox.innerHTML = `<strong>What does this mean?</strong> Your ads consume <strong>${formatPct(acos)}</strong> (${formatCurr((acos / 100))} of every ₹1 revenue). Compare this against your product margin and <a href="amazon-break-even-acos-calculator.html" style="color:#0284c7; text-decoration:underline;">Break-Even ACoS</a> to evaluate true profitability.`;
+            acosAdviceBox.innerHTML = `<strong>What does this mean?</strong> Your ads consume <strong>${formatPct(acos)}</strong> (${formatCurr((spend / sales) * 1)} of every ₹1 revenue). Compare this against your product margin and <a href="amazon-break-even-acos-calculator.html" style="color:#38bdf8; text-decoration:underline;">Break-Even ACoS</a> to evaluate true profitability.`;
         }
     }
 
