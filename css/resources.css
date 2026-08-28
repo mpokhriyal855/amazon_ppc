@@ -1,7 +1,7 @@
 /* =========================================================
    PPC GROWTH EXPERT - RESOURCES & CALCULATORS STYLESHEET
    File: css/resources.css
-   Theme: Light Page with Dark Executive Calculators Section
+   Theme: Hybrid Light-Dark Architecture matching Services Page
 ========================================================= */
 
 /* ROOT DESIGN TOKENS */
@@ -44,7 +44,7 @@ body {
 .resources-page-container {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 30px 20px 80px 20px;
+    padding: 60px 20px 80px 20px;
 }
 
 /* BREADCRUMB NAV */
@@ -74,16 +74,24 @@ body {
 }
 
 /* =========================================================
-   HERO SECTION (CLEAN LIGHT SECTION ON GRID BACKGROUND)
+   1. CLEAN LIGHT HERO SECTION (MATCHING SERVICES HERO PAGE)
 ========================================================= */
-.resources-hero {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 10px 0 36px 0;
-    box-shadow: none;
-    margin-bottom: 36px;
+.resources-hero-section {
+    padding: 40px 24px 50px;
+    background: #ffffff;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 60%),
+        linear-gradient(rgba(216, 223, 233, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 223, 233, 0.4) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    border-bottom: 1px solid #e2e8f0;
     position: relative;
+    overflow: hidden;
+}
+
+.resources-hero-container {
+    max-width: 1240px;
+    margin: 0 auto;
 }
 
 .hero-eyebrow {
@@ -102,12 +110,12 @@ body {
 }
 
 .hero-title {
-    font-size: 42px;
+    font-size: clamp(34px, 4.5vw, 52px);
     font-weight: 800;
     color: #0f172a;
     letter-spacing: -1.2px;
     margin: 0 0 16px 0;
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .hero-title .highlight-blue {
@@ -126,8 +134,7 @@ body {
 }
 
 /* TRUST STRIP (LIGHT CLEAN MODE) */
-.hero-trust-strip,
-.resources-hero .trust-strip {
+.hero-trust-strip {
     background: transparent !important;
     border-top: 1px solid #e2e8f0 !important;
     border-bottom: none !important;
@@ -140,21 +147,16 @@ body {
     flex-wrap: wrap !important;
 }
 
-.hero-trust-strip .trust-item,
-.resources-hero .trust-item {
+.hero-trust-strip .trust-item {
     display: inline-flex !important;
     align-items: center !important;
     gap: 8px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     color: #334155 !important;
-    background: transparent !important;
-    padding: 0 !important;
-    border: none !important;
 }
 
-.hero-trust-strip .trust-item .check-icon,
-.resources-hero .trust-item .check-icon {
+.hero-trust-strip .trust-item .check-icon {
     color: #10b981 !important;
     font-weight: 800 !important;
 }
@@ -202,37 +204,38 @@ body {
 }
 
 /* =========================================================
-   CALCULATOR DIRECTORY SECTION (DARK EXECUTIVE SECTION)
+   2. FULL-WIDTH DARK CALCULATOR SECTION (MATCHING SERVICES PACKAGES)
 ========================================================= */
-#calculatorGridSection {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    border-radius: 26px;
-    padding: 48px 40px;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18), 0 0 35px rgba(37, 99, 235, 0.12);
-    margin-bottom: 60px;
-    position: relative;
-    overflow: hidden;
+.resources-dark-calc-section {
+    width: 100%;
+    padding: 70px 0;
+    background: #080d1a;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 65%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-#calculatorGridSection::after {
-    content: '';
-    position: absolute;
-    top: -120px;
-    right: -120px;
-    width: 380px;
-    height: 380px;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
-    pointer-events: none;
+.resources-calc-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-#calculatorGridSection .section-header {
-    margin-bottom: 32px;
+.resources-dark-calc-section .section-header {
+    margin-bottom: 40px;
 }
 
-#calculatorGridSection .section-eyebrow {
+.resources-dark-calc-section .section-header.text-center {
+    text-align: center;
+}
+
+.resources-dark-calc-section .section-eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 11.5px;
+    font-size: 12px;
     font-weight: 700;
     color: #38bdf8;
     letter-spacing: 1.6px;
@@ -240,32 +243,33 @@ body {
     text-transform: uppercase;
 }
 
-#calculatorGridSection .section-title {
-    font-size: 32px;
+.resources-dark-calc-section .section-title {
+    font-size: clamp(28px, 4vw, 40px);
     font-weight: 800;
     color: #ffffff;
-    margin: 0 0 8px 0;
-    letter-spacing: -0.5px;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.8px;
 }
 
-#calculatorGridSection .section-desc {
-    font-size: 16px;
-    color: #cbd5e1;
-    margin: 0;
+.resources-dark-calc-section .section-desc {
+    font-size: 16.5px;
+    color: #94a3b8;
+    margin: 0 auto;
+    max-width: 680px;
 }
 
-/* CALCULATOR CARDS GRID INSIDE DARK CONTAINER */
+/* CALCULATOR CARDS GRID INSIDE FULL-WIDTH DARK SECTION */
 .calculators-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 24px;
+    gap: 26px;
 }
 
 .calc-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
-    padding: 28px;
+    border-radius: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -280,7 +284,7 @@ body {
     transform: translateY(-6px);
     border-color: #38bdf8;
     background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.2);
 }
 
 .calc-card-top {
@@ -291,20 +295,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .calc-card-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
     background: rgba(56, 189, 248, 0.15);
     border: 1px solid rgba(56, 189, 248, 0.3);
     color: #38bdf8;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .calc-card-category {
@@ -320,7 +324,7 @@ body {
 }
 
 .calc-card-title {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 800;
     color: #ffffff;
     margin: 0 0 10px 0;
@@ -328,18 +332,18 @@ body {
 }
 
 .calc-card-desc {
-    font-size: 14px;
+    font-size: 14.5px;
     color: #cbd5e1;
-    margin: 0 0 18px 0;
-    line-height: 1.55;
+    margin: 0 0 20px 0;
+    line-height: 1.6;
 }
 
 .calc-card-bestfor {
-    font-size: 12.5px;
+    font-size: 13px;
     color: #e2e8f0;
     background: rgba(255, 255, 255, 0.08);
-    padding: 8px 14px;
-    border-radius: 10px;
+    padding: 9px 14px;
+    border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -348,7 +352,7 @@ body {
 }
 
 .calc-card-footer {
-    padding-top: 18px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -356,7 +360,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 800;
     color: #38bdf8;
     transition: all 0.25s ease;
@@ -368,13 +372,13 @@ body {
 }
 
 /* =========================================================
-   INTERACTIVE TOOL FINDER SECTION (PRISTINE WHITE CARD)
+   3. INTERACTIVE TOOL FINDER SECTION (PRISTINE WHITE CARD)
 ========================================================= */
 .tool-finder-section {
     background: #ffffff;
     border: 1px solid var(--res-border);
     border-radius: 24px;
-    padding: 40px;
+    padding: 44px;
     box-shadow: var(--res-shadow);
     margin-bottom: 60px;
 }
@@ -407,12 +411,12 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 14px;
-    margin: 24px 0;
+    margin: 28px 0;
 }
 
 .problem-chip {
     background: #f8fafc;
-    border: 1px solid var(--res-border);
+    border: 1.5px solid var(--res-border);
     border-radius: 14px;
     padding: 16px 20px;
     font-size: 14.5px;
@@ -514,7 +518,7 @@ body {
 }
 
 /* =========================================================
-   FEATURED CALCULATOR PREVIEW (DARK TECH HIGHLIGHT)
+   4. FEATURED CALCULATOR PREVIEW (DARK TECH HIGHLIGHT)
 ========================================================= */
 .featured-tool-section {
     background: linear-gradient(135deg, #0f172a 0%, #1c2435 100%);
@@ -592,49 +596,141 @@ body {
 }
 
 /* =========================================================
-   QUICK FORMULAS & WHY USE (LIGHT WHITE CARDS)
+   5. ULTRA ADVANCED FORMULAS CHEAT SHEET SECTION
 ========================================================= */
+.formulas-section {
+    margin-bottom: 60px;
+}
+
+.formulas-section .section-header {
+    margin-bottom: 32px;
+}
+
+.formulas-section .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 1.6px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.formulas-section .section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.formulas-section .section-desc {
+    font-size: 16px;
+    color: #64748b;
+    margin: 0;
+}
+
 .formulas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 22px;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
 }
 
 .formula-card {
     background: #ffffff;
-    border: 1px solid var(--res-border);
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: var(--res-shadow);
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.formula-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #0284c7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .formula-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--res-border-hover);
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+    box-shadow: 0 16px 36px -10px rgba(37, 99, 235, 0.12);
+}
+
+.formula-card:hover::before {
+    opacity: 1;
+}
+
+.formula-card-top {
+    margin-bottom: 16px;
+}
+
+.formula-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 4px 10px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
 .formula-name {
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 800;
-    color: var(--res-text-main);
-    margin-bottom: 10px;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .formula-code {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
     background: #0f172a;
-    color: #38bdf8;
     border: 1px solid #1e293b;
-    padding: 8px 14px;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    display: inline-block;
+    color: #38bdf8;
+    font-family: 'DM Mono', monospace;
+    font-size: 13.5px;
     font-weight: 700;
+    padding: 13px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    word-break: break-all;
 }
 
+.formula-card-footer {
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.formula-card .calc-btn-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.formula-card:hover .calc-btn-link {
+    color: #1d4ed8;
+}
+
+/* =========================================================
+   6. WHY USE & FAQ SECTIONS (LIGHT WHITE CARDS)
+========================================================= */
 .why-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -748,280 +844,6 @@ body {
     background: rgba(255, 255, 255, 0.22);
 }
 
-/* =========================================================
-   DEDICATED CALCULATOR PAGE (LIGHT INPUT + DARK RESULT DASHBOARD)
-========================================================= */
-.calculator-app-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
-    background: #ffffff;
-    border: 1px solid var(--res-border);
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: var(--res-shadow);
-    margin-bottom: 50px;
-}
-
-@media (max-width: 900px) {
-    .calculator-app-wrapper {
-        grid-template-columns: 1fr;
-        padding: 26px;
-        gap: 26px;
-    }
-}
-
-.calc-inputs-col {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.input-label {
-    font-size: 14.5px;
-    font-weight: 800;
-    color: var(--res-text-main);
-}
-
-.input-hint {
-    font-size: 12.5px;
-    color: var(--res-text-muted);
-}
-
-.calc-input-field {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 13px 18px;
-    font-size: 16px;
-    font-family: inherit;
-    color: var(--res-text-main);
-    background: #f8fafc;
-    border: 1.5px solid var(--res-border);
-    border-radius: var(--res-radius-sm);
-    transition: all 0.2s ease;
-}
-
-.calc-input-field:focus {
-    outline: none;
-    border-color: var(--res-accent);
-    background: #ffffff;
-    box-shadow: 0 0 0 3.5px var(--res-accent-glow);
-}
-
-.calc-action-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.btn-calc-submit {
-    flex: 1;
-    background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
-    color: #ffffff;
-    font-size: 15.5px;
-    font-weight: 800;
-    padding: 15px;
-    border: none;
-    border-radius: var(--res-radius-sm);
-    cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
-}
-
-.btn-calc-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
-}
-
-.btn-calc-reset {
-    background: #f1f5f9;
-    color: #475569;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 15px 22px;
-    border: 1px solid var(--res-border);
-    border-radius: var(--res-radius-sm);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.btn-calc-reset:hover {
-    background: #e2e8f0;
-}
-
-/* RESULTS PANEL (DARK EXECUTIVE DASHBOARD) */
-.calc-results-col {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    border-radius: 20px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
-}
-
-.result-main-box {
-    text-align: center;
-    background: rgba(10, 15, 29, 0.9);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    border-radius: 16px;
-    padding: 26px;
-    margin-bottom: 22px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.result-main-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11.5px;
-    font-weight: 700;
-    color: #38bdf8;
-    letter-spacing: 1.5px;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-}
-
-.result-main-value {
-    font-size: 44px;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -1px;
-    margin: 4px 0 8px 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.result-main-sub {
-    font-size: 14px;
-    color: #cbd5e1;
-}
-
-/* METRIC BREAKDOWN GRID */
-.result-metrics-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 22px;
-}
-
-.mini-stat-card {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    padding: 16px;
-}
-
-.mini-stat-label {
-    font-size: 11.5px;
-    color: #94a3b8;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.mini-stat-val {
-    font-size: 17px;
-    font-weight: 800;
-    color: #38bdf8;
-    font-family: 'DM Mono', monospace;
-    margin-top: 4px;
-}
-
-/* VISUAL GRAPH / BAR */
-.result-visual-bar-wrapper {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 18px;
-    margin-bottom: 22px;
-}
-
-.visual-bar-track {
-    height: 14px;
-    background: rgba(30, 41, 59, 0.9);
-    border-radius: 50px;
-    overflow: hidden;
-    display: flex;
-    margin: 10px 0;
-}
-
-.visual-bar-fill-ad {
-    background: #38bdf8;
-    height: 100%;
-    transition: width 0.4s ease;
-}
-
-.visual-bar-fill-rem {
-    background: #10b981;
-    height: 100%;
-    transition: width 0.4s ease;
-}
-
-.visual-bar-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 700;
-    color: #cbd5e1;
-}
-
-/* CONTEXTUAL GUIDANCE BOX */
-.result-guidance-box {
-    background: rgba(56, 189, 248, 0.12);
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    border-radius: 14px;
-    padding: 18px;
-    font-size: 14px;
-    color: #e0f2fe;
-    line-height: 1.5;
-}
-
-.result-guidance-title {
-    font-weight: 800;
-    color: #38bdf8;
-    margin-bottom: 4px;
-}
-
-/* EDUCATIONAL ARTICLE PROSE BELOW CALCULATOR */
-.calc-educational-prose {
-    background: #ffffff;
-    border: 1px solid var(--res-border);
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: var(--res-shadow);
-    margin-bottom: 50px;
-}
-
-.calc-educational-prose h2 {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--res-text-main);
-    margin: 32px 0 14px 0;
-}
-
-.calc-educational-prose h2:first-child {
-    margin-top: 0;
-}
-
-.calc-educational-prose p {
-    font-size: 15.5px;
-    color: #334155;
-    line-height: 1.65;
-    margin-bottom: 18px;
-}
-
-.calc-educational-prose ul {
-    margin: 0 0 22px 22px;
-    color: #334155;
-    font-size: 15px;
-    line-height: 1.65;
-}
-
 /* FAQ ACCORDION STYLES */
 .faq-section {
     background: #ffffff;
@@ -1089,8 +911,8 @@ body {
    RESPONSIVE ADJUSTMENTS
 ========================================================= */
 @media (max-width: 768px) {
-    .resources-hero {
-        padding: 10px 0 24px 0;
+    .resources-hero-section {
+        padding: 30px 16px 36px;
     }
 
     .hero-title {
@@ -1101,16 +923,16 @@ body {
         font-size: 15px;
     }
 
-    #calculatorGridSection {
-        padding: 30px 20px;
+    .resources-dark-calc-section {
+        padding: 50px 0;
     }
 
-    .calculators-grid {
+    .calculators-grid,
+    .formulas-grid {
         grid-template-columns: 1fr;
     }
 
     .tool-finder-section,
-    .calc-educational-prose,
     .faq-section {
         padding: 24px 18px;
     }
