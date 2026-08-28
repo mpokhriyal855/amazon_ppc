@@ -64,23 +64,82 @@ body {
 }
 
 /* =========================================================
-   1. CLEAN LIGHT HERO SECTION (WHITE WITH CHECK GRID BG)
+   1. CLEAN LIGHT HERO SECTION (EXACT MATCH WITH SERVICES PAGE)
 ========================================================= */
 .resources-hero-section {
-    padding: 110px 24px 50px 24px; /* Top padding ensures seamless spacing below fixed navbar */
+    padding: 110px 24px 50px 24px;
     background: #ffffff;
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
-        linear-gradient(rgba(216, 223, 233, 0.45) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(216, 223, 233, 0.45) 1px, transparent 1px);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 60%),
+        linear-gradient(rgba(216, 223, 233, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 223, 233, 0.4) 1px, transparent 1px);
     background-size: 100% 100%, 40px 40px, 40px 40px;
     border-bottom: 1px solid #e2e8f0;
+    text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+/* DYNAMIC ANIMATED GLOW ORBS */
+.hero-glow-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 70%);
+    top: -160px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    filter: blur(60px);
+    animation: floatOrb 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb {
+    0% { transform: translateX(-50%) translateY(0) scale(1); }
+    100% { transform: translateX(-50%) translateY(20px) scale(1.08); }
 }
 
 .resources-hero-container {
-    max-width: 1240px;
+    max-width: 940px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* BREADCRUMBS BAR (EXACT MATCH WITH SERVICES) */
+.breadcrumbs-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+.breadcrumbs-bar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs-bar a:hover {
+    color: #2563eb;
+}
+
+.breadcrumb-sep {
+    color: #cbd5e1;
+    font-size: 12px;
+}
+
+.breadcrumb-active {
+    color: #0f172a;
+    font-weight: 700;
 }
 
 .hero-eyebrow {
@@ -99,39 +158,41 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(34px, 4.5vw, 52px);
+    font-size: clamp(36px, 5vw, 56px);
     font-weight: 800;
     color: #0f172a;
-    letter-spacing: -1.2px;
-    margin: 0 0 16px 0;
-    line-height: 1.15;
+    letter-spacing: -1.5px;
+    line-height: 1.12;
+    margin: 0 0 18px 0;
+    text-align: center;
 }
 
 .hero-title .highlight-blue {
-    color: #2563eb;
-    background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #0284c7 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero-description {
     font-size: 17px;
     color: #475569;
-    max-width: 860px;
-    margin: 0 0 24px 0;
+    max-width: 780px;
+    margin: 0 auto 26px auto;
     line-height: 1.65;
+    text-align: center;
 }
 
-/* TRUST STRIP */
+/* TRUST STRIP CENTERED */
 .hero-trust-strip {
     background: transparent !important;
     border-top: 1px solid #e2e8f0 !important;
     border-bottom: none !important;
     padding: 20px 0 0 0 !important;
-    margin-bottom: 24px !important;
+    margin: 0 auto 28px auto !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     gap: 28px !important;
     flex-wrap: wrap !important;
 }
@@ -150,23 +211,27 @@ body {
     font-weight: 800 !important;
 }
 
-/* QUICK TOOL FINDER CHIPS */
+/* QUICK TOOL FINDER CHIPS CENTERED */
 .quick-finder-wrapper {
     margin-top: 28px;
+    text-align: center;
 }
 
 .quick-finder-title {
-    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
     font-weight: 700;
     color: #64748b;
     margin-bottom: 14px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+    text-align: center;
 }
 
 .quick-chips-grid {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
 }

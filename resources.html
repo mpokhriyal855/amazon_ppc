@@ -39,7 +39,7 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="css/style.css?v=v41">
     <link rel="stylesheet" href="css/navbar.css?v=v42">
-    <link rel="stylesheet" href="css/resources.css?v=v11">
+    <link rel="stylesheet" href="css/resources.css?v=v12">
     <link rel="stylesheet" href="css/footer.css?v=v41">
     <link rel="stylesheet" href="css/whatsapp.css">
 
@@ -208,14 +208,22 @@
     </div>
 
     <!-- =========================================================
-         1. CLEAN LIGHT HERO SECTION
+         1. CLEAN LIGHT HERO SECTION (EXACT MATCH WITH SERVICES PAGE)
     ========================================================= -->
     <section class="resources-hero-section">
+        <div class="hero-glow-orb"></div>
         <div class="resources-hero-container">
-            <!-- BREADCRUMB NAV -->
-            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-                <a href="index.html">Home</a> /
-                <span>Resources</span>
+            <!-- BREADCRUMBS -->
+            <nav class="breadcrumbs-bar" aria-label="Breadcrumb">
+                <a href="index.html">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </a>
+                <span class="breadcrumb-sep">&gt;</span>
+                <span class="breadcrumb-active">Resources</span>
             </nav>
 
             <div class="hero-eyebrow">✦ AMAZON PPC TOOLS</div>
@@ -232,7 +240,7 @@
 
             <!-- QUICK TOOL FINDER CHIPS -->
             <div class="quick-finder-wrapper">
-                <div class="quick-finder-title">What do you want to calculate?</div>
+                <div class="quick-finder-title">WHAT DO YOU WANT TO CALCULATE?</div>
                 <div class="quick-chips-grid">
                     <button class="chip-btn active" data-tool-category="all">All Tools</button>
                     <button class="chip-btn" data-tool-category="acos">ACoS</button>
