@@ -1,7 +1,7 @@
 /* =========================================================
    PPC GROWTH EXPERT - RESOURCES & CALCULATORS STYLESHEET
    File: css/resources.css
-   Theme: Full-Width Executive Sections Architecture matching Services Page
+   Theme: Hybrid Executive Dark Architecture matching Services Page
 ========================================================= */
 
 /* ROOT DESIGN TOKENS */
@@ -23,7 +23,7 @@
 }
 
 body {
-    background-color: var(--res-bg);
+    background-color: #080d1a;
     color: var(--res-text-main);
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
@@ -198,7 +198,7 @@ body {
 ========================================================= */
 .resources-dark-calc-section {
     width: 100%;
-    padding: 36px 0 60px 0; /* Reduced top padding */
+    padding: 36px 0 60px 0;
     background: #080d1a;
     background-image: 
         radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 65%),
@@ -352,20 +352,21 @@ body {
 }
 
 /* =========================================================
-   3. FULL-WIDTH TOOL FINDER SECTION
+   3. FULL-WIDTH DARK TOOL FINDER SECTION
 ========================================================= */
 .resources-tool-finder-section {
     width: 100%;
     padding: 60px 0;
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
+    background: #0b1222;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .resources-tool-finder-section .section-eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11.5px;
     font-weight: 700;
-    color: var(--res-accent);
+    color: #38bdf8;
     letter-spacing: 1.6px;
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -374,14 +375,14 @@ body {
 .resources-tool-finder-section .section-title {
     font-size: 32px;
     font-weight: 800;
-    color: var(--res-text-main);
+    color: #ffffff;
     margin: 0 0 8px 0;
     letter-spacing: -0.5px;
 }
 
 .resources-tool-finder-section .section-desc {
     font-size: 16px;
-    color: var(--res-text-muted);
+    color: #94a3b8;
     margin: 0;
 }
 
@@ -393,13 +394,13 @@ body {
 }
 
 .problem-chip {
-    background: #f8fafc;
-    border: 1.5px solid var(--res-border);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 14px;
     padding: 16px 20px;
     font-size: 14.5px;
     font-weight: 700;
-    color: #1e293b;
+    color: #e2e8f0;
     cursor: pointer;
     transition: all 0.25s ease;
     display: flex;
@@ -409,15 +410,16 @@ body {
 
 .problem-chip:hover,
 .problem-chip.active {
-    background: #eff6ff;
+    background: rgba(37, 99, 235, 0.25);
     border-color: #38bdf8;
-    color: #2563eb;
-    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
 }
 
 .problem-chip::after {
     content: "→";
     font-size: 16px;
+    color: #38bdf8;
     transition: transform 0.2s ease;
 }
 
@@ -427,13 +429,13 @@ body {
 }
 
 .recommendation-output-panel {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: linear-gradient(135deg, #050811 0%, #0f172a 100%);
+    border: 1px solid rgba(56, 189, 248, 0.35);
     color: #ffffff;
     border-radius: 20px;
     padding: 32px;
     margin-top: 24px;
-    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.2);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
 }
 
 .rec-eyebrow {
@@ -453,8 +455,8 @@ body {
 }
 
 .rec-item-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
     padding: 22px;
     flex: 1;
@@ -496,17 +498,18 @@ body {
 }
 
 /* =========================================================
-   4. FULL-WIDTH FEATURED CALCULATOR SECTION (DARK EXECUTIVE)
+   4. FULL-WIDTH FEATURED CALCULATOR SECTION (EDGE-TO-EDGE DARK EXECUTIVE)
 ========================================================= */
 .resources-featured-section {
     width: 100%;
     padding: 65px 0;
-    background: #090e1a;
+    background: #080d1a;
     background-image: 
-        radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.15) 0%, transparent 70%),
+        radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.18) 0%, transparent 70%),
         linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 100% 100%, 40px 40px, 40px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -581,55 +584,61 @@ body {
 }
 
 /* =========================================================
-   5. FULL-WIDTH FORMULAS CHEAT SHEET SECTION
+   5. FULL-WIDTH FORMULAS CHEAT SHEET SECTION (HIGH-TECH DARK)
 ========================================================= */
 .resources-formulas-section {
     width: 100%;
-    padding: 60px 0;
-    background: #f8fafc;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 65px 0;
+    background: #090e1a;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 65%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .resources-formulas-section .section-header {
-    margin-bottom: 32px;
+    margin-bottom: 36px;
 }
 
 .resources-formulas-section .section-eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11.5px;
     font-weight: 700;
-    color: #2563eb;
+    color: #38bdf8;
     letter-spacing: 1.6px;
     margin-bottom: 6px;
     text-transform: uppercase;
 }
 
 .resources-formulas-section .section-title {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 800;
-    color: #0f172a;
+    color: #ffffff;
     margin: 0 0 8px 0;
     letter-spacing: -0.5px;
 }
 
 .resources-formulas-section .section-desc {
-    font-size: 16px;
-    color: #64748b;
+    font-size: 16.5px;
+    color: #94a3b8;
     margin: 0;
 }
 
 .formulas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 24px;
+    gap: 26px;
 }
 
 .formula-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
     padding: 28px;
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -644,16 +653,17 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #2563eb, #0284c7);
+    height: 3px;
+    background: linear-gradient(90deg, #38bdf8, #2563eb);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .formula-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: #38bdf8;
-    box-shadow: 0 16px 36px -10px rgba(37, 99, 235, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.2);
 }
 
 .formula-card:hover::before {
@@ -668,52 +678,57 @@ body {
     font-family: 'DM Mono', monospace;
     font-size: 10.5px;
     font-weight: 700;
-    color: #2563eb;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    padding: 4px 10px;
+    color: #60a5fa;
+    background: rgba(37, 99, 235, 0.25);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    padding: 4px 12px;
     border-radius: 50px;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     letter-spacing: 0.5px;
 }
 
 .formula-name {
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 800;
-    color: #0f172a;
+    color: #ffffff;
     margin: 0;
     line-height: 1.3;
 }
 
 .formula-code {
-    background: #0f172a;
-    border: 1px solid #1e293b;
+    background: #050811;
+    border: 1px solid rgba(56, 189, 248, 0.3);
     color: #38bdf8;
     font-family: 'DM Mono', monospace;
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 13px 16px;
+    padding: 14px 18px;
     border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
     word-break: break-all;
 }
 
 .formula-card-footer {
     padding-top: 16px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .formula-card .calc-btn-link {
-    color: #2563eb;
+    color: #38bdf8;
     text-decoration: none;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 14.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
 }
 
 .formula-card:hover .calc-btn-link {
-    color: #1d4ed8;
+    color: #60a5fa;
+    transform: translateX(4px);
 }
 
 /* =========================================================

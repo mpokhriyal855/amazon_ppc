@@ -3,11 +3,8 @@
    File: js/resources.js
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================================================
-       1. QUICK TOOL FINDER CHIP FILTERING
-    ========================================================= */
+function initResourcesPage() {
+    /* 1. QUICK TOOL FINDER CHIPS FILTERING */
     const chipButtons = document.querySelectorAll(".quick-chips-grid .chip-btn");
     const calcCards = document.querySelectorAll(".calculators-grid .calc-card");
 
@@ -15,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chipButtons.forEach(function (btn) {
             btn.addEventListener("click", function (e) {
                 e.preventDefault();
+                e.stopPropagation();
 
                 // Update active chip UI
                 chipButtons.forEach(b => b.classList.remove("active"));
@@ -22,31 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const targetCategory = this.getAttribute("data-tool-category");
 
-                // Filter cards with smooth animation
+                // Filter cards
                 calcCards.forEach(function (card) {
                     const cardCategory = card.getAttribute("data-category");
 
                     if (targetCategory === "all" || cardCategory === targetCategory) {
                         card.style.display = "flex";
-                        setTimeout(() => {
-                            card.style.opacity = "1";
-                            card.style.transform = "translateY(0)";
-                        }, 50);
+                        card.style.opacity = "1";
+                        card.style.transform = "translateY(0)";
                     } else {
-                        card.style.opacity = "0";
-                        card.style.transform = "translateY(10px)";
-                        setTimeout(() => {
-                            card.style.display = "none";
-                        }, 200);
+                        card.style.display = "none";
                     }
                 });
             });
         });
     }
 
-    /* =========================================================
-       2. PROBLEM FINDER INTERACTIVE CHIPS
-    ========================================================= */
+    /* 2. PROBLEM FINDER CHIPS */
     const problemChips = document.querySelectorAll(".problem-chips-grid .problem-chip");
     const recTitle = document.getElementById("recOutputTitle");
     const recDesc = document.getElementById("recOutputDesc");
@@ -95,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         problemChips.forEach(function (chip) {
             chip.addEventListener("click", function (e) {
                 e.preventDefault();
+                e.stopPropagation();
 
                 problemChips.forEach(c => c.classList.remove("active"));
                 this.classList.add("active");
@@ -111,4 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-});
+}
+
+// Execute immediately if DOM is ready, else wait
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initResourcesPage);
+} else {
+    initResourcesPage();
+}
