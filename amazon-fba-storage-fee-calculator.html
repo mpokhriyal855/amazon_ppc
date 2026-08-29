@@ -9,8 +9,8 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Amazon FBA Storage Fee Calculator | Inventory Volume & Cost Exposure</title>
-    <meta name="description" content="Calculate Amazon FBA inventory storage costs based on product dimensions, unit quantity, duration, and monthly storage rates.">
+    <title>Amazon FBA Storage Fee Calculator India | Inventory Storage & Velocity Engine</title>
+    <meta name="description" content="Calculate Amazon FBA storage costs in India using product dimensions, inventory quantity and time in storage. Model sell-through velocity, months of cover, inventory exposure, packaging optimization and downloadable storage analysis.">
     <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-fba-storage-fee-calculator.html">
 
     <!-- FONTS & STYLES -->
@@ -22,267 +22,2037 @@
     <link rel="stylesheet" href="css/resources.css?v=v19">
     <link rel="stylesheet" href="css/footer.css?v=v41">
 
+    <!-- SCHEMA.ORG STRUCTURED DATA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Amazon FBA Storage Fee Calculator",
+      "name": "Amazon FBA Storage Fee Calculator India",
       "url": "https://ppcgrowthexpert.com/amazon-fba-storage-fee-calculator.html",
-      "description": "Calculate Amazon FBA storage cost exposure, inventory cubic volume, and months of cover.",
+      "description": "Comprehensive Amazon India FBA Storage, Inventory & Sell-Through Velocity Engine. Sourced from official Amazon India seller pricing with cubic volume conversion, inventory depletion modeling, aged inventory surcharges, packaging optimization, and 18% GST calculations.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How are Amazon FBA storage fees calculated in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon India FBA storage fees are calculated based on the daily average volume (in cubic feet) occupied by your packaged inventory stored in Amazon fulfilment centers, multiplied by the monthly storage rate per cubic foot plus 18% GST."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What product dimensions should I enter for FBA storage calculation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Always enter the packed, sellable unit dimensions (Length × Width × Height in cm) including polybags, boxes, or retail packaging, as Amazon measures the total warehouse space your package occupies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Months of Cover in Amazon FBA inventory management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Months of Cover estimates how long your current FBA inventory will last based on your expected monthly sales velocity (Current Inventory ÷ Monthly Sales)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is sell-through velocity important for FBA storage costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Storage fees accumulate over time. As products sell through, stored inventory decreases, reducing average monthly cubic volume and lowering total storage fees compared to a static inventory model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is GST charged on Amazon India FBA storage fees?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, an 18% Goods and Services Tax (GST) is levied on all Amazon FBA storage charges in India. Registered GST sellers can claim Input Tax Credit (ITC) on these charges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does packaging size reduction lower FBA storage costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Volume scales multiplicatively (L × W × H). A 10% reduction across all three packaging dimensions results in a 27.1% reduction in total cubic volume, significantly lowering storage costs per unit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between static inventory and sell-through storage models?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A static model assumes your initial inventory quantity stays in FBA for the entire duration, representing a worst-case scenario. A sell-through model dynamically depletes inventory monthly as sales occur, providing a realistic operational storage projection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Amazon aged inventory storage surcharges?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aged inventory surcharges apply to units stored in Amazon fulfilment centers for extended periods (typically over 270 or 365 days), adding extra per-unit or per-cubic-foot monthly fees on top of standard storage rates."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* STORAGE CALCULATOR SCOPED STYLES */
+        .fba-storage-page {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #0f172a;
+        }
+
+        .dark-section-wrapper {
+            background: #090d16;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(2, 132, 199, 0.1) 0%, transparent 45%);
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .light-section-wrapper {
+            background: #f8fafc;
+            padding: 65px 0;
+        }
+
+        .dark-glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 28px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-result-panel {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%);
+            border: 1.5px solid rgba(56, 189, 248, 0.25);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 24px;
+        }
+
+        .dark-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+        }
+
+        .dark-input-field {
+            width: 100%;
+            background: #0f172a !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: #ffffff !important;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .dark-input-field:focus {
+            border-color: #38bdf8 !important;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        .dark-hint {
+            font-size: 11.5px;
+            color: #94a3b8;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .duration-btn-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .duration-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .duration-btn.active, .duration-btn:hover {
+            background: rgba(37, 99, 235, 0.3);
+            border-color: #38bdf8;
+            color: #ffffff;
+        }
+
+        .model-toggle-container {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 20px;
+        }
+
+        .model-toggle-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 8px 12px;
+            font-size: 12.5px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .model-toggle-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        .dark-telemetry-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .dark-telemetry-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 500px) {
+            .dark-telemetry-grid { grid-template-columns: 1fr; }
+        }
+
+        .dark-stat-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 18px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .dark-stat-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .dark-stat-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .dark-stat-value {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .dark-stat-sub {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .receipt-line-dark {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 13px;
+            color: #cbd5e1;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+        }
+
+        .receipt-line-dark:last-child { border-bottom: none; }
+
+        /* DELETION TIMELINE BARS */
+        .burn-bar-wrapper {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            height: 12px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .burn-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
+            border-radius: 8px;
+            transition: width 0.4s ease;
+        }
+
+        /* DIAGNOSTIC PILLS */
+        .diag-pill-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .diag-pill-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .diag-pill {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .diag-pill:hover, .diag-pill.active {
+            background: rgba(37, 99, 235, 0.25);
+            border-color: #38bdf8;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .diag-pill-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .diag-pill-desc {
+            font-size: 11.5px;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        /* LIGHT SECTION LAB TABLES */
+        .scen-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            margin-top: 14px;
+        }
+
+        .scen-table th {
+            background: #f8fafc;
+            color: #475569;
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 2px solid #e2e8f0;
+            font-family: 'DM Mono', monospace;
+            font-size: 11.5px;
+        }
+
+        .scen-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #1e293b;
+        }
+
+        .scen-table tr.active-row {
+            background: rgba(37, 99, 235, 0.06);
+            font-weight: 700;
+        }
+
+        /* FAQ ACCORDION STYLES (+/- SIGN SMOOTH TRANSITION) */
+        .faq-item {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .faq-item:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+        }
+
+        .faq-item[open] {
+            border-color: #2563eb;
+            box-shadow: 0 6px 20px rgba(37,99,235,0.08);
+        }
+
+        .faq-question-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 22px;
+            font-weight: 700;
+            font-size: 15.5px;
+            color: #0f172a;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+        }
+
+        .faq-question-btn::-webkit-details-marker { display: none; }
+
+        .faq-q-text { flex: 1; padding-right: 16px; }
+
+        .faq-toggle-icon {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2563eb;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] .faq-toggle-icon {
+            transform: rotate(45deg);
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .faq-answer-content {
+            padding: 0 22px 22px 22px;
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .faq-answer-content p { margin: 0; }
+
+        /* PRINT PDF TEMPLATE */
+        #pdfReportContainer { display: none; }
+
+        @media print {
+            body { background: #ffffff !important; color: #0f172a !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
+            #webAppLayout { display: none !important; }
+            #pdfReportContainer { display: block !important; padding: 24px; max-width: 800px; margin: 0 auto; }
+            .pdf-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 16px; margin-bottom: 24px; }
+            .pdf-title { font-size: 24px; font-weight: 800; color: #0f172a; }
+            .pdf-subtitle { font-size: 12px; color: #64748b; font-family: 'DM Mono', monospace; }
+            .pdf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+            .pdf-box { border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px; background: #f8fafc; }
+            .pdf-box-title { font-size: 12px; font-weight: 800; color: #2563eb; text-transform: uppercase; margin-bottom: 8px; font-family: 'DM Mono', monospace; }
+            .pdf-table { width: 100%; font-size: 12px; border-collapse: collapse; }
+            .pdf-table td { padding: 6px 4px; border-bottom: 1px solid #e2e8f0; }
+            .pdf-takeaways { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 16px; margin-top: 20px; }
+            .pdf-footer { margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 10px; color: #94a3b8; text-align: center; }
+        }
+    </style>
 </head>
 
-<body>
+<body class="fba-storage-page">
 
     <!-- BACKGROUND GRID & GLOW -->
     <div class="background-grid"></div>
     <div class="background-glow"></div>
 
-    <!-- NAVBAR -->
-    <div class="navbar-container" id="navbarContainer">
-        <header class="navbar">
-            <a href="index.html" class="logo">
-                <div class="logo-badge"><div class="logo-symbol"></div></div>
-                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
-            </a>
+    <div id="webAppLayout">
+        <!-- NAVBAR -->
+        <div class="navbar-container" id="navbarContainer">
+            <header class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-badge"><div class="logo-symbol"></div></div>
+                    <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+                </a>
 
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="services.html" class="nav-item">Services</a>
-                <a href="case-studies.html" class="nav-item">Case Studies</a>
-                <a href="index.html#results" class="nav-item">Results</a>
-                <a href="about.html" class="nav-item">About</a>
-                <div class="nav-dropdown">
-                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
-                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
-                    </a>
-                    <div class="dropdown-menu mega-dropdown-menu">
-                        <div class="mega-menu-grid">
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">PPC PERFORMANCE</div>
-                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
-                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
-                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
-                            </div>
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
-                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
-                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
-                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
-                            </div>
-                            <!-- <div class="mega-menu-col" style="display: none !important;" data-hidden-col="profit-planning">
-                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
-                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item">
-                                    <span class="mega-item-icon">⚖️</span>
-                                    <div class="mega-item-text">
-                                        <span class="mega-item-title">Break-Even ACoS Calculator</span>
-                                        <span class="mega-item-desc">Max ACoS before margin loss</span>
-                                    </div>
-                                </a>
-                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item">
-                                    <span class="mega-item-icon">💰</span>
-                                    <div class="mega-item-text">
-                                        <span class="mega-item-title">PPC Budget Calculator</span>
-                                        <span class="mega-item-desc">Estimate working monthly budget</span>
-                                    </div>
-                                </a>
-                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item">
-                                    <span class="mega-item-icon">🎯</span>
-                                    <div class="mega-item-text">
-                                        <span class="mega-item-title">Target ACoS &amp; Bid Calculator</span>
-                                        <span class="mega-item-desc">Estimate practical CPC &amp; bid</span>
-                                    </div>
-                                </a>
-                            </div> -->
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
-                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
-                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
-                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
-                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                <nav class="nav-links" id="navLinks">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="services.html" class="nav-item">Services</a>
+                    <a href="case-studies.html" class="nav-item">Case Studies</a>
+                    <a href="index.html#results" class="nav-item">Results</a>
+                    <a href="about.html" class="nav-item">About</a>
+                    <div class="nav-dropdown">
+                        <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                            Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                        </a>
+                        <div class="dropdown-menu mega-dropdown-menu">
+                            <div class="mega-menu-grid">
+                                <div class="mega-menu-col">
+                                    <div class="mega-col-title">PPC PERFORMANCE</div>
+                                    <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                    <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                    <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <div class="mega-col-title">PROFITABILITY &amp; FEES</div>
+                                    <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏷️</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Amazon India fee breakdown</span></div></a>
+                                    <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item active"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Fee Calculator</span><span class="mega-item-desc">Storage &amp; sell-through engine</span></div></a>
+                                    <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Net profit &amp; margin engine</span></div></a>
+                                </div>
                             </div>
                         </div>
-                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-cta">Get Free Audit</a>
+                </nav>
+
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <span class="hamburger"></span>
+                </button>
+            </header>
+        </div>
+
+        <!-- 1. HERO SECTION (MATCHES CALCULATOR FAMILY EXACTLY) -->
+        <div class="hero-compact">
+            <div class="resources-section-container">
+                <nav class="breadcrumbs-bar" aria-label="Breadcrumb">
+                    <a href="index.html">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Home
+                    </a>
+                    <span class="breadcrumb-sep">&gt;</span>
+                    <a href="resources.html">Resources</a>
+                    <span class="breadcrumb-sep">&gt;</span>
+                    <span class="breadcrumb-active">Amazon FBA Storage Fee Calculator India</span>
+                </nav>
+
+                <div class="hero-eyebrow">✦ AMAZON FBA INVENTORY COST ENGINE</div>
+                <h1 class="hero-title">Amazon FBA Storage Fee Calculator India</h1>
+                <p class="hero-description">Estimate how much your Amazon FBA inventory costs to store based on packed product volume, inventory quantity and time in storage — then analyze months of cover, sell-through velocity, slow-moving inventory exposure and the impact storage has on your unit economics.</p>
+
+                <div style="display:flex; justify-content:center; align-items:center; gap:24px; flex-wrap:wrap; font-size:13.5px; font-weight:700; color:#334155;">
+                    <span><strong style="color:#10b981;">✓</strong> Amazon India focused</span>
+                    <span><strong style="color:#10b981;">✓</strong> Live inventory modelling</span>
+                    <span><strong style="color:#10b981;">✓</strong> Storage + sell-through analysis</span>
+                    <span><strong style="color:#10b981;">✓</strong> Downloadable executive report</span>
+                </div>
+
+                <div style="margin-top:16px; text-align:center;">
+                    <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(37,99,235,0.06); border:1px solid rgba(37,99,235,0.2); padding:6px 16px; border-radius:50px; font-size:12.5px; color:#1e40af; flex-wrap:wrap; justify-content:center;">
+                        <span><strong>Storage Fee Schedule:</strong> Amazon.in · Verified Schedule (Current)</span>
+                        <button type="button" id="btnToggleRulesDrawer" style="background:#2563eb; color:#ffffff; border:none; padding:4px 12px; border-radius:12px; font-size:11px; font-weight:700; cursor:pointer; text-transform:uppercase;">View Storage Rules ▾</button>
+                        <button type="button" id="btnHeroPdf" style="background:#10b981; color:#ffffff; border:none; padding:4px 14px; border-radius:12px; font-size:11px; font-weight:800; cursor:pointer; text-transform:uppercase; box-shadow:0 3px 10px rgba(16,185,129,0.3);">Download Storage Audit PDF 📄</button>
                     </div>
                 </div>
-                <a href="blog.html" class="nav-item">Blog</a>
-                <a href="contact.html" class="nav-item">Contact</a>
-            </nav>
-
-            <div class="nav-actions">
-                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
-                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
-                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
-            </div>
-        </header>
-    </div>
-
-    <!-- MAIN CONTAINER -->
-    <div class="resources-page-container">
-
-        <!-- BREADCRUMB -->
-        <nav class="breadcrumb-nav">
-            <a href="index.html">Home</a> /
-            <a href="resources.html">Resources</a> /
-            <span>Amazon FBA Storage Fee Calculator</span>
-        </nav>
-
-        <!-- HERO -->
-        <section class="resources-hero">
-            <div class="hero-eyebrow">✦ INVENTORY STORAGE ESTIMATOR</div>
-            <h1 class="hero-title">Amazon FBA Storage Fee Calculator</h1>
-            <p class="hero-description">Estimate how much FBA inventory storage could cost based on product dimensions, quantity, storage duration and applicable storage rates.</p>
-        </section>
-
-        <!-- CALCULATOR APP WRAPPER -->
-        <section class="calculator-app-wrapper">
-            <!-- LEFT INPUTS COL -->
-            <div class="calc-inputs-col">
-                <h3>Inventory & Volume Inputs</h3>
-                <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-                    <div class="input-group">
-                        <label class="input-label" for="stgLen">Length (cm)</label>
-                        <input type="number" id="stgLen" class="calc-input-field" value="25" min="0">
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label" for="stgWid">Width (cm)</label>
-                        <input type="number" id="stgWid" class="calc-input-field" value="18" min="0">
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label" for="stgHgt">Height (cm)</label>
-                        <input type="number" id="stgHgt" class="calc-input-field" value="10" min="0">
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="stgQty">Total Units Stored</label>
-                    <input type="number" id="stgQty" class="calc-input-field" value="500" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="stgMonths">Storage Duration (Months)</label>
-                    <input type="number" id="stgMonths" class="calc-input-field" value="3" min="1">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="stgRate">Storage Rate (₹ per cu. ft. per month)</label>
-                    <input type="number" id="stgRate" class="calc-input-field" value="45" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="stgSalesVel">Monthly Sales Velocity (Units/mo)</label>
-                    <input type="number" id="stgSalesVel" class="calc-input-field" value="125" placeholder="Optional" min="0">
-                </div>
-
-                <div class="calc-action-row">
-                    <button type="button" class="btn-calc-submit" id="btnCalcStg">Calculate Storage Cost →</button>
-                    <button type="button" class="btn-calc-reset" id="btnResetStg">Reset</button>
-                </div>
-            </div>
-
-            <!-- RIGHT RESULTS COL -->
-            <div class="calc-results-col" aria-live="polite">
-                <div class="result-main-box">
-                    <div class="result-main-label">TOTAL STORAGE COST</div>
-                    <div class="result-main-value" id="stgTotalVal">₹10,718</div>
-                    <div class="result-main-sub" id="stgSubText">For 500 units over 3 months</div>
-                </div>
-
-                <div class="result-metrics-grid">
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">MONTHLY COST</div>
-                        <div class="mini-stat-val" id="stgMonthlyVal">₹3,572.63</div>
-                    </div>
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">COST PER UNIT</div>
-                        <div class="mini-stat-val" id="stgPerUnitVal">₹21.44</div>
-                    </div>
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">TOTAL VOLUME</div>
-                        <div class="mini-stat-val" id="stgVolumeVal">79.39 cu.ft.</div>
-                    </div>
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">INVENTORY COVER</div>
-                        <div class="mini-stat-val" id="stgCoverVal">4.0 Months</div>
-                    </div>
-                </div>
-
-                <div class="result-guidance-box">
-                    <div class="result-guidance-title">Storage Cost Exposure</div>
-                    <div id="stgGuidanceText">
-                        At a sales velocity of 125 units/month, your 500 units represent <strong>4.0 months of cover</strong>. High inventory cover increases storage exposure.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AUDIT CTA BANNER -->
-        <section class="resources-audit-cta">
-            <h2>Slow-Moving FBA Inventory Eating Profits?</h2>
-            <p>We help Amazon India sellers accelerate sales velocity through targeted PPC campaigns to reduce long-term storage fees.</p>
-            <a href="contact.html" class="btn-cta-primary">Audit Your PPC & Inventory Velocity →</a>
-        </section>
-
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p>© 2026 PPC Growth Expert. All rights reserved.</p>
             </div>
         </div>
-    </footer>
 
+        <!-- STORAGE RULES AUDIT DRAWER (EXPANDABLE) -->
+        <div id="feeRulesDrawer" style="display:none; max-width:1160px; margin:20px auto; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.04);">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:10px; margin-bottom:14px;">
+                <div style="font-family:'DM Mono',monospace; font-size:13px; font-weight:700; color:#2563eb; text-transform:uppercase;">Official Amazon India FBA Storage Fee Reference</div>
+                <span style="font-size:12px; color:#64748b;" id="ruleVerDate">Verified Date: 2026-08-15</span>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; font-size:12.5px; color:#334155;">
+                <div><strong style="color:#0f172a;">1. Standard Storage Rate:</strong><br>₹45.00 per cubic foot per month (or ₹1,589.15/m³/mo) for standard size products.</div>
+                <div><strong style="color:#0f172a;">2. Volume Derivation:</strong><br>Packaged Length × Width × Height (cm) ÷ 28,316.85 = Volume in cubic feet (ft³).</div>
+                <div><strong style="color:#0f172a;">3. 18% GST &amp; Aged Storage:</strong><br>18.0% GST applies to storage base. Surcharges apply for inventory stored >270 or >365 days.</div>
+            </div>
+        </div>
+
+        <!-- 2. MAIN STORAGE CALCULATOR (FULL-WIDTH DARK EXECUTIVE SECTION) -->
+        <div class="dark-section-wrapper">
+            <div class="resources-calc-container">
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; align-items:start;">
+
+                    <!-- LEFT INPUTS GLASS CARD -->
+                    <div class="dark-glass-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+                            <h3 style="font-size:20px; font-weight:800; color:#ffffff; margin:0;">Inventory &amp; Size Inputs</h3>
+                            <span style="font-family:'DM Mono',monospace; font-size:11px; background:rgba(56,189,248,0.15); color:#38bdf8; padding:4px 10px; border-radius:50px; font-weight:700; border:1px solid rgba(56,189,248,0.3);">ENGINE MODE</span>
+                        </div>
+
+                        <!-- MODEL SELECTION TOGGLE -->
+                        <label class="dark-label">Inventory Storage Model *</label>
+                        <div class="model-toggle-container">
+                            <button type="button" id="btnModelSellThrough" class="model-toggle-btn active">Sell-Through Depletion (Realistic)</button>
+                            <button type="button" id="btnModelStatic" class="model-toggle-btn">Static Inventory (Worst-Case)</button>
+                        </div>
+
+                        <!-- 01 PRODUCT SIZE -->
+                        <div style="border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:16px; margin-bottom:16px;">
+                            <div style="font-family:'DM Mono',monospace; font-size:11px; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">01 · PACKAGED UNIT SIZE</div>
+                            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-bottom:8px;">
+                                <div>
+                                    <label class="dark-label" for="inputLength" style="font-size:11px;">Length (cm)</label>
+                                    <input type="number" id="inputLength" class="dark-input-field" value="30" placeholder="30" min="0.1" step="any">
+                                </div>
+                                <div>
+                                    <label class="dark-label" for="inputWidth" style="font-size:11px;">Width (cm)</label>
+                                    <input type="number" id="inputWidth" class="dark-input-field" value="20" placeholder="20" min="0.1" step="any">
+                                </div>
+                                <div>
+                                    <label class="dark-label" for="inputHeight" style="font-size:11px;">Height (cm)</label>
+                                    <input type="number" id="inputHeight" class="dark-input-field" value="12" placeholder="12" min="0.1" step="any">
+                                </div>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); padding:8px 12px; border-radius:8px; font-size:12px; color:#94a3b8;">
+                                <span>Unit Volume: <strong id="valUnitCm3" style="color:#ffffff;">7,200 cm³</strong></span>
+                                <span>Volume (ft³): <strong id="valUnitCuFt" style="color:#38bdf8;">0.254 ft³</strong></span>
+                                <span>(m³): <strong id="valUnitCuM" style="color:#cbd5e1;">0.0072 m³</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- 02 INVENTORY QUANTITY & TIME -->
+                        <div style="border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:16px; margin-bottom:16px;">
+                            <div style="font-family:'DM Mono',monospace; font-size:11px; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">02 · INVENTORY &amp; DURATION</div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+                                <div>
+                                    <label class="dark-label" for="inputUnitsStored">Units Stored in FBA *</label>
+                                    <input type="number" id="inputUnitsStored" class="dark-input-field" value="600" placeholder="600" min="1" step="1">
+                                </div>
+                                <div>
+                                    <label class="dark-label" for="inputStorageRate">Storage Rate (₹ / ft³ / mo) *</label>
+                                    <input type="number" id="inputStorageRate" class="dark-input-field" value="45.00" placeholder="45.00" min="0" step="any">
+                                </div>
+                            </div>
+
+                            <label class="dark-label">Modelling Storage Duration</label>
+                            <div class="duration-btn-group">
+                                <button type="button" class="duration-btn" data-days="30">30 Days</button>
+                                <button type="button" class="duration-btn active" data-days="90">90 Days</button>
+                                <button type="button" class="duration-btn" data-days="180">180 Days</button>
+                                <button type="button" class="duration-btn" data-days="365">365 Days</button>
+                            </div>
+                            <input type="hidden" id="inputDaysDuration" value="90">
+                        </div>
+
+                        <!-- 03 VELOCITY & UNIT ECONOMICS -->
+                        <div>
+                            <div style="font-family:'DM Mono',monospace; font-size:11px; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">03 · SALES VELOCITY &amp; PRODUCT COSTS</div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+                                <div>
+                                    <label class="dark-label" for="inputMonthlySales">Expected Monthly Sales *</label>
+                                    <input type="number" id="inputMonthlySales" class="dark-input-field" value="200" placeholder="200" min="0" step="1">
+                                    <span class="dark-hint">Units sold per 30-day period.</span>
+                                </div>
+                                <div>
+                                    <label class="dark-label" for="inputTargetCoverMonths">Target Cover (Months)</label>
+                                    <input type="number" id="inputTargetCoverMonths" class="dark-input-field" value="2.0" placeholder="2.0" min="0.1" step="0.1">
+                                    <span class="dark-hint">Desired inventory buffer.</span>
+                                </div>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                                <div>
+                                    <label class="dark-label" for="inputSellingPrice">Selling Price (₹) <span style="color:#64748b;">(Opt)</span></label>
+                                    <input type="number" id="inputSellingPrice" class="dark-input-field" value="1499" placeholder="1499" min="0">
+                                </div>
+                                <div>
+                                    <label class="dark-label" for="inputLandedCogs">Unit Product COGS (₹) <span style="color:#64748b;">(Opt)</span></label>
+                                    <input type="number" id="inputLandedCogs" class="dark-input-field" value="440" placeholder="440" min="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ACTION BUTTONS -->
+                        <div style="display:flex; gap:10px; margin-top:24px;">
+                            <button type="button" id="btnCalcStorageEngine" style="flex:2; background:linear-gradient(135deg, #2563eb 0%, #0284c7 100%); color:#ffffff; border:none; padding:14px; border-radius:50px; font-weight:800; font-size:15px; cursor:pointer; box-shadow:0 6px 20px rgba(37,99,235,0.4);">Calculate FBA Storage →</button>
+                            <button type="button" id="btnExample600" style="flex:1; background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3); padding:14px; border-radius:50px; font-weight:700; font-size:13px; cursor:pointer;">Use Example</button>
+                            <button type="button" id="btnResetStorageEngine" style="flex:1; background:rgba(255,255,255,0.08); color:#ffffff; border:1px solid rgba(255,255,255,0.2); padding:14px; border-radius:50px; font-weight:700; font-size:13px; cursor:pointer;">Reset</button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT TELEMETRY RECEIPT PANEL -->
+                    <div class="dark-result-panel" aria-live="polite">
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px dashed rgba(255,255,255,0.15); padding-bottom:12px; margin-bottom:14px;">
+                            <div>
+                                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:1px;">PPC GROWTH EXPERT</div>
+                                <div style="font-size:15px; font-weight:800; color:#ffffff;">AMAZON INDIA FBA STORAGE RECEIPT</div>
+                            </div>
+                            <div style="display:flex; gap:8px; align-items:center;">
+                                <button type="button" id="btnCopyAnalysis" style="background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3); padding:6px 12px; border-radius:50px; font-size:11.5px; font-weight:700; cursor:pointer;">Copy 📋</button>
+                                <button type="button" id="btnDownloadPDF" style="background:#2563eb; color:#ffffff; border:none; padding:6px 14px; border-radius:50px; font-size:11.5px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.4);">Download PDF 📄</button>
+                            </div>
+                        </div>
+
+                        <!-- BIG ESTIMATED STORAGE COST -->
+                        <div style="background:rgba(37,99,235,0.15); border:1px solid rgba(56,189,248,0.3); border-radius:14px; padding:18px; text-align:center; margin-bottom:16px;">
+                            <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:0.5px;">ESTIMATED STORAGE BURDEN (<span id="resDurationLabel">90 DAYS</span>)</div>
+                            <div style="font-size:34px; font-weight:800; color:#ffffff; margin:4px 0;" id="resTotalStorageCost">₹2,367.00</div>
+                            <div style="font-size:12px; color:#cbd5e1;" id="resStorageSubhead">Includes 18% GST (₹361.07) under Sell-Through Depletion</div>
+                        </div>
+
+                        <div class="receipt-line-dark">
+                            <span>Package Dimensions:</span>
+                            <span style="font-weight:700; color:#ffffff;" id="recDims">30 × 20 × 12 cm</span>
+                        </div>
+                        <div class="receipt-line-dark">
+                            <span>Packaged Unit Volume:</span>
+                            <span style="font-weight:700; color:#ffffff;" id="recUnitVol">0.254 ft³ (7,200 cm³)</span>
+                        </div>
+                        <div class="receipt-line-dark">
+                            <span>Starting FBA Space:</span>
+                            <span style="font-weight:700; color:#38bdf8;" id="recTotalSpace">152.58 ft³ (4.32 m³)</span>
+                        </div>
+
+                        <div style="font-size:10.5px; font-weight:700; color:#94a3b8; margin-top:10px; margin-bottom:4px; text-transform:uppercase;">1. Velocity &amp; Inventory Cover</div>
+                        <div class="receipt-line-dark">
+                            <span>Current FBA Inventory:</span>
+                            <span style="color:#ffffff;" id="recStartUnits">600 units</span>
+                        </div>
+                        <div class="receipt-line-dark">
+                            <span>Expected Sales Velocity:</span>
+                            <span style="color:#ffffff;" id="recSalesVel">200 units / mo</span>
+                        </div>
+                        <div class="receipt-line-dark">
+                            <span>Months of Cover:</span>
+                            <span style="font-weight:700; color:#38bdf8;" id="recMonthsCover">3.00 Months</span>
+                        </div>
+                        <div class="receipt-line-dark">
+                            <span>Ending Inventory (<span id="recPeriodLabel">90d</span>):</span>
+                            <span style="color:#ffffff;" id="recEndingUnits">0 units</span>
+                        </div>
+
+                        <div style="font-size:10.5px; font-weight:700; color:#94a3b8; margin-top:10px; margin-bottom:4px; text-transform:uppercase;">2. Unit Economics &amp; Allocation</div>
+                        <div class="receipt-line-dark">
+                            <span>Storage / Unit / Month:</span>
+                            <span style="color:#ffffff;" id="recStoragePerUnitMo">₹11.45</span>
+                        </div>
+                        <div class="receipt-line-dark">
+                            <span>Storage Cost / Unit Sold:</span>
+                            <span style="font-weight:700; color:#f87171;" id="recStoragePerUnitSold">₹3.95 / unit</span>
+                        </div>
+                        <div class="receipt-line-dark">
+                            <span>Inventory Cost Value Tied Up:</span>
+                            <span style="color:#ffffff;" id="recCapitalTiedUp">₹2,64,000.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LAB 1: FBA INVENTORY CONTROL CENTER & TELEMETRY -->
+                <div style="margin-top:40px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:1px;">LAB 1 · TELEMETRY DASHBOARD</div>
+                    <h2 style="font-size:24px; font-weight:800; color:#ffffff; margin:4px 0 16px 0;">FBA Storage &amp; Inventory Risk Workspace</h2>
+
+                    <div class="dark-telemetry-grid">
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">STARTING INVENTORY</div>
+                            <div class="dark-stat-value" id="dashStartUnits">600</div>
+                            <div class="dark-stat-sub">Units in FBA</div>
+                        </div>
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">STARTING SPACE</div>
+                            <div class="dark-stat-value" id="dashStartSpace">152.6 ft³</div>
+                            <div class="dark-stat-sub" id="dashStartSpaceM3">4.32 m³</div>
+                        </div>
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">MONTHLY SALES</div>
+                            <div class="dark-stat-value" id="dashMonthlySales">200</div>
+                            <div class="dark-stat-sub">Units / 30 days</div>
+                        </div>
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">MONTHS OF COVER</div>
+                            <div class="dark-stat-value" style="color:#38bdf8;" id="dashMonthsCover">3.00</div>
+                            <div class="dark-stat-sub">Velocity horizon</div>
+                        </div>
+
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">STORAGE / UNIT / MO</div>
+                            <div class="dark-stat-value" id="dashStoragePerUnitMo">₹11.45</div>
+                            <div class="dark-stat-sub">Base storage rate</div>
+                        </div>
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">MODELLED PERIOD COST</div>
+                            <div class="dark-stat-value" style="color:#f87171;" id="dashPeriodCost">₹2,367.00</div>
+                            <div class="dark-stat-sub" id="dashPeriodCostSub">Inc. 18% GST (90d)</div>
+                        </div>
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">ENDING INVENTORY</div>
+                            <div class="dark-stat-value" id="dashEndingUnits">0</div>
+                            <div class="dark-stat-sub">Units at period end</div>
+                        </div>
+                        <div class="dark-stat-card">
+                            <div class="dark-stat-label">INVENTORY COST VALUE</div>
+                            <div class="dark-stat-value" style="color:#34d399;" id="dashCapitalValue">₹2,64,000</div>
+                            <div class="dark-stat-sub">Working capital tied up</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LAB 2: INVENTORY BURN-DOWN & CUMULATIVE STORAGE TIMELINE -->
+                <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:28px; margin-top:30px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#38bdf8; text-transform:uppercase;">LAB 2 · INVENTORY DEPLETION &amp; COST CUMULATION</div>
+                    <h2 style="font-size:22px; font-weight:800; color:#ffffff; margin:4px 0 16px 0;">How Storage Cost &amp; Inventory Deplete Over Time</h2>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px;">
+                        <!-- LEFT: INVENTORY BURN-DOWN -->
+                        <div>
+                            <div style="font-size:14px; font-weight:700; color:#e2e8f0; margin-bottom:12px;">Inventory Unit Depletion Horizon</div>
+                            
+                            <div style="margin-bottom:12px;">
+                                <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1;">
+                                    <span>Month 1 (Day 30):</span>
+                                    <span id="burnM1Text">400 units (66.7%)</span>
+                                </div>
+                                <div class="burn-bar-wrapper"><div class="burn-bar-fill" id="burnM1Bar" style="width: 66.7%;"></div></div>
+                            </div>
+
+                            <div style="margin-bottom:12px;">
+                                <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1;">
+                                    <span>Month 2 (Day 60):</span>
+                                    <span id="burnM2Text">200 units (33.3%)</span>
+                                </div>
+                                <div class="burn-bar-wrapper"><div class="burn-bar-fill" id="burnM2Bar" style="width: 33.3%;"></div></div>
+                            </div>
+
+                            <div style="margin-bottom:12px;">
+                                <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1;">
+                                    <span>Month 3 (Day 90):</span>
+                                    <span id="burnM3Text">0 units (0.0%)</span>
+                                </div>
+                                <div class="burn-bar-wrapper"><div class="burn-bar-fill" id="burnM3Bar" style="width: 0%;"></div></div>
+                            </div>
+
+                            <div style="margin-bottom:12px;">
+                                <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1;">
+                                    <span>Month 6 (Day 180):</span>
+                                    <span id="burnM6Text">0 units (0.0%)</span>
+                                </div>
+                                <div class="burn-bar-wrapper"><div class="burn-bar-fill" id="burnM6Bar" style="width: 0%;"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: CUMULATIVE STORAGE COST -->
+                        <div>
+                            <div style="font-size:14px; font-weight:700; color:#e2e8f0; margin-bottom:12px;">Cumulative Storage Cost Progression</div>
+                            
+                            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; text-align:center;">
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px;">
+                                    <div style="font-family:'DM Mono',monospace; font-size:10.5px; color:#94a3b8;">30 DAYS</div>
+                                    <div style="font-size:16px; font-weight:800; color:#ffffff; margin-top:4px;" id="cumCost30">₹1,475.00</div>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px;">
+                                    <div style="font-family:'DM Mono',monospace; font-size:10.5px; color:#94a3b8;">60 DAYS</div>
+                                    <div style="font-size:16px; font-weight:800; color:#ffffff; margin-top:4px;" id="cumCost60">₹2,096.00</div>
+                                </div>
+                                <div style="background:rgba(37,99,235,0.15); border:1px solid rgba(56,189,248,0.3); border-radius:12px; padding:12px;">
+                                    <div style="font-family:'DM Mono',monospace; font-size:10.5px; color:#38bdf8;">90 DAYS</div>
+                                    <div style="font-size:16px; font-weight:800; color:#38bdf8; margin-top:4px;" id="cumCost90">₹2,367.00</div>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:12px;">
+                                    <div style="font-family:'DM Mono',monospace; font-size:10.5px; color:#94a3b8;">180 DAYS</div>
+                                    <div style="font-size:16px; font-weight:800; color:#ffffff; margin-top:4px;" id="cumCost180">₹2,367.00</div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top:16px; font-size:12.5px; color:#94a3b8; line-height:1.6; background:rgba(255,255,255,0.02); padding:12px; border-radius:10px;">
+                                💡 <strong>Sell-Through Insight:</strong> Notice how cumulative storage costs level off once inventory depletes to 0 units, avoiding unneeded warehouse fees.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LAB 3: PACKAGING VOLUME & SENSITIVITY LAB -->
+                <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:28px; margin-top:30px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#38bdf8; text-transform:uppercase;">LAB 3 · PACKAGING OPTIMIZATION LAB</div>
+                    <h2 style="font-size:22px; font-weight:800; color:#ffffff; margin:4px 0 16px 0;">Before vs After Packaging Volume Comparison</h2>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; align-items:start;">
+                        <!-- LEFT INPUTS -->
+                        <div>
+                            <div style="font-size:13.5px; font-weight:700; color:#e2e8f0; margin-bottom:10px;">Alternative / Redesigned Package Dimensions (cm)</div>
+                            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-bottom:12px;">
+                                <div>
+                                    <label class="dark-label" style="font-size:11px;">Alt Length (cm)</label>
+                                    <input type="number" id="inputAltLength" class="dark-input-field" value="27" placeholder="27">
+                                </div>
+                                <div>
+                                    <label class="dark-label" style="font-size:11px;">Alt Width (cm)</label>
+                                    <input type="number" id="inputAltWidth" class="dark-input-field" value="18" placeholder="18">
+                                </div>
+                                <div>
+                                    <label class="dark-label" style="font-size:11px;">Alt Height (cm)</label>
+                                    <input type="number" id="inputAltHeight" class="dark-input-field" value="10" placeholder="10">
+                                </div>
+                            </div>
+
+                            <div style="display:flex; gap:8px; margin-top:10px;">
+                                <button type="button" id="btnChip5Pct" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; padding:4px 10px; border-radius:6px; font-size:11px; cursor:pointer;">-5% Each Dimension</button>
+                                <button type="button" id="btnChip10Pct" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; padding:4px 10px; border-radius:6px; font-size:11px; cursor:pointer;">-10% Each Dimension</button>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT COMPARISON BOARD -->
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:18px;">
+                            <div style="font-family:'DM Mono',monospace; font-size:11px; color:#38bdf8; font-weight:700; text-transform:uppercase; margin-bottom:8px;">PACKAGING SAVINGS METRICS</div>
+                            
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; font-size:13px; color:#cbd5e1; border-bottom:1px dashed rgba(255,255,255,0.1); padding-bottom:10px; margin-bottom:10px;">
+                                <div>Current Unit Vol: <strong style="color:#ffffff;" id="pkgCurrVol">0.254 ft³</strong></div>
+                                <div>Alternative Unit Vol: <strong style="color:#38bdf8;" id="pkgAltVol">0.172 ft³</strong></div>
+                                <div>Space Reduction: <strong style="color:#34d399;" id="pkgVolRedPct">32.5% Less Volume</strong></div>
+                                <div>600-Unit Total Space: <strong style="color:#ffffff;" id="pkgSpaceDiff">103.2 ft³ (vs 152.6)</strong></div>
+                            </div>
+
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:13px; font-weight:700; color:#ffffff;">Modelled Storage Savings (90d):</span>
+                                <span style="font-size:18px; font-weight:800; color:#34d399;" id="pkgSavingsVal">₹769.28 Saved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LAB 4: DIAGNOSTIC SYMPTOMS & TOP 3 DYNAMIC PRIORITIES -->
+                <div style="margin-top:35px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:1px;">LAB 4 · DIAGNOSTIC &amp; OPTIMIZATION CENTER</div>
+                    <h2 style="font-size:24px; font-weight:800; color:#ffffff; margin:4px 0 16px 0;">What's Driving Your FBA Storage Cost?</h2>
+
+                    <div class="diag-pill-grid">
+                        <div class="diag-pill active" data-diag="velocity">
+                            <div class="diag-pill-title">Sell-Through Velocity</div>
+                            <div class="diag-pill-desc">Impact of sales speed on storage duration</div>
+                        </div>
+                        <div class="diag-pill" data-diag="packaging">
+                            <div class="diag-pill-title">Package Volume</div>
+                            <div class="diag-pill-desc">Excess box size multiplier effects</div>
+                        </div>
+                        <div class="diag-pill" data-diag="cover">
+                            <div class="diag-pill-title">Target Inventory Cover</div>
+                            <div class="diag-pill-desc">Current inventory vs 2.0-month target</div>
+                        </div>
+                        <div class="diag-pill" data-diag="margin">
+                            <div class="diag-pill-title">Margin &amp; Payout Impact</div>
+                            <div class="diag-pill-desc">Storage fee allocation per unit sold</div>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px; margin-top:20px;" id="boxDiagSolution">
+                        <div style="font-size:14px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:6px;" id="diagSolTitle">Primary Area: Sell-Through Velocity</div>
+                        <div style="font-size:13.5px; color:#cbd5e1; line-height:1.6;" id="diagSolDesc">
+                            Storage cost is driven by both space and time. At 200 units/month sales velocity, your 600 stored units represent 3.00 months of cover, incurring ₹2,367.00 in cumulative storage fees before inventory depletes.
+                        </div>
+                    </div>
+
+                    <!-- TOP 3 DYNAMIC PRIORITIES -->
+                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:20px; margin-top:24px;">
+                        <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#34d399; text-transform:uppercase; margin-bottom:12px;">Top 3 Dynamic Executive Priorities</div>
+                        
+                        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; font-size:13px; color:#cbd5e1;">
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px;">
+                                <div style="font-weight:700; color:#ffffff; margin-bottom:4px;" id="prioTitle1">1. Sell-Through &amp; Storage Duration</div>
+                                <div style="font-size:12px; line-height:1.5; color:#94a3b8;" id="prioDesc1">At 200 units/month, stored inventory lasts 3.00 months, accumulating ₹2,367.00 in storage fees.</div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px;">
+                                <div style="font-weight:700; color:#ffffff; margin-bottom:4px;" id="prioTitle2">2. Package Volume Optimization</div>
+                                <div style="font-size:12px; line-height:1.5; color:#94a3b8;" id="prioDesc2">Alternative packaging reduces cubic space by 32.5%, saving ₹769.28 over 90 days.</div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px;">
+                                <div style="font-weight:700; color:#ffffff; margin-bottom:4px;" id="prioTitle3">3. Inventory Above Target Cover</div>
+                                <div style="font-size:12px; line-height:1.5; color:#94a3b8;" id="prioDesc3">You hold 200 units (50.9 ft³) above your 2.0-month target cover, tying up ₹88,000 in capital.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AUDIT DRAWER -->
+                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.12); border-radius:16px; margin-top:28px; overflow:hidden;">
+                        <div id="headerMathAccordion" style="padding:16px 20px; font-weight:700; font-size:14px; color:#38bdf8; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+                            <span>🔍 SHOW CALCULATION AUDIT TRAIL &amp; FORMULAS</span>
+                            <span class="math-accordion-icon">▸</span>
+                        </div>
+                        <div id="mathDrawerContent" style="padding:20px; display:none; border-top:1px solid rgba(255,255,255,0.1); font-size:13.5px; line-height:1.65; color:#cbd5e1;">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. EDITORIAL & ADVANCED SCENARIO LABS (LIGHT SECTION WRAPPER) -->
+        <div class="light-section-wrapper">
+            <div class="resources-calc-container">
+
+                <!-- LAB 5: SALES VELOCITY SCENARIO TABLE -->
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:28px; margin-bottom:32px; box-shadow:0 10px 30px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#2563eb; text-transform:uppercase;">LAB 5 · SALES VELOCITY SENSITIVITY</div>
+                    <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin:4px 0 16px 0;">What If Sell-Through Velocity Changes?</h2>
+                    <p style="font-size:14px; color:#475569; margin-bottom:16px;">
+                        Storage cost is driven by both space and time. Faster sell-through reduces volume-days held in Amazon fulfilment centers, directly lowering storage burden per unit sold.
+                    </p>
+
+                    <table class="scen-table" id="tableVelocityScenarios">
+                        <thead>
+                            <tr>
+                                <th>Sales Scenario</th>
+                                <th>Monthly Sales</th>
+                                <th>Months of Cover</th>
+                                <th>90-Day Storage Cost</th>
+                                <th>Ending Inventory</th>
+                                <th>Storage / Unit Sold</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- LAB 6: REPLENISHMENT PLANNER & CONTRIBUTION BRIDGE -->
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:28px; margin-bottom:32px;">
+                    
+                    <!-- REPLENISHMENT PLANNER -->
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,0.03);">
+                        <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">LAB 6 · REPLENISHMENT TIMING PLANNER</div>
+                        <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:4px 0 14px 0;">Reorder Point &amp; Days Until Replenishment</h3>
+                        
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:14px;">
+                            <div>
+                                <label style="font-size:12px; font-weight:700; color:#475569;">Lead Time (Days)</label>
+                                <input type="number" id="inputLeadTimeDays" value="20" min="1" style="width:100%; padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:13px; font-weight:700;">
+                            </div>
+                            <div>
+                                <label style="font-size:12px; font-weight:700; color:#475569;">Safety Stock (Units)</label>
+                                <input type="number" id="inputSafetyStockUnits" value="50" min="0" style="width:100%; padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:13px; font-weight:700;">
+                            </div>
+                        </div>
+
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:14px;">
+                            <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px;">
+                                <span>Modelled Daily Velocity:</span>
+                                <strong id="valDailySales">6.67 units / day</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px;">
+                                <span>Calculated Reorder Point:</span>
+                                <strong id="valReorderPoint" style="color:#2563eb;">183 units</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; border-top:1px solid #e2e8f0; padding-top:6px;">
+                                <span>Days Until Reorder Point:</span>
+                                <strong id="valDaysToReorder" style="color:#059669;">62 Days Remaining</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTRIBUTION BRIDGE -->
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,0.03);">
+                        <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">LAB 7 · PROFITABILITY &amp; MARGIN BRIDGE</div>
+                        <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:4px 0 14px 0;">Storage Cost Impact on Unit Contribution</h3>
+
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:14px; font-size:13px; color:#334155;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <span>Selling Price:</span>
+                                <strong id="bridgeSp">₹1,499.00</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <span>Unit Product COGS:</span>
+                                <strong id="bridgeCogs">−₹440.00</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                                <span>Pre-Storage Margin:</span>
+                                <strong id="bridgePreStorage" style="color:#059669;">₹1,059.00 (70.6%)</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:6px; color:#ef4444;">
+                                <span>Allocated Storage / Unit Sold:</span>
+                                <strong id="bridgeStorageAlloc">−₹3.95</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; font-weight:800; font-size:14px; border-top:1.5px solid #cbd5e1; padding-top:6px; margin-top:6px; color:#0f172a;">
+                                <span>Contribution After Storage:</span>
+                                <strong id="bridgePostStorage" style="color:#2563eb;">₹1,055.05 (70.4%)</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LAB 8: MULTI-SKU INVENTORY ANALYZER -->
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:28px; margin-bottom:32px; box-shadow:0 10px 30px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#2563eb; text-transform:uppercase;">LAB 8 · MULTI-SKU PORTFOLIO ANALYZER</div>
+                    <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin:4px 0 16px 0;">Portfolio Storage Space &amp; Cost Pareto</h2>
+
+                    <table class="scen-table" id="tableMultiSku">
+                        <thead>
+                            <tr>
+                                <th>SKU Name</th>
+                                <th>Dimensions (cm)</th>
+                                <th>Units Stored</th>
+                                <th>Monthly Sales</th>
+                                <th>Total Space (ft³)</th>
+                                <th>Monthly Storage</th>
+                                <th>Months Cover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SKU A (Hero Product)</strong></td>
+                                <td>30 × 20 × 12</td>
+                                <td>600</td>
+                                <td>200</td>
+                                <td>152.6 ft³</td>
+                                <td>₹8,114.89</td>
+                                <td>3.00 mo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SKU B (Bulky Item)</strong></td>
+                                <td>45 × 35 × 20</td>
+                                <td>300</td>
+                                <td>50</td>
+                                <td>333.7 ft³</td>
+                                <td>₹17,770.42</td>
+                                <td>6.00 mo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SKU C (Compact Item)</strong></td>
+                                <td>15 × 10 × 5</td>
+                                <td>1,200</td>
+                                <td>400</td>
+                                <td>31.8 ft³</td>
+                                <td>₹1,692.68</td>
+                                <td>3.00 mo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- EDITORIAL GUIDE PROSE -->
+                <article class="calc-educational-prose">
+                    <h2 style="font-size:32px; font-weight:800; color:#0f172a; margin-top:0;">How to Use the Amazon FBA Storage Calculator India</h2>
+                    <p style="font-size:15.5px; color:#475569; line-height:1.7;">
+                        Enter the packed dimensions of one sellable unit and the number of units currently stored in Amazon fulfilment centers. Select the applicable storage-rate assumption and the modelling duration. Add monthly sales velocity to replace simple static estimates with a sell-through model that dynamically depletes inventory as units are sold.
+                    </p>
+
+                    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; margin:28px 0;">
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px;">
+                            <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#2563eb;">STEP 1</div>
+                            <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:6px 0;">Enter Packed Dimensions</h3>
+                            <p style="font-size:13px; color:#64748b; margin:0;">Provide packaged unit length, width, and height to calculate cubic volume in ft³ and m³.</p>
+                        </div>
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px;">
+                            <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#2563eb;">STEP 2</div>
+                            <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:6px 0;">Add Inventory &amp; Rate</h3>
+                            <p style="font-size:13px; color:#64748b; margin:0;">Input total FBA unit inventory and apply official Amazon India storage rates.</p>
+                        </div>
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px;">
+                            <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#2563eb;">STEP 3</div>
+                            <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:6px 0;">Add Sales Velocity</h3>
+                            <p style="font-size:13px; color:#64748b; margin:0;">Model monthly sell-through depletion, months of cover, and profitability impact.</p>
+                        </div>
+                    </div>
+
+                    <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin-top:36px;">Amazon FBA Storage Cost Formula</h2>
+                    <p style="font-size:15px; color:#475569; line-height:1.7;">
+                        For a static inventory model, monthly storage fees equal <strong>Total Inventory Volume (ft³) × Storage Rate (₹/ft³/month) × (1 + 0.18 GST)</strong>. Under realistic sell-through conditions, storage fees decline over time as monthly sales reduce average daily stored volume.
+                    </p>
+
+                    <!-- FREQUENTLY ASKED QUESTIONS -->
+                    <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin-top:40px;">Frequently Asked Questions</h2>
+                    <div style="margin-top:20px;">
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">How are Amazon FBA storage fees calculated in India?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Amazon India FBA storage fees are calculated based on the daily average volume (in cubic feet) occupied by your packaged inventory stored in Amazon fulfilment centers, multiplied by the monthly storage rate per cubic foot plus 18% GST.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">What product dimensions should I enter for FBA storage calculation?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Always enter the packed, sellable unit dimensions (Length × Width × Height in cm) including polybags, boxes, or retail packaging, as Amazon measures the total warehouse space your package occupies.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">What is Months of Cover in Amazon FBA inventory management?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Months of Cover estimates how long your current FBA inventory will last based on your expected monthly sales velocity (Current Inventory ÷ Monthly Sales).</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">Why is sell-through velocity important for FBA storage costs?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Storage fees accumulate over time. As products sell through, stored inventory decreases, reducing average monthly cubic volume and lowering total storage fees compared to a static inventory model.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">Is GST charged on Amazon India FBA storage fees?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Yes, an 18% Goods and Services Tax (GST) is levied on all Amazon FBA storage charges in India. Registered GST sellers can claim Input Tax Credit (ITC) on these charges.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">How does packaging size reduction lower FBA storage costs?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Volume scales multiplicatively (L × W × H). A 10% reduction across all three packaging dimensions results in a 27.1% reduction in total cubic volume, significantly lowering storage costs per unit.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">What is the difference between static inventory and sell-through storage models?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">A static model assumes your initial inventory quantity stays in FBA for the entire duration, representing a worst-case scenario. A sell-through model dynamically depletes inventory monthly as sales occur, providing a realistic operational storage projection.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">What are Amazon aged inventory storage surcharges?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Aged inventory surcharges apply to units stored in Amazon fulfilment centers for extended periods (typically over 270 or 365 days), adding extra per-unit or per-cubic-foot monthly fees on top of standard storage rates.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- RELATED CALCULATORS -->
+                    <div style="border-top:1.5px solid #e2e8f0; padding-top:28px; margin-top:40px;">
+                        <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin-bottom:16px;">Related Amazon Profitability &amp; PPC Tools</h3>
+                        <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;">
+                            <a href="amazon-fba-fee-calculator.html" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:16px; text-decoration:none; color:inherit;">
+                                <div style="font-size:20px; margin-bottom:6px;">🏷️</div>
+                                <div style="font-weight:700; font-size:14px; color:#0f172a;">FBA Fee Calculator</div>
+                                <div style="font-size:12px; color:#64748b; margin-top:4px;">Referral, closing &amp; shipping</div>
+                            </a>
+                            <a href="amazon-profit-calculator.html" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:16px; text-decoration:none; color:inherit;">
+                                <div style="font-size:20px; margin-bottom:6px;">💰</div>
+                                <div style="font-weight:700; font-size:14px; color:#0f172a;">Amazon Profit Calculator</div>
+                                <div style="font-size:12px; color:#64748b; margin-top:4px;">Net margin &amp; ROI analysis</div>
+                            </a>
+                            <a href="amazon-acos-calculator.html" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:16px; text-decoration:none; color:inherit;">
+                                <div style="font-size:20px; margin-bottom:6px;">📊</div>
+                                <div style="font-weight:700; font-size:14px; color:#0f172a;">ACoS Calculator</div>
+                                <div style="font-size:12px; color:#64748b; margin-top:4px;">Target &amp; break-even ACoS</div>
+                            </a>
+                            <a href="amazon-roas-calculator.html" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:16px; text-decoration:none; color:inherit;">
+                                <div style="font-size:20px; margin-bottom:6px;">🚀</div>
+                                <div style="font-weight:700; font-size:14px; color:#0f172a;">ROAS Calculator</div>
+                                <div style="font-size:12px; color:#64748b; margin-top:4px;">Return on ad spend targets</div>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-badge"><div class="logo-symbol"></div></div>
+                            <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+                        </a>
+                        <p class="footer-sub-tagline">Independent Amazon PPC consultancy founded by Anmol Pokhriyal.</p>
+                        <p class="footer-tagline" itemprop="description">
+                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
+                        </p>
+                        <div class="footer-socials" aria-label="Social Media Links">
+                            <a href="https://wa.me/916397607291" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z"/></svg>
+                            </a>
+                            <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 10.01 5.18A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3 class="footer-heading">SERVICES</h3>
+                        <ul class="footer-links">
+                            <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
+                            <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
+                            <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                            <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                            <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
+                            <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <h3 class="footer-heading">CONTACT US</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <div class="contact-icon-pill">📍</div>
+                                <div><span itemprop="addressLocality">Noida</span>,<br><span itemprop="addressRegion">Uttar Pradesh</span></div>
+                            </li>
+                            <li>
+                                <div class="contact-icon-pill">📞</div>
+                                <a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a>
+                            </li>
+                            <li>
+                                <div class="contact-icon-pill">✉️</div>
+                                <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3 class="footer-heading">COMPANY</h3>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="about.html#founder">Our Founder</a></li>
+                            <li><a href="case-studies.html">Case Studies</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-middle">
+                    <p class="footer-meta-info">PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 · anmolpokhriyal3200@gmail.com</p>
+                </div>
+
+                <div class="footer-bottom">
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PRINT PDF REPORT TEMPLATE (OUTSIDE webAppLayout) -->
+    <div id="pdfReportContainer">
+        <div class="pdf-header">
+            <div>
+                <h1 class="pdf-title">Amazon India FBA Storage &amp; Inventory Analysis</h1>
+                <div class="pdf-subtitle">PPC Growth Expert · Executive Storage Risk &amp; Sell-Through Report</div>
+            </div>
+            <div style="text-align: right; font-size: 11px; color: #64748b;" id="pdfReportDate">
+                Date: 30 Aug 2026
+            </div>
+        </div>
+
+        <div class="pdf-grid-2">
+            <div class="pdf-box">
+                <div class="pdf-box-title">1. Product Size &amp; Warehouse Space</div>
+                <table class="pdf-table">
+                    <tr><td>Packaged Dimensions</td><td style="text-align:right; font-weight:700;" id="pdfDims">30 × 20 × 12 cm</td></tr>
+                    <tr><td>Unit Volume (cm³)</td><td style="text-align:right; font-weight:700;" id="pdfUnitCm3">7,200 cm³</td></tr>
+                    <tr><td>Unit Volume (ft³)</td><td style="text-align:right; font-weight:700; color:#2563eb;" id="pdfUnitCuFt">0.254 ft³</td></tr>
+                    <tr><td>Starting Units Stored</td><td style="text-align:right; font-weight:700;" id="pdfStartUnits">600 units</td></tr>
+                    <tr><td>Total Starting FBA Space</td><td style="text-align:right; font-weight:700; color:#2563eb;" id="pdfTotalSpace">152.58 ft³ (4.32 m³)</td></tr>
+                </table>
+            </div>
+
+            <div class="pdf-box">
+                <div class="pdf-box-title">2. Velocity &amp; Storage Burden</div>
+                <table class="pdf-table">
+                    <tr><td>Monthly Sales Velocity</td><td style="text-align:right; font-weight:700;" id="pdfSalesVel">200 units / mo</td></tr>
+                    <tr><td>Months of Cover</td><td style="text-align:right; font-weight:700; color:#2563eb;" id="pdfMonthsCover">3.00 Months</td></tr>
+                    <tr><td>Modelling Duration</td><td style="text-align:right; font-weight:700;" id="pdfDuration">90 Days</td></tr>
+                    <tr><td>Storage Rate Applied</td><td style="text-align:right; font-weight:700;" id="pdfRateStr">₹45.00 / ft³ / mo</td></tr>
+                    <tr><td>18.0% GST Levy</td><td style="text-align:right; font-weight:700;" id="pdfGstVal">₹361.07</td></tr>
+                    <tr><td>TOTAL STORAGE COST</td><td style="text-align:right; font-weight:800; color:#ef4444;" id="pdfTotalStorageVal">₹2,367.00</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="pdf-grid-2">
+            <div class="pdf-box">
+                <div class="pdf-box-title">3. Unit Economics &amp; Working Capital</div>
+                <table class="pdf-table">
+                    <tr><td>Storage Cost / Unit / Month</td><td style="text-align:right; font-weight:700;" id="pdfStoragePerUnitMo">₹11.45</td></tr>
+                    <tr><td>Storage Cost / Unit Sold</td><td style="text-align:right; font-weight:700; color:#ef4444;" id="pdfStoragePerUnitSold">₹3.95 / unit</td></tr>
+                    <tr><td>Inventory Cost Value Tied Up</td><td style="text-align:right; font-weight:700;" id="pdfCapitalVal">₹2,64,000.00</td></tr>
+                    <tr><td>Ending Units (90d)</td><td style="text-align:right; font-weight:700;" id="pdfEndingUnits">0 units</td></tr>
+                </table>
+            </div>
+
+            <div class="pdf-box">
+                <div class="pdf-box-title">4. Packaging Optimization Impact</div>
+                <table class="pdf-table">
+                    <tr><td>Current vs Alt Packaging</td><td style="text-align:right; font-weight:700;" id="pdfPkgCompare">30×20×12 vs 27×18×10 cm</td></tr>
+                    <tr><td>Space Reduction %</td><td style="text-align:right; font-weight:700; color:#059669;" id="pdfPkgRed">32.5% Less Volume</td></tr>
+                    <tr><td>90-Day Storage Savings</td><td style="text-align:right; font-weight:800; color:#059669;" id="pdfPkgSavings">₹769.28 Saved</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="pdf-takeaways">
+            <div class="pdf-box-title" style="color:#1e3a8a;">Top Executive Priorities &amp; Audit Trail</div>
+            <div style="font-size:11px; color:#334155; line-height:1.6;" id="pdfAuditText">
+                • <strong>Sell-Through Impact:</strong> At 200 units/mo, stored inventory depletes over 3.00 months, incurring ₹2,367.00 total storage burden.<br>
+                • <strong>Packaging Optimization:</strong> Reducing package dimensions by ~10% saves 32.5% warehouse volume, recovering ₹769.28 in 90-day storage costs.<br>
+                • <strong>Target Cover Buffer:</strong> Current inventory exceeds a 2.0-month target by 200 units (50.9 ft³), holding ₹88,000 in working capital.
+            </div>
+        </div>
+
+        <div class="pdf-footer">
+            <strong>Disclaimer:</strong> This report is a mathematical inventory and storage-cost analysis based on the values entered and the Amazon India FBA storage fee schedule. Actual Amazon FBA charges may vary with Amazon's laser package measurements, inventory location, product classification, seasonal rate updates, and aged-inventory surcharges.
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC ENGINE -->
     <script src="js/navbar.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
+        document.addEventListener('DOMContentLoaded', function () {
 
-            function calcStg() {
-                const len = parseFloat(document.getElementById('stgLen').value) || 0;
-                const wid = parseFloat(document.getElementById('stgWid').value) || 0;
-                const hgt = parseFloat(document.getElementById('stgHgt').value) || 0;
-                const qty = parseFloat(document.getElementById('stgQty').value) || 0;
-                const months = parseFloat(document.getElementById('stgMonths').value) || 1;
-                const rate = parseFloat(document.getElementById('stgRate').value) || 0;
-                const vel = parseFloat(document.getElementById('stgSalesVel').value) || 0;
+            // 1. VERSIONED STORAGE FEE CONFIGURATION
+            const amazonStorageSchedule = {
+                marketplace: "Amazon.in",
+                effectiveFrom: "Verified Current Amazon India Storage Fee Schedule",
+                lastVerified: "2026-08-15",
+                sourceLabel: "Official Amazon.in Seller Central Fee Schedule",
+                gstRate: 18.0,
+                cm3PerCuFt: 28316.846592,
+                cm3PerCuM: 1000000.0,
+                standardStorageRatePerCuFtMonth: 45.00
+            };
 
-                const unitCuFt = (len * wid * hgt) / 28316.8466; // cm3 to cu ft
-                const totalCuFt = unitCuFt * qty;
-                const monthlyCost = totalCuFt * rate;
-                const totalCost = monthlyCost * months;
-                const costPerUnit = qty > 0 ? totalCost / qty : 0;
-                const cover = vel > 0 ? (qty / vel).toFixed(1) + ' Months' : 'N/A';
+            // STATE VARIABLES
+            let isSellThroughModel = true;
 
-                document.getElementById('stgTotalVal').innerText = fmt.format(totalCost);
-                document.getElementById('stgSubText').innerText = `For ${qty} units over ${months} month(s)`;
-                document.getElementById('stgMonthlyVal').innerText = fmt.format(monthlyCost);
-                document.getElementById('stgPerUnitVal').innerText = fmt.format(costPerUnit);
-                document.getElementById('stgVolumeVal').innerText = totalCuFt.toFixed(2) + ' cu.ft.';
-                document.getElementById('stgCoverVal').innerText = cover;
-
-                document.getElementById('stgGuidanceText').innerHTML = vel > 0 
-                    ? `At <strong>${vel} units/month</strong> sales velocity, your ${qty} units equal <strong>${cover} of cover</strong> with ${fmt.format(totalCost)} total storage fee.`
-                    : `Your ${qty} units occupy <strong>${totalCuFt.toFixed(2)} cu.ft.</strong> incurring ${fmt.format(monthlyCost)} monthly storage fee.`;
+            // INDIAN CURRENCY FORMATTER
+            function formatINR(val, includeSymbol = true) {
+                if (isNaN(val) || val === null) return includeSymbol ? '₹0.00' : '0.00';
+                const formatted = new Intl.NumberFormat('en-IN', {
+                    maximumFractionDigits: 2,
+                    minimumFractionDigits: 2
+                }).format(val);
+                return includeSymbol ? `₹${formatted}` : formatted;
             }
 
-            document.querySelectorAll('#stgLen, #stgWid, #stgHgt, #stgQty, #stgMonths, #stgRate, #stgSalesVel').forEach(el => {
-                el.addEventListener('input', calcStg);
-            });
-            document.getElementById('btnCalcStg').addEventListener('click', calcStg);
-            document.getElementById('btnResetStg').addEventListener('click', function() {
-                document.getElementById('stgLen').value = 25;
-                document.getElementById('stgWid').value = 18;
-                document.getElementById('stgHgt').value = 10;
-                document.getElementById('stgQty').value = 500;
-                document.getElementById('stgMonths').value = 3;
-                document.getElementById('stgRate').value = 45;
-                document.getElementById('stgSalesVel').value = 125;
-                calcStg();
+            // ACCORDION TOGGLES
+            document.getElementById('headerMathAccordion').addEventListener('click', function () {
+                const body = document.getElementById('mathDrawerContent');
+                const isHidden = body.style.display === 'none' || body.style.display === '';
+                body.style.display = isHidden ? 'block' : 'none';
+                const arrow = this.querySelector('span:last-child');
+                if (arrow) arrow.innerText = isHidden ? '▾' : '▸';
             });
 
-            calcStg();
+            document.getElementById('btnToggleRulesDrawer').addEventListener('click', function () {
+                const drawer = document.getElementById('feeRulesDrawer');
+                drawer.style.display = drawer.style.display === 'none' ? 'block' : 'none';
+            });
+
+            // MODEL TOGGLE LISTENERS
+            document.getElementById('btnModelSellThrough').addEventListener('click', function () {
+                isSellThroughModel = true;
+                this.classList.add('active');
+                document.getElementById('btnModelStatic').classList.remove('active');
+                calcStorageEngine();
+            });
+
+            document.getElementById('btnModelStatic').addEventListener('click', function () {
+                isSellThroughModel = false;
+                this.classList.add('active');
+                document.getElementById('btnModelSellThrough').classList.remove('active');
+                calcStorageEngine();
+            });
+
+            // DURATION BUTTON LISTENERS
+            const durationBtns = document.querySelectorAll('.duration-btn');
+            durationBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    durationBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById('inputDaysDuration').value = this.dataset.days;
+                    calcStorageEngine();
+                });
+            });
+
+            // PACKAGING QUICK CHIPS
+            document.getElementById('btnChip5Pct').addEventListener('click', function () {
+                const l = parseFloat(document.getElementById('inputLength').value) || 30;
+                const w = parseFloat(document.getElementById('inputWidth').value) || 20;
+                const h = parseFloat(document.getElementById('inputHeight').value) || 12;
+                document.getElementById('inputAltLength').value = (l * 0.95).toFixed(1);
+                document.getElementById('inputAltWidth').value = (w * 0.95).toFixed(1);
+                document.getElementById('inputAltHeight').value = (h * 0.95).toFixed(1);
+                calcStorageEngine();
+            });
+
+            document.getElementById('btnChip10Pct').addEventListener('click', function () {
+                const l = parseFloat(document.getElementById('inputLength').value) || 30;
+                const w = parseFloat(document.getElementById('inputWidth').value) || 20;
+                const h = parseFloat(document.getElementById('inputHeight').value) || 12;
+                document.getElementById('inputAltLength').value = (l * 0.90).toFixed(1);
+                document.getElementById('inputAltWidth').value = (w * 0.90).toFixed(1);
+                document.getElementById('inputAltHeight').value = (h * 0.90).toFixed(1);
+                calcStorageEngine();
+            });
+
+            // DIAGNOSTIC PILLS SELECTION
+            const diagPills = document.querySelectorAll('.diag-pill');
+            const diagSolTitle = document.getElementById('diagSolTitle');
+            const diagSolDesc = document.getElementById('diagSolDesc');
+
+            diagPills.forEach(pill => {
+                pill.addEventListener('click', function () {
+                    diagPills.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                    const diag = this.dataset.diag;
+
+                    if (diag === 'velocity') {
+                        diagSolTitle.innerText = "Primary Area: Sell-Through Velocity";
+                        diagSolDesc.innerText = "Storage cost is driven by both space and time. Faster sell-through reduces average stored inventory month-over-month, lowering cumulative storage fees.";
+                    } else if (diag === 'packaging') {
+                        diagSolTitle.innerText = "Primary Area: Package Volume Multiplier";
+                        diagSolDesc.innerText = "Cubic volume scales multiplicatively (L × W × H). A 10% trim on each package dimension drops total warehouse volume by 27.1%, yielding large storage savings.";
+                    } else if (diag === 'cover') {
+                        diagSolTitle.innerText = "Primary Area: Target Inventory Cover";
+                        diagSolDesc.innerText = "Holding inventory beyond your target cover (e.g. >2.0 months) unnecessarily ties up working capital and subjects surplus units to recurring storage fees.";
+                    } else if (diag === 'margin') {
+                        diagSolTitle.innerText = "Primary Area: Margin & Unit Payout";
+                        diagSolDesc.innerText = "Allocated storage costs directly reduce net contribution per unit sold. Slow sell-through increases storage cost per unit sold, eroding profit margins.";
+                    }
+                });
+            });
+
+            // PDF PRINT LISTENERS
+            ['btnDownloadPDF', 'btnHeroPdf'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    btn.addEventListener('click', function () {
+                        window.print();
+                    });
+                }
+            });
+
+            // SMOOTH ACCORDION LOGIC FOR FAQ ("ONE OPEN SECOND CLOSE")
+            class SmoothAccordion {
+                constructor(el) {
+                    this.el = el;
+                    this.summary = el.querySelector('summary');
+                    this.content = el.querySelector('.faq-answer-content');
+                    this.animation = null;
+                    this.isClosing = false;
+                    this.isExpanding = false;
+                    if (this.summary) {
+                        this.summary.addEventListener('click', (e) => this.onClick(e));
+                    }
+                }
+
+                onClick(e) {
+                    e.preventDefault();
+                    this.el.style.overflow = 'hidden';
+                    if (this.isClosing || !this.el.open) {
+                        this.open();
+                    } else if (this.isExpanding || this.el.open) {
+                        this.shrink();
+                    }
+                }
+
+                shrink() {
+                    this.isClosing = true;
+                    const startHeight = `${this.el.offsetHeight}px`;
+                    const endHeight = `${this.summary.offsetHeight}px`;
+
+                    if (this.animation) this.animation.cancel();
+
+                    this.animation = this.el.animate({
+                        height: [startHeight, endHeight]
+                    }, {
+                        duration: 340,
+                        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                    });
+
+                    this.animation.onfinish = () => this.onAnimationFinish(false);
+                    this.animation.oncancel = () => this.isClosing = false;
+                }
+
+                open() {
+                    document.querySelectorAll('.faq-item[open]').forEach(otherEl => {
+                        if (otherEl !== this.el && otherEl._accordion) {
+                            otherEl._accordion.shrink();
+                        }
+                    });
+
+                    this.el.style.height = `${this.el.offsetHeight}px`;
+                    this.el.open = true;
+                    window.requestAnimationFrame(() => this.expand());
+                }
+
+                expand() {
+                    this.isExpanding = true;
+                    const startHeight = `${this.el.offsetHeight}px`;
+                    const endHeight = `${this.summary.offsetHeight + (this.content ? this.content.offsetHeight : 0)}px`;
+
+                    if (this.animation) this.animation.cancel();
+
+                    this.animation = this.el.animate({
+                        height: [startHeight, endHeight]
+                    }, {
+                        duration: 380,
+                        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                    });
+
+                    this.animation.onfinish = () => this.onAnimationFinish(true);
+                    this.animation.oncancel = () => this.isExpanding = false;
+                }
+
+                onAnimationFinish(open) {
+                    this.el.open = open;
+                    this.animation = null;
+                    this.isClosing = false;
+                    this.isExpanding = false;
+                    this.el.style.height = '';
+                    this.el.style.overflow = '';
+                }
+            }
+
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el._accordion = new SmoothAccordion(el);
+            });
+
+            // CORE CALCULATION ENGINE
+            function calcStorageEngine() {
+                const len = Math.max(0.1, parseFloat(document.getElementById('inputLength').value) || 30);
+                const wid = Math.max(0.1, parseFloat(document.getElementById('inputWidth').value) || 20);
+                const hgt = Math.max(0.1, parseFloat(document.getElementById('inputHeight').value) || 12);
+
+                const unitsStored = Math.max(1, parseInt(document.getElementById('inputUnitsStored').value) || 600);
+                const ratePerCuFt = Math.max(0, parseFloat(document.getElementById('inputStorageRate').value) || 45.00);
+                const durationDays = Math.max(1, parseInt(document.getElementById('inputDaysDuration').value) || 90);
+                const monthlySales = Math.max(0, parseFloat(document.getElementById('inputMonthlySales').value) || 200);
+                const targetCoverMo = Math.max(0.1, parseFloat(document.getElementById('inputTargetCoverMonths').value) || 2.0);
+
+                const sellingPrice = parseFloat(document.getElementById('inputSellingPrice').value) || 1499;
+                const landedCogs = parseFloat(document.getElementById('inputLandedCogs').value) || 440;
+
+                // 1. VOLUME DERIVATIONS
+                const unitCm3 = len * wid * hgt;
+                const unitCuFt = unitCm3 / amazonStorageSchedule.cm3PerCuFt;
+                const unitCuM = unitCm3 / amazonStorageSchedule.cm3PerCuM;
+
+                const startTotalCuFt = unitCuFt * unitsStored;
+                const startTotalCuM = unitCuM * unitsStored;
+
+                // Update inline volume metrics
+                document.getElementById('valUnitCm3').innerText = `${unitCm3.toLocaleString()} cm³`;
+                document.getElementById('valUnitCuFt').innerText = `${unitCuFt.toFixed(3)} ft³`;
+                document.getElementById('valUnitCuM').innerText = `${unitCuM.toFixed(4)} m³`;
+
+                // 2. VELOCITY & MONTHS OF COVER
+                const monthsCover = monthlySales > 0 ? (unitsStored / monthlySales) : 0;
+                const dailySales = monthlySales / 30.0;
+
+                // 3. DEPLETION & STORAGE BURDEN CALCULATIONS
+                const monthsInPeriod = durationDays / 30.0;
+                let totalBaseStorageCost = 0;
+                let endingUnits = unitsStored;
+
+                // Monthly Bucket Depletion Array
+                let monthUnitsArr = [];
+                let monthStorageCostArr = [];
+
+                if (isSellThroughModel && monthlySales > 0) {
+                    let currUnits = unitsStored;
+                    for (let m = 1; m <= Math.ceil(monthsInPeriod); m++) {
+                        const mFraction = (m <= Math.floor(monthsInPeriod)) ? 1.0 : (monthsInPeriod - Math.floor(monthsInPeriod));
+                        if (mFraction <= 0) break;
+
+                        const startMUnits = currUnits;
+                        const unitsSoldM = Math.min(currUnits, monthlySales * mFraction);
+                        const endMUnits = Math.max(0, currUnits - unitsSoldM);
+                        const avgMUnits = (startMUnits + endMUnits) / 2.0;
+
+                        const mSpaceCuFt = avgMUnits * unitCuFt;
+                        const mBaseCost = mSpaceCuFt * ratePerCuFt * mFraction;
+
+                        totalBaseStorageCost += mBaseCost;
+                        currUnits = endMUnits;
+
+                        monthUnitsArr.push(endMUnits);
+                        monthStorageCostArr.push(totalBaseStorageCost);
+                    }
+                    endingUnits = currUnits;
+                } else {
+                    // Static Model
+                    totalBaseStorageCost = startTotalCuFt * ratePerCuFt * monthsInPeriod;
+                    endingUnits = unitsStored;
+
+                    for (let m = 1; m <= Math.ceil(monthsInPeriod); m++) {
+                        monthUnitsArr.push(unitsStored);
+                        monthStorageCostArr.push(startTotalCuFt * ratePerCuFt * (m * Math.min(1, monthsInPeriod)));
+                    }
+                }
+
+                const gstStorage = totalBaseStorageCost * (amazonStorageSchedule.gstRate / 100.0);
+                const totalStorageCostIncGst = totalBaseStorageCost + gstStorage;
+
+                const storagePerUnitPerMoBase = unitCuFt * ratePerCuFt * (1 + amazonStorageSchedule.gstRate / 100.0);
+                const totalUnitsSoldInPeriod = Math.min(unitsStored, monthlySales * monthsInPeriod);
+                const storagePerUnitSold = (totalUnitsSoldInPeriod > 0 && isSellThroughModel) ? (totalStorageCostIncGst / totalUnitsSoldInPeriod) : (totalStorageCostIncGst / unitsStored);
+                const capitalTiedUp = unitsStored * landedCogs;
+
+                // 4. UPDATE RIGHT TELEMETRY RECEIPT PANEL
+                document.getElementById('resDurationLabel').innerText = `${durationDays} DAYS`;
+                document.getElementById('resTotalStorageCost').innerText = formatINR(totalStorageCostIncGst);
+                document.getElementById('resStorageSubhead').innerText = `Includes 18% GST (${formatINR(gstStorage)}) under ${isSellThroughModel ? 'Sell-Through Depletion' : 'Static Inventory'}`;
+
+                document.getElementById('recDims').innerText = `${len} × ${wid} × ${hgt} cm`;
+                document.getElementById('recUnitVol').innerText = `${unitCuFt.toFixed(3)} ft³ (${unitCm3.toLocaleString()} cm³)`;
+                document.getElementById('recTotalSpace').innerText = `${startTotalCuFt.toFixed(2)} ft³ (${startTotalCuM.toFixed(2)} m³)`;
+
+                document.getElementById('recStartUnits').innerText = `${unitsStored} units`;
+                document.getElementById('recSalesVel').innerText = `${monthlySales} units / mo`;
+                document.getElementById('recMonthsCover').innerText = monthlySales > 0 ? `${monthsCover.toFixed(2)} Months` : 'N/A (0 Sales)';
+                document.getElementById('recEndingUnits').innerText = `${Math.round(endingUnits)} units`;
+
+                document.getElementById('recStoragePerUnitMo').innerText = formatINR(storagePerUnitPerMoBase);
+                document.getElementById('recStoragePerUnitSold').innerText = `${formatINR(storagePerUnitSold)} / unit`;
+                document.getElementById('recCapitalTiedUp').innerText = formatINR(capitalTiedUp);
+
+                // 5. UPDATE LAB 1 TELEMETRY DASHBOARD
+                document.getElementById('dashStartUnits').innerText = unitsStored.toLocaleString();
+                document.getElementById('dashStartSpace').innerText = `${startTotalCuFt.toFixed(1)} ft³`;
+                document.getElementById('dashStartSpaceM3').innerText = `${startTotalCuM.toFixed(2)} m³`;
+                document.getElementById('dashMonthlySales').innerText = monthlySales.toLocaleString();
+                document.getElementById('dashMonthsCover').innerText = monthlySales > 0 ? monthsCover.toFixed(2) : 'N/A';
+                document.getElementById('dashStoragePerUnitMo').innerText = formatINR(storagePerUnitPerMoBase);
+                document.getElementById('dashPeriodCost').innerText = formatINR(totalStorageCostIncGst);
+                document.getElementById('dashPeriodCostSub').innerText = `Inc. 18% GST (${durationDays}d)`;
+                document.getElementById('dashEndingUnits').innerText = Math.round(endingUnits).toLocaleString();
+                document.getElementById('dashCapitalValue').innerText = formatINR(capitalTiedUp);
+
+                // 6. UPDATE LAB 2 BURN-DOWN & CUMULATIVE COSTS
+                const m1End = monthUnitsArr[0] !== undefined ? monthUnitsArr[0] : unitsStored;
+                const m2End = monthUnitsArr[1] !== undefined ? monthUnitsArr[1] : unitsStored;
+                const m3End = monthUnitsArr[2] !== undefined ? monthUnitsArr[2] : unitsStored;
+                const m6End = monthUnitsArr[5] !== undefined ? monthUnitsArr[5] : Math.max(0, unitsStored - monthlySales * 6);
+
+                document.getElementById('burnM1Text').innerText = `${Math.round(m1End)} units (${((m1End / unitsStored) * 100).toFixed(1)}%)`;
+                document.getElementById('burnM1Bar').style.width = `${Math.min(100, Math.max(0, (m1End / unitsStored) * 100))}%`;
+
+                document.getElementById('burnM2Text').innerText = `${Math.round(m2End)} units (${((m2End / unitsStored) * 100).toFixed(1)}%)`;
+                document.getElementById('burnM2Bar').style.width = `${Math.min(100, Math.max(0, (m2End / unitsStored) * 100))}%`;
+
+                document.getElementById('burnM3Text').innerText = `${Math.round(m3End)} units (${((m3End / unitsStored) * 100).toFixed(1)}%)`;
+                document.getElementById('burnM3Bar').style.width = `${Math.min(100, Math.max(0, (m3End / unitsStored) * 100))}%`;
+
+                document.getElementById('burnM6Text').innerText = `${Math.round(m6End)} units (${((m6End / unitsStored) * 100).toFixed(1)}%)`;
+                document.getElementById('burnM6Bar').style.width = `${Math.min(100, Math.max(0, (m6End / unitsStored) * 100))}%`;
+
+                // Cumulative cost milestones
+                const calcCumForDays = (d) => {
+                    const m = d / 30.0;
+                    if (!isSellThroughModel || monthlySales === 0) {
+                        return startTotalCuFt * ratePerCuFt * m * 1.18;
+                    }
+                    let tot = 0; let u = unitsStored;
+                    for (let i = 1; i <= Math.ceil(m); i++) {
+                        const frac = (i <= Math.floor(m)) ? 1.0 : (m - Math.floor(m));
+                        if (frac <= 0) break;
+                        const sold = Math.min(u, monthlySales * frac);
+                        const endU = Math.max(0, u - sold);
+                        tot += ((u + endU) / 2.0) * unitCuFt * ratePerCuFt * frac;
+                        u = endU;
+                    }
+                    return tot * 1.18;
+                };
+
+                document.getElementById('cumCost30').innerText = formatINR(calcCumForDays(30));
+                document.getElementById('cumCost60').innerText = formatINR(calcCumForDays(60));
+                document.getElementById('cumCost90').innerText = formatINR(calcCumForDays(90));
+                document.getElementById('cumCost180').innerText = formatINR(calcCumForDays(180));
+
+                // 7. UPDATE LAB 3 PACKAGING OPTIMIZATION
+                const altL = Math.max(0.1, parseFloat(document.getElementById('inputAltLength').value) || 27);
+                const altW = Math.max(0.1, parseFloat(document.getElementById('inputAltWidth').value) || 18);
+                const altH = Math.max(0.1, parseFloat(document.getElementById('inputAltHeight').value) || 10);
+
+                const altCm3 = altL * altW * altH;
+                const altCuFt = altCm3 / amazonStorageSchedule.cm3PerCuFt;
+                const altStartSpaceCuFt = altCuFt * unitsStored;
+                const spaceRedPct = ((1 - (altCuFt / unitCuFt)) * 100);
+
+                const altCum90IncGst = isSellThroughModel ? (calcCumForDays(90) * (altCuFt / unitCuFt)) : (altStartSpaceCuFt * ratePerCuFt * (durationDays / 30.0) * 1.18);
+                const pkgSavings90d = Math.max(0, totalStorageCostIncGst - altCum90IncGst);
+
+                document.getElementById('pkgCurrVol').innerText = `${unitCuFt.toFixed(3)} ft³`;
+                document.getElementById('pkgAltVol').innerText = `${altCuFt.toFixed(3)} ft³`;
+                document.getElementById('pkgVolRedPct').innerText = `${spaceRedPct.toFixed(1)}% Less Volume`;
+                document.getElementById('pkgSpaceDiff').innerText = `${altStartSpaceCuFt.toFixed(1)} ft³ (vs ${startTotalCuFt.toFixed(1)})`;
+                document.getElementById('pkgSavingsVal').innerText = `${formatINR(pkgSavings90d)} Saved`;
+
+                // 8. UPDATE LAB 4 TOP 3 PRIORITIES & DIAGNOSTICS
+                const targetUnits = Math.round(monthlySales * targetCoverMo);
+                const excessUnits = Math.max(0, unitsStored - targetUnits);
+                const excessSpaceCuFt = excessUnits * unitCuFt;
+                const excessCapital = excessUnits * landedCogs;
+
+                document.getElementById('prioTitle1').innerText = "1. Sell-Through & Storage Duration";
+                document.getElementById('prioDesc1').innerText = monthlySales > 0 ? `At ${monthlySales} units/mo, stored inventory lasts ${monthsCover.toFixed(2)} months, accumulating ${formatINR(totalStorageCostIncGst)} in storage fees.` : `Zero monthly sales detected. Inventory remains static indefinitely, incurring ${formatINR(totalStorageCostIncGst)} storage fees every 90 days.`;
+
+                document.getElementById('prioTitle2').innerText = "2. Package Volume Optimization";
+                document.getElementById('prioDesc2').innerText = `Alternative packaging (${altL}×${altW}×${altH} cm) reduces cubic space by ${spaceRedPct.toFixed(1)}%, saving ${formatINR(pkgSavings90d)} over ${durationDays} days.`;
+
+                document.getElementById('prioTitle3').innerText = "3. Target Inventory Cover Buffer";
+                document.getElementById('prioDesc3').innerText = excessUnits > 0 ? `You hold ${excessUnits} units (${excessSpaceCuFt.toFixed(1)} ft³) above your ${targetCoverMo.toFixed(1)}-month target cover, tying up ${formatINR(excessCapital)} in capital.` : `Current inventory (${unitsStored} units) is within your ${targetCoverMo.toFixed(1)}-month target cover buffer (${targetUnits} units).`;
+
+                // 9. UPDATE LAB 5 SALES VELOCITY SCENARIO TABLE
+                const tbody = document.querySelector('#tableVelocityScenarios tbody');
+                if (tbody) {
+                    const scenarios = [
+                        { name: "-30% Slower Sales", factor: 0.7 },
+                        { name: "-15% Slower Sales", factor: 0.85 },
+                        { name: "Current Velocity", factor: 1.0, current: true },
+                        { name: "+15% Faster Sales", factor: 1.15 },
+                        { name: "+30% Faster Sales", factor: 1.30 }
+                    ];
+
+                    let html = '';
+                    scenarios.forEach(sc => {
+                        const scSales = monthlySales * sc.factor;
+                        const scCover = scSales > 0 ? (unitsStored / scSales) : 0;
+                        
+                        // Calc 90d storage under scenario
+                        let scTot90 = 0; let u = unitsStored;
+                        for (let i = 1; i <= 3; i++) {
+                            const sold = Math.min(u, scSales);
+                            const endU = Math.max(0, u - sold);
+                            scTot90 += ((u + endU) / 2.0) * unitCuFt * ratePerCuFt;
+                            u = endU;
+                        }
+                        scTot90 *= 1.18;
+                        const scSoldTot = Math.min(unitsStored, scSales * 3);
+                        const scPerSold = scSoldTot > 0 ? (scTot90 / scSoldTot) : (scTot90 / unitsStored);
+
+                        html += `
+                            <tr class="${sc.current ? 'active-row' : ''}">
+                                <td><strong>${sc.name}</strong> ${sc.current ? '★' : ''}</td>
+                                <td>${Math.round(scSales)} units/mo</td>
+                                <td>${scCover.toFixed(2)} mo</td>
+                                <td style="font-weight:700;">${formatINR(scTot90)}</td>
+                                <td>${Math.round(u)} units</td>
+                                <td style="color:${scPerSold > storagePerUnitSold ? '#ef4444' : '#059669'}; font-weight:700;">${formatINR(scPerSold)}</td>
+                            </tr>
+                        `;
+                    });
+                    tbody.innerHTML = html;
+                }
+
+                // 10. UPDATE LAB 6 REPLENISHMENT PLANNER
+                const leadDays = Math.max(1, parseFloat(document.getElementById('inputLeadTimeDays').value) || 20);
+                const safetyUnits = Math.max(0, parseFloat(document.getElementById('inputSafetyStockUnits').value) || 50);
+
+                const leadDemand = dailySales * leadDays;
+                const reorderPoint = Math.round(leadDemand + safetyUnits);
+                const unitsAboveReorder = unitsStored - reorderPoint;
+                const daysToReorder = dailySales > 0 ? Math.max(0, Math.round(unitsAboveReorder / dailySales)) : 0;
+
+                document.getElementById('valDailySales').innerText = `${dailySales.toFixed(2)} units / day`;
+                document.getElementById('valReorderPoint').innerText = `${reorderPoint} units`;
+                document.getElementById('valDaysToReorder').innerText = unitsStored <= reorderPoint ? "REORDER POINT ALREADY REACHED" : `${daysToReorder} Days Remaining`;
+                document.getElementById('valDaysToReorder').style.color = unitsStored <= reorderPoint ? "#ef4444" : "#059669";
+
+                // 11. UPDATE LAB 7 CONTRIBUTION BRIDGE
+                const preStorageContrib = sellingPrice - landedCogs;
+                const preStoragePct = sellingPrice > 0 ? ((preStorageContrib / sellingPrice) * 100) : 0;
+                const postStorageContrib = preStorageContrib - storagePerUnitSold;
+                const postStoragePct = sellingPrice > 0 ? ((postStorageContrib / sellingPrice) * 100) : 0;
+
+                document.getElementById('bridgeSp').innerText = formatINR(sellingPrice);
+                document.getElementById('bridgeCogs').innerText = `−${formatINR(landedCogs)}`;
+                document.getElementById('bridgePreStorage').innerText = `${formatINR(preStorageContrib)} (${preStoragePct.toFixed(1)}%)`;
+                document.getElementById('bridgeStorageAlloc').innerText = `−${formatINR(storagePerUnitSold)}`;
+                document.getElementById('bridgePostStorage').innerText = `${formatINR(postStorageContrib)} (${postStoragePct.toFixed(1)}%)`;
+
+                // 12. UPDATE MATH AUDIT DRAWER
+                updateMathAuditDrawer(len, wid, hgt, unitCm3, unitCuFt, unitsStored, startTotalCuFt, ratePerCuFt, durationDays, monthlySales, totalBaseStorageCost, gstStorage, totalStorageCostIncGst, storagePerUnitSold, endingUnits);
+
+                // 13. UPDATE PRINTABLE PDF REPORT
+                updatePdfReport(len, wid, hgt, unitCm3, unitCuFt, startTotalCuFt, startTotalCuM, unitsStored, monthlySales, monthsCover, durationDays, ratePerCuFt, totalBaseStorageCost, gstStorage, totalStorageCostIncGst, storagePerUnitPerMoBase, storagePerUnitSold, capitalTiedUp, endingUnits, altL, altW, altH, spaceRedPct, pkgSavings90d, excessUnits, excessSpaceCuFt, excessCapital);
+            }
+
+            // MATH AUDIT DRAWER UPDATE
+            function updateMathAuditDrawer(len, wid, hgt, unitCm3, unitCuFt, unitsStored, startTotalCuFt, ratePerCuFt, durationDays, monthlySales, baseCost, gst, totalCost, storagePerSold, endingUnits) {
+                const content = document.getElementById('mathDrawerContent');
+                if (!content) return;
+
+                content.innerHTML = `
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:13px; color:#cbd5e1;">
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">1. Volume &amp; Space Formulas</div>
+                            <div style="margin-bottom:6px;">• <strong>Unit Volume (cm³):</strong> ${len} × ${wid} × ${hgt} = <strong>${unitCm3.toLocaleString()} cm³</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Unit Volume (ft³):</strong> ${unitCm3.toLocaleString()} ÷ 28,316.85 = <strong>${unitCuFt.toFixed(3)} ft³</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Total Starting Space:</strong> ${unitsStored} units × ${unitCuFt.toFixed(3)} ft³ = <strong>${startTotalCuFt.toFixed(2)} ft³</strong></div>
+                        </div>
+
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">2. Depletion &amp; Storage Burden</div>
+                            <div style="margin-bottom:6px;">• <strong>Depletion Model:</strong> ${isSellThroughModel ? 'Sell-Through Monthly Buckets' : 'Static Inventory'}</div>
+                            <div style="margin-bottom:6px;">• <strong>Base Storage Charges:</strong> ${formatINR(baseCost)}</div>
+                            <div style="margin-bottom:6px;">• <strong>18% GST Levy:</strong> ${formatINR(baseCost)} × 18% = <strong>${formatINR(gst)}</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Total Amazon Storage Cost:</strong> ${formatINR(baseCost)} + ${formatINR(gst)} = <strong style="color:#f87171;">${formatINR(totalCost)}</strong></div>
+                        </div>
+
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">3. Per-Unit Allocation</div>
+                            <div style="margin-bottom:6px;">• <strong>Allocated Storage / Unit Sold:</strong> ${formatINR(totalCost)} ÷ Modelled Sales = <strong style="color:#f87171;">${formatINR(storagePerSold)}</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Ending Inventory (${durationDays}d):</strong> ${Math.round(endingUnits)} units</div>
+                        </div>
+
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#34d399; font-weight:700; margin-bottom:8px; text-transform:uppercase;">4. Fee Schedule Reference</div>
+                            <div style="margin-bottom:6px;">• <strong>Marketplace:</strong> ${amazonStorageSchedule.marketplace}</div>
+                            <div style="margin-bottom:6px;">• <strong>Standard Storage Rate:</strong> ₹${ratePerCuFt.toFixed(2)} / ft³ / month</div>
+                            <div style="margin-bottom:6px;">• <strong>Schedule Verification:</strong> ${amazonStorageSchedule.lastVerified}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // PDF REPORT DOM UPDATE
+            function updatePdfReport(len, wid, hgt, unitCm3, unitCuFt, startSpaceFt, startSpaceM, startUnits, salesVel, monthsCover, durationDays, ratePerCuFt, baseCost, gst, totalCost, storagePerUnitMo, storagePerSold, capitalVal, endingUnits, altL, altW, altH, spaceRedPct, pkgSavings90d, excessUnits, excessSpace, excessCap) {
+                if (!document.getElementById('pdfReportContainer')) return;
+
+                document.getElementById('pdfDims').innerText = `${len} × ${wid} × ${hgt} cm`;
+                document.getElementById('pdfUnitCm3').innerText = `${unitCm3.toLocaleString()} cm³`;
+                document.getElementById('pdfUnitCuFt').innerText = `${unitCuFt.toFixed(3)} ft³`;
+                document.getElementById('pdfStartUnits').innerText = `${startUnits} units`;
+                document.getElementById('pdfTotalSpace').innerText = `${startSpaceFt.toFixed(2)} ft³ (${startSpaceM.toFixed(2)} m³)`;
+
+                document.getElementById('pdfSalesVel').innerText = `${salesVel} units / mo`;
+                document.getElementById('pdfMonthsCover').innerText = salesVel > 0 ? `${monthsCover.toFixed(2)} Months` : 'N/A';
+                document.getElementById('pdfDuration').innerText = `${durationDays} Days`;
+                document.getElementById('pdfRateStr').innerText = `₹${ratePerCuFt.toFixed(2)} / ft³ / mo`;
+                document.getElementById('pdfGstVal').innerText = formatINR(gst);
+                document.getElementById('pdfTotalStorageVal').innerText = formatINR(totalCost);
+
+                document.getElementById('pdfStoragePerUnitMo').innerText = formatINR(storagePerUnitMo);
+                document.getElementById('pdfStoragePerUnitSold').innerText = `${formatINR(storagePerSold)} / unit`;
+                document.getElementById('pdfCapitalVal').innerText = formatINR(capitalVal);
+                document.getElementById('pdfEndingUnits').innerText = `${Math.round(endingUnits)} units`;
+
+                document.getElementById('pdfPkgCompare').innerText = `${len}×${wid}×${hgt} vs ${altL}×${altW}×${altH} cm`;
+                document.getElementById('pdfPkgRed').innerText = `${spaceRedPct.toFixed(1)}% Less Volume`;
+                document.getElementById('pdfPkgSavings').innerText = `${formatINR(pkgSavings90d)} Saved`;
+
+                const reportDateEl = document.getElementById('pdfReportDate');
+                if (reportDateEl) {
+                    reportDateEl.innerText = `Report Date: ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+                }
+            }
+
+            // COPY ANALYSIS BUTTON
+            document.getElementById('btnCopyAnalysis').addEventListener('click', function () {
+                const dims = document.getElementById('recDims').innerText;
+                const unitVol = document.getElementById('recUnitVol').innerText;
+                const totalSpace = document.getElementById('recTotalSpace').innerText;
+                const startUnits = document.getElementById('recStartUnits').innerText;
+                const salesVel = document.getElementById('recSalesVel').innerText;
+                const cover = document.getElementById('recMonthsCover').innerText;
+                const cost = document.getElementById('resTotalStorageCost').innerText;
+                const perUnitSold = document.getElementById('recStoragePerUnitSold').innerText;
+
+                const text = `Amazon India FBA Storage & Inventory Analysis\n\nPackage Dimensions: ${dims}\nUnit Volume: ${unitVol}\nStarting Inventory: ${startUnits}\nTotal Warehouse Space: ${totalSpace}\n\nExpected Sales Velocity: ${salesVel}\nMonths of Cover: ${cover}\n\nModelled Storage Burden (Inc. 18% GST): ${cost}\nAllocated Storage / Unit Sold: ${perUnitSold}\n\nCalculated using PPC Growth Expert Amazon FBA Storage Fee Calculator India.`;
+
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        this.innerText = 'Copied! ✓';
+                        setTimeout(() => this.innerText = 'Copy 📋', 2000);
+                    });
+                } else {
+                    alert(text);
+                }
+            });
+
+            // RESET BUTTON
+            document.getElementById('btnResetStorageEngine').addEventListener('click', function () {
+                document.getElementById('inputLength').value = '30';
+                document.getElementById('inputWidth').value = '20';
+                document.getElementById('inputHeight').value = '12';
+                document.getElementById('inputUnitsStored').value = '600';
+                document.getElementById('inputStorageRate').value = '45.00';
+                document.getElementById('inputDaysDuration').value = '90';
+                document.getElementById('inputMonthlySales').value = '200';
+                document.getElementById('inputTargetCoverMonths').value = '2.0';
+                document.getElementById('inputSellingPrice').value = '1499';
+                document.getElementById('inputLandedCogs').value = '440';
+                document.getElementById('inputAltLength').value = '27';
+                document.getElementById('inputAltWidth').value = '18';
+                document.getElementById('inputAltHeight').value = '10';
+
+                durationBtns.forEach(b => b.classList.remove('active'));
+                document.querySelector('.duration-btn[data-days="90"]').classList.add('active');
+
+                isSellThroughModel = true;
+                document.getElementById('btnModelSellThrough').classList.add('active');
+                document.getElementById('btnModelStatic').classList.remove('active');
+
+                calcStorageEngine();
+            });
+
+            // USE EXAMPLE BUTTON
+            document.getElementById('btnExample600').addEventListener('click', function () {
+                document.getElementById('inputLength').value = '30';
+                document.getElementById('inputWidth').value = '20';
+                document.getElementById('inputHeight').value = '12';
+                document.getElementById('inputUnitsStored').value = '600';
+                document.getElementById('inputMonthlySales').value = '200';
+                calcStorageEngine();
+            });
+
+            // LISTENERS FOR ALL INPUTS
+            const inputsToWatch = [
+                'inputLength', 'inputWidth', 'inputHeight', 'inputUnitsStored', 'inputStorageRate',
+                'inputMonthlySales', 'inputTargetCoverMonths', 'inputSellingPrice', 'inputLandedCogs',
+                'inputAltLength', 'inputAltWidth', 'inputAltHeight', 'inputLeadTimeDays', 'inputSafetyStockUnits'
+            ];
+
+            inputsToWatch.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', calcStorageEngine);
+                    el.addEventListener('change', calcStorageEngine);
+                }
+            });
+
+            document.getElementById('btnCalcStorageEngine').addEventListener('click', calcStorageEngine);
+
+            // INITIALIZATION
+            calcStorageEngine();
         });
     </script>
 </body>
+
 </html>
