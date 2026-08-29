@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Amazon TACoS Calculator | Total Advertising Cost of Sales</title>
-    <meta name="description" content="Calculate your Amazon TACoS (Total Advertising Cost of Sales). Measure ad spend against overall Amazon revenue to track brand health and organic growth.">
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon TACoS Calculator | Total Advertising Cost of Sales &amp; Organic Multiplier</title>
+    <meta name="description" content="Calculate Amazon TACoS (Total Advertising Cost of Sales). Measure ad spend against total Amazon revenue, track organic sales multiplier, analyze ACoS vs TACoS divergence, and optimize organic keyword ranking velocity.">
     <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-tacos-calculator.html">
 
+    <!-- FONTS & STYLES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,25 +22,412 @@
     <link rel="stylesheet" href="css/resources.css?v=v19">
     <link rel="stylesheet" href="css/footer.css?v=v41">
 
+    <!-- SCHEMA MARKUP (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Amazon TACoS Calculator",
+      "name": "Amazon TACoS Calculator & Organic Multiplier Engine",
       "url": "https://ppcgrowthexpert.com/amazon-tacos-calculator.html",
-      "description": "Calculate Total Advertising Cost of Sales (TACoS) for Amazon.",
+      "description": "Professional Amazon TACoS Calculator to analyze ad spend against overall revenue, organic revenue share, and brand keyword ranking health.",
       "applicationCategory": "BusinessApplication",
-      "operatingSystem": "All"
+      "operatingSystem": "All",
+      "author": {
+        "@type": "Organization",
+        "name": "PPC Growth Expert",
+        "url": "https://ppcgrowthexpert.com/"
+      }
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Amazon TACoS (Total Advertising Cost of Sales)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TACoS (Total Advertising Cost of Sales) measures total Amazon ad spend as a percentage of total account revenue (organic sales + ad sales combined). Unlike ACoS, which only evaluates ad sales, TACoS measures overall brand profitability and organic ranking leverage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate Amazon TACoS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TACoS is calculated using the formula: TACoS = (Total Ad Spend ÷ Total Amazon Revenue) × 100."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good TACoS for Amazon FBA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A healthy TACoS for mature Amazon products typically ranges between 8% and 15%. For newly launched products in aggressive growth phases, TACoS of 20% to 35% is common to drive initial keyword indexing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a rising TACoS mean on Amazon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A rising TACoS indicates that ad spend is growing faster than total revenue. This means organic keyword rankings may be dropping, ad efficiency is declining, or PPC is cannibalizing organic sales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between ACoS and TACoS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACoS measures ad spend divided by ad-attributed revenue, evaluating direct campaign performance. TACoS measures ad spend divided by total account revenue, evaluating overall brand health and organic sales leverage."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* PAGE SCOPED STYLES & OVERRIDES */
+        .tacos-page {
+            background-color: #080d1a;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .tacos-page .hero-compact {
+            padding: 32px 0 24px 0;
+            background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .tacos-page .hero-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.25);
+        }
+
+        .tacos-page .hero-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .tacos-page .hero-description {
+            font-size: 15.5px;
+            color: #cbd5e1;
+            max-width: 780px;
+            margin: 0 auto 16px auto;
+            line-height: 1.6;
+        }
+
+        /* SECTION WRAPPERS */
+        .tacos-page .dark-section-wrapper {
+            background: #080d1a;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px 0;
+            color: #ffffff;
+        }
+
+        .tacos-page .dark-section-alt {
+            background: #0b1329;
+            background-image: 
+                radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.12) 0%, transparent 70%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px 0;
+            color: #ffffff;
+        }
+
+        .tacos-page .light-section-wrapper {
+            background: #ffffff;
+            padding: 48px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+        }
+
+        .tacos-page .light-section-alt {
+            background: #f8fafc;
+            padding: 48px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+        }
+
+        /* CARDS */
+        .tacos-page .white-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .tacos-page .dark-glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* INPUTS */
+        .tacos-page .input-group {
+            margin-bottom: 18px;
+        }
+
+        .tacos-page .input-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+
+        .tacos-page .dark-input-label {
+            color: #cbd5e1;
+        }
+
+        .tacos-page .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'DM Mono', monospace;
+            font-weight: 600;
+            color: #0f172a;
+            background: #ffffff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .tacos-page .dark-input-field {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid rgba(255, 255, 255, 0.16);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'DM Mono', monospace;
+            font-weight: 600;
+            color: #ffffff;
+            background: rgba(15, 23, 42, 0.85);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .tacos-page .dark-input-field:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        .tacos-page .input-field:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .tacos-page .input-helper {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .tacos-page .dark-input-helper {
+            color: #94a3b8;
+        }
+
+        /* BUTTONS & BADGES */
+        .tacos-page .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .tacos-page .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .tacos-page .btn-secondary {
+            background: #ffffff;
+            color: #334155;
+            border: 1.5px solid #cbd5e1;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tacos-page .btn-secondary:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+            color: #0f172a;
+        }
+
+        .tacos-page .type-badge {
+            display: inline-block;
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* SENSITIVITY MATRIX */
+        .tacos-page .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .tacos-page .matrix-table th {
+            background: rgba(30, 41, 59, 0.95);
+            color: #38bdf8;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-weight: 700;
+        }
+
+        .tacos-page .matrix-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 23, 42, 0.7);
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        .tacos-page .matrix-table td.matrix-row-hdr {
+            background: rgba(30, 41, 59, 0.75);
+            color: #ffffff;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .tacos-page .matrix-table td.highlight-cell {
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            font-weight: 800;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+        }
+
+        /* DIAGNOSTIC SYMPTOMS */
+        .tacos-page .symptom-pill {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .tacos-page .symptom-pill:hover {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+        }
+
+        .tacos-page .symptom-pill.active {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            border-color: #38bdf8;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        }
+
+        /* REVENUE SPLIT BAR */
+        .tacos-page .split-bar-container {
+            height: 24px;
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 12px 0;
+        }
+
+        .tacos-page .split-bar-paid {
+            background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .tacos-page .split-bar-organic {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        /* PRINT FORMATTING */
+        @media print {
+            body { background: #ffffff !important; color: #000000 !important; }
+            .navbar-container, .site-footer, .resources-audit-cta, .btn-calc-group, #pdfBanner { display: none !important; }
+            .tacos-page .hero-compact { border: none !important; padding: 10px 0 !important; }
+            .tacos-page .white-card, .tacos-page .dark-glass-card { background: #ffffff !important; border: 1px solid #000000 !important; color: #000000 !important; box-shadow: none !important; }
+            .tacos-page .type-badge { border: 1px solid #000000 !important; }
+        }
+    </style>
 </head>
 
-<body>
+<body class="tacos-page">
 
-    <!-- BACKGROUND GRID & GLOW (MATCHING INDEX.HTML THEME) -->
+    <!-- BACKGROUND GRID -->
     <div class="background-grid"></div>
-    <div class="background-glow"></div>
 
+    <!-- NAVBAR -->
     <div class="navbar-container" id="navbarContainer">
         <header class="navbar">
             <a href="index.html" class="logo">
@@ -65,13 +457,20 @@
                                 <div class="mega-col-title">COST &amp; TRAFFIC</div>
                                 <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Calculate average cost per click</span></div></a>
                                 <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Measure ad click-through rate</span></div></a>
-                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Compare ad spend vs total sales</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item active"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Compare ad spend vs total sales</span></div></a>
                             </div>
                             <div class="mega-menu-col">
                                 <div class="mega-col-title">PROFIT &amp; PLANNING</div>
                                 <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS Calculator</span><span class="mega-item-desc">Max ACoS before margin loss</span></div></a>
                                 <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Estimate working monthly budget</span></div></a>
                                 <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target ACoS &amp; Bid Calculator</span><span class="mega-item-desc">Estimate practical CPC &amp; bid</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin &amp; profit</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral breakdown</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage cost</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
                             </div>
                         </div>
                         <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
@@ -89,120 +488,718 @@
         </header>
     </div>
 
-    <div class="resources-page-container">
+    <!-- 01 · HERO SECTION -->
+    <div class="hero-compact">
+        <div class="resources-section-container">
+            <nav class="breadcrumb-nav" style="padding-top: 16px;">
+                <a href="index.html">Home</a> /
+                <a href="resources.html">Resources</a> /
+                <span>Amazon TACoS Calculator</span>
+            </nav>
 
-        <nav class="breadcrumb-nav">
-            <a href="index.html">Home</a> /
-            <a href="resources.html">Resources</a> /
-            <span>TACoS Calculator</span>
-        </nav>
+            <div class="hero-eyebrow">✦ AMAZON ORGANIC MULTIPLIER &amp; BRAND HEALTH ENGINE</div>
+            <h1 class="hero-title" style="margin-bottom:12px;">Amazon TACoS Calculator</h1>
+            <p class="hero-description" style="max-width:820px; margin:0 auto 20px auto;">
+                Calculate your Total Advertising Cost of Sales (TACoS), evaluate how heavily your revenue relies on PPC ad spend, measure your organic sales multiplier, analyze ACoS vs TACoS divergence, and optimize organic keyword ranking velocity.
+            </p>
 
-        <section class="resources-hero">
-            <div class="hero-eyebrow">✦ AMAZON PPC CALCULATOR</div>
-            <h1 class="hero-title">Amazon TACoS Calculator</h1>
-            <p class="hero-description">Measure advertising spend against total Amazon revenue (organic + paid) to evaluate overall account health.</p>
-
-        </section>
-
-        <section class="calculator-app-wrapper">
-            <div class="calc-inputs-col">
-                <h3 style="margin:0 0 10px 0; font-size:18px;">Account Figures</h3>
-                <div class="input-group">
-                    <label class="input-label" for="tacosSpend">Ad Spend (₹)</label>
-                    <input type="number" id="tacosSpend" class="calc-input-field" placeholder="e.g. 10000" min="0" step="any">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="tacosTotalSales">Total Sales (Organic + Paid) (₹)</label>
-                    <input type="number" id="tacosTotalSales" class="calc-input-field" placeholder="e.g. 100000" min="0" step="any">
-                </div>
-                <div class="calc-action-row">
-                    <button type="button" class="btn-calc-submit">Calculate TACoS →</button>
-                    <button type="button" class="btn-calc-reset">Reset</button>
-                </div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; font-size:13px; font-weight:600; color:#cbd5e1;">
+                <span>✓ Free to use</span>
+                <span>✓ Instant live calculation</span>
+                <span>✓ No sign-up required</span>
+                <span>✓ Downloadable PPC analysis</span>
             </div>
-
-            <div class="calc-results-col" aria-live="polite">
-                <div class="result-main-box">
-                    <div class="result-main-label">YOUR TACOS</div>
-                    <div class="result-main-value" id="tacosResultVal">0.00%</div>
-                    <div class="result-main-sub" id="tacosSubText">Enter ad spend and total sales to calculate TACoS.</div>
-                </div>
-
-                <div class="result-guidance-box">
-                    <div class="result-guidance-title">What does this mean?</div>
-                    TACoS measures how heavily your total Amazon brand sales rely on PPC ad dollars. Lower or stabilizing TACoS over time indicates strong organic keyword ranking velocity.
-                </div>
-            </div>
-        </section>
-
-        <article class="calc-educational-prose">
-            <h2>What Is Amazon TACoS?</h2>
-            <p><strong>Total Advertising Cost of Sales (TACoS)</strong> measures advertising spend relative to <em>total</em> account revenue on Amazon (both organic and paid sales combined).</p>
-
-            <h2>Formula:</h2>
-            <div class="formula-code-box">
-                TACoS = (Total Ad Spend ÷ Total Amazon Revenue) × 100
-            </div>
-        </article>
-
-        <section class="related-calculators-section">
-            <div class="section-header">
-                <div class="section-eyebrow">RELATED TOOLS</div>
-                <h2 class="section-title">Explore Related PPC Calculators</h2>
-            </div>
-            <div class="calculators-grid">
-                <a href="amazon-acos-calculator.html" class="calc-card">
-                    <div class="calc-card-top"><div class="calc-card-header"><div class="calc-card-icon">📊</div><span class="calc-card-category">EFFICIENCY</span></div><h3 class="calc-card-title">Amazon ACoS Calculator</h3><p class="calc-card-desc">Calculate ad-attributed cost of sales.</p></div>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate ACoS →</span></div>
-                </a>
-            </div>
-        </section>
-
-        <section class="resources-audit-cta">
-            <div class="hero-eyebrow" style="color:#e0f2fe;">✦ NEED A DEEPER ANALYSIS?</div>
-            <h2>Looking to Reduce Brand TACoS?</h2>
-            <p>We build organic keyword ranking strategies powered by Amazon PPC to drive long-term organic sales and reduce TACoS.</p>
-            <div class="cta-btn-group">
-                <a href="contact.html" class="btn-cta-primary">Request an Amazon PPC Audit →</a>
-            </div>
-        </section>
-
+        </div>
     </div>
 
-    <!-- =========================================================
-     FOOTER
-========================================================= -->
+    <!-- 02 · QUICK SUMMARY -->
+    <section class="light-section-alt" style="padding:28px 0; background:#f8fafc; color:#0f172a;">
+        <div class="resources-section-container" style="max-width:1100px; margin:0 auto; padding:0 20px;">
+            <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-left:4px solid #2563eb; border-radius:14px; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+                <div style="flex:1; min-width:280px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; letter-spacing:1px; margin-bottom:4px;">QUICK SUMMARY</div>
+                    <p style="margin:0; font-size:14.5px; color:#334155; line-height:1.55;">
+                        <strong>TACoS measures total ad spend relative to total Amazon revenue (organic + paid combined).</strong> While ACoS evaluates immediate ad ROI, TACoS measures whether your advertising is building sustainable organic keyword ranking or creating artificial ad dependency.
+                    </p>
+                </div>
+                <div style="background:#f1f5f9; border:1px solid #cbd5e1; border-radius:12px; padding:12px 18px; font-family:'DM Mono',monospace; font-weight:700; font-size:14px; color:#0f172a; white-space:nowrap;">
+                    TACoS = Total Ad Spend ÷ Total Revenue × 100
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 · MAIN CALCULATOR SECTION (DARK TELEMETRY THEME) -->
+    <section class="dark-section-wrapper" id="mainCalculator">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            
+            <div style="display:grid; grid-template-columns: 1fr 1.1fr; gap:32px; align-items:start;">
+                
+                <!-- INPUT COLUMN -->
+                <div class="dark-glass-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.12);">
+                        <h2 style="font-size:20px; font-weight:800; color:#ffffff; margin:0;">ACCOUNT REVENUE &amp; SPEND</h2>
+                        <span style="font-family:'DM Mono',monospace; font-size:11px; color:#38bdf8; background:rgba(56,189,248,0.12); padding:3px 8px; border-radius:10px;">STEP 1 OF 2</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label dark-input-label" for="inputTotalRevenue">
+                            <span>Total Amazon Revenue (₹) *</span>
+                            <span style="font-family:'DM Mono',monospace; color:#94a3b8; font-size:12px;">ORGANIC + PAID</span>
+                        </label>
+                        <input type="number" id="inputTotalRevenue" class="dark-input-field" value="250000" min="1" step="1000" oninput="calculateTacosEngine()">
+                        <div class="input-helper dark-input-helper">Total gross sales generated across your Amazon store for the period.</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label dark-input-label" for="inputAdSpend">
+                            <span>Total PPC Ad Spend (₹) *</span>
+                            <span style="font-family:'DM Mono',monospace; color:#94a3b8; font-size:12px;">AD INVESTMENT</span>
+                        </label>
+                        <input type="number" id="inputAdSpend" class="dark-input-field" value="31250" min="0" step="500" oninput="calculateTacosEngine()">
+                        <div class="input-helper dark-input-helper">Total advertising spend across Sponsored Products, Brands &amp; Display.</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label dark-input-label" for="inputTargetTacos">
+                            <span>Target TACoS (%) — Optional</span>
+                            <span style="font-family:'DM Mono',monospace; color:#38bdf8; font-size:12px;">PLANNING MODEL</span>
+                        </label>
+                        <input type="number" id="inputTargetTacos" class="dark-input-field" value="10.00" min="0.1" max="100" step="0.5" oninput="calculateTacosEngine()">
+                        <div class="input-helper dark-input-helper">Your strategic TACoS target based on product lifecycle and profit margin goals.</div>
+                    </div>
+
+                    <!-- COLLAPSIBLE DOWNSTREAM DATA -->
+                    <details style="margin-top:16px; background:rgba(30, 41, 59, 0.6); padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,0.12);">
+                        <summary style="color:#38bdf8; font-weight:700; cursor:pointer;">✦ Add Ad Sales &amp; Order Volume Data (For ACoS &amp; Organic Split)</summary>
+                        <div style="margin-top:14px; display:grid; gap:14px;">
+                            <div class="input-group" style="margin:0;">
+                                <label class="input-label dark-input-label" for="inputAdSales">Attributed Ad Sales (₹)</label>
+                                <input type="number" id="inputAdSales" class="dark-input-field" value="93750" min="0" step="500" oninput="calculateTacosEngine()">
+                            </div>
+                            <div class="input-group" style="margin:0;">
+                                <label class="input-label dark-input-label" for="inputAdOrders">Attributed Ad Orders</label>
+                                <input type="number" id="inputAdOrders" class="dark-input-field" value="125" min="0" step="1" oninput="calculateTacosEngine()">
+                            </div>
+                            <div class="input-group" style="margin:0;">
+                                <label class="input-label dark-input-label" for="inputTotalOrders">Total Account Orders</label>
+                                <input type="number" id="inputTotalOrders" class="dark-input-field" value="333" min="0" step="1" oninput="calculateTacosEngine()">
+                            </div>
+                        </div>
+                    </details>
+
+                    <div class="btn-calc-group" style="display:flex; gap:10px; margin-top:24px;">
+                        <button type="button" class="btn-primary" onclick="loadExampleData()" style="flex:1;">Load Example</button>
+                        <button type="button" class="btn-secondary" onclick="resetForm()" style="flex:1; background:rgba(255,255,255,0.08); color:#ffffff; border-color:rgba(255,255,255,0.18);">Reset</button>
+                        <button type="button" class="btn-secondary" onclick="copyResults()" style="width:44px; padding:0; background:rgba(255,255,255,0.08); color:#ffffff; border-color:rgba(255,255,255,0.18);" title="Copy Results">📋</button>
+                        <button type="button" class="btn-secondary" onclick="window.print()" style="width:44px; padding:0; background:rgba(255,255,255,0.08); color:#ffffff; border-color:rgba(255,255,255,0.18);" title="Print PDF">📄</button>
+                    </div>
+                </div>
+
+                <!-- RESULT PANEL COLUMN -->
+                <div class="dark-glass-card" style="border-top:4px solid #38bdf8;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.12);">
+                        <h2 style="font-size:20px; font-weight:800; color:#ffffff; margin:0;">YOUR TACOS RESULTS</h2>
+                        <span class="type-badge type-observed" style="color:#38bdf8; background:rgba(56,189,248,0.15);" id="tacosBadgeVal">HEALTHY TACOS</span>
+                    </div>
+
+                    <!-- PRIMARY BIG METRIC -->
+                    <div style="background:linear-gradient(135deg, rgba(30, 58, 138, 0.6) 0%, rgba(15, 23, 42, 0.95) 100%); border:1.5px solid rgba(56, 189, 248, 0.4); border-radius:16px; padding:24px; text-align:center; margin-bottom:20px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:1px;">TOTAL ADVERTISING COST OF SALES (TACOS)</div>
+                        <div style="font-size:48px; font-weight:800; font-family:'DM Mono',monospace; color:#38bdf8; margin:6px 0; text-shadow:0 0 20px rgba(56,189,248,0.3);" id="resTacosVal">12.50%</div>
+                        <div style="font-size:13.5px; color:#bfdbfe; font-weight:600;" id="resTacosSub">12.50% of your total revenue was spent on Amazon PPC ads</div>
+                    </div>
+
+                    <!-- KEY DERIVED METRICS GRID -->
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:12px; margin-bottom:20px;">
+                        <div style="background:rgba(30, 41, 59, 0.65); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:14px; text-align:center;">
+                            <div style="font-size:10.5px; font-family:'DM Mono',monospace; font-weight:700; color:#94a3b8;">ORGANIC SHARE %</div>
+                            <div style="font-size:20px; font-weight:800; font-family:'DM Mono',monospace; color:#34d399; margin-top:4px;" id="resOrganicShare">62.50%</div>
+                            <div style="font-size:10px; color:#cbd5e1; margin-top:2px;">Unpaid Revenue</div>
+                        </div>
+
+                        <div style="background:rgba(30, 41, 59, 0.65); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:14px; text-align:center;">
+                            <div style="font-size:10.5px; font-family:'DM Mono',monospace; font-weight:700; color:#94a3b8;">PAID SHARE %</div>
+                            <div style="font-size:20px; font-weight:800; font-family:'DM Mono',monospace; color:#60a5fa; margin-top:4px;" id="resPaidShare">37.50%</div>
+                            <div style="font-size:10px; color:#cbd5e1; margin-top:2px;">Ad-Attributed Revenue</div>
+                        </div>
+
+                        <div style="background:rgba(30, 41, 59, 0.65); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:14px; text-align:center;">
+                            <div style="font-size:10.5px; font-family:'DM Mono',monospace; font-weight:700; color:#94a3b8;">ORGANIC MULTIPLIER</div>
+                            <div style="font-size:20px; font-weight:800; font-family:'DM Mono',monospace; color:#ffffff; margin-top:4px;" id="resOrganicMultiplier">2.67x</div>
+                            <div style="font-size:10px; color:#cbd5e1; margin-top:2px;">Rev per ad sales ₹</div>
+                        </div>
+                    </div>
+
+                    <!-- DOWNSTREAM PERFORMANCE UNLOCKED GRID -->
+                    <div style="background:rgba(15, 23, 42, 0.85); border:1px solid rgba(56, 189, 248, 0.25); border-radius:14px; padding:16px; margin-bottom:20px;" id="downstreamPanel">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; margin-bottom:10px; text-transform:uppercase;">ACCOUNT REVENUE BREAKDOWN</div>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap:10px; text-align:center;">
+                            <div>
+                                <div style="font-size:10px; color:#94a3b8;">OBSERVED ACOS</div>
+                                <div style="font-size:16px; font-weight:800; font-family:'DM Mono',monospace; color:#f59e0b;" id="resAcosVal">33.33%</div>
+                            </div>
+                            <div>
+                                <div style="font-size:10px; color:#94a3b8;">ACOS - TACOS GAP</div>
+                                <div style="font-size:16px; font-weight:800; font-family:'DM Mono',monospace; color:#38bdf8;" id="resGapVal">20.83 pp</div>
+                            </div>
+                            <div>
+                                <div style="font-size:10px; color:#94a3b8;">ORGANIC REVENUE</div>
+                                <div style="font-size:16px; font-weight:800; font-family:'DM Mono',monospace; color:#34d399;" id="resOrganicSales">₹1,56,250</div>
+                            </div>
+                            <div>
+                                <div style="font-size:10px; color:#94a3b8;">BLENDED ROAS</div>
+                                <div style="font-size:16px; font-weight:800; font-family:'DM Mono',monospace; color:#60a5fa;" id="resBlendedRoas">8.00x</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DYNAMIC INTERPRETATION BOX -->
+                    <div style="background:rgba(30, 41, 59, 0.7); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:16px; font-size:13.5px; color:#cbd5e1; line-height:1.6;" id="interpretationText">
+                        Your account generated <strong>₹2,50,000 total revenue</strong> with <strong>₹31,250 ad spend</strong>, producing a <strong>12.50% TACoS</strong>. Organic sales account for <strong>62.50% (₹1,56,250)</strong> of your total revenue.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 04 · REVENUE BREAKDOWN & ORGANIC SPLIT VISUALIZER -->
+    <section class="light-section-alt" style="background:#f8fafc; color:#0f172a;">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:24px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">REVENUE COMPOSITION MODEL</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Paid vs Organic Revenue Distribution</h2>
+                <p style="font-size:14px; color:#475569; margin:0;">Evaluating whether your brand relies primarily on organic search ranking momentum or paid PPC ads.</p>
+            </div>
+
+            <div class="white-card">
+                <div style="display:flex; justify-content:space-between; align-items:center; font-size:14px; font-weight:700; margin-bottom:8px;">
+                    <span style="color:#059669;">Organic Sales: <span id="barOrganicText" style="font-family:'DM Mono',monospace;">₹1,56,250 (62.5%)</span></span>
+                    <span style="color:#2563eb;">Paid Ad Sales: <span id="barPaidText" style="font-family:'DM Mono',monospace;">₹93,750 (37.5%)</span></span>
+                </div>
+
+                <div class="split-bar-container">
+                    <div class="split-bar-organic" id="barOrganicWidth" style="width:62.5%;"></div>
+                    <div class="split-bar-paid" id="barPaidWidth" style="width:37.5%;"></div>
+                </div>
+
+                <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px; margin-top:20px; text-align:center;">
+                    <div style="background:#f1f5f9; padding:14px; border-radius:12px; border:1px solid #cbd5e1;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; color:#64748b;">ORGANIC REVENUE MULTIPLIER</div>
+                        <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#059669; margin-top:4px;" id="dispOrgMult">2.67x</div>
+                        <div style="font-size:11px; color:#64748b; margin-top:2px;">₹1 ad sales yields ₹2.67 total</div>
+                    </div>
+                    <div style="background:#f1f5f9; padding:14px; border-radius:12px; border:1px solid #cbd5e1;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; color:#64748b;">BLENDED CAC / ORDER</div>
+                        <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#0f172a; margin-top:4px;" id="dispBlendedCac">₹93.84</div>
+                        <div style="font-size:11px; color:#64748b; margin-top:2px;">Ad spend ÷ Total orders</div>
+                    </div>
+                    <div style="background:#f1f5f9; padding:14px; border-radius:12px; border:1px solid #cbd5e1;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; color:#64748b;">ORGANIC ORDERS</div>
+                        <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#2563eb; margin-top:4px;" id="dispOrgOrders">208 Orders</div>
+                        <div style="font-size:11px; color:#64748b; margin-top:2px;">Non-paid customer orders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 · ACCOUNT HEALTH TELEMETRY CENTER (DARK THEME) -->
+    <section class="dark-section-wrapper" id="telemetryCenter">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:28px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">BRAND HEALTH TELEMETRY</div>
+                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">TACoS Account Diagnostic Matrix</h2>
+                <p style="font-size:15px; color:#cbd5e1; margin:0;">Evaluating ad reliance, keyword ranking velocity, and margin safety.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
+                
+                <div class="dark-glass-card" style="border-top:4px solid #34d399;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#34d399; margin-bottom:6px;">DIAGNOSTIC 1</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">TACoS Status</h3>
+                    <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#34d399; margin-bottom:8px;" id="diagTacosStatus">HEALTHY (12.50%)</div>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.55; margin:0;" id="diagTacosDesc">
+                        Your ad spend consumes a balanced portion of overall revenue, leaving healthy net margin for store operations.
+                    </p>
+                </div>
+
+                <div class="dark-glass-card" style="border-top:4px solid #38bdf8;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; margin-bottom:6px;">DIAGNOSTIC 2</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">Organic Ranking Velocity</h3>
+                    <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#38bdf8; margin-bottom:8px;" id="diagRankVelocity">STRONG MULTIPLIER</div>
+                    <p style="font-size:13px; color:#cbd5e1; line-height:1.55; margin:0;" id="diagRankDesc">
+                        PPC ads are generating organic sales velocity. Organic sales make up over 60% of total revenue.
+                    </p>
+                </div>
+
+                <div class="dark-glass-card" style="border-top:4px solid #f59e0b;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#f59e0b; margin-bottom:6px;">DIAGNOSTIC 3</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">ACoS vs TACoS Divergence</h3>
+                    <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#f59e0b; margin-bottom:8px;" id="diagDivergence">WIDE GAP (20.83pp)</div>
+                    <p style="font-size:13.5px; color:#cbd5e1; line-height:1.55; margin:0;" id="diagDivergenceDesc">
+                        Significant gap between ACoS (33.33%) and TACoS (12.50%) confirms strong organic revenue cushion.
+                    </p>
+                </div>
+
+                <div class="dark-glass-card" style="border-top:4px solid #60a5fa;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#60a5fa; margin-bottom:6px;">DIAGNOSTIC 4</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">Net Margin Tax</h3>
+                    <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#60a5fa; margin-bottom:8px;" id="diagMarginImpact">-12.50% Off Margin</div>
+                    <p style="font-size:13.5px; color:#cbd5e1; line-height:1.55; margin:0;" id="diagMarginDesc">
+                        PPC ad spend reduces your gross product margin by exactly 12.50 percentage points.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 · TARGET TACOS PLANNER & REVENUE SCALING ENGINE -->
+    <section class="light-section-wrapper">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:28px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">STRATEGIC TARGETING</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Target TACoS Planning Engine</h2>
+                <p style="font-size:14px; color:#475569; margin:0;">Model required total sales or maximum ad spend caps to achieve your strategic TACoS goal.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+                
+                <!-- MODEL 1: SPEND CAP -->
+                <div class="white-card">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">MODEL 1 · AD SPEND CAP ENGINE</div>
+                    <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin:6px 0 14px 0;">Max Ad Budget for Target TACoS</h3>
+                    <p style="font-size:14px; color:#475569; margin-bottom:16px;">
+                        Holding your current total revenue constant at <strong id="planRevenueConst">₹2,50,000</strong>, what is the maximum ad spend allowed?
+                    </p>
+
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:18px; text-align:center;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">MAXIMUM AD SPEND ALLOWED</div>
+                        <div style="font-size:32px; font-weight:800; font-family:'DM Mono',monospace; color:#2563eb; margin:6px 0;" id="planMaxSpend">₹25,000</div>
+                        <div style="font-size:12px; color:#059669; font-weight:600;" id="planSpendDiff">Need to cut spend by ₹6,250 (-20.0%)</div>
+                    </div>
+                </div>
+
+                <!-- MODEL 2: REVENUE REQUIREMENT -->
+                <div class="white-card">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#059669; text-transform:uppercase;">MODEL 2 · REVENUE REQUIREMENT ENGINE</div>
+                    <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin:6px 0 14px 0;">Total Revenue Needed for Current Spend</h3>
+                    <p style="font-size:14px; color:#475569; margin-bottom:16px;">
+                        Holding your ad budget constant at <strong id="planSpendConst">₹31,250</strong>, what total revenue is needed to reach your target TACoS?
+                    </p>
+
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:18px; text-align:center;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">REQUIRED TOTAL REVENUE</div>
+                        <div style="font-size:32px; font-weight:800; font-family:'DM Mono',monospace; color:#059669; margin:6px 0;" id="planReqRevenue">₹3,12,500</div>
+                        <div style="font-size:12px; color:#2563eb; font-weight:600;" id="planRevGap">Need +₹62,500 (+25.0%) total revenue lift</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 07 · TACOS STRESS-TEST LAB (DARK THEME) -->
+    <section class="dark-section-alt" id="stressTestLab">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:24px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">TACOS STRESS-TEST LAB</div>
+                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Model Ad Spend &amp; Revenue Sensitivity Scenarios</h2>
+                <p style="font-size:14px; color:#cbd5e1; margin:0;">Test how ad budget shifts or total sales growth change your TACoS and net profitability.</p>
+            </div>
+
+            <div class="dark-glass-card">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12);">
+                    <div>
+                        <span style="font-size:14px; font-weight:700; color:#ffffff;">Scenario Ad Spend Adjustment: </span>
+                        <span style="font-family:'DM Mono',monospace; font-size:18px; font-weight:800; color:#38bdf8;" id="sliderValText">₹31,250 (+0%)</span>
+                    </div>
+                    <input type="range" id="tacosSlider" min="-30" max="50" step="5" value="0" style="width:300px; accent-color:#38bdf8;" oninput="calculateTacosEngine()">
+                </div>
+
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse:collapse; text-align:left; font-size:14px;">
+                        <thead>
+                            <tr style="background:rgba(30, 41, 59, 0.8); border-bottom:2px solid rgba(255,255,255,0.15);">
+                                <th style="padding:12px; color:#94a3b8;">METRIC</th>
+                                <th style="padding:12px; color:#ffffff; text-align:right;">CURRENT</th>
+                                <th style="padding:12px; color:#38bdf8; text-align:right;">SCENARIO (<span id="tableScenPercent">+0%</span>)</th>
+                                <th style="padding:12px; color:#34d399; text-align:right;">DIFFERENCE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+                                <td style="padding:12px; font-weight:700; color:#ffffff;">Ad Spend (₹)</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#cbd5e1;" id="scenCurrSpend">₹31,250</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8;" id="scenValSpend">₹31,250</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#34d399; font-weight:700;" id="scenDiffSpend">₹0</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+                                <td style="padding:12px; font-weight:700; color:#ffffff;">TACoS (%)</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#cbd5e1;" id="scenCurrTacos">12.50%</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8;" id="scenValTacos">12.50%</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#34d399; font-weight:700;" id="scenDiffTacos">0.00 pp</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+                                <td style="padding:12px; font-weight:700; color:#ffffff;">Organic Share %</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#cbd5e1;" id="scenCurrOrgShare">62.50%</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8;" id="scenValOrgShare">62.50%</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#34d399; font-weight:700;" id="scenDiffOrgShare">0.00 pp</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:12px; font-weight:700; color:#ffffff;">Net Profit Impact (₹)</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#cbd5e1;" id="scenCurrProfit">-₹31,250</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8;" id="scenValProfit">-₹31,250</td>
+                                <td style="padding:12px; text-align:right; font-family:'DM Mono',monospace; color:#34d399; font-weight:700;" id="scenDiffProfit">₹0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin-top:16px; font-size:12px; color:#94a3b8; font-style:italic;">
+                    * Assumes ad sales scale proportionally with ad spend adjustments under fixed ACoS.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 08 · VOLUME BENCHMARK MODEL -->
+    <section class="light-section-wrapper">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:24px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+                <div>
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">VOLUME SCALE MODEL</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Account Scale Benchmark Projections</h2>
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <button type="button" class="btn-secondary" id="btnVol10k" onclick="setVolumeModel(10000)" style="padding:6px 14px; font-size:13px;">₹10k Scale</button>
+                    <button type="button" class="btn-primary" id="btnVol100k" onclick="setVolumeModel(100000)" style="padding:6px 14px; font-size:13px;">₹1 Lakh Scale</button>
+                    <button type="button" class="btn-secondary" id="btnVol1m" onclick="setVolumeModel(1000000)" style="padding:6px 14px; font-size:13px;">₹10 Lakh Scale</button>
+                </div>
+            </div>
+
+            <div class="white-card">
+                <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#64748b; margin-bottom:16px;" id="volModelHeader">
+                    AT YOUR OBSERVED 12.50% TACOS (PER ₹1,00,000 TOTAL REVENUE):
+                </div>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:16px; text-align:center;">
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
+                        <div style="font-size:11px; color:#64748b;">AD SPEND</div>
+                        <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#2563eb; margin-top:4px;" id="volSpend">₹12,500</div>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
+                        <div style="font-size:11px; color:#64748b;">PAID AD SALES</div>
+                        <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#0f172a; margin-top:4px;" id="volAdSales">₹37,500</div>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
+                        <div style="font-size:11px; color:#64748b;">ORGANIC REVENUE</div>
+                        <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#059669; margin-top:4px;" id="volOrgSales">₹62,500</div>
+                    </div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
+                        <div style="font-size:11px; color:#64748b;">MODELLED TOTAL ORDERS</div>
+                        <div style="font-size:24px; font-weight:800; font-family:'DM Mono',monospace; color:#7c3aed; margin-top:4px;" id="volOrders">133 Orders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 09 · ACOS VS TACOS TRAJECTORY QUADRANTS -->
+    <section class="light-section-alt" style="background:#f8fafc; color:#0f172a;">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:28px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">STRATEGIC TRAJECTORY</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">The 4 ACoS vs TACoS Growth Quadrants</h2>
+                <p style="font-size:15px; color:#475569; margin:0;">Tracking how ACoS and TACoS interact over time reveals your true brand momentum.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
+                
+                <div class="white-card" style="border-top:4px solid #059669;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#059669; margin-bottom:6px;">QUADRANT 1 · IDEAL SCALE</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 8px 0;">Declining ACoS + Declining TACoS</h3>
+                    <p style="font-size:13.5px; color:#475569; line-height:1.55; margin:0;">
+                        Peak campaign efficiency. Organic search ranks are rising rapidly, allowing organic sales to outpace ad spend growth.
+                    </p>
+                </div>
+
+                <div class="white-card" style="border-top:4px solid #2563eb;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; margin-bottom:6px;">QUADRANT 2 · LAUNCH / RANKING</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 8px 0;">Rising ACoS + Declining TACoS</h3>
+                    <p style="font-size:13.5px; color:#475569; line-height:1.55; margin:0;">
+                        Aggressive bid strategy. Even though ad unit cost is high, ad velocity is successfully lifting overall organic revenue.
+                    </p>
+                </div>
+
+                <div class="white-card" style="border-top:4px solid #d97706;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#d97706; margin-bottom:6px;">QUADRANT 3 · ORGANIC EROSION</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 8px 0;">Declining ACoS + Rising TACoS</h3>
+                    <p style="font-size:13.5px; color:#475569; line-height:1.55; margin:0;">
+                        Dangerous illusion. Ads look efficient on paper, but organic keyword rank is slipping, making total revenue shrink.
+                    </p>
+                </div>
+
+                <div class="white-card" style="border-top:4px solid #dc2626;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#dc2626; margin-bottom:6px;">QUADRANT 4 · CRITICAL BURN</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 8px 0;">Rising ACoS + Rising TACoS</h3>
+                    <p style="font-size:13.5px; color:#475569; line-height:1.55; margin:0;">
+                        Unprofitable money pit. PPC spend is burning margin without generating organic rank. Immediate audit required.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 10 · MULTI-VARIABLE TACOS x ACOS SENSITIVITY MATRIX (DARK THEME) -->
+    <section class="dark-section-wrapper" id="sensitivityMatrix">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:24px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">MULTI-VARIABLE MATRIX</div>
+                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">TACoS × ACoS Organic Multiplier Matrix</h2>
+                <p style="font-size:14px; color:#cbd5e1; margin:0;">Modelled Organic Multiplier across combined ACoS and TACoS levels.</p>
+            </div>
+
+            <div class="dark-glass-card" style="overflow-x:auto;">
+                <table class="matrix-table" id="matrixTable">
+                    <!-- MATRIX GENERATED DYNAMICALLY -->
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11 · TACOS DIAGNOSTIC ENGINE & SYMPTOM TROUBLESHOOTER (DARK THEME) -->
+    <section class="dark-section-alt" id="diagnosticEngine">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:28px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">ACCOUNT DIAGNOSTICS</div>
+                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">TACoS Symptom Troubleshooter</h2>
+                <p style="font-size:15px; color:#cbd5e1; margin:0;">Select your current account symptom to unlock specific optimization steps.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap:28px; align-items:start;">
+                
+                <div style="display:grid; gap:12px;">
+                    <div class="symptom-pill active" onclick="selectDiagnostic(0)" id="diagPill0">1. High ACoS &amp; High TACoS (Money Loss)</div>
+                    <div class="symptom-pill" onclick="selectDiagnostic(1)" id="diagPill1">2. Low ACoS but Rising TACoS (Organic Rank Slip)</div>
+                    <div class="symptom-pill" onclick="selectDiagnostic(2)" id="diagPill2">3. High ACoS but Stable TACoS (Product Launch)</div>
+                    <div class="symptom-pill" onclick="selectDiagnostic(3)" id="diagPill3">4. Low TACoS but Stagnant Revenue (Under-investing)</div>
+                    <div class="symptom-pill" onclick="selectDiagnostic(4)" id="diagPill4">5. TACoS Spiking After Price Increase</div>
+                    <div class="symptom-pill" onclick="selectDiagnostic(5)" id="diagPill5">6. Paid Sales Up but Organic Sales Down (Cannibalization)</div>
+                </div>
+
+                <div class="dark-glass-card" style="border-left:4px solid #38bdf8;" id="diagOutputCard">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:1px;" id="diagOutputArea">DIAGNOSTIC AREA</div>
+                    <h3 style="font-size:22px; font-weight:800; color:#ffffff; margin:6px 0 12px 0;" id="diagOutputTitle">Symptom Title</h3>
+                    <p style="font-size:14.5px; color:#cbd5e1; line-height:1.6; margin-bottom:20px;" id="diagOutputDesc">Description</p>
+
+                    <div style="background:rgba(30, 41, 59, 0.7); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:18px;">
+                        <div style="font-size:12px; font-family:'DM Mono',monospace; font-weight:700; color:#34d399; margin-bottom:10px;">RECOMMENDED ACTION CHECKLIST:</div>
+                        <ul style="margin:0; padding-left:20px; font-size:13.5px; color:#cbd5e1; line-height:1.7;" id="diagOutputChecklist">
+                            <li>Checklist step 1</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 12 · CATEGORY & MATURITY TACOS BENCHMARKS -->
+    <section class="light-section-wrapper">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:24px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">INDUSTRY BENCHMARKS</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Target TACoS by Product Maturity Stage</h2>
+                <p style="font-size:14px; color:#475569; margin:0;">What constitutes a "good" TACoS changes dramatically as your ASIN matures.</p>
+            </div>
+
+            <div class="white-card" style="overflow-x:auto;">
+                <table style="width:100%; border-collapse:collapse; text-align:left; font-size:14px;">
+                    <thead>
+                        <tr style="background:#f1f5f9; border-bottom:2px solid #cbd5e1;">
+                            <th style="padding:12px; color:#0f172a;">PRODUCT STAGE</th>
+                            <th style="padding:12px; color:#2563eb;">TARGET TACOS RANGE</th>
+                            <th style="padding:12px; color:#059669;">EXPECTED ORGANIC SHARE</th>
+                            <th style="padding:12px; color:#475569;">PRIMARY OBJECTIVE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid #e2e8f0;">
+                            <td style="padding:12px; font-weight:700;">1. Product Launch (0-60 Days)</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; font-weight:700; color:#2563eb;">20.0% – 40.0%+</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; color:#059669;">10% – 30%</td>
+                            <td style="padding:12px; color:#475569;">Build keyword indexing, reviews &amp; sales velocity</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #e2e8f0;">
+                            <td style="padding:12px; font-weight:700;">2. Growth &amp; Scaling (2-6 Months)</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; font-weight:700; color:#2563eb;">12.0% – 20.0%</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; color:#059669;">40% – 60%</td>
+                            <td style="padding:12px; color:#475569;">Expand organic rank onto Page 1 head terms</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #e2e8f0;">
+                            <td style="padding:12px; font-weight:700;">3. Mature Brand (6+ Months)</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; font-weight:700; color:#2563eb;">7.0% – 12.0%</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; color:#059669;">65% – 85%</td>
+                            <td style="padding:12px; color:#475569;">Maximize net store profit &amp; brand defense</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:12px; font-weight:700;">4. Hero ASIN / Category Leader</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; font-weight:700; color:#2563eb;">4.0% – 8.0%</td>
+                            <td style="padding:12px; font-family:'DM Mono',monospace; color:#059669;">80% – 90%+</td>
+                            <td style="padding:12px; color:#475569;">Harvest organic volume with minimal ad tax</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13 · TOP 3 DYNAMIC STRATEGIC PRIORITIES (DARK THEME) -->
+    <section class="dark-section-wrapper" id="prioritiesSection">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:28px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">TAILORED ACTION PLAN</div>
+                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Top 3 Strategic Priorities for Your Account</h2>
+                <p style="font-size:15px; color:#cbd5e1; margin:0;">Calculated automatically based on your specific TACoS, ACoS, and organic revenue mix.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;" id="prioritiesGrid">
+                <!-- GENERATED DYNAMICALLY -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 14 · TECHNICAL MATH FORMULA MANUAL -->
+    <section class="light-section-alt" style="background:#f8fafc; color:#0f172a;">
+        <div class="resources-section-container" style="max-width:1100px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:24px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">FORMULA MANUAL</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">How the TACoS Engine Calculates Your Numbers</h2>
+            </div>
+
+            <div class="white-card" style="font-family:'DM Mono',monospace; font-size:13.5px; color:#334155; line-height:1.8;" id="formulaManualBox">
+                <!-- FORMULA BOX GENERATED DYNAMICALLY -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 15 · COMPREHENSIVE EDUCATIONAL GUIDE & FAQS -->
+    <section class="light-section-wrapper">
+        <div class="resources-section-container" style="max-width:1000px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:32px; text-align:center;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">KNOWLEDGE BASE</div>
+                <h2 style="font-size:32px; font-weight:800; color:#0f172a; margin:6px 0;">Frequently Asked Questions About Amazon TACoS</h2>
+            </div>
+
+            <div style="display:grid; gap:16px;">
+                <details class="white-card">
+                    <summary style="font-size:16px; font-weight:700; color:#0f172a; cursor:pointer;">What is Amazon TACoS and why is it more important than ACoS?</summary>
+                    <div style="margin-top:12px; font-size:14.5px; color:#475569; line-height:1.6;">
+                        TACoS (Total Advertising Cost of Sales) measures ad spend against total store revenue (organic + paid). While ACoS only measures direct ad ROI, TACoS measures your overall brand profitability and whether PPC spend is successfully building organic keyword rank.
+                    </div>
+                </details>
+
+                <details class="white-card">
+                    <summary style="font-size:16px; font-weight:700; color:#0f172a; cursor:pointer;">What is a good TACoS benchmark for Amazon sellers in India?</summary>
+                    <div style="margin-top:12px; font-size:14.5px; color:#475569; line-height:1.6;">
+                        For mature Amazon products, a healthy TACoS is between 8% and 15%. During new product launches, TACoS of 20% to 35% is acceptable to index for main keywords. Category leaders often maintain TACoS under 6%.
+                    </div>
+                </details>
+
+                <details class="white-card">
+                    <summary style="font-size:16px; font-weight:700; color:#0f172a; cursor:pointer;">How do I lower my TACoS without dropping organic rankings?</summary>
+                    <div style="margin-top:12px; font-size:14.5px; color:#475569; line-height:1.6;">
+                        Lower TACoS by shifting budget into high-intent converting keywords, improving listing main images to boost CTR, adding negative exact keywords for non-converting search terms, and driving external traffic (Google/Meta ads) to boost Amazon organic rank.
+                    </div>
+                </details>
+
+                <details class="white-card">
+                    <summary style="font-size:16px; font-weight:700; color:#0f172a; cursor:pointer;">Why is my TACoS rising even though my ACoS is improving?</summary>
+                    <div style="margin-top:12px; font-size:14.5px; color:#475569; line-height:1.6;">
+                        This indicates organic sales erosion. While your ad campaigns are running efficiently, your organic search position is slipping—meaning total revenue is shrinking faster than ad spend.
+                    </div>
+                </details>
+
+                <details class="white-card">
+                    <summary style="font-size:16px; font-weight:700; color:#0f172a; cursor:pointer;">What is the Organic Sales Multiplier?</summary>
+                    <div style="margin-top:12px; font-size:14.5px; color:#475569; line-height:1.6;">
+                        The Organic Multiplier measures how many rupees of total revenue are generated for every rupee of ad-attributed sales (`Total Sales ÷ Ad Sales`). A 2.5x multiplier means ₹1 of paid sales creates ₹1.50 of organic sales.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16 · RELATED PPC CALCULATORS -->
+    <section class="light-section-alt" style="background:#f8fafc; color:#0f172a;">
+        <div class="resources-section-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="margin-bottom:24px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">MORE TOOLS</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Explore PPC Growth Expert Tools</h2>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+                <a href="amazon-acos-calculator.html" class="white-card" style="text-decoration:none; color:inherit;">
+                    <div style="font-size:24px; margin-bottom:8px;">📊</div>
+                    <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">ACoS Calculator</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">Calculate direct ad cost of sales</p>
+                </a>
+                <a href="amazon-roas-calculator.html" class="white-card" style="text-decoration:none; color:inherit;">
+                    <div style="font-size:24px; margin-bottom:8px;">🚀</div>
+                    <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">ROAS Calculator</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">Measure return on ad spend</p>
+                </a>
+                <a href="amazon-ppc-conversion-rate-calculator.html" class="white-card" style="text-decoration:none; color:inherit;">
+                    <div style="font-size:24px; margin-bottom:8px;">⚡</div>
+                    <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">Conversion Calculator</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">Analyze CVR &amp; orders</p>
+                </a>
+                <a href="amazon-cpc-calculator.html" class="white-card" style="text-decoration:none; color:inherit;">
+                    <div style="font-size:24px; margin-bottom:8px;">💵</div>
+                    <h3 style="font-size:16px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">CPC Calculator</h3>
+                    <p style="font-size:12.5px; color:#64748b; margin:0;">Calculate average cost per click</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 17 · FINAL AUDIT CTA BANNER -->
+    <section class="resources-audit-cta" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding:60px 20px; text-align:center; color:#ffffff;">
+        <div style="max-width:800px; margin:0 auto;">
+            <div class="hero-eyebrow" style="color:#38bdf8; border-color:rgba(56,189,248,0.3); background:rgba(56,189,248,0.1);">WANT TO LOWER YOUR TACOS PROFITABLY?</div>
+            <h2 style="font-size:32px; font-weight:800; color:#ffffff; margin:12px 0 16px 0;">Get a Custom Amazon TACoS &amp; PPC Audit</h2>
+            <p style="font-size:16px; color:#cbd5e1; line-height:1.65; margin-bottom:28px;">
+                PPC Growth Expert can analyze your search terms, organic keyword positions, ACoS vs TACoS gap, and ad spend allocation to build a strategy that lowers TACoS while expanding organic sales.
+            </p>
+            <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+                <a href="contact.html" class="btn-primary" style="padding:14px 28px; font-size:15px;">Request Free TACoS Audit →</a>
+                <a href="services.html" class="btn-secondary" style="padding:14px 28px; font-size:15px; background:transparent; color:#ffffff; border-color:rgba(255,255,255,0.3);">Explore Amazon PPC Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18 · GLOBAL FOOTER -->
     <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
-
         <div class="footer-container">
-
-            <!-- TOP GRID -->
             <div class="footer-grid">
-
-                <!-- COL 1: BRAND GLASS CARD -->
                 <div class="footer-col brand-col">
                     <div class="brand-card">
                         <a href="index.html" class="footer-logo">
-                            <div class="logo-badge">
-                                <div class="logo-symbol"></div>
-                            </div>
-                            <span class="logo-text">
-                                PPC <span class="highlight">Growth</span> Expert
-                            </span>
+                            <div class="logo-badge"><div class="logo-symbol"></div></div>
+                            <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
                         </a>
-
-                        <p class="footer-sub-tagline">
-                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
-                        </p>
-
+                        <p class="footer-sub-tagline">Independent Amazon PPC consultancy founded by Anmol Pokhriyal.</p>
                         <p class="footer-tagline" itemprop="description">
                             PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
                         </p>
                     </div>
                 </div>
 
-
-                <!-- COL 2: SERVICES -->
                 <div class="footer-col">
                     <h3 class="footer-heading">SERVICES</h3>
                     <ul class="footer-links">
@@ -215,33 +1212,15 @@
                     </ul>
                 </div>
 
-
-                <!-- COL 3: CONTACT US -->
-                <div class="footer-col contact-col" itemprop="address" itemscope
-                    itemtype="http://schema.org/PostalAddress">
+                <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                     <h3 class="footer-heading">CONTACT US</h3>
                     <ul class="footer-contact-list">
-                        <li>
-                            <div class="contact-icon-pill">📍</div>
-                            <div>
-                                <span itemprop="addressLocality">Noida</span>,<br>
-                                <span itemprop="addressRegion">Uttar Pradesh</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">📞</div>
-                            <a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">✉️</div>
-                            <a href="mailto:anmolpokhriyal3200@gmail.com"
-                                itemprop="email">anmolpokhriyal3200@gmail.com</a>
-                        </li>
+                        <li><div class="contact-icon-pill">📍</div><div><span itemprop="addressLocality">Noida</span>,<br><span itemprop="addressRegion">Uttar Pradesh</span></div></li>
+                        <li><div class="contact-icon-pill">📞</div><a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a></li>
+                        <li><div class="contact-icon-pill">✉️</div><a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a></li>
                     </ul>
                 </div>
 
-
-                <!-- COL 4: COMPANY -->
                 <div class="footer-col">
                     <h3 class="footer-heading">COMPANY</h3>
                     <ul class="footer-links">
@@ -251,34 +1230,536 @@
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-
             </div>
 
-
-            <!-- MIDDLE BAR -->
             <div class="footer-middle">
                 <p class="footer-meta-info">
-                    PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 ·
-                    anmolpokhriyal3200@gmail.com
+                    PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 · anmolpokhriyal3200@gmail.com
                 </p>
             </div>
 
-
-            <!-- BOTTOM COPYRIGHT BAR -->
             <div class="footer-bottom">
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
-                    class="scroll-top-btn" aria-label="Scroll to top">
-                    ↑
-                </a>
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
             </div>
-
         </div>
-
     </footer>
 
-    <script src="js/script.js?v=v27"></script>
-    <script src="js/navbar.js?v=v27"></script>
-    <script src="js/calculators.js?v=v1"></script>
+    <!-- ENGINE JAVASCRIPT -->
+    <script>
+        let currentVolumeTarget = 100000;
+        let activeDiagIndex = 0;
+
+        const diagnosticData = [
+            {
+                area: "CRITICAL PROFIT RISK",
+                title: "High ACoS & High TACoS",
+                desc: "Your ad spend is consuming a massive portion of total revenue while ad campaigns themselves are unprofitable. This indicates poor keyword targeting or an uncompetitive detail page.",
+                checklist: [
+                    "Audit search terms for high-spend non-converting keywords and add negative exact matches.",
+                    "Review CPC bids across top 20 campaigns and trim over-bidding target terms.",
+                    "Verify listing price point and customer rating relative to top 3 organic competitors.",
+                    "Pause high-budget Sponsored Brands & Display campaigns until Sponsored Products reach break-even."
+                ]
+            },
+            {
+                area: "ORGANIC RANKING EROSION",
+                title: "Low ACoS but Rising TACoS",
+                desc: "A dangerous illusion. While ad campaigns report high efficiency, your overall TACoS is worsening—meaning organic keyword rankings are falling and total sales are shrinking.",
+                checklist: [
+                    "Track organic rank positions for your top 10 primary sales-driving keywords.",
+                    "Check if main competitor price cuts or deal badges are stealing organic Buy Box clicks.",
+                    "Increase ad budget on high-intent exact match keywords to defend organic rank position.",
+                    "Review recent customer feedback for product quality issues impacting organic conversion."
+                ]
+            },
+            {
+                area: "PRODUCT LAUNCH PHASE",
+                title: "High ACoS but Stable TACoS",
+                desc: "Common during product launches or aggressive market expansion. High ad bids generate initial sales velocity, driving organic keyword indexing.",
+                checklist: [
+                    "Monitor organic ranking improvements on a weekly basis to confirm indexing progress.",
+                    "Ensure total ad spend does not breach your pre-planned launch budget cap.",
+                    "Gradually transition budget from broad/auto campaigns to exact match ranking terms.",
+                    "Optimize listing A+ Content and main images to improve organic conversion rate."
+                ]
+            },
+            {
+                area: "UNDER-INVESTMENT RISK",
+                title: "Low TACoS but Stagnant Revenue",
+                desc: "Your account is extremely profitable, but total revenue growth has plateaued. You may be under-investing in PPC ad spend and missing category market share.",
+                checklist: [
+                    "Test incremental ad budget increases on top-performing exact match keywords.",
+                    "Launch Sponsored Brands video ads to capture top-of-search visual placement.",
+                    "Expand keyword targeting to secondary long-tail search terms.",
+                    "Run conquesting campaigns on competitor product detail pages."
+                ]
+            },
+            {
+                area: "CONVERSION / PRICE IMPACT",
+                title: "TACoS Spiking After Price Increase",
+                desc: "Increasing prices reduced both ad and organic conversion rates, causing ad spend to produce fewer orders relative to total revenue.",
+                checklist: [
+                    "Test minor price adjustments or introduce digital coupons to soften price perception.",
+                    "Audit click-through rate (CTR) and conversion rate (CVR) before vs after price change.",
+                    "Re-evaluate competitor price points across top search results pages.",
+                    "Focus ad spend on unique bundle variations or higher-margin multipacks."
+                ]
+            },
+            {
+                area: "AD CANNIBALIZATION",
+                title: "Paid Sales Growing but Organic Sales Shrinking",
+                desc: "PPC ads are buying clicks from shoppers who would have bought organically anyway (e.g. over-spending on branded keywords).",
+                checklist: [
+                    "Reduce branded search ad bids if you already hold rank #1 organic position.",
+                    "Shift ad budget from branded terms into non-branded generic ranking keywords.",
+                    "Audit Placement Modifier adjustments (Top of Search vs Product Pages).",
+                    "Track total account sales (not just ad sales) whenever altering ad budgets."
+                ]
+            }
+        ];
+
+        function formatInr(num) {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(num);
+        }
+
+        function formatInteger(num) {
+            return new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(num);
+        }
+
+        function formatDecimal(num, decimals = 2) {
+            if (isNaN(num) || !isFinite(num)) return '0.00';
+            return num.toLocaleString('en-IN', {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals
+            });
+        }
+
+        function calculateTacosEngine() {
+            const totalRevenueInput = parseFloat(document.getElementById('inputTotalRevenue').value) || 0;
+            const adSpendInput = parseFloat(document.getElementById('inputAdSpend').value) || 0;
+            const targetTacosInput = parseFloat(document.getElementById('inputTargetTacos').value) || 10.0;
+            const adSalesInput = parseFloat(document.getElementById('inputAdSales').value) || 0;
+            const adOrdersInput = parseFloat(document.getElementById('inputAdOrders').value) || 0;
+            const totalOrdersInput = parseFloat(document.getElementById('inputTotalOrders').value) || 0;
+
+            if (totalRevenueInput <= 0) {
+                document.getElementById('resTacosVal').innerText = '0.00%';
+                document.getElementById('resTacosSub').innerText = 'Total revenue must be greater than ₹0';
+                return;
+            }
+
+            // Core TACoS Calculation
+            const tacosPercent = (adSpendInput / totalRevenueInput) * 100;
+            
+            // Paid vs Organic Breakdown
+            let actualAdSales = adSalesInput;
+            if (actualAdSales > totalRevenueInput) {
+                actualAdSales = totalRevenueInput;
+            }
+
+            const organicRevenue = Math.max(0, totalRevenueInput - actualAdSales);
+            const organicSharePercent = (organicRevenue / totalRevenueInput) * 100;
+            const paidSharePercent = (actualAdSales / totalRevenueInput) * 100;
+            const organicMultiplier = actualAdSales > 0 ? (totalRevenueInput / actualAdSales) : 1.0;
+
+            // Downstream ACoS & Gaps
+            const acosPercent = actualAdSales > 0 ? ((adSpendInput / actualAdSales) * 100) : 0;
+            const acosTacosGap = acosPercent - tacosPercent;
+            const blendedRoas = adSpendInput > 0 ? (totalRevenueInput / adSpendInput) : 0;
+            const blendedCac = totalOrdersInput > 0 ? (adSpendInput / totalOrdersInput) : 0;
+            const organicOrders = Math.max(0, totalOrdersInput - adOrdersInput);
+
+            // Display Results
+            let tacosFormatted = formatDecimal(tacosPercent, 2) + '%';
+            document.getElementById('resTacosVal').innerText = tacosFormatted;
+            document.getElementById('resTacosSub').innerText = `${formatDecimal(tacosPercent, 2)}% of total account revenue was spent on Amazon PPC ads`;
+            
+            document.getElementById('resOrganicShare').innerText = formatDecimal(organicSharePercent, 2) + '%';
+            document.getElementById('resPaidShare').innerText = formatDecimal(paidSharePercent, 2) + '%';
+            document.getElementById('resOrganicMultiplier').innerText = formatDecimal(organicMultiplier, 2) + 'x';
+
+            document.getElementById('resAcosVal').innerText = actualAdSales > 0 ? (formatDecimal(acosPercent, 2) + '%') : 'N/A';
+            document.getElementById('resGapVal').innerText = actualAdSales > 0 ? (formatDecimal(acosTacosGap, 2) + ' pp') : 'N/A';
+            document.getElementById('resOrganicSales').innerText = formatInr(organicRevenue);
+            document.getElementById('resBlendedRoas').innerText = adSpendInput > 0 ? (formatDecimal(blendedRoas, 2) + 'x') : 'N/A';
+
+            // TACoS Status Badge
+            const badgeEl = document.getElementById('tacosBadgeVal');
+            if (tacosPercent <= 8) {
+                badgeEl.innerText = 'HERO / LOW TACOS';
+                badgeEl.style.color = '#34d399';
+                badgeEl.style.background = 'rgba(52, 211, 153, 0.15)';
+            } else if (tacosPercent <= 15) {
+                badgeEl.innerText = 'HEALTHY TACOS';
+                badgeEl.style.color = '#38bdf8';
+                badgeEl.style.background = 'rgba(56, 189, 248, 0.15)';
+            } else if (tacosPercent <= 25) {
+                badgeEl.innerText = 'MODERATE / LAUNCH TACOS';
+                badgeEl.style.color = '#f59e0b';
+                badgeEl.style.background = 'rgba(245, 158, 11, 0.15)';
+            } else {
+                badgeEl.innerText = 'HIGH TACOS RELIANCE';
+                badgeEl.style.color = '#f87171';
+                badgeEl.style.background = 'rgba(248, 113, 113, 0.15)';
+            }
+
+            // Dynamic Narrative Interpretation
+            let interp = `Your account generated <strong>${formatInr(totalRevenueInput)} total revenue</strong> with <strong>${formatInr(adSpendInput)} ad spend</strong>, producing a <strong>${formatDecimal(tacosPercent, 2)}% TACoS</strong>. Organic sales account for <strong>${formatDecimal(organicSharePercent, 2)}% (${formatInr(organicRevenue)})</strong> of total store revenue.`;
+            if (actualAdSales > 0) {
+                interp += `<br><br>Ad-attributed sales reached <strong>${formatInr(actualAdSales)}</strong> with an observed ACoS of <strong>${formatDecimal(acosPercent, 2)}%</strong>. Every ₹1 of paid ad sales supports <strong>${formatDecimal(organicMultiplier, 2)}x</strong> in total account revenue.`;
+            }
+            document.getElementById('interpretationText').innerHTML = interp;
+
+            // Visualizer Split Bar
+            document.getElementById('barOrganicText').innerText = `${formatInr(organicRevenue)} (${formatDecimal(organicSharePercent, 1)}%)`;
+            document.getElementById('barPaidText').innerText = `${formatInr(actualAdSales)} (${formatDecimal(paidSharePercent, 1)}%)`;
+            document.getElementById('barOrganicWidth').style.width = `${Math.min(100, Math.max(0, organicSharePercent))}%`;
+            document.getElementById('barPaidWidth').style.width = `${Math.min(100, Math.max(0, paidSharePercent))}%`;
+
+            document.getElementById('dispOrgMult').innerText = formatDecimal(organicMultiplier, 2) + 'x';
+            document.getElementById('dispBlendedCac').innerText = totalOrdersInput > 0 ? formatInr(blendedCac) : 'N/A';
+            document.getElementById('dispOrgOrders').innerText = `${formatInteger(organicOrders)} Orders`;
+
+            // Telemetry Diagnostics
+            updateTelemetryDiagnostics(tacosPercent, organicSharePercent, acosPercent, acosTacosGap, adSpendInput);
+
+            // Target TACoS Planning Models
+            updateTargetPlanners(totalRevenueInput, adSpendInput, targetTacosInput);
+
+            // Stress-Test Lab
+            updateStressTestLab(totalRevenueInput, adSpendInput, tacosPercent, organicSharePercent);
+
+            // Volume Benchmark Model
+            updateVolumeDisplay(tacosPercent, paidSharePercent, organicSharePercent);
+
+            // Matrix Table Generation
+            generateSensitivityMatrix(tacosPercent, acosPercent);
+
+            // Dynamic Priorities Generation
+            generateDynamicPriorities(tacosPercent, targetTacosInput, organicSharePercent, acosPercent, acosTacosGap);
+
+            // Formula Reference Manual
+            generateFormulaBox(totalRevenueInput, adSpendInput, tacosPercent, organicRevenue, organicSharePercent, paidSharePercent, organicMultiplier);
+        }
+
+        function updateTelemetryDiagnostics(tacos, organicShare, acos, gap, spend) {
+            // Diagnostic 1: Status
+            const d1Val = document.getElementById('diagTacosStatus');
+            const d1Desc = document.getElementById('diagTacosDesc');
+            if (tacos <= 8) {
+                d1Val.innerText = `EXCELLENT (${formatDecimal(tacos, 2)}%)`;
+                d1Val.style.color = '#34d399';
+                d1Desc.innerText = "Minimal ad spend tax on gross revenue. Highly sustainable profit margins.";
+            } else if (tacos <= 15) {
+                d1Val.innerText = `HEALTHY (${formatDecimal(tacos, 2)}%)`;
+                d1Val.style.color = '#38bdf8';
+                d1Desc.innerText = "Balanced advertising spend leaving healthy net profit for business reinvestment.";
+            } else if (tacos <= 25) {
+                d1Val.innerText = `MODERATE (${formatDecimal(tacos, 2)}%)`;
+                d1Val.style.color = '#f59e0b';
+                d1Desc.innerText = "Acceptable during growth/launch phases, but requires monitoring to prevent margin erosion.";
+            } else {
+                d1Val.innerText = `HIGH TACOS (${formatDecimal(tacos, 2)}%)`;
+                d1Val.style.color = '#f87171';
+                d1Desc.innerText = "Ad spend is consuming over 25% of gross revenue. Critical reliance on PPC ad dollars.";
+            }
+
+            // Diagnostic 2: Velocity
+            const d2Val = document.getElementById('diagRankVelocity');
+            const d2Desc = document.getElementById('diagRankDesc');
+            if (organicShare >= 65) {
+                d2Val.innerText = "HIGH ORGANIC RANK";
+                d2Val.style.color = '#34d399';
+                d2Desc.innerText = "Strong organic sales momentum. Over 65% of total revenue comes without ad spend.";
+            } else if (organicShare >= 40) {
+                d2Val.innerText = "MODERATE RANK";
+                d2Val.style.color = '#38bdf8';
+                d2Desc.innerText = "Balanced organic and paid sales mix. Keyword ranking is generating organic traction.";
+            } else {
+                d2Val.innerText = "WEAK ORGANIC RANK";
+                d2Val.style.color = '#f87171';
+                d2Desc.innerText = "PPC ads generate over 60% of total revenue. Low organic keyword visibility.";
+            }
+
+            // Diagnostic 3: Divergence
+            const d3Val = document.getElementById('diagDivergence');
+            const d3Desc = document.getElementById('diagDivergenceDesc');
+            if (gap >= 15) {
+                d3Val.innerText = `WIDE GAP (${formatDecimal(gap, 1)}pp)`;
+                d3Val.style.color = '#34d399';
+                d3Desc.innerText = "Large buffer between ACoS and TACoS confirms strong organic revenue leverage.";
+            } else if (gap >= 5) {
+                d3Val.innerText = `MODERATE GAP (${formatDecimal(gap, 1)}pp)`;
+                d3Val.style.color = '#38bdf8';
+                d3Desc.innerText = "Healthy gap. Organic sales provide cushion against ad bid inflation.";
+            } else {
+                d3Val.innerText = `NARROW GAP (${formatDecimal(gap, 1)}pp)`;
+                d3Val.style.color = '#f87171';
+                d3Desc.innerText = "ACoS and TACoS are nearly equal, indicating total sales almost entirely depend on PPC.";
+            }
+
+            // Diagnostic 4: Net Margin
+            document.getElementById('diagMarginImpact').innerText = `-${formatDecimal(tacos, 2)}% Off Margin`;
+            document.getElementById('diagMarginDesc').innerText = `PPC ad spend reduces your overall gross profit margin by exactly ${formatDecimal(tacos, 2)} percentage points.`;
+        }
+
+        function updateTargetPlanners(totalRev, spend, targetTacos) {
+            document.getElementById('planRevenueConst').innerText = formatInr(totalRev);
+            document.getElementById('planSpendConst').innerText = formatInr(spend);
+
+            // Model 1: Max Spend
+            const maxSpend = totalRev * (targetTacos / 100);
+            const spendDiff = maxSpend - spend;
+            document.getElementById('planMaxSpend').innerText = formatInr(maxSpend);
+            const spendDiffEl = document.getElementById('planSpendDiff');
+            if (spendDiff >= 0) {
+                spendDiffEl.innerText = `Can increase ad spend by +${formatInr(spendDiff)} within target`;
+                spendDiffEl.style.color = '#059669';
+            } else {
+                spendDiffEl.innerText = `Need to cut ad spend by ${formatInr(Math.abs(spendDiff))} to reach ${formatDecimal(targetTacos, 1)}% TACoS`;
+                spendDiffEl.style.color = '#dc2626';
+            }
+
+            // Model 2: Required Revenue
+            const reqRev = spend / (targetTacos / 100);
+            const revGap = reqRev - totalRev;
+            document.getElementById('planReqRevenue').innerText = formatInr(reqRev);
+            const revGapEl = document.getElementById('planRevGap');
+            if (revGap <= 0) {
+                revGapEl.innerText = `Current revenue already exceeds target threshold by ${formatInr(Math.abs(revGap))}`;
+                revGapEl.style.color = '#059669';
+            } else {
+                revGapEl.innerText = `Need +${formatInr(revGap)} (+${formatDecimal((revGap / totalRev) * 100, 1)}%) revenue growth`;
+                revGapEl.style.color = '#2563eb';
+            }
+        }
+
+        function updateStressTestLab(totalRev, currSpend, currTacos, orgShare) {
+            const sliderVal = parseFloat(document.getElementById('tacosSlider').value) || 0;
+            const pctText = (sliderVal >= 0 ? '+' : '') + sliderVal + '%';
+            document.getElementById('sliderValText').innerText = `${formatInr(currSpend * (1 + sliderVal / 100))} (${pctText})`;
+            document.getElementById('tableScenPercent').innerText = pctText;
+
+            const scenSpend = currSpend * (1 + sliderVal / 100);
+            const scenTotalRev = totalRev + (scenSpend - currSpend) * 2.0; // Modelled 2.0x revenue lift on spend shift
+            const scenTacos = (scenSpend / scenTotalRev) * 100;
+            const scenOrgShare = orgShare;
+
+            document.getElementById('scenCurrSpend').innerText = formatInr(currSpend);
+            document.getElementById('scenValSpend').innerText = formatInr(scenSpend);
+            document.getElementById('scenDiffSpend').innerText = (scenSpend - currSpend >= 0 ? '+' : '') + formatInr(scenSpend - currSpend);
+
+            document.getElementById('scenCurrTacos').innerText = formatDecimal(currTacos, 2) + '%';
+            document.getElementById('scenValTacos').innerText = formatDecimal(scenTacos, 2) + '%';
+            document.getElementById('scenDiffTacos').innerText = (scenTacos - currTacos >= 0 ? '+' : '') + formatDecimal(scenTacos - currTacos, 2) + ' pp';
+
+            document.getElementById('scenCurrOrgShare').innerText = formatDecimal(orgShare, 2) + '%';
+            document.getElementById('scenValOrgShare').innerText = formatDecimal(scenOrgShare, 2) + '%';
+            document.getElementById('scenDiffOrgShare').innerText = '0.00 pp';
+
+            document.getElementById('scenCurrProfit').innerText = '-' + formatInr(currSpend);
+            document.getElementById('scenValProfit').innerText = '-' + formatInr(scenSpend);
+            document.getElementById('scenDiffProfit').innerText = (scenSpend - currSpend <= 0 ? '+' : '-') + formatInr(Math.abs(scenSpend - currSpend));
+        }
+
+        function setVolumeModel(vol) {
+            currentVolumeTarget = vol;
+            document.getElementById('btnVol10k').className = vol === 10000 ? 'btn-primary' : 'btn-secondary';
+            document.getElementById('btnVol100k').className = vol === 100000 ? 'btn-primary' : 'btn-secondary';
+            document.getElementById('btnVol1m').className = vol === 1000000 ? 'btn-primary' : 'btn-secondary';
+            calculateTacosEngine();
+        }
+
+        function updateVolumeDisplay(tacosPercent, paidShare, orgShare) {
+            const volTitle = currentVolumeTarget === 10000 ? '₹10,000' : (currentVolumeTarget === 100000 ? '₹1,00,000' : '₹10,00,000');
+            document.getElementById('volModelHeader').innerText = `AT YOUR OBSERVED ${formatDecimal(tacosPercent, 2)}% TACOS (PER ${volTitle} TOTAL REVENUE):`;
+
+            const volSpend = currentVolumeTarget * (tacosPercent / 100);
+            const volAdSales = currentVolumeTarget * (paidShare / 100);
+            const volOrgSales = currentVolumeTarget * (orgShare / 100);
+            const volOrders = Math.round(currentVolumeTarget / 750); // Estimated orders at ₹750 AOV
+
+            document.getElementById('volSpend').innerText = formatInr(volSpend);
+            document.getElementById('volAdSales').innerText = formatInr(volAdSales);
+            document.getElementById('volOrgSales').innerText = formatInr(volOrgSales);
+            document.getElementById('volOrders').innerText = `${formatInteger(volOrders)} Orders`;
+        }
+
+        function generateSensitivityMatrix(baseTacos, baseAcos) {
+            const matrixTable = document.getElementById('matrixTable');
+            const tacosOffsets = [-4.0, -2.0, 0.0, 2.0, 4.0];
+            const acosOffsets = [-10.0, -5.0, 0.0, 5.0, 10.0];
+
+            let html = '<thead><tr><th>TACoS \\ ACoS</th>';
+            acosOffsets.forEach(aOff => {
+                const acosVal = Math.max(5.0, (baseAcos || 30.0) + aOff);
+                html += `<th>${formatDecimal(acosVal, 1)}% ACoS</th>`;
+            });
+            html += '</tr></thead><tbody>';
+
+            tacosOffsets.forEach(tOff => {
+                const tacosVal = Math.max(1.0, baseTacos + tOff);
+                const isBaseRow = tOff === 0;
+                html += `<tr><td class="matrix-row-hdr">${formatDecimal(tacosVal, 1)}% TACoS</td>`;
+
+                acosOffsets.forEach(aOff => {
+                    const acosVal = Math.max(5.0, (baseAcos || 30.0) + aOff);
+                    const isBaseCol = aOff === 0;
+                    // Multiplier = ACoS / TACoS
+                    const mult = acosVal / tacosVal;
+
+                    const isHighlight = isBaseRow && isBaseCol;
+                    html += `<td class="${isHighlight ? 'highlight-cell' : ''}">${formatDecimal(mult, 2)}x Mult</td>`;
+                });
+                html += '</tr>';
+            });
+            html += 'tbody>';
+            matrixTable.innerHTML = html;
+        }
+
+        function selectDiagnostic(idx) {
+            activeDiagIndex = idx;
+            for (let i = 0; i < 6; i++) {
+                const p = document.getElementById(`diagPill${i}`);
+                if (p) p.className = i === idx ? 'symptom-pill active' : 'symptom-pill';
+            }
+
+            const data = diagnosticData[idx];
+            document.getElementById('diagOutputArea').innerText = data.area;
+            document.getElementById('diagOutputTitle').innerText = data.title;
+            document.getElementById('diagOutputDesc').innerText = data.desc;
+
+            let checkHtml = '';
+            data.checklist.forEach(step => {
+                checkHtml += `<li style="margin-bottom:8px;">${step}</li>`;
+            });
+            document.getElementById('diagOutputChecklist').innerHTML = checkHtml;
+        }
+
+        function generateDynamicPriorities(tacos, targetTacos, orgShare, acos, gap) {
+            const grid = document.getElementById('prioritiesGrid');
+            let p1 = { title: "", desc: "", badge: "", color: "" };
+            let p2 = { title: "", desc: "", badge: "", color: "" };
+            let p3 = { title: "", desc: "", badge: "", color: "" };
+
+            // Priority 1: TACoS Gap
+            if (tacos > targetTacos) {
+                p1 = {
+                    badge: "HIGH PRIORITY · TACOS OVER TARGET",
+                    color: "#f87171",
+                    title: `Trim Ad Spend by ${formatDecimal(tacos - targetTacos, 1)}pp`,
+                    desc: `Your actual TACoS (${formatDecimal(tacos, 2)}%) exceeds your target (${formatDecimal(targetTacos, 2)}%). Audit non-converting keywords and lower bids on low-CTR search terms.`
+                };
+            } else {
+                p1 = {
+                    badge: "STABLE TACOS · ON TARGET",
+                    color: "#34d399",
+                    title: "Maintain Current Spend Budget",
+                    desc: `Your TACoS (${formatDecimal(tacos, 2)}%) is within your target boundary. Focus budget reallocation toward high-converting long-tail keywords.`
+                };
+            }
+
+            // Priority 2: Organic Share
+            if (orgShare < 50) {
+                p2 = {
+                    badge: "CRITICAL · LOW ORGANIC RELIANCE",
+                    color: "#f59e0b",
+                    title: "Boost Organic Keyword Ranking",
+                    desc: `PPC ads account for over 50% of total revenue. Focus ad spend on exact match ranking keywords and optimize listing main images to build organic rank.`
+                };
+            } else {
+                p2 = {
+                    badge: "STRONG ORGANIC MOMENTUM",
+                    color: "#38bdf8",
+                    title: "Protect Organic Keyword Ranks",
+                    desc: `Organic sales generate ${formatDecimal(orgShare, 1)}% of your total revenue. Maintain brand defense ads to protect rank against conquesting competitors.`
+                };
+            }
+
+            // Priority 3: ACoS Gap
+            if (gap < 8 && acos > 0) {
+                p3 = {
+                    badge: "WARNING · NARROW ACOS GAP",
+                    color: "#60a5fa",
+                    title: "Widen ACoS vs TACoS Buffer",
+                    desc: `The small gap between ACoS (${formatDecimal(acos, 1)}%) and TACoS (${formatDecimal(tacos, 1)}%) indicates heavy PPC dependency. Audit ad campaign cannibalization.`
+                };
+            } else {
+                p3 = {
+                    badge: "OPTIMAL · HEALTHY CUSHION",
+                    color: "#34d399",
+                    title: "Scale Top-Performing Campaigns",
+                    desc: `Strong gap (${formatDecimal(gap, 1)}pp) confirms your ads drive organic sales. Test expanding budgets on top 10 performing campaign targets.`
+                };
+            }
+
+            grid.innerHTML = `
+                <div class="dark-glass-card" style="border-top:4px solid ${p1.color};">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:${p1.color}; margin-bottom:6px;">${p1.badge}</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">1. ${p1.title}</h3>
+                    <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin:0;">${p1.desc}</p>
+                </div>
+                <div class="dark-glass-card" style="border-top:4px solid ${p2.color};">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:${p2.color}; margin-bottom:6px;">${p2.badge}</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">2. ${p2.title}</h3>
+                    <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin:0;">${p2.desc}</p>
+                </div>
+                <div class="dark-glass-card" style="border-top:4px solid ${p3.color};">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:${p3.color}; margin-bottom:6px;">${p3.badge}</div>
+                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">3. ${p3.title}</h3>
+                    <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin:0;">${p3.desc}</p>
+                </div>
+            `;
+        }
+
+        function generateFormulaBox(totalRev, spend, tacos, organicRev, organicShare, paidShare, multiplier) {
+            document.getElementById('formulaManualBox').innerHTML = `
+                <div><strong>1. TACoS (%)</strong> = (Total Ad Spend ÷ Total Revenue) × 100 = (${formatInr(spend)} ÷ ${formatInr(totalRev)}) × 100 = <strong>${formatDecimal(tacos, 2)}%</strong></div>
+                <div style="margin-top:8px;"><strong>2. Organic Revenue (₹)</strong> = Total Revenue - Ad Sales = ${formatInr(totalRev)} - ${formatInr(totalRev * (paidShare / 100))} = <strong>${formatInr(organicRev)}</strong></div>
+                <div style="margin-top:8px;"><strong>3. Organic Share (%)</strong> = (Organic Revenue ÷ Total Revenue) × 100 = <strong>${formatDecimal(organicShare, 2)}%</strong></div>
+                <div style="margin-top:8px;"><strong>4. Organic Multiplier</strong> = Total Revenue ÷ Ad-Attributed Revenue = <strong>${formatDecimal(multiplier, 2)}x</strong></div>
+            `;
+        }
+
+        function loadExampleData() {
+            document.getElementById('inputTotalRevenue').value = 500000;
+            document.getElementById('inputAdSpend').value = 50000;
+            document.getElementById('inputTargetTacos').value = 8.5;
+            document.getElementById('inputAdSales').value = 175000;
+            document.getElementById('inputAdOrders').value = 250;
+            document.getElementById('inputTotalOrders').value = 667;
+            calculateTacosEngine();
+        }
+
+        function resetForm() {
+            document.getElementById('inputTotalRevenue').value = 250000;
+            document.getElementById('inputAdSpend').value = 31250;
+            document.getElementById('inputTargetTacos').value = 10.0;
+            document.getElementById('inputAdSales').value = 93750;
+            document.getElementById('inputAdOrders').value = 125;
+            document.getElementById('inputTotalOrders').value = 333;
+            calculateTacosEngine();
+        }
+
+        function copyResults() {
+            const tacosVal = document.getElementById('resTacosVal').innerText;
+            const orgShare = document.getElementById('resOrganicShare').innerText;
+            const text = `Amazon TACoS Analysis by PPC Growth Expert:\nTotal Advertising Cost of Sales (TACoS): ${tacosVal}\nOrganic Sales Share: ${orgShare}\nOrganic Multiplier: ${document.getElementById('resOrganicMultiplier').innerText}`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('TACoS calculation summary copied to clipboard!');
+            });
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            selectDiagnostic(0);
+            calculateTacosEngine();
+        });
+    </script>
 </body>
 
 </html>
