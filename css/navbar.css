@@ -775,7 +775,8 @@
     gap: 16px;
 }
 
-.mega-menu-col[data-hidden-col="profit-planning"] {
+.mega-menu-col[data-hidden-col="profit-planning"],
+.mega-menu-grid > .mega-menu-col:nth-child(3):not(:last-child) {
     display: none !important;
 }
 

@@ -237,16 +237,25 @@ body.blog-page-body {
 }
 
 .featured-visual {
-    background: linear-gradient(145deg, #090e1a 0%, #1e293b 100%) !important;
-    border-radius: 16px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
     min-height: 286px !important;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: stretch;
+    /* Bleed to card edges: cancel card padding on left + top + bottom */
+    margin: -34px 0 -38px -30px;
+    border-radius: 18px 0 0 18px;
+    background: #090e1a;
+}
+
+.featured-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 0;
 }
 
 .featured-content {
