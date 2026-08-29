@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Amazon PPC Conversion Rate Calculator | CVR Tool</title>
-    <meta name="description" content="Calculate your Amazon PPC Conversion Rate (CVR). Measure what percentage of paid ad clicks convert into completed customer orders.">
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon PPC Conversion Rate Calculator | CVR, CPA, ACoS & ROAS</title>
+    <meta name="description" content="Calculate Amazon PPC conversion rate, clicks per order, CPC, cost per order, ACoS, ROAS and required CVR. Stress-test conversion and download your free PPC analysis.">
     <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-ppc-conversion-rate-calculator.html">
 
+    <!-- FONTS & STYLES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,270 +28,1956 @@
       "@type": "WebApplication",
       "name": "Amazon PPC Conversion Rate Calculator",
       "url": "https://ppcgrowthexpert.com/amazon-ppc-conversion-rate-calculator.html",
-      "description": "Calculate Amazon PPC conversion rates and click-to-order ratios.",
+      "description": "Calculate Amazon PPC conversion rate, clicks per order, cost per order (CPA), revenue per click, target CVR, break-even CVR, and CPC capacity.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is Amazon PPC conversion rate?","acceptedAnswer":{"@type":"Answer","text":"Amazon PPC conversion rate (CVR) measures the percentage of paid ad clicks that generate attributed orders. Formula: CVR % = (Attributed Orders ÷ PPC Clicks) × 100."}},
+        {"@type":"Question","name":"How do I calculate Amazon PPC conversion rate?","acceptedAnswer":{"@type":"Answer","text":"Divide attributed ad orders by total PPC clicks for the same reporting period and multiply by 100. For example, 40 attributed orders divided by 500 clicks equals 8.00% CVR."}},
+        {"@type":"Question","name":"What is a good Amazon PPC conversion rate?","acceptedAnswer":{"@type":"Answer","text":"There is no universal 'good' conversion rate across all products. A sustainable CVR depends on your CPC, average order value, target ACoS, and product economics."}},
+        {"@type":"Question","name":"What is the difference between CTR and conversion rate?","acceptedAnswer":{"@type":"Answer","text":"CTR (Click-Through Rate) measures how effectively an ad generates a click from impressions (Clicks ÷ Impressions). Conversion Rate measures how effectively clicked traffic turns into attributed orders (Orders ÷ Clicks)."}},
+        {"@type":"Question","name":"Why do I get clicks but no orders on Amazon PPC?","acceptedAnswer":{"@type":"Answer","text":"Clicks without orders usually indicate either a traffic quality issue (irrelevant search terms or loose match types) or a post-click listing issue (uncompetitive price, poor reviews, weak listing content, or slow delivery)."}},
+        {"@type":"Question","name":"How does conversion rate affect Amazon ACoS?","acceptedAnswer":{"@type":"Answer","text":"Conversion rate directly drives revenue per click (RPC = AOV × CVR). At a constant CPC, higher conversion generates higher revenue per click, which mathematically reduces ACoS."}},
+        {"@type":"Question","name":"How does conversion rate affect maximum supported CPC?","acceptedAnswer":{"@type":"Answer","text":"Higher conversion rate increases the maximum CPC your campaign can support for a given target ACoS. Target CPC = AOV × CVR × Target ACoS."}}
+      ]
+    }
+    </script>
+
+    <style>
+        /* =========================================================
+           EXECUTIVE DARK GLASSMORPHIC & TELEMETRY THEME FOR CVR CALCULATOR
+        ========================================================= */
+        body {
+            background-color: #fcfbf8;
+            color: #0f172a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+        }
+
+        .cvr-page .dark-section-wrapper {
+            background: #080d1a;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px 0;
+            color: #ffffff;
+        }
+
+        .cvr-page .dark-section-alt {
+            background: #0b1329;
+            background-image: 
+                radial-gradient(circle at 50% 100%, rgba(2, 132, 199, 0.15) 0%, transparent 70%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px 0;
+            color: #ffffff;
+        }
+
+        .cvr-page .light-section-wrapper {
+            background: #ffffff;
+            padding: 48px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+        }
+
+        /* DARK GLASS CARDS & INPUTS */
+        .cvr-page .dark-glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
+        }
+
+        .cvr-page .dark-input-group {
+            margin-bottom: 18px;
+        }
+
+        .cvr-page .dark-input-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cvr-page .dark-input-field {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 12px 14px;
+            color: #ffffff;
+            font-size: 15px;
+            font-family: 'DM Mono', monospace;
+            font-weight: 600;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        .cvr-page .dark-input-field:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+            background: rgba(30, 41, 59, 0.95);
+        }
+
+        .cvr-page .input-hint-dark {
+            font-size: 11.5px;
+            color: #64748b;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* TELEMETRY RESULTS PANEL */
+        .cvr-page .dark-result-panel {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        }
+
+        .cvr-page .dark-result-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #34d399, #c084fc);
+        }
+
+        .cvr-page .hero-metric-callout {
+            font-size: clamp(40px, 5vw, 56px);
+            font-weight: 800;
+            font-family: 'DM Mono', monospace;
+            line-height: 1;
+            letter-spacing: -1px;
+            color: #38bdf8;
+            margin: 8px 0;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .cvr-page .dark-telemetry-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .cvr-page .dark-telemetry-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .cvr-page .telemetry-title {
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'DM Mono', monospace;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cvr-page .telemetry-val {
+            font-size: 22px;
+            font-weight: 800;
+            font-family: 'DM Mono', monospace;
+            color: #ffffff;
+            margin: 4px 0;
+        }
+
+        .cvr-page .telemetry-sub {
+            font-size: 11.5px;
+            color: #64748b;
+        }
+
+        /* CARD GLOW ACCENTS */
+        .cvr-page .card-glow-blue { border-left: 4px solid #38bdf8; }
+        .cvr-page .card-glow-green { border-left: 4px solid #34d399; }
+        .cvr-page .card-glow-purple { border-left: 4px solid #c084fc; }
+        .cvr-page .card-glow-amber { border-left: 4px solid #f59e0b; }
+        .cvr-page .card-glow-red { border-left: 4px solid #f87171; }
+
+        /* BENCHMARK GAUGE SCALE */
+        .cvr-page .cvr-gauge-track-dark {
+            position: relative;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            margin: 44px 16px 38px 16px;
+        }
+
+        .cvr-page .cvr-gauge-marker {
+            position: absolute;
+            top: -28px;
+            transform: translateX(-50%);
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: left 0.4s ease, top 0.3s ease;
+            z-index: 2;
+        }
+
+        .cvr-page .cvr-gauge-marker.marker-below {
+            top: 12px;
+            flex-direction: column-reverse;
+        }
+
+        .cvr-page .cvr-gauge-marker.marker-top-high {
+            top: -48px;
+        }
+
+        .cvr-page .cvr-gauge-marker::after {
+            content: '';
+            width: 2px;
+            height: 18px;
+            margin-top: 2px;
+            background: currentColor;
+            border-radius: 1px;
+        }
+
+        .cvr-page .cvr-gauge-marker.marker-below::after {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        .cvr-page .marker-target { color: #38bdf8; }
+        .cvr-page .marker-current { color: #34d399; }
+        .cvr-page .marker-breakeven { color: #f59e0b; }
+
+        /* SYMPTOM DIAGNOSTIC PILLS */
+        .cvr-page .symptom-pills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .cvr-page .symptom-pill {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cvr-page .symptom-pill:hover {
+            border-color: #38bdf8;
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .cvr-page .symptom-pill.active {
+            border-color: #38bdf8;
+            background: rgba(37, 99, 235, 0.4) !important;
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+        }
+
+        .cvr-page .symptom-pill.active .symptom-text {
+            color: #ffffff !important;
+            font-weight: 800;
+        }
+
+        .cvr-page .symptom-icon {
+            font-size: 18px;
+        }
+
+        .cvr-page .symptom-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* SENSITIVITY MATRIX TABLE */
+        .cvr-page .matrix-container-dark {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cvr-page .matrix-table-dark {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .cvr-page .matrix-table-dark th {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 12px 10px;
+            color: #94a3b8;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+        }
+
+        .cvr-page .matrix-table-dark td {
+            padding: 12px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+        }
+
+        .cvr-page .cell-current {
+            background: rgba(56, 189, 248, 0.25) !important;
+            color: #ffffff !important;
+            font-weight: 800;
+            outline: 2px solid #38bdf8;
+        }
+
+        .cvr-page .cell-above-target {
+            background: rgba(52, 211, 153, 0.15);
+            color: #6ee7b7;
+        }
+
+        .cvr-page .cell-below-target {
+            background: rgba(248, 113, 113, 0.1);
+            color: #fca5a5;
+        }
+
+        /* FUNNEL VISUALIZATION */
+        .cvr-page .funnel-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .cvr-page .funnel-step {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 16px 24px;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .cvr-page .funnel-step:hover {
+            transform: scale(1.01);
+            border-color: #38bdf8;
+        }
+
+        .cvr-page .funnel-arrow {
+            text-align: center;
+            color: #38bdf8;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        /* DRIVER MAP DIAGRAM */
+        .cvr-page .driver-map-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .cvr-page .driver-node {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #334155;
+            transition: all 0.2s ease;
+        }
+
+        .cvr-page .driver-node.highlight-traffic {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .cvr-page .driver-node.highlight-listing {
+            border-color: #10b981;
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .cvr-page .driver-node.highlight-offer {
+            border-color: #8b5cf6;
+            background: #f5f3ff;
+            color: #6d28d9;
+        }
+
+        /* TYPE BADGES */
+        .cvr-page .type-badge {
+            font-size: 10px;
+            font-family: 'DM Mono', monospace;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .cvr-page .type-observed {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .cvr-page .type-modelled {
+            background: rgba(192, 132, 252, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(192, 132, 252, 0.3);
+        }
+
+        /* PRINT STYLING FOR EXECUTIVE PDF REPORT */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            #pdfReportContainer, #pdfReportContainer * {
+                visibility: visible;
+            }
+
+            #pdfReportContainer {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background: #ffffff !important;
+                color: #0f172a !important;
+                padding: 20px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="cvr-page">
 
-    <!-- BACKGROUND GRID & GLOW (MATCHING INDEX.HTML THEME) -->
-    <div class="background-grid"></div>
-    <div class="background-glow"></div>
+    <!-- GLOBAL NAVBAR (LOADED VIA DYNAMIC SCRIPT) -->
+    <nav id="navbar"></nav>
 
-    <div class="navbar-container" id="navbarContainer">
-        <header class="navbar">
-            <a href="index.html" class="logo">
-                <div class="logo-badge"><div class="logo-symbol"></div></div>
-                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
-            </a>
+    <!-- 01 · HERO SECTION -->
+    <header class="hero-compact" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding: 28px 0 24px 0;">
+        <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+            <div style="font-size:12px; font-family:'DM Mono',monospace; color:#64748b; margin-bottom:10px;">
+                <a href="index.html" style="color:#64748b; text-decoration:none;">Home</a> / 
+                <a href="resources.html" style="color:#64748b; text-decoration:none;">Resources</a> / 
+                <span style="color:#0f172a; font-weight:600;">Amazon PPC Conversion Rate Calculator</span>
+            </div>
 
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="services.html" class="nav-item">Services</a>
-                <a href="case-studies.html" class="nav-item">Case Studies</a>
-                <a href="index.html#results" class="nav-item">Results</a>
-                <a href="about.html" class="nav-item">About</a>
-                <div class="nav-dropdown">
-                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
-                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
-                    </a>
-                    <div class="dropdown-menu mega-dropdown-menu">
-                        <div class="mega-menu-grid">
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">PPC PERFORMANCE</div>
-                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
-                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
-                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Measure clicks turning into orders</span></div></a>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                <span style="background:rgba(37, 99, 235, 0.1); color:#2563eb; font-size:11px; font-weight:700; font-family:'DM Mono',monospace; padding:3px 10px; border-radius:12px; text-transform:uppercase; letter-spacing:0.5px;">✦ AMAZON PPC CONVERSION ENGINE</span>
+            </div>
+
+            <h1 style="font-size: clamp(28px, 4vw, 42px); font-weight:800; color:#0f172a; margin:0 0 10px 0; letter-spacing:-0.5px; line-height:1.15;">
+                Amazon PPC Conversion Rate Calculator
+            </h1>
+
+            <p style="font-size:15px; color:#475569; max-width:860px; margin:0 0 16px 0; line-height:1.5;">
+                Calculate how efficiently your Amazon PPC clicks turn into attributed orders — then see the impact on cost per order, ACoS, ROAS, CPC capacity and the conversion rate required to reach your advertising targets.
+            </p>
+
+            <div style="display:flex; flex-wrap:wrap; gap:16px; font-size:12.5px; font-weight:600; color:#334155;">
+                <span>✓ Free to use</span>
+                <span>✓ Instant live analysis</span>
+                <span>✓ No sign-up required</span>
+                <span>✓ Downloadable PDF report</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main>
+
+        <!-- 02 · QUICK SUMMARY -->
+        <section class="light-section-wrapper" style="padding:28px 0; background:#f8fafc;">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:14px; padding:20px 24px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px;">
+                    <div style="max-width:760px;">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase; margin-bottom:4px;">QUICK SUMMARY</div>
+                        <div style="font-size:14px; color:#334155; line-height:1.5;">
+                            <strong>PPC conversion rate</strong> measures the percentage of paid ad clicks that generate attributed orders. Conversion is one of the most important drivers of Amazon advertising efficiency because the same CPC can produce very different ACoS and ROAS depending on how many clicks become orders.
+                        </div>
+                    </div>
+                    <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 18px; text-align:center;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#1e40af;">FORMULA</div>
+                        <div style="font-size:14px; font-weight:800; font-family:'DM Mono',monospace; color:#1e3a8a; margin-top:2px;">Orders ÷ Clicks × 100</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 · MAIN CALCULATOR SECTION (DARK GLASS ENGINE) -->
+        <section class="dark-section-wrapper" id="calculator">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+
+                <div style="display:grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap:28px; align-items:start;">
+
+                    <!-- INPUTS PANEL -->
+                    <div class="dark-glass-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:14px;">
+                            <div>
+                                <span style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8; text-transform:uppercase;">INPUT PANEL</span>
+                                <h2 style="font-size:20px; font-weight:800; color:#ffffff; margin:2px 0 0 0;">Enter PPC Performance Data</h2>
                             </div>
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
-                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Calculate average cost per click</span></div></a>
-                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Measure ad click-through rate</span></div></a>
-                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Compare ad spend vs total sales</span></div></a>
-                            </div>
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
-                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS Calculator</span><span class="mega-item-desc">Max ACoS before margin loss</span></div></a>
-                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Estimate working monthly budget</span></div></a>
-                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target ACoS &amp; Bid Calculator</span><span class="mega-item-desc">Estimate practical CPC &amp; bid</span></div></a>
+                            <div style="display:flex; gap:8px;">
+                                <button type="button" id="btnLoadExample" style="background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.3); color:#38bdf8; font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;">Example</button>
+                                <button type="button" id="btnReset" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#94a3b8; font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;">Reset</button>
                             </div>
                         </div>
-                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
-                    </div>
-                </div>
-                <a href="blog.html" class="nav-item">Blog</a>
-                <a href="contact.html" class="nav-item">Contact</a>
-            </nav>
 
-            <div class="nav-actions">
-                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
-                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
-                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
-            </div>
-        </header>
-    </div>
-
-    <div class="resources-page-container">
-
-        <nav class="breadcrumb-nav">
-            <a href="index.html">Home</a> /
-            <a href="resources.html">Resources</a> /
-            <span>Conversion Rate Calculator</span>
-        </nav>
-
-        <section class="resources-hero">
-            <div class="hero-eyebrow">✦ AMAZON PPC CALCULATOR</div>
-            <h1 class="hero-title">Amazon PPC Conversion Rate Calculator</h1>
-            <p class="hero-description">Calculate what percentage of PPC clicks are turning into completed orders on your product listing.</p>
-
-        </section>
-
-        <section class="calculator-app-wrapper">
-            <div class="calc-inputs-col">
-                <h3 style="margin:0 0 10px 0; font-size:18px;">Traffic &amp; Orders</h3>
-                <div class="input-group">
-                    <label class="input-label" for="cvrClicks">PPC Clicks</label>
-                    <input type="number" id="cvrClicks" class="calc-input-field" placeholder="e.g. 500" min="0" step="any">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="cvrOrders">PPC Orders</label>
-                    <input type="number" id="cvrOrders" class="calc-input-field" placeholder="e.g. 50" min="0" step="any">
-                </div>
-                <div class="calc-action-row">
-                    <button type="button" class="btn-calc-submit">Check Conversion →</button>
-                    <button type="button" class="btn-calc-reset">Reset</button>
-                </div>
-            </div>
-
-            <div class="calc-results-col" aria-live="polite">
-                <div class="result-main-box">
-                    <div class="result-main-label">CONVERSION RATE (CVR)</div>
-                    <div class="result-main-value" id="cvrResultVal">0.00%</div>
-                    <div class="result-main-sub" id="cvrSubText">Enter clicks and orders to calculate CVR.</div>
-                </div>
-
-                <div class="result-metrics-grid">
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">CLICKS PER ORDER</div>
-                        <div class="mini-stat-val" id="cvrRatioVal">0.00</div>
-                    </div>
-                </div>
-
-                <div class="result-guidance-box">
-                    <div class="result-guidance-title">What does this mean?</div>
-                    Conversion rate measures listing effectiveness. If CVR is low despite high clicks, review listing images, price competitiveness, reviews, and search term relevance.
-                </div>
-            </div>
-        </section>
-
-        <article class="calc-educational-prose">
-            <h2>What Is Amazon PPC Conversion Rate?</h2>
-            <p><strong>Conversion Rate (CVR)</strong> measures the proportion of shoppers who click your PPC ad and complete a purchase.</p>
-
-            <h2>Formula:</h2>
-            <div class="formula-code-box">
-                CVR % = (Total PPC Orders ÷ Total PPC Clicks) × 100
-            </div>
-            <p>Read our diagnostic guide on <a href="blog-amazon-ppc-clicks-no-sales.html" style="color:#0284c7; font-weight:700;">Why Are My Amazon Ads Getting Clicks But No Sales?</a></p>
-        </article>
-
-        <section class="related-calculators-section">
-            <div class="section-header">
-                <div class="section-eyebrow">RELATED TOOLS</div>
-                <h2 class="section-title">Explore Related PPC Calculators</h2>
-            </div>
-            <div class="calculators-grid">
-                <a href="amazon-cpc-calculator.html" class="calc-card">
-                    <div class="calc-card-top"><div class="calc-card-header"><div class="calc-card-icon">💵</div><span class="calc-card-category">TRAFFIC COST</span></div><h3 class="calc-card-title">Amazon CPC Calculator</h3><p class="calc-card-desc">Calculate average cost per click.</p></div>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate CPC →</span></div>
-                </a>
-            </div>
-        </section>
-
-        <section class="resources-audit-cta">
-            <div class="hero-eyebrow" style="color:#e0f2fe;">✦ NEED A DEEPER ANALYSIS?</div>
-            <h2>PPC Clicks Not Converting into Orders?</h2>
-            <p>We analyze listing main images, bullet points, price points, and keyword intent to fix low campaign conversion rates.</p>
-            <div class="cta-btn-group">
-                <a href="contact.html" class="btn-cta-primary">Request an Amazon PPC Audit →</a>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- =========================================================
-     FOOTER
-========================================================= -->
-    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
-
-        <div class="footer-container">
-
-            <!-- TOP GRID -->
-            <div class="footer-grid">
-
-                <!-- COL 1: BRAND GLASS CARD -->
-                <div class="footer-col brand-col">
-                    <div class="brand-card">
-                        <a href="index.html" class="footer-logo">
-                            <div class="logo-badge">
-                                <div class="logo-symbol"></div>
+                        <!-- CORE OBSERVED INPUTS -->
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputClicks">PPC Clicks *</label>
+                                <input type="number" id="inputClicks" class="dark-input-field" value="500" min="0" step="1" placeholder="e.g. 500">
+                                <div class="input-hint-dark">Total paid ad clicks from reporting period.</div>
                             </div>
-                            <span class="logo-text">
-                                PPC <span class="highlight">Growth</span> Expert
-                            </span>
-                        </a>
 
-                        <p class="footer-sub-tagline">
-                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
-                        </p>
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputOrders">Attributed Orders *</label>
+                                <input type="number" id="inputOrders" class="dark-input-field" value="40" min="0" step="1" placeholder="e.g. 40">
+                                <div class="input-hint-dark">Orders attributed to ad traffic in period.</div>
+                            </div>
+                        </div>
 
-                        <p class="footer-tagline" itemprop="description">
-                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
-                        </p>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputSpend">Ad Spend (₹) [Optional]</label>
+                                <input type="number" id="inputSpend" class="dark-input-field" value="10000" min="0" step="100" placeholder="e.g. 10000">
+                                <div class="input-hint-dark">Unlocks CPC and Cost per Order (CPA).</div>
+                            </div>
+
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputSales">Attributed Sales (₹) [Optional]</label>
+                                <input type="number" id="inputSales" class="dark-input-field" value="40000" min="0" step="100" placeholder="e.g. 40000">
+                                <div class="input-hint-dark">Unlocks Revenue/Click, ACoS &amp; ROAS.</div>
+                            </div>
+                        </div>
+
+                        <!-- EXPANDABLE COLLAPSIBLE 1: PPC TARGETS -->
+                        <details class="dark-glass-card" style="margin-top:14px; background:rgba(30, 41, 59, 0.4); border:1px solid rgba(255, 255, 255, 0.08); padding:16px;">
+                            <summary style="font-size:13.5px; font-weight:700; color:#38bdf8; cursor:pointer; user-select:none;">
+                                🎯 Add PPC Targets (Unlock Required CVR Planner)
+                            </summary>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputTargetAcos">Target ACoS (%)</label>
+                                    <input type="number" id="inputTargetAcos" class="dark-input-field" value="25.0" min="0" step="0.5" placeholder="e.g. 25.0">
+                                    <div class="input-hint-dark">Your benchmark ACoS threshold.</div>
+                                </div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputTargetRoas">Target ROAS (x)</label>
+                                    <input type="number" id="inputTargetRoas" class="dark-input-field" value="4.00" min="0" step="0.1" placeholder="e.g. 4.00">
+                                    <div class="input-hint-dark">Target return multiplier.</div>
+                                </div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputExpectedCpc">Target / Expected CPC (₹)</label>
+                                    <input type="number" id="inputExpectedCpc" class="dark-input-field" value="20.00" min="0" step="0.5" placeholder="e.g. 20.00">
+                                    <div class="input-hint-dark">Defaults to observed CPC if blank.</div>
+                                </div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputAov">Average Order Value (₹)</label>
+                                    <input type="number" id="inputAov" class="dark-input-field" value="1000" min="0" step="10" placeholder="e.g. 1000">
+                                    <div class="input-hint-dark">Defaults to Sales ÷ Orders if blank.</div>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- EXPANDABLE COLLAPSIBLE 2: PRODUCT ECONOMICS -->
+                        <details class="dark-glass-card" style="margin-top:10px; background:rgba(30, 41, 59, 0.4); border:1px solid rgba(255, 255, 255, 0.08); padding:16px;">
+                            <summary style="font-size:13.5px; font-weight:700; color:#34d399; cursor:pointer; user-select:none;">
+                                ⚖️ Add Product Economics (Unlock Break-Even CVR)
+                            </summary>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputCogs">Product Cost / COGS (₹)</label>
+                                    <input type="number" id="inputCogs" class="dark-input-field" value="400" min="0" step="10" placeholder="e.g. 400">
+                                </div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputFees">Amazon Fees (₹)</label>
+                                    <input type="number" id="inputFees" class="dark-input-field" value="150" min="0" step="5" placeholder="e.g. 150">
+                                </div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputShipping">Shipping / FBA (₹)</label>
+                                    <input type="number" id="inputShipping" class="dark-input-field" value="50" min="0" step="5" placeholder="e.g. 50">
+                                </div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputOtherCosts">Other Costs (₹)</label>
+                                    <input type="number" id="inputOtherCosts" class="dark-input-field" value="20" min="0" step="5" placeholder="e.g. 20">
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- ACTION BUTTONS -->
+                        <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:10px; margin-top:20px;">
+                            <button type="button" id="btnCalculate" style="background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color:#ffffff; border:none; font-size:14px; font-weight:800; padding:14px; border-radius:10px; cursor:pointer; box-shadow:0 4px 16px rgba(37,99,235,0.4);">Calculate CVR →</button>
+                            <button type="button" id="btnCopy" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#ffffff; font-size:13px; font-weight:700; padding:14px; border-radius:10px; cursor:pointer;">Copy Analysis 📋</button>
+                            <button type="button" id="btnPrintPdf" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#ffffff; font-size:13px; font-weight:700; padding:14px; border-radius:10px; cursor:pointer;">PDF Report 📄</button>
+                        </div>
+
+                    </div>
+
+                    <!-- PRIMARY RESULTS TELEMETRY PANEL -->
+                    <div class="dark-result-panel" id="resultPanel">
+                        <span class="type-badge type-observed">OBSERVED CVR RESULT</span>
+                        
+                        <div style="font-size:12px; font-family:'DM Mono',monospace; color:#94a3b8; text-transform:uppercase; font-weight:700;">PPC CONVERSION RATE</div>
+                        
+                        <div class="hero-metric-callout" id="resCvrVal">8.00%</div>
+                        
+                        <div style="display:inline-block; background:rgba(52, 211, 153, 0.15); border:1px solid rgba(52, 211, 153, 0.3); color:#34d399; font-size:12px; font-weight:700; font-family:'DM Mono',monospace; padding:4px 12px; border-radius:20px; margin-bottom:20px;" id="resClicksPerOrderBadge">
+                            12.50 clicks per order
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:20px;">
+
+                            <div class="dark-telemetry-card card-glow-blue">
+                                <div class="telemetry-title">CLICKS / ORDER</div>
+                                <div class="telemetry-val" style="color:#60a5fa;" id="resClicksPerOrder">12.50</div>
+                                <div class="telemetry-sub">Clicks ÷ Orders</div>
+                            </div>
+
+                            <div class="dark-telemetry-card card-glow-green">
+                                <div class="telemetry-title">COST / ORDER (CPA)</div>
+                                <div class="telemetry-val" style="color:#34d399;" id="resCostPerOrder">₹250.00</div>
+                                <div class="telemetry-sub">Ad Spend ÷ Orders</div>
+                            </div>
+
+                            <div class="dark-telemetry-card">
+                                <div class="telemetry-title">AVERAGE CPC</div>
+                                <div class="telemetry-val" id="resCpc">₹20.00</div>
+                                <div class="telemetry-sub">Ad Spend ÷ Clicks</div>
+                            </div>
+
+                            <div class="dark-telemetry-card">
+                                <div class="telemetry-title">REVENUE / CLICK</div>
+                                <div class="telemetry-val" id="resRpc">₹80.00</div>
+                                <div class="telemetry-sub">Ad Sales ÷ Clicks</div>
+                            </div>
+
+                            <div class="dark-telemetry-card card-glow-purple">
+                                <div class="telemetry-title">OBSERVED ACOS</div>
+                                <div class="telemetry-val" style="color:#c084fc;" id="resAcos">25.00%</div>
+                                <div class="telemetry-sub">(Spend ÷ Sales) × 100</div>
+                            </div>
+
+                            <div class="dark-telemetry-card card-glow-amber">
+                                <div class="telemetry-title">OBSERVED ROAS</div>
+                                <div class="telemetry-val" style="color:#f59e0b;" id="resRoas">4.00x</div>
+                                <div class="telemetry-sub">Ad Sales ÷ Ad Spend</div>
+                            </div>
+
+                        </div>
+
+                        <!-- DYNAMIC INTERPRETATION BOX -->
+                        <div style="background:rgba(15, 23, 42, 0.8); border-left:4px solid #38bdf8; border-radius:0 12px 12px 0; padding:16px; margin-top:8px;">
+                            <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:4px;">DYNAMIC ANALYSIS</div>
+                            <div style="font-size:13px; color:#cbd5e1; line-height:1.5;" id="resInterpretationText">
+                                Your PPC traffic generated 40 attributed orders from 500 clicks, giving a conversion rate of 8.00%. Approximately 12.5 paid clicks were required per attributed order.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 04 · CLICK → ORDER FUNNEL VISUALIZATION -->
+        <section class="light-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="text-align:center; margin-bottom:32px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase;">VISUAL TRAFFIC FLOW</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">What Happens to Your Paid Clicks?</h2>
+                    <p style="font-size:14px; color:#64748b; margin:0;">Visualizing how paid ad traffic transitions from clicks into attributed sales.</p>
+                </div>
+
+                <div class="funnel-container">
+                    <div class="funnel-step" style="width:100%;">
+                        <div>
+                            <span style="font-family:'DM Mono',monospace; font-size:11px; color:#94a3b8;">STEP 1 · PAID TRAFFIC</span>
+                            <div style="font-size:18px; font-weight:800; color:#ffffff;" id="funnelStep1Val">500 PPC Clicks</div>
+                        </div>
+                        <div style="font-family:'DM Mono',monospace; font-size:13px; color:#38bdf8;" id="funnelStep1Sub">Spend: ₹10,000</div>
+                    </div>
+
+                    <div class="funnel-arrow">↓ 12.5 Clicks per Order</div>
+
+                    <div class="funnel-step" style="width:85%; margin:0 auto;">
+                        <div>
+                            <span style="font-family:'DM Mono',monospace; font-size:11px; color:#94a3b8;">STEP 2 · ATTRIBUTED CONVERSION</span>
+                            <div style="font-size:18px; font-weight:800; color:#34d399;" id="funnelStep2Val">40 Attributed Orders</div>
+                        </div>
+                        <div style="font-family:'DM Mono',monospace; font-size:13px; color:#34d399;" id="funnelStep2Sub">CVR: 8.00%</div>
+                    </div>
+
+                    <div class="funnel-arrow">↓ ₹1,000 Average Order Value</div>
+
+                    <div class="funnel-step" style="width:70%; margin:0 auto;">
+                        <div>
+                            <span style="font-family:'DM Mono',monospace; font-size:11px; color:#94a3b8;">STEP 3 · ADVERTISING REVENUE</span>
+                            <div style="font-size:18px; font-weight:800; color:#c084fc;" id="funnelStep3Val">₹40,000 Attributed Sales</div>
+                        </div>
+                        <div style="font-family:'DM Mono',monospace; font-size:13px; color:#c084fc;" id="funnelStep3Sub">ACoS: 25.00% (4.00x ROAS)</div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-
-                <!-- COL 2: SERVICES -->
-                <div class="footer-col">
-                    <h3 class="footer-heading">SERVICES</h3>
-                    <ul class="footer-links">
-                        <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
-                        <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
-                        <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
-                        <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
-                        <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
-                        <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
-                    </ul>
+        <!-- 05 · CONVERSION ECONOMICS DASHBOARD -->
+        <section class="dark-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="margin-bottom:28px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">CONVERSION TELEMETRY CENTER</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">What Your Conversion Rate Means for PPC</h2>
+                    <p style="font-size:14px; color:#cbd5e1; margin:0;">Observed conversion metrics contrasted against target &amp; break-even boundaries.</p>
                 </div>
 
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:18px;">
+                    <div class="dark-telemetry-card card-glow-blue">
+                        <span class="type-badge type-observed">OBSERVED</span>
+                        <div class="telemetry-title" style="color:#38bdf8;">CONVERSION RATE</div>
+                        <div class="telemetry-val" style="color:#60a5fa;" id="dashCvr">8.00%</div>
+                        <div class="telemetry-sub">Orders ÷ Clicks × 100</div>
+                    </div>
 
-                <!-- COL 3: CONTACT US -->
-                <div class="footer-col contact-col" itemprop="address" itemscope
-                    itemtype="http://schema.org/PostalAddress">
-                    <h3 class="footer-heading">CONTACT US</h3>
-                    <ul class="footer-contact-list">
-                        <li>
-                            <div class="contact-icon-pill">📍</div>
+                    <div class="dark-telemetry-card">
+                        <span class="type-badge type-observed">OBSERVED</span>
+                        <div class="telemetry-title">CLICKS / ORDER</div>
+                        <div class="telemetry-val" id="dashClicksPerOrder">12.50</div>
+                        <div class="telemetry-sub">Clicks needed per order</div>
+                    </div>
+
+                    <div class="dark-telemetry-card">
+                        <span class="type-badge type-observed">OBSERVED</span>
+                        <div class="telemetry-title">COST PER ORDER (CPA)</div>
+                        <div class="telemetry-val" id="dashCpa">₹250.00</div>
+                        <div class="telemetry-sub">Ad Spend ÷ Orders</div>
+                    </div>
+
+                    <div class="dark-telemetry-card card-glow-purple">
+                        <span class="type-badge type-modelled">MODELLED</span>
+                        <div class="telemetry-title" style="color:#c084fc;">REQUIRED CVR (TARGET)</div>
+                        <div class="telemetry-val" style="color:#d8b4fe;" id="dashReqCvr">8.00%</div>
+                        <div class="telemetry-sub">For Target ACoS</div>
+                    </div>
+
+                    <div class="dark-telemetry-card card-glow-amber">
+                        <span class="type-badge type-modelled">MODELLED</span>
+                        <div class="telemetry-title" style="color:#f59e0b;">BREAK-EVEN CVR</div>
+                        <div class="telemetry-val" style="color:#fde047;" id="dashBeCvr">6.25%</div>
+                        <div class="telemetry-sub">CPC ÷ Pre-Ad Contribution</div>
+                    </div>
+
+                    <div class="dark-telemetry-card">
+                        <span class="type-badge type-modelled">MODELLED</span>
+                        <div class="telemetry-title">MAX SUPPORTED CPC</div>
+                        <div class="telemetry-val" id="dashMaxCpc">₹20.00</div>
+                        <div class="telemetry-sub">AOV × CVR × Target ACoS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 · TARGET CONVERSION PLANNER & GAP ENGINE -->
+        <section class="dark-section-alt">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="margin-bottom:28px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">TARGET CONVERSION PLANNER</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">What Conversion Rate Do You Need?</h2>
+                    <p style="font-size:14px; color:#cbd5e1; margin:0;">Calculate the exact conversion rate required to reach your target ACoS, ROAS, or CPA goal.</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:26px;">
+                    <div class="dark-glass-card">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:12px;">CALCULATION MODEL</div>
+                        
+                        <div style="display:flex; gap:10px; margin-bottom:16px;">
+                            <button type="button" id="tabAcos" class="active" style="background:#2563eb; color:#ffffff; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target ACoS</button>
+                            <button type="button" id="tabRoas" style="background:rgba(255,255,255,0.08); color:#cbd5e1; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target ROAS</button>
+                            <button type="button" id="tabCpa" style="background:rgba(255,255,255,0.08); color:#cbd5e1; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target CPA</button>
+                        </div>
+
+                        <div id="plannerBodyText" style="font-size:13px; color:#cbd5e1; line-height:1.6; margin-bottom:16px;">
+                            Formula: <strong>CPC ÷ (AOV × Target ACoS)</strong><br>
+                            At ₹20.00 CPC and ₹1,000 AOV with a 25% Target ACoS, your campaign requires an 8.00% conversion rate.
+                        </div>
+
+                        <div style="background:rgba(30, 41, 59, 0.8); border-radius:12px; padding:16px; display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
                             <div>
-                                <span itemprop="addressLocality">Noida</span>,<br>
-                                <span itemprop="addressRegion">Uttar Pradesh</span>
+                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">REQUIRED CVR</div>
+                                <div style="font-size:24px; font-weight:800; color:#38bdf8; font-family:'DM Mono',monospace;" id="planReqCvr">8.00%</div>
                             </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">📞</div>
-                            <a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">✉️</div>
-                            <a href="mailto:anmolpokhriyal3200@gmail.com"
-                                itemprop="email">anmolpokhriyal3200@gmail.com</a>
-                        </li>
-                    </ul>
+                            <div>
+                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">CONVERSION GAP</div>
+                                <div style="font-size:24px; font-weight:800; color:#34d399; font-family:'DM Mono',monospace;" id="planCvrGap">0.00pp</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dark-glass-card">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase; margin-bottom:12px;">ACTIONABLE ORDER IMPACT</div>
+                        <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 12px 0;">Orders Needed at Current Traffic</h3>
+                        
+                        <div style="font-size:13px; color:#cbd5e1; line-height:1.6; margin-bottom:16px;">
+                            At your entered 500 PPC clicks:
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:16px;">
+                            <div style="background:rgba(255,255,255,0.05); padding:14px; border-radius:10px;">
+                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">REQUIRED ORDERS</div>
+                                <div style="font-size:22px; font-weight:800; color:#ffffff; font-family:'DM Mono',monospace;" id="planReqOrders">40</div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.05); padding:14px; border-radius:10px;">
+                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">ADDITIONAL ORDERS</div>
+                                <div style="font-size:22px; font-weight:800; color:#38bdf8; font-family:'DM Mono',monospace;" id="planAddOrders">+0</div>
+                            </div>
+                        </div>
+
+                        <div style="font-size:12.5px; color:#94a3b8; line-height:1.5;" id="planActionableText">
+                            Your observed conversion rate matches your target requirement. No additional conversion lift is required at current CPC and order value.
+                        </div>
+                    </div>
                 </div>
 
-
-                <!-- COL 4: COMPANY -->
-                <div class="footer-col">
-                    <h3 class="footer-heading">COMPANY</h3>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="about.html#founder">Our Founder</a></li>
-                        <li><a href="case-studies.html">Case Studies</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
+                <!-- 07 · BENCHMARK ALIGNMENT GAUGE SCALE -->
+                <div style="margin-top:40px; max-width:960px; margin-left:auto; margin-right:auto;">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:13.5px; font-weight:700; color:#ffffff;">Conversion Rate Benchmark Alignment Scale</span>
+                        <span style="font-size:12px; font-family:'DM Mono',monospace; color:#94a3b8;" id="gaugeStatusText">Status: Target Met</span>
+                    </div>
+                    <div class="cvr-gauge-track-dark">
+                        <div class="cvr-gauge-marker marker-breakeven" id="markerBe" style="left: 40%;">
+                            <span>BE: <strong id="mValBe">6.25%</strong></span>
+                        </div>
+                        <div class="cvr-gauge-marker marker-current" id="markerCurr" style="left: 50%;">
+                            <span>Current: <strong id="mValCurr">8.00%</strong></span>
+                        </div>
+                        <div class="cvr-gauge-marker marker-target" id="markerTgt" style="left: 60%;">
+                            <span>Target: <strong id="mValTgt">8.00%</strong></span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
+        </section>
 
+        <!-- 08 · CONVERSION SCENARIO LAB -->
+        <section class="dark-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="margin-bottom:28px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">SCENARIO STRESS-TEST LAB</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Stress-Test Your Conversion Rate</h2>
+                    <p style="font-size:14px; color:#cbd5e1; margin:0;">Move the conversion delta slider to simulate how CVR improvements or drops impact your CPA, ACoS, and ROAS.</p>
+                </div>
 
-            <!-- MIDDLE BAR -->
-            <div class="footer-middle">
-                <p class="footer-meta-info">
-                    PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 ·
-                    anmolpokhriyal3200@gmail.com
+                <div class="dark-glass-card" style="margin-bottom:28px;">
+                    <div style="margin-bottom:20px;">
+                        <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; color:#ffffff; margin-bottom:8px;">
+                            <span>Conversion Rate Shift (Percentage Points)</span>
+                            <span style="color:#38bdf8; font-family:'DM Mono',monospace;" id="lblSliderShift">+2.00pp (10.00% CVR)</span>
+                        </div>
+                        <input type="range" id="sliderCvrShift" min="-4" max="6" value="2" step="0.5" style="width:100%;">
+                    </div>
+
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse:collapse; font-size:13px; color:#ffffff; text-align:left;">
+                            <thead>
+                                <tr style="border-bottom:1px solid rgba(255,255,255,0.1); color:#94a3b8; font-family:'DM Mono',monospace; font-size:11px;">
+                                    <th style="padding:10px;">METRIC</th>
+                                    <th style="padding:10px;">OBSERVED (NOW)</th>
+                                    <th style="padding:10px; color:#38bdf8;">SCENARIO MODEL</th>
+                                    <th style="padding:10px;">VARIANCE / IMPACT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding:12px 10px; font-weight:700;">Conversion Rate</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace;" id="scenCurrCvr">8.00%</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#38bdf8; font-weight:800;" id="scenNewCvr">10.00%</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#34d399;" id="scenDiffCvr">+2.00pp</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding:12px 10px; font-weight:700;">Attributed Orders</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace;" id="scenCurrOrders">40</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#38bdf8; font-weight:800;" id="scenNewOrders">50</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#34d399;" id="scenDiffOrders">+10 orders</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding:12px 10px; font-weight:700;">Cost per Order (CPA)</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace;" id="scenCurrCpa">₹250.00</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#38bdf8; font-weight:800;" id="scenNewCpa">₹200.00</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#34d399;" id="scenDiffCpa">−₹50.00 (−20.0%)</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding:12px 10px; font-weight:700;">Revenue per Click (RPC)</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace;" id="scenCurrRpc">₹80.00</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#38bdf8; font-weight:800;" id="scenNewRpc">₹100.00</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#34d399;" id="scenDiffRpc">+₹20.00</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                                    <td style="padding:12px 10px; font-weight:700;">Modelled ACoS</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace;" id="scenCurrAcos">25.00%</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#38bdf8; font-weight:800;" id="scenNewAcos">20.00%</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#34d399;" id="scenDiffAcos">−5.00pp</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:12px 10px; font-weight:700;">Modelled ROAS</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace;" id="scenCurrRoas">4.00x</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#38bdf8; font-weight:800;" id="scenNewRoas">5.00x</td>
+                                    <td style="padding:12px 10px; font-family:'DM Mono',monospace; color:#34d399;" id="scenDiffRoas">+1.00x</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="font-size:11.5px; color:#64748b; margin-top:12px;">
+                        * Holding click volume, CPC (₹20.00), and average order value (₹1,000) constant. Mathematical scenario, not a guaranteed sales forecast.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 09 · 1,000-CLICK CONVERSION MODEL -->
+        <section class="light-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="text-align:center; margin-bottom:32px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase;">STANDARDIZED VOLUME MODEL</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">What Could 1,000 Clicks Produce?</h2>
+                    <p style="font-size:14px; color:#64748b; margin:0;">Standardized 1,000-click benchmark output using your observed CVR, CPC, and AOV.</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; color:#64748b; font-weight:700;">ESTIMATED ORDERS</div>
+                        <div style="font-size:26px; font-weight:800; font-family:'DM Mono',monospace; color:#2563eb; margin:4px 0;" id="kOrders">80</div>
+                        <div style="font-size:12px; color:#64748b;">At 8.00% CVR</div>
+                    </div>
+
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; color:#64748b; font-weight:700;">ESTIMATED AD SPEND</div>
+                        <div style="font-size:26px; font-weight:800; font-family:'DM Mono',monospace; color:#0f172a; margin:4px 0;" id="kSpend">₹20,000</div>
+                        <div style="font-size:12px; color:#64748b;">At ₹20.00 CPC</div>
+                    </div>
+
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; color:#64748b; font-weight:700;">ESTIMATED AD SALES</div>
+                        <div style="font-size:26px; font-weight:800; font-family:'DM Mono',monospace; color:#10b981; margin:4px 0;" id="kSales">₹80,000</div>
+                        <div style="font-size:12px; color:#64748b;">At ₹1,000 AOV</div>
+                    </div>
+
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px;">
+                        <div style="font-size:11px; font-family:'DM Mono',monospace; color:#64748b; font-weight:700;">EFFICIENCY (ACOS / ROAS)</div>
+                        <div style="font-size:26px; font-weight:800; font-family:'DM Mono',monospace; color:#8b5cf6; margin:4px 0;" id="kAcos">25.0% / 4.0x</div>
+                        <div style="font-size:12px; color:#64748b;">CPA: ₹250.00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 · CONVERSION IMPACT CURVE TABLE -->
+        <section class="light-section-wrapper" style="background:#f8fafc;">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="margin-bottom:24px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase;">SENSITIVITY CURVE</div>
+                    <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin:4px 0;">See How Conversion Changes Your PPC Economics</h2>
+                    <p style="font-size:14px; color:#64748b; margin:0;">Evaluating CPA, ACoS, and ROAS across 5 distinct conversion rate tiers.</p>
+                </div>
+
+                <div style="overflow-x:auto; background:#ffffff; border:1px solid #e2e8f0; border-radius:14px;">
+                    <table style="width:100%; border-collapse:collapse; font-size:13px; text-align:center;">
+                        <thead>
+                            <tr style="background:#f1f5f9; border-bottom:1px solid #e2e8f0; font-family:'DM Mono',monospace; font-size:11px; color:#475569;">
+                                <th style="padding:12px;">CONVERSION TIER</th>
+                                <th style="padding:12px;">COST PER ORDER (CPA)</th>
+                                <th style="padding:12px;">REVENUE / CLICK</th>
+                                <th style="padding:12px;">MODELLED ACOS</th>
+                                <th style="padding:12px;">MODELLED ROAS</th>
+                                <th style="padding:12px;">TARGET CPC CAPACITY</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tierTableBody">
+                            <!-- Populated via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11 · CPC × CVR 5x5 SENSITIVITY MATRIX -->
+        <section class="dark-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                    <div>
+                        <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">2D SENSITIVITY LAB</div>
+                        <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">CPC × Conversion Rate Sensitivity</h2>
+                    </div>
+                    <div style="display:flex; gap:10px;">
+                        <button type="button" id="btnMatrixAcos" class="active" style="background:#2563eb; color:#ffffff; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Show ACoS</button>
+                        <button type="button" id="btnMatrixRoas" style="background:rgba(255,255,255,0.08); color:#cbd5e1; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Show ROAS</button>
+                    </div>
+                </div>
+
+                <div class="matrix-container-dark">
+                    <table class="matrix-table-dark" id="sensMatrixTable">
+                        <!-- Dynamically generated 5x5 matrix -->
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12 · TRAFFIC VS LISTING DIAGNOSTIC ENGINE -->
+        <section class="light-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="margin-bottom:28px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase;">PPC DIAGNOSTIC ENGINE</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Is My Conversion Problem Traffic or the Listing?</h2>
+                    <p style="font-size:14px; color:#64748b; margin:0;">Select your observed campaign symptom to diagnose the root cause and inspect actionable solutions.</p>
+                </div>
+
+                <div class="symptom-pills-grid">
+                    <div class="symptom-pill active" data-symptom="imp-clicks">
+                        <span class="symptom-icon">🔍</span>
+                        <span class="symptom-text">High impressions + low clicks</span>
+                    </div>
+                    <div class="symptom-pill" data-symptom="clicks-orders">
+                        <span class="symptom-icon">🛒</span>
+                        <span class="symptom-text">Many clicks + few orders</span>
+                    </div>
+                    <div class="symptom-pill" data-symptom="irrelevant-terms">
+                        <span class="symptom-icon">🚫</span>
+                        <span class="symptom-text">Irrelevant search terms</span>
+                    </div>
+                    <div class="symptom-pill" data-symptom="high-cpc-weak-cvr">
+                        <span class="symptom-icon">💸</span>
+                        <span class="symptom-text">High CPC + weak CVR</span>
+                    </div>
+                    <div class="symptom-pill" data-symptom="strong-ctr-weak-cvr">
+                        <span class="symptom-icon">⚡</span>
+                        <span class="symptom-text">Strong CTR + weak CVR</span>
+                    </div>
+                    <div class="symptom-pill" data-symptom="good-cvr-poor-acos">
+                        <span class="symptom-icon">📊</span>
+                        <span class="symptom-text">Good CVR + poor ACoS</span>
+                    </div>
+                </div>
+
+                <!-- DIAGNOSTIC OUTPUT BOX -->
+                <div style="background:#f8fafc; border:1px solid #cbd5e1; border-left:5px solid #2563eb; border-radius:14px; padding:24px;" id="diagDetailBox">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase;" id="diagCategory">PRE-CLICK RELEVANCE DIAGNOSTIC</div>
+                    <h3 style="font-size:20px; font-weight:800; color:#0f172a; margin:6px 0;" id="diagTitle">High Impressions + Low Clicks</h3>
+                    <p style="font-size:14px; color:#334155; line-height:1.6; margin:0 0 16px 0;" id="diagDescription">
+                        This pattern occurs before conversion. Your ad is being served to shoppers, but few click through to your product detail page. Improve search relevance, main image contrast, and title clarity before focusing on detail page optimization.
+                    </p>
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+                        <div style="font-weight:700; font-size:13px; color:#0f172a; margin-bottom:6px;">ACTIONABLE AUDIT CHECKLIST:</div>
+                        <ul style="margin:0; padding-left:20px; font-size:13px; color:#475569; line-height:1.6;" id="diagChecklist">
+                            <li>Review search term intent in your Amazon Search Term Report.</li>
+                            <li>Optimize main image lighting, crop, and thumbnail clarity.</li>
+                            <li>Ensure price and deal badges are competitive on search results.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13 · CONVERSION DRIVER MAP -->
+        <section class="light-section-wrapper" style="background:#f8fafc;">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="text-align:center; margin-bottom:32px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase;">SYSTEM DIAGRAM</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">What Actually Changes PPC Conversion?</h2>
+                    <p style="font-size:14px; color:#64748b; margin:0;">Conversion is driven by both traffic-side relevance and product-page-side offer quality.</p>
+                </div>
+
+                <div class="driver-map-box">
+                    <div style="display:flex; justify-content:center; gap:12px; margin-bottom:24px;">
+                        <button type="button" id="btnFilterTraffic" class="driver-node highlight-traffic" style="cursor:pointer;">Traffic Factors</button>
+                        <button type="button" id="btnFilterListing" class="driver-node" style="cursor:pointer;">Listing Factors</button>
+                        <button type="button" id="btnFilterOffer" class="driver-node" style="cursor:pointer;">Offer &amp; Price</button>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px; text-align:center;">
+                        <div class="driver-node highlight-traffic" id="nodeIntent">Search Intent &amp; Match Type</div>
+                        <div class="driver-node highlight-traffic" id="nodeTargeting">Targeting Precision</div>
+                        <div class="driver-node highlight-listing" id="nodePage">Main Image &amp; Listing Copy</div>
+                        <div class="driver-node highlight-offer" id="nodePrice">Price, Coupon &amp; Buy Box</div>
+                        <div class="driver-node highlight-offer" id="nodeReviews">Rating &amp; Review Count</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14 · ORDER TARGET PLANNER -->
+        <section class="dark-section-alt">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="margin-bottom:24px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">TRAFFIC GOAL PLANNER</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">How Much Traffic Do I Need for My Order Goal?</h2>
+                </div>
+
+                <div class="dark-glass-card" style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; align-items:center;">
+                    <div>
+                        <div class="dark-input-group">
+                            <label class="dark-input-label" for="inputTargetGoalOrders">Target Monthly Attributed Orders</label>
+                            <input type="number" id="inputTargetGoalOrders" class="dark-input-field" value="100" min="1" step="10">
+                        </div>
+                        <div style="font-size:13px; color:#cbd5e1; line-height:1.5;">
+                            Calculated at your observed <strong>8.00% CVR</strong> and <strong>₹20.00 CPC</strong>:
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(30, 41, 59, 0.8); border:1px solid rgba(56,189,248,0.3); border-radius:14px; padding:20px; display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                        <div>
+                            <div style="font-size:11px; font-family:'DM Mono',monospace; color:#94a3b8;">REQUIRED CLICKS</div>
+                            <div style="font-size:26px; font-weight:800; font-family:'DM Mono',monospace; color:#38bdf8;" id="goalReqClicks">1,250</div>
+                        </div>
+                        <div>
+                            <div style="font-size:11px; font-family:'DM Mono',monospace; color:#94a3b8;">REQUIRED SPEND</div>
+                            <div style="font-size:26px; font-weight:800; font-family:'DM Mono',monospace; color:#34d399;" id="goalReqSpend">₹25,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15 · TOP 3 DYNAMIC PRIORITIES PANEL -->
+        <section class="dark-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="margin-bottom:28px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">STRATEGIC ACTION PLAN</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Top 3 Strategic Priorities</h2>
+                    <p style="font-size:14px; color:#cbd5e1; margin:0;">Personalized priorities generated from your math and diagnostic selections.</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;" id="dynamicPrioritiesGrid">
+                    <!-- Populated via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 16 · SHOW THE MATH DRAWER -->
+        <section class="dark-section-alt">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <details class="dark-glass-card" style="background:rgba(15, 23, 42, 0.9);">
+                    <summary style="font-size:16px; font-weight:800; color:#38bdf8; cursor:pointer; user-select:none; padding:4px 0;">
+                        🧮 Mathematical Audit Proof (Click to Expand Calculations)
+                    </summary>
+                    <div style="margin-top:20px; font-family:'DM Mono',monospace; font-size:13px; color:#cbd5e1; line-height:1.8;" id="mathDrawerContent">
+                        <!-- Populated via JavaScript -->
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 17 · FINAL TAKEAWAY -->
+        <section class="light-section-wrapper">
+            <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
+                <div style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius:20px; padding:36px; color:#ffffff;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:8px;">FINAL TAKEAWAY</div>
+                    <h2 style="font-size:28px; font-weight:800; margin:0 0 16px 0;">Conversion Rate Connects Traffic Cost to Sales</h2>
+                    <p style="font-size:15px; color:#cbd5e1; line-height:1.6; margin:0 0 20px 0;">
+                        A low conversion rate forces every order to consume more paid clicks. Raising conversion reduces your cost per order (CPA) and improves ACoS/ROAS without requiring lower CPC bids — provided traffic volume and order values remain constant.
+                    </p>
+                    <div style="font-size:14px; font-weight:700; color:#34d399;">
+                        Goal: Qualify traffic so paid clicks turn into profitable Amazon orders.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 18 · EDITORIAL & EDUCATIONAL CONTENT -->
+        <section class="light-section-wrapper" style="background:#ffffff;">
+            <div class="resources-calc-container" style="max-width:960px; margin:0 auto; padding:0 20px;">
+                
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin-top:0;">How to Use the Amazon PPC Conversion Rate Calculator</h2>
+                <p style="font-size:15px; color:#334155; line-height:1.7;">
+                    Start with clicks and attributed orders to calculate observed PPC conversion. Add ad spend to understand CPC and cost per order. Add ad sales to unlock revenue-per-click, ACoS and ROAS. Use target and product-economics inputs to calculate the conversion rate required for a specific goal.
                 </p>
+
+                <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin-top:36px;">Amazon PPC Conversion Rate Formula</h2>
+                <div style="background:#f8fafc; border-left:4px solid #2563eb; padding:16px 20px; border-radius:0 10px 10px 0; margin:16px 0; font-family:'DM Mono',monospace; font-size:15px; font-weight:700; color:#1e293b;">
+                    Conversion Rate = Attributed Orders ÷ PPC Clicks × 100
+                </div>
+
+                <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin-top:36px;">Conversion Rate vs CTR</h2>
+                <p style="font-size:15px; color:#334155; line-height:1.7;">
+                    CTR (Click-Through Rate) measures how effectively an ad generates a click from impressions, while Conversion Rate measures how effectively clicked traffic turns into attributed orders on your product detail page.
+                </p>
+
+                <!-- RELATED CALCULATORS -->
+                <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin-top:48px;">Related Amazon PPC Calculators</h2>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:16px;">
+                    <a href="amazon-cpc-calculator.html" style="text-decoration:none; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px; color:#0f172a; display:block;">
+                        <div style="font-weight:800; font-size:16px; color:#2563eb;">Amazon CPC Calculator →</div>
+                        <div style="font-size:13px; color:#64748b; margin-top:4px;">See how click cost interacts with conversion.</div>
+                    </a>
+                    <a href="amazon-acos-calculator.html" style="text-decoration:none; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px; color:#0f172a; display:block;">
+                        <div style="font-weight:800; font-size:16px; color:#2563eb;">Amazon ACoS Calculator →</div>
+                        <div style="font-size:13px; color:#64748b; margin-top:4px;">Measure ad spend relative to attributed sales.</div>
+                    </a>
+                    <a href="amazon-roas-calculator.html" style="text-decoration:none; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px; color:#0f172a; display:block;">
+                        <div style="font-weight:800; font-size:16px; color:#2563eb;">Amazon ROAS Calculator →</div>
+                        <div style="font-size:13px; color:#64748b; margin-top:4px;">Measure attributed revenue return per ₹1 spent.</div>
+                    </a>
+                    <a href="amazon-profit-calculator.html" style="text-decoration:none; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px; color:#0f172a; display:block;">
+                        <div style="font-weight:800; font-size:16px; color:#2563eb;">Amazon Profit Calculator →</div>
+                        <div style="font-size:13px; color:#64748b; margin-top:4px;">Calculate net margins after fees and ad spend.</div>
+                    </a>
+                </div>
+
+                <!-- FAQS ACCORDION -->
+                <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin-top:48px;">Frequently Asked Questions</h2>
+                <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+                    <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+                        <summary style="font-weight:700; font-size:15px; color:#0f172a; cursor:pointer;">What is Amazon PPC conversion rate?</summary>
+                        <div style="font-size:14px; color:#475569; margin-top:10px; line-height:1.6;">
+                            Amazon PPC conversion rate (CVR) measures the percentage of paid ad clicks that generate attributed orders. Formula: CVR % = (Attributed Orders ÷ PPC Clicks) × 100.
+                        </div>
+                    </details>
+                    <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+                        <summary style="font-weight:700; font-size:15px; color:#0f172a; cursor:pointer;">How do I calculate Amazon PPC conversion rate?</summary>
+                        <div style="font-size:14px; color:#475569; margin-top:10px; line-height:1.6;">
+                            Divide attributed ad orders by total PPC clicks for the same reporting period and multiply by 100. For example, 40 attributed orders divided by 500 clicks equals 8.00% CVR.
+                        </div>
+                    </details>
+                    <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+                        <summary style="font-weight:700; font-size:15px; color:#0f172a; cursor:pointer;">What is a good Amazon PPC conversion rate?</summary>
+                        <div style="font-size:14px; color:#475569; margin-top:10px; line-height:1.6;">
+                            There is no universal 'good' conversion rate across all products. A sustainable CVR depends on your CPC, average order value, target ACoS, and product economics.
+                        </div>
+                    </details>
+                </div>
+
             </div>
+        </section>
 
-
-            <!-- BOTTOM COPYRIGHT BAR -->
-            <div class="footer-bottom">
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
-                    class="scroll-top-btn" aria-label="Scroll to top">
-                    ↑
-                </a>
+        <!-- 19 · DARK AUDIT BANNER CTA -->
+        <section style="background:#080d1a; border-top:1px solid rgba(255,255,255,0.1); padding:60px 0; text-align:center; color:#ffffff;">
+            <div class="resources-calc-container" style="max-width:800px; margin:0 auto; padding:0 20px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:8px;">NEED MORE THAN THE CONVERSION NUMBER?</div>
+                <h2 style="font-size:32px; font-weight:800; margin:0 0 12px 0;">Find Out Why Your Amazon PPC Clicks Aren't Converting</h2>
+                <p style="font-size:15px; color:#cbd5e1; line-height:1.6; margin:0 0 24px 0;">
+                    PPC Growth Expert can analyze search terms, traffic quality, bids, placements, campaign structure and listing conversion to identify where your paid traffic is losing efficiency.
+                </p>
+                <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+                    <a href="contact.html" style="background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color:#ffffff; font-weight:800; font-size:15px; padding:14px 28px; border-radius:10px; text-decoration:none; box-shadow:0 4px 20px rgba(37,99,235,0.4);">Request an Amazon PPC Audit →</a>
+                    <a href="services.html" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); color:#ffffff; font-weight:700; font-size:15px; padding:14px 28px; border-radius:10px; text-decoration:none;">Explore Amazon PPC Management</a>
+                </div>
             </div>
+        </section>
 
+    </main>
+
+    <!-- HIDDEN EXECUTIVE PDF PRINT REPORT CONTAINER -->
+    <div id="pdfReportContainer" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #0f172a; padding-bottom:12px; margin-bottom:20px;">
+            <div>
+                <h1 style="font-size:22px; font-weight:800; color:#0f172a; margin:0;">PPC GROWTH EXPERT</h1>
+                <div style="font-size:12px; font-weight:700; color:#2563eb; text-transform:uppercase;">EXECUTIVE AUDIT · AMAZON PPC CONVERSION ANALYSIS</div>
+            </div>
+            <div style="text-align:right; font-family:'DM Mono',monospace; font-size:11px; color:#64748b;">
+                <div id="pdfDate">DATE: --</div>
+                <div>REF: CVR-AUDIT-EXPERT</div>
+            </div>
         </div>
 
-    </footer>
+        <h3 style="font-size:14px; text-transform:uppercase; color:#2563eb; border-bottom:1px solid #e2e8f0; padding-bottom:4px; margin-top:16px;">01 · OBSERVED CONVERSION TELEMETRY</h3>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:16px;">
+            <tr>
+                <td style="padding:6px; font-weight:700;">PPC Clicks:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfClicks">500</td>
+                <td style="padding:6px; font-weight:700;">Attributed Orders:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfOrders">40</td>
+            </tr>
+            <tr>
+                <td style="padding:6px; font-weight:700;">Conversion Rate (CVR):</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace; font-weight:800; color:#2563eb;" id="pdfCvr">8.00%</td>
+                <td style="padding:6px; font-weight:700;">Clicks per Order:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfClicksPerOrder">12.50</td>
+            </tr>
+            <tr>
+                <td style="padding:6px; font-weight:700;">Ad Spend:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfSpend">₹10,000</td>
+                <td style="padding:6px; font-weight:700;">Average CPC:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfCpc">₹20.00</td>
+            </tr>
+            <tr>
+                <td style="padding:6px; font-weight:700;">Attributed Ad Sales:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfSales">₹40,000</td>
+                <td style="padding:6px; font-weight:700;">Cost per Order (CPA):</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfCpa">₹250.00</td>
+            </tr>
+            <tr>
+                <td style="padding:6px; font-weight:700;">Observed ACoS:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfAcos">25.00%</td>
+                <td style="padding:6px; font-weight:700;">Observed ROAS:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfRoas">4.00x</td>
+            </tr>
+        </table>
 
-    <script src="js/script.js?v=v27"></script>
-    <script src="js/navbar.js?v=v27"></script>
-    <script src="js/calculators.js?v=v1"></script>
+        <h3 style="font-size:14px; text-transform:uppercase; color:#2563eb; border-bottom:1px solid #e2e8f0; padding-bottom:4px; margin-top:16px;">02 · TARGET &amp; BREAK-EVEN CONVERSION MODEL</h3>
+        <table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:16px;">
+            <tr>
+                <td style="padding:6px; font-weight:700;">Target ACoS:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfTargetAcos">25.00%</td>
+                <td style="padding:6px; font-weight:700;">Required CVR (Target):</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace; font-weight:800; color:#2563eb;" id="pdfReqCvr">8.00%</td>
+            </tr>
+            <tr>
+                <td style="padding:6px; font-weight:700;">Pre-Ad Contribution:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace;" id="pdfPreAdContrib">₹380.00</td>
+                <td style="padding:6px; font-weight:700;">Break-Even CVR:</td>
+                <td style="padding:6px; font-family:'DM Mono',monospace; font-weight:800; color:#d97706;" id="pdfBeCvr">6.25%</td>
+            </tr>
+        </table>
+
+        <h3 style="font-size:14px; text-transform:uppercase; color:#2563eb; border-bottom:1px solid #e2e8f0; padding-bottom:4px; margin-top:16px;">03 · STRATEGIC PRIORITIES &amp; DIAGNOSTIC</h3>
+        <div style="font-size:12px; line-height:1.5; margin-bottom:16px;" id="pdfPriorities">
+            <!-- Populated via JS -->
+        </div>
+
+        <div style="font-size:10px; color:#64748b; border-top:1px solid #e2e8f0; padding-top:8px; margin-top:24px;">
+            This report is a mathematical analysis based on entered values. Conversion outcomes vary by search intent, targeting, listing quality, pricing, competition, attribution, and marketplace conditions. Modelled scenarios are not guarantees.
+        </div>
+    </div>
+
+    <!-- GLOBAL FOOTER (LOADED VIA DYNAMIC SCRIPT) -->
+    <footer id="footer"></footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/navbar.js?v=v42"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // HELPER FUNCTIONS
+            function formatINR(val, isWhole = false) {
+                if (isNaN(val) || !isFinite(val)) return '₹0';
+                return new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'INR',
+                    maximumFractionDigits: isWhole ? 0 : 2
+                }).format(val);
+            }
+
+            // CORE CALCULATION ENGINE
+            function calculateCvrEngine() {
+                const clicks = parseFloat(document.getElementById('inputClicks').value) || 0;
+                const orders = parseFloat(document.getElementById('inputOrders').value) || 0;
+                const spend = parseFloat(document.getElementById('inputSpend').value) || 0;
+                const sales = parseFloat(document.getElementById('inputSales').value) || 0;
+
+                const targetAcosInput = parseFloat(document.getElementById('inputTargetAcos').value) || 25;
+                const targetRoasInput = parseFloat(document.getElementById('inputTargetRoas').value) || 4.0;
+                const expectedCpcInput = parseFloat(document.getElementById('inputExpectedCpc').value) || 0;
+                const aovInput = parseFloat(document.getElementById('inputAov').value) || 0;
+
+                const cogs = parseFloat(document.getElementById('inputCogs').value) || 0;
+                const fees = parseFloat(document.getElementById('inputFees').value) || 0;
+                const shipping = parseFloat(document.getElementById('inputShipping').value) || 0;
+                const other = parseFloat(document.getElementById('inputOtherCosts').value) || 0;
+
+                // 1. OBSERVED METRICS
+                let cvr = 0;
+                let clicksPerOrderText = 'N/A';
+                let clicksPerOrderVal = 0;
+
+                if (clicks > 0) {
+                    cvr = (orders / clicks) * 100;
+                    if (orders > 0) {
+                        clicksPerOrderVal = clicks / orders;
+                        clicksPerOrderText = clicksPerOrderVal.toFixed(2);
+                    } else {
+                        clicksPerOrderText = 'No attributed orders';
+                    }
+                }
+
+                const cpc = clicks > 0 ? spend / clicks : 0;
+                const cpa = orders > 0 ? spend / orders : 0;
+                const rpc = clicks > 0 ? sales / clicks : 0;
+                const observedAov = orders > 0 ? sales / orders : (aovInput > 0 ? aovInput : 1000);
+                const acos = sales > 0 ? (spend / sales) * 100 : 0;
+                const roas = spend > 0 ? sales / spend : 0;
+
+                // UPDATE PRIMARY RESULTS PANEL
+                document.getElementById('resCvrVal').innerText = clicks > 0 ? `${cvr.toFixed(2)}%` : '0.00%';
+                document.getElementById('resClicksPerOrderBadge').innerText = orders > 0 ? `${clicksPerOrderVal.toFixed(2)} clicks per order` : 'No attributed orders';
+                document.getElementById('resClicksPerOrder').innerText = clicksPerOrderText;
+                document.getElementById('resCostPerOrder').innerText = orders > 0 ? formatINR(cpa) : 'N/A';
+                document.getElementById('resCpc').innerText = clicks > 0 ? formatINR(cpc) : '₹0.00';
+                document.getElementById('resRpc').innerText = clicks > 0 ? formatINR(rpc) : '₹0.00';
+                document.getElementById('resAcos').innerText = sales > 0 ? `${acos.toFixed(2)}%` : 'N/A';
+                document.getElementById('resRoas').innerText = spend > 0 ? `${roas.toFixed(2)}x` : 'N/A';
+
+                // DYNAMIC INTERPRETATION COPY
+                let interp = `Your PPC traffic generated ${orders} attributed orders from ${clicks} clicks, giving a conversion rate of ${cvr.toFixed(2)}%. `;
+                if (orders > 0) {
+                    interp += `Approximately ${clicksPerOrderVal.toFixed(1)} paid clicks were required per attributed order. `;
+                }
+                if (spend > 0) {
+                    interp += `With ${formatINR(spend, true)} in ad spend, your average CPC was ${formatINR(cpc)} and your cost per order was ${formatINR(cpa)}. `;
+                }
+                if (sales > 0) {
+                    interp += `Ad sales generated ${formatINR(sales, true)}, resulting in a ${acos.toFixed(1)}% ACoS (${roas.toFixed(2)}x ROAS).`;
+                }
+                document.getElementById('resInterpretationText').innerText = interp;
+
+                // 2. FUNNEL VISUALIZATION
+                document.getElementById('funnelStep1Val').innerText = `${clicks} PPC Clicks`;
+                document.getElementById('funnelStep1Sub').innerText = spend > 0 ? `Spend: ${formatINR(spend, true)}` : 'Traffic Volume';
+                document.getElementById('funnelStep2Val').innerText = `${orders} Attributed Orders`;
+                document.getElementById('funnelStep2Sub').innerText = `CVR: ${cvr.toFixed(2)}%`;
+                document.getElementById('funnelStep3Val').innerText = sales > 0 ? `${formatINR(sales, true)} Attributed Sales` : 'Sales Generated';
+                document.getElementById('funnelStep3Sub').innerText = sales > 0 ? `ACoS: ${acos.toFixed(2)}% (${roas.toFixed(2)}x ROAS)` : 'Revenue Output';
+
+                // 3. TARGET CVR PLANNER & PRODUCT ECONOMICS
+                const calcCpc = expectedCpcInput > 0 ? expectedCpcInput : (cpc > 0 ? cpc : 20);
+                const calcAov = observedAov > 0 ? observedAov : 1000;
+                const reqCvrAcos = (calcCpc / (calcAov * (targetAcosInput / 100))) * 100;
+
+                const preAdContrib = calcAov - cogs - fees - shipping - other;
+                const beCvr = (preAdContrib > 0 && calcCpc > 0) ? (calcCpc / preAdContrib) * 100 : 0;
+                const maxCpcSupported = calcAov * (cvr / 100) * (targetAcosInput / 100);
+
+                document.getElementById('dashCvr').innerText = `${cvr.toFixed(2)}%`;
+                document.getElementById('dashClicksPerOrder').innerText = clicksPerOrderText;
+                document.getElementById('dashCpa').innerText = orders > 0 ? formatINR(cpa) : 'N/A';
+                document.getElementById('dashReqCvr').innerText = `${reqCvrAcos.toFixed(2)}%`;
+                document.getElementById('dashBeCvr').innerText = beCvr > 0 ? `${beCvr.toFixed(2)}%` : 'N/A';
+                document.getElementById('dashMaxCpc').innerText = formatINR(maxCpcSupported);
+
+                // PLANNER OUTPUTS
+                const cvrGap = reqCvrAcos - cvr;
+                const reqOrdersVal = Math.round((reqCvrAcos / 100) * clicks);
+                const addOrdersVal = reqOrdersVal - orders;
+
+                document.getElementById('planReqCvr').innerText = `${reqCvrAcos.toFixed(2)}%`;
+                document.getElementById('planCvrGap').innerText = `${cvrGap >= 0 ? '+' : ''}${cvrGap.toFixed(2)}pp`;
+                document.getElementById('planReqOrders').innerText = reqOrdersVal;
+                document.getElementById('planAddOrders').innerText = `${addOrdersVal >= 0 ? '+' : ''}${addOrdersVal}`;
+
+                let actionText = '';
+                if (cvrGap <= 0) {
+                    actionText = 'Your observed conversion rate exceeds your target requirement. No additional conversion lift is required at current CPC and order value.';
+                } else {
+                    actionText = `To hit your ${targetAcosInput}% Target ACoS at current CPC (${formatINR(calcCpc)}), conversion needs to rise by +${cvrGap.toFixed(2)} percentage points, generating ${addOrdersVal} additional orders at current traffic.`;
+                }
+                document.getElementById('planActionableText').innerText = actionText;
+
+                // 4. BENCHMARK ALIGNMENT GAUGE
+                updateBenchmarkGauge(beCvr, cvr, reqCvrAcos);
+
+                // 5. SCENARIO STRESS TEST
+                updateScenarioLab(cvr, clicks, calcCpc, calcAov);
+
+                // 6. 1,000 CLICK MODEL
+                const kOrd = Math.round(1000 * (cvr / 100));
+                const kSpd = 1000 * calcCpc;
+                const kSls = kOrd * calcAov;
+                const kAc = kSls > 0 ? (kSpd / kSls) * 100 : 0;
+                const kRo = kSpd > 0 ? kSls / kSpd : 0;
+
+                document.getElementById('kOrders').innerText = kOrd;
+                document.getElementById('kSpend').innerText = formatINR(kSpd, true);
+                document.getElementById('kSales').innerText = formatINR(kSls, true);
+                document.getElementById('kAcos').innerText = kSls > 0 ? `${kAc.toFixed(1)}% / ${kRo.toFixed(1)}x` : 'N/A';
+
+                // 7. SENSITIVITY CURVE & MATRIX
+                updateSensitivityCurve(cvr, calcCpc, calcAov);
+                updateSensitivityMatrix(cvr, calcCpc, calcAov, targetAcosInput);
+
+                // 8. ORDER GOAL PLANNER
+                updateGoalPlanner(cvr, calcCpc, calcAov);
+
+                // 9. DYNAMIC PRIORITIES & MATH DRAWER
+                updateDynamicPriorities(cvr, reqCvrAcos, beCvr, cvrGap, calcCpc, maxCpcSupported);
+                updateMathDrawer(clicks, orders, spend, sales, cvr, calcCpc, calcAov, targetAcosInput, reqCvrAcos, preAdContrib, beCvr);
+                updatePdfReport(clicks, orders, spend, sales, cvr, clicksPerOrderVal, calcCpc, cpa, acos, roas, targetAcosInput, reqCvrAcos, preAdContrib, beCvr);
+            }
+
+            // GAUGE SCALE POSITIONING WITH ANTI-COLLISION STAGGERING
+            function updateBenchmarkGauge(beCvr, currCvr, targetCvr) {
+                const mBe = document.getElementById('markerBe');
+                const mCurr = document.getElementById('markerCurr');
+                const mTgt = document.getElementById('markerTgt');
+
+                document.getElementById('mValBe').innerText = beCvr > 0 ? `${beCvr.toFixed(2)}%` : 'N/A';
+                document.getElementById('mValCurr').innerText = `${currCvr.toFixed(2)}%`;
+                document.getElementById('mValTgt').innerText = `${targetCvr.toFixed(2)}%`;
+
+                const maxVal = Math.max(beCvr || 1, currCvr, targetCvr) * 1.3;
+
+                const posBe = beCvr > 0 ? Math.min(92, Math.max(8, (beCvr / maxVal) * 100)) : 10;
+                const posCurr = Math.min(92, Math.max(8, (currCvr / maxVal) * 100));
+                const posTgt = Math.min(92, Math.max(8, (targetCvr / maxVal) * 100));
+
+                if (mBe) mBe.style.left = `${posBe}%`;
+                if (mCurr) mCurr.style.left = `${posCurr}%`;
+                if (mTgt) mTgt.style.left = `${posTgt}%`;
+
+                // ANTI-COLLISION LOGIC
+                const markers = [
+                    { el: mBe, pos: posBe },
+                    { el: mCurr, pos: posCurr },
+                    { el: mTgt, pos: posTgt }
+                ].filter(m => m.el !== null).sort((a, b) => a.pos - b.pos);
+
+                markers.forEach(m => m.el.classList.remove('marker-below', 'marker-top-high'));
+
+                const MIN_DIST = 16;
+                for (let i = 0; i < markers.length - 1; i++) {
+                    const current = markers[i];
+                    const next = markers[i + 1];
+
+                    if (next.pos - current.pos < MIN_DIST) {
+                        if (!current.el.classList.contains('marker-below')) {
+                            next.el.classList.add('marker-below');
+                        } else {
+                            next.el.classList.add('marker-top-high');
+                        }
+                    }
+                }
+            }
+
+            // SCENARIO LAB
+            function updateScenarioLab(currCvr, currClicks, cpc, aov) {
+                const shiftPp = parseFloat(document.getElementById('sliderCvrShift').value) || 0;
+                const newCvr = Math.max(0.1, currCvr + shiftPp);
+                
+                document.getElementById('lblSliderShift').innerText = `${shiftPp >= 0 ? '+' : ''}${shiftPp.toFixed(2)}pp (${newCvr.toFixed(2)}% CVR)`;
+
+                const currOrders = Math.round((currCvr / 100) * currClicks);
+                const newOrders = Math.round((newCvr / 100) * currClicks);
+
+                const currCpa = currCvr > 0 ? cpc / (currCvr / 100) : 0;
+                const newCpa = cpc / (newCvr / 100);
+
+                const currRpc = aov * (currCvr / 100);
+                const newRpc = aov * (newCvr / 100);
+
+                const currAcos = currRpc > 0 ? (cpc / currRpc) * 100 : 0;
+                const newAcos = newRpc > 0 ? (cpc / newRpc) * 100 : 0;
+
+                const currRoas = cpc > 0 ? currRpc / cpc : 0;
+                const newRoas = cpc > 0 ? newRpc / cpc : 0;
+
+                document.getElementById('scenCurrCvr').innerText = `${currCvr.toFixed(2)}%`;
+                document.getElementById('scenNewCvr').innerText = `${newCvr.toFixed(2)}%`;
+                document.getElementById('scenDiffCvr').innerText = `${shiftPp >= 0 ? '+' : ''}${shiftPp.toFixed(2)}pp`;
+
+                document.getElementById('scenCurrOrders').innerText = currOrders;
+                document.getElementById('scenNewOrders').innerText = newOrders;
+                document.getElementById('scenDiffOrders').innerText = `${newOrders - currOrders >= 0 ? '+' : ''}${newOrders - currOrders} orders`;
+
+                document.getElementById('scenCurrCpa').innerText = formatINR(currCpa);
+                document.getElementById('scenNewCpa').innerText = formatINR(newCpa);
+                document.getElementById('scenDiffCpa').innerText = `${formatINR(newCpa - currCpa)}`;
+
+                document.getElementById('scenCurrRpc').innerText = formatINR(currRpc);
+                document.getElementById('scenNewRpc').innerText = formatINR(newRpc);
+                document.getElementById('scenDiffRpc').innerText = `${newRpc - currRpc >= 0 ? '+' : ''}${formatINR(newRpc - currRpc)}`;
+
+                document.getElementById('scenCurrAcos').innerText = `${currAcos.toFixed(2)}%`;
+                document.getElementById('scenNewAcos').innerText = `${newAcos.toFixed(2)}%`;
+                document.getElementById('scenDiffAcos').innerText = `${(newAcos - currAcos).toFixed(2)}pp`;
+
+                document.getElementById('scenCurrRoas').innerText = `${currRoas.toFixed(2)}x`;
+                document.getElementById('scenNewRoas').innerText = `${newRoas.toFixed(2)}x`;
+                document.getElementById('scenDiffRoas').innerText = `${(newRoas - currRoas >= 0 ? '+' : '')}${(newRoas - currRoas).toFixed(2)}x`;
+            }
+
+            document.getElementById('sliderCvrShift').addEventListener('input', function() {
+                const clicks = parseFloat(document.getElementById('inputClicks').value) || 500;
+                const orders = parseFloat(document.getElementById('inputOrders').value) || 40;
+                const cvr = clicks > 0 ? (orders / clicks) * 100 : 8.0;
+                const spend = parseFloat(document.getElementById('inputSpend').value) || 10000;
+                const sales = parseFloat(document.getElementById('inputSales').value) || 40000;
+                const cpc = clicks > 0 ? spend / clicks : 20;
+                const aov = orders > 0 ? sales / orders : 1000;
+                updateScenarioLab(cvr, clicks, cpc, aov);
+            });
+
+            // SENSITIVITY CURVE
+            function updateSensitivityCurve(currCvr, cpc, aov) {
+                const tbody = document.getElementById('tierTableBody');
+                if (!tbody) return;
+
+                const tiers = [4.0, 6.0, 8.0, 10.0, 12.0];
+                tbody.innerHTML = tiers.map(tCvr => {
+                    const cpa = cpc / (tCvr / 100);
+                    const rpc = aov * (tCvr / 100);
+                    const acos = rpc > 0 ? (cpc / rpc) * 100 : 0;
+                    const roas = cpc > 0 ? rpc / cpc : 0;
+                    const maxCpc = aov * (tCvr / 100) * 0.25;
+
+                    const isCurr = Math.abs(tCvr - currCvr) < 0.5;
+
+                    return `
+                        <tr style="border-bottom:1px solid #e2e8f0; ${isCurr ? 'background:#eff6ff; font-weight:700;' : ''}">
+                            <td style="padding:10px;">${tCvr.toFixed(1)}%${isCurr ? ' (Observed)' : ''}</td>
+                            <td style="padding:10px; font-family:'DM Mono',monospace;">${formatINR(cpa)}</td>
+                            <td style="padding:10px; font-family:'DM Mono',monospace;">${formatINR(rpc)}</td>
+                            <td style="padding:10px; font-family:'DM Mono',monospace; color:#2563eb;">${acos.toFixed(1)}%</td>
+                            <td style="padding:10px; font-family:'DM Mono',monospace; color:#10b981;">${roas.toFixed(2)}x</td>
+                            <td style="padding:10px; font-family:'DM Mono',monospace;">${formatINR(maxCpc)}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // 5x5 SENSITIVITY MATRIX
+            let matrixMode = 'acos';
+
+            function updateSensitivityMatrix(currCvr, currCpc, aov, targetAcos) {
+                const matrixEl = document.getElementById('sensMatrixTable');
+                if (!matrixEl) return;
+
+                const cpcMultipliers = [0.8, 0.9, 1.0, 1.1, 1.2];
+                const cvrDeltas = [-2.0, -1.0, 0, 1.0, 2.0];
+
+                let html = `
+                    <thead>
+                        <tr>
+                            <th>CPC \\ CVR Shift</th>
+                            ${cvrDeltas.map(d => `<th>${d >= 0 ? '+' : ''}${d.toFixed(1)}pp (${Math.max(0.1, currCvr + d).toFixed(1)}%)</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                `;
+
+                cpcMultipliers.forEach(m => {
+                    const testCpc = currCpc * m;
+                    html += `<tr><td style="font-family:'DM Mono',monospace; color:#94a3b8; font-weight:700;">${formatINR(testCpc)} (${m === 1 ? 'Now' : (m > 1 ? '+' : '') + Math.round((m - 1) * 100) + '%'})</td>`;
+                    
+                    cvrDeltas.forEach(d => {
+                        const testCvr = Math.max(0.1, currCvr + d);
+                        const rpc = aov * (testCvr / 100);
+                        const cellAcos = rpc > 0 ? (testCpc / rpc) * 100 : 0;
+                        const cellRoas = testCpc > 0 ? rpc / testCpc : 0;
+
+                        const isCurrent = (m === 1.0 && d === 0);
+                        const isGood = cellAcos <= targetAcos;
+
+                        let cellClass = 'cell-below-target';
+                        if (isCurrent) cellClass = 'cell-current';
+                        else if (isGood) cellClass = 'cell-above-target';
+
+                        const displayVal = matrixMode === 'acos' ? `${cellAcos.toFixed(1)}%` : `${cellRoas.toFixed(2)}x`;
+
+                        html += `<td class="${cellClass}">${displayVal}</td>`;
+                    });
+                    html += `</tr>`;
+                });
+
+                html += `</tbody>`;
+                matrixEl.innerHTML = html;
+            }
+
+            document.getElementById('btnMatrixAcos').addEventListener('click', function() {
+                matrixMode = 'acos';
+                this.classList.add('active');
+                this.style.background = '#2563eb';
+                document.getElementById('btnMatrixRoas').classList.remove('active');
+                document.getElementById('btnMatrixRoas').style.background = 'rgba(255,255,255,0.08)';
+                calculateCvrEngine();
+            });
+
+            document.getElementById('btnMatrixRoas').addEventListener('click', function() {
+                matrixMode = 'roas';
+                this.classList.add('active');
+                this.style.background = '#2563eb';
+                document.getElementById('btnMatrixAcos').classList.remove('active');
+                document.getElementById('btnMatrixAcos').style.background = 'rgba(255,255,255,0.08)';
+                calculateCvrEngine();
+            });
+
+            // ORDER GOAL PLANNER
+            function updateGoalPlanner(currCvr, cpc, aov) {
+                const targetOrders = parseFloat(document.getElementById('inputTargetGoalOrders').value) || 100;
+                const reqClicks = currCvr > 0 ? Math.round(targetOrders / (currCvr / 100)) : 0;
+                const reqSpend = reqClicks * cpc;
+
+                document.getElementById('goalReqClicks').innerText = reqClicks.toLocaleString('en-IN');
+                document.getElementById('goalReqSpend').innerText = formatINR(reqSpend, true);
+            }
+
+            document.getElementById('inputTargetGoalOrders').addEventListener('input', calculateCvrEngine);
+
+            // DIAGNOSTIC PILLS LOGIC
+            const diagData = {
+                'imp-clicks': {
+                    category: 'PRE-CLICK RELEVANCE DIAGNOSTIC',
+                    title: 'High Impressions + Low Clicks',
+                    desc: 'This pattern occurs before conversion. Your ad is being served to shoppers, but few click through to your product detail page. Improve search relevance, main image contrast, and title clarity before focusing on detail page optimization.',
+                    checklist: [
+                        'Review search term intent in your Amazon Search Term Report.',
+                        'Optimize main image lighting, crop, and thumbnail clarity.',
+                        'Ensure price and deal badges are competitive on search results.'
+                    ]
+                },
+                'clicks-orders': {
+                    category: 'POST-CLICK CONVERSION DIAGNOSTIC',
+                    title: 'Many Clicks + Few Orders',
+                    desc: 'Shoppers are showing interest by clicking your ad, but leaving without completing the purchase. Audit product page elements including price competitiveness, review rating, bullet clarity, and stock availability.',
+                    checklist: [
+                        'Audit pricing against top 3 organic competitors on target keywords.',
+                        'Verify main bullet points communicate key value propositions instantly.',
+                        'Check for negative customer reviews or lower overall star rating.'
+                    ]
+                },
+                'irrelevant-terms': {
+                    category: 'TRAFFIC QUALITY DIAGNOSTIC',
+                    title: 'Irrelevant Search Terms',
+                    desc: 'Ad spend is leaking onto broad or irrelevant search queries. Negating loose match terms will immediately raise traffic qualification and overall PPC conversion rate.',
+                    checklist: [
+                        'Download Search Term Report and isolate zero-order search terms.',
+                        'Add irrelevant search phrases as Negative Exact or Negative Phrase.',
+                        'Refine Auto campaign targeting groups (Close-match vs Loose-match).'
+                    ]
+                },
+                'high-cpc-weak-cvr': {
+                    category: 'EFFICIENCY DUAL PRESSURE',
+                    title: 'High CPC + Weak CVR',
+                    desc: 'High CPC combined with weak conversion creates severe upward pressure on both CPA and ACoS. Optimize traffic quality and landing page offer before attempting to scale bids.',
+                    checklist: [
+                        'Lower bids on high-CPC, low-converting targets.',
+                        'Shift budget toward high-converting long-tail exact keywords.',
+                        'Optimize product page conversion to increase maximum supported CPC.'
+                    ]
+                },
+                'strong-ctr-weak-cvr': {
+                    category: 'OFFER DISCONNECT DIAGNOSTIC',
+                    title: 'Strong CTR + Weak CVR',
+                    desc: 'Your ad creative successfully attracts clicks, but shoppers experience a disconnect when arriving at your product detail page. Ensure detail page content delivers on ad expectations.',
+                    checklist: [
+                        'Align listing title and main image with top ad copy hooks.',
+                        'Check if competitor product ads on your page are stealing conversions.',
+                        'Add coupons or limited-time promotional pricing to improve conversion.'
+                    ]
+                },
+                'good-cvr-poor-acos': {
+                    category: 'BID & MARGIN BOTTLENECK',
+                    title: 'Good CVR + Poor ACoS',
+                    desc: 'Conversion is already strong, meaning conversion rate is not your primary bottleneck. High CPC or low selling price relative to ad cost is causing elevated ACoS.',
+                    checklist: [
+                        'Review bid levels using the Amazon CPC Calculator.',
+                        'Evaluate multipack or higher-AOV bundle strategies to lift revenue/click.',
+                        'Negotiate unit product cost or FBA fees to widen pre-ad contribution.'
+                    ]
+                }
+            };
+
+            document.querySelectorAll('.symptom-pill').forEach(pill => {
+                pill.addEventListener('click', function() {
+                    document.querySelectorAll('.symptom-pill').forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const symKey = this.getAttribute('data-symptom');
+                    const d = diagData[symKey];
+
+                    if (d) {
+                        document.getElementById('diagCategory').innerText = d.category;
+                        document.getElementById('diagTitle').innerText = d.title;
+                        document.getElementById('diagDescription').innerText = d.desc;
+                        document.getElementById('diagChecklist').innerHTML = d.checklist.map(item => `<li>${item}</li>`).join('');
+                    }
+                });
+            });
+
+            // DRIVER MAP FILTERS
+            document.getElementById('btnFilterTraffic').addEventListener('click', function() {
+                document.querySelectorAll('.driver-node').forEach(n => n.className = 'driver-node');
+                document.getElementById('nodeIntent').classList.add('highlight-traffic');
+                document.getElementById('nodeTargeting').classList.add('highlight-traffic');
+            });
+
+            document.getElementById('btnFilterListing').addEventListener('click', function() {
+                document.querySelectorAll('.driver-node').forEach(n => n.className = 'driver-node');
+                document.getElementById('nodePage').classList.add('highlight-listing');
+            });
+
+            document.getElementById('btnFilterOffer').addEventListener('click', function() {
+                document.querySelectorAll('.driver-node').forEach(n => n.className = 'driver-node');
+                document.getElementById('nodePrice').classList.add('highlight-offer');
+                document.getElementById('nodeReviews').classList.add('highlight-offer');
+            });
+
+            // DYNAMIC TOP 3 PRIORITIES
+            function updateDynamicPriorities(cvr, reqCvr, beCvr, cvrGap, cpc, maxCpc) {
+                const grid = document.getElementById('dynamicPrioritiesGrid');
+                if (!grid) return;
+
+                let p1 = '', p2 = '', p3 = '';
+
+                if (cvrGap > 0) {
+                    p1 = `
+                        <div class="dark-telemetry-card card-glow-amber">
+                            <div class="telemetry-title" style="color:#f59e0b;">01 · TARGET CONVERSION GAP</div>
+                            <div style="font-size:14px; color:#ffffff; margin-top:6px; font-weight:800;">Gap: +${cvrGap.toFixed(2)}pp Required</div>
+                            <div style="font-size:13px; color:#cbd5e1; margin-top:4px; line-height:1.5;">Observed CVR (${cvr.toFixed(2)}%) is below your ${reqCvr.toFixed(2)}% target requirement. Audit search terms and product page offer.</div>
+                        </div>
+                    `;
+                } else {
+                    p1 = `
+                        <div class="dark-telemetry-card card-glow-green">
+                            <div class="telemetry-title" style="color:#34d399;">01 · TARGET CONVERSION MET</div>
+                            <div style="font-size:14px; color:#ffffff; margin-top:6px; font-weight:800;">Target Requirement Surpassed</div>
+                            <div style="font-size:13px; color:#cbd5e1; margin-top:4px; line-height:1.5;">Observed CVR (${cvr.toFixed(2)}%) meets or exceeds your required benchmark (${reqCvr.toFixed(2)}%). Focus on bid optimization and scaling.</div>
+                        </div>
+                    `;
+                }
+
+                if (cpc > maxCpc) {
+                    p2 = `
+                        <div class="dark-telemetry-card card-glow-red">
+                            <div class="telemetry-title" style="color:#f87171;">02 · CPC BID CONSTRAINT</div>
+                            <div style="font-size:14px; color:#ffffff; margin-top:6px; font-weight:800;">CPC Exceeds Supported Limit</div>
+                            <div style="font-size:13px; color:#cbd5e1; margin-top:4px; line-height:1.5;">Your current CPC (${formatINR(cpc)}) is above the max supported CPC (${formatINR(maxCpc)}) at current conversion. Reduce target bids.</div>
+                        </div>
+                    `;
+                } else {
+                    p2 = `
+                        <div class="dark-telemetry-card card-glow-blue">
+                            <div class="telemetry-title" style="color:#38bdf8;">02 · TRAFFIC QUALIFICATION</div>
+                            <div style="font-size:14px; color:#ffffff; margin-top:6px; font-weight:800;">Filter Non-Converting Terms</div>
+                            <div style="font-size:13px; color:#cbd5e1; margin-top:4px; line-height:1.5;">Audit negative search terms weekly to ensure paid clicks maintain high purchase intent.</div>
+                        </div>
+                    `;
+                }
+
+                p3 = `
+                    <div class="dark-telemetry-card">
+                        <div class="telemetry-title">03 · DETAIL PAGE OPTIMIZATION</div>
+                        <div style="font-size:14px; color:#ffffff; margin-top:6px; font-weight:800;">Test Pricing &amp; Coupons</div>
+                        <div style="font-size:13px; color:#cbd5e1; margin-top:4px; line-height:1.5;">A 1-2 percentage point boost in conversion directly lowers cost per order without requiring lower bids.</div>
+                    </div>
+                `;
+
+                grid.innerHTML = p1 + p2 + p3;
+            }
+
+            // MATH DRAWER
+            function updateMathDrawer(clicks, orders, spend, sales, cvr, cpc, aov, targetAcos, reqCvr, preAdContrib, beCvr) {
+                const drawer = document.getElementById('mathDrawerContent');
+                if (!drawer) return;
+
+                drawer.innerHTML = `
+                    <div><strong>1. OBSERVED CONVERSION RATE:</strong> (${orders} Orders ÷ ${clicks} Clicks) × 100 = <strong>${cvr.toFixed(2)}%</strong></div>
+                    <div><strong>2. CLICKS PER ORDER:</strong> ${clicks} Clicks ÷ ${orders} Orders = <strong>${orders > 0 ? (clicks/orders).toFixed(2) : 'N/A'}</strong></div>
+                    <div><strong>3. COST PER ORDER (CPA):</strong> ${formatINR(spend)} Spend ÷ ${orders} Orders = <strong>${orders > 0 ? formatINR(spend/orders) : 'N/A'}</strong></div>
+                    <div><strong>4. REVENUE PER CLICK (RPC):</strong> ${formatINR(sales)} Sales ÷ ${clicks} Clicks = <strong>${formatINR(sales/clicks)}</strong></div>
+                    <div><strong>5. REQUIRED CVR FOR TARGET ACOS:</strong> ${formatINR(cpc)} CPC ÷ (${formatINR(aov)} AOV × ${targetAcos/100}) = <strong>${reqCvr.toFixed(2)}%</strong></div>
+                    <div><strong>6. BREAK-EVEN CVR:</strong> ${formatINR(cpc)} CPC ÷ ${formatINR(preAdContrib)} Pre-Ad Contribution = <strong>${beCvr > 0 ? beCvr.toFixed(2) + '%' : 'N/A'}</strong></div>
+                `;
+            }
+
+            // PDF REPORT GENERATOR
+            function updatePdfReport(clicks, orders, spend, sales, cvr, clicksPerOrderVal, cpc, cpa, acos, roas, targetAcos, reqCvr, preAdContrib, beCvr) {
+                document.getElementById('pdfDate').innerText = `DATE: ${new Date().toLocaleDateString('en-IN')}`;
+                document.getElementById('pdfClicks').innerText = clicks;
+                document.getElementById('pdfOrders').innerText = orders;
+                document.getElementById('pdfCvr').innerText = `${cvr.toFixed(2)}%`;
+                document.getElementById('pdfClicksPerOrder').innerText = orders > 0 ? clicksPerOrderVal.toFixed(2) : 'N/A';
+                document.getElementById('pdfSpend').innerText = formatINR(spend, true);
+                document.getElementById('pdfCpc').innerText = formatINR(cpc);
+                document.getElementById('pdfSales').innerText = formatINR(sales, true);
+                document.getElementById('pdfCpa').innerText = orders > 0 ? formatINR(cpa) : 'N/A';
+                document.getElementById('pdfAcos').innerText = sales > 0 ? `${acos.toFixed(2)}%` : 'N/A';
+                document.getElementById('pdfRoas').innerText = spend > 0 ? `${roas.toFixed(2)}x` : 'N/A';
+                document.getElementById('pdfTargetAcos').innerText = `${targetAcos.toFixed(2)}%`;
+                document.getElementById('pdfReqCvr').innerText = `${reqCvr.toFixed(2)}%`;
+                document.getElementById('pdfPreAdContrib').innerText = formatINR(preAdContrib);
+                document.getElementById('pdfBeCvr').innerText = beCvr > 0 ? `${beCvr.toFixed(2)}%` : 'N/A';
+
+                const prioritiesHtml = document.getElementById('dynamicPrioritiesGrid').innerHTML;
+                document.getElementById('pdfPriorities').innerHTML = prioritiesHtml;
+            }
+
+            // EVENT LISTENERS
+            ['inputClicks', 'inputOrders', 'inputSpend', 'inputSales', 'inputTargetAcos', 'inputTargetRoas', 'inputExpectedCpc', 'inputAov', 'inputCogs', 'inputFees', 'inputShipping', 'inputOtherCosts'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', calculateCvrEngine);
+            });
+
+            document.getElementById('btnCalculate').addEventListener('click', calculateCvrEngine);
+
+            document.getElementById('btnLoadExample').addEventListener('click', function() {
+                document.getElementById('inputClicks').value = 500;
+                document.getElementById('inputOrders').value = 40;
+                document.getElementById('inputSpend').value = 10000;
+                document.getElementById('inputSales').value = 40000;
+                document.getElementById('inputTargetAcos').value = 25.0;
+                document.getElementById('inputTargetRoas').value = 4.0;
+                document.getElementById('inputExpectedCpc').value = 20.0;
+                document.getElementById('inputAov').value = 1000;
+                document.getElementById('inputCogs').value = 400;
+                document.getElementById('inputFees').value = 150;
+                document.getElementById('inputShipping').value = 50;
+                document.getElementById('inputOtherCosts').value = 20;
+                calculateCvrEngine();
+            });
+
+            document.getElementById('btnReset').addEventListener('click', function() {
+                document.getElementById('inputClicks').value = 0;
+                document.getElementById('inputOrders').value = 0;
+                document.getElementById('inputSpend').value = 0;
+                document.getElementById('inputSales').value = 0;
+                calculateCvrEngine();
+            });
+
+            document.getElementById('btnCopy').addEventListener('click', function() {
+                const cvrText = document.getElementById('resCvrVal').innerText;
+                const cpaText = document.getElementById('resCostPerOrder').innerText;
+                const textToCopy = `Amazon PPC Conversion Analysis\nConversion Rate: ${cvrText}\nCost per Order (CPA): ${cpaText}\nCalculated with PPC Growth Expert (ppcgrowthexpert.com)`;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    alert('Conversion analysis copied to clipboard!');
+                });
+            });
+
+            document.getElementById('btnPrintPdf').addEventListener('click', function() {
+                window.print();
+            });
+
+            // INITIALIZE ENGINE
+            calculateCvrEngine();
+        });
+    </script>
 </body>
-
 </html>
