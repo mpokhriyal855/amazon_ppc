@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Amazon CPC Calculator | Calculate Cost Per Click</title>
-    <meta name="description" content="Calculate your average Amazon Cost Per Click (CPC) instantly. Evaluate traffic costs across Sponsored Products, Brands and Display campaigns.">
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon CPC Calculator | PPC Cost Per Click & Target CPC Tool</title>
+    <meta name="description" content="Calculate Amazon PPC CPC, conversion rate, cost per order, ACoS, ROAS, target CPC and break-even CPC. Stress-test conversion and download your free CPC analysis.">
     <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-cpc-calculator.html">
 
+    <!-- FONTS & STYLES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,268 +23,1872 @@
     <link rel="stylesheet" href="css/footer.css?v=v41">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Amazon CPC Calculator",
-      "url": "https://ppcgrowthexpert.com/amazon-cpc-calculator.html",
-      "description": "Calculate Amazon average cost per click.",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "All"
-    }
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Amazon CPC Calculator",
+        "url": "https://ppcgrowthexpert.com/amazon-cpc-calculator.html",
+        "description": "Calculate Amazon PPC cost per click, conversion rate, cost per order, ACoS, ROAS, target CPC reference and economic break-even CPC.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Amazon CPC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Amazon CPC (Cost Per Click) is the average advertising spend paid each time a shopper clicks your Sponsored Products, Brands, or Display ad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Amazon PPC CPC calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Average CPC is calculated by dividing total advertising spend by the total number of paid ad clicks (Ad Spend ÷ Clicks)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is CPC the same as my Amazon bid?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Your bid is the maximum amount you are willing to pay in Amazon's second-price auction. The actual CPC you pay is typically lower than your max bid, depending on ad rank, competitor bids, and placement adjustments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good CPC for Amazon PPC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There is no single 'good' CPC. A sustainable CPC depends directly on your conversion rate, average order value, target ACoS, and product profit margin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does conversion rate affect CPC capacity?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A higher conversion rate generates more orders per click, increasing revenue per click and allowing your campaign to economically support a higher CPC at the same target ACoS."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I calculate Target CPC from ACoS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Target CPC Reference = Average Order Value × Conversion Rate × Target ACoS (expressed as decimals)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why can a low CPC still produce high ACoS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If traffic quality or conversion rate is extremely low, shoppers rarely buy after clicking. Even a cheap ₹5 CPC can produce an unprofitably high ACoS if it takes 50 clicks to generate one sale."
+            }
+          }
+        ]
+      }
+    ]
     </script>
+
+    <style>
+        /* =========================================================
+           ADVANCED EXECUTIVE ALTERNATING HYBRID THEME STYLES (SCOPED)
+        ========================================================= */
+        body {
+            background-color: #fcfbf8;
+            color: #0f172a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+        }
+
+        /* BLUE EDITORIAL HERO SECTION */
+        .cpc-hero-editorial {
+            background: linear-gradient(135deg, #0b1329 0%, #1e3a8a 60%, #1d4ed8 100%);
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px;
+            color: #ffffff;
+            padding: 40px 20px 52px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            text-align: center;
+        }
+
+        .cpc-hero-container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .cpc-breadcrumb {
+            font-family: 'DM Mono', monospace;
+            font-size: 12.5px;
+            color: #93c5fd;
+            margin-bottom: 16px;
+        }
+
+        .cpc-breadcrumb a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        .cpc-breadcrumb a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .cpc-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .cpc-eyebrow::before {
+            content: '●';
+            color: #34d399;
+            font-size: 8px;
+        }
+
+        .cpc-hero-title {
+            font-size: clamp(34px, 4.5vw, 48px);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+            margin: 0 0 14px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .cpc-hero-desc {
+            font-size: 16.5px;
+            color: #e0f2fe;
+            max-width: 780px;
+            margin: 0 auto 24px auto;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .cpc-trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #7dd3fc;
+            flex-wrap: wrap;
+        }
+
+        /* QUICK SUMMARY STRIP */
+        .cpc-quick-summary-strip {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 22px 20px;
+        }
+
+        .cpc-summary-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .cpc-summary-text {
+            flex: 1;
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.55;
+        }
+
+        .cpc-summary-formula-pill {
+            font-family: 'DM Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1.5px solid #bfdbfe;
+            padding: 10px 20px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        /* LIGHT GRID SECTION */
+        .cpc-section-light-grid {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.04) 0%, transparent 65%),
+                linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 48px 20px;
+        }
+
+        /* DARK EXECUTIVE TELEMETRY SECTION */
+        .cpc-section-dark-telemetry {
+            background-color: #080d1a;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 70%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 56px 20px;
+            color: #ffffff;
+        }
+
+        /* DARK DIAGNOSTIC SECTION */
+        .cpc-section-dark-alt {
+            background-color: #0b1329;
+            background-image: 
+                radial-gradient(circle at 50% 100%, rgba(2, 132, 199, 0.15) 0%, transparent 70%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 56px 20px;
+            color: #ffffff;
+        }
+
+        /* PURE LIGHT CONTENT SECTION */
+        .cpc-section-pure-light {
+            background: #ffffff;
+            padding: 56px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+        }
+
+        /* MAIN CALCULATOR CARD */
+        .cpc-calc-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .cpc-util-btn {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            color: #334155;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cpc-util-btn:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .cpc-util-btn.locked {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #64748b;
+        }
+
+        .cpc-util-btn.unlocked {
+            opacity: 1;
+            cursor: pointer;
+            background: #ecfdf5;
+            border-color: #10b981;
+            color: #047857;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+        }
+
+        /* INPUT FIELD STYLES */
+        .cpc-input-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cpc-input-helper {
+            font-size: 11.5px;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .cpc-input-field {
+            background: #ffffff !important;
+            border: 1.5px solid #cbd5e1 !important;
+            color: #0f172a !important;
+            border-radius: 12px !important;
+            padding: 12px 14px !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .cpc-input-field:focus {
+            outline: none !important;
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+        }
+
+        /* RECEIPT CARD */
+        .cpc-receipt-card {
+            background: #0f172a;
+            background-image: radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.25) 0%, transparent 60%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 30px;
+            color: #ffffff;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+            position: relative;
+        }
+
+        .cpc-receipt-val {
+            font-size: clamp(38px, 4.5vw, 52px);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            margin: 10px 0 6px 0;
+            letter-spacing: -1px;
+        }
+
+        .cpc-receipt-pill {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            padding: 4px 12px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        /* CPC POSITION SCALE VISUAL */
+        .cpc-scale-container {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .cpc-scale-track {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            position: relative;
+            margin: 28px 0 16px 0;
+        }
+
+        .cpc-scale-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #38bdf8 50%, #f59e0b 100%);
+            border-radius: 10px;
+        }
+
+        .cpc-scale-pin {
+            position: absolute;
+            top: -24px;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .cpc-scale-pin-bubble {
+            font-family: 'DM Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .cpc-pin-current { background: #38bdf8; color: #0f172a; }
+        .cpc-pin-target { background: #10b981; color: #ffffff; }
+        .cpc-pin-breakeven { background: #f59e0b; color: #0f172a; }
+
+        /* DARK EXECUTIVE TELEMETRY CARDS */
+        .cpc-telemetry-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .cpc-telemetry-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+        }
+
+        .cpc-badge-obs {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            padding: 2px 6px;
+            border-radius: 4px;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+
+        .cpc-badge-mod {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 2px 6px;
+            border-radius: 4px;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+
+        .cpc-telemetry-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .cpc-telemetry-val {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-top: 6px;
+            line-height: 1.2;
+        }
+
+        .cpc-telemetry-sub {
+            font-size: 12px;
+            color: #cbd5e1;
+            margin-top: 4px;
+        }
+
+        /* SENSITIVITY MATRIX TABLE */
+        .cpc-matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .cpc-matrix-table th {
+            background: #0f172a;
+            color: #94a3b8;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cpc-matrix-table td {
+            padding: 10px;
+            text-align: center;
+            font-family: 'DM Mono', monospace;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        .cpc-cell-target { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .cpc-cell-caution { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        .cpc-cell-risk { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .cpc-cell-current { outline: 2px solid #38bdf8; outline-offset: -2px; }
+
+        /* DIAGNOSTIC CARDS */
+        .cpc-diag-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .cpc-diag-card:hover, .cpc-diag-card.active {
+            border-color: #38bdf8;
+            background: rgba(30, 58, 138, 0.4);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+        }
+
+        /* EDITORIAL READING COLUMN & TOC */
+        .cpc-editorial-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .cpc-toc-box {
+            position: sticky;
+            top: 100px;
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .cpc-toc-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #2563eb;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .cpc-toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .cpc-toc-list li {
+            margin-bottom: 8px;
+        }
+
+        .cpc-toc-list a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .cpc-toc-list a:hover {
+            color: #2563eb;
+        }
+
+        /* PRINT EXECUTIVE PDF REPORT STYLES */
+        #pdfReportContainer {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
+            }
+
+            #webAppLayout {
+                display: none !important;
+            }
+
+            #pdfReportContainer {
+                display: block !important;
+                padding: 24px;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .pdf-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid #0f172a;
+                padding-bottom: 16px;
+                margin-bottom: 24px;
+            }
+
+            .pdf-title {
+                font-size: 22px;
+                font-weight: 800;
+                color: #0f172a;
+                margin: 0;
+            }
+
+            .pdf-subtitle {
+                font-size: 12px;
+                color: #64748b;
+                margin-top: 4px;
+            }
+
+            .pdf-grid-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                margin-bottom: 24px;
+            }
+
+            .pdf-box {
+                border: 1px solid #cbd5e1;
+                border-radius: 12px;
+                padding: 16px;
+                background: #f8fafc;
+            }
+
+            .pdf-box-title {
+                font-family: 'DM Mono', monospace;
+                font-size: 11px;
+                font-weight: 700;
+                color: #2563eb;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+
+            .pdf-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 12.5px;
+            }
+
+            .pdf-table th {
+                text-align: left;
+                font-size: 10.5px;
+                color: #64748b;
+                border-bottom: 1px solid #cbd5e1;
+                padding: 6px 0;
+            }
+
+            .pdf-table td {
+                padding: 8px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .pdf-takeaways {
+                background: #eff6ff;
+                border: 1px solid #bfdbfe;
+                border-radius: 12px;
+                padding: 18px;
+                margin-bottom: 24px;
+            }
+
+            .pdf-takeaway-item {
+                font-size: 13px;
+                color: #1e3a8a;
+                margin-bottom: 8px;
+                line-height: 1.5;
+            }
+
+            .pdf-footer {
+                border-top: 1px solid #cbd5e1;
+                padding-top: 16px;
+                text-align: center;
+                font-size: 11px;
+                color: #64748b;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .cpc-editorial-layout {
+                grid-template-columns: 1fr;
+            }
+            .cpc-toc-box {
+                position: static;
+                margin-bottom: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- BACKGROUND GRID & GLOW (MATCHING INDEX.HTML THEME) -->
-    <div class="background-grid"></div>
-    <div class="background-glow"></div>
+    <!-- WEB APPLICATION WRAPPER (HIDDEN DURING PDF PRINT) -->
+    <div id="webAppLayout">
 
-    <div class="navbar-container" id="navbarContainer">
-        <header class="navbar">
-            <a href="index.html" class="logo">
-                <div class="logo-badge"><div class="logo-symbol"></div></div>
-                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
-            </a>
+        <!-- BACKGROUND GRID & GLOW -->
+        <div class="background-grid"></div>
+        <div class="background-glow"></div>
 
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="services.html" class="nav-item">Services</a>
-                <a href="case-studies.html" class="nav-item">Case Studies</a>
-                <a href="index.html#results" class="nav-item">Results</a>
-                <a href="about.html" class="nav-item">About</a>
-                <div class="nav-dropdown">
-                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
-                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
-                    </a>
-                    <div class="dropdown-menu mega-dropdown-menu">
-                        <div class="mega-menu-grid">
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">PPC PERFORMANCE</div>
-                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
-                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
-                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Measure clicks turning into orders</span></div></a>
-                            </div>
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
-                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Calculate average cost per click</span></div></a>
-                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Measure ad click-through rate</span></div></a>
-                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Compare ad spend vs total sales</span></div></a>
-                            </div>
-                            <div class="mega-menu-col">
-                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
-                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS Calculator</span><span class="mega-item-desc">Max ACoS before margin loss</span></div></a>
-                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Estimate working monthly budget</span></div></a>
-                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target ACoS &amp; Bid Calculator</span><span class="mega-item-desc">Estimate practical CPC &amp; bid</span></div></a>
-                            </div>
-                        </div>
-                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
-                    </div>
-                </div>
-                <a href="blog.html" class="nav-item">Blog</a>
-                <a href="contact.html" class="nav-item">Contact</a>
-            </nav>
-
-            <div class="nav-actions">
-                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
-                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
-                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
-            </div>
-        </header>
-    </div>
-
-    <div class="resources-page-container">
-
-        <nav class="breadcrumb-nav">
-            <a href="index.html">Home</a> /
-            <a href="resources.html">Resources</a> /
-            <span>CPC Calculator</span>
-        </nav>
-
-        <section class="resources-hero">
-            <div class="hero-eyebrow">✦ AMAZON PPC CALCULATOR</div>
-            <h1 class="hero-title">Amazon CPC Calculator</h1>
-            <p class="hero-description">Calculate your average advertising cost for each PPC click on Amazon.</p>
-
-        </section>
-
-        <section class="calculator-app-wrapper">
-            <div class="calc-inputs-col">
-                <h3 style="margin:0 0 10px 0; font-size:18px;">Ad Spend &amp; Clicks</h3>
-                <div class="input-group">
-                    <label class="input-label" for="cpcSpend">Ad Spend (₹)</label>
-                    <input type="number" id="cpcSpend" class="calc-input-field" placeholder="e.g. 8000" min="0" step="any">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="cpcClicks">Total Clicks</label>
-                    <input type="number" id="cpcClicks" class="calc-input-field" placeholder="e.g. 400" min="0" step="any">
-                </div>
-                <div class="calc-action-row">
-                    <button type="button" class="btn-calc-submit">Calculate CPC →</button>
-                    <button type="button" class="btn-calc-reset">Reset</button>
-                </div>
-            </div>
-
-            <div class="calc-results-col" aria-live="polite">
-                <div class="result-main-box">
-                    <div class="result-main-label">AVERAGE COST PER CLICK</div>
-                    <div class="result-main-value" id="cpcResultVal">₹0.00</div>
-                    <div class="result-main-sub" id="cpcSubText">Enter ad spend and total clicks to calculate CPC.</div>
-                </div>
-
-                <div class="result-guidance-box">
-                    <div class="result-guidance-title">What does this mean?</div>
-                    CPC measures traffic acquisition cost. Compare CPC with your conversion rate to determine average Cost Per Acquisition (CPA).
-                </div>
-            </div>
-        </section>
-
-        <article class="calc-educational-prose">
-            <h2>What Is Amazon CPC?</h2>
-            <p><strong>Cost Per Click (CPC)</strong> is the actual amount charged by Amazon when a shopper clicks your sponsored ad.</p>
-
-            <h2>Formula:</h2>
-            <div class="formula-code-box">
-                CPC = Total Ad Spend ÷ Total Ad Clicks
-            </div>
-            <p>Read our full guide on <a href="blog-amazon-ppc-cpc-increasing.html" style="color:#0284c7; font-weight:700;">Why Is My Amazon PPC CPC Increasing and How Can I Control It?</a></p>
-        </article>
-
-        <section class="related-calculators-section">
-            <div class="section-header">
-                <div class="section-eyebrow">RELATED TOOLS</div>
-                <h2 class="section-title">Explore Related PPC Calculators</h2>
-            </div>
-            <div class="calculators-grid">
-                <a href="amazon-target-acos-bid-calculator.html" class="calc-card">
-                    <div class="calc-card-top"><div class="calc-card-header"><div class="calc-card-icon">🎯</div><span class="calc-card-category">BIDDING</span></div><h3 class="calc-card-title">Target ACoS &amp; Bid Calculator</h3><p class="calc-card-desc">Estimate target bids based on price &amp; CVR.</p></div>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Estimate Bid →</span></div>
+        <!-- NAVBAR -->
+        <div class="navbar-container" id="navbarContainer">
+            <header class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-badge"><div class="logo-symbol"></div></div>
+                    <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
                 </a>
-            </div>
-        </section>
 
-        <section class="resources-audit-cta">
-            <div class="hero-eyebrow" style="color:#e0f2fe;">✦ NEED A DEEPER ANALYSIS?</div>
-            <h2>CPC Rising on Core Keywords?</h2>
-            <p>Our PPC team helps optimize campaign placement modifiers, negative keywords, and bid rules to lower CPC without sacrificing conversions.</p>
-            <div class="cta-btn-group">
-                <a href="contact.html" class="btn-cta-primary">Request an Amazon PPC Audit →</a>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- =========================================================
-     FOOTER
-========================================================= -->
-    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
-
-        <div class="footer-container">
-
-            <!-- TOP GRID -->
-            <div class="footer-grid">
-
-                <!-- COL 1: BRAND GLASS CARD -->
-                <div class="footer-col brand-col">
-                    <div class="brand-card">
-                        <a href="index.html" class="footer-logo">
-                            <div class="logo-badge">
-                                <div class="logo-symbol"></div>
-                            </div>
-                            <span class="logo-text">
-                                PPC <span class="highlight">Growth</span> Expert
-                            </span>
+                <nav class="nav-links" id="navLinks">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="services.html" class="nav-item">Services</a>
+                    <a href="case-studies.html" class="nav-item">Case Studies</a>
+                    <a href="index.html#results" class="nav-item">Results</a>
+                    <a href="about.html" class="nav-item">About</a>
+                    <div class="nav-dropdown">
+                        <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                            Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
                         </a>
-
-                        <p class="footer-sub-tagline">
-                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
-                        </p>
-
-                        <p class="footer-tagline" itemprop="description">
-                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
-                        </p>
-                    </div>
-                </div>
-
-
-                <!-- COL 2: SERVICES -->
-                <div class="footer-col">
-                    <h3 class="footer-heading">SERVICES</h3>
-                    <ul class="footer-links">
-                        <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
-                        <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
-                        <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
-                        <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
-                        <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
-                        <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
-                    </ul>
-                </div>
-
-
-                <!-- COL 3: CONTACT US -->
-                <div class="footer-col contact-col" itemprop="address" itemscope
-                    itemtype="http://schema.org/PostalAddress">
-                    <h3 class="footer-heading">CONTACT US</h3>
-                    <ul class="footer-contact-list">
-                        <li>
-                            <div class="contact-icon-pill">📍</div>
-                            <div>
-                                <span itemprop="addressLocality">Noida</span>,<br>
-                                <span itemprop="addressRegion">Uttar Pradesh</span>
+                        <div class="dropdown-menu mega-dropdown-menu">
+                            <div class="mega-menu-grid">
+                                <div class="mega-menu-col">
+                                    <div class="mega-col-title">PPC PERFORMANCE</div>
+                                    <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                    <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                    <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Clicks to order ratio</span></div></a>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                    <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Average cost per click</span></div></a>
+                                    <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Click-through rate</span></div></a>
+                                    <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Ad spend vs total sales</span></div></a>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                    <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                    <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
+                                    <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                    <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin</span></div></a>
+                                    <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral fees</span></div></a>
+                                    <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage</span></div></a>
+                                    <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                                </div>
                             </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">📞</div>
-                            <a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">✉️</div>
-                            <a href="mailto:anmolpokhriyal3200@gmail.com"
-                                itemprop="email">anmolpokhriyal3200@gmail.com</a>
-                        </li>
-                    </ul>
+                            <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="nav-item">Blog</a>
+                    <a href="contact.html" class="nav-item">Contact</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                    <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                    <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
                 </div>
-
-
-                <!-- COL 4: COMPANY -->
-                <div class="footer-col">
-                    <h3 class="footer-heading">COMPANY</h3>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="about.html#founder">Our Founder</a></li>
-                        <li><a href="case-studies.html">Case Studies</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-
-            <!-- MIDDLE BAR -->
-            <div class="footer-middle">
-                <p class="footer-meta-info">
-                    PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 ·
-                    anmolpokhriyal3200@gmail.com
-                </p>
-            </div>
-
-
-            <!-- BOTTOM COPYRIGHT BAR -->
-            <div class="footer-bottom">
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
-                    class="scroll-top-btn" aria-label="Scroll to top">
-                    ↑
-                </a>
-            </div>
-
+            </header>
         </div>
 
-    </footer>
+        <!-- 1. BLUE EDITORIAL HERO -->
+        <div class="cpc-hero-editorial">
+            <div class="cpc-hero-container">
+                <nav class="cpc-breadcrumb">
+                    <a href="index.html">Home</a> /
+                    <a href="resources.html">Resources</a> /
+                    <span>Amazon CPC Calculator</span>
+                </nav>
 
-    <script src="js/script.js?v=v27"></script>
-    <script src="js/navbar.js?v=v27"></script>
-    <script src="js/calculators.js?v=v1"></script>
+                <div class="cpc-eyebrow">AMAZON PPC DECISION ENGINE</div>
+                <h1 class="cpc-hero-title">Amazon CPC Calculator</h1>
+                <p class="cpc-hero-desc">
+                    Calculate your Amazon PPC cost per click and see how CPC connects with conversion rate, ACoS, ROAS, cost per order and the CPC your product economics can actually support.
+                </p>
+
+                <div class="cpc-trust-badges">
+                    <span>✓ Free Amazon PPC Tool</span>
+                    <span>✓ Instant Live Calculation</span>
+                    <span>✓ No Sign-up Required</span>
+                    <span>✓ Downloadable Executive PDF Analysis</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. QUICK SUMMARY STRIP -->
+        <div class="cpc-quick-summary-strip">
+            <div class="cpc-summary-box">
+                <div class="cpc-summary-text">
+                    <strong style="color:#0f172a; display:block; margin-bottom:4px; font-size:15px;">QUICK SUMMARY</strong>
+                    Amazon CPC is the average amount of advertising spend paid for each ad click. CPC alone does not tell you whether traffic is efficient. A useful CPC analysis combines click cost with conversion rate, attributed sales, ACoS and product economics.
+                </div>
+                <div class="cpc-summary-formula-pill">
+                    Average CPC = Ad Spend ÷ Clicks
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. MAIN CALCULATOR SECTION (LIGHT GRID) -->
+        <div class="cpc-section-light-grid">
+            <div class="resources-calc-container">
+                
+                <div style="display:grid; grid-template-columns: 1.15fr 0.85fr; gap:30px; align-items:start;">
+                    
+                    <!-- LEFT MAIN INPUT CARD -->
+                    <div class="cpc-calc-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:10px;">
+                            <div>
+                                <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin:0;">Campaign Performance Data</h3>
+                                <div style="font-size:12.5px; color:#64748b; margin-top:2px;">Enter your observed ad data to analyze CPC economics</div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <button type="button" class="cpc-util-btn" id="btnUseExample">Use Example Data</button>
+                                <button type="button" class="cpc-util-btn" id="btnResetCalc">Reset</button>
+                                <button type="button" class="cpc-util-btn locked" id="btnDownloadPDF" disabled title="Complete all inputs to unlock PDF report">Complete Inputs for PDF 🔒</button>
+                                <button type="button" class="cpc-util-btn" id="btnCopySummary">Copy 📋</button>
+                            </div>
+                        </div>
+
+                        <!-- CORE INPUTS -->
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">1. CORE TRAFFIC INPUTS</div>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:24px;">
+                            <div>
+                                <label class="cpc-input-label" for="inputSpend">Ad Spend (₹)</label>
+                                <input type="number" id="inputSpend" class="cpc-input-field" value="18750" placeholder="18750" min="0" step="any">
+                                <div class="cpc-input-helper">Total ad spend in reporting period</div>
+                            </div>
+                            <div>
+                                <label class="cpc-input-label" for="inputClicks">Total Clicks</label>
+                                <input type="number" id="inputClicks" class="cpc-input-field" value="1000" placeholder="1000" min="1" step="1">
+                                <div class="cpc-input-helper">Paid ad clicks generated</div>
+                            </div>
+                        </div>
+
+                        <!-- OPTIONAL PERFORMANCE DATA -->
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">2. PERFORMANCE &amp; CONVERSION DATA</div>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:24px;">
+                            <div>
+                                <label class="cpc-input-label" for="inputOrders">Attributed Orders</label>
+                                <input type="number" id="inputOrders" class="cpc-input-field" value="82" placeholder="82" min="0" step="1">
+                                <div class="cpc-input-helper">Orders from ad traffic</div>
+                            </div>
+                            <div>
+                                <label class="cpc-input-label" for="inputSales">Attributed Ad Sales (₹)</label>
+                                <input type="number" id="inputSales" class="cpc-input-field" value="77160" placeholder="77160" min="0" step="any">
+                                <div class="cpc-input-helper">Revenue generated by ads</div>
+                            </div>
+                        </div>
+
+                        <!-- OPTIONAL TARGET & ECONOMICS -->
+                        <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:16px; padding:18px; margin-bottom:20px;">
+                            <summary style="font-size:15px; font-weight:700; color:#0f172a; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+                                <span>3. Target ACoS &amp; Product Profit Economics (Optional) ⚙️</span>
+                                <span style="font-size:12.5px; color:#2563eb;">Expand / Collapse</span>
+                            </summary>
+                            <div style="margin-top:16px;">
+                                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
+                                    <div>
+                                        <label class="cpc-input-label" for="inputTargetAcos">Target ACoS (%)</label>
+                                        <input type="number" id="inputTargetAcos" class="cpc-input-field" value="25" placeholder="25%" min="1" max="100" step="any">
+                                        <div class="cpc-input-helper">Goal ACoS threshold</div>
+                                    </div>
+                                    <div>
+                                        <label class="cpc-input-label" for="inputAov">Average Order Value (₹)</label>
+                                        <input type="number" id="inputAov" class="cpc-input-field" value="941" placeholder="941" min="1" step="any">
+                                        <div class="cpc-input-helper">Ad sales ÷ orders or selling price</div>
+                                    </div>
+                                </div>
+
+                                <div style="font-size:13px; font-weight:700; color:#334155; margin-bottom:10px;">Itemized Unit Profit Economics (For Break-Even CPC):</div>
+                                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+                                    <div>
+                                        <label class="cpc-input-label" for="inputCogs">Landed COGS (₹)</label>
+                                        <input type="number" id="inputCogs" class="cpc-input-field" value="380" placeholder="380">
+                                    </div>
+                                    <div>
+                                        <label class="cpc-input-label" for="inputAmzFees">Amazon Marketplace Fees (₹)</label>
+                                        <input type="number" id="inputAmzFees" class="cpc-input-field" value="210" placeholder="210">
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+
+                        <div style="font-size:12.5px; color:#64748b; font-style:italic;">
+                            *All calculations update in real-time. Input errors like Clicks=0 or negative spend are automatically validated.
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT LIVE RECEIPT CARD & CPC POSITION SCALE -->
+                    <div class="cpc-receipt-card" aria-live="polite">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:1.5px; text-transform:uppercase;">LIVE CPC ANALYSIS</div>
+                        <div class="cpc-receipt-val" id="receiptCpcVal">₹18.75</div>
+                        <div style="font-size:13.5px; color:#94a3b8; margin-bottom:8px;">Average cost per click paid</div>
+                        <div class="cpc-receipt-pill" id="receiptCpcSubPill">Paid ₹18.75 per ad click</div>
+
+                        <table style="width:100%; border-collapse:collapse; font-size:13.5px; margin-bottom:20px;">
+                            <tbody>
+                                <tr style="border-bottom:1px dashed rgba(255,255,255,0.12);">
+                                    <td style="padding:8px 0; color:#94a3b8;">Conversion Rate (CVR)</td>
+                                    <td style="padding:8px 0; text-align:right; font-family:'DM Mono',monospace; font-weight:700;" id="recCvr">8.20%</td>
+                                </tr>
+                                <tr style="border-bottom:1px dashed rgba(255,255,255,0.12);">
+                                    <td style="padding:8px 0; color:#94a3b8;">Cost per Order (CPA)</td>
+                                    <td style="padding:8px 0; text-align:right; font-family:'DM Mono',monospace; font-weight:700;" id="recCpa">₹228.66</td>
+                                </tr>
+                                <tr style="border-bottom:1px dashed rgba(255,255,255,0.12);">
+                                    <td style="padding:8px 0; color:#94a3b8;">Revenue per Click (RPC)</td>
+                                    <td style="padding:8px 0; text-align:right; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8;" id="recRpc">₹77.16</td>
+                                </tr>
+                                <tr style="border-bottom:1px dashed rgba(255,255,255,0.12);">
+                                    <td style="padding:8px 0; color:#94a3b8;">ACoS / ROAS</td>
+                                    <td style="padding:8px 0; text-align:right; font-family:'DM Mono',monospace; font-weight:700;" id="recAcosRoas">24.3% / 4.12x</td>
+                                </tr>
+                                <tr style="border-bottom:1px dashed rgba(255,255,255,0.12);">
+                                    <td style="padding:8px 0; color:#94a3b8;">Target CPC Reference</td>
+                                    <td style="padding:8px 0; text-align:right; font-family:'DM Mono',monospace; font-weight:700; color:#34d399;" id="recTargetCpc">₹19.29</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0; color:#ffffff; font-weight:700;">Break-Even CPC</td>
+                                    <td style="padding:8px 0; text-align:right; font-family:'DM Mono',monospace; font-weight:800; color:#fbbf24;" id="recBreakEvenCpc">₹28.78</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- CPC POSITION SCALE VISUAL -->
+                        <div class="cpc-scale-container">
+                            <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#94a3b8; text-transform:uppercase;">WHERE YOUR CPC SITS</div>
+                            <div class="cpc-scale-track">
+                                <div class="cpc-scale-fill" style="width: 100%;"></div>
+                                <div class="cpc-scale-pin" id="pinCurrent" style="left: 45%;">
+                                    <div class="cpc-scale-pin-bubble cpc-pin-current" id="pinCurrentText">Current ₹18.75</div>
+                                </div>
+                                <div class="cpc-scale-pin" id="pinTarget" style="left: 55%;">
+                                    <div class="cpc-scale-pin-bubble cpc-pin-target" id="pinTargetText">Target ₹19.29</div>
+                                </div>
+                                <div class="cpc-scale-pin" id="pinBreakEven" style="left: 85%;">
+                                    <div class="cpc-scale-pin-bubble cpc-pin-breakeven" id="pinBreakEvenText">Break-Even ₹28.78</div>
+                                </div>
+                            </div>
+                            <div style="font-size:12.5px; color:#cbd5e1; line-height:1.5; margin-top:20px;" id="cpcScaleGuidance">
+                                Your observed CPC (₹18.75) is below your Target CPC reference (₹19.29). Traffic is mathematically efficient for your 25% ACoS goal.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 4. EXECUTIVE CPC DECISION DASHBOARD (DARK TELEMETRY) -->
+        <div class="cpc-section-dark-telemetry">
+            <div class="resources-calc-container">
+                <div style="margin-bottom:32px;">
+                    <div class="cpc-eyebrow">CPC DECISION CENTER</div>
+                    <h2 style="font-size:30px; font-weight:800; color:#ffffff; margin:4px 0;">Your PPC Economics at a Glance</h2>
+                    <p style="font-size:14px; color:#cbd5e1; margin:0;">Real-time metrics calculated from your observed campaign performance and target economics.</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+                    
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-obs">OBSERVED</span>
+                        <div class="cpc-telemetry-title">AVERAGE CPC</div>
+                        <div class="cpc-telemetry-val" id="dashValCpc">₹18.75</div>
+                        <div class="cpc-telemetry-sub">Ad Spend ÷ Clicks</div>
+                    </div>
+
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-obs">OBSERVED</span>
+                        <div class="cpc-telemetry-title">CONVERSION RATE</div>
+                        <div class="cpc-telemetry-val" style="color:#38bdf8;" id="dashValCvr">8.20%</div>
+                        <div class="cpc-telemetry-sub">Orders ÷ Clicks</div>
+                    </div>
+
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-obs">OBSERVED</span>
+                        <div class="cpc-telemetry-title">COST PER ORDER (CPA)</div>
+                        <div class="cpc-telemetry-val" id="dashValCpa">₹228.66</div>
+                        <div class="cpc-telemetry-sub">Ad Spend ÷ Orders</div>
+                    </div>
+
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-obs">OBSERVED</span>
+                        <div class="cpc-telemetry-title">REVENUE / CLICK (RPC)</div>
+                        <div class="cpc-telemetry-val" style="color:#34d399;" id="dashValRpc">₹77.16</div>
+                        <div class="cpc-telemetry-sub">Ad Sales ÷ Clicks</div>
+                    </div>
+
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-obs">OBSERVED</span>
+                        <div class="cpc-telemetry-title">ACOS &amp; ROAS</div>
+                        <div class="cpc-telemetry-val" style="color:#fbbf24;" id="dashValAcos">24.3%</div>
+                        <div class="cpc-telemetry-sub" id="dashValRoasSub">ROAS: 4.12x</div>
+                    </div>
+
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-mod">MODELLED</span>
+                        <div class="cpc-telemetry-title">TARGET CPC REFERENCE</div>
+                        <div class="cpc-telemetry-val" style="color:#34d399;" id="dashValTargetCpc">₹19.29</div>
+                        <div class="cpc-telemetry-sub">AOV × CVR × Target ACoS</div>
+                    </div>
+
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-mod">MODELLED</span>
+                        <div class="cpc-telemetry-title">BREAK-EVEN CPC</div>
+                        <div class="cpc-telemetry-val" style="color:#fbbf24;" id="dashValBeCpc">₹28.78</div>
+                        <div class="cpc-telemetry-sub">Margin × CVR</div>
+                    </div>
+
+                    <div class="cpc-telemetry-card">
+                        <span class="cpc-badge-mod">MODELLED</span>
+                        <div class="cpc-telemetry-title">REQUIRED CVR AT CURRENT CPC</div>
+                        <div class="cpc-telemetry-val" style="color:#38bdf8;" id="dashValReqCvr">7.97%</div>
+                        <div class="cpc-telemetry-sub" id="dashValReqCvrSub">Gap: −0.23 percentage pts</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 5. CLICK ECONOMICS & 1,000-CLICK FORECAST (PURE LIGHT) -->
+        <div class="cpc-section-pure-light">
+            <div class="resources-calc-container">
+                
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:start;">
+                    
+                    <!-- CLICK FUNNEL -->
+                    <div>
+                        <div class="cpc-eyebrow">CLICK ECONOMICS FUNNEL</div>
+                        <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin:4px 0 16px 0;">What Happens to Every 100 Clicks?</h2>
+                        <p style="font-size:14px; color:#64748b; margin-bottom:20px;">Understanding how traffic flows from paid click budget into generated sales.</p>
+
+                        <div style="display:flex; flex-direction:column; gap:12px;">
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:16px; display:flex; justify-content:space-between; align-items:center;">
+                                <div><strong style="color:#0f172a;">100 Paid Ad Clicks</strong><div style="font-size:12px; color:#64748b;">At ₹18.75 Average CPC</div></div>
+                                <div style="font-family:'DM Mono',monospace; font-size:18px; font-weight:800; color:#2563eb;" id="funnelSpend">₹1,875 Spend</div>
+                            </div>
+                            <div style="text-align:center; color:#94a3b8; font-size:14px;">↓ (8.20% Conversion Rate)</div>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:16px; display:flex; justify-content:space-between; align-items:center;">
+                                <div><strong style="color:#0f172a;">8.2 Generated Orders</strong><div style="font-size:12px; color:#64748b;">Cost Per Order (CPA): ₹228.66</div></div>
+                                <div style="font-family:'DM Mono',monospace; font-size:18px; font-weight:800; color:#047857;" id="funnelOrders">8.2 Orders</div>
+                            </div>
+                            <div style="text-align:center; color:#94a3b8; font-size:14px;">↓ (₹941 Average Order Value)</div>
+                            <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:14px; padding:16px; display:flex; justify-content:space-between; align-items:center;">
+                                <div><strong style="color:#047857;">Attributed Sales Generated</strong><div style="font-size:12px; color:#047857;">ACoS: 24.3% | ROAS: 4.12x</div></div>
+                                <div style="font-family:'DM Mono',monospace; font-size:18px; font-weight:800; color:#047857;" id="funnelSales">₹7,716 Sales</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1,000 CLICK FORECAST -->
+                    <div>
+                        <div class="cpc-eyebrow">CAMPAIGN PROJECTION</div>
+                        <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin:4px 0 16px 0;">What Could 1,000 Clicks Produce?</h2>
+                        <p style="font-size:14px; color:#64748b; margin-bottom:20px;">Mathematical projection based on your entered CPC, CVR and Order Value.</p>
+
+                        <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:24px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
+                                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px;">
+                                    <div style="font-size:12px; color:#64748b;">Projected Ad Spend</div>
+                                    <div style="font-size:22px; font-weight:800; color:#0f172a; margin-top:2px;" id="fcSpend">₹18,750</div>
+                                </div>
+                                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px;">
+                                    <div style="font-size:12px; color:#64748b;">Projected Orders</div>
+                                    <div style="font-size:22px; font-weight:800; color:#2563eb; margin-top:2px;" id="fcOrders">82 Orders</div>
+                                </div>
+                            </div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
+                                <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:14px; padding:14px;">
+                                    <div style="font-size:12px; color:#047857;">Projected Ad Sales</div>
+                                    <div style="font-size:22px; font-weight:800; color:#047857; margin-top:2px;" id="fcSales">₹77,160</div>
+                                </div>
+                                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px;">
+                                    <div style="font-size:12px; color:#64748b;">Projected ACoS</div>
+                                    <div style="font-size:22px; font-weight:800; color:#d97706; margin-top:2px;" id="fcAcos">24.3%</div>
+                                </div>
+                            </div>
+                            <div style="font-size:11.5px; color:#94a3b8; font-style:italic;">
+                                *Note: This is a pure mathematical projection based on constant conversion — actual Amazon auction performance varies by competition and placement.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 6. CONVERSION SHIFT SIMULATOR & SENSITIVITY MATRIX (LIGHT GRID) -->
+        <div class="cpc-section-light-grid">
+            <div class="resources-calc-container">
+                
+                <!-- CONVERSION SHIFT SIMULATOR -->
+                <div style="margin-bottom:48px;">
+                    <div class="cpc-eyebrow">CONVERSION SHIFT SIMULATOR</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0 12px 0;">See How Conversion Changes Your CPC Capacity</h2>
+                    <p style="font-size:14.5px; color:#475569; max-width:760px; margin-bottom:24px;">
+                        Higher conversion rates allow your campaign to support a higher CPC at the exact same Target ACoS goal.
+                    </p>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:14px;" id="cvrShiftGrid">
+                        <!-- DYNAMIC CVR SCENARIOS -->
+                    </div>
+                    <div style="font-size:12.5px; color:#64748b; margin-top:10px; font-style:italic;">
+                        *Target CPC calculated at your target 25% ACoS and ₹941 order value.
+                    </div>
+                </div>
+
+                <!-- CPC x CVR SENSITIVITY MATRIX -->
+                <div>
+                    <div class="cpc-eyebrow">SENSITIVITY MATRIX</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0 12px 0;">CPC × Conversion Rate Implied ACoS Matrix</h2>
+                    <p style="font-size:14.5px; color:#475569; max-width:760px; margin-bottom:20px;">
+                        Evaluate how various CPC levels and conversion rates interact to determine your resulting campaign ACoS.
+                    </p>
+
+                    <div style="background:#080d1a; border-radius:20px; padding:24px; overflow-x:auto;">
+                        <table class="cpc-matrix-table" id="matrixTable">
+                            <!-- DYNAMIC MATRIX TABLE -->
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 7. DIAGNOSTICS & ACTION PRIORITIES (DARK DIAGNOSTIC SECTION) -->
+        <div class="cpc-section-dark-alt">
+            <div class="resources-calc-container">
+                <div style="margin-bottom:32px;">
+                    <div class="cpc-eyebrow">CPC DIAGNOSTICS WORKSPACE</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Why Might Your CPC Be a Problem?</h2>
+                    <p style="font-size:14px; color:#cbd5e1; margin:0;">Select your specific campaign symptom to reveal tailored diagnostic actions.</p>
+                </div>
+
+                <!-- DIAGNOSTIC PICKER CARDS -->
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-bottom:24px;" id="cpcDiagGrid">
+                    <div class="cpc-diag-card active" data-diag="rising">
+                        <div style="font-size:20px; margin-bottom:6px;">📈</div>
+                        <div style="font-weight:800; font-size:15px; color:#ffffff;">CPC is Rising</div>
+                        <div style="font-size:12.5px; color:#94a3b8; margin-top:4px;">Average click cost increasing over time.</div>
+                    </div>
+                    <div class="cpc-diag-card" data-diag="expConverts">
+                        <div style="font-size:20px; margin-bottom:6px;">💰</div>
+                        <div style="font-weight:800; font-size:15px; color:#ffffff;">Expensive But Converts</div>
+                        <div style="font-size:12.5px; color:#94a3b8; margin-top:4px;">High CPC but order volume is steady.</div>
+                    </div>
+                    <div class="cpc-diag-card" data-diag="expNoConvert">
+                        <div style="font-size:20px; margin-bottom:6px;">🚨</div>
+                        <div style="font-weight:800; font-size:15px; color:#ffffff;">Expensive &amp; Low Sales</div>
+                        <div style="font-size:12.5px; color:#94a3b8; margin-top:4px;">High CPC combined with weak conversion.</div>
+                    </div>
+                    <div class="cpc-diag-card" data-diag="lowCpcHighAcos">
+                        <div style="font-size:20px; margin-bottom:6px;">⚡</div>
+                        <div style="font-weight:800; font-size:15px; color:#ffffff;">Low CPC But High ACoS</div>
+                        <div style="font-size:12.5px; color:#94a3b8; margin-top:4px;">Cheap clicks failing to produce sales.</div>
+                    </div>
+                </div>
+
+                <div style="background:rgba(15, 23, 42, 0.85); border:1px solid rgba(56, 189, 248, 0.3); border-radius:18px; padding:22px; margin-bottom:40px;" id="cpcDiagSolBox">
+                    <h4 style="margin:0 0 6px 0; font-size:16px; font-weight:800; color:#38bdf8;" id="cpcDiagSolTitle">Diagnostic Action: Rising CPC</h4>
+                    <p style="margin:0; font-size:14px; color:#cbd5e1; line-height:1.6;" id="cpcDiagSolDesc">Check bid adjustments on Top of Search placement and audit search term reports for high-competition non-exact terms that drive up auction costs without proportional conversion gain.</p>
+                </div>
+
+                <!-- FINAL ACTION PRIORITIES -->
+                <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:32px;">
+                    <div class="cpc-eyebrow">AUTOMATED ACTION PLAN</div>
+                    <h3 style="font-size:24px; font-weight:800; color:#ffffff; margin:4px 0 16px 0;">Top 3 Priority Actions for Your Campaign</h3>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px;" id="actionPrioritiesGrid">
+                        <!-- DYNAMIC PRIORITIES GENERATED FROM MATH -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 8. SHOW THE MATH & FORMULAS (PURE LIGHT) -->
+        <div class="cpc-section-pure-light">
+            <div class="resources-calc-container">
+                <details style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:22px; max-width:920px; margin:0 auto;">
+                    <summary style="font-size:18px; font-weight:800; color:#0f172a; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+                        <span>Show Calculation Steps &amp; Formulas 📐</span>
+                        <span style="font-size:13.5px; color:#2563eb;">▾ Expand / Collapse</span>
+                    </summary>
+                    <div style="margin-top:16px; font-family:'DM Mono',monospace; font-size:13px; color:#334155; line-height:1.7;" id="cpcMathDrawerContent">
+                        <!-- LIVE MATH STEPS -->
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- 9. EDITORIAL KNOWLEDGE SECTION -->
+        <div class="cpc-section-light-grid">
+            <div class="resources-calc-container">
+                <div class="cpc-editorial-layout">
+                    
+                    <!-- STICKY TOC -->
+                    <div class="cpc-toc-box">
+                        <div class="cpc-toc-title">ON THIS PAGE</div>
+                        <ul class="cpc-toc-list">
+                            <li><a href="#sec-how-to-use">How to Use This Tool</a></li>
+                            <li><a href="#sec-formula">Amazon CPC Formula</a></li>
+                            <li><a href="#sec-cpc-vs-bid">CPC vs Amazon Bid</a></li>
+                            <li><a href="#sec-sustainable">What Determines Sustainable CPC?</a></li>
+                            <li><a href="#sec-raise-lower">When to Raise or Lower Bids</a></li>
+                            <li><a href="#sec-improve">How to Improve CPC Efficiency</a></li>
+                            <li><a href="#sec-faqs">Frequently Asked Questions</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- MAIN EDITORIAL PROSE -->
+                    <article class="calc-educational-prose" style="margin:0;">
+                        
+                        <section id="sec-how-to-use">
+                            <h2>How to Use the Amazon PPC CPC Calculator</h2>
+                            <p>Start by entering your total <strong>Ad Spend</strong> and paid <strong>Clicks</strong> to derive your observed Average CPC. Add <strong>Orders</strong> and <strong>Ad Sales</strong> to unlock conversion rate, cost per order (CPA), ACoS, ROAS, and observed Revenue per Click (RPC). Add your <strong>Target ACoS</strong> and unit economics to calculate your exact Target CPC reference and economic Break-Even CPC threshold.</p>
+                        </section>
+
+                        <section id="sec-formula">
+                            <h2>Amazon CPC Formula</h2>
+                            <p>Average Cost Per Click (CPC) measures the average amount paid for each click generated across your Amazon ad campaigns:</p>
+                            <div style="background:#f1f5f9; border-left:4px solid #2563eb; padding:14px 18px; font-family:'DM Mono',monospace; font-weight:700; font-size:15px; margin:16px 0;">
+                                Average CPC = Total Ad Spend ÷ Total Paid Clicks
+                            </div>
+                        </section>
+
+                        <section id="sec-cpc-vs-bid">
+                            <h2>Amazon CPC vs Bid</h2>
+                            <p>Sellers often confuse keyword bids with CPC. Here is how they differ in Amazon's second-price auction system:</p>
+                            
+                            <table style="width:100%; border-collapse:collapse; margin:18px 0; font-size:14px;">
+                                <thead>
+                                    <tr style="background:#0f172a; color:#ffffff;">
+                                        <th style="padding:10px; text-align:left;">KEYWORD BID</th>
+                                        <th style="padding:10px; text-align:left;">ACTUAL CPC</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:12px;">Maximum amount you are willing to pay per click.</td>
+                                        <td style="padding:12px;">Actual average amount charged per click.</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid #e2e8f0;">
+                                        <td style="padding:12px;">Configured in Campaign Manager at target level.</td>
+                                        <td style="padding:12px;">Observed reporting metric after auction clearing.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:12px;">Adjusted by placement multipliers (+0% to +900%).</td>
+                                        <td style="padding:12px;">Includes placement &amp; dynamic bidding adjustments.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <section id="sec-sustainable">
+                            <h2>What CPC Can Your Product Actually Support?</h2>
+                            <p>Your product's sustainable CPC is determined by three core variables: <strong>Average Order Value (AOV)</strong>, <strong>Conversion Rate (CVR)</strong>, and <strong>Target ACoS</strong>:</p>
+                            <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:12px; padding:16px; font-family:'DM Mono',monospace; font-size:13.5px; color:#047857; margin:16px 0;">
+                                Target CPC Reference = Order Value × Conversion Rate × Target ACoS
+                            </div>
+                            <p>A higher conversion rate or higher average order value increases the CPC a product can economically support at the exact same target ACoS goal.</p>
+                        </section>
+
+                        <section id="sec-raise-lower">
+                            <h2>When to Review Amazon PPC Bids</h2>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin:20px 0;">
+                                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:18px;">
+                                    <h4 style="color:#047857; margin:0 0 10px 0;">A Higher Bid May Be Worth Testing When:</h4>
+                                    <ul style="font-size:13px; color:#475569; padding-left:18px; margin:0;">
+                                        <li>Target converts consistently above account average.</li>
+                                        <li>Observed CPC is well below your target reference.</li>
+                                        <li>High organic rank potential from ad sales.</li>
+                                    </ul>
+                                </div>
+                                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:18px;">
+                                    <h4 style="color:#b91c1c; margin:0 0 10px 0;">Lower Bidding May Be Worth Testing When:</h4>
+                                    <ul style="font-size:13px; color:#475569; padding-left:18px; margin:0;">
+                                        <li>CPC exceeds what current conversion supports.</li>
+                                        <li>Search terms show weak intent or high non-converting clicks.</li>
+                                        <li>ACoS exceeds economic break-even threshold.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="sec-improve">
+                            <h2>How to Improve CPC Efficiency</h2>
+                            <ol>
+                                <li><strong>Improve Traffic Quality:</strong> Use negative exact targeting and exact match keywords to eliminate non-converting customer search terms.</li>
+                                <li><strong>Improve Listing Conversion:</strong> Optimize main image, A+ content, bullet points, and pricing to boost CVR.</li>
+                                <li><strong>Control Bidding Strategy:</strong> Align keyword bids with calculated target CPC rather than competitive market averages.</li>
+                                <li><strong>Reallocate Budget:</strong> Shift ad spend toward high-converting placements and high-RPC keywords.</li>
+                            </ol>
+                        </section>
+
+                    </article>
+
+                </div>
+
+                <!-- RECOMMENDED CALCULATORS -->
+                <div style="margin-top:56px;">
+                    <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:20px; text-align:center;">Related Amazon PPC Calculators</h2>
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+                        <a href="amazon-acos-calculator.html" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; text-decoration:none; color:inherit; display:block; transition:all 0.25s ease;">
+                            <div style="font-size:24px; margin-bottom:6px;">📊</div>
+                            <div style="font-weight:800; font-size:16px; color:#0f172a;">Amazon ACoS Calculator</div>
+                            <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Calculate ad cost of sales and cost per rupee sale.</div>
+                        </a>
+                        <a href="amazon-break-even-acos-calculator.html" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; text-decoration:none; color:inherit; display:block; transition:all 0.25s ease;">
+                            <div style="font-size:24px; margin-bottom:6px;">⚖️</div>
+                            <div style="font-weight:800; font-size:16px; color:#0f172a;">Break-Even ACoS Calculator</div>
+                            <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Find maximum allowable ACoS before net loss.</div>
+                        </a>
+                        <a href="amazon-ppc-conversion-rate-calculator.html" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; text-decoration:none; color:inherit; display:block; transition:all 0.25s ease;">
+                            <div style="font-size:24px; margin-bottom:6px;">⚡</div>
+                            <div style="font-weight:800; font-size:16px; color:#0f172a;">Conversion Rate Calculator</div>
+                            <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Calculate clicks turning into completed orders.</div>
+                        </a>
+                        <a href="amazon-target-acos-bid-calculator.html" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; text-decoration:none; color:inherit; display:block; transition:all 0.25s ease;">
+                            <div style="font-size:24px; margin-bottom:6px;">🎯</div>
+                            <div style="font-weight:800; font-size:16px; color:#0f172a;">Target Bid Calculator</div>
+                            <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Model target bidding economics and optimal bids.</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ ACCORDION -->
+                <div style="max-width:920px; margin:56px auto 0 auto;" id="sec-faqs">
+                    <div style="text-align:center; margin-bottom:28px;">
+                        <div class="cpc-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+                        <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Amazon CPC Calculator FAQs</h2>
+                    </div>
+
+                    <div class="faq-accordion-list">
+                        <details class="faq-item">
+                            <summary>What is Amazon CPC? <span class="faq-icon">+</span></summary>
+                            <div class="faq-answer">Amazon CPC (Cost Per Click) is the average advertising spend paid each time a shopper clicks your Sponsored Products, Brands, or Display ad.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>How is Amazon PPC CPC calculated? <span class="faq-icon">+</span></summary>
+                            <div class="faq-answer">Average CPC is calculated by dividing total advertising spend by the total number of paid ad clicks (Ad Spend ÷ Clicks).</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Is CPC the same as my Amazon bid? <span class="faq-icon">+</span></summary>
+                            <div class="faq-answer">No. Your bid is the maximum amount you are willing to pay in Amazon's second-price auction. The actual CPC you pay is typically lower than your max bid.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What is a good CPC for Amazon PPC? <span class="faq-icon">+</span></summary>
+                            <div class="faq-answer">There is no universal 'good' CPC. A sustainable CPC depends directly on your conversion rate, average order value, target ACoS, and product profit margin.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>How does conversion rate affect CPC capacity? <span class="faq-icon">+</span></summary>
+                            <div class="faq-answer">A higher conversion rate generates more orders per click, increasing revenue per click and allowing your campaign to economically support a higher CPC at the same target ACoS.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>How do I calculate Target CPC from ACoS? <span class="faq-icon">+</span></summary>
+                            <div class="faq-answer">Target CPC Reference = Average Order Value × Conversion Rate × Target ACoS (expressed as decimals).</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Why can a low CPC still produce high ACoS? <span class="faq-icon">+</span></summary>
+                            <div class="faq-answer">If traffic quality or conversion rate is extremely low, shoppers rarely buy after clicking. Even a cheap ₹5 CPC can produce an unprofitably high ACoS if it takes 50 clicks to generate one sale.</div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 10. PPC AUDIT CTA BANNER -->
+        <div style="background:#080d1a; padding:60px 20px; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); text-align:center; color:#ffffff;">
+            <div class="resources-calc-container">
+                <div class="cpc-eyebrow">NEED MORE THAN A CPC NUMBER?</div>
+                <h2 style="font-size:32px; font-weight:800; color:#ffffff; margin:0 0 14px 0;">Find Out What's Driving Your Amazon PPC Costs</h2>
+                <p style="font-size:16px; color:#cbd5e1; max-width:760px; margin:0 auto 24px auto; line-height:1.65;">
+                    If CPC, ACoS or conversion is limiting your campaign, PPC Growth Expert can analyze your search terms, keyword bids, placements, budgets and listing performance to identify where advertising efficiency is being lost.
+                </p>
+                <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; align-items:center;">
+                    <a href="contact.html" class="btn-cta-primary" style="padding:14px 30px; font-size:15px;">Request an Amazon PPC Audit →</a>
+                    <a href="services.html#service-ppc-management" style="color:#ffffff; font-weight:700; text-decoration:underline; font-size:14.5px;">Explore Amazon PPC Management →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer" id="footer" role="contentinfo">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-col brand-col">
+                        <div class="brand-card">
+                            <a href="index.html" class="footer-logo">
+                                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+                            </a>
+                            <p class="footer-sub-tagline">Independent Amazon PPC consultancy founded by Anmol Pokhriyal.</p>
+                            <p class="footer-tagline">Helping Amazon brands in India optimize ACoS, scale ROAS, and achieve profitable growth.</p>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3 class="footer-heading">SERVICES</h3>
+                        <ul class="footer-links">
+                            <li><a href="services.html#service-ppc-management">Amazon PPC Management</a></li>
+                            <li><a href="services.html#service-listing-optimization">Listing Optimization</a></li>
+                            <li><a href="services.html#service-image-aplus">A+ Content &amp; Images</a></li>
+                            <li><a href="services.html#service-keyword-research">Keyword Research</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col contact-col">
+                        <h3 class="footer-heading">CONTACT US</h3>
+                        <ul class="footer-contact-list">
+                            <li><div class="contact-icon-pill">📍</div><div>Noida, Uttar Pradesh</div></li>
+                            <li><div class="contact-icon-pill">📞</div><a href="tel:+916397607291">+91 63976 07291</a></li>
+                            <li><div class="contact-icon-pill">✉️</div><a href="mailto:anmolpokhriyal3200@gmail.com">anmolpokhriyal3200@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3 class="footer-heading">COMPANY</h3>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="case-studies.html">Case Studies</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-middle">
+                    <p class="footer-meta-info">PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291</p>
+                </div>
+                <div class="footer-bottom">
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- DEDICATED PRINT EXECUTIVE PDF AUDIT REPORT TEMPLATE -->
+    <div id="pdfReportContainer">
+        <div class="pdf-header">
+            <div>
+                <h1 class="pdf-title">Amazon PPC CPC Analysis Report</h1>
+                <div class="pdf-subtitle">PPC Growth Expert Executive Decision Tool · Confidential</div>
+            </div>
+            <div style="text-align:right;">
+                <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#2563eb;">ppcgrowthexpert.com</div>
+                <div style="font-size:11px; color:#64748b;" id="pdfReportDate">Date: Jan 2026</div>
+            </div>
+        </div>
+
+        <div class="pdf-grid-2">
+            <div class="pdf-box">
+                <div class="pdf-box-title">CAMPAIGN INPUTS &amp; OBSERVED PERFORMANCE</div>
+                <table class="pdf-table">
+                    <tbody>
+                        <tr><td>Total Ad Spend:</td><td style="text-align:right; font-weight:700;" id="pdfSpend">₹18,750</td></tr>
+                        <tr><td>Total Paid Clicks:</td><td style="text-align:right;" id="pdfClicks">1,000</td></tr>
+                        <tr><td>Attributed Orders:</td><td style="text-align:right;" id="pdfOrders">82</td></tr>
+                        <tr><td>Attributed Ad Sales:</td><td style="text-align:right;" id="pdfSales">₹77,160</td></tr>
+                        <tr style="font-weight:800; font-size:14px;"><td style="color:#0f172a;">Average CPC Paid:</td><td style="text-align:right; color:#2563eb;" id="pdfCpc">₹18.75</td></tr>
+                        <tr><td>Conversion Rate (CVR):</td><td style="text-align:right;" id="pdfCvr">8.20%</td></tr>
+                        <tr><td>Cost per Order (CPA):</td><td style="text-align:right;" id="pdfCpa">₹228.66</td></tr>
+                        <tr><td>Revenue per Click (RPC):</td><td style="text-align:right; color:#047857;" id="pdfRpc">₹77.16</td></tr>
+                        <tr><td>ACoS / ROAS:</td><td style="text-align:right;" id="pdfAcos">24.3% / 4.12x</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pdf-box">
+                <div class="pdf-box-title">CPC ECONOMIC LIMITS &amp; GOALS</div>
+                <table class="pdf-table">
+                    <tbody>
+                        <tr><td>Target ACoS Goal:</td><td style="text-align:right; font-weight:700;" id="pdfTargetAcosGoal">25.0%</td></tr>
+                        <tr><td>Average Order Value (AOV):</td><td style="text-align:right;" id="pdfAov">₹941.00</td></tr>
+                        <tr style="font-weight:800; font-size:14px;"><td style="color:#047857;">Target CPC Reference:</td><td style="text-align:right; color:#047857;" id="pdfTargetCpc">₹19.29</td></tr>
+                        <tr style="font-weight:800; font-size:14px;"><td style="color:#d97706;">Break-Even CPC Limit:</td><td style="text-align:right; color:#d97706;" id="pdfBreakEvenCpc">₹28.78</td></tr>
+                        <tr><td>Required CVR (at current CPC):</td><td style="text-align:right;" id="pdfReqCvr">7.97%</td></tr>
+                        <tr style="font-weight:800;"><td style="color:#2563eb;">Est. Spend / 1,000 Clicks:</td><td style="text-align:right; color:#2563eb;" id="pdf1000Spend">₹18,750</td></tr>
+                        <tr style="font-weight:800;"><td style="color:#047857;">Est. Sales / 1,000 Clicks:</td><td style="text-align:right; color:#047857;" id="pdf1000Sales">₹77,160</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="pdf-takeaways">
+            <div style="font-weight:800; font-size:14px; color:#1e3a8a; margin-bottom:10px;">EXECUTIVE TAKEAWAYS &amp; STRATEGIC ACTION PLAN</div>
+            <div class="pdf-takeaway-item" id="pdfTakeaway1"><strong>1. CPC Headroom:</strong> Observed CPC (₹18.75) is below your Target CPC reference (₹19.29). Traffic is mathematically efficient for your 25% ACoS goal.</div>
+            <div class="pdf-takeaway-item" id="pdfTakeaway2"><strong>2. Break-Even Buffer:</strong> Your Break-Even CPC is ₹28.78. Current CPC leaves a positive contribution safety margin per click.</div>
+            <div class="pdf-takeaway-item" id="pdfTakeaway3"><strong>3. Traffic Quality:</strong> Each click generates ₹77.16 in attributed ad revenue. Maintain exact match negative keyword auditing to protect conversion.</div>
+        </div>
+
+        <div class="pdf-footer">
+            Report generated via PPC Growth Expert Amazon CPC Calculator · Contact Anmol Pokhriyal (+91 63976 07291 | anmolpokhriyal3200@gmail.com) for a full Amazon PPC Audit.
+        </div>
+    </div>
+
+    <!-- JS CALCULATOR ENGINE -->
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            let hasInteracted = false;
+
+            // FORMATTING HELPERS
+            function formatINR(val, isRound = false) {
+                if (isNaN(val) || val === null || val === undefined) return '₹0.00';
+                return new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'INR',
+                    maximumFractionDigits: isRound ? 0 : 2,
+                    minimumFractionDigits: isRound ? 0 : 2
+                }).format(val);
+            }
+
+            function formatPct(val) {
+                if (isNaN(val) || val === null || val === undefined) return '0.0%';
+                return `${val.toFixed(2)}%`;
+            }
+
+            // CORE CALCULATION ENGINE
+            function calcCpcEngine() {
+                hasInteracted = true;
+                const spend = parseFloat(document.getElementById('inputSpend').value) || 0;
+                const clicks = parseFloat(document.getElementById('inputClicks').value) || 0;
+                const orders = parseFloat(document.getElementById('inputOrders').value) || 0;
+                const sales = parseFloat(document.getElementById('inputSales').value) || 0;
+
+                const targetAcos = parseFloat(document.getElementById('inputTargetAcos').value) || 25;
+                let aov = parseFloat(document.getElementById('inputAov').value) || 0;
+                const cogs = parseFloat(document.getElementById('inputCogs').value) || 0;
+                const amzFees = parseFloat(document.getElementById('inputAmzFees').value) || 0;
+
+                // VALIDATION & DERIVATIONS
+                if (clicks <= 0 || spend < 0) {
+                    document.getElementById('receiptCpcVal').innerText = '₹0.00';
+                    return;
+                }
+
+                // 1. OBSERVED METRICS
+                const cpc = spend / clicks;
+                const cvr = clicks > 0 ? (orders / clicks) * 100 : 0;
+                const cpa = orders > 0 ? spend / orders : 0;
+                const rpc = clicks > 0 ? sales / clicks : 0;
+                const acos = sales > 0 ? (spend / sales) * 100 : 0;
+                const roas = spend > 0 ? sales / spend : 0;
+
+                if (aov <= 0 && orders > 0 && sales > 0) {
+                    aov = sales / orders;
+                    document.getElementById('inputAov').value = aov.toFixed(2);
+                } else if (aov <= 0) {
+                    aov = 941;
+                }
+
+                // 2. MODELLED ECONOMICS
+                const preAdMargin = Math.max(0, aov - cogs - amzFees);
+                const breakEvenAcos = aov > 0 ? (preAdMargin / aov) * 100 : 35;
+                const targetCpc = aov * (cvr / 100) * (targetAcos / 100);
+                const breakEvenCpc = preAdMargin * (cvr / 100);
+
+                const reqCvr = (cpc / (aov * (targetAcos / 100))) * 100;
+                const reqCvrGap = cvr - reqCvr;
+
+                // UNLOCK PDF BUTTON
+                const pdfBtn = document.getElementById('btnDownloadPDF');
+                if (pdfBtn && (clicks > 0 && spend > 0)) {
+                    pdfBtn.disabled = false;
+                    pdfBtn.classList.remove('locked');
+                    pdfBtn.classList.add('unlocked');
+                    pdfBtn.innerText = 'Download Executive PDF Report 📄';
+                }
+
+                // UPDATE RECEIPT CARD
+                document.getElementById('receiptCpcVal').innerText = formatINR(cpc);
+                document.getElementById('receiptCpcSubPill').innerText = `Paid ${formatINR(cpc)} per ad click`;
+                document.getElementById('recCvr').innerText = formatPct(cvr);
+                document.getElementById('recCpa').innerText = formatINR(cpa);
+                document.getElementById('recRpc').innerText = formatINR(rpc);
+                document.getElementById('recAcosRoas').innerText = `${formatPct(acos)} / ${roas.toFixed(2)}x`;
+                document.getElementById('recTargetCpc').innerText = formatINR(targetCpc);
+                document.getElementById('recBreakEvenCpc').innerText = formatINR(breakEvenCpc);
+
+                // UPDATE CPC POSITION SCALE
+                const maxScale = Math.max(cpc, targetCpc, breakEvenCpc) * 1.25 || 50;
+                const pinCurrentPct = Math.min(95, Math.max(5, (cpc / maxScale) * 100));
+                const pinTargetPct = Math.min(95, Math.max(5, (targetCpc / maxScale) * 100));
+                const pinBePct = Math.min(95, Math.max(5, (breakEvenCpc / maxScale) * 100));
+
+                document.getElementById('pinCurrent').style.left = pinCurrentPct + '%';
+                document.getElementById('pinTarget').style.left = pinTargetPct + '%';
+                document.getElementById('pinBreakEven').style.left = pinBePct + '%';
+
+                document.getElementById('pinCurrentText').innerText = `Current ${formatINR(cpc)}`;
+                document.getElementById('pinTargetText').innerText = `Target ${formatINR(targetCpc)}`;
+                document.getElementById('pinBreakEvenText').innerText = `Break-Even ${formatINR(breakEvenCpc)}`;
+
+                const guidanceEl = document.getElementById('cpcScaleGuidance');
+                if (cpc <= targetCpc) {
+                    guidanceEl.innerText = `Your observed CPC (${formatINR(cpc)}) is below your Target CPC reference (${formatINR(targetCpc)}). Traffic is mathematically efficient for your ${targetAcos}% ACoS goal.`;
+                } else if (cpc <= breakEvenCpc) {
+                    guidanceEl.innerText = `Your observed CPC (${formatINR(cpc)}) is above your Target CPC reference (${formatINR(targetCpc)}), but remains below your Break-Even CPC (${formatINR(breakEvenCpc)}). Campaign is profitable but above target ACoS.`;
+                } else {
+                    guidanceEl.innerText = `Your observed CPC (${formatINR(cpc)}) exceeds your Break-Even CPC (${formatINR(breakEvenCpc)}). At current conversion (${formatPct(cvr)}), ad spend exceeds pre-ad contribution.`;
+                }
+
+                // UPDATE DARK TELEMETRY DASHBOARD
+                document.getElementById('dashValCpc').innerText = formatINR(cpc);
+                document.getElementById('dashValCvr').innerText = formatPct(cvr);
+                document.getElementById('dashValCpa').innerText = formatINR(cpa);
+                document.getElementById('dashValRpc').innerText = formatINR(rpc);
+                document.getElementById('dashValAcos').innerText = formatPct(acos);
+                document.getElementById('dashValRoasSub').innerText = `ROAS: ${roas.toFixed(2)}x`;
+                document.getElementById('dashValTargetCpc').innerText = formatINR(targetCpc);
+                document.getElementById('dashValBeCpc').innerText = formatINR(breakEvenCpc);
+                document.getElementById('dashValReqCvr').innerText = formatPct(reqCvr);
+                document.getElementById('dashValReqCvrSub').innerText = `Gap: ${reqCvrGap >= 0 ? '+' : ''}${reqCvrGap.toFixed(2)} percentage pts`;
+
+                // UPDATE CLICK FUNNEL & 1,000 CLICK FORECAST
+                document.getElementById('funnelSpend').innerText = `${formatINR(cpc * 100, true)} Spend`;
+                document.getElementById('funnelOrders').innerText = `${(cvr).toFixed(1)} Orders`;
+                document.getElementById('funnelSales').innerText = `${formatINR(rpc * 100, true)} Sales`;
+
+                const fcSpend = cpc * 1000;
+                const fcOrders = (cvr / 100) * 1000;
+                const fcSales = fcOrders * aov;
+                const fcAcos = fcSales > 0 ? (fcSpend / fcSales) * 100 : 0;
+
+                document.getElementById('fcSpend').innerText = formatINR(fcSpend, true);
+                document.getElementById('fcOrders').innerText = `${fcOrders.toFixed(0)} Orders`;
+                document.getElementById('fcSales').innerText = formatINR(fcSales, true);
+                document.getElementById('fcAcos').innerText = formatPct(fcAcos);
+
+                // UPDATE CONVERSION SHIFT SIMULATOR
+                const cvrSteps = [Math.max(1, cvr - 4), Math.max(2, cvr - 2), cvr, cvr + 2, cvr + 4];
+                const shiftGrid = document.getElementById('cvrShiftGrid');
+                shiftGrid.innerHTML = cvrSteps.map(stepCvr => {
+                    const stepTargetCpc = aov * (stepCvr / 100) * (targetAcos / 100);
+                    const isCurrent = Math.abs(stepCvr - cvr) < 0.1;
+                    return `
+                        <div style="background:${isCurrent ? '#eff6ff' : '#ffffff'}; border:${isCurrent ? '2px solid #2563eb' : '1.5px solid #e2e8f0'}; border-radius:16px; padding:16px; text-align:center;">
+                            <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:${isCurrent ? '#2563eb' : '#64748b'};">${isCurrent ? 'CURRENT CVR' : 'CVR SCENARIO'}</div>
+                            <div style="font-size:20px; font-weight:800; color:#0f172a; margin:4px 0;">${stepCvr.toFixed(1)}%</div>
+                            <div style="font-size:16px; font-weight:800; color:#047857;">${formatINR(stepTargetCpc)}</div>
+                            <div style="font-size:11.5px; color:#64748b; margin-top:2px;">Target CPC</div>
+                        </div>
+                    `;
+                }).join('');
+
+                // UPDATE CPC x CVR SENSITIVITY MATRIX
+                const matrixCpcSteps = [cpc * 0.7, cpc * 0.85, cpc, cpc * 1.15, cpc * 1.3];
+                const matrixCvrSteps = [Math.max(1, cvr - 3), Math.max(2, cvr - 1.5), cvr, cvr + 1.5, cvr + 3];
+                const matrixTable = document.getElementById('matrixTable');
+
+                let matrixHtml = `
+                    <thead>
+                        <tr>
+                            <th>CPC \\ CVR</th>
+                            ${matrixCvrSteps.map(c => `<th>${c.toFixed(1)}% CVR</th>`).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                `;
+
+                matrixCpcSteps.forEach(mCpc => {
+                    matrixHtml += `<tr><td style="background:#0f172a; color:#ffffff;">${formatINR(mCpc)}</td>`;
+                    matrixCvrSteps.forEach(mCvr => {
+                        const mRpc = (mCvr / 100) * aov;
+                        const mAcos = mRpc > 0 ? (mCpc / mRpc) * 100 : 0;
+                        let cellClass = 'cpc-cell-target';
+                        if (mAcos > breakEvenAcos) cellClass = 'cpc-cell-risk';
+                        else if (mAcos > targetAcos) cellClass = 'cpc-cell-caution';
+                        if (Math.abs(mCpc - cpc) < 0.1 && Math.abs(mCvr - cvr) < 0.1) cellClass += ' cpc-cell-current';
+
+                        matrixHtml += `<td class="${cellClass}">${mAcos.toFixed(1)}%</td>`;
+                    });
+                    matrixHtml += `</tr>`;
+                });
+                matrixHtml += `</tbody>`;
+                matrixTable.innerHTML = matrixHtml;
+
+                // UPDATE DYNAMIC ACTION PRIORITIES
+                const prioritiesGrid = document.getElementById('actionPrioritiesGrid');
+                let p1Title = "1. CPC is Below Target Reference", p1Desc = `Your observed CPC (${formatINR(cpc)}) is lower than your Target CPC reference (${formatINR(targetCpc)}). Maintain campaign bids and check for impression share headroom.`;
+                if (cpc > breakEvenCpc) {
+                    p1Title = "1. CPC Exceeds Break-Even Limit";
+                    p1Desc = `Your observed CPC (${formatINR(cpc)}) exceeds your Break-Even CPC (${formatINR(breakEvenCpc)}). Immediately audit non-converting search terms and reduce bids.`;
+                } else if (cpc > targetCpc) {
+                    p1Title = "1. CPC Above Target Goal";
+                    p1Desc = `Your observed CPC (${formatINR(cpc)}) is higher than your Target CPC reference (${formatINR(targetCpc)}). Review keyword match types and placement multipliers.`;
+                }
+
+                let p2Title = "2. Conversion Rate Alignment", p2Desc = `Actual CVR is ${formatPct(cvr)}, compared to ${formatPct(reqCvr)} required for your target ACoS. Optimize product images and listing text to close the gap.`;
+                let p3Title = "3. Revenue per Click Growth", p3Desc = `Each click currently yields ${formatINR(rpc)} in ad sales. Test multi-pack bundles or higher AOV offers to increase RPC capacity.`;
+
+                prioritiesGrid.innerHTML = `
+                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:20px;">
+                        <div style="font-weight:800; font-size:16px; color:#38bdf8; margin-bottom:6px;">${p1Title}</div>
+                        <div style="font-size:13.5px; color:#cbd5e1; line-height:1.5;">${p1Desc}</div>
+                    </div>
+                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:20px;">
+                        <div style="font-weight:800; font-size:16px; color:#34d399; margin-bottom:6px;">${p2Title}</div>
+                        <div style="font-size:13.5px; color:#cbd5e1; line-height:1.5;">${p2Desc}</div>
+                    </div>
+                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:20px;">
+                        <div style="font-weight:800; font-size:16px; color:#fbbf24; margin-bottom:6px;">${p3Title}</div>
+                        <div style="font-size:13.5px; color:#cbd5e1; line-height:1.5;">${p3Desc}</div>
+                    </div>
+                `;
+
+                // UPDATE MATH DRAWER
+                document.getElementById('cpcMathDrawerContent').innerHTML = `
+                    <strong>Observed Average CPC:</strong> ${formatINR(spend)} Ad Spend ÷ ${clicks} Clicks = <strong>${formatINR(cpc)}</strong><br>
+                    <strong>Observed CVR:</strong> (${orders} Orders ÷ ${clicks} Clicks) × 100 = <strong>${formatPct(cvr)}</strong><br>
+                    <strong>Cost per Order (CPA):</strong> ${formatINR(spend)} ÷ ${orders} Orders = <strong>${formatINR(cpa)}</strong><br>
+                    <strong>Observed Revenue per Click (RPC):</strong> ${formatINR(sales)} Ad Sales ÷ ${clicks} Clicks = <strong>${formatINR(rpc)}</strong><br>
+                    <strong>Target CPC Reference:</strong> ${formatINR(aov)} AOV × ${formatPct(cvr)} CVR × ${targetAcos}% Target ACoS = <strong>${formatINR(targetCpc)}</strong><br>
+                    <strong>Break-Even CPC:</strong> ${formatINR(preAdMargin)} Margin × ${formatPct(cvr)} CVR = <strong>${formatINR(breakEvenCpc)}</strong>
+                `;
+
+                // UPDATE DEDICATED PDF REPORT DATA
+                updatePdfCpcData(spend, clicks, orders, sales, cpc, cvr, cpa, rpc, acos, roas, targetAcos, aov, targetCpc, breakEvenCpc, reqCvr, fcSpend, fcSales, p1Desc, p2Desc, p3Desc);
+            }
+
+            function updatePdfCpcData(spend, clicks, orders, sales, cpc, cvr, cpa, rpc, acos, roas, targetAcos, aov, targetCpc, breakEvenCpc, reqCvr, fcSpend, fcSales, p1, p2, p3) {
+                document.getElementById('pdfSpend').innerText = formatINR(spend);
+                document.getElementById('pdfClicks').innerText = clicks.toLocaleString('en-IN');
+                document.getElementById('pdfOrders').innerText = orders.toLocaleString('en-IN');
+                document.getElementById('pdfSales').innerText = formatINR(sales);
+                document.getElementById('pdfCpc').innerText = formatINR(cpc);
+                document.getElementById('pdfCvr').innerText = formatPct(cvr);
+                document.getElementById('pdfCpa').innerText = formatINR(cpa);
+                document.getElementById('pdfRpc').innerText = formatINR(rpc);
+                document.getElementById('pdfAcos').innerText = `${formatPct(acos)} / ${roas.toFixed(2)}x`;
+
+                document.getElementById('pdfTargetAcosGoal').innerText = `${targetAcos.toFixed(1)}%`;
+                document.getElementById('pdfAov').innerText = formatINR(aov);
+                document.getElementById('pdfTargetCpc').innerText = formatINR(targetCpc);
+                document.getElementById('pdfBreakEvenCpc').innerText = formatINR(breakEvenCpc);
+                document.getElementById('pdfReqCvr').innerText = formatPct(reqCvr);
+                document.getElementById('pdf1000Spend').innerText = formatINR(fcSpend, true);
+                document.getElementById('pdf1000Sales').innerText = formatINR(fcSales, true);
+
+                document.getElementById('pdfTakeaway1').innerHTML = `<strong>1. CPC Headroom:</strong> ${p1}`;
+                document.getElementById('pdfTakeaway2').innerHTML = `<strong>2. CVR Requirement:</strong> ${p2}`;
+                document.getElementById('pdfTakeaway3').innerHTML = `<strong>3. Traffic RPC Value:</strong> ${p3}`;
+
+                const today = new Date();
+                document.getElementById('pdfReportDate').innerText = `Date: ${today.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+            }
+
+            // DIAGNOSTIC PICKER EVENTS
+            const diagCards = document.querySelectorAll('.cpc-diag-card');
+            const diagTitle = document.getElementById('cpcDiagSolTitle');
+            const diagDesc = document.getElementById('cpcDiagSolDesc');
+
+            const diagSolutions = {
+                rising: {
+                    title: "Diagnostic Action: Rising CPC",
+                    desc: "Check bid adjustments on Top of Search placement and audit search term reports for high-competition non-exact terms driving up auction costs without proportional conversion gain."
+                },
+                expConverts: {
+                    title: "Diagnostic Action: Expensive But Converts",
+                    desc: "A high CPC can remain highly profitable if CVR and order value are strong. Compare your observed CPC with Break-Even CPC before lowering bids."
+                },
+                expNoConvert: {
+                    title: "Diagnostic Action: Expensive & Low Conversion",
+                    desc: "High click costs combined with low conversion indicates a mismatch between keyword intent and product listing offer. Negative-target non-converting queries immediately."
+                },
+                lowCpcHighAcos: {
+                    title: "Diagnostic Action: Low CPC But High ACoS",
+                    desc: "Cheap clicks do not guarantee profitability. If traffic fails to convert, even a ₹5 CPC will yield high ACoS. Focus on listing CVR optimization."
+                }
+            };
+
+            diagCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    diagCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    const diag = this.getAttribute('data-diag');
+                    if (diagSolutions[diag]) {
+                        diagTitle.innerText = diagSolutions[diag].title;
+                        diagDesc.innerText = diagSolutions[diag].desc;
+                    }
+                });
+            });
+
+            // INPUT EVENT LISTENERS
+            const cpcInputs = ['inputSpend', 'inputClicks', 'inputOrders', 'inputSales', 'inputTargetAcos', 'inputAov', 'inputCogs', 'inputAmzFees'];
+            cpcInputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', calcCpcEngine);
+                    el.addEventListener('change', calcCpcEngine);
+                }
+            });
+
+            // BUTTON: USE EXAMPLE DATA
+            document.getElementById('btnUseExample').addEventListener('click', function() {
+                document.getElementById('inputSpend').value = '18750';
+                document.getElementById('inputClicks').value = '1000';
+                document.getElementById('inputOrders').value = '82';
+                document.getElementById('inputSales').value = '77160';
+                document.getElementById('inputTargetAcos').value = '25';
+                document.getElementById('inputAov').value = '941';
+                document.getElementById('inputCogs').value = '380';
+                document.getElementById('inputAmzFees').value = '210';
+                calcCpcEngine();
+            });
+
+            // BUTTON: RESET
+            document.getElementById('btnResetCalc').addEventListener('click', function() {
+                document.getElementById('inputSpend').value = '18750';
+                document.getElementById('inputClicks').value = '1000';
+                document.getElementById('inputOrders').value = '82';
+                document.getElementById('inputSales').value = '77160';
+                document.getElementById('inputTargetAcos').value = '25';
+                document.getElementById('inputAov').value = '941';
+                document.getElementById('inputCogs').value = '380';
+                document.getElementById('inputAmzFees').value = '210';
+                calcCpcEngine();
+            });
+
+            // BUTTON: DOWNLOAD DEDICATED PDF
+            document.getElementById('btnDownloadPDF').addEventListener('click', function() {
+                if (this.disabled) {
+                    alert('Please enter valid Spend and Clicks to unlock your custom executive PDF report.');
+                    return;
+                }
+                window.print();
+            });
+
+            // BUTTON: COPY SUMMARY
+            document.getElementById('btnCopySummary').addEventListener('click', function() {
+                const cpc = document.getElementById('receiptCpcVal').innerText;
+                const cvr = document.getElementById('recCvr').innerText;
+                const cpa = document.getElementById('recCpa').innerText;
+                const rpc = document.getElementById('recRpc').innerText;
+                const acos = document.getElementById('dashValAcos').innerText;
+                const targetCpc = document.getElementById('recTargetCpc').innerText;
+
+                const text = `Amazon PPC CPC Analysis\n\nAverage CPC Paid: ${cpc}\nConversion Rate (CVR): ${cvr}\nCost per Order (CPA): ${cpa}\nRevenue per Click (RPC): ${rpc}\nObserved ACoS: ${acos}\nTarget CPC Reference: ${targetCpc}\n\nCalculated using PPC Growth Expert Amazon CPC Calculator.`;
+
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        this.innerText = 'Copied! ✓';
+                        setTimeout(() => this.innerText = 'Copy 📋', 2000);
+                    });
+                } else {
+                    alert(text);
+                }
+            });
+
+            // INITIAL ENGINE EXECUTION
+            calcCpcEngine();
+        });
+    </script>
 </body>
-
 </html>
