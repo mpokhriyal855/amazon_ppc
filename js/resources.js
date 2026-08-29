@@ -44,10 +44,10 @@ function initResourcesPage() {
 
     const problemData = {
         "acos-high": {
-            title: "Break-Even ACoS & ACoS Calculator",
-            desc: "Find out if your high ACoS is consuming profit margin and calculate your exact break-even threshold.",
-            btnText: "Find Break-Even ACoS →",
-            url: "amazon-break-even-acos-calculator.html"
+            title: "Amazon ACoS Calculator",
+            desc: "Calculate your Advertising Cost of Sales and evaluate how efficiently your ad spend translates into revenue.",
+            btnText: "Calculate ACoS →",
+            url: "amazon-acos-calculator.html"
         },
         "low-cvr": {
             title: "Amazon PPC Conversion Rate Calculator",
@@ -55,17 +55,29 @@ function initResourcesPage() {
             btnText: "Check Conversion Rate →",
             url: "amazon-ppc-conversion-rate-calculator.html"
         },
-        "budget-plan": {
-            title: "Amazon PPC Budget Calculator",
-            desc: "Plan a practical monthly ad spend based on your revenue targets, target ACoS, and default CPC assumptions.",
-            btnText: "Plan PPC Budget →",
-            url: "amazon-ppc-budget-calculator.html"
-        },
         "profit-check": {
-            title: "Break-Even ACoS & Profitability Calculator",
-            desc: "Determine exact contribution margins and maximum allowable ACoS before advertising consumes profit.",
-            btnText: "Check Profitability →",
-            url: "amazon-break-even-acos-calculator.html"
+            title: "Amazon India Profit Calculator",
+            desc: "Calculate net margins, Amazon referral & closing fees, GST impact, and net seller payout.",
+            btnText: "Calculate Net Profit →",
+            url: "amazon-profit-calculator.html"
+        },
+        "fba-fee": {
+            title: "Amazon FBA Fee Calculator India",
+            desc: "Calculate pick & pack, weight handling, and referral fee breakdowns for FBA orders.",
+            btnText: "Calculate FBA Fees →",
+            url: "amazon-fba-fee-calculator.html"
+        },
+        "storage-fee": {
+            title: "Amazon FBA Storage Fee Calculator",
+            desc: "Estimate monthly inventory storage costs based on unit dimensions, volume, and sell-through velocity.",
+            btnText: "Calculate Storage Fee →",
+            url: "amazon-fba-storage-fee-calculator.html"
+        },
+        "ad-roi": {
+            title: "Amazon Advertising ROI Calculator",
+            desc: "Calculate true net profit return after subtracting ad spend, product COGS, and Amazon fees.",
+            btnText: "Calculate Ad ROI →",
+            url: "amazon-advertising-roi-calculator.html"
         },
         "tacos-check": {
             title: "Amazon TACoS Calculator",
@@ -73,11 +85,11 @@ function initResourcesPage() {
             btnText: "Calculate TACoS →",
             url: "amazon-tacos-calculator.html"
         },
-        "bid-setting": {
-            title: "Target ACoS & Bid Calculator",
-            desc: "Calculate exact recommended keyword bids using target ACoS, conversion rate, and product selling price.",
-            btnText: "Estimate Keyword Bid →",
-            url: "amazon-target-acos-bid-calculator.html"
+        "roas-check": {
+            title: "Amazon ROAS Calculator",
+            desc: "See how much attributed advertising revenue you generate for every ₹1 spent on PPC campaigns.",
+            btnText: "Calculate ROAS →",
+            url: "amazon-roas-calculator.html"
         }
     };
 
