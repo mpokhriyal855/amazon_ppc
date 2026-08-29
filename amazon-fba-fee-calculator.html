@@ -523,6 +523,81 @@
         /* PRINT PDF TEMPLATE */
         #pdfReportContainer { display: none; }
 
+        /* FAQ ACCORDION STYLES (+/- SIGN SMOOTH TRANSITION) */
+        .faq-item {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 14px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .faq-item:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+        }
+
+        .faq-item[open] {
+            border-color: #2563eb;
+            box-shadow: 0 6px 20px rgba(37,99,235,0.08);
+        }
+
+        .faq-question-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 22px;
+            font-weight: 700;
+            font-size: 15.5px;
+            color: #0f172a;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+        }
+
+        .faq-question-btn::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-q-text {
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .faq-toggle-icon {
+            font-size: 18px;
+            font-weight: 800;
+            color: #2563eb;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] .faq-toggle-icon {
+            transform: rotate(45deg);
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .faq-answer-content {
+            padding: 0 22px 22px 22px;
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .faq-answer-content p {
+            margin: 0;
+        }
+
         @media print {
             body { background: #ffffff !important; color: #0f172a !important; font-family: 'Plus Jakarta Sans', sans-serif !important; }
             #webAppLayout { display: none !important; }
@@ -534,7 +609,7 @@
             .pdf-box { border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px; background: #f8fafc; }
             .pdf-box-title { font-size: 12px; font-weight: 800; color: #2563eb; text-transform: uppercase; margin-bottom: 8px; font-family: 'DM Mono', monospace; }
             .pdf-table { width: 100%; font-size: 12px; border-collapse: collapse; }
-            .pdf-table td { padding: 5px 0; border-bottom: 1px solid #e2e8f0; }
+            .pdf-table td { padding: 6px 4px; border-bottom: 1px solid #e2e8f0; }
             .pdf-takeaways { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 16px; margin-top: 20px; }
             .pdf-footer { margin-top: 30px; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 10px; color: #94a3b8; text-align: center; }
         }
@@ -632,9 +707,10 @@
                 </div>
 
                 <div style="margin-top:16px; text-align:center;">
-                    <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(37,99,235,0.06); border:1px solid rgba(37,99,235,0.2); padding:6px 16px; border-radius:50px; font-size:12.5px; color:#1e40af;">
+                    <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(37,99,235,0.06); border:1px solid rgba(37,99,235,0.2); padding:6px 16px; border-radius:50px; font-size:12.5px; color:#1e40af; flex-wrap:wrap; justify-content:center;">
                         <span><strong>Fee Schedule:</strong> Amazon.in · Verified Schedule (Current)</span>
-                        <button type="button" id="btnToggleRulesDrawer" style="background:#2563eb; color:#ffffff; border:none; padding:3px 10px; border-radius:12px; font-size:11px; font-weight:700; cursor:pointer; text-transform:uppercase;">View Fee Rules ▾</button>
+                        <button type="button" id="btnToggleRulesDrawer" style="background:#2563eb; color:#ffffff; border:none; padding:4px 12px; border-radius:12px; font-size:11px; font-weight:700; cursor:pointer; text-transform:uppercase;">View Fee Rules ▾</button>
+                        <button type="button" id="btnHeroPdf" style="background:#10b981; color:#ffffff; border:none; padding:4px 14px; border-radius:12px; font-size:11px; font-weight:800; cursor:pointer; text-transform:uppercase; box-shadow:0 3px 10px rgba(16,185,129,0.3);">Download Fee Audit PDF 📄</button>
                     </div>
                 </div>
             </div>
@@ -813,7 +889,10 @@
                                 <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; letter-spacing:1px;">PPC GROWTH EXPERT</div>
                                 <div style="font-size:15px; font-weight:800; color:#ffffff;">AMAZON INDIA FBA FEE RECEIPT</div>
                             </div>
-                            <button type="button" id="btnCopyAnalysis" style="background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3); padding:6px 12px; border-radius:50px; font-size:11.5px; font-weight:700; cursor:pointer;">Copy Receipt 📋</button>
+                            <div style="display:flex; gap:8px; align-items:center;">
+                                <button type="button" id="btnCopyAnalysis" style="background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3); padding:6px 12px; border-radius:50px; font-size:11.5px; font-weight:700; cursor:pointer;">Copy 📋</button>
+                                <button type="button" id="btnDownloadPDF" style="background:#2563eb; color:#ffffff; border:none; padding:6px 14px; border-radius:50px; font-size:11.5px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(37,99,235,0.4);">Download PDF 📄</button>
+                            </div>
                         </div>
 
                         <div class="receipt-line-dark">
@@ -1286,52 +1365,83 @@
                     <!-- FREQUENTLY ASKED QUESTIONS -->
                     <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin-top:40px;">Frequently Asked Questions</h2>
                     <div style="margin-top:20px;">
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">What fees does Amazon FBA charge in India?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                Amazon India FBA charges referral fees (category & price slab dependent), closing fees (item price tier dependent), FBA fulfilment fees (pick, pack, and shipping based on billing weight and distance), monthly storage fees (per cubic foot), and 18% GST on all fee components.
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">What fees does Amazon FBA charge in India?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Amazon India FBA charges referral fees (category &amp; price slab dependent), closing fees (item price tier dependent), FBA fulfilment fees (pick, pack, and shipping based on billing weight and distance), monthly storage fees (per cubic foot), and 18% GST on all fee components.</p>
                             </div>
                         </details>
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">How is Amazon referral fee calculated in India?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                Referral fees are calculated as a percentage of the total selling price based on the product's category and selling-price slab under the official Amazon India seller fee schedule.
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">How is Amazon referral fee calculated in India?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Referral fees are calculated as a percentage of the total selling price based on the product's category and selling-price slab under the official Amazon India seller fee schedule.</p>
                             </div>
                         </details>
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">Does Amazon India charge FBA shipping fees on actual or volumetric weight?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                Amazon India uses billing weight, which is the higher of actual physical weight and volumetric weight (Length × Width × Height in cm ÷ 5000), rounded up to applicable weight slabs.
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">Does Amazon India charge FBA shipping fees on actual or volumetric weight?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Amazon India uses billing weight, which is the higher of actual physical weight and volumetric weight (Length × Width × Height in cm ÷ 5000), rounded up to applicable weight slabs.</p>
                             </div>
                         </details>
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">What is Amazon FBA Pick &amp; Pack fee in India?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                Pick & Pack is the fulfilment handling fee for picking, packing, and processing individual sellable units at Amazon fulfilment centers prior to dispatch.
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">What is Amazon FBA Pick &amp; Pack fee in India?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Pick &amp; Pack is the fulfilment handling fee for picking, packing, and processing individual sellable units at Amazon fulfilment centers prior to dispatch.</p>
                             </div>
                         </details>
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">Is GST charged on Amazon seller fees in India?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                Yes, an 18% Goods and Services Tax (GST) is levied on all Amazon fee components (referral, closing, weight handling, and storage). Registered GST sellers can claim Input Tax Credit (ITC) on these fees.
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">Is GST charged on Amazon seller fees in India?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Yes, an 18% Goods and Services Tax (GST) is levied on all Amazon fee components (referral, closing, weight handling, and storage). Registered GST sellers can claim Input Tax Credit (ITC) on these fees.</p>
                             </div>
                         </details>
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">Is FBA storage fee charged per item sold?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                No, storage fees are charged monthly based on the average daily cubic volume (cubic feet) occupied by your inventory stored in Amazon fulfilment centers, regardless of whether individual units sold.
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">Is FBA storage fee charged per item sold?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">No, storage fees are charged monthly based on the average daily cubic volume (cubic feet) occupied by your inventory stored in Amazon fulfilment centers, regardless of whether individual units sold.</p>
                             </div>
                         </details>
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">Why can my Seller Central invoice differ from calculator estimates?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                Actual Seller Central charges may differ due to automated laser cube re-measurements of packaging, shifting customer shipping destinations (Local vs Regional vs National), promotional fee waivers, or storage ageing surcharges.
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">Why can my Seller Central invoice differ from calculator estimates?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Actual Seller Central charges may differ due to automated laser cube re-measurements of packaging, shifting customer shipping destinations (Local vs Regional vs National), promotional fee waivers, or storage ageing surcharges.</p>
                             </div>
                         </details>
-                        <details class="faq-item" style="border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:12px; background:#ffffff;">
-                            <summary style="font-weight:700; color:#0f172a; cursor:pointer; font-size:15px;">How does shipping zone affect Amazon India FBA costs?</summary>
-                            <div style="font-size:14px; color:#475569; line-height:1.6; margin-top:10px;">
-                                Amazon classifies shipments into Local (intracity/same hub), Regional (intra-region), and National (cross-country). Weight handling fees increase as shipping distance expands from Local to National.
+
+                        <details class="faq-item" name="faq-accordion" itemprop="mainEntity" itemscope itemtype="http://schema.org/Question">
+                            <summary class="faq-question-btn">
+                                <span class="faq-q-text" itemprop="name">How does shipping zone affect Amazon India FBA costs?</span>
+                                <span class="faq-toggle-icon">+</span>
+                            </summary>
+                            <div class="faq-answer-content" itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+                                <p itemprop="text">Amazon classifies shipments into Local (intracity/same hub), Regional (intra-region), and National (cross-country). Weight handling fees increase as shipping distance expands from Local to National.</p>
                             </div>
                         </details>
                     </div>
@@ -1776,12 +1886,111 @@
 
             document.getElementById('headerMathAccordion').addEventListener('click', function () {
                 const body = document.getElementById('mathDrawerContent');
-                body.style.display = body.style.display === 'none' ? 'block' : 'none';
+                const isHidden = body.style.display === 'none' || body.style.display === '';
+                body.style.display = isHidden ? 'block' : 'none';
+                const arrow = this.querySelector('span:last-child');
+                if (arrow) arrow.innerText = isHidden ? '▾' : '▸';
             });
 
             document.getElementById('btnToggleRulesDrawer').addEventListener('click', function () {
                 const drawer = document.getElementById('feeRulesDrawer');
                 drawer.style.display = drawer.style.display === 'none' ? 'block' : 'none';
+            });
+
+            // PDF PRINT LISTENERS
+            ['btnDownloadPDF', 'btnHeroPdf'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    btn.addEventListener('click', function () {
+                        window.print();
+                    });
+                }
+            });
+
+            // SMOOTH ACCORDION LOGIC FOR FAQ ("ONE OPEN SECOND CLOSE")
+            class SmoothAccordion {
+                constructor(el) {
+                    this.el = el;
+                    this.summary = el.querySelector('summary');
+                    this.content = el.querySelector('.faq-answer-content');
+                    this.animation = null;
+                    this.isClosing = false;
+                    this.isExpanding = false;
+                    if (this.summary) {
+                        this.summary.addEventListener('click', (e) => this.onClick(e));
+                    }
+                }
+
+                onClick(e) {
+                    e.preventDefault();
+                    this.el.style.overflow = 'hidden';
+                    if (this.isClosing || !this.el.open) {
+                        this.open();
+                    } else if (this.isExpanding || this.el.open) {
+                        this.shrink();
+                    }
+                }
+
+                shrink() {
+                    this.isClosing = true;
+                    const startHeight = `${this.el.offsetHeight}px`;
+                    const endHeight = `${this.summary.offsetHeight}px`;
+
+                    if (this.animation) this.animation.cancel();
+
+                    this.animation = this.el.animate({
+                        height: [startHeight, endHeight]
+                    }, {
+                        duration: 340,
+                        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                    });
+
+                    this.animation.onfinish = () => this.onAnimationFinish(false);
+                    this.animation.oncancel = () => this.isClosing = false;
+                }
+
+                open() {
+                    document.querySelectorAll('.faq-item[open]').forEach(otherEl => {
+                        if (otherEl !== this.el && otherEl._accordion) {
+                            otherEl._accordion.shrink();
+                        }
+                    });
+
+                    this.el.style.height = `${this.el.offsetHeight}px`;
+                    this.el.open = true;
+                    window.requestAnimationFrame(() => this.expand());
+                }
+
+                expand() {
+                    this.isExpanding = true;
+                    const startHeight = `${this.el.offsetHeight}px`;
+                    const endHeight = `${this.summary.offsetHeight + (this.content ? this.content.offsetHeight : 0)}px`;
+
+                    if (this.animation) this.animation.cancel();
+
+                    this.animation = this.el.animate({
+                        height: [startHeight, endHeight]
+                    }, {
+                        duration: 380,
+                        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+                    });
+
+                    this.animation.onfinish = () => this.onAnimationFinish(true);
+                    this.animation.oncancel = () => this.isExpanding = false;
+                }
+
+                onAnimationFinish(open) {
+                    this.el.open = open;
+                    this.animation = null;
+                    this.isClosing = false;
+                    this.isExpanding = false;
+                    this.el.style.height = '';
+                    this.el.style.overflow = '';
+                }
+            }
+
+            document.querySelectorAll('.faq-item').forEach(el => {
+                el._accordion = new SmoothAccordion(el);
             });
 
             document.getElementById('chkIncludeStorage').addEventListener('change', function () {
@@ -2233,23 +2442,52 @@
             // MATH AUDIT DRAWER (LAB 7)
             function updateMathAuditDrawer(price, physWt, volWt, billWt, refRate, refFee, closeFee, pickPackFee, weightHandlingFee, storageFee, subtotal, gst, totalCharges, proceeds) {
                 const content = document.getElementById('mathDrawerContent');
+                if (!content) return;
+
+                const isVolumetric = volWt > physWt;
+
                 content.innerHTML = `
-                    <strong>Marketplace &amp; Fee Schedule:</strong> Amazon.in · Verified Schedule (${amazonIndiaFeeSchedule.lastVerified})<br>
-                    <strong>Category Rule:</strong> ${selectedCategory.name} (${refRate.toFixed(1)}% Applied Slab Rate)<br>
-                    <strong>1. Referral Fee:</strong> ${formatINR(price)} × ${refRate.toFixed(1)}% = <strong>${formatINR(referralFee)}</strong><br>
-                    <strong>2. Closing Fee:</strong> Price Slab Tier = <strong>${formatINR(closeFee)}</strong><br>
-                    <strong>3. Billing Weight Derivation:</strong> MAX( Physical ${physWt.toFixed(2)} kg, Volumetric ${volWt.toFixed(2)} kg ) → Applied Slab <strong>${billWt.toFixed(2)} kg</strong><br>
-                    <strong>4. Pick &amp; Pack Fee:</strong> Standard FBA Pick &amp; Pack = <strong>${formatINR(pickPackFee)}</strong><br>
-                    <strong>5. Weight Handling Fee:</strong> Slab Charge = <strong>${formatINR(weightHandlingFee)}</strong><br>
-                    <strong>6. Subtotal Before Tax:</strong> ${formatINR(referralFee)} + ${formatINR(closeFee)} + ${formatINR(pickPackFee)} + ${formatINR(weightHandlingFee)} + ${formatINR(storageFee)} = <strong>${formatINR(subtotal)}</strong><br>
-                    <strong>7. 18% GST:</strong> ${formatINR(subtotal)} × 18% = <strong>${formatINR(gst)}</strong><br>
-                    <strong>8. Total Amazon Charges:</strong> ${formatINR(subtotal)} + ${formatINR(gst)} = <strong>${formatINR(totalCharges)}</strong><br>
-                    <strong>9. Seller Proceeds (Before Product Cost):</strong> ${formatINR(price)} − ${formatINR(totalCharges)} = <strong>${formatINR(proceeds)}</strong>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:13px; color:#cbd5e1;">
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">1. Volumetric vs Physical Weight Billing</div>
+                            <div style="margin-bottom:6px;">• <strong>Physical Weight:</strong> ${physWt.toFixed(2)} kg</div>
+                            <div style="margin-bottom:6px;">• <strong>Volumetric Weight:</strong> (L × W × H) ÷ 5000 = ${volWt.toFixed(2)} kg</div>
+                            <div style="margin-bottom:6px;">• <strong>Active Billing Weight:</strong> MAX(${physWt.toFixed(2)} kg, ${volWt.toFixed(2)} kg) → <strong>${billWt.toFixed(2)} kg</strong> slab</div>
+                            <div style="color:${isVolumetric ? '#38bdf8' : '#34d399'}; font-size:12px; margin-top:8px; padding-top:6px; border-top:1px dashed rgba(255,255,255,0.1);">
+                                ${isVolumetric ? '⚠️ Volumetric weight governs shipping fees. Reducing box dimensions will drop weight slab.' : '✓ Physical weight governs shipping fees.'}
+                            </div>
+                        </div>
+
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">2. Marketplace Fees Formula</div>
+                            <div style="margin-bottom:6px;">• <strong>Referral Fee:</strong> ${formatINR(price)} × ${refRate.toFixed(1)}% = <strong>${formatINR(refFee)}</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Closing Fee Slab:</strong> Price ${formatINR(price)} → Tier Charge <strong>${formatINR(closeFee)}</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Pick &amp; Pack Handling:</strong> Standard Flat Fee = <strong>${formatINR(pickPackFee)}</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Weight Handling:</strong> Chargeable Slab ${billWt.toFixed(2)} kg = <strong>${formatINR(weightHandlingFee)}</strong></div>
+                        </div>
+
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#38bdf8; font-weight:700; margin-bottom:8px; text-transform:uppercase;">3. Tax &amp; Deduction Subtotal</div>
+                            <div style="margin-bottom:6px;">• <strong>Base Fees Subtotal:</strong> ${formatINR(refFee)} + ${formatINR(closeFee)} + ${formatINR(pickPackFee)} + ${formatINR(weightHandlingFee)} ${storageFee > 0 ? '+ ' + formatINR(storageFee) : ''} = <strong>${formatINR(subtotal)}</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>18% GST Tax Levy:</strong> ${formatINR(subtotal)} × 18% = <strong>${formatINR(gst)}</strong></div>
+                            <div style="margin-bottom:6px;">• <strong>Total Amazon Deductions:</strong> ${formatINR(subtotal)} + ${formatINR(gst)} = <strong style="color:#f87171;">${formatINR(totalCharges)}</strong></div>
+                        </div>
+
+                        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px;">
+                            <div style="font-family:'DM Mono',monospace; color:#34d399; font-weight:700; margin-bottom:8px; text-transform:uppercase;">4. Seller Payout &amp; Margin</div>
+                            <div style="margin-bottom:6px;">• <strong>Gross List Price:</strong> ${formatINR(price)}</div>
+                            <div style="margin-bottom:6px;">• <strong>Total Amazon Fees:</strong> −${formatINR(totalCharges)}</div>
+                            <div style="margin-bottom:6px;">• <strong>Net Bank Proceeds:</strong> ${formatINR(price)} − ${formatINR(totalCharges)} = <strong style="color:#34d399; font-size:15px;">${formatINR(proceeds)}</strong></div>
+                            <div style="font-size:12px; color:#94a3b8; margin-top:8px;">• <strong>Amazon Take (% of Selling Price):</strong> ${((totalCharges / price) * 100).toFixed(2)}%</div>
+                        </div>
+                    </div>
                 `;
             }
 
             // PDF REPORT DOM UPDATE
             function updatePdfReport(price, catName, len, wid, hgt, physWt, volWt, billWt, isHeavyBulky, zone, refFee, closeFee, pickPackFee, weightHandlingFee, storageFee, subtotal, gst, totalCharges, proceeds, feePct) {
+                if (!document.getElementById('pdfReportContainer')) return;
+
                 document.getElementById('pdfSp').innerText = formatINR(price);
                 document.getElementById('pdfCategory').innerText = catName;
                 document.getElementById('pdfDims').innerText = `${len} × ${wid} × ${hgt} cm`;
@@ -2275,13 +2513,22 @@
                 const pkgCost = parseFloat(document.getElementById('inputPkgCost').value) || 25;
                 const inbound = parseFloat(document.getElementById('inputInboundFreight').value) || 15;
                 const totalCogs = landedCogs + pkgCost + inbound;
+                const netContrib = proceeds - totalCogs;
+
                 document.getElementById('pdfCogsVal').innerText = formatINR(totalCogs);
-                document.getElementById('pdfNetContribVal').innerText = formatINR(proceeds - totalCogs);
+                document.getElementById('pdfNetContribVal').innerText = formatINR(netContrib);
 
                 document.getElementById('pdfWeightDriver').innerText = volWt > physWt ? 'Volumetric Weight' : 'Physical Weight';
                 const nextThresh = price < 300 ? 300 : (price < 500 ? 500 : (price < 1000 ? 1000 : Infinity));
                 document.getElementById('pdfNearbyThreshold').innerText = nextThresh < Infinity ? formatINR(nextThresh) : 'Top Slab';
-                document.getElementById('pdfBreakEvenPrice').innerText = document.getElementById('solverBePriceVal').innerText;
+                if (document.getElementById('pdfBreakEvenPrice')) {
+                    document.getElementById('pdfBreakEvenPrice').innerText = document.getElementById('solverBePriceVal') ? document.getElementById('solverBePriceVal').innerText : formatINR(totalCogs);
+                }
+
+                const reportDateEl = document.getElementById('pdfReportDate');
+                if (reportDateEl) {
+                    reportDateEl.innerText = `Report Date: ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+                }
             }
 
             // COPY ANALYSIS BUTTON
