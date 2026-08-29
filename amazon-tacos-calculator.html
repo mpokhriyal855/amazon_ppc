@@ -92,9 +92,18 @@
     <style>
         /* PAGE SCOPED STYLES & OVERRIDES */
         .tacos-page {
-            background-color: #080d1a;
-            color: #f8fafc;
+            background-color: #ffffff;
+            color: #0f172a;
             font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .tacos-page .background-grid {
+            background-image: 
+                linear-gradient(rgba(216, 223, 233, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(216, 223, 233, 0.4) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: none;
+            -webkit-mask-image: none;
         }
 
         .tacos-page .hero-compact {
@@ -522,7 +531,7 @@
     </div>
 
     <!-- 02 · QUICK SUMMARY -->
-    <section class="light-section-alt" style="padding:28px 0; background:#f8fafc; color:#0f172a;">
+    <section class="light-section-alt" style="padding:28px 0; background:#ffffff; background-image: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.05) 0%, transparent 60%), linear-gradient(rgba(216, 223, 233, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(216, 223, 233, 0.4) 1px, transparent 1px); background-size: 100% 100%, 40px 40px, 40px 40px; border-bottom:1px solid #e2e8f0; color:#0f172a;">
         <div class="resources-section-container" style="max-width:1100px; margin:0 auto; padding:0 20px;">
             <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-left:4px solid #2563eb; border-radius:14px; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
                 <div style="flex:1; min-width:280px;">
