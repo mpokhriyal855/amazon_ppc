@@ -9,8 +9,8 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Amazon Profit Calculator India | Calculate Net Margin & FBA Fees</title>
-    <meta name="description" content="Calculate your Amazon India net profit per unit, margin %, and ROI after referral fees, closing fees, FBA fulfilment, storage, packaging, and PPC ad spend.">
+    <title>Amazon Profit Calculator India | Fees, PPC, Margin & Break-Even ACoS</title>
+    <meta name="description" content="Calculate Amazon seller profit after product cost, Amazon fees, FBA or shipping, PPC and returns. See profit margin, break-even ACoS, CPC limits and cost breakdown instantly.">
     <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-profit-calculator.html">
 
     <!-- FONTS & STYLES -->
@@ -28,14 +28,319 @@
       "@type": "WebApplication",
       "name": "Amazon Profit Calculator India",
       "url": "https://ppcgrowthexpert.com/amazon-profit-calculator.html",
-      "description": "Calculate Amazon India product profitability, FBA fees, net margin, and ROI.",
+      "description": "Calculate Amazon India product profitability, FBA fees, net margin, break-even ACoS, and PPC limits.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
     </script>
+
+    <style>
+        /* =========================================================
+           EXECUTIVE DARK GLASSMORPHIC & HYBRID SECTIONAL STYLES
+        ========================================================= */
+        .hero-compact {
+            padding: 24px 20px 36px 20px;
+            background: #ffffff;
+            background-image: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        /* DARK SECTION CONTAINERS */
+        .dark-section-wrapper {
+            background: #080d1a;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px 0;
+            color: #ffffff;
+        }
+
+        .dark-section-alt {
+            background: #0b1329;
+            background-image: 
+                radial-gradient(circle at 50% 100%, rgba(2, 132, 199, 0.15) 0%, transparent 70%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px 0;
+            color: #ffffff;
+        }
+
+        .light-section-wrapper {
+            background: #ffffff;
+            padding: 48px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* DARK GLASS CARDS & INPUTS */
+        .dark-glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .dark-input-field {
+            background: rgba(30, 41, 59, 0.8) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            color: #ffffff !important;
+            border-radius: 10px !important;
+            padding: 12px 14px !important;
+            font-size: 14.5px !important;
+            font-weight: 600 !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            transition: all 0.25s ease !important;
+        }
+
+        .dark-input-field:focus {
+            outline: none !important;
+            border-color: #38bdf8 !important;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.35) !important;
+            background: rgba(30, 41, 59, 0.95) !important;
+        }
+
+        .dark-label {
+            color: #e2e8f0 !important;
+            font-weight: 700 !important;
+            font-size: 13px !important;
+            margin-bottom: 6px !important;
+            display: block !important;
+        }
+
+        .dark-hint {
+            color: #94a3b8 !important;
+            font-size: 12px !important;
+            margin-top: 5px !important;
+            display: block !important;
+        }
+
+        /* TABBED STAGES */
+        .step-tabs-container {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding-bottom: 14px;
+            margin-bottom: 22px;
+            overflow-x: auto;
+        }
+
+        .step-tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .step-tab-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .step-tab-btn.active {
+            background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+            color: #ffffff;
+            border-color: #38bdf8;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        /* MODE TOGGLES */
+        .mode-toggle-group {
+            display: flex;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            padding: 4px;
+            margin-bottom: 18px;
+        }
+
+        .mode-toggle-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+            font-size: 12.5px;
+            font-weight: 700;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .mode-toggle-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+        }
+
+        /* LIVE PROFIT LEDGER (RIGHT PANEL) */
+        .dark-result-panel {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.45) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-result-val {
+            font-size: clamp(38px, 5vw, 54px);
+            font-weight: 800;
+            color: #38bdf8;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+            margin: 6px 0;
+        }
+
+        .ledger-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            margin-top: 18px;
+        }
+
+        .ledger-table td {
+            padding: 7px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .ledger-label { color: #cbd5e1; }
+        .ledger-val { text-align: right; font-weight: 700; font-family: 'DM Mono', monospace; }
+        .ledger-deduct { color: #f87171; }
+        .ledger-final { color: #34d399; font-size: 16px; font-weight: 800; }
+
+        /* WATERFALL DIAGRAM */
+        .waterfall-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .waterfall-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 13.5px;
+            font-weight: 700;
+        }
+
+        .waterfall-label { width: 180px; text-align: right; color: #334155; }
+        .waterfall-track { flex: 1; height: 24px; background: #f1f5f9; border-radius: 6px; overflow: hidden; position: relative; }
+        .waterfall-bar { height: 100%; border-radius: 6px; transition: width 0.4s ease; }
+        .waterfall-val { width: 90px; font-family: 'DM Mono', monospace; font-size: 13px; color: #0f172a; }
+
+        /* CPC SCALE MARKERS */
+        .cpc-scale-track {
+            position: relative;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            margin: 32px 12px 20px 12px;
+        }
+
+        .cpc-marker {
+            position: absolute;
+            top: -26px;
+            transform: translateX(-50%);
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cpc-marker::after {
+            content: '';
+            width: 2px;
+            height: 16px;
+            margin-top: 2px;
+            background: currentColor;
+            border-radius: 1px;
+        }
+
+        .marker-cpc-curr { color: #60a5fa; }
+        .marker-cpc-target { color: #38bdf8; }
+        .marker-cpc-be { color: #f59e0b; }
+
+        .tooltip-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 5px;
+            cursor: help;
+            position: relative;
+        }
+
+        .tooltip-icon:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0f172a;
+            color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 400;
+            white-space: normal;
+            width: 220px;
+            z-index: 100;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* PRINT STYLES FOR CLIENT-SIDE PDF GENERATION */
+        @media print {
+            .navbar-container, .breadcrumb-nav, .hero-compact, .step-tabs-container, .calc-action-row, .faq-section, .resources-audit-cta, .site-footer, button, .mode-toggle-group {
+                display: none !important;
+            }
+            body { background: #ffffff !important; color: #000000 !important; }
+            .dark-section-wrapper, .dark-section-alt { background: #ffffff !important; color: #000000 !important; border: none !important; padding: 0 !important; }
+            .dark-glass-card, .dark-result-panel { background: #ffffff !important; border: 1px solid #cccccc !important; color: #000000 !important; box-shadow: none !important; }
+            .dark-result-val { color: #000000 !important; text-shadow: none !important; }
+            .print-pdf-header { display: block !important; text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000000; padding-bottom: 10px; }
+        }
+        .print-pdf-header { display: none; }
+    </style>
 </head>
 
 <body>
+
+    <!-- PRINT PDF HEADER -->
+    <div class="print-pdf-header">
+        <h2 style="margin:0; font-size:22px;">PPC GROWTH EXPERT — AMAZON PROFIT REPORT</h2>
+        <p style="margin:4px 0 0 0; font-size:12px; color:#555555;">Generated live client-side on <span id="printDate"></span></p>
+    </div>
 
     <!-- BACKGROUND GRID & GLOW -->
     <div class="background-grid"></div>
@@ -75,7 +380,7 @@
                             </div>
                             <div class="mega-menu-col">
                                 <div class="mega-col-title">PROFIT &amp; PLANNING</div>
-                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">秤</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS</span><span class="mega-item-desc">Max ACoS before loss</span></div></a>
                                 <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Monthly budget model</span></div></a>
                                 <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target Bid Calculator</span><span class="mega-item-desc">Optimal bid &amp; CPC</span></div></a>
                             </div>
@@ -102,266 +407,1528 @@
         </header>
     </div>
 
-    <!-- MAIN CONTAINER -->
-    <div class="resources-page-container">
+    <!-- 1. BREADCRUMB & HERO (CLEAN LIGHT HERO SECTION) -->
+    <div class="hero-compact">
+        <div class="resources-section-container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Home</a> /
+                <a href="resources.html">Resources</a> /
+                <span>Amazon Profit Calculator</span>
+            </nav>
 
-        <!-- BREADCRUMB -->
-        <nav class="breadcrumb-nav">
-            <a href="index.html">Home</a> /
-            <a href="resources.html">Resources</a> /
-            <span>Amazon Profit Calculator India</span>
-        </nav>
+            <div class="hero-eyebrow">✦ AMAZON SELLER TOOL</div>
+            <h1 class="hero-title" style="margin-bottom:12px;">Amazon Profit Calculator India</h1>
+            <p class="hero-description" style="margin-bottom:16px;">Calculate what you actually keep after product cost, Amazon fees, fulfilment, advertising and return-related costs — then see your margin, break-even ACoS and PPC limits.</p>
+            
+            <div style="display:flex; justify-content:center; gap:24px; font-size:13.5px; font-weight:700; color:#334155; flex-wrap:wrap;">
+                <span><strong style="color:#10b981;">✓</strong> Free to use</span>
+                <span><strong style="color:#10b981;">✓</strong> Instant live results</span>
+                <span><strong style="color:#10b981;">✓</strong> No sign-up required</span>
+            </div>
+            <p style="font-size:12px; color:#64748b; margin-top:10px;">*Use your actual Seller Central fee statement whenever possible for the most accurate result.</p>
+        </div>
+    </div>
 
-        <!-- HERO -->
-        <section class="resources-hero">
-            <div class="hero-eyebrow">✦ AMAZON SELLER CALCULATOR</div>
-            <h1 class="hero-title">Amazon Profit Calculator India</h1>
-            <p class="hero-description">Estimate your Amazon India product profit after product cost, referral fees, fulfilment costs, advertising spend and other variable expenses.</p>
-        </section>
-
-        <!-- CALCULATOR APP WRAPPER -->
-        <section class="calculator-app-wrapper">
-            <!-- LEFT INPUTS COL -->
-            <div class="calc-inputs-col">
-                <h3>Product & Cost Inputs</h3>
-                <div class="input-group">
-                    <label class="input-label" for="profSp">Selling Price (₹)</label>
-                    <input type="number" id="profSp" class="calc-input-field" placeholder="e.g. 1499" value="1499" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="profCogs">Product Cost / COGS (₹)</label>
-                    <input type="number" id="profCogs" class="calc-input-field" placeholder="e.g. 400" value="400" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="profRefPct">Referral Fee (% of Selling Price)</label>
-                    <input type="number" id="profRefPct" class="calc-input-field" placeholder="e.g. 12" value="12" min="0" max="100">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="profClosing">Closing Fee (₹)</label>
-                    <input type="number" id="profClosing" class="calc-input-field" placeholder="e.g. 25" value="25" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="profFba">FBA / Fulfilment Fee (₹)</label>
-                    <input type="number" id="profFba" class="calc-input-field" placeholder="e.g. 85" value="85" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="profAdSpend">Advertising Spend per Sale (₹)</label>
-                    <input type="number" id="profAdSpend" class="calc-input-field" placeholder="e.g. 150" value="150" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="profShipping">Inbound Shipping & Packaging (₹)</label>
-                    <input type="number" id="profShipping" class="calc-input-field" placeholder="e.g. 35" value="35" min="0">
-                </div>
-                <div class="input-group">
-                    <label class="input-label" for="profOther">GST & Other Variable Costs (₹)</label>
-                    <input type="number" id="profOther" class="calc-input-field" placeholder="e.g. 50" value="50" min="0">
-                </div>
-                <div class="calc-action-row">
-                    <button type="button" class="btn-calc-submit" id="btnCalculateProf">Calculate Net Profit →</button>
-                    <button type="button" class="btn-calc-reset" id="btnResetProf">Reset</button>
+    <!-- 2. MAIN AMAZON PROFIT CALCULATOR (DARK EXECUTIVE GLASS SECTION) -->
+    <div class="dark-section-wrapper">
+        <div class="resources-calc-container">
+            
+            <!-- HEADER UTILITIES ROW -->
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+                <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#38bdf8; letter-spacing:1px; text-transform:uppercase;">AMAZON INDIA PROFIT ENGINE</div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;" class="calc-action-row">
+                    <button type="button" class="btn-calc-reset" id="btnUseExample" style="padding:7px 14px; font-size:12px; background:rgba(56,189,248,0.15); color:#38bdf8; border-color:rgba(56,189,248,0.3);">Use Example Data</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetProf" style="padding:7px 14px; font-size:12px; background:rgba(255,255,255,0.08); color:#ffffff; border-color:rgba(255,255,255,0.2);">Reset</button>
+                    <button type="button" class="btn-calc-reset" id="btnDownloadPDF" style="padding:7px 14px; font-size:12px; background:rgba(16,185,129,0.2); color:#34d399; border-color:rgba(16,185,129,0.4);">Download PDF Report 📄</button>
+                    <button type="button" class="btn-calc-reset" id="btnCopySummary" style="padding:7px 14px; font-size:12px; background:rgba(255,255,255,0.1); color:#ffffff; border-color:rgba(255,255,255,0.2);">Copy Summary 📋</button>
                 </div>
             </div>
 
-            <!-- RIGHT RESULTS COL -->
-            <div class="calc-results-col" aria-live="polite">
-                <div class="result-main-box">
-                    <div class="result-main-label">NET PROFIT PER UNIT</div>
-                    <div class="result-main-value" id="profNetVal">₹574</div>
-                    <div class="result-main-sub" id="profSubText">After all entered Amazon fees & variable costs.</div>
+            <div style="display:grid; grid-template-columns: 1.15fr 0.85fr; gap:30px; align-items:start;">
+                
+                <!-- LEFT INPUTS GLASS CARD WITH 4 STAGES -->
+                <div class="dark-glass-card">
+                    <!-- STAGE TABS -->
+                    <div class="step-tabs-container" id="stepTabsNav">
+                        <button type="button" class="step-tab-btn active" data-step="1">Step 1: Product &amp; Selling</button>
+                        <button type="button" class="step-tab-btn" data-step="2">Step 2: Amazon &amp; Fulfilment</button>
+                        <button type="button" class="step-tab-btn" data-step="3">Step 3: Advertising</button>
+                        <button type="button" class="step-tab-btn" data-step="4">Step 4: Returns &amp; Loss</button>
+                    </div>
+
+                    <!-- STEP 1 CONTENT -->
+                    <div id="stepPanel1" class="step-panel">
+                        <h4 style="margin:0 0 14px 0; font-size:16px; color:#ffffff;">1. Product &amp; Selling Price</h4>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+                            <div>
+                                <label class="dark-label" for="profPrice">Selling Price (₹)</label>
+                                <input type="number" id="profPrice" class="dark-input-field" value="999" placeholder="₹999" min="1" step="any">
+                            </div>
+                            <div>
+                                <label class="dark-label" for="profCogs">Product Cost / COGS (₹)</label>
+                                <input type="number" id="profCogs" class="dark-input-field" value="400" placeholder="₹400" min="0" step="any">
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+                            <div>
+                                <label class="dark-label" for="profCategory">Product Category</label>
+                                <select id="profCategory" class="dark-input-field" style="height:44px;">
+                                    <option value="12" selected>Apparel &amp; Fashion (12%)</option>
+                                    <option value="10">Electronics &amp; Accessories (10%)</option>
+                                    <option value="8">Home &amp; Kitchen (8%)</option>
+                                    <option value="9">Beauty &amp; Personal Care (9%)</option>
+                                    <option value="15">Health &amp; Wellness (15%)</option>
+                                    <option value="11">Toys &amp; Games (11%)</option>
+                                    <option value="6">Books &amp; Media (6%)</option>
+                                    <option value="12">General / Other (12%)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="dark-label" for="profWeight">Weight (kg)</label>
+                                <input type="number" id="profWeight" class="dark-input-field" value="0.5" placeholder="0.5" min="0.01" step="0.01">
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+                            <div>
+                                <label class="dark-label" for="profPackaging">Packaging Cost (₹)</label>
+                                <input type="number" id="profPackaging" class="dark-input-field" value="10" placeholder="₹10" min="0" step="any">
+                            </div>
+                            <div>
+                                <label class="dark-label" for="profOtherProd">Other Product Cost (₹)</label>
+                                <input type="number" id="profOtherProd" class="dark-input-field" value="0" placeholder="₹0" min="0" step="any">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 CONTENT -->
+                    <div id="stepPanel2" class="step-panel" style="display:none;">
+                        <h4 style="margin:0 0 14px 0; font-size:16px; color:#ffffff;">2. Amazon Fees &amp; Fulfilment Method</h4>
+                        
+                        <!-- FULFILMENT METHOD SELECTOR -->
+                        <div class="mode-toggle-group">
+                            <button type="button" class="mode-toggle-btn active" id="btnFulfillmentFBA">FBA (Fulfilled by Amazon)</button>
+                            <button type="button" class="mode-toggle-btn" id="btnFulfillmentEasy">Easy Ship</button>
+                            <button type="button" class="mode-toggle-btn" id="btnFulfillmentSelf">Self Ship</button>
+                        </div>
+
+                        <!-- FEE ESTIMATE TOGGLE -->
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:12.5px; color:#94a3b8;">
+                            <span>Fee Mode:</span>
+                            <div style="display:flex; gap:10px;">
+                                <label style="cursor:pointer; color:#ffffff;"><input type="radio" name="feeMode" id="feeModeEstimate" checked> Use Estimated Fees</label>
+                                <label style="cursor:pointer; color:#ffffff;"><input type="radio" name="feeMode" id="feeModeManual"> Enter My Actual Fees</label>
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+                            <div>
+                                <label class="dark-label" for="profReferralFee">Referral Fee (% of Selling Price)</label>
+                                <input type="number" id="profReferralFee" class="dark-input-field" value="12" placeholder="12%" min="0" max="100" step="any">
+                            </div>
+                            <div>
+                                <label class="dark-label" for="profClosingFee">Closing Fee (₹)</label>
+                                <input type="number" id="profClosingFee" class="dark-input-field" value="25" placeholder="₹25" min="0" step="any">
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+                            <div>
+                                <label class="dark-label" for="profFulfilmentFee">Fulfilment / Weight Fee (₹)</label>
+                                <input type="number" id="profFulfilmentFee" class="dark-input-field" value="65" placeholder="₹65" min="0" step="any">
+                            </div>
+                            <div>
+                                <label class="dark-label" for="profStorageFee">Monthly Storage Cost (₹/unit)</label>
+                                <input type="number" id="profStorageFee" class="dark-input-field" value="6" placeholder="₹6" min="0" step="any">
+                            </div>
+                        </div>
+
+                        <div style="font-size:11.5px; color:#94a3b8; margin-top:12px; background:rgba(255,255,255,0.04); padding:8px 12px; border-radius:8px;">
+                            *Estimated using configured fee assumptions — verify exact rates in Seller Central. Updated: Jan 2026.
+                        </div>
+                    </div>
+
+                    <!-- STEP 3 CONTENT -->
+                    <div id="stepPanel3" class="step-panel" style="display:none;">
+                        <h4 style="margin:0 0 14px 0; font-size:16px; color:#ffffff;">3. Advertising Economics</h4>
+                        
+                        <!-- AD MODE TOGGLE -->
+                        <div class="mode-toggle-group">
+                            <button type="button" class="mode-toggle-btn active" id="btnAdModeACOS">ACoS Mode (% of Ad Sales)</button>
+                            <button type="button" class="mode-toggle-btn" id="btnAdModeTACOS">Blended / TACoS Mode (% of Total Sales)</button>
+                        </div>
+
+                        <div id="adModeAcosContainer">
+                            <div style="margin-bottom:14px;">
+                                <label class="dark-label" for="profAcosPct">
+                                    Expected / Current ACoS (%)
+                                    <span class="tooltip-icon" data-tooltip="Advertising Cost of Sales attributed to ad clicks.">?</span>
+                                </label>
+                                <input type="number" id="profAcosPct" class="dark-input-field" value="20" placeholder="20%" min="0" max="500" step="any">
+                                <span class="dark-hint">Per ad-attributed sale view: Selling Price × ACoS = ₹200.00</span>
+                            </div>
+                        </div>
+
+                        <div id="adModeTacosContainer" style="display:none;">
+                            <div style="margin-bottom:14px;">
+                                <label class="dark-label" for="profTacosPct">
+                                    Expected TACoS / Blended Ad Spend (%)
+                                    <span class="tooltip-icon" data-tooltip="Total ad spend divided by total (ad + organic) revenue.">?</span>
+                                </label>
+                                <input type="number" id="profTacosPct" class="dark-input-field" value="10" placeholder="10%" min="0" max="100" step="any">
+                                <span class="dark-hint">Blended per-unit view across ALL units sold: Selling Price × TACoS</span>
+                            </div>
+                        </div>
+
+                        <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:14px; margin-top:14px;">
+                            <div style="font-size:12px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:10px;">Optional PPC Insights Parameters</div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+                                <div>
+                                    <label class="dark-label" for="profCpc">Average CPC (₹)</label>
+                                    <input type="number" id="profCpc" class="dark-input-field" value="15" placeholder="₹15" min="0" step="any">
+                                </div>
+                                <div>
+                                    <label class="dark-label" for="profCvr">Conversion Rate (%)</label>
+                                    <input type="number" id="profCvr" class="dark-input-field" value="10" placeholder="10%" min="0.1" max="100" step="any">
+                                </div>
+                            </div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+                                <div>
+                                    <label class="dark-label" for="profTargetAcos">Target ACoS (%)</label>
+                                    <input type="number" id="profTargetAcos" class="dark-input-field" value="19.6" placeholder="19.6%" min="0" max="100" step="any">
+                                </div>
+                                <div>
+                                    <label class="dark-label" for="profDailyBudget">Daily PPC Budget (₹)</label>
+                                    <input type="number" id="profDailyBudget" class="dark-input-field" value="750" placeholder="₹750" min="0" step="any">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4 CONTENT -->
+                    <div id="stepPanel4" class="step-panel" style="display:none;">
+                        <h4 style="margin:0 0 14px 0; font-size:16px; color:#ffffff;">4. Returns &amp; Variable Loss</h4>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+                            <div>
+                                <label class="dark-label" for="profReturnRate">Return Rate (%)</label>
+                                <input type="number" id="profReturnRate" class="dark-input-field" value="3" placeholder="3%" min="0" max="100" step="any">
+                            </div>
+                            <div>
+                                <label class="dark-label" for="profReturnCost">Average Cost per Return (₹)</label>
+                                <input type="number" id="profReturnCost" class="dark-input-field" value="120" placeholder="₹120" min="0" step="any">
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
+                            <div>
+                                <label class="dark-label" for="profRefundLoss">Refund / Unrecoverable Loss (₹)</label>
+                                <input type="number" id="profRefundLoss" class="dark-input-field" value="10" placeholder="₹10" min="0" step="any">
+                            </div>
+                            <div>
+                                <label class="dark-label" for="profReturnRecovery">Return Recovery Rate (%)</label>
+                                <input type="number" id="profReturnRecovery" class="dark-input-field" value="50" placeholder="50%" min="0" max="100" step="any">
+                                <span class="dark-hint">Percentage of returned items sellable again.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP NAV BUTTONS -->
+                    <div style="display:flex; justify-content:space-between; margin-top:24px; border-top:1px solid rgba(255,255,255,0.1); padding-top:16px;">
+                        <button type="button" class="btn-calc-reset" id="btnPrevStep" style="padding:8px 16px; background:rgba(255,255,255,0.08); color:#ffffff; border-color:rgba(255,255,255,0.2);">← Previous</button>
+                        <button type="button" class="btn-calc-submit" id="btnNextStep" style="padding:8px 20px;">Next Step →</button>
+                    </div>
+
                 </div>
 
-                <div class="result-metrics-grid">
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">PROFIT MARGIN</div>
-                        <div class="mini-stat-val" id="profMarginVal">38.29%</div>
+                <!-- RIGHT LIVE PROFIT LEDGER PANEL -->
+                <div class="dark-result-panel" aria-live="polite">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:1.5px; text-transform:uppercase;">LIVE PROFIT RESULT</div>
+                        <div id="profStatusPill" style="font-family:'DM Mono',monospace; font-size:10.5px; font-weight:700; padding:4px 10px; border-radius:50px; background:rgba(16,185,129,0.2); color:#34d399; border:1px solid rgba(16,185,129,0.4);">
+                            HEALTHY CONTRIBUTION
+                        </div>
                     </div>
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">ROI ON COGS</div>
-                        <div class="mini-stat-val" id="profRoiVal">143.50%</div>
+
+                    <div class="dark-result-val" id="profNetProfitVal">₹171.37</div>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+                        <span style="font-size:16px; font-weight:800; color:#ffffff;" id="profMarginVal">17.15% net margin</span>
+                        <span style="font-size:12.5px; color:#94a3b8;" id="profRoiVal">ROI: 41.80%</span>
                     </div>
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">TOTAL AMAZON FEES</div>
-                        <div class="mini-stat-val" id="profFeesVal">₹289.88</div>
-                    </div>
-                    <div class="mini-stat-card">
-                        <div class="mini-stat-label">TOTAL VARIABLE COST</div>
-                        <div class="mini-stat-val" id="profTotalCostVal">₹924.88</div>
+
+                    <!-- UNIFIED FINANCIAL LEDGER -->
+                    <table class="ledger-table">
+                        <tbody>
+                            <tr>
+                                <td class="ledger-label">Selling Price</td>
+                                <td class="ledger-val" id="ledgerSp">₹999.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ledger-label">Product &amp; Packaging Cost</td>
+                                <td class="ledger-val ledger-deduct" id="ledgerCogs">-₹410.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ledger-label">Amazon Fees (Referral + Closing)</td>
+                                <td class="ledger-val ledger-deduct" id="ledgerAmzFees">-₹144.88</td>
+                            </tr>
+                            <tr>
+                                <td class="ledger-label">Fulfilment &amp; Storage</td>
+                                <td class="ledger-val ledger-deduct" id="ledgerFulfilment">-₹71.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ledger-label">Advertising Cost</td>
+                                <td class="ledger-val ledger-deduct" id="ledgerAdCost">-₹199.80</td>
+                            </tr>
+                            <tr>
+                                <td class="ledger-label">Expected Return &amp; Loss</td>
+                                <td class="ledger-val ledger-deduct" id="ledgerReturns">-₹1.95</td>
+                            </tr>
+                            <tr style="border-top:2px solid rgba(255,255,255,0.2);">
+                                <td class="ledger-label" style="font-weight:800; color:#ffffff;">Estimated Net Profit</td>
+                                <td class="ledger-val ledger-final" id="ledgerFinalProfit">₹171.37</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="font-size:12px; color:#cbd5e1; margin-top:16px; background:rgba(15, 23, 42, 0.8); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.1);" id="profContextText">
+                        Based only on the costs entered above. Fixed overhead, income tax and unentered costs are excluded.
                     </div>
                 </div>
 
-                <div class="result-visual-bar-wrapper">
-                    <div class="visual-bar-labels">
-                        <span>Cost Share Breakdown</span>
-                        <span id="profShareLabel">Profit: 38.3%</span>
-                    </div>
-                    <div class="visual-bar-track">
-                        <div class="visual-bar-fill-ad" id="profBarAd" style="width: 61.7%;"></div>
-                        <div class="visual-bar-fill-rem" id="profBarProf" style="width: 38.3%;"></div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="result-guidance-box">
-                    <div class="result-guidance-title">What This Means</div>
-                    <div id="profGuidanceText">After the costs entered, you retain approximately <strong>₹574 per unit</strong> before fixed business expenses and income tax.</div>
+    <!-- 3. FULL PROFITABILITY ANALYSIS DASHBOARD (LIGHT SECTION) -->
+    <div class="light-section-wrapper">
+        <div class="resources-calc-container">
+            <div style="text-align:center; max-width:800px; margin:0 auto 28px auto;">
+                <div class="hero-eyebrow">PROFITABILITY METRICS</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0 8px 0;">Your Amazon Profitability at a Glance</h2>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">SELLING PRICE</div>
+                    <div style="font-size:24px; font-weight:800; color:#0f172a; margin-top:4px;" id="dashSp">₹999.00</div>
+                </div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">TOTAL COST PER UNIT</div>
+                    <div style="font-size:24px; font-weight:800; color:#ef4444; margin-top:4px;" id="dashTotalCost">₹827.63</div>
+                </div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">ESTIMATED NET PROFIT</div>
+                    <div style="font-size:24px; font-weight:800; color:#10b981; margin-top:4px;" id="dashNetProfit">₹171.37</div>
+                </div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">PROFIT MARGIN</div>
+                    <div style="font-size:24px; font-weight:800; color:#2563eb; margin-top:4px;" id="dashMargin">17.15%</div>
+                </div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">ROI ON PRODUCT COST</div>
+                    <div style="font-size:24px; font-weight:800; color:#0284c7; margin-top:4px;" id="dashRoi">41.80%</div>
+                </div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">AMAZON &amp; FULFILMENT</div>
+                    <div style="font-size:24px; font-weight:800; color:#f59e0b; margin-top:4px;" id="dashAmzFees">₹215.88</div>
+                </div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">ADVERTISING COST</div>
+                    <div style="font-size:24px; font-weight:800; color:#2563eb; margin-top:4px;" id="dashAdCost">₹199.80</div>
+                </div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase;">EXPECTED RETURN COST</div>
+                    <div style="font-size:24px; font-weight:800; color:#64748b; margin-top:4px;" id="dashReturnCost">₹1.95</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- EDUCATIONAL GUIDE -->
-        <article class="calc-educational-prose">
-            <h2>How Amazon India Profitability Is Calculated</h2>
-            <p>Selling on Amazon India requires factoring in multiple fee slabs, product manufacturing costs, logistics, and PPC spend to understand true unit economics.</p>
+    <!-- 4. REVENUE BREAKDOWN & WATERFALL (LIGHT SECTION) -->
+    <div class="light-section-wrapper" style="background:#f8fafc;">
+        <div class="resources-calc-container">
+            
+            <!-- PROPORTIONAL REVENUE BAR -->
+            <div style="margin-bottom:48px;">
+                <div style="text-align:center; max-width:800px; margin:0 auto 20px auto;">
+                    <div class="hero-eyebrow">REVENUE ALLOCATION</div>
+                    <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin:4px 0;">Where Does Every ₹100 of Revenue Go?</h2>
+                </div>
 
-            <div class="formula-code-box">
-                Net Profit = Selling Price - (COGS + Referral Fee + Closing Fee + FBA Fee + Ad Spend + Shipping + Tax)
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; padding:26px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.04); max-width:900px; margin:0 auto;">
+                    <div style="height:22px; background:#e2e8f0; border-radius:11px; overflow:hidden; display:flex; margin-bottom:18px;">
+                        <div id="barCogs" style="width:41.04%; background:#475569;" title="Product Cost"></div>
+                        <div id="barAmz" style="width:21.61%; background:#f59e0b;" title="Amazon Fees"></div>
+                        <div id="barAds" style="width:20.00%; background:#2563eb;" title="Advertising"></div>
+                        <div id="barReturns" style="width:0.20%; background:#ef4444;" title="Returns"></div>
+                        <div id="barProfit" style="width:17.15%; background:#10b981;" title="Net Profit"></div>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:14px; font-size:13px; font-weight:700;">
+                        <span style="color:#475569;">■ Product Cost: <span id="legCogs">₹41.04 (41.0%)</span></span>
+                        <span style="color:#f59e0b;">■ Amazon Fees: <span id="legAmz">₹21.61 (21.6%)</span></span>
+                        <span style="color:#2563eb;">■ Advertising: <span id="legAds">₹20.00 (20.0%)</span></span>
+                        <span style="color:#ef4444;">■ Returns: <span id="legReturns">₹0.20 (0.2%)</span></span>
+                        <span style="color:#10b981;">■ Net Profit: <span id="legProfit">₹17.15 (17.2%)</span></span>
+                    </div>
+                </div>
             </div>
 
-            <h2>Key Cost Components Explained</h2>
-            <ul>
-                <li><strong>Referral Fee:</strong> Category-based commission charged by Amazon (typically 5% to 18%).</li>
-                <li><strong>Closing Fee:</strong> Fee based on selling price slabs.</li>
-                <li><strong>FBA Fulfilment Fee:</strong> Weight and dimension-based pick, pack, and delivery cost.</li>
-                <li><strong>Ad Spend per Sale:</strong> Your Amazon PPC cost to generate a purchase (ACoS × Selling Price).</li>
-            </ul>
+            <!-- WATERFALL DIAGRAM -->
+            <div>
+                <div style="text-align:center; max-width:800px; margin:0 auto 20px auto;">
+                    <div class="hero-eyebrow">COST FLOW</div>
+                    <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin:4px 0;">From Selling Price to Net Profit</h2>
+                </div>
 
-            <!-- COLLAPSIBLE ASSUMPTIONS PANEL -->
-            <details class="faq-item" style="margin-top:24px;">
-                <summary>How this calculation works &amp; assumptions <span class="faq-icon">+</span></summary>
-                <div class="faq-answer">
-                    This model calculates unit contribution margin based on user-entered costs. It assumes all variable costs per unit are accounted for and does not include fixed overhead costs like software subscriptions or staff salaries.
+                <div class="waterfall-container">
+                    <div class="waterfall-row">
+                        <div class="waterfall-label">Selling Price</div>
+                        <div class="waterfall-track"><div class="waterfall-bar" style="width:100%; background:#2563eb;"></div></div>
+                        <div class="waterfall-val" id="wfSp">₹999.00</div>
+                    </div>
+                    <div class="waterfall-row">
+                        <div class="waterfall-label">− Product &amp; Packaging</div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarCogs" style="width:58.96%; background:#475569;"></div></div>
+                        <div class="waterfall-val" id="wfCogs">−₹410.00</div>
+                    </div>
+                    <div class="waterfall-row">
+                        <div class="waterfall-label">− Amazon Fees</div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarAmz" style="width:44.44%; background:#f59e0b;"></div></div>
+                        <div class="waterfall-val" id="wfAmz">−₹144.88</div>
+                    </div>
+                    <div class="waterfall-row">
+                        <div class="waterfall-label">− Fulfilment &amp; Storage</div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarFulfil" style="width:37.33%; background:#0284c7;"></div></div>
+                        <div class="waterfall-val" id="wfFulfil">−₹71.00</div>
+                    </div>
+                    <div class="waterfall-row">
+                        <div class="waterfall-label">− Advertising Cost</div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarAd" style="width:17.33%; background:#3b82f6;"></div></div>
+                        <div class="waterfall-val" id="wfAd">−₹199.80</div>
+                    </div>
+                    <div class="waterfall-row">
+                        <div class="waterfall-label">− Returns &amp; Loss</div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarReturns" style="width:17.13%; background:#ef4444;"></div></div>
+                        <div class="waterfall-val" id="wfReturns">−₹1.95</div>
+                    </div>
+                    <div class="waterfall-row" style="margin-top:6px;">
+                        <div class="waterfall-label" style="font-weight:800; color:#10b981;">Remaining Net Profit</div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarProfit" style="width:17.15%; background:#10b981;"></div></div>
+                        <div class="waterfall-val" style="font-weight:800; color:#10b981;" id="wfProfit">₹171.37</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 5. BREAK-EVEN & PPC ECONOMICS (DARK EXECUTIVE SECTION) -->
+    <div class="dark-section-wrapper">
+        <div class="resources-calc-container">
+            <div style="margin-bottom:28px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">PPC PROFITABILITY BOUNDARIES</div>
+                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0 8px 0;">Your PPC Profitability Limits</h2>
+                <p style="font-size:15px; color:#94a3b8; margin:0;">Based on your entered product economics, here are the maximum advertising thresholds before your product loses money.</p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+                <div class="dark-mini-card" style="padding:20px;">
+                    <div class="dark-mini-label" style="color:#38bdf8;">PRE-AD CONTRIBUTION</div>
+                    <div class="dark-mini-val" id="ppcPreAdContrib" style="font-size:24px; color:#ffffff;">₹371.17</div>
+                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;" id="ppcPreAdContribPct">37.15% margin before ads</div>
+                </div>
+
+                <div class="dark-mini-card" style="padding:20px;">
+                    <div class="dark-mini-label" style="color:#f59e0b;">BREAK-EVEN ACOS</div>
+                    <div class="dark-mini-val" id="ppcBreakEvenAcos" style="font-size:24px; color:#f59e0b;">37.15%</div>
+                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">Max ACoS before net loss</div>
+                </div>
+
+                <div class="dark-mini-card" style="padding:20px;">
+                    <div class="dark-mini-label" style="color:#34d399;">ACOS HEADROOM</div>
+                    <div class="dark-mini-val" id="ppcAcosHeadroom" style="font-size:24px; color:#34d399;">+17.15 pp</div>
+                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">Distance to break-even ACoS</div>
+                </div>
+
+                <div class="dark-mini-card" style="padding:20px;">
+                    <div class="dark-mini-label" style="color:#60a5fa;">TARGET CPC REFERENCE</div>
+                    <div class="dark-mini-val" id="ppcTargetCpcRef" style="font-size:24px; color:#60a5fa;">₹19.58</div>
+                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">At 19.6% target ACoS &amp; 10% CVR</div>
+                </div>
+
+                <div class="dark-mini-card" style="padding:20px;">
+                    <div class="dark-mini-label" style="color:#e2e8f0;">BREAK-EVEN CPC</div>
+                    <div class="dark-mini-val" id="ppcBreakEvenCpc" style="font-size:24px; color:#ffffff;">₹37.12</div>
+                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">Max CPC at 10% CVR</div>
+                </div>
+            </div>
+
+            <!-- CPC BENCHMARK VISUAL SCALE -->
+            <div class="acos-gauge-wrapper-dark" style="margin-top:24px;">
+                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#94a3b8; text-transform:uppercase;">CPC Benchmark Alignment Scale</div>
+                <div class="cpc-scale-track" id="cpcScaleTrack">
+                    <div class="cpc-marker marker-cpc-curr" id="markerCpcCurr" style="left:40%;">
+                        <span>Current CPC: ₹15.00</span>
+                    </div>
+                    <div class="cpc-marker marker-cpc-target" id="markerCpcTarget" style="left:52%;">
+                        <span>Target CPC: ₹19.58</span>
+                    </div>
+                    <div class="cpc-marker marker-cpc-be" id="markerCpcBe" style="left:90%;">
+                        <span>Break-Even CPC: ₹37.12</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="font-size:12.5px; color:#cbd5e1; margin-top:16px; background:rgba(255,255,255,0.04); padding:14px; border-radius:12px;">
+                <strong>CPC Reference Note:</strong> Based on the assumptions entered, this is the CPC mathematically associated with the selected price, conversion rate and target ACoS. It is not an instruction to set the Amazon bid exactly to this value.
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. ADVANCED SCENARIO LAB & SENSITIVITY (DARK EXECUTIVE SECTION ALT) -->
+    <div class="dark-section-alt">
+        <div class="resources-calc-container">
+            
+            <!-- ADVANCED SCENARIO LAB -->
+            <div style="margin-bottom:48px;">
+                <div style="margin-bottom:20px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">INTERACTIVE SCENARIO LAB</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0 8px 0;">Stress-Test Your Profit</h2>
+                    <p style="font-size:15px; color:#94a3b8; margin:0;">See how changes in price, advertising and conversion affect your economics before changing live settings.</p>
+                </div>
+
+                <div class="dark-glass-card">
+                    <div class="mode-toggle-group" id="scenarioTabsNav">
+                        <button type="button" class="mode-toggle-btn active" data-scen="price">Price Shift</button>
+                        <button type="button" class="mode-toggle-btn" data-scen="acos">ACoS Shift</button>
+                        <button type="button" class="mode-toggle-btn" data-scen="cvr">Conversion Shift</button>
+                        <button type="button" class="mode-toggle-btn" data-scen="cogs">Product Cost Shift</button>
+                    </div>
+
+                    <div id="scenPricePanel">
+                        <div class="sim-slider-group">
+                            <label for="scenPriceSlider">
+                                <span>Selling Price Change</span>
+                                <span id="scenPriceLabel" style="color:#38bdf8;">0%</span>
+                            </label>
+                            <input type="range" id="scenPriceSlider" class="sim-slider-input" min="-20" max="20" value="0" step="2">
+                        </div>
+                    </div>
+
+                    <div id="scenAcosPanel" style="display:none;">
+                        <div class="sim-slider-group">
+                            <label for="scenAcosSlider">
+                                <span>ACoS Percentage Change</span>
+                                <span id="scenAcosLabel" style="color:#38bdf8;">0%</span>
+                            </label>
+                            <input type="range" id="scenAcosSlider" class="sim-slider-input" min="-15" max="25" value="0" step="1">
+                        </div>
+                    </div>
+
+                    <div id="scenCvrPanel" style="display:none;">
+                        <div class="sim-slider-group">
+                            <label for="scenCvrSlider">
+                                <span>Conversion Rate Change</span>
+                                <span id="scenCvrLabel" style="color:#38bdf8;">0%</span>
+                            </label>
+                            <input type="range" id="scenCvrSlider" class="sim-slider-input" min="-5" max="15" value="0" step="1">
+                        </div>
+                    </div>
+
+                    <div id="scenCogsPanel" style="display:none;">
+                        <div class="sim-slider-group">
+                            <label for="scenCogsSlider">
+                                <span>Product Cost Change</span>
+                                <span id="scenCogsLabel" style="color:#38bdf8;">0%</span>
+                            </label>
+                            <input type="range" id="scenCogsSlider" class="sim-slider-input" min="-20" max="20" value="0" step="2">
+                        </div>
+                    </div>
+
+                    <!-- SCENARIO COMPARISON TABLE -->
+                    <div style="background:rgba(15, 23, 42, 0.9); border:1px solid rgba(56, 189, 248, 0.3); border-radius:16px; padding:20px; margin-top:20px;">
+                        <div style="display:flex; justify-content:space-around; align-items:center; text-align:center;">
+                            <div>
+                                <div style="color:#94a3b8; font-family:'DM Mono',monospace; font-size:11px; font-weight:700;">BASE CASE</div>
+                                <div style="font-size:20px; font-weight:800; color:#ffffff; margin-top:4px;" id="scenBaseProfit">₹171.37</div>
+                                <div style="font-size:12px; color:#94a3b8;" id="scenBaseMargin">17.15% margin</div>
+                            </div>
+                            <div style="font-size:24px; color:#38bdf8;">→</div>
+                            <div>
+                                <div style="color:#38bdf8; font-family:'DM Mono',monospace; font-size:11px; font-weight:700;">SIMULATED SCENARIO</div>
+                                <div style="font-size:20px; font-weight:800; color:#38bdf8; margin-top:4px;" id="scenSimProfit">₹171.37</div>
+                                <div style="font-size:12px; color:#38bdf8;" id="scenSimMargin">17.15% margin</div>
+                            </div>
+                        </div>
+                        <div style="font-size:12px; color:#cbd5e1; margin-top:14px; text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;" id="scenNoteText">
+                            Scenario holds other entered assumptions constant. Actual market demand may vary.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SENSITIVITY ANALYSIS -->
+            <div>
+                <div style="margin-bottom:16px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">LEVER RANKING</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Which Lever Has the Biggest Impact?</h2>
+                    <p style="font-size:14px; color:#94a3b8; margin:0;">Automated sensitivity analysis showing which standardized change moves your net profit most.</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;" id="sensitivityGrid">
+                    <!-- LEVERS GENERATED DYNAMICALLY -->
+                </div>
+                <div style="font-size:11.5px; color:#94a3b8; margin-top:12px; text-align:center;">
+                    *Sensitivity analysis illustrates mathematical impact under standardized changes — not a direct strategic recommendation.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 7. MINIMUM PRICE PLANNER & MONTHLY PROJECTION (LIGHT SECTION) -->
+    <div class="light-section-wrapper">
+        <div class="resources-calc-container">
+            
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; align-items:start;">
+                
+                <!-- MINIMUM PRICE PLANNER -->
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; padding:26px; border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.04);">
+                    <div class="hero-eyebrow">PRICING PLANNER</div>
+                    <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin:4px 0 12px 0;">What Selling Price Supports Your Target Margin?</h3>
+                    
+                    <div style="margin-bottom:16px;">
+                        <label class="input-label" for="minTargetMargin">Desired Net Margin (%)</label>
+                        <input type="number" id="minTargetMargin" class="calc-input-field" value="20" min="1" max="90" step="any">
+                    </div>
+
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:18px; border-radius:14px; margin-top:16px;">
+                        <div style="font-size:12px; font-weight:700; color:#64748b; text-transform:uppercase;">CURRENT VS REQUIRED PRICE</div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                            <div>
+                                <div style="font-size:12px; color:#64748b;">Current Price:</div>
+                                <div style="font-size:18px; font-weight:800; color:#0f172a;" id="planCurrPrice">₹999.00</div>
+                            </div>
+                            <div style="font-size:20px; color:#cbd5e1;">→</div>
+                            <div>
+                                <div style="font-size:12px; color:#2563eb; font-weight:700;">Estimated Required Price:</div>
+                                <div style="font-size:22px; font-weight:800; color:#2563eb;" id="planReqPrice">₹1,034.40</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-size:12px; color:#64748b; margin-top:10px;">
+                        *Holding cost assumptions constant. Recomputes price-dependent Amazon referral fees dynamically.
+                    </div>
+                </div>
+
+                <!-- MONTHLY PROFIT PROJECTION -->
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; padding:26px; border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.04);">
+                    <div class="hero-eyebrow">MONTHLY PROJECTION</div>
+                    <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin:4px 0 12px 0;">What Could This Look Like Monthly?</h3>
+                    
+                    <div style="margin-bottom:16px;">
+                        <label class="input-label" for="projUnits">Expected Monthly Units Sold</label>
+                        <input type="number" id="projUnits" class="calc-input-field" value="500" min="1" step="1">
+                    </div>
+
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:18px; border-radius:14px; font-size:13.5px;">
+                        <div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid #e2e8f0;">
+                            <span>Monthly Revenue</span>
+                            <strong id="projRev">₹4,99,500.00</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:4px 0; color:#ef4444; border-bottom:1px solid #e2e8f0;">
+                            <span>Total Product Costs</span>
+                            <span id="projCogs">−₹2,05,000.00</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:4px 0; color:#ef4444; border-bottom:1px solid #e2e8f0;">
+                            <span>Amazon &amp; Fulfilment Fees</span>
+                            <span id="projAmz">−₹1,07,940.00</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:4px 0; color:#ef4444; border-bottom:1px solid #e2e8f0;">
+                            <span>Advertising Spend</span>
+                            <span id="projAds">−₹99,900.00</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:4px 0; color:#ef4444; border-bottom:1px solid #e2e8f0;">
+                            <span>Expected Return Loss</span>
+                            <span id="projReturns">−₹975.00</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:8px 0 0 0; font-size:16px; font-weight:800; color:#10b981;">
+                            <span>Estimated Monthly Profit</span>
+                            <span id="projNetProfit">₹85,685.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. PROFIT ACTION PRIORITIES (LIGHT SECTION ALT) -->
+    <div class="light-section-wrapper" style="background:#f8fafc;">
+        <div class="resources-calc-container">
+            <div style="text-align:center; max-width:800px; margin:0 auto 24px auto;">
+                <div class="hero-eyebrow">ACTION PRIORITIES</div>
+                <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin:4px 0;">What Should You Review First?</h2>
+            </div>
+
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px;" id="actionPrioritiesGrid">
+                <!-- GENERATED DYNAMICALLY -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. MATH & FORMULA DRAWER (LIGHT SECTION) -->
+    <div class="light-section-wrapper">
+        <div class="resources-calc-container">
+            <details style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:22px; max-width:900px; margin:0 auto;">
+                <summary style="font-size:18px; font-weight:800; color:#0f172a; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+                    <span>Show Calculation Steps &amp; Formulas 📐</span>
+                    <span style="font-size:13.5px; color:#2563eb;">▾ Expand / Collapse</span>
+                </summary>
+                <div style="margin-top:16px; font-family:'DM Mono',monospace; font-size:13px; color:#334155; line-height:1.7;" id="mathDrawerContent">
+                    <!-- STEP BY STEP LIVE FORMULAS -->
                 </div>
             </details>
-        </article>
+        </div>
+    </div>
 
-        <!-- RELATED CALCULATORS -->
-        <section class="related-calculators-section">
-            <div class="section-header">
-                <div class="section-eyebrow">EXPLORE RELATED TOOLS</div>
-                <h2 class="section-title">Amazon India Seller Toolkit</h2>
-            </div>
-            <div class="calculators-grid">
-                <a href="amazon-fba-fee-calculator.html" class="calc-card">
-                    <div class="calc-card-header">
-                        <span class="calc-card-icon">🚚</span>
-                        <span class="calc-card-category">FULFILMENT</span>
-                    </div>
-                    <h3 class="calc-card-title">Amazon FBA Fee Calculator</h3>
-                    <p class="calc-card-desc">Estimate Amazon fulfilment-related costs using product weight and dimensions.</p>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate FBA Fees →</span></div>
-                </a>
-                <a href="amazon-break-even-acos-calculator.html" class="calc-card">
-                    <div class="calc-card-header">
-                        <span class="calc-card-icon">⚖️</span>
-                        <span class="calc-card-category">PPC SAFETY</span>
-                    </div>
-                    <h3 class="calc-card-title">Break-Even ACoS Calculator</h3>
-                    <p class="calc-card-desc">Find your profit margin limit before ad spend eats profits.</p>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Find Break-Even ACoS →</span></div>
-                </a>
-                <a href="amazon-coupon-roi-calculator.html" class="calc-card">
-                    <div class="calc-card-header">
-                        <span class="calc-card-icon">🎟️</span>
-                        <span class="calc-card-category">PROMOTIONS</span>
-                    </div>
-                    <h3 class="calc-card-title">Coupon ROI Calculator</h3>
-                    <p class="calc-card-desc">Calculate incremental orders needed to justify seller coupons.</p>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate Coupon ROI →</span></div>
-                </a>
-            </div>
-        </section>
+    <!-- 10. EDUCATIONAL CONTENT (LIGHT SECTION) -->
+    <div class="light-section-wrapper" style="background:#f8fafc;">
+        <div class="resources-calc-container">
+            
+            <article class="calc-educational-prose" style="max-width:900px; margin:0 auto 48px auto;">
+                <h2>How to Use the Amazon Profit Calculator</h2>
+                <p>Start with the numbers you can verify directly from Seller Central and your own cost records. More accurate inputs produce more useful profitability estimates.</p>
 
-        <!-- FAQS -->
-        <section class="faq-section">
-            <div class="section-header">
-                <div class="section-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
-                <h2 class="section-title">Amazon India Profitability FAQs</h2>
-            </div>
-            <div class="faq-accordion-list">
-                <details class="faq-item">
-                    <summary>What is a good net profit margin on Amazon India? <span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">A healthy Amazon India net margin typically ranges between 15% and 25% after PPC advertising and Amazon fees.</div>
-                </details>
-                <details class="faq-item">
-                    <summary>Does this include GST input credit? <span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">You can enter net GST cost or zero if you claim 100% input tax credit (ITC) on Amazon marketplace fee invoices.</div>
-                </details>
-            </div>
-        </section>
+                <h3>1. Enter Your Product Economics</h3>
+                <p>Input your selling price and true landed product cost (including COGS, packaging, and inbound shipping to warehouse).</p>
 
-        <!-- AUDIT CTA BANNER -->
-        <section class="resources-audit-cta">
-            <h2>Want to Maximize Your Amazon India Profit Margins?</h2>
-            <p>Get a comprehensive Amazon PPC &amp; Margin Audit to eliminate wasted ad spend and scale your profitable sales velocity.</p>
-            <a href="contact.html" class="btn-cta-primary">Request an Amazon PPC Audit →</a>
-        </section>
+                <h3>2. Add Amazon &amp; Fulfilment Costs</h3>
+                <p>Select your fulfilment method (FBA, Easy Ship, or Self Ship) and verify referral and closing fees against Seller Central slabs.</p>
 
+                <h3>3. Add Advertising &amp; Return Assumptions</h3>
+                <p>Use recent product-level ACoS or TACoS percentages rather than account-wide averages to get a realistic picture.</p>
+
+                <h3>4. Review Profit, Break-Even &amp; Sensitivity</h3>
+                <p>Use the resulting break-even ACoS and CPC limits as decision-support boundaries for your Amazon campaigns.</p>
+
+                <h2>Amazon Profit Calculator Formulas</h2>
+                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:16px; font-family:'DM Mono',monospace; font-size:13px; line-height:1.7; margin-bottom:20px;">
+                    <strong>Estimated Net Profit</strong> = Selling Price − (Product Cost + Amazon Fees + Fulfilment + Advertising + Return Loss)<br>
+                    <strong>Net Profit Margin</strong> = (Estimated Net Profit ÷ Selling Price) × 100<br>
+                    <strong>Break-Even ACoS</strong> = (Pre-Ad Contribution Margin ÷ Selling Price) × 100<br>
+                    <strong>Target CPC Reference</strong> = Selling Price × Conversion Rate × Target ACoS
+                </div>
+
+                <h2>How Can You Improve Amazon Profitability?</h2>
+                <ul>
+                    <li><strong>Product Economics:</strong> Negotiate supplier terms, reduce packaging dimensions, and optimize inbound freight.</li>
+                    <li><strong>Amazon Fees:</strong> Verify that Amazon's fee tier matches your exact ASIN dimensions and weight slab.</li>
+                    <li><strong>PPC Efficiency:</strong> Audit search terms for wasted spend without cutting high-converting profitable keywords.</li>
+                    <li><strong>Conversion &amp; Returns:</strong> Optimize product listing images and title clarity to improve conversion and reduce costly returns.</li>
+                </ul>
+            </article>
+
+            <!-- EDITORIAL TAKEAWAY -->
+            <div style="text-align:center; background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:36px; max-width:900px; margin:0 auto 48px auto;">
+                <div class="hero-eyebrow">FINAL TAKEAWAY</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:8px 0 12px 0;">Revenue Is Not Profit — Know What You Keep Per Sale</h2>
+                <p style="font-size:15.5px; color:#475569; max-width:780px; margin:0 auto 24px auto; line-height:1.65;">
+                    A product can generate strong Amazon sales and still have weak economics after product cost, marketplace fees, fulfilment, PPC and returns are included. The most useful number is not revenue alone — it is the contribution left after the costs required to generate that revenue.
+                </p>
+
+                <div style="display:flex; justify-content:center; align-items:center; gap:12px; font-family:'DM Mono',monospace; font-size:13.5px; font-weight:700; color:#2563eb; flex-wrap:wrap; background:#f8fafc; padding:16px; border-radius:14px; max-width:820px; margin:0 auto;">
+                    <span>SELLING PRICE</span> <span>→</span>
+                    <span>PRODUCT COST</span> <span>→</span>
+                    <span>AMAZON FEES</span> <span>→</span>
+                    <span>ADVERTISING</span> <span>→</span>
+                    <span style="color:#10b981;">WHAT YOU ACTUALLY KEEP</span>
+                </div>
+            </div>
+
+            <!-- RELATED CALCULATORS -->
+            <div style="max-width:900px; margin:0 auto 48px auto;">
+                <div style="text-align:center; margin-bottom:28px;">
+                    <div class="hero-eyebrow">RELATED TOOLS</div>
+                    <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin:4px 0;">Explore Related PPC Calculators</h2>
+                </div>
+
+                <div class="calculators-grid">
+                    <a href="amazon-break-even-acos-calculator.html" class="calc-card">
+                        <div class="calc-card-top">
+                            <div class="calc-card-header"><div class="calc-card-icon">秤</div><span class="calc-card-category">PROFITABILITY</span></div>
+                            <h3 class="calc-card-title">Break-Even ACoS Calculator</h3>
+                            <p class="calc-card-desc">Find how much advertising your product economics can support.</p>
+                        </div>
+                        <div class="calc-card-footer"><span class="calc-btn-link">Calculate Break-Even ACoS →</span></div>
+                    </a>
+
+                    <a href="amazon-acos-calculator.html" class="calc-card">
+                        <div class="calc-card-top">
+                            <div class="calc-card-header"><div class="calc-card-icon">📊</div><span class="calc-card-category">PPC EFFICIENCY</span></div>
+                            <h3 class="calc-card-title">Amazon ACoS Calculator</h3>
+                            <p class="calc-card-desc">Analyze advertising cost of sales and cost per rupee ad sale.</p>
+                        </div>
+                        <div class="calc-card-footer"><span class="calc-btn-link">Calculate ACoS →</span></div>
+                    </a>
+
+                    <a href="amazon-advertising-roi-calculator.html" class="calc-card">
+                        <div class="calc-card-top">
+                            <div class="calc-card-header"><div class="calc-card-icon">💸</div><span class="calc-card-category">NET RETURN</span></div>
+                            <h3 class="calc-card-title">Amazon Advertising ROI</h3>
+                            <p class="calc-card-desc">Examine net profit return after product economics and ad spend.</p>
+                        </div>
+                        <div class="calc-card-footer"><span class="calc-btn-link">Calculate Ad ROI →</span></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FAQ ACCORDION -->
+            <div style="max-width:900px; margin:0 auto;">
+                <div style="text-align:center; margin-bottom:28px;">
+                    <div class="hero-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Amazon Profit Calculator FAQs</h2>
+                </div>
+
+                <div class="faq-accordion-list">
+                    <details class="faq-item">
+                        <summary>How is Amazon profit calculated? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">Amazon profit is calculated by subtracting product landed cost, Amazon referral fees, closing fees, fulfilment/shipping costs, advertising spend, and return loss from your selling price.</div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Which Amazon fees should I include? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">Include Referral Fee (percentage based on category), Closing Fee (based on price slab), FBA Fulfilment / Weight Handling fee (or Easy Ship fee), and storage charges.</div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Should I use ACoS or TACoS for advertising cost? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">ACoS measures ad spend per ad-attributed sale. TACoS measures blended ad spend across all units sold (ad + organic). Use TACoS for a true blended per-unit profit view across your entire account.</div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What is break-even ACoS? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">Break-even ACoS is the exact ACoS percentage equal to your pre-ad contribution margin. At break-even ACoS, advertising spend consumes all profit, resulting in zero net profit and zero loss.</div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How is maximum CPC calculated? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">Maximum (Break-Even) CPC is calculated by multiplying Revenue per Click (Selling Price × Conversion Rate) by Break-Even ACoS. Target CPC uses your target ACoS instead.</div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How do returns affect Amazon profit? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">Returns add unrecoverable shipping costs, customer refund fees, and inventory write-off losses. Even a 3–5% return rate can reduce unit profit by ₹15–₹30.</div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Does this calculator use live Amazon fees? <span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">This calculator uses configured estimated fee assumptions based on Amazon India fee slabs. For exact accounting, verify charges in Seller Central or toggle to "Enter My Actual Fees" mode.</div>
+                    </details>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 11. PPC AUDIT CTA BANNER -->
+    <div style="background:#080d1a; padding:60px 20px; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); text-align:center; color:#ffffff;">
+        <div class="resources-calc-container">
+            <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:8px;">WANT TO IMPROVE THE PPC SIDE?</div>
+            <h2 style="font-size:32px; font-weight:800; color:#ffffff; margin:0 0 14px 0;">Your Calculator Shows the Margin. We Help Find the PPC Leakage.</h2>
+            <p style="font-size:16px; color:#cbd5e1; max-width:760px; margin:0 auto 24px auto; line-height:1.65;">
+                If advertising is consuming too much of your product margin, PPC Growth Expert can analyze your campaigns, keywords, search terms, bids, budgets and placements to identify where spend can work more efficiently.
+            </p>
+            <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; align-items:center;">
+                <a href="contact.html" class="btn-cta-primary" style="padding:14px 30px; font-size:15px;">Request an Amazon PPC Audit →</a>
+                <a href="services.html#service-ppc-management" style="color:#ffffff; font-weight:700; text-decoration:underline; font-size:14.5px;">Explore Amazon PPC Management →</a>
+            </div>
+        </div>
     </div>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" id="footer" role="contentinfo">
         <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="brand-card">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-badge"><div class="logo-symbol"></div></div>
+                            <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+                        </a>
+                        <p class="footer-sub-tagline">Independent Amazon PPC consultancy founded by Anmol Pokhriyal.</p>
+                        <p class="footer-tagline">Helping Amazon brands in India optimize ACoS, scale ROAS, and achieve profitable growth.</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">SERVICES</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#service-ppc-management">Amazon PPC Management</a></li>
+                        <li><a href="services.html#service-listing-optimization">Listing Optimization</a></li>
+                        <li><a href="services.html#service-image-aplus">A+ Content &amp; Images</a></li>
+                        <li><a href="services.html#service-keyword-research">Keyword Research</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <ul class="footer-contact-list">
+                        <li><div class="contact-icon-pill">📍</div><div>Noida, Uttar Pradesh</div></li>
+                        <li><div class="contact-icon-pill">📞</div><a href="tel:+916397607291">+91 63976 07291</a></li>
+                        <li><div class="contact-icon-pill">✉️</div><a href="mailto:anmolpokhriyal3200@gmail.com">anmolpokhriyal3200@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <p class="footer-meta-info">PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291</p>
+            </div>
             <div class="footer-bottom">
-                <p>© 2026 PPC Growth Expert. All rights reserved. Results are estimates based on user inputs.</p>
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPT -->
+    <!-- SCRIPTS & JAVASCRIPT ENGINE -->
     <script src="js/navbar.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 2 });
-            
-            function calcProfit() {
-                const sp = parseFloat(document.getElementById('profSp').value) || 0;
-                const cogs = parseFloat(document.getElementById('profCogs').value) || 0;
-                const refPct = parseFloat(document.getElementById('profRefPct').value) || 0;
-                const closing = parseFloat(document.getElementById('profClosing').value) || 0;
-                const fba = parseFloat(document.getElementById('profFba').value) || 0;
-                const adSpend = parseFloat(document.getElementById('profAdSpend').value) || 0;
-                const shipping = parseFloat(document.getElementById('profShipping').value) || 0;
-                const other = parseFloat(document.getElementById('profOther').value) || 0;
 
-                const referralFee = sp * (refPct / 100);
-                const amzFees = referralFee + closing + fba;
-                const totalCost = cogs + amzFees + adSpend + shipping + other;
-                const netProfit = sp - totalCost;
-                const margin = sp > 0 ? (netProfit / sp) * 100 : 0;
-                const roi = cogs > 0 ? (netProfit / cogs) * 100 : 0;
-
-                document.getElementById('profNetVal').innerText = fmt.format(netProfit);
-                document.getElementById('profMarginVal').innerText = margin.toFixed(2) + '%';
-                document.getElementById('profRoiVal').innerText = roi.toFixed(2) + '%';
-                document.getElementById('profFeesVal').innerText = fmt.format(amzFees);
-                document.getElementById('profTotalCostVal').innerText = fmt.format(totalCost);
-
-                const costPct = Math.min(100, Math.max(0, (totalCost / (sp || 1)) * 100));
-                const profPct = Math.max(0, 100 - costPct);
-                
-                document.getElementById('profBarAd').style.width = costPct.toFixed(1) + '%';
-                document.getElementById('profBarProf').style.width = profPct.toFixed(1) + '%';
-                document.getElementById('profShareLabel').innerText = 'Profit: ' + margin.toFixed(1) + '%';
-                
-                document.getElementById('profGuidanceText').innerHTML = `After the costs entered, you retain approximately <strong>${fmt.format(netProfit)} per unit</strong> (${margin.toFixed(1)}% margin) before fixed overhead.`;
+            // INR FORMATTER HELPER
+            function formatINR(val, maxDecimals = 2) {
+                if (isNaN(val) || val === null || val === undefined) return '₹0.00';
+                return new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'INR',
+                    maximumFractionDigits: maxDecimals,
+                    minimumFractionDigits: 2
+                }).format(val);
             }
 
-            document.querySelectorAll('#profSp, #profCogs, #profRefPct, #profClosing, #profFba, #profAdSpend, #profShipping, #profOther').forEach(el => {
-                el.addEventListener('input', calcProfit);
-            });
-            document.getElementById('btnCalculateProf').addEventListener('click', calcProfit);
-            document.getElementById('btnResetProf').addEventListener('click', function() {
-                document.getElementById('profSp').value = 1499;
-                document.getElementById('profCogs').value = 400;
-                document.getElementById('profRefPct').value = 12;
-                document.getElementById('profClosing').value = 25;
-                document.getElementById('profFba').value = 85;
-                document.getElementById('profAdSpend').value = 150;
-                document.getElementById('profShipping').value = 35;
-                document.getElementById('profOther').value = 50;
-                calcProfit();
+            // STATE VARIABLES
+            let currentFulfillment = 'FBA'; // FBA, Easy, Self
+            let currentAdMode = 'ACOS'; // ACOS, TACOS
+            let isManualFeeMode = false;
+            let currentStep = 1;
+
+            // STEP NAVIGATION
+            const stepBtns = document.querySelectorAll('.step-tab-btn');
+            stepBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentStep = parseInt(this.getAttribute('data-step'));
+                    showStep(currentStep);
+                });
             });
 
-            calcProfit();
+            function showStep(step) {
+                stepBtns.forEach(b => b.classList.remove('active'));
+                document.querySelector(`.step-tab-btn[data-step="${step}"]`).classList.add('active');
+
+                for (let i = 1; i <= 4; i++) {
+                    const panel = document.getElementById(`stepPanel${i}`);
+                    if (panel) panel.style.display = (i === step) ? 'block' : 'none';
+                }
+
+                document.getElementById('btnPrevStep').style.visibility = (step === 1) ? 'hidden' : 'visible';
+                document.getElementById('btnNextStep').innerText = (step === 4) ? 'Finish & Review' : 'Next Step →';
+            }
+
+            document.getElementById('btnPrevStep').addEventListener('click', function() {
+                if (currentStep > 1) { currentStep--; showStep(currentStep); }
+            });
+            document.getElementById('btnNextStep').addEventListener('click', function() {
+                if (currentStep < 4) { currentStep++; showStep(currentStep); }
+                else { window.scrollTo({ top: document.querySelector('.light-section-wrapper').offsetTop - 80, behavior: 'smooth' }); }
+            });
+
+            // FULFILMENT METHOD TOGGLE
+            document.getElementById('btnFulfillmentFBA').addEventListener('click', function() {
+                setFulfillment('FBA');
+            });
+            document.getElementById('btnFulfillmentEasy').addEventListener('click', function() {
+                setFulfillment('Easy');
+            });
+            document.getElementById('btnFulfillmentSelf').addEventListener('click', function() {
+                setFulfillment('Self');
+            });
+
+            function setFulfillment(method) {
+                currentFulfillment = method;
+                document.getElementById('btnFulfillmentFBA').classList.toggle('active', method === 'FBA');
+                document.getElementById('btnFulfillmentEasy').classList.toggle('active', method === 'Easy');
+                document.getElementById('btnFulfillmentSelf').classList.toggle('active', method === 'Self');
+
+                if (!isManualFeeMode) {
+                    if (method === 'FBA') {
+                        document.getElementById('profFulfilmentFee').value = '65';
+                        document.getElementById('profStorageFee').value = '6';
+                        document.getElementById('profClosingFee').value = '25';
+                    } else if (method === 'Easy') {
+                        document.getElementById('profFulfilmentFee').value = '55';
+                        document.getElementById('profStorageFee').value = '0';
+                        document.getElementById('profClosingFee').value = '20';
+                    } else { // Self Ship
+                        document.getElementById('profFulfilmentFee').value = '40';
+                        document.getElementById('profStorageFee').value = '0';
+                        document.getElementById('profClosingFee').value = '15';
+                    }
+                }
+                calculateProfit();
+            }
+
+            // AD MODE TOGGLE
+            document.getElementById('btnAdModeACOS').addEventListener('click', function() {
+                setAdMode('ACOS');
+            });
+            document.getElementById('btnAdModeTACOS').addEventListener('click', function() {
+                setAdMode('TACOS');
+            });
+
+            function setAdMode(mode) {
+                currentAdMode = mode;
+                document.getElementById('btnAdModeACOS').classList.toggle('active', mode === 'ACOS');
+                document.getElementById('btnAdModeTACOS').classList.toggle('active', mode === 'TACOS');
+                document.getElementById('adModeAcosContainer').style.display = (mode === 'ACOS') ? 'block' : 'none';
+                document.getElementById('adModeTacosContainer').style.display = (mode === 'TACOS') ? 'block' : 'none';
+                calculateProfit();
+            }
+
+            // FEE MODE RADIOS
+            document.getElementById('feeModeEstimate').addEventListener('change', function() {
+                isManualFeeMode = false;
+                setFulfillment(currentFulfillment);
+            });
+            document.getElementById('feeModeManual').addEventListener('change', function() {
+                isManualFeeMode = true;
+            });
+
+            // CATEGORY SELECTOR AUTO REFERRAL FEE UPDATE
+            document.getElementById('profCategory').addEventListener('change', function() {
+                if (!isManualFeeMode) {
+                    document.getElementById('profReferralFee').value = this.value;
+                }
+                calculateProfit();
+            });
+
+            // CORE PROFIT CALCULATION ENGINE
+            function calculateProfit() {
+                const sp = parseFloat(document.getElementById('profPrice').value) || 0;
+                const cogs = parseFloat(document.getElementById('profCogs').value) || 0;
+                const packaging = parseFloat(document.getElementById('profPackaging').value) || 0;
+                const otherProd = parseFloat(document.getElementById('profOtherProd').value) || 0;
+
+                const refPct = parseFloat(document.getElementById('profReferralFee').value) || 0;
+                const closingFee = parseFloat(document.getElementById('profClosingFee').value) || 0;
+                const fulfilmentFee = parseFloat(document.getElementById('profFulfilmentFee').value) || 0;
+                const storageFee = parseFloat(document.getElementById('profStorageFee').value) || 0;
+
+                const acosPct = parseFloat(document.getElementById('profAcosPct').value) || 0;
+                const tacosPct = parseFloat(document.getElementById('profTacosPct').value) || 0;
+
+                const returnRate = parseFloat(document.getElementById('profReturnRate').value) || 0;
+                const returnCost = parseFloat(document.getElementById('profReturnCost').value) || 0;
+                const refundLoss = parseFloat(document.getElementById('profRefundLoss').value) || 0;
+                const returnRecovery = parseFloat(document.getElementById('profReturnRecovery').value) || 0;
+
+                const cpc = parseFloat(document.getElementById('profCpc').value) || 15;
+                const cvr = parseFloat(document.getElementById('profCvr').value) || 10;
+                const targetAcos = parseFloat(document.getElementById('profTargetAcos').value) || 19.6;
+
+                // VALIDATION: PRICE <= 0
+                if (sp <= 0) {
+                    document.getElementById('profNetProfitVal').innerText = 'Enter Price';
+                    document.getElementById('profMarginVal').innerText = '0.00% margin';
+                    return;
+                }
+
+                // DIRECT PRODUCT COST
+                const directProdCost = cogs + packaging + otherProd;
+
+                // AMAZON FEES
+                const referralAmt = sp * (refPct / 100);
+                const totalAmzFees = referralAmt + closingFee;
+                const totalFulfilment = fulfilmentFee + storageFee;
+
+                // ADVERTISING COST
+                let adCost = 0;
+                if (currentAdMode === 'ACOS') {
+                    adCost = sp * (acosPct / 100);
+                } else {
+                    adCost = sp * (tacosPct / 100);
+                }
+
+                // RETURNS COST
+                const grossReturnPerUnit = (returnRate / 100) * (returnCost + refundLoss);
+                const netReturnLoss = grossReturnPerUnit * (1 - returnRecovery / 100);
+
+                // TOTAL COSTS & PROFIT
+                const totalCost = directProdCost + totalAmzFees + totalFulfilment + adCost + netReturnLoss;
+                const netProfit = sp - totalCost;
+                const margin = (netProfit / sp) * 100;
+                const roi = directProdCost > 0 ? (netProfit / directProdCost) * 100 : 0;
+
+                // PRE-AD CONTRIBUTION & BREAK-EVEN ACOS
+                const preAdCost = directProdCost + totalAmzFees + totalFulfilment + netReturnLoss;
+                const preAdContrib = sp - preAdCost;
+                const breakEvenAcos = (preAdContrib / sp) * 100;
+                const acosHeadroom = breakEvenAcos - (currentAdMode === 'ACOS' ? acosPct : tacosPct);
+
+                // CPC ECONOMICS
+                const rpc = sp * (cvr / 100);
+                const targetCpcRef = rpc * (targetAcos / 100);
+                const breakEvenCpc = rpc * (breakEvenAcos / 100);
+
+                // UPDATE LIVE LEDGER (RIGHT PANEL)
+                document.getElementById('profNetProfitVal').innerText = formatINR(netProfit);
+                document.getElementById('profMarginVal').innerText = `${margin.toFixed(2)}% net margin`;
+                document.getElementById('profRoiVal').innerText = `ROI: ${roi.toFixed(2)}%`;
+
+                document.getElementById('ledgerSp').innerText = formatINR(sp);
+                document.getElementById('ledgerCogs').innerText = `-${formatINR(directProdCost)}`;
+                document.getElementById('ledgerAmzFees').innerText = `-${formatINR(totalAmzFees)}`;
+                document.getElementById('ledgerFulfilment').innerText = `-${formatINR(totalFulfilment)}`;
+                document.getElementById('ledgerAdCost').innerText = `-${formatINR(adCost)}`;
+                document.getElementById('ledgerReturns').innerText = `-${formatINR(netReturnLoss)}`;
+                document.getElementById('ledgerFinalProfit').innerText = formatINR(netProfit);
+
+                // UPDATE STATUS PILL
+                const statusPill = document.getElementById('profStatusPill');
+                const contextText = document.getElementById('profContextText');
+
+                if (netProfit < 0) {
+                    statusPill.innerText = 'NEGATIVE CONTRIBUTION';
+                    statusPill.style.background = 'rgba(239,68,68,0.2)';
+                    statusPill.style.color = '#f87171';
+                    statusPill.style.borderColor = 'rgba(239,68,68,0.4)';
+                    contextText.innerHTML = `<span style="color:#f87171; font-weight:700;">Warning:</span> Entered variable costs exceed revenue by <strong>${formatINR(Math.abs(netProfit))}</strong> per unit (${margin.toFixed(2)}% margin). Evaluate price, COGS or ad spend before scaling.`;
+                } else if (margin < 5) {
+                    statusPill.innerText = 'THIN PROFIT BUFFER';
+                    statusPill.style.background = 'rgba(245,158,11,0.2)';
+                    statusPill.style.color = '#f59e0b';
+                    statusPill.style.borderColor = 'rgba(245,158,11,0.4)';
+                    contextText.innerHTML = `The entered costs leave <strong>${formatINR(netProfit)}</strong> per unit (${margin.toFixed(2)}% margin). Profit buffer is tight against unexpected return rates or CPC spikes.`;
+                } else {
+                    statusPill.innerText = 'HEALTHY CONTRIBUTION';
+                    statusPill.style.background = 'rgba(16,185,129,0.2)';
+                    statusPill.style.color = '#34d399';
+                    statusPill.style.borderColor = 'rgba(16,185,129,0.4)';
+                    contextText.innerHTML = `The entered costs leave <strong>${formatINR(netProfit)}</strong> per unit after the expenses included in this calculation (<strong>${margin.toFixed(2)}% margin</strong>).`;
+                }
+
+                // UPDATE DASHBOARD METRICS
+                document.getElementById('dashSp').innerText = formatINR(sp);
+                document.getElementById('dashTotalCost').innerText = formatINR(totalCost);
+                document.getElementById('dashNetProfit').innerText = formatINR(netProfit);
+                document.getElementById('dashMargin').innerText = margin.toFixed(2) + '%';
+                document.getElementById('dashRoi').innerText = roi.toFixed(2) + '%';
+                document.getElementById('dashAmzFees').innerText = formatINR(totalAmzFees + totalFulfilment);
+                document.getElementById('dashAdCost').innerText = formatINR(adCost);
+                document.getElementById('dashReturnCost').innerText = formatINR(netReturnLoss);
+
+                // UPDATE PROPORTIONAL REVENUE BAR
+                const cogsPctBar = Math.max(0, (directProdCost / sp) * 100);
+                const amzPctBar = Math.max(0, ((totalAmzFees + totalFulfilment) / sp) * 100);
+                const adPctBar = Math.max(0, (adCost / sp) * 100);
+                const retPctBar = Math.max(0, (netReturnLoss / sp) * 100);
+                const profitPctBar = Math.max(0, (netProfit / sp) * 100);
+
+                document.getElementById('barCogs').style.width = cogsPctBar + '%';
+                document.getElementById('barAmz').style.width = amzPctBar + '%';
+                document.getElementById('barAds').style.width = adPctBar + '%';
+                document.getElementById('barReturns').style.width = retPctBar + '%';
+                document.getElementById('barProfit').style.width = profitPctBar + '%';
+
+                document.getElementById('legCogs').innerText = `${formatINR(directProdCost * (100 / sp))} (${cogsPctBar.toFixed(1)}%)`;
+                document.getElementById('legAmz').innerText = `${formatINR((totalAmzFees + totalFulfilment) * (100 / sp))} (${amzPctBar.toFixed(1)}%)`;
+                document.getElementById('legAds').innerText = `${formatINR(adCost * (100 / sp))} (${adPctBar.toFixed(1)}%)`;
+                document.getElementById('legReturns').innerText = `${formatINR(netReturnLoss * (100 / sp))} (${retPctBar.toFixed(1)}%)`;
+                document.getElementById('legProfit').innerText = `${formatINR(netProfit * (100 / sp))} (${profitPctBar.toFixed(1)}%)`;
+
+                // UPDATE WATERFALL DIAGRAM
+                document.getElementById('wfSp').innerText = formatINR(sp);
+                document.getElementById('wfCogs').innerText = `−${formatINR(directProdCost)}`;
+                document.getElementById('wfAmz').innerText = `−${formatINR(totalAmzFees)}`;
+                document.getElementById('wfFulfil').innerText = `−${formatINR(totalFulfilment)}`;
+                document.getElementById('wfAd').innerText = `−${formatINR(adCost)}`;
+                document.getElementById('wfReturns').innerText = `−${formatINR(netReturnLoss)}`;
+                document.getElementById('wfProfit').innerText = formatINR(netProfit);
+
+                document.getElementById('wfBarCogs').style.width = Math.min(100, (directProdCost / sp) * 100) + '%';
+                document.getElementById('wfBarAmz').style.width = Math.min(100, (totalAmzFees / sp) * 100) + '%';
+                document.getElementById('wfBarFulfil').style.width = Math.min(100, (totalFulfilment / sp) * 100) + '%';
+                document.getElementById('wfBarAd').style.width = Math.min(100, (adCost / sp) * 100) + '%';
+                document.getElementById('wfBarReturns').style.width = Math.min(100, (netReturnLoss / sp) * 100) + '%';
+                document.getElementById('wfBarProfit').style.width = Math.max(0, Math.min(100, margin)) + '%';
+
+                // UPDATE PPC PROFITABILITY BOUNDARIES
+                document.getElementById('ppcPreAdContrib').innerText = formatINR(preAdContrib);
+                document.getElementById('ppcPreAdContribPct').innerText = `${((preAdContrib / sp) * 100).toFixed(2)}% margin before ads`;
+                document.getElementById('ppcBreakEvenAcos').innerText = breakEvenAcos.toFixed(2) + '%';
+                document.getElementById('ppcAcosHeadroom').innerText = (acosHeadroom >= 0 ? '+' : '') + acosHeadroom.toFixed(2) + ' pp';
+                document.getElementById('ppcTargetCpcRef').innerText = formatINR(targetCpcRef);
+                document.getElementById('ppcBreakEvenCpc').innerText = formatINR(breakEvenCpc);
+
+                // UPDATE CPC SCALE MARKERS
+                const maxCpcScale = Math.max(50, cpc * 1.2, targetCpcRef * 1.2, breakEvenCpc * 1.2);
+                const posCurrCpc = Math.min(95, Math.max(5, (cpc / maxCpcScale) * 100));
+                const posTargetCpc = Math.min(95, Math.max(5, (targetCpcRef / maxCpcScale) * 100));
+                const posBeCpc = Math.min(95, Math.max(5, (breakEvenCpc / maxCpcScale) * 100));
+
+                const mCurr = document.getElementById('markerCpcCurr');
+                const mTarget = document.getElementById('markerCpcTarget');
+                const mBe = document.getElementById('markerCpcBe');
+
+                mCurr.style.left = posCurrCpc + '%';
+                mCurr.querySelector('span').innerText = `Current CPC: ${formatINR(cpc)}`;
+
+                mTarget.style.left = posTargetCpc + '%';
+                mTarget.querySelector('span').innerText = `Target CPC: ${formatINR(targetCpcRef)}`;
+
+                mBe.style.left = posBeCpc + '%';
+                mBe.querySelector('span').innerText = `Break-Even CPC: ${formatINR(breakEvenCpc)}`;
+
+                // UPDATE SCENARIO LAB
+                updateScenarioLab(sp, cogs, directProdCost, totalAmzFees, totalFulfilment, adCost, netReturnLoss, acosPct);
+
+                // UPDATE SENSITIVITY ANALYSIS
+                updateSensitivity(sp, directProdCost, totalAmzFees, totalFulfilment, adCost, netReturnLoss, acosPct, returnRate);
+
+                // UPDATE MINIMUM PRICE PLANNER
+                updateMinPricePlanner(directProdCost, totalAmzFees - referralAmt, totalFulfilment, adCost, netReturnLoss, refPct);
+
+                // UPDATE MONTHLY PROJECTION
+                updateMonthlyProjection(sp, directProdCost, totalAmzFees + totalFulfilment, adCost, netReturnLoss);
+
+                // UPDATE ACTION PRIORITIES
+                updateActionPriorities(margin, acosHeadroom, cogsPctBar, amzPctBar, netReturnLoss, netProfit);
+
+                // UPDATE MATH DRAWER
+                updateMathDrawer(sp, directProdCost, totalAmzFees, totalFulfilment, adCost, netReturnLoss, netProfit, margin, preAdContrib, breakEvenAcos);
+            }
+
+            // SCENARIO LAB SLIDERS LOGIC
+            let activeScenario = 'price';
+            const scenTabs = document.querySelectorAll('#scenarioTabsNav button');
+            scenTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    scenTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    activeScenario = this.getAttribute('data-scen');
+
+                    document.getElementById('scenPricePanel').style.display = (activeScenario === 'price') ? 'block' : 'none';
+                    document.getElementById('scenAcosPanel').style.display = (activeScenario === 'acos') ? 'block' : 'none';
+                    document.getElementById('scenCvrPanel').style.display = (activeScenario === 'cvr') ? 'block' : 'none';
+                    document.getElementById('scenCogsPanel').style.display = (activeScenario === 'cogs') ? 'block' : 'none';
+
+                    calculateProfit();
+                });
+            });
+
+            function updateScenarioLab(sp, cogs, directProdCost, totalAmzFees, totalFulfilment, adCost, netReturnLoss, baseAcos) {
+                const baseProfit = sp - (directProdCost + totalAmzFees + totalFulfilment + adCost + netReturnLoss);
+                const baseMargin = (baseProfit / sp) * 100;
+
+                document.getElementById('scenBaseProfit').innerText = formatINR(baseProfit);
+                document.getElementById('scenBaseMargin').innerText = baseMargin.toFixed(2) + '% margin';
+
+                let simProfit = baseProfit;
+                let simMargin = baseMargin;
+                let noteText = '';
+
+                if (activeScenario === 'price') {
+                    const priceShiftPct = parseFloat(document.getElementById('scenPriceSlider').value) || 0;
+                    document.getElementById('scenPriceLabel').innerText = (priceShiftPct > 0 ? '+' : '') + priceShiftPct + '%';
+                    const newSp = sp * (1 + priceShiftPct / 100);
+                    const newRef = newSp * (parseFloat(document.getElementById('profReferralFee').value) / 100);
+                    const newAmz = newRef + (totalAmzFees - (sp * (parseFloat(document.getElementById('profReferralFee').value) / 100)));
+                    const newAd = currentAdMode === 'ACOS' ? newSp * (baseAcos / 100) : adCost;
+                    simProfit = newSp - (directProdCost + newAmz + totalFulfilment + newAd + netReturnLoss);
+                    simMargin = (simProfit / newSp) * 100;
+                    noteText = `Simulated Price: ${formatINR(newSp)} | New Profit: ${formatINR(simProfit)} (${simMargin.toFixed(2)}% margin)`;
+                } else if (activeScenario === 'acos') {
+                    const acosShift = parseFloat(document.getElementById('scenAcosSlider').value) || 0;
+                    document.getElementById('scenAcosLabel').innerText = (acosShift > 0 ? '+' : '') + acosShift + ' pp';
+                    const newAcos = Math.max(0, baseAcos + acosShift);
+                    const newAd = sp * (newAcos / 100);
+                    simProfit = sp - (directProdCost + totalAmzFees + totalFulfilment + newAd + netReturnLoss);
+                    simMargin = (simProfit / sp) * 100;
+                    noteText = `Simulated ACoS: ${newAcos.toFixed(1)}% | New Profit: ${formatINR(simProfit)} (${simMargin.toFixed(2)}% margin)`;
+                } else if (activeScenario === 'cvr') {
+                    const cvrShift = parseFloat(document.getElementById('scenCvrSlider').value) || 0;
+                    document.getElementById('scenCvrLabel').innerText = (cvrShift > 0 ? '+' : '') + cvrShift + ' pp';
+                    const baseCvr = parseFloat(document.getElementById('profCvr').value) || 10;
+                    const newCvr = Math.max(0.1, baseCvr + cvrShift);
+                    const rpc = sp * (newCvr / 100);
+                    const newTargetCpc = rpc * (parseFloat(document.getElementById('profTargetAcos').value) / 100);
+                    simProfit = baseProfit;
+                    simMargin = baseMargin;
+                    noteText = `Simulated CVR: ${newCvr.toFixed(1)}% | New Target CPC Reference: ${formatINR(newTargetCpc)}`;
+                } else if (activeScenario === 'cogs') {
+                    const cogsShiftPct = parseFloat(document.getElementById('scenCogsSlider').value) || 0;
+                    document.getElementById('scenCogsLabel').innerText = (cogsShiftPct > 0 ? '+' : '') + cogsShiftPct + '%';
+                    const newCogs = directProdCost * (1 + cogsShiftPct / 100);
+                    simProfit = sp - (newCogs + totalAmzFees + totalFulfilment + adCost + netReturnLoss);
+                    simMargin = (simProfit / sp) * 100;
+                    noteText = `Simulated Product Cost: ${formatINR(newCogs)} | New Profit: ${formatINR(simProfit)} (${simMargin.toFixed(2)}% margin)`;
+                }
+
+                document.getElementById('scenSimProfit').innerText = formatINR(simProfit);
+                document.getElementById('scenSimMargin').innerText = simMargin.toFixed(2) + '% margin';
+                document.getElementById('scenNoteText').innerText = noteText;
+            }
+
+            // SENSITIVITY ANALYSIS LOGIC
+            function updateSensitivity(sp, directProdCost, totalAmzFees, totalFulfilment, adCost, netReturnLoss, acosPct, returnRate) {
+                const baseProfit = sp - (directProdCost + totalAmzFees + totalFulfilment + adCost + netReturnLoss);
+
+                // Lever 1: ACoS -5 percentage points
+                const newAdCost1 = sp * (Math.max(0, acosPct - 5) / 100);
+                const impact1 = (sp - (directProdCost + totalAmzFees + totalFulfilment + newAdCost1 + netReturnLoss)) - baseProfit;
+
+                // Lever 2: Selling Price +5%
+                const newSp2 = sp * 1.05;
+                const refPct = parseFloat(document.getElementById('profReferralFee').value) || 12;
+                const newAmz2 = (newSp2 * (refPct / 100)) + (totalAmzFees - (sp * (refPct / 100)));
+                const newAd2 = currentAdMode === 'ACOS' ? newSp2 * (acosPct / 100) : adCost;
+                const impact2 = (newSp2 - (directProdCost + newAmz2 + totalFulfilment + newAd2 + netReturnLoss)) - baseProfit;
+
+                // Lever 3: Product Cost -5%
+                const newCogs3 = directProdCost * 0.95;
+                const impact3 = (sp - (newCogs3 + totalAmzFees + totalFulfilment + adCost + netReturnLoss)) - baseProfit;
+
+                // Lever 4: Return Rate -2 percentage points
+                const newReturnRate4 = Math.max(0, returnRate - 2);
+                const returnCost = parseFloat(document.getElementById('profReturnCost').value) || 120;
+                const refundLoss = parseFloat(document.getElementById('profRefundLoss').value) || 10;
+                const returnRecovery = parseFloat(document.getElementById('profReturnRecovery').value) || 50;
+                const newNetReturn4 = ((newReturnRate4 / 100) * (returnCost + refundLoss)) * (1 - returnRecovery / 100);
+                const impact4 = (sp - (directProdCost + totalAmzFees + totalFulfilment + adCost + newNetReturn4)) - baseProfit;
+
+                const levers = [
+                    { name: 'Reduce ACoS by 5 pp', impact: impact1, desc: '-5% Advertising Cost' },
+                    { name: 'Increase Price by 5%', impact: impact2, desc: '+5% Selling Price' },
+                    { name: 'Reduce Product Cost 5%', impact: impact3, desc: '-5% COGS & Packaging' },
+                    { name: 'Reduce Return Rate 2 pp', impact: impact4, desc: '-2% Customer Returns' }
+                ];
+
+                levers.sort((a, b) => b.impact - a.impact);
+
+                const grid = document.getElementById('sensitivityGrid');
+                grid.innerHTML = levers.map((lev, idx) => `
+                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:16px;">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8;">RANK #${idx + 1} IMPACT</div>
+                        <div style="font-size:15px; font-weight:800; color:#ffffff; margin-top:4px;">${lev.name}</div>
+                        <div style="font-size:18px; font-weight:800; color:#34d399; margin-top:4px;">+${formatINR(lev.impact)} / unit</div>
+                        <div style="font-size:12px; color:#94a3b8; margin-top:2px;">${lev.desc}</div>
+                    </div>
+                `).join('');
+            }
+
+            // MINIMUM SELLING PRICE PLANNER LOGIC
+            function updateMinPricePlanner(directProdCost, nonRefAmzFees, totalFulfilment, adCost, netReturnLoss, refPct) {
+                const targetMarginPct = parseFloat(document.getElementById('minTargetMargin').value) || 20;
+                const currSp = parseFloat(document.getElementById('profPrice').value) || 999;
+
+                const targetMarginDec = targetMarginPct / 100;
+                const refDec = refPct / 100;
+                const adDec = currentAdMode === 'ACOS' ? (parseFloat(document.getElementById('profAcosPct').value) / 100) : 0;
+                const fixedAdCost = currentAdMode === 'TACOS' ? adCost : 0;
+
+                const denominator = 1 - refDec - targetMarginDec - adDec;
+
+                const planCurrPrice = document.getElementById('planCurrPrice');
+                const planReqPrice = document.getElementById('planReqPrice');
+
+                planCurrPrice.innerText = formatINR(currSp);
+
+                if (denominator <= 0) {
+                    planReqPrice.innerText = 'Unreachable';
+                    return;
+                }
+
+                const numerator = directProdCost + nonRefAmzFees + totalFulfilment + fixedAdCost + netReturnLoss;
+                const reqPrice = numerator / denominator;
+
+                planReqPrice.innerText = formatINR(reqPrice);
+            }
+
+            // MONTHLY PROJECTION LOGIC
+            function updateMonthlyProjection(sp, directProdCost, amzFulfilFees, adCost, netReturnLoss) {
+                const units = parseFloat(document.getElementById('projUnits').value) || 500;
+
+                const rev = sp * units;
+                const cogs = directProdCost * units;
+                const amz = amzFulfilFees * units;
+                const ads = adCost * units;
+                const returns = netReturnLoss * units;
+                const profit = rev - (cogs + amz + ads + returns);
+
+                document.getElementById('projRev').innerText = formatINR(rev);
+                document.getElementById('projCogs').innerText = `−${formatINR(cogs)}`;
+                document.getElementById('projAmz').innerText = `−${formatINR(amz)}`;
+                document.getElementById('projAds').innerText = `−${formatINR(ads)}`;
+                document.getElementById('projReturns').innerText = `−${formatINR(returns)}`;
+                document.getElementById('projNetProfit').innerText = formatINR(profit);
+            }
+
+            // DYNAMIC ACTION PRIORITIES LOGIC
+            function updateActionPriorities(margin, acosHeadroom, cogsPctBar, amzPctBar, netReturnLoss, netProfit) {
+                const priorities = [];
+
+                if (netProfit < 0) {
+                    priorities.push({
+                        title: "1. Unit Economics Are Currently Losing Money",
+                        desc: `Entered costs exceed selling price by ${formatINR(Math.abs(netProfit))} per unit. Do not scale advertising spend under current parameters.`
+                    });
+                }
+
+                if (acosHeadroom < 10) {
+                    priorities.push({
+                        title: "2. Advertising Profit Headroom Is Tight",
+                        desc: `Your break-even ACoS headroom is only ${acosHeadroom.toFixed(1)} percentage points. Audit zero-order search terms and optimize bids before increasing budget.`
+                    });
+                }
+
+                if (cogsPctBar > 40) {
+                    priorities.push({
+                        title: "3. Product Cost Is Your Largest Cost Driver",
+                        desc: `Product cost accounts for ${cogsPctBar.toFixed(1)}% of your selling price. Even a 5% supplier discount adds meaningful unit contribution.`
+                    });
+                }
+
+                if (amzPctBar > 25) {
+                    priorities.push({
+                        title: "4. Review Amazon Fulfilment Tier",
+                        desc: `Amazon fees consume ${amzPctBar.toFixed(1)}% of revenue. Verify product dimensions and weight slab in Seller Central.`
+                    });
+                }
+
+                if (netReturnLoss > 15) {
+                    priorities.push({
+                        title: "5. Customer Returns Are Reducing Contribution",
+                        desc: `Expected return losses cost ${formatINR(netReturnLoss)} per unit. Audit listing accuracy and customer expectation alignment.`
+                    });
+                }
+
+                if (priorities.length < 3) {
+                    priorities.push({
+                        title: "Protect High-Performing Keywords",
+                        desc: "Your product economics have healthy headroom. Expand budgets on profitable target keywords while monitoring TACoS."
+                    });
+                }
+
+                const grid = document.getElementById('actionPrioritiesGrid');
+                grid.innerHTML = priorities.slice(0, 3).map(p => `
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:22px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                        <h4 style="margin:0 0 8px 0; font-size:16px; font-weight:800; color:#0f172a;">${p.title}</h4>
+                        <p style="margin:0; font-size:13.5px; color:#475569; line-height:1.6;">${p.desc}</p>
+                    </div>
+                `).join('');
+            }
+
+            // MATH DRAWER CONTENT LOGIC
+            function updateMathDrawer(sp, directProdCost, totalAmzFees, totalFulfilment, adCost, netReturnLoss, netProfit, margin, preAdContrib, breakEvenAcos) {
+                const content = document.getElementById('mathDrawerContent');
+                content.innerHTML = `
+                    <strong>Selling Price:</strong> ${formatINR(sp)}<br>
+                    − Product Cost: ${formatINR(directProdCost)}<br>
+                    − Amazon Fees (Referral + Closing): ${formatINR(totalAmzFees)}<br>
+                    − Fulfilment &amp; Storage: ${formatINR(totalFulfilment)}<br>
+                    − Advertising Cost: ${formatINR(adCost)}<br>
+                    − Expected Return Loss: ${formatINR(netReturnLoss)}<br>
+                    ─────────────────────────────────────────────────<br>
+                    <strong>Estimated Net Profit:</strong> ${formatINR(netProfit)}<br><br>
+                    <strong>Net Margin Formula:</strong> (${formatINR(netProfit)} ÷ ${formatINR(sp)}) × 100 = <strong>${margin.toFixed(2)}%</strong><br>
+                    <strong>Pre-Ad Contribution:</strong> ${formatINR(sp)} − ${formatINR(directProdCost + totalAmzFees + totalFulfilment + netReturnLoss)} = <strong>${formatINR(preAdContrib)}</strong><br>
+                    <strong>Break-Even ACoS Formula:</strong> (${formatINR(preAdContrib)} ÷ ${formatINR(sp)}) × 100 = <strong>${breakEvenAcos.toFixed(2)}%</strong>
+                `;
+            }
+
+            // EVENT LISTENERS FOR INPUTS
+            const allInputs = [
+                'profPrice', 'profCogs', 'profPackaging', 'profOtherProd',
+                'profReferralFee', 'profClosingFee', 'profFulfilmentFee', 'profStorageFee',
+                'profAcosPct', 'profTacosPct', 'profCpc', 'profCvr', 'profTargetAcos', 'profDailyBudget',
+                'profReturnRate', 'profReturnCost', 'profRefundLoss', 'profReturnRecovery',
+                'scenPriceSlider', 'scenAcosSlider', 'scenCvrSlider', 'scenCogsSlider',
+                'minTargetMargin', 'projUnits'
+            ];
+
+            allInputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', calculateProfit);
+                    el.addEventListener('change', calculateProfit);
+                }
+            });
+
+            // BUTTON: USE EXAMPLE DATA
+            document.getElementById('btnUseExample').addEventListener('click', function() {
+                document.getElementById('profPrice').value = '1499';
+                document.getElementById('profCogs').value = '450';
+                document.getElementById('profPackaging').value = '15';
+                document.getElementById('profOtherProd').value = '0';
+                document.getElementById('profReferralFee').value = '12';
+                document.getElementById('profClosingFee').value = '25';
+                document.getElementById('profFulfilmentFee').value = '75';
+                document.getElementById('profStorageFee').value = '8';
+                document.getElementById('profAcosPct').value = '20';
+                document.getElementById('profReturnRate').value = '4';
+                document.getElementById('profReturnCost').value = '150';
+                calculateProfit();
+            });
+
+            // BUTTON: RESET
+            document.getElementById('btnResetProf').addEventListener('click', function() {
+                document.getElementById('profPrice').value = '999';
+                document.getElementById('profCogs').value = '400';
+                document.getElementById('profPackaging').value = '10';
+                document.getElementById('profOtherProd').value = '0';
+                document.getElementById('profReferralFee').value = '12';
+                document.getElementById('profClosingFee').value = '25';
+                document.getElementById('profFulfilmentFee').value = '65';
+                document.getElementById('profStorageFee').value = '6';
+                document.getElementById('profAcosPct').value = '20';
+                document.getElementById('profReturnRate').value = '3';
+                document.getElementById('profReturnCost').value = '120';
+                calculateProfit();
+            });
+
+            // BUTTON: DOWNLOAD PDF
+            document.getElementById('btnDownloadPDF').addEventListener('click', function() {
+                document.getElementById('printDate').innerText = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+                window.print();
+            });
+
+            // BUTTON: COPY SUMMARY
+            document.getElementById('btnCopySummary').addEventListener('click', function() {
+                const sp = document.getElementById('profPrice').value;
+                const profit = document.getElementById('profNetProfitVal').innerText;
+                const margin = document.getElementById('profMarginVal').innerText;
+                const beAcos = document.getElementById('ppcBreakEvenAcos').innerText;
+                const targetCpc = document.getElementById('ppcTargetCpcRef').innerText;
+
+                const text = `Amazon India Profit Analysis\n\nSelling Price: ₹${sp}\nEstimated Net Profit: ${profit}\nNet Margin: ${margin}\nBreak-Even ACoS: ${beAcos}\nTarget CPC Reference: ${targetCpc}\n\nCalculated using PPC Growth Expert Amazon Profit Calculator.`;
+
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        this.innerText = 'Copied! ✓';
+                        setTimeout(() => this.innerText = 'Copy Summary 📋', 2000);
+                    });
+                } else {
+                    alert(text);
+                }
+            });
+
+            // INITIAL CALCULATION ON LOAD
+            calculateProfit();
         });
     </script>
 </body>
