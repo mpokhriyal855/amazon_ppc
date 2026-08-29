@@ -9,8 +9,8 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Amazon ACoS Calculator | Calculate Advertising Cost of Sales</title>
-    <meta name="description" content="Calculate your Amazon Advertising Cost of Sales (ACoS) instantly. Enter your ad spend and ad revenue to evaluate advertising efficiency and ROAS.">
+    <title>Amazon ACoS Calculator | Free Amazon PPC Calculator</title>
+    <meta name="description" content="Calculate Amazon ACoS, ROAS and advertising cost per ₹1 of ad sales. Compare your current ACoS with target and break-even levels using this free Amazon PPC calculator.">
     <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-acos-calculator.html">
 
     <!-- FONTS & STYLES -->
@@ -28,16 +28,218 @@
       "@type": "WebApplication",
       "name": "Amazon ACoS Calculator",
       "url": "https://ppcgrowthexpert.com/amazon-acos-calculator.html",
-      "description": "Calculate Amazon Advertising Cost of Sales (ACoS) and ROAS instantly.",
+      "description": "Calculate Amazon Advertising Cost of Sales (ACoS), ROAS, and cost per rupee sale instantly.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All"
     }
     </script>
+
+    <style>
+        /* INLINE STYLES FOR DYNAMIC CALCULATOR ELEMENTS & GAUGE SCALES */
+        .acos-gauge-wrapper {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        .acos-gauge-track {
+            position: relative;
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            margin: 28px 12px 16px 12px;
+        }
+        .acos-gauge-marker {
+            position: absolute;
+            top: -24px;
+            transform: translateX(-50%);
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .acos-gauge-marker::after {
+            content: '';
+            width: 2px;
+            height: 16px;
+            margin-top: 2px;
+            background: currentColor;
+            border-radius: 1px;
+        }
+        .marker-target { color: #0284c7; }
+        .marker-current { color: #2563eb; }
+        .marker-breakeven { color: #d97706; }
+
+        .symptom-pills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .symptom-pill-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #1e293b;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .symptom-pill-btn:hover {
+            border-color: #2563eb;
+            background: #f0f6ff;
+            color: #2563eb;
+        }
+        .symptom-pill-btn.active {
+            border-color: #2563eb;
+            background: #eff6ff;
+            color: #1d4ed8;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+        }
+
+        .driver-diagram-box {
+            background: #0f172a;
+            border-radius: 16px;
+            padding: 24px;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+        .driver-nodes-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0;
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+        }
+        .driver-node {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+        }
+        .driver-node.spend-side { border-color: #3b82f6; }
+        .driver-node.sales-side { border-color: #10b981; }
+        .driver-node.highlight-spend { background: #1e3a8a; color: #60a5fa; border-color: #3b82f6; box-shadow: 0 0 12px rgba(59, 130, 246, 0.4); }
+        .driver-node.highlight-sales { background: #064e3b; color: #34d399; border-color: #10b981; box-shadow: 0 0 12px rgba(16, 185, 129, 0.4); }
+        .driver-arrow { color: #64748b; font-weight: 700; }
+
+        .simulator-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .sim-slider-group {
+            margin-bottom: 16px;
+        }
+        .sim-slider-group label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+        .sim-slider-input {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #cbd5e1;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .decision-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .decision-step {
+            margin-bottom: 16px;
+        }
+        .decision-step-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+        .decision-toggle-group {
+            display: flex;
+            gap: 10px;
+        }
+        .decision-toggle-btn {
+            flex: 1;
+            padding: 8px 14px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .decision-toggle-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        .tooltip-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            color: #334155;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 5px;
+            cursor: help;
+            position: relative;
+        }
+        .tooltip-icon:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0f172a;
+            color: #ffffff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 400;
+            white-space: normal;
+            width: 200px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- BACKGROUND GRID & GLOW (MATCHING INDEX.HTML THEME) -->
+    <!-- BACKGROUND GRID & GLOW -->
     <div class="background-grid"></div>
     <div class="background-glow"></div>
 
@@ -79,6 +281,13 @@
                                 <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Estimate working monthly budget</span></div></a>
                                 <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target ACoS &amp; Bid Calculator</span><span class="mega-item-desc">Estimate practical CPC &amp; bid</span></div></a>
                             </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin &amp; profit</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral breakdown</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage cost</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
                         </div>
                         <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
                     </div>
@@ -98,39 +307,60 @@
     <!-- MAIN PAGE CONTAINER -->
     <div class="resources-page-container">
 
-        <!-- BREADCRUMB -->
+        <!-- 1. BREADCRUMB -->
         <nav class="breadcrumb-nav">
             <a href="index.html">Home</a> /
             <a href="resources.html">Resources</a> /
             <span>ACoS Calculator</span>
         </nav>
 
-        <!-- HERO -->
-        <section class="resources-hero">
+        <!-- 2. CALCULATOR HERO -->
+        <section class="resources-hero" style="padding-bottom:24px;">
             <div class="hero-eyebrow">✦ AMAZON PPC CALCULATOR</div>
             <h1 class="hero-title">Amazon ACoS Calculator</h1>
-            <p class="hero-description">Enter your advertising spend and attributed ad sales to calculate your Amazon Advertising Cost of Sales instantly.</p>
-
+            <p class="hero-description">Calculate your Amazon Advertising Cost of Sales, understand how much advertising spend is required to generate ₹1 of attributed ad sales, and compare your current ACoS with your own profitability and target assumptions.</p>
+            <div style="display:flex; justify-content:center; gap:20px; font-size:13px; font-weight:600; color:#475569; margin-top:12px; flex-wrap:wrap;">
+                <span>✓ Free to use</span>
+                <span>✓ Instant calculation</span>
+                <span>✓ No sign-up required</span>
+            </div>
+            <p style="font-size:12px; color:#64748b; margin-top:10px;">For Amazon Sponsored Products, Sponsored Brands and Sponsored Display performance analysis.</p>
         </section>
 
-        <!-- CALCULATOR APP WRAPPER -->
+        <!-- 3. MAIN CALCULATOR APP WRAPPER -->
         <section class="calculator-app-wrapper">
             <!-- LEFT INPUTS COL -->
             <div class="calc-inputs-col">
-                <h3 style="margin:0 0 10px 0; font-size:18px;">Your Ad Campaign Numbers</h3>
+                <h3 style="margin:0 0 14px 0; font-size:18px;">Your Numbers</h3>
+                
+                <!-- INPUT 1: AD SPEND -->
                 <div class="input-group">
                     <label class="input-label" for="acosSpend">Ad Spend (₹)</label>
-                    <input type="number" id="acosSpend" class="calc-input-field" placeholder="e.g. 5000" min="0" step="any">
-                    <span class="input-hint">Total advertising spend for your selected date range</span>
+                    <input type="number" id="acosSpend" class="calc-input-field" value="25000" placeholder="₹25,000" min="0" step="any">
+                    <span class="input-hint">Total advertising spend for the same reporting period.</span>
                 </div>
+
+                <!-- INPUT 2: AD SALES -->
                 <div class="input-group">
-                    <label class="input-label" for="acosSales">Ad Sales (₹)</label>
-                    <input type="number" id="acosSales" class="calc-input-field" placeholder="e.g. 20000" min="0" step="any">
-                    <span class="input-hint">Total sales attributed to Amazon PPC ads</span>
+                    <label class="input-label" for="acosSales">
+                        Attributed Ad Sales (₹)
+                        <span class="tooltip-icon" data-tooltip="Sales attributed to your Amazon advertising campaigns for the selected period.">?</span>
+                    </label>
+                    <input type="number" id="acosSales" class="calc-input-field" value="100000" placeholder="₹1,00,000" min="0" step="any">
+                    <span class="input-hint">Use advertising-attributed sales, not total account sales.</span>
                 </div>
-                <div class="calc-action-row">
-                    <button type="button" class="btn-calc-submit">Calculate ACoS →</button>
-                    <button type="button" class="btn-calc-reset">Reset</button>
+
+                <!-- INPUT 3: TOTAL SALES (OPTIONAL) -->
+                <div class="input-group">
+                    <label class="input-label" for="acosTotalSales">Total Amazon Sales (₹) — Optional</label>
+                    <input type="number" id="acosTotalSales" class="calc-input-field" value="250000" placeholder="₹2,50,000" min="0" step="any">
+                    <span class="input-hint">Enter total Amazon sales if you also want to calculate TACoS and paid-vs-non-ad sales contribution.</span>
+                </div>
+
+                <div class="calc-action-row" style="margin-top:20px;">
+                    <button type="button" class="btn-calc-submit" id="btnCalcAcos">Calculate ACoS →</button>
+                    <button type="button" class="btn-calc-reset" id="btnResetAcos">Reset</button>
+                    <button type="button" class="btn-calc-reset" id="btnCopyResult" style="background:#f1f5f9; color:#334155; border-color:#cbd5e1;">Copy Result 📋</button>
                 </div>
             </div>
 
@@ -138,240 +368,1197 @@
             <div class="calc-results-col" aria-live="polite">
                 <div class="result-main-box">
                     <div class="result-main-label">YOUR ACOS</div>
-                    <div class="result-main-value" id="acosResultVal">0.00%</div>
-                    <div class="result-main-sub" id="acosSubText">Enter ad spend and ad sales to calculate ACoS.</div>
+                    <div class="result-main-value" id="acosResultVal">25.00%</div>
+                    <div class="result-main-sub" id="acosSubText">Ad Spend ÷ Attributed Ad Sales × 100</div>
                 </div>
 
                 <div class="result-metrics-grid">
                     <div class="mini-stat-card">
                         <div class="mini-stat-label">EQUIVALENT ROAS</div>
-                        <div class="mini-stat-val" id="acosRoasVal">0.00x</div>
+                        <div class="mini-stat-val" id="acosRoasVal">4.00x</div>
                     </div>
                     <div class="mini-stat-card">
-                        <div class="mini-stat-label">REMAINING REVENUE</div>
-                        <div class="mini-stat-val" id="acosRemVal">100.00%</div>
+                        <div class="mini-stat-label">AD COST / ₹1 AD SALE</div>
+                        <div class="mini-stat-val" id="acosCostPerSaleVal">₹0.25</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">TACOS (OPTIONAL)</div>
+                        <div class="mini-stat-val" id="acosTacosVal">10.00%</div>
+                    </div>
+                    <div class="mini-stat-card">
+                        <div class="mini-stat-label">NON-AD / OTHER SALES</div>
+                        <div class="mini-stat-val" id="acosNonAdSalesVal">₹1,50,000</div>
                     </div>
                 </div>
 
-                <div class="result-visual-bar-wrapper">
-                    <div class="visual-bar-labels">
-                        <span>Ad Spend Share</span>
-                        <span>Remaining Sales Revenue</span>
-                    </div>
-                    <div class="visual-bar-track">
-                        <div class="visual-bar-fill-ad" id="acosBarAd" style="width:0%;"></div>
-                        <div class="visual-bar-fill-rem" id="acosBarRem" style="width:100%;"></div>
-                    </div>
-                    <div style="font-size:11px; color:#64748b; margin-top:6px;">Remaining revenue is before COGS, Amazon fees, shipping and overhead.</div>
-                </div>
-
+                <!-- DYNAMIC RESULT DESCRIPTION -->
                 <div class="result-guidance-box" id="acosAdviceBox">
-                    <div class="result-guidance-title">What does this mean?</div>
-                    Enter your campaign spend and revenue above to see your exact percentage advertising cost.
+                    <div class="result-guidance-title">Result Summary</div>
+                    <div id="acosDynamicDescText">
+                        Your Amazon ads spent ₹25,000 to generate ₹1,00,000 in attributed ad sales. That gives you an ACoS of 25.00%, equivalent to a 4.00x ROAS. In simple terms, you spent ₹0.25 in advertising for every ₹1 of attributed ad revenue.<br><br>
+                        Whether 25% is profitable or appropriate cannot be determined from ACoS alone. Compare it with your product contribution margin, break-even ACoS and campaign objective.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- EDUCATIONAL CONTENT -->
-        <article class="calc-educational-prose">
-            <h2>What Is Amazon ACoS?</h2>
-            <p><strong>Advertising Cost of Sales (ACoS)</strong> is a core metric used to measure the efficiency of your Amazon PPC campaigns. It represents the percentage of attributed ad revenue spent on advertising.</p>
-
-            <h2>How Is ACoS Calculated?</h2>
-            <p>The formula for Amazon ACoS is:</p>
-            <div class="formula-code-box">
-                ACoS = (Total Ad Spend ÷ Total Attributed Ad Sales) × 100
+        <!-- 4. REVENUE BREAKDOWN VISUAL -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <h3 style="margin:0 0 10px 0; font-size:18px;">Where Does ACoS Sit Inside ₹1 of Ad Revenue?</h3>
+                <div class="result-visual-bar-wrapper" style="background:#ffffff; border:1px solid #e2e8f0; padding:20px; border-radius:16px;">
+                    <div class="visual-bar-labels" style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:8px;">
+                        <span id="barAdLabel" style="color:#2563eb;">Advertising Spend: ₹0.25 (25%)</span>
+                        <span id="barRemLabel" style="color:#0284c7;">Remaining Sales Revenue: ₹0.75 (75%)</span>
+                    </div>
+                    <div class="visual-bar-track" style="height:14px; background:#e2e8f0; border-radius:7px; overflow:hidden; display:flex;">
+                        <div class="visual-bar-fill-ad" id="acosBarAd" style="width:25%; background:#2563eb; transition:width 0.4s ease;"></div>
+                        <div class="visual-bar-fill-rem" id="acosBarRem" style="width:75%; background:#0284c7; transition:width 0.4s ease;"></div>
+                    </div>
+                    <div id="barNoteText" style="font-size:12.5px; color:#64748b; margin-top:10px;">
+                        <strong>₹0.75 is remaining revenue</strong> before product cost, Amazon fees, fulfilment, returns, tax and other expenses. It is NOT profit.
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <h2>What Is a Good ACoS on Amazon?</h2>
-            <p>There is no single universal "good" ACoS. A healthy target depends entirely on your product margin, strategy, and business goals:</p>
-            <ul>
-                <li><strong>Profitability Target:</strong> Keep ACoS below your Break-Even ACoS threshold.</li>
-                <li><strong>Product Launch Target:</strong> Accept higher ACoS (40%–80%) to generate sales velocity and review momentum.</li>
-                <li><strong>Brand Defense Target:</strong> Maintain lower ACoS (10%–20%) on high-converting branded search terms.</li>
-            </ul>
-            <p>Read our full guide on <a href="blog-reduce-amazon-acos.html" style="color:#0284c7; font-weight:700;">How to Reduce Amazon ACoS Without Killing Sales</a>.</p>
-        </article>
+        <!-- 5. TARGET ACOS PLANNER -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <div class="section-header" style="text-align:left; margin-bottom:16px;">
+                    <div class="section-eyebrow">SCENARIO ANALYSIS</div>
+                    <h2 class="section-title" style="font-size:22px;">What Would It Take to Reach Your Target ACoS?</h2>
+                    <p style="font-size:14px; color:#475569; margin:4px 0 0 0;">Enter the ACoS you want to evaluate and see what would need to change if either spend or attributed sales remained constant.</p>
+                </div>
 
-        <!-- RELATED CALCULATORS -->
-        <section class="related-calculators-section">
+                <div style="display:grid; grid-template-columns: 1fr 2fr; gap:20px; align-items:start;">
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; padding:20px; border-radius:16px;">
+                        <label class="input-label" for="targetAcosInput">Target ACoS (%)</label>
+                        <input type="number" id="targetAcosInput" class="calc-input-field" value="20" min="0.1" max="500" step="any">
+                        <span class="input-hint">Enter your desired campaign target ACoS percentage.</span>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                        <!-- SCENARIO A -->
+                        <div class="mini-stat-card" style="padding:16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px;">
+                            <div class="mini-stat-label" style="color:#0284c7;">IF SPEND STAYS ₹25,000</div>
+                            <div style="font-size:12px; color:#64748b; margin-top:4px;">Ad Sales Needed:</div>
+                            <div class="mini-stat-val" id="targetReqSalesVal" style="font-size:20px; color:#0f172a; margin:4px 0;">₹1,25,000</div>
+                            <div style="font-size:12px; font-weight:600; color:#0284c7;" id="targetAddSalesVal">+₹25,000 ad sales needed</div>
+                        </div>
+
+                        <!-- SCENARIO B -->
+                        <div class="mini-stat-card" style="padding:16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px;">
+                            <div class="mini-stat-label" style="color:#2563eb;">IF SALES STAY ₹1,00,000</div>
+                            <div style="font-size:12px; color:#64748b; margin-top:4px;">Max Allowed Spend:</div>
+                            <div class="mini-stat-val" id="targetMaxSpendVal" style="font-size:20px; color:#0f172a; margin:4px 0;">₹20,000</div>
+                            <div style="font-size:12px; font-weight:600; color:#2563eb;" id="targetSpendDiffVal">-₹5,000 spend reduction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size:12px; color:#64748b; margin-top:14px; background:#f1f5f9; padding:12px; border-radius:10px;">
+                    <strong>Important Note:</strong> These are mathematical scenarios, not instructions to blindly cut spend or force more sales. In practice, ACoS can improve through changes in CPC, conversion rate, targeting, bids, placements and listing performance.
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. OPTIONAL BREAK-EVEN COMPARISON & DYNAMIC 3-MARKER GAUGE -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <details class="calc-expandable-panel" open style="background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:20px;">
+                    <summary style="font-size:18px; font-weight:700; color:#0f172a; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                        <span>Compare With Break-Even ACoS</span>
+                        <span style="font-size:14px; color:#2563eb;">▾ Expand / Collapse</span>
+                    </summary>
+
+                    <div style="margin-top:16px; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:12px;">
+                        <div class="input-group">
+                            <label class="input-label" for="bePrice">Selling Price (₹)</label>
+                            <input type="number" id="bePrice" class="calc-input-field" value="1000" min="0" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="beCogs">Product Cost / COGS (₹)</label>
+                            <input type="number" id="beCogs" class="calc-input-field" value="300" min="0" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="beAmzFees">Amazon Fees (₹)</label>
+                            <input type="number" id="beAmzFees" class="calc-input-field" value="180" min="0" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="beShipping">Fulfilment / Shipping (₹)</label>
+                            <input type="number" id="beShipping" class="calc-input-field" value="120" min="0" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label" for="beOtherCost">Other Variable Cost (₹)</label>
+                            <input type="number" id="beOtherCost" class="calc-input-field" value="0" min="0" step="any">
+                        </div>
+                    </div>
+
+                    <!-- BREAK-EVEN OUTPUT METRICS -->
+                    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:16px;">
+                        <div class="mini-stat-card" style="background:#f8fafc;">
+                            <div class="mini-stat-label">CONTRIBUTION MARGIN</div>
+                            <div class="mini-stat-val" id="beContribVal" style="font-size:18px;">₹400 (40.00%)</div>
+                        </div>
+                        <div class="mini-stat-card" style="background:#f8fafc;">
+                            <div class="mini-stat-label">BREAK-EVEN ACOS</div>
+                            <div class="mini-stat-val" id="beAcosVal" style="font-size:18px; color:#d97706;">40.00%</div>
+                        </div>
+                        <div class="mini-stat-card" style="background:#f8fafc;">
+                            <div class="mini-stat-label">PROFIT BUFFER</div>
+                            <div class="mini-stat-val" id="beBufferVal" style="font-size:18px; color:#10b981;">+15.00 percentage pts</div>
+                        </div>
+                    </div>
+
+                    <!-- DYNAMIC 3-MARKER SCALE VISUAL -->
+                    <div class="acos-gauge-wrapper">
+                        <div style="font-size:12px; font-weight:700; color:#475569; text-transform:uppercase;">ACoS Benchmark Alignment Scale</div>
+                        <div class="acos-gauge-track" id="acosGaugeTrack">
+                            <div class="acos-gauge-marker marker-target" id="markerTarget" style="left:40%;">
+                                <span>Target: 20%</span>
+                            </div>
+                            <div class="acos-gauge-marker marker-current" id="markerCurrent" style="left:50%;">
+                                <span>Current: 25%</span>
+                            </div>
+                            <div class="acos-gauge-marker marker-breakeven" id="markerBreakeven" style="left:80%;">
+                                <span>Break-Even: 40%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size:13px; color:#334155; margin-top:14px; background:#eff6ff; border-left:4px solid #2563eb; padding:12px; border-radius:0 8px 8px 0;" id="beInterpretationBox">
+                        Based only on the variable costs entered, your current ACoS (25.00%) is below the calculated break-even level (40.00%). This simplified break-even calculation does not automatically include every tax, return, overhead or business expense unless entered.
+                    </div>
+                    <div style="margin-top:10px;">
+                        <a href="amazon-break-even-acos-calculator.html" style="font-size:13px; font-weight:700; color:#2563eb; text-decoration:none;">Open Full Break-Even ACoS Calculator →</a>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- 7. INTERACTIVE ACOS DIAGNOSTIC -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <div class="section-header" style="text-align:left; margin-bottom:12px;">
+                    <div class="section-eyebrow">CAMPAIGN DIAGNOSTICS</div>
+                    <h2 class="section-title" style="font-size:22px;">Why Might My ACoS Be High?</h2>
+                    <p style="font-size:14px; color:#475569; margin-top:4px;">Choose the pattern that most closely matches your campaign to see targeted diagnostic steps.</p>
+                </div>
+
+                <div class="symptom-pills-grid" id="symptomPillsContainer">
+                    <button class="symptom-pill-btn active" data-diag="1">Lots of clicks, few orders <span>→</span></button>
+                    <button class="symptom-pill-btn" data-diag="2">CPC is increasing <span>→</span></button>
+                    <button class="symptom-pill-btn" data-diag="3">Sales coming but ACoS high <span>→</span></button>
+                    <button class="symptom-pill-btn" data-diag="4">One campaign spends too much <span>→</span></button>
+                    <button class="symptom-pill-btn" data-diag="5">Search terms look irrelevant <span>→</span></button>
+                    <button class="symptom-pill-btn" data-diag="6">Differs by placement <span>→</span></button>
+                    <button class="symptom-pill-btn" data-diag="7">Traffic relevant, weak CVR <span>→</span></button>
+                </div>
+
+                <!-- DIAGNOSTIC OUTPUT DETAIL PANEL -->
+                <div class="result-guidance-box" id="diagOutputBox" style="margin-top:16px; background:#ffffff; border:1px solid #cbd5e1;">
+                    <div class="result-guidance-title" id="diagTitle" style="color:#0f172a; font-size:16px;">Primary Area to Investigate: Conversion Rate</div>
+                    <div id="diagReviewChecklist" style="font-size:13.5px; color:#334155; margin-top:8px;">
+                        <strong>Review sequence:</strong> Search relevance → Product page → Price → Reviews → Offer
+                    </div>
+                    <div id="diagExplanation" style="font-size:13px; color:#64748b; margin-top:8px;">
+                        If traffic is relevant but orders are weak, cutting bids alone may reduce traffic without fixing the core conversion bottleneck on your product page.
+                    </div>
+                    <div id="diagRecommendedTool" style="margin-top:12px; font-weight:700;">
+                        <a href="amazon-ppc-conversion-rate-calculator.html" style="color:#2563eb; text-decoration:none;">Open PPC Conversion Rate Calculator →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. ACOS DRIVER MAP -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <div class="section-header" style="text-align:left; margin-bottom:12px;">
+                    <div class="section-eyebrow">INTERACTIVE ARCHITECTURE</div>
+                    <h2 class="section-title" style="font-size:22px;">What Actually Moves ACoS?</h2>
+                </div>
+
+                <div class="driver-diagram-box">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                        <span style="font-size:13px; font-weight:700; color:#94a3b8;">SYSTEM RELATIONSHIP MAP</span>
+                        <div style="display:flex; gap:8px;">
+                            <button type="button" class="btn-calc-reset" id="btnDriverAll" style="padding:6px 12px; font-size:11px; background:#334155; color:#ffffff; border-color:#475569;">Show All</button>
+                            <button type="button" class="btn-calc-reset" id="btnDriverSpend" style="padding:6px 12px; font-size:11px; background:#1e3a8a; color:#60a5fa; border-color:#3b82f6;">Spend-Side Drivers</button>
+                            <button type="button" class="btn-calc-reset" id="btnDriverSales" style="padding:6px 12px; font-size:11px; background:#064e3b; color:#34d399; border-color:#10b981;">Sales-Side Drivers</button>
+                        </div>
+                    </div>
+
+                    <div class="driver-nodes-row">
+                        <div class="driver-node spend-side" id="nodeQuery">SEARCH TERM QUALITY</div>
+                        <span class="driver-arrow">↓</span>
+                        <div class="driver-node spend-side" id="nodeBids">BIDS</div>
+                        <span class="driver-arrow">→</span>
+                        <div class="driver-node spend-side" id="nodeCpc">CPC</div>
+                        <span class="driver-arrow">→</span>
+                        <div class="driver-node spend-side" id="nodeSpend">AD SPEND</div>
+                        <span class="driver-arrow">↓</span>
+                        <div class="driver-node sales-side" id="nodeTraffic">TRAFFIC</div>
+                        <span class="driver-arrow">→</span>
+                        <div class="driver-node sales-side" id="nodePage">PRODUCT PAGE</div>
+                        <span class="driver-arrow">→</span>
+                        <div class="driver-node sales-side" id="nodeCvr">CONVERSION</div>
+                        <span class="driver-arrow">→</span>
+                        <div class="driver-node sales-side" id="nodeSales">AD SALES</div>
+                        <span class="driver-arrow">↓</span>
+                        <div class="driver-node" id="nodeAcos" style="border-color:#2563eb; color:#60a5fa; font-weight:700;">ACOS = SPEND / SALES</div>
+                    </div>
+
+                    <div style="font-size:12.5px; color:#cbd5e1; line-height:1.5; border-top:1px solid #334155; padding-top:14px; margin-top:14px;">
+                        <strong>Key Takeaway:</strong> ACoS can improve from either side — by reducing inefficient ad spend OR by generating more attributed sales from relevant traffic. Simply lowering bids is only half the equation.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. SCENARIO SIMULATOR -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <div class="section-header" style="text-align:left; margin-bottom:12px;">
+                    <div class="section-eyebrow">SIMULATION MODEL</div>
+                    <h2 class="section-title" style="font-size:22px;">See How Changes Affect ACoS</h2>
+                    <p style="font-size:14px; color:#475569; margin-top:4px;">Adjust spend and sales sliders to model simulated performance shifts in real-time.</p>
+                </div>
+
+                <div class="simulator-card">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
+                        <div>
+                            <div class="sim-slider-group">
+                                <label for="simSpendSlider">
+                                    <span>Advertising Spend Change</span>
+                                    <span id="simSpendLabel" style="color:#2563eb;">0%</span>
+                                </label>
+                                <input type="range" id="simSpendSlider" class="sim-slider-input" min="-30" max="30" value="0" step="5">
+                            </div>
+                            <div class="sim-slider-group">
+                                <label for="simSalesSlider">
+                                    <span>Attributed Sales Change</span>
+                                    <span id="simSalesLabel" style="color:#0284c7;">0%</span>
+                                </label>
+                                <input type="range" id="simSalesSlider" class="sim-slider-input" min="-30" max="50" value="0" step="5">
+                            </div>
+                        </div>
+
+                        <!-- SIMULATION BEFORE / AFTER DISPLAY -->
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px; display:flex; flex-direction:column; justify-content:center;">
+                            <div style="display:flex; justify-content:space-between; text-align:center; font-size:13px;">
+                                <div>
+                                    <div style="color:#64748b; font-weight:700;">CURRENT</div>
+                                    <div style="font-size:18px; font-weight:800; color:#0f172a; margin-top:4px;" id="simCurrAcos">25.00%</div>
+                                    <div style="font-size:12px; color:#64748b;" id="simCurrRoas">4.00x ROAS</div>
+                                </div>
+                                <div style="font-size:20px; color:#cbd5e1; align-self:center;">→</div>
+                                <div>
+                                    <div style="color:#2563eb; font-weight:700;">SIMULATED</div>
+                                    <div style="font-size:18px; font-weight:800; color:#2563eb; margin-top:4px;" id="simNewAcos">25.00%</div>
+                                    <div style="font-size:12px; color:#2563eb;" id="simNewRoas">4.00x ROAS</div>
+                                </div>
+                            </div>
+                            <div style="font-size:11.5px; color:#64748b; margin-top:12px; text-align:center;" id="simSummaryText">
+                                Simulated Spend: ₹25,000 | Simulated Sales: ₹1,00,000
+                            </div>
+                        </div>
+                    </div>
+                    <div style="font-size:11.5px; color:#64748b; margin-top:12px;">
+                        *Scenario results are mathematical illustrations and do not predict future advertising performance.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. HOW TO IMPROVE ACOS -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <div class="section-header" style="text-align:left; margin-bottom:16px;">
+                    <div class="section-eyebrow">OPTIMIZATION STRATEGY</div>
+                    <h2 class="section-title" style="font-size:22px;">How Can I Improve My Amazon ACoS?</h2>
+                    <p style="font-size:14px; color:#475569; margin-top:4px;">Improving ACoS means improving the relationship between advertising spend and attributed sales. The right action depends on where efficiency is being lost.</p>
+                </div>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; padding:18px; border-radius:14px;">
+                        <h4 style="margin:0 0 8px 0; color:#0f172a; font-size:15px;">1. Traffic Quality</h4>
+                        <ul style="margin:0; padding-left:18px; font-size:13px; color:#475569; line-height:1.6;">
+                            <li>Search terms audit</li>
+                            <li>Keyword relevance check</li>
+                            <li>Product targeting alignment</li>
+                            <li>Negative keyword expansion</li>
+                        </ul>
+                        <p style="font-size:12px; color:#64748b; margin-top:10px;">Stop paying for traffic that has little realistic chance of purchasing your product.</p>
+                    </div>
+
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; padding:18px; border-radius:14px;">
+                        <h4 style="margin:0 0 8px 0; color:#0f172a; font-size:15px;">2. CPC &amp; Bids</h4>
+                        <ul style="margin:0; padding-left:18px; font-size:13px; color:#475569; line-height:1.6;">
+                            <li>Actual CPC vs Bid alignment</li>
+                            <li>Bid adjustments by match type</li>
+                            <li>Placement modifier testing</li>
+                            <li>Target-level performance bids</li>
+                        </ul>
+                        <p style="font-size:12px; color:#64748b; margin-top:10px;">Reduce excessive click costs where performance does not justify them, while protecting high-value traffic.</p>
+                    </div>
+
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; padding:18px; border-radius:14px;">
+                        <h4 style="margin:0 0 8px 0; color:#0f172a; font-size:15px;">3. Conversion Rate</h4>
+                        <ul style="margin:0; padding-left:18px; font-size:13px; color:#475569; line-height:1.6;">
+                            <li>Main image optimization</li>
+                            <li>Title &amp; bullet clarity</li>
+                            <li>Review rating &amp; count health</li>
+                            <li>Competitive pricing &amp; coupons</li>
+                        </ul>
+                        <p style="font-size:12px; color:#64748b; margin-top:10px;">Relevant paid traffic becomes expensive when the product page cannot convert it efficiently.</p>
+                    </div>
+
+                    <div style="background:#ffffff; border:1px solid #e2e8f0; padding:18px; border-radius:14px;">
+                        <h4 style="margin:0 0 8px 0; color:#0f172a; font-size:15px;">4. Budget Allocation</h4>
+                        <ul style="margin:0; padding-left:18px; font-size:13px; color:#475569; line-height:1.6;">
+                            <li>Campaign profitability scaling</li>
+                            <li>Profitable target isolation</li>
+                            <li>Budget-limited winner expansion</li>
+                            <li>High-spend weak area trimming</li>
+                        </ul>
+                        <p style="font-size:12px; color:#64748b; margin-top:10px;">Move available budget toward stronger opportunities instead of treating every campaign equally.</p>
+                    </div>
+                </div>
+
+                <div style="background:#fffbebf0; border:1px solid #fde68a; border-left:4px solid #d97706; padding:16px; border-radius:0 12px 12px 0; margin-top:20px;">
+                    <h4 style="margin:0 0 4px 0; color:#92400e; font-size:14px;">LOWER ACOS IS NOT ALWAYS THE ONLY GOAL</h4>
+                    <p style="margin:0; font-size:13px; color:#78350f;">A campaign with a slightly higher ACoS may still create more valuable sales or support a strategic growth objective. Evaluate ACoS together with margin, ROAS, TACoS, conversion and total sales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. ACOS VS ROAS VS TACOS -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <div class="section-header" style="text-align:left; margin-bottom:14px;">
+                    <div class="section-eyebrow">METRIC COMPARISON</div>
+                    <h2 class="section-title" style="font-size:22px;">ACoS, ROAS and TACoS — What's the Difference?</h2>
+                </div>
+
+                <div style="overflow-x:auto;">
+                    <table style="width:100%; border-collapse:collapse; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; font-size:13.5px;">
+                        <thead>
+                            <tr style="background:#f8fafc; border-bottom:1px solid #e2e8f0; text-align:left;">
+                                <th style="padding:12px 16px; color:#0f172a;">Metric</th>
+                                <th style="padding:12px 16px; color:#0f172a;">Answers</th>
+                                <th style="padding:12px 16px; color:#0f172a;">Formula</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:12px 16px; font-weight:700; color:#2563eb;">ACoS</td>
+                                <td style="padding:12px 16px; color:#334155;">How much ad spend was required relative to attributed ad sales?</td>
+                                <td style="padding:12px 16px; font-family:'DM Mono',monospace; color:#475569;">(Spend ÷ Ad Sales) × 100</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #f1f5f9;">
+                                <td style="padding:12px 16px; font-weight:700; color:#0284c7;">ROAS</td>
+                                <td style="padding:12px 16px; color:#334155;">How much attributed ad revenue was generated per ₹1 spent?</td>
+                                <td style="padding:12px 16px; font-family:'DM Mono',monospace; color:#475569;">Ad Sales ÷ Spend</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:12px 16px; font-weight:700; color:#10b981;">TACoS</td>
+                                <td style="padding:12px 16px; color:#334155;">How large is advertising spend relative to total Amazon sales?</td>
+                                <td style="padding:12px 16px; font-family:'DM Mono',monospace; color:#475569;">(Spend ÷ Total Sales) × 100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:10px;">
+                    <span style="font-size:12.5px; color:#64748b;">ACoS and ROAS describe the same ad-spend/ad-sales relationship from opposite directions. TACoS introduces total sales for a wider business view.</span>
+                    <div style="display:flex; gap:14px;">
+                        <a href="amazon-roas-calculator.html" style="font-size:13px; font-weight:700; color:#2563eb; text-decoration:none;">Open ROAS Calculator →</a>
+                        <a href="amazon-tacos-calculator.html" style="font-size:13px; font-weight:700; color:#2563eb; text-decoration:none;">Open TACoS Calculator →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. FORMULA SECTION -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <h3 style="margin:0 0 10px 0; font-size:18px;">ACoS Formula</h3>
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
+                    <div style="font-family:'DM Mono',monospace; font-size:15px; font-weight:700; color:#0f172a;">
+                        ACoS = (Ad Spend ÷ Ad Sales) × 100
+                    </div>
+                    <div style="font-size:13px; color:#475569; margin-top:10px;">
+                        <strong>Worked Example:</strong><br>
+                        Ad Spend = ₹15,000 | Ad Sales = ₹60,000<br>
+                        ACoS = (15,000 ÷ 60,000) × 100 = <strong>25%</strong><br>
+                        ROAS = 60,000 ÷ 15,000 = <strong>4.0x</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. WHAT IS A GOOD AMAZON ACOS? -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <h3 style="margin:0 0 10px 0; font-size:18px;">What Is a Good Amazon ACoS?</h3>
+                <p style="font-size:14px; color:#334155; line-height:1.6;">
+                    There is no single ACoS percentage that is good for every Amazon seller. The appropriate level depends on your contribution margin, product price, category competitiveness, conversion rate, product lifecycle, campaign objective, and growth strategy.
+                </p>
+                <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:12px; padding:16px; margin-top:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                    <span style="font-size:14px; font-weight:700; color:#1e40af;">The more useful benchmark is your own break-even ACoS.</span>
+                    <a href="amazon-break-even-acos-calculator.html" class="btn-calc-submit" style="padding:8px 16px; font-size:13px; text-decoration:none;">Calculate Break-Even ACoS →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. ACOS DECISION FRAMEWORK -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%;">
+                <div class="section-header" style="text-align:left; margin-bottom:14px;">
+                    <div class="section-eyebrow">DECISION ARCHITECTURE</div>
+                    <h2 class="section-title" style="font-size:22px;">What Should I Do With My ACoS Result?</h2>
+                </div>
+
+                <div class="decision-card">
+                    <div class="decision-step">
+                        <div class="decision-step-title">1. Do you know your Break-Even ACoS?</div>
+                        <div class="decision-toggle-group">
+                            <button type="button" class="decision-toggle-btn active" id="decQ1Yes">Yes, I know it</button>
+                            <button type="button" class="decision-toggle-btn" id="decQ1No">No, I don't</button>
+                        </div>
+                    </div>
+
+                    <div class="decision-step" id="decStep2">
+                        <div class="decision-step-title">2. Is your current ACoS above Break-Even?</div>
+                        <div class="decision-toggle-group">
+                            <button type="button" class="decision-toggle-btn" id="decQ2Yes">Yes (Higher than margin)</button>
+                            <button type="button" class="decision-toggle-btn active" id="decQ2No">No (Lower than margin)</button>
+                        </div>
+                    </div>
+
+                    <div class="decision-step" id="decStep3">
+                        <div class="decision-step-title">3. Is the campaign meeting its business objective?</div>
+                        <div class="decision-toggle-group">
+                            <button type="button" class="decision-toggle-btn active" id="decQ3Yes">Yes, meeting goals</button>
+                            <button type="button" class="decision-toggle-btn" id="decQ3No">No, underperforming</button>
+                        </div>
+                    </div>
+
+                    <!-- DECISION RECOMMENDATION BOX -->
+                    <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:16px; margin-top:16px;" id="decOutputBox">
+                        <div style="font-size:12px; font-weight:700; color:#2563eb; text-transform:uppercase;">Contextual Recommendation</div>
+                        <div style="font-size:14px; font-weight:700; color:#0f172a; margin-top:4px;" id="decRecTitle">Protect &amp; Test Scaling Carefully</div>
+                        <div style="font-size:13px; color:#475569; margin-top:6px;" id="decRecDesc">
+                            Your ACoS is currently below break-even and meeting strategic objectives. Maintain high-performing target bids and test careful budget expansion on profitable keywords.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. FINAL TAKEAWAY SECTION -->
+        <section class="calculator-app-wrapper" style="margin-top:28px;">
+            <div style="width:100%; text-align:center; background:#ffffff; border:1px solid #e2e8f0; border-radius:16px; padding:28px;">
+                <div class="hero-eyebrow">FINAL TAKEAWAY</div>
+                <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin:8px 0 12px 0;">Don't Optimize ACoS in Isolation</h2>
+                <p style="font-size:14.5px; color:#475569; max-width:760px; margin:0 auto 20px auto; line-height:1.6;">
+                    ACoS tells you how much advertising spend was required relative to attributed ad sales. It does not, by itself, tell you whether the campaign is profitable, scalable or strategically valuable.
+                </p>
+
+                <div style="display:flex; justify-content:center; align-items:center; gap:10px; font-family:'DM Mono',monospace; font-size:13px; font-weight:700; color:#0284c7; flex-wrap:wrap; background:#f8fafc; padding:14px; border-radius:12px; max-width:800px; margin:0 auto 16px auto;">
+                    <span>ACoS</span> <span>+</span>
+                    <span>ROAS</span> <span>+</span>
+                    <span>BREAK-EVEN ACOS</span> <span>+</span>
+                    <span>CONVERSION</span> <span>+</span>
+                    <span>TACOS</span> <span>=</span>
+                    <span style="color:#2563eb;">BETTER PPC DECISIONS</span>
+                </div>
+
+                <p style="font-size:14px; font-weight:700; color:#0f172a; margin:0;">
+                    The goal isn't simply the lowest possible ACoS. The goal is advertising efficiency that supports profitable, sustainable Amazon growth.
+                </p>
+            </div>
+        </section>
+
+        <!-- 16. RELATED CALCULATORS -->
+        <section class="related-calculators-section" style="margin-top:40px;">
             <div class="section-header">
                 <div class="section-eyebrow">RELATED TOOLS</div>
                 <h2 class="section-title">Explore Related PPC Calculators</h2>
             </div>
             <div class="calculators-grid">
-                <a href="amazon-roas-calculator.html" class="calc-card">
-                    <div class="calc-card-top">
-                        <div class="calc-card-header"><div class="calc-card-icon">🚀</div><span class="calc-card-category">RETURN</span></div>
-                        <h3 class="calc-card-title">Amazon ROAS Calculator</h3>
-                        <p class="calc-card-desc">Calculate return on ad spend per ₹1 spent.</p>
-                    </div>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate ROAS →</span></div>
-                </a>
                 <a href="amazon-break-even-acos-calculator.html" class="calc-card">
                     <div class="calc-card-top">
                         <div class="calc-card-header"><div class="calc-card-icon">⚖️</div><span class="calc-card-category">PROFITABILITY</span></div>
                         <h3 class="calc-card-title">Break-Even ACoS Calculator</h3>
-                        <p class="calc-card-desc">Find your profit margin limit before ad spend eats profits.</p>
+                        <p class="calc-card-desc">Find the ACoS level your product economics can support.</p>
                     </div>
-                    <div class="calc-card-footer"><span class="calc-btn-link">Find Break-Even ACoS →</span></div>
+                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate Break-Even ACoS →</span></div>
                 </a>
+
+                <a href="amazon-advertising-roi-calculator.html" class="calc-card">
+                    <div class="calc-card-top">
+                        <div class="calc-card-header"><div class="calc-card-icon">💸</div><span class="calc-card-category">NET RETURN</span></div>
+                        <h3 class="calc-card-title">Amazon Advertising ROI</h3>
+                        <p class="calc-card-desc">Go beyond revenue efficiency and examine advertising return after product economics.</p>
+                    </div>
+                    <div class="calc-card-footer"><span class="calc-btn-link">Calculate Advertising ROI →</span></div>
+                </a>
+
                 <a href="amazon-tacos-calculator.html" class="calc-card">
                     <div class="calc-card-top">
                         <div class="calc-card-header"><div class="calc-card-icon">📈</div><span class="calc-card-category">ACCOUNT HEALTH</span></div>
-                        <h3 class="calc-card-title">Amazon TACoS Calculator</h3>
-                        <p class="calc-card-desc">Measure ad spend against total brand revenue on Amazon.</p>
+                        <h3 class="calc-card-title">TACoS Calculator</h3>
+                        <p class="calc-card-desc">Compare advertising spend with total Amazon sales.</p>
                     </div>
                     <div class="calc-card-footer"><span class="calc-btn-link">Calculate TACoS →</span></div>
                 </a>
             </div>
         </section>
 
-        <!-- FAQ ACCORDION -->
-        <section class="faq-section">
+        <!-- 17. SHORT EDUCATIONAL CONTENT -->
+        <article class="calc-educational-prose" style="margin-top:40px;">
+            <h2>What Is Amazon ACoS?</h2>
+            <p>ACoS stands for Advertising Cost of Sales. It measures advertising spend as a percentage of sales attributed to advertising.</p>
+
+            <h2>Why Does ACoS Increase?</h2>
+            <ul>
+                <li>CPC rises due to increased bid competition</li>
+                <li>Conversion rate falls due to listing or stock issues</li>
+                <li>Irrelevant traffic increases through broad targeting leakage</li>
+                <li>Placement modifiers push top-of-search bids excessively high</li>
+                <li>Listing competitiveness weakens relative to category peers</li>
+                <li>Budget shifts toward unproven or lower-intent keywords</li>
+            </ul>
+
+            <h2>Is Lower ACoS Always Better?</h2>
+            <p>No. Lower ACoS improves advertising efficiency mathematically, but the business impact depends on sales volume, margin and campaign objective.</p>
+        </article>
+
+        <!-- 18. FAQ ACCORDION -->
+        <section class="faq-section" style="margin-top:40px;">
             <div class="section-header">
                 <div class="section-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
                 <h2 class="section-title">ACoS Calculator FAQs</h2>
             </div>
             <div class="faq-accordion-list">
                 <details class="faq-item">
-                    <summary>What does ACoS stand for on Amazon? <span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">ACoS stands for Advertising Cost of Sales. It indicates what percentage of your direct advertising revenue was spent on PPC ad clicks.</div>
+                    <summary>What does Amazon ACoS mean? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">ACoS (Advertising Cost of Sales) represents the percentage of attributed ad sales spent on advertising. For example, spending ₹25 to generate ₹100 in ad sales equals a 25% ACoS.</div>
                 </details>
+
                 <details class="faq-item">
-                    <summary>How is ACoS different from ROAS? <span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">ACoS is expressed as an inverse percentage (Ad Spend ÷ Ad Sales), whereas ROAS is expressed as a multiplier (Ad Sales ÷ Ad Spend). A 25% ACoS is equal to a 4.0x ROAS.</div>
+                    <summary>How do I calculate Amazon ACoS? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">Divide total ad spend by total attributed ad sales, then multiply by 100. (e.g. ₹25,000 ÷ ₹1,00,000 × 100 = 25%).</div>
                 </details>
+
                 <details class="faq-item">
-                    <summary>Why is my ACoS rising suddenly? <span class="faq-icon">+</span></summary>
-                    <div class="faq-answer">Rising ACoS is usually driven by higher Cost Per Click (CPC), reduced conversion rates, increased bid competition, or seasonal search behavior changes.</div>
+                    <summary>Is a lower ACoS always better? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">Not necessarily. A lower ACoS means higher ad efficiency per sale, but extremely low ACoS targets can restrict total ad sales volume, BSR keyword ranking velocity, and brand growth.</div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What is break-even ACoS? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">Break-even ACoS is the exact ACoS percentage equal to your product contribution margin before advertising. At break-even ACoS, your ad sales generate zero net profit and zero net loss.</div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What is the difference between ACoS and ROAS? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">ACoS and ROAS describe the same metric from opposite directions. ACoS is expressed as a percentage (Spend ÷ Sales), while ROAS is a multiplier (Sales ÷ Spend). A 25% ACoS is equal to a 4.00x ROAS.</div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Why is my ACoS high? <span class="faq-icon">+</span></summary>
+                    <div class="faq-answer">High ACoS is caused by three core factors: high Cost Per Click (CPC), low conversion rate (CVR), or irrelevant search term targeting that spends budget without producing orders.</div>
                 </details>
             </div>
         </section>
 
-        <!-- AUDIT CTA -->
-        <section class="resources-audit-cta">
-            <div class="hero-eyebrow" style="color:#e0f2fe;">✦ NEED A DEEPER ANALYSIS?</div>
-            <h2>Want to Lower Your Campaign ACoS?</h2>
-            <p>Our Amazon PPC specialists audit bids, placements, search term waste, and listing conversion rates to optimize campaign efficiency.</p>
-            <div class="cta-btn-group">
+        <!-- 19. PPC AUDIT CTA -->
+        <section class="resources-audit-cta" style="margin-top:40px;">
+            <div class="hero-eyebrow" style="color:#e0f2fe;">✦ NEED MORE THAN THE NUMBER?</div>
+            <h2>Know Your ACoS. Now Find Out What's Driving It.</h2>
+            <p>If your ACoS is higher than your target, PPC Growth Expert can analyze the campaigns, search terms, bids, budgets, placements and listing performance behind the result.</p>
+            <div style="display:flex; justify-content:center; gap:16px; margin-top:20px; flex-wrap:wrap;">
                 <a href="contact.html" class="btn-cta-primary">Request an Amazon PPC Audit →</a>
+                <a href="blog.html" style="color:#ffffff; font-weight:700; text-decoration:underline; font-size:14px; align-self:center;">Read the ACoS Optimization Guide →</a>
             </div>
         </section>
 
     </div>
 
-    <!-- =========================================================
-     FOOTER
-========================================================= -->
-    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
-
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo">
         <div class="footer-container">
-
-            <!-- TOP GRID -->
             <div class="footer-grid">
-
-                <!-- COL 1: BRAND GLASS CARD -->
                 <div class="footer-col brand-col">
                     <div class="brand-card">
                         <a href="index.html" class="footer-logo">
-                            <div class="logo-badge">
-                                <div class="logo-symbol"></div>
-                            </div>
-                            <span class="logo-text">
-                                PPC <span class="highlight">Growth</span> Expert
-                            </span>
+                            <div class="logo-badge"><div class="logo-symbol"></div></div>
+                            <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
                         </a>
-
-                        <p class="footer-sub-tagline">
-                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
-                        </p>
-
-                        <p class="footer-tagline" itemprop="description">
-                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
-                        </p>
+                        <p class="footer-sub-tagline">Independent Amazon PPC consultancy founded by Anmol Pokhriyal.</p>
+                        <p class="footer-tagline">Helping Amazon brands in India optimize ACoS, scale ROAS, and achieve profitable growth.</p>
                     </div>
                 </div>
-
-
-                <!-- COL 2: SERVICES -->
                 <div class="footer-col">
                     <h3 class="footer-heading">SERVICES</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
-                        <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
-                        <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
-                        <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
-                        <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
-                        <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                        <li><a href="services.html#service-ppc-management">Amazon PPC Management</a></li>
+                        <li><a href="services.html#service-listing-optimization">Listing Optimization</a></li>
+                        <li><a href="services.html#service-image-aplus">A+ Content &amp; Images</a></li>
+                        <li><a href="services.html#service-keyword-research">Keyword Research</a></li>
                     </ul>
                 </div>
-
-
-                <!-- COL 3: CONTACT US -->
-                <div class="footer-col contact-col" itemprop="address" itemscope
-                    itemtype="http://schema.org/PostalAddress">
+                <div class="footer-col contact-col">
                     <h3 class="footer-heading">CONTACT US</h3>
                     <ul class="footer-contact-list">
-                        <li>
-                            <div class="contact-icon-pill">📍</div>
-                            <div>
-                                <span itemprop="addressLocality">Noida</span>,<br>
-                                <span itemprop="addressRegion">Uttar Pradesh</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">📞</div>
-                            <a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a>
-                        </li>
-                        <li>
-                            <div class="contact-icon-pill">✉️</div>
-                            <a href="mailto:anmolpokhriyal3200@gmail.com"
-                                itemprop="email">anmolpokhriyal3200@gmail.com</a>
-                        </li>
+                        <li><div class="contact-icon-pill">📍</div><div>Noida, Uttar Pradesh</div></li>
+                        <li><div class="contact-icon-pill">📞</div><a href="tel:+916397607291">+91 63976 07291</a></li>
+                        <li><div class="contact-icon-pill">✉️</div><a href="mailto:anmolpokhriyal3200@gmail.com">anmolpokhriyal3200@gmail.com</a></li>
                     </ul>
                 </div>
-
-
-                <!-- COL 4: COMPANY -->
                 <div class="footer-col">
                     <h3 class="footer-heading">COMPANY</h3>
                     <ul class="footer-links">
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="about.html#founder">Our Founder</a></li>
                         <li><a href="case-studies.html">Case Studies</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
             </div>
-
-
-            <!-- MIDDLE BAR -->
             <div class="footer-middle">
-                <p class="footer-meta-info">
-                    PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 ·
-                    anmolpokhriyal3200@gmail.com
-                </p>
+                <p class="footer-meta-info">PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291</p>
             </div>
-
-
-            <!-- BOTTOM COPYRIGHT BAR -->
             <div class="footer-bottom">
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
-                    class="scroll-top-btn" aria-label="Scroll to top">
-                    ↑
-                </a>
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
             </div>
-
         </div>
-
     </footer>
 
-    <!-- SCRIPTS -->
-    <script src="js/script.js?v=v27"></script>
-    <script src="js/navbar.js?v=v27"></script>
-    <script src="js/calculators.js?v=v1"></script>
-</body>
+    <!-- SCRIPTS & JAVASCRIPT LOGIC -->
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
+            // INR FORMATTER HELPER
+            function formatINR(val, maxDecimals = 2) {
+                if (isNaN(val) || val === null || val === undefined) return '₹0';
+                return new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'INR',
+                    maximumFractionDigits: maxDecimals,
+                    minimumFractionDigits: (val % 1 === 0) ? 0 : 2
+                }).format(val);
+            }
+
+            // CORE CALCULATION LOGIC
+            function calculateAcos() {
+                const spendInput = document.getElementById('acosSpend').value.trim();
+                const salesInput = document.getElementById('acosSales').value.trim();
+                const totalSalesInput = document.getElementById('acosTotalSales').value.trim();
+
+                const spend = parseFloat(spendInput);
+                const sales = parseFloat(salesInput);
+                const totalSales = totalSalesInput ? parseFloat(totalSalesInput) : null;
+
+                const resultVal = document.getElementById('acosResultVal');
+                const subText = document.getElementById('acosSubText');
+                const roasVal = document.getElementById('acosRoasVal');
+                const costPerSaleVal = document.getElementById('acosCostPerSaleVal');
+                const tacosVal = document.getElementById('acosTacosVal');
+                const nonAdSalesVal = document.getElementById('acosNonAdSalesVal');
+                const dynamicDescText = document.getElementById('acosDynamicDescText');
+
+                // VALIDATION 1: NEGATIVE INPUTS
+                if (spend < 0 || sales < 0 || (totalSales !== null && totalSales < 0)) {
+                    resultVal.innerText = 'Error';
+                    subText.innerText = 'Ad spend and sales values cannot be negative.';
+                    dynamicDescText.innerHTML = '<span style="color:#ef4444; font-weight:700;">Validation Warning:</span> Please enter positive numerical values for ad spend and sales.';
+                    return;
+                }
+
+                // VALIDATION 2: TOTAL SALES < AD SALES
+                if (totalSales !== null && totalSales < sales) {
+                    tacosVal.innerText = 'Check Total';
+                    nonAdSalesVal.innerText = 'Invalid';
+                    dynamicDescText.innerHTML = '<span style="color:#d97706; font-weight:700;">Note:</span> Total Sales should not be lower than attributed Ad Sales for this simplified TACoS comparison. Please check the values entered.';
+                }
+
+                // EDGE CASE: SPEND = 0 & SALES = 0
+                if ((isNaN(spend) || spend === 0) && (isNaN(sales) || sales === 0)) {
+                    resultVal.innerText = '0.00%';
+                    subText.innerText = 'Enter advertising spend and attributed ad sales to calculate ACoS.';
+                    roasVal.innerText = '0.00x';
+                    costPerSaleVal.innerText = '₹0.00';
+                    if (totalSales !== null && totalSales > 0) {
+                        tacosVal.innerText = '0.00%';
+                        nonAdSalesVal.innerText = formatINR(totalSales);
+                    } else {
+                        tacosVal.innerText = 'N/A';
+                        nonAdSalesVal.innerText = 'N/A';
+                    }
+                    dynamicDescText.innerText = 'Enter advertising spend and attributed ad sales to calculate ACoS.';
+                    updateVisualBar(0, 100);
+                    updateTargetPlanner(0, 0);
+                    updateBreakEvenGauge(0);
+                    return;
+                }
+
+                // EDGE CASE: SALES = 0 & SPEND > 0
+                if (sales === 0 && spend > 0) {
+                    resultVal.innerText = 'No Sales';
+                    subText.innerText = 'ACoS cannot be calculated because attributed ad sales are ₹0.';
+                    roasVal.innerText = '0.00x';
+                    costPerSaleVal.innerText = 'N/A';
+                    dynamicDescText.innerHTML = `Your campaigns spent <strong>${formatINR(spend)}</strong> during this period, but generated <strong>₹0 in attributed ad sales</strong>. ACoS cannot be calculated because division by zero is invalid.`;
+                    updateVisualBar(100, 0);
+                    updateTargetPlanner(spend, 0);
+                    updateBreakEvenGauge(0);
+                    return;
+                }
+
+                // EDGE CASE: SPEND = 0 & SALES > 0
+                if (spend === 0 && sales > 0) {
+                    resultVal.innerText = '0.00%';
+                    subText.innerText = '0% ACoS — Sales generated with ₹0 ad spend.';
+                    roasVal.innerText = '∞';
+                    costPerSaleVal.innerText = '₹0.00';
+                    dynamicDescText.innerHTML = `Attributed sales of <strong>${formatINR(sales)}</strong> were entered with no advertising spend (₹0). Verify that both values refer to the same reporting period and attribution scope.`;
+                    updateVisualBar(0, 100);
+                    updateTargetPlanner(0, sales);
+                    updateBreakEvenGauge(0);
+                    return;
+                }
+
+                // STANDARD CALCULATION
+                const acos = (spend / sales) * 100;
+                const roas = sales / spend;
+                const costPerSale = spend / sales;
+
+                resultVal.innerText = acos.toFixed(2) + '%';
+                subText.innerText = `Spent ${formatINR(spend)} to generate ${formatINR(sales)}`;
+                roasVal.innerText = roas.toFixed(2) + 'x';
+                costPerSaleVal.innerText = formatINR(costPerSale, 2);
+
+                // TACOS & NON-AD SALES
+                if (totalSales !== null && totalSales >= sales && totalSales > 0) {
+                    const tacos = (spend / totalSales) * 100;
+                    const nonAdSales = totalSales - sales;
+                    tacosVal.innerText = tacos.toFixed(2) + '%';
+                    nonAdSalesVal.innerText = formatINR(nonAdSales);
+                } else if (totalSales === null) {
+                    tacosVal.innerText = 'N/A';
+                    nonAdSalesVal.innerText = 'N/A';
+                }
+
+                // DYNAMIC DESCRIPTION TEXT
+                dynamicDescText.innerHTML = `Your Amazon ads spent <strong>${formatINR(spend)}</strong> to generate <strong>${formatINR(sales)}</strong> in attributed ad sales. That gives you an ACoS of <strong>${acos.toFixed(2)}%</strong>, equivalent to a <strong>${roas.toFixed(2)}x ROAS</strong>. In simple terms, you spent <strong>${formatINR(costPerSale, 2)}</strong> in advertising for every ₹1 of attributed ad revenue.<br><br>Whether ${acos.toFixed(2)}% is profitable or appropriate cannot be determined from ACoS alone. Compare it with your product contribution margin, break-even ACoS and campaign objective.`;
+
+                // UPDATE VISUAL BAR
+                updateVisualBar(acos, Math.max(0, 100 - acos));
+
+                // UPDATE TARGET PLANNER
+                updateTargetPlanner(spend, sales);
+
+                // UPDATE BREAK-EVEN & GAUGE
+                calculateBreakEven(acos);
+
+                // UPDATE SCENARIO SIMULATOR
+                updateSimulator(spend, sales);
+            }
+
+            // VISUAL REVENUE BAR UPDATE
+            function updateVisualBar(acos, rem) {
+                const barAd = document.getElementById('acosBarAd');
+                const barRem = document.getElementById('acosBarRem');
+                const barAdLabel = document.getElementById('barAdLabel');
+                const barRemLabel = document.getElementById('barRemLabel');
+                const barNoteText = document.getElementById('barNoteText');
+
+                const spend = parseFloat(document.getElementById('acosSpend').value) || 0;
+                const sales = parseFloat(document.getElementById('acosSales').value) || 0;
+
+                if (acos > 100) {
+                    barAd.style.width = '100%';
+                    barRem.style.width = '0%';
+                    barAdLabel.innerText = `Ad Spend Share: 100%+ (${acos.toFixed(2)}%)`;
+                    barRemLabel.innerText = `Remaining Sales Revenue: ₹0.00`;
+                    barNoteText.innerHTML = `<span style="color:#ef4444; font-weight:700;">ACoS exceeds 100%:</span> ${formatINR(spend)} advertising spend was required to generate ${formatINR(sales)} of attributed ad sales.`;
+                } else {
+                    const costPerRupee = sales > 0 ? (spend / sales) : 0;
+                    const remPerRupee = Math.max(0, 1 - costPerRupee);
+                    barAd.style.width = Math.min(100, Math.max(0, acos)) + '%';
+                    barRem.style.width = Math.min(100, Math.max(0, 100 - acos)) + '%';
+                    barAdLabel.innerText = `Advertising Spend: ${formatINR(costPerRupee, 2)} (${acos.toFixed(2)}%)`;
+                    barRemLabel.innerText = `Remaining Sales Revenue: ${formatINR(remPerRupee, 2)} (${Math.max(0, 100 - acos).toFixed(2)}%)`;
+                    barNoteText.innerHTML = `<strong>${formatINR(remPerRupee, 2)} is remaining revenue</strong> before product cost, Amazon fees, fulfilment, returns, tax and other expenses. It is NOT profit.`;
+                }
+            }
+
+            // TARGET PLANNER UPDATE
+            function updateTargetPlanner(spend, sales) {
+                const targetAcosInput = parseFloat(document.getElementById('targetAcosInput').value) || 20;
+                const targetReqSalesVal = document.getElementById('targetReqSalesVal');
+                const targetAddSalesVal = document.getElementById('targetAddSalesVal');
+                const targetMaxSpendVal = document.getElementById('targetMaxSpendVal');
+                const targetSpendDiffVal = document.getElementById('targetSpendDiffVal');
+
+                if (targetAcosInput <= 0) {
+                    targetReqSalesVal.innerText = 'Invalid Target';
+                    targetAddSalesVal.innerText = 'Target must be > 0%';
+                    targetMaxSpendVal.innerText = 'Invalid Target';
+                    targetSpendDiffVal.innerText = 'Target must be > 0%';
+                    return;
+                }
+
+                const targetDec = targetAcosInput / 100;
+
+                // Scenario A: Spend stays constant
+                const reqSales = spend / targetDec;
+                const addSalesNeeded = reqSales - sales;
+
+                targetReqSalesVal.innerText = formatINR(reqSales);
+                if (addSalesNeeded >= 0) {
+                    targetAddSalesVal.innerText = `+${formatINR(addSalesNeeded)} ad sales needed`;
+                    targetAddSalesVal.style.color = '#0284c7';
+                } else {
+                    targetAddSalesVal.innerText = `${formatINR(addSalesNeeded)} (Sales already exceeding target)`;
+                    targetAddSalesVal.style.color = '#10b981';
+                }
+
+                // Scenario B: Sales stay constant
+                const maxSpend = sales * targetDec;
+                const spendDiff = spend - maxSpend;
+
+                targetMaxSpendVal.innerText = formatINR(maxSpend);
+                if (spendDiff > 0) {
+                    targetSpendDiffVal.innerText = `-${formatINR(spendDiff)} spend reduction needed`;
+                    targetSpendDiffVal.style.color = '#2563eb';
+                } else {
+                    targetSpendDiffVal.innerText = `+${formatINR(Math.abs(spendDiff))} additional spend room`;
+                    targetSpendDiffVal.style.color = '#10b981';
+                }
+            }
+
+            // BREAK-EVEN & GAUGE SCALE UPDATE
+            function calculateBreakEven(currentAcos) {
+                const price = parseFloat(document.getElementById('bePrice').value) || 0;
+                const cogs = parseFloat(document.getElementById('beCogs').value) || 0;
+                const fees = parseFloat(document.getElementById('beAmzFees').value) || 0;
+                const shipping = parseFloat(document.getElementById('beShipping').value) || 0;
+                const other = parseFloat(document.getElementById('beOtherCost').value) || 0;
+
+                const beContribVal = document.getElementById('beContribVal');
+                const beAcosVal = document.getElementById('beAcosVal');
+                const beBufferVal = document.getElementById('beBufferVal');
+                const beInterpretationBox = document.getElementById('beInterpretationBox');
+
+                if (price <= 0) {
+                    beContribVal.innerText = 'Enter Price';
+                    beAcosVal.innerText = '0.00%';
+                    beBufferVal.innerText = '0.00';
+                    return;
+                }
+
+                const totalVarCost = cogs + fees + shipping + other;
+                const contrib = price - totalVarCost;
+                const contribPct = (contrib / price) * 100;
+                const breakEvenAcos = contribPct;
+                const buffer = breakEvenAcos - currentAcos;
+
+                beContribVal.innerText = `${formatINR(contrib)} (${contribPct.toFixed(2)}%)`;
+                beAcosVal.innerText = breakEvenAcos.toFixed(2) + '%';
+                
+                if (buffer >= 0) {
+                    beBufferVal.innerText = `+${buffer.toFixed(2)} percentage pts`;
+                    beBufferVal.style.color = '#10b981';
+                    beInterpretationBox.innerHTML = `Based only on the variable costs entered, your current ACoS (<strong>${currentAcos.toFixed(2)}%</strong>) is below the calculated break-even level (<strong>${breakEvenAcos.toFixed(2)}%</strong>). You have a <strong>+${buffer.toFixed(2)} percentage point profit buffer</strong> before ad spend exceeds unit margin.<br><br><em>This simplified break-even calculation does not automatically include every tax, return, overhead or business expense unless entered.</em>`;
+                    beInterpretationBox.style.borderLeftColor = '#10b981';
+                    beInterpretationBox.style.background = '#f0fdf4';
+                } else {
+                    beBufferVal.innerText = `${buffer.toFixed(2)} percentage pts`;
+                    beBufferVal.style.color = '#ef4444';
+                    beInterpretationBox.innerHTML = `Based only on the costs entered, your current ACoS (<strong>${currentAcos.toFixed(2)}%</strong>) is <strong>${Math.abs(buffer).toFixed(2)} percentage points above</strong> the calculated break-even level (<strong>${breakEvenAcos.toFixed(2)}%</strong>). Your ad spend is currently reducing net profit.<br><br><em>This simplified break-even calculation does not automatically include every tax, return, overhead or business expense unless entered.</em>`;
+                    beInterpretationBox.style.borderLeftColor = '#ef4444';
+                    beInterpretationBox.style.background = '#fef2f2';
+                }
+
+                updateBreakEvenGauge(currentAcos, breakEvenAcos);
+            }
+
+            // GAUGE SCALE UPDATE
+            function updateBreakEvenGauge(currentAcos, breakEvenAcos = 40) {
+                const targetAcos = parseFloat(document.getElementById('targetAcosInput').value) || 20;
+                
+                const maxScale = Math.max(50, currentAcos * 1.15, breakEvenAcos * 1.15, targetAcos * 1.15);
+
+                const posTarget = Math.min(95, Math.max(5, (targetAcos / maxScale) * 100));
+                const posCurrent = Math.min(95, Math.max(5, (currentAcos / maxScale) * 100));
+                const posBreakeven = Math.min(95, Math.max(5, (breakEvenAcos / maxScale) * 100));
+
+                const markerTarget = document.getElementById('markerTarget');
+                const markerCurrent = document.getElementById('markerCurrent');
+                const markerBreakeven = document.getElementById('markerBreakeven');
+
+                markerTarget.style.left = posTarget + '%';
+                markerTarget.querySelector('span').innerText = `Target: ${targetAcos.toFixed(1)}%`;
+
+                markerCurrent.style.left = posCurrent + '%';
+                markerCurrent.querySelector('span').innerText = `Current: ${currentAcos.toFixed(1)}%`;
+
+                markerBreakeven.style.left = posBreakeven + '%';
+                markerBreakeven.querySelector('span').innerText = `Break-Even: ${breakEvenAcos.toFixed(1)}%`;
+            }
+
+            // SCENARIO SIMULATOR LOGIC
+            function updateSimulator(baseSpend, baseSales) {
+                const spendChangePct = parseFloat(document.getElementById('simSpendSlider').value) || 0;
+                const salesChangePct = parseFloat(document.getElementById('simSalesSlider').value) || 0;
+
+                document.getElementById('simSpendLabel').innerText = (spendChangePct > 0 ? '+' : '') + spendChangePct + '%';
+                document.getElementById('simSalesLabel').innerText = (salesChangePct > 0 ? '+' : '') + salesChangePct + '%';
+
+                const newSpend = baseSpend * (1 + spendChangePct / 100);
+                const newSales = baseSales * (1 + salesChangePct / 100);
+
+                const currAcos = baseSales > 0 ? (baseSpend / baseSales) * 100 : 0;
+                const currRoas = baseSpend > 0 ? (baseSales / baseSpend) : 0;
+
+                const newAcos = newSales > 0 ? (newSpend / newSales) * 100 : 0;
+                const newRoas = newSpend > 0 ? (newSales / newSpend) : 0;
+
+                document.getElementById('simCurrAcos').innerText = currAcos.toFixed(2) + '%';
+                document.getElementById('simCurrRoas').innerText = currRoas.toFixed(2) + 'x ROAS';
+
+                document.getElementById('simNewAcos').innerText = newAcos.toFixed(2) + '%';
+                document.getElementById('simNewRoas').innerText = newRoas.toFixed(2) + 'x ROAS';
+
+                document.getElementById('simSummaryText').innerHTML = `Simulated Spend: <strong>${formatINR(newSpend)}</strong> | Simulated Sales: <strong>${formatINR(newSales)}</strong>`;
+            }
+
+            // INTERACTIVE DIAGNOSTIC SELECTION
+            const diagData = {
+                1: {
+                    title: "Primary Area to Investigate: Conversion Rate & Search Intent",
+                    checklist: "Review sequence: Search relevance → Product page → Price → Reviews → Offer",
+                    explanation: "If traffic is relevant but orders are weak, cutting bids alone may reduce traffic without fixing the core conversion bottleneck on your product page.",
+                    linkText: "Open PPC Conversion Rate Calculator →",
+                    linkUrl: "amazon-ppc-conversion-rate-calculator.html"
+                },
+                2: {
+                    title: "Primary Area to Investigate: Traffic Cost & Bidding Strategy",
+                    checklist: "Review sequence: Max Bid → Actual CPC → Target Match Types → Placements",
+                    explanation: "High CPC is not automatically bad. A more expensive click can still be valuable if it converts efficiently. Compare CPC increases against CVR changes.",
+                    linkText: "Open CPC Calculator →",
+                    linkUrl: "amazon-cpc-calculator.html"
+                },
+                3: {
+                    title: "Primary Area to Investigate: Margin & Target Economics",
+                    checklist: "Review sequence: CPC → CVR → Average Order Value → Placement Modifiers",
+                    explanation: "The campaign may be producing steady sales, but at an advertising cost that is too high relative to your product margin.",
+                    linkText: "Open Break-Even ACoS Calculator →",
+                    linkUrl: "amazon-break-even-acos-calculator.html"
+                },
+                4: {
+                    title: "Primary Area to Investigate: Campaign Budget Allocation",
+                    checklist: "Review sequence: Campaign Spend Share → Search Terms → Waste Keywords",
+                    explanation: "Evaluate high-spending campaigns individually. Do not automatically pause a top-revenue campaign without checking its non-ad sales halo impact.",
+                    linkText: "Open PPC Budget Calculator →",
+                    linkUrl: "amazon-ppc-budget-calculator.html"
+                },
+                5: {
+                    title: "Primary Area to Investigate: Search Term Quality & Targeting",
+                    checklist: "Review sequence: Search Term Report → Zero-Order Queries → Broad Leakage → Negatives",
+                    explanation: "Audit your search term report for high-spend queries that generate clicks without orders, and add them as negative exact keywords.",
+                    linkText: "Request an Amazon PPC Audit →",
+                    linkUrl: "contact.html"
+                },
+                6: {
+                    title: "Primary Area to Investigate: Placement Performance Modifiers",
+                    checklist: "Review sequence: Top of Search → Product Pages → Rest of Search",
+                    explanation: "Compare CVR and ACoS across placements. Rest of Search or Product Pages may be dragging down account performance despite strong Top of Search metrics.",
+                    linkText: "Request Placement Audit →",
+                    linkUrl: "contact.html"
+                },
+                7: {
+                    title: "Primary Area to Investigate: Product Listing & Offer Appeal",
+                    checklist: "Review sequence: Main Image → Title → Bullet Points → A+ Content → Rating / Price",
+                    explanation: "Relevant paid traffic becomes expensive when the product listing fails to convey trust or product value relative to competitors.",
+                    linkText: "Open Listing Quality Grader →",
+                    linkUrl: "amazon-listing-quality-grader.html"
+                }
+            };
+
+            document.querySelectorAll('.symptom-pill-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.symptom-pill-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const diagId = this.getAttribute('data-diag');
+                    const data = diagData[diagId];
+                    if (data) {
+                        document.getElementById('diagTitle').innerText = data.title;
+                        document.getElementById('diagReviewChecklist').innerHTML = `<strong>Review sequence:</strong> ${data.checklist}`;
+                        document.getElementById('diagExplanation').innerText = data.explanation;
+                        document.getElementById('diagRecommendedTool').innerHTML = `<a href="${data.linkUrl}" style="color:#2563eb; text-decoration:none;">${data.linkText}</a>`;
+                    }
+                });
+            });
+
+            // DRIVER DIAGRAM HIGHLIGHT BUTTONS
+            document.getElementById('btnDriverAll').addEventListener('click', function() {
+                document.querySelectorAll('.driver-node').forEach(node => {
+                    node.classList.remove('highlight-spend', 'highlight-sales');
+                });
+            });
+
+            document.getElementById('btnDriverSpend').addEventListener('click', function() {
+                document.querySelectorAll('.driver-node').forEach(node => {
+                    node.classList.remove('highlight-spend', 'highlight-sales');
+                    if (node.classList.contains('spend-side')) {
+                        node.classList.add('highlight-spend');
+                    }
+                });
+            });
+
+            document.getElementById('btnDriverSales').addEventListener('click', function() {
+                document.querySelectorAll('.driver-node').forEach(node => {
+                    node.classList.remove('highlight-spend', 'highlight-sales');
+                    if (node.classList.contains('sales-side')) {
+                        node.classList.add('highlight-sales');
+                    }
+                });
+            });
+
+            // DECISION FRAMEWORK INTERACTIVITY
+            let decQ1 = true;
+            let decQ2 = false;
+            let decQ3 = true;
+
+            function updateDecisionFramework() {
+                const title = document.getElementById('decRecTitle');
+                const desc = document.getElementById('decRecDesc');
+
+                if (!decQ1) {
+                    title.innerText = "Calculate Product Economics & Break-Even First";
+                    desc.innerText = "Before adjusting campaign bids or budgets, calculate your exact product contribution margin and break-even ACoS threshold.";
+                    return;
+                }
+
+                if (decQ2) { // ACoS Above Break-Even
+                    title.innerText = "Diagnose Traffic Cost, CVR & High-Waste Search Terms";
+                    desc.innerText = "Your campaign is spending more than your unit margin allows. Audit zero-order search terms, adjust placement modifiers, and optimize listing conversion elements.";
+                } else { // ACoS Below Break-Even
+                    if (decQ3) {
+                        title.innerText = "Protect Campaign Stability & Test Controlled Scaling";
+                        desc.innerText = "Your campaign is profitable and meeting business targets. Protect winning keyword bids, expand budget-limited campaigns, and test adjacent search terms.";
+                    } else {
+                        title.innerText = "Investigate Impression Share & Sales Volume Bottlenecks";
+                        desc.innerText = "Your ACoS is profitable, but the campaign is underperforming on volume. Evaluate target bids, campaign budget ceilings, and keyword search volume.";
+                    }
+                }
+            }
+
+            document.getElementById('decQ1Yes').addEventListener('click', function() {
+                document.getElementById('decQ1Yes').classList.add('active');
+                document.getElementById('decQ1No').classList.remove('active');
+                decQ1 = true;
+                updateDecisionFramework();
+            });
+
+            document.getElementById('decQ1No').addEventListener('click', function() {
+                document.getElementById('decQ1No').classList.add('active');
+                document.getElementById('decQ1Yes').classList.remove('active');
+                decQ1 = false;
+                updateDecisionFramework();
+            });
+
+            document.getElementById('decQ2Yes').addEventListener('click', function() {
+                document.getElementById('decQ2Yes').classList.add('active');
+                document.getElementById('decQ2No').classList.remove('active');
+                decQ2 = true;
+                updateDecisionFramework();
+            });
+
+            document.getElementById('decQ2No').addEventListener('click', function() {
+                document.getElementById('decQ2No').classList.add('active');
+                document.getElementById('decQ2Yes').classList.remove('active');
+                decQ2 = false;
+                updateDecisionFramework();
+            });
+
+            document.getElementById('decQ3Yes').addEventListener('click', function() {
+                document.getElementById('decQ3Yes').classList.add('active');
+                document.getElementById('decQ3No').classList.remove('active');
+                decQ3 = true;
+                updateDecisionFramework();
+            });
+
+            document.getElementById('decQ3No').addEventListener('click', function() {
+                document.getElementById('decQ3No').classList.add('active');
+                document.getElementById('decQ3Yes').classList.remove('active');
+                decQ3 = false;
+                updateDecisionFramework();
+            });
+
+            // EVENT LISTENERS FOR INPUTS
+            const inputs = ['acosSpend', 'acosSales', 'acosTotalSales', 'targetAcosInput', 'bePrice', 'beCogs', 'beAmzFees', 'beShipping', 'beOtherCost'];
+            inputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', calculateAcos);
+                    el.addEventListener('change', calculateAcos);
+                }
+            });
+
+            document.getElementById('simSpendSlider').addEventListener('input', calculateAcos);
+            document.getElementById('simSalesSlider').addEventListener('input', calculateAcos);
+
+            document.getElementById('btnCalcAcos').addEventListener('click', calculateAcos);
+
+            // RESET BUTTON
+            document.getElementById('btnResetAcos').addEventListener('click', function() {
+                document.getElementById('acosSpend').value = '25000';
+                document.getElementById('acosSales').value = '100000';
+                document.getElementById('acosTotalSales').value = '250000';
+                document.getElementById('targetAcosInput').value = '20';
+                document.getElementById('bePrice').value = '1000';
+                document.getElementById('beCogs').value = '300';
+                document.getElementById('beAmzFees').value = '180';
+                document.getElementById('beShipping').value = '120';
+                document.getElementById('beOtherCost').value = '0';
+                document.getElementById('simSpendSlider').value = '0';
+                document.getElementById('simSalesSlider').value = '0';
+                calculateAcos();
+            });
+
+            // COPY RESULT BUTTON
+            document.getElementById('btnCopyResult').addEventListener('click', function() {
+                const spend = document.getElementById('acosSpend').value;
+                const sales = document.getElementById('acosSales').value;
+                const acos = document.getElementById('acosResultVal').innerText;
+                const roas = document.getElementById('acosRoasVal').innerText;
+                const costPerSale = document.getElementById('acosCostPerSaleVal').innerText;
+
+                const copyText = `Amazon PPC ACoS Analysis\n\nAd Spend: ${formatINR(parseFloat(spend))}\nAd Sales: ${formatINR(parseFloat(sales))}\nACoS: ${acos}\nROAS: ${roas}\nAd Cost per ₹1 Ad Sales: ${costPerSale}\n\nCalculated using PPC Growth Expert ACoS Calculator.`;
+
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(copyText).then(() => {
+                        this.innerText = 'Copied! ✓';
+                        setTimeout(() => this.innerText = 'Copy Result 📋', 2000);
+                    }).catch(() => {
+                        alert(copyText);
+                    });
+                } else {
+                    alert(copyText);
+                }
+            });
+
+            // INITIAL CALCULATION ON LOAD
+            calculateAcos();
+        });
+    </script>
+</body>
 </html>
