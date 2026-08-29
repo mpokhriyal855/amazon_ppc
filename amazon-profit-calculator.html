@@ -10,7 +10,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <title>Amazon Profit Calculator India | Calculate Your Real Amazon Profit</title>
-    <meta name="description" content="Calculate Amazon fees, FBA, Easy Ship, advertising, returns and net profit — then see your break-even ACoS, maximum CPC, sensitivity analysis, and stress-test your numbers.">
+    <meta name="description" content="Calculate Amazon India fees, FBA, Easy Ship, advertising, returns and net profit — see break-even ACoS, maximum CPC, sensitivity analysis, and stress-test your numbers.">
     <link rel="canonical" href="https://ppcgrowthexpert.com/amazon-profit-calculator.html">
 
     <!-- FONTS & STYLES -->
@@ -36,28 +36,51 @@
 
     <style>
         /* =========================================================
-           ULTRA-ADVANCED EXECUTIVE DARK GLASS & HYBRID THEME STYLES
+           HIGH-END LIGHT THEME WITH GRID BACKGROUND & HIGHLIGHT CARDS
         ========================================================= */
         body {
-            background-color: #080d1a;
-            color: #ffffff;
+            background-color: #fcfbf8;
+            color: #0f172a;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
+        /* GRID BACKGROUND SECTION */
+        .grid-bg-section {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.05) 0%, transparent 60%),
+                linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 44px 0;
+        }
+
+        .light-content-section {
+            background: #ffffff;
+            padding: 52px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .alt-light-section {
+            background: #f8fafc;
+            padding: 52px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* HERO STYLING */
         .hero-compact {
             padding: 28px 20px 36px 20px;
             background: #ffffff;
-            background-image: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 65%);
             border-bottom: 1px solid #e2e8f0;
             text-align: center;
-            color: #0f172a;
         }
 
         .section-tag-eyebrow {
             font-family: 'DM Mono', monospace;
             font-size: 11px;
             font-weight: 700;
-            color: #38bdf8;
+            color: #2563eb;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             display: inline-flex;
@@ -68,90 +91,43 @@
 
         .section-tag-eyebrow::before {
             content: '●';
+            color: #10b981;
             font-size: 8px;
         }
 
-        /* EXECUTIVE DARK SECTION CONTAINERS */
-        .dark-section-wrapper {
-            background: #080d1a;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 70%),
-                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-            background-size: 100% 100%, 36px 36px, 36px 36px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 48px 0;
-            color: #ffffff;
-        }
-
-        .dark-section-alt {
-            background: #0b1329;
-            background-image: 
-                radial-gradient(circle at 50% 100%, rgba(2, 132, 199, 0.18) 0%, transparent 70%),
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 100% 100%, 36px 36px, 36px 36px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 48px 0;
-            color: #ffffff;
-        }
-
-        .light-section-wrapper {
+        /* MAIN CALCULATOR CONTAINER */
+        .calc-main-card {
             background: #ffffff;
-            padding: 48px 0;
-            border-bottom: 1px solid #e2e8f0;
-            color: #0f172a;
-        }
-
-        /* DARK GLASS CARDS & INPUTS */
-        .dark-glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            border: 1.5px solid #e2e8f0;
             border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
         }
 
-        .dark-input-field {
-            background: rgba(30, 41, 59, 0.85) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            color: #ffffff !important;
-            border-radius: 12px !important;
-            padding: 12px 14px !important;
-            font-size: 15px !important;
-            font-weight: 600 !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            transition: all 0.25s ease !important;
+        .util-btn {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            color: #334155;
+            padding: 7px 16px;
+            border-radius: 50px;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .dark-input-field:focus {
-            outline: none !important;
-            border-color: #38bdf8 !important;
-            box-shadow: 0 0 16px rgba(56, 189, 248, 0.4) !important;
-            background: rgba(30, 41, 59, 0.98) !important;
+        .util-btn:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            background: #eff6ff;
         }
 
-        .dark-label {
-            color: #e2e8f0 !important;
-            font-weight: 700 !important;
-            font-size: 13px !important;
-            margin-bottom: 6px !important;
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-        }
-
-        /* STEP TABS BAR (GLOWING UNDERLINE) */
+        /* STEP TABS UNDERLINE BAR */
         .step-tabs-bar {
             display: flex;
-            gap: 18px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            margin-bottom: 24px;
+            gap: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 26px;
             overflow-x: auto;
         }
 
@@ -159,50 +135,78 @@
             padding: 10px 4px 14px 4px;
             font-size: 13.5px;
             font-weight: 700;
-            color: #94a3b8;
+            color: #64748b;
             cursor: pointer;
             position: relative;
             white-space: nowrap;
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
             background: transparent;
             border: none;
         }
 
-        .step-tab-item:hover { color: #ffffff; }
+        .step-tab-item:hover { color: #0f172a; }
 
         .step-tab-item.active {
-            color: #38bdf8;
+            color: #0f172a;
         }
 
         .step-tab-item.active::after {
             content: '';
             position: absolute;
-            bottom: -1px;
+            bottom: -2px;
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
+            background: #10b981;
             border-radius: 3px 3px 0 0;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
         }
 
         .step-tab-num {
             font-family: 'DM Mono', monospace;
             font-size: 11px;
-            color: #64748b;
+            color: #94a3b8;
             margin-bottom: 2px;
             display: block;
         }
 
         .step-tab-item.active .step-tab-num {
-            color: #38bdf8;
+            color: #10b981;
+        }
+
+        /* FORM INPUT STYLING */
+        .light-input-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .light-input-field {
+            background: #ffffff !important;
+            border: 1.5px solid #cbd5e1 !important;
+            color: #0f172a !important;
+            border-radius: 12px !important;
+            padding: 12px 14px !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .light-input-field:focus {
+            outline: none !important;
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
         }
 
         /* PILL TOGGLES */
         .pill-toggle-container {
             display: flex;
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: #f1f5f9;
             border-radius: 50px;
             padding: 4px;
             gap: 4px;
@@ -214,7 +218,7 @@
             padding: 10px 16px;
             border: none;
             background: transparent;
-            color: #94a3b8;
+            color: #475569;
             font-size: 13px;
             font-weight: 700;
             border-radius: 50px;
@@ -223,30 +227,48 @@
         }
 
         .pill-toggle-btn.active {
-            background: #2563eb;
+            background: #0f172a;
             color: #ffffff;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
         }
 
-        /* RECEIPT / LIVE RESULT PANEL (DARK EXECUTIVE RECEIPT STYLE) */
+        /* RIGHT RECEIPT CARD (SLEEK DARK NAVY CONTAINER) */
         .receipt-card-dark {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(15, 23, 42, 0.95) 100%);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: #0f172a;
+            background-image: radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.25) 0%, transparent 60%);
+            border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 24px;
-            padding: 28px;
+            padding: 30px;
             color: #ffffff;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+            position: relative;
+        }
+
+        .receipt-header-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #34d399;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .receipt-header-eyebrow::before {
+            content: '●';
+            color: #34d399;
+            font-size: 8px;
         }
 
         .receipt-profit-val {
             font-size: clamp(42px, 5vw, 56px);
             font-weight: 800;
-            color: #38bdf8;
+            color: #ffffff;
             line-height: 1;
             margin: 10px 0 6px 0;
             letter-spacing: -1px;
-            text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
         }
 
         .receipt-margin-pill {
@@ -255,21 +277,21 @@
             font-weight: 700;
             background: rgba(16, 185, 129, 0.2);
             color: #34d399;
-            border: 1px solid rgba(52, 211, 153, 0.4);
+            border: 1px solid rgba(52, 211, 153, 0.35);
             padding: 4px 12px;
             border-radius: 50px;
             display: inline-block;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
 
         .receipt-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13.5px;
+            font-size: 14px;
         }
 
         .receipt-table td {
-            padding: 8px 0;
+            padding: 9px 0;
             border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
         }
 
@@ -280,17 +302,31 @@
             font-weight: 800;
         }
 
-        .receipt-label { color: #cbd5e1; }
+        .receipt-label { color: #94a3b8; }
         .receipt-val { text-align: right; font-family: 'DM Mono', monospace; font-weight: 700; color: #ffffff; }
         .receipt-deduct { color: #f87171; }
 
         .receipt-status-box {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(52, 211, 153, 0.3);
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.25);
             border-radius: 16px;
             padding: 16px;
-            margin-top: 20px;
+            margin-top: 22px;
         }
+
+        .status-pill-head {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #34d399;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+
+        .status-pill-head::before { content: '●'; }
 
         .receipt-audit-btn {
             display: block;
@@ -304,74 +340,100 @@
             font-size: 14.5px;
             text-decoration: none;
             margin-top: 20px;
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
             transition: all 0.25s ease;
         }
 
         .receipt-audit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
+            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.4);
         }
 
-        /* METRICS TELEMETRY GLOW CARDS */
-        .telemetry-card {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* METRICS DASHBOARD HIGHLIGHT CARDS */
+        .dash-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
             border-radius: 18px;
             padding: 22px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
             transition: all 0.25s ease;
         }
 
-        .telemetry-card:hover {
+        .dash-card:hover {
             transform: translateY(-3px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
 
-        .card-amber-glow {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(15, 23, 42, 0.85) 100%);
-            border-color: rgba(245, 158, 11, 0.35);
+        .dash-card-yellow {
+            background: #fefce8;
+            border-color: #fef08a;
         }
 
-        .card-blue-glow {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(15, 23, 42, 0.85) 100%);
-            border-color: rgba(56, 189, 248, 0.35);
+        .dash-card-green {
+            background: #ecfdf5;
+            border-color: #a7f3d0;
         }
 
-        .card-red-glow {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(15, 23, 42, 0.85) 100%);
-            border-color: rgba(239, 68, 68, 0.35);
+        .dash-card-blue {
+            background: #eff6ff;
+            border-color: #bfdbfe;
         }
 
-        .card-green-glow {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(15, 23, 42, 0.85) 100%);
-            border-color: rgba(52, 211, 153, 0.35);
+        .dash-card-red {
+            background: #fef2f2;
+            border-color: #fecaca;
         }
 
-        .telemetry-card-title {
+        .dash-card-title {
             font-family: 'DM Mono', monospace;
             font-size: 11px;
             font-weight: 700;
-            color: #94a3b8;
+            color: #64748b;
             text-transform: uppercase;
             letter-spacing: 0.8px;
         }
 
-        .telemetry-card-val {
+        .dash-card-val {
             font-size: 26px;
             font-weight: 800;
-            color: #ffffff;
+            color: #0f172a;
             margin-top: 4px;
             line-height: 1.2;
         }
+
+        .dash-card-sub {
+            font-size: 12.5px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* STACKED BAR */
+        .bar-stacked-container {
+            height: 28px;
+            background: #e2e8f0;
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            margin-bottom: 18px;
+        }
+
+        .bar-seg {
+            height: 100%;
+            transition: width 0.4s ease;
+        }
+
+        .seg-cogs { background: #334155; }
+        .seg-amz { background: #d97706; }
+        .seg-ads { background: #1e293b; }
+        .seg-returns { background: #ef4444; }
+        .seg-profit { background: #10b981; }
 
         /* WATERFALL DIAGRAM */
         .waterfall-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            max-width: 840px;
+            max-width: 860px;
             margin: 0 auto;
         }
 
@@ -383,83 +445,87 @@
             font-weight: 700;
         }
 
-        .waterfall-label { width: 190px; text-align: right; color: #cbd5e1; }
-        .waterfall-track { flex: 1; height: 24px; background: rgba(255, 255, 255, 0.08); border-radius: 6px; overflow: hidden; position: relative; }
+        .waterfall-label { width: 190px; text-align: right; color: #334155; }
+        .waterfall-track { flex: 1; height: 24px; background: #f1f5f9; border-radius: 6px; overflow: hidden; position: relative; }
         .waterfall-bar { height: 100%; border-radius: 6px; transition: width 0.4s ease; }
-        .waterfall-val { width: 90px; font-family: 'DM Mono', monospace; font-size: 13px; color: #ffffff; }
+        .waterfall-val { width: 90px; font-family: 'DM Mono', monospace; font-size: 13px; color: #0f172a; }
 
-        /* CPC SCALE MARKERS */
-        .cpc-scale-track {
-            position: relative;
-            height: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            margin: 32px 12px 20px 12px;
-        }
-
-        .cpc-marker {
-            position: absolute;
-            top: -26px;
-            transform: translateX(-50%);
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 700;
-            white-space: nowrap;
+        /* RECOMMENDATION PILLS */
+        .rec-alert-pill {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 16px 20px;
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 12px;
             display: flex;
-            flex-direction: column;
             align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
-        .cpc-marker::after {
-            content: '';
-            width: 2px;
-            height: 16px;
-            margin-top: 2px;
-            background: currentColor;
-            border-radius: 1px;
+        .rec-alert-pill.warn {
+            border-color: #fde68a;
+            background: #fffbeb;
         }
 
-        .marker-cpc-curr { color: #60a5fa; }
-        .marker-cpc-target { color: #38bdf8; }
-        .marker-cpc-be { color: #f59e0b; }
+        .rec-alert-pill.success {
+            border-color: #a7f3d0;
+            background: #ecfdf5;
+        }
 
         /* STRESS TEST TABLES */
-        .stress-table-dark {
+        .stress-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 13.5px;
             margin-top: 14px;
         }
 
-        .stress-table-dark th {
+        .stress-table th {
             text-align: left;
             font-family: 'DM Mono', monospace;
             font-size: 10.5px;
-            color: #94a3b8;
+            color: #64748b;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            border-bottom: 1px solid #e2e8f0;
             text-transform: uppercase;
         }
 
-        .stress-table-dark td {
+        .stress-table td {
             padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid #f1f5f9;
             font-weight: 600;
-            color: #ffffff;
         }
 
-        .stress-table-dark tr:last-child td {
+        .stress-table tr:last-child td {
             border-bottom: none;
         }
 
-        /* PRINT STYLES */
+        /* DIAGNOSTIC PICKER CARDS */
+        .diag-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .diag-card:hover, .diag-card.active {
+            border-color: #2563eb;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+            background: #f0f6ff;
+        }
+
+        /* PRINT MEDIA STYLES */
         @media print {
             .navbar-container, .breadcrumb-nav, .hero-compact, .calc-header-row button, .receipt-audit-btn, .site-footer, button {
                 display: none !important;
             }
             body { background: #ffffff !important; color: #000000 !important; }
-            .dark-section-wrapper, .dark-section-alt { background: #ffffff !important; color: #000000 !important; border: none !important; }
-            .receipt-card-dark, .dark-glass-card { background: #ffffff !important; border: 1px solid #000000 !important; color: #000000 !important; }
+            .receipt-card-dark { background: #ffffff !important; color: #000000 !important; border: 1px solid #000000 !important; }
             .receipt-profit-val, .receipt-val { color: #000000 !important; }
         }
     </style>
@@ -541,41 +607,39 @@
                 <span>Amazon Profit Calculator</span>
             </nav>
 
-            <div class="section-tag-eyebrow">AMAZON PROFIT CALCULATOR</div>
+            <div class="section-tag-eyebrow">AMAZON SELLER DECISION TOOL</div>
             <h1 class="hero-title" style="margin-bottom:12px; font-size:clamp(32px, 4vw, 46px);">Amazon Profit Calculator – Calculate Your Real Amazon Profit</h1>
-            <p class="hero-description" style="margin-bottom:16px; max-width:760px; margin-left:auto; margin-right:auto;">
-                Calculate Amazon fees, FBA, Easy Ship, advertising, returns and net profit — then see your break-even ACoS, maximum CPC, sensitivity analysis, and stress-test your numbers.
+            <p class="hero-description" style="margin-bottom:16px; max-width:780px; margin-left:auto; margin-right:auto;">
+                Calculate Amazon India referral fees, FBA storage &amp; weight handling, advertising cost, returns, and net margin — plus break-even ACoS, maximum CPC, sensitivity analysis, and stress-test scenarios.
             </p>
             
             <div style="display:flex; justify-content:center; gap:20px; font-size:13px; font-weight:700; color:#475569; flex-wrap:wrap;">
-                <span>✓ Built for Amazon sellers &amp; PPC professionals</span>
-                <span>✓ Real-time mathematical decision engine</span>
-                <span>✓ Instant PDF export</span>
+                <span>✓ Built for Amazon India Sellers</span>
+                <span>✓ Live Real-Time Math</span>
+                <span>✓ Instant PDF &amp; Clipboard Export</span>
             </div>
-            <p style="font-size:12px; color:#64748b; margin-top:10px;">Fee assumptions last updated: Jan 2026</p>
+            <p style="font-size:12px; color:#64748b; margin-top:10px;">Fee assumptions last updated: 1 Jan 2026</p>
         </div>
     </div>
 
-    <!-- 2. MAIN EXECUTIVE DARK CALCULATOR SECTION -->
-    <div class="dark-section-wrapper">
+    <!-- 2. MAIN CALCULATOR SECTION (CLEAN GRID BACKGROUND + RECEIPT PANEL) -->
+    <div class="grid-bg-section">
         <div class="resources-calc-container">
             
-            <!-- HEADER UTILITIES ROW -->
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:24px;">
-                <div style="font-family:'DM Mono',monospace; font-size:12px; font-weight:700; color:#38bdf8; letter-spacing:1px; text-transform:uppercase;">AMAZON PROFIT ENGINE</div>
-                <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                    <button type="button" class="btn-calc-reset" id="btnUseExampleData" style="padding:7px 14px; font-size:12px; background:rgba(56,189,248,0.15); color:#38bdf8; border-color:rgba(56,189,248,0.3);">Use Example Data</button>
-                    <button type="button" class="btn-calc-reset" id="btnResetCalculator" style="padding:7px 14px; font-size:12px; background:rgba(255,255,255,0.08); color:#ffffff; border-color:rgba(255,255,255,0.2);">Reset</button>
-                    <button type="button" class="btn-calc-reset" id="btnDownloadPDF" style="padding:7px 14px; font-size:12px; background:rgba(16,185,129,0.2); color:#34d399; border-color:rgba(16,185,129,0.4);">Download PDF Report 📄</button>
-                    <button type="button" class="btn-calc-reset" id="btnCopySummary" style="padding:7px 14px; font-size:12px; background:rgba(255,255,255,0.1); color:#ffffff; border-color:rgba(255,255,255,0.2);">Copy Summary 📋</button>
-                </div>
-            </div>
-
-            <div style="display:grid; grid-template-columns: 1.15fr 0.85fr; gap:30px; align-items:start;">
+            <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap:30px; align-items:start;">
                 
-                <!-- LEFT MAIN DARK GLASS INPUT CARD -->
-                <div class="dark-glass-card">
-                    
+                <!-- LEFT MAIN INPUT CARD -->
+                <div class="calc-main-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
+                        <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin:0;">Calculate My Amazon Profit</h3>
+                        <div style="display:flex; gap:8px;">
+                            <button type="button" class="util-btn" id="btnUseExampleData">Use Example Data</button>
+                            <button type="button" class="util-btn" id="btnResetCalculator">Reset Calculator</button>
+                            <button type="button" class="util-btn" id="btnDownloadPDF" style="border-color:#10b981; color:#047857; background:#ecfdf5;">PDF Report 📄</button>
+                            <button type="button" class="util-btn" id="btnCopySummary">Copy 📋</button>
+                        </div>
+                    </div>
+
                     <!-- STEP UNDERLINE TABS -->
                     <div class="step-tabs-bar" id="stepTabsBar">
                         <button type="button" class="step-tab-item active" data-step="1">
@@ -600,19 +664,19 @@
                     <div id="stepContent1" class="step-content">
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
                             <div>
-                                <label class="dark-label" for="spInput">Selling Price (₹)</label>
-                                <input type="number" id="spInput" class="dark-input-field" value="999" placeholder="999" min="1" step="any">
+                                <label class="light-input-label" for="spInput">Selling Price (₹)</label>
+                                <input type="number" id="spInput" class="light-input-field" value="999" placeholder="999" min="1" step="any">
                             </div>
                             <div>
-                                <label class="dark-label" for="cogsInput">Product Cost / COGS (₹)</label>
-                                <input type="number" id="cogsInput" class="dark-input-field" value="400" placeholder="400" min="0" step="any">
+                                <label class="light-input-label" for="cogsInput">Product Cost / COGS (₹)</label>
+                                <input type="number" id="cogsInput" class="light-input-field" value="400" placeholder="400" min="0" step="any">
                             </div>
                         </div>
 
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
                             <div>
-                                <label class="dark-label" for="catSelect">Product Category</label>
-                                <select id="catSelect" class="dark-input-field" style="height:46px;">
+                                <label class="light-input-label" for="catSelect">Product Category</label>
+                                <select id="catSelect" class="light-input-field" style="height:46px;">
                                     <option value="12" selected>Apparel &amp; Accessories (12%)</option>
                                     <option value="10">Electronics &amp; Accessories (10%)</option>
                                     <option value="8">Home &amp; Kitchen (8%)</option>
@@ -624,22 +688,22 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="dark-label" for="weightInput">Product Weight (kg)</label>
-                                <input type="number" id="weightInput" class="dark-input-field" value="0.5" placeholder="0.5 kg" min="0.01" step="0.01">
+                                <label class="light-input-label" for="weightInput">Product Weight (kg)</label>
+                                <input type="number" id="weightInput" class="light-input-field" value="0.5" placeholder="0.5" min="0.01" step="0.01">
                             </div>
                         </div>
 
                         <div style="margin-bottom:16px;">
-                            <label class="dark-label">Product Dimensions (L × W × H cm)</label>
+                            <label class="light-input-label">Product Dimensions (L × W × H cm)</label>
                             <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px;">
-                                <input type="number" id="dimL" class="dark-input-field" placeholder="L (cm)">
-                                <input type="number" id="dimW" class="dark-input-field" placeholder="W (cm)">
-                                <input type="number" id="dimH" class="dark-input-field" placeholder="H (cm)">
+                                <input type="number" id="dimL" class="light-input-field" placeholder="L (cm)">
+                                <input type="number" id="dimW" class="light-input-field" placeholder="W (cm)">
+                                <input type="number" id="dimH" class="light-input-field" placeholder="H (cm)">
                             </div>
                         </div>
 
                         <div style="margin-bottom:20px;">
-                            <label class="dark-label">Fulfillment Method</label>
+                            <label class="light-input-label">Fulfillment Method</label>
                             <div class="pill-toggle-container">
                                 <button type="button" class="pill-toggle-btn active" id="pillFBA">FBA</button>
                                 <button type="button" class="pill-toggle-btn" id="pillEasy">Easy Ship</button>
@@ -649,22 +713,22 @@
 
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:20px;">
                             <div>
-                                <label class="dark-label" for="shippingZoneSelect">Shipping Zone</label>
-                                <select id="shippingZoneSelect" class="dark-input-field" style="height:46px;">
+                                <label class="light-input-label" for="shippingZoneSelect">Shipping Zone</label>
+                                <select id="shippingZoneSelect" class="light-input-field" style="height:46px;">
                                     <option value="local">Local</option>
                                     <option value="regional" selected>Regional</option>
                                     <option value="national">National</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="dark-label" for="packInput">Packaging Cost (₹)</label>
-                                <input type="number" id="packInput" class="dark-input-field" value="10" placeholder="10">
+                                <label class="light-input-label" for="packInput">Packaging Cost (₹)</label>
+                                <input type="number" id="packInput" class="light-input-field" value="10" placeholder="10">
                             </div>
                         </div>
 
                         <div style="margin-bottom:20px;">
-                            <label class="dark-label" for="otherProdInput">Other Product Cost (₹)</label>
-                            <input type="number" id="otherProdInput" class="dark-input-field" value="0" placeholder="0">
+                            <label class="light-input-label" for="otherProdInput">Other Product Cost (₹)</label>
+                            <input type="number" id="otherProdInput" class="light-input-field" value="0" placeholder="0">
                         </div>
                     </div>
 
@@ -672,23 +736,23 @@
                     <div id="stepContent2" class="step-content" style="display:none;">
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
                             <div>
-                                <label class="dark-label" for="refPctInput">Referral Fee (%)</label>
-                                <input type="number" id="refPctInput" class="dark-input-field" value="12" placeholder="12%">
+                                <label class="light-input-label" for="refPctInput">Referral Fee (%)</label>
+                                <input type="number" id="refPctInput" class="light-input-field" value="12" placeholder="12%">
                             </div>
                             <div>
-                                <label class="dark-label" for="closingFeeInput">Closing Fee (₹)</label>
-                                <input type="number" id="closingFeeInput" class="dark-input-field" value="25" placeholder="₹25">
+                                <label class="light-input-label" for="closingFeeInput">Closing Fee (₹)</label>
+                                <input type="number" id="closingFeeInput" class="light-input-field" value="25" placeholder="₹25">
                             </div>
                         </div>
 
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
                             <div>
-                                <label class="dark-label" for="fulfilFeeInput">FBA / Weight Handling (₹)</label>
-                                <input type="number" id="fulfilFeeInput" class="dark-input-field" value="65" placeholder="₹65">
+                                <label class="light-input-label" for="fulfilFeeInput">FBA / Weight Handling (₹)</label>
+                                <input type="number" id="fulfilFeeInput" class="light-input-field" value="65" placeholder="₹65">
                             </div>
                             <div>
-                                <label class="dark-label" for="storageFeeInput">Storage Cost (₹/unit)</label>
-                                <input type="number" id="storageFeeInput" class="dark-input-field" value="6" placeholder="₹6">
+                                <label class="light-input-label" for="storageFeeInput">Storage Cost (₹/unit)</label>
+                                <input type="number" id="storageFeeInput" class="light-input-field" value="6" placeholder="₹6">
                             </div>
                         </div>
                     </div>
@@ -697,23 +761,23 @@
                     <div id="stepContent3" class="step-content" style="display:none;">
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
                             <div>
-                                <label class="dark-label" for="acosPctInput">Current / Expected ACoS (%)</label>
-                                <input type="number" id="acosPctInput" class="dark-input-field" value="20" placeholder="20%">
+                                <label class="light-input-label" for="acosPctInput">Current / Expected ACoS (%)</label>
+                                <input type="number" id="acosPctInput" class="light-input-field" value="20" placeholder="20%">
                             </div>
                             <div>
-                                <label class="dark-label" for="cpcInput">Average CPC (₹)</label>
-                                <input type="number" id="cpcInput" class="dark-input-field" value="15" placeholder="₹15">
+                                <label class="light-input-label" for="cpcInput">Average CPC (₹)</label>
+                                <input type="number" id="cpcInput" class="light-input-field" value="15" placeholder="₹15">
                             </div>
                         </div>
 
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
                             <div>
-                                <label class="dark-label" for="cvrPctInput">Conversion Rate (%)</label>
-                                <input type="number" id="cvrPctInput" class="dark-input-field" value="10" placeholder="10%">
+                                <label class="light-input-label" for="cvrPctInput">Conversion Rate (%)</label>
+                                <input type="number" id="cvrPctInput" class="light-input-field" value="10" placeholder="10%">
                             </div>
                             <div>
-                                <label class="dark-label" for="targetAcosInput">Target ACoS (%)</label>
-                                <input type="number" id="targetAcosInput" class="dark-input-field" value="19.6" placeholder="19.6%">
+                                <label class="light-input-label" for="targetAcosInput">Target ACoS (%)</label>
+                                <input type="number" id="targetAcosInput" class="light-input-field" value="19.6" placeholder="19.6%">
                             </div>
                         </div>
                     </div>
@@ -722,25 +786,25 @@
                     <div id="stepContent4" class="step-content" style="display:none;">
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-bottom:16px;">
                             <div>
-                                <label class="dark-label" for="returnRateInput">Return Rate (%)</label>
-                                <input type="number" id="returnRateInput" class="dark-input-field" value="3" placeholder="3%">
+                                <label class="light-input-label" for="returnRateInput">Return Rate (%)</label>
+                                <input type="number" id="returnRateInput" class="light-input-field" value="3" placeholder="3%">
                             </div>
                             <div>
-                                <label class="dark-label" for="returnCostInput">Cost per Return (₹)</label>
-                                <input type="number" id="returnCostInput" class="dark-input-field" value="120" placeholder="₹120">
+                                <label class="light-input-label" for="returnCostInput">Cost per Return (₹)</label>
+                                <input type="number" id="returnCostInput" class="light-input-field" value="120" placeholder="₹120">
                             </div>
                         </div>
                     </div>
 
                     <div style="display:flex; justify-content:flex-end; margin-top:20px;">
-                        <button type="button" class="btn-calc-submit" id="btnNextStepNav" style="padding:12px 24px; font-size:14px;">Next: Fulfillment &amp; Fees →</button>
+                        <button type="button" class="btn-cta-primary" id="btnNextStepNav" style="padding:12px 24px; font-size:14px;">Next: Fulfillment &amp; Fees →</button>
                     </div>
 
                 </div>
 
-                <!-- RIGHT RECEIPT / LIVE RESULT CARD (DARK TEAR-OFF RECEIPT STYLE) -->
+                <!-- RIGHT RECEIPT / LIVE RESULT CARD -->
                 <div class="receipt-card-dark" aria-live="polite">
-                    <div class="receipt-header-eyebrow">LIVE PROFIT LEDGER</div>
+                    <div class="receipt-header-eyebrow">LIVE RESULT LEDGER</div>
                     <div class="receipt-profit-val" id="receiptProfitVal">₹146.12</div>
                     <div style="font-size:13px; color:#94a3b8; margin-bottom:8px;">Net profit per unit sold</div>
                     <div class="receipt-margin-pill" id="receiptMarginPill">14.6% net margin</div>
@@ -789,88 +853,88 @@
         </div>
     </div>
 
-    <!-- 3. FULL RESULT DASHBOARD (ADVANCED TELEMETRY METRICS) -->
-    <div class="dark-section-alt">
+    <!-- 3. FULL RESULT DASHBOARD (METRICS HIGHLIGHT CARDS) -->
+    <div class="light-content-section">
         <div class="resources-calc-container">
             <div style="margin-bottom:28px;">
                 <div class="section-tag-eyebrow">FULL RESULT DASHBOARD</div>
-                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Your Amazon Profitability, Fully Broken Down</h2>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Your Amazon Profitability, Fully Broken Down</h2>
             </div>
 
             <!-- PRIMARY METRICS -->
-            <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">PRIMARY METRICS</div>
+            <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">PRIMARY METRICS</div>
             
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:18px; margin-bottom:36px;">
-                <div class="telemetry-card">
-                    <div class="telemetry-card-title">SELLING PRICE</div>
-                    <div class="telemetry-card-val" id="dashValSp">₹999</div>
+                <div class="dash-card">
+                    <div class="dash-card-title">SELLING PRICE</div>
+                    <div class="dash-card-val" id="dashValSp">₹999</div>
                 </div>
 
-                <div class="telemetry-card card-amber-glow">
-                    <div class="telemetry-card-title" style="color:#f59e0b;">AMAZON FEES</div>
-                    <div class="telemetry-card-val" style="color:#fbbf24;" id="dashValAmz">₹238</div>
+                <div class="dash-card dash-card-yellow">
+                    <div class="dash-card-title" style="color:#b45309;">AMAZON FEES</div>
+                    <div class="dash-card-val" style="color:#b45309;" id="dashValAmz">₹238</div>
                 </div>
 
-                <div class="telemetry-card">
-                    <div class="telemetry-card-title">PRODUCT COST</div>
-                    <div class="telemetry-card-val" id="dashValCogs">₹410</div>
+                <div class="dash-card">
+                    <div class="dash-card-title">PRODUCT COST</div>
+                    <div class="dash-card-val" id="dashValCogs">₹410</div>
                 </div>
 
-                <div class="telemetry-card card-blue-glow">
-                    <div class="telemetry-card-title" style="color:#38bdf8;">ADVERTISING COST</div>
-                    <div class="telemetry-card-val" style="color:#60a5fa;" id="dashValAds">₹200</div>
+                <div class="dash-card dash-card-blue">
+                    <div class="dash-card-title" style="color:#1d4ed8;">ADVERTISING COST</div>
+                    <div class="dash-card-val" style="color:#1d4ed8;" id="dashValAds">₹200</div>
                 </div>
 
-                <div class="telemetry-card card-red-glow">
-                    <div class="telemetry-card-title" style="color:#f87171;">RETURN / LOSS COST</div>
-                    <div class="telemetry-card-val" style="color:#f87171;" id="dashValReturns">₹5</div>
+                <div class="dash-card dash-card-red">
+                    <div class="dash-card-title" style="color:#b91c1c;">RETURN / LOSS COST</div>
+                    <div class="dash-card-val" style="color:#b91c1c;" id="dashValReturns">₹5</div>
                 </div>
 
-                <div class="telemetry-card card-green-glow">
-                    <div class="telemetry-card-title" style="color:#34d399;">NET PROFIT</div>
-                    <div class="telemetry-card-val" style="color:#34d399;" id="dashValNet">₹146</div>
-                    <div style="font-size:12.5px; color:#a7f3d0; margin-top:4px;" id="dashValMarginSub">14.6% net margin</div>
+                <div class="dash-card dash-card-green">
+                    <div class="dash-card-title" style="color:#047857;">NET PROFIT</div>
+                    <div class="dash-card-val" style="color:#047857;" id="dashValNet">₹146</div>
+                    <div class="dash-card-sub" style="color:#047857;" id="dashValMarginSub">14.6% net margin</div>
                 </div>
             </div>
 
             <!-- PPC METRICS -->
-            <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">PPC METRICS</div>
+            <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#64748b; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;">PPC METRICS</div>
             
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:18px;">
-                <div class="telemetry-card">
-                    <div class="telemetry-card-title">BREAK-EVEN ACOS</div>
-                    <div class="telemetry-card-val" style="color:#f59e0b;" id="dashPpcBeAcos">34.6%</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">Max ACoS before ~₹0 profit</div>
+                <div class="dash-card">
+                    <div class="dash-card-title">BREAK-EVEN ACOS</div>
+                    <div class="dash-card-val" id="dashPpcBeAcos">34.6%</div>
+                    <div class="dash-card-sub">Max ACoS before ~₹0 profit</div>
                 </div>
 
-                <div class="telemetry-card">
-                    <div class="telemetry-card-title">TARGET ACOS</div>
-                    <div class="telemetry-card-val" id="dashPpcTargetAcos">19.6%</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">At target margin</div>
+                <div class="dash-card">
+                    <div class="dash-card-title">TARGET ACOS</div>
+                    <div class="dash-card-val" id="dashPpcTargetAcos">19.6%</div>
+                    <div class="dash-card-sub">At target margin</div>
                 </div>
 
-                <div class="telemetry-card">
-                    <div class="telemetry-card-title">TACOS (EST.)</div>
-                    <div class="telemetry-card-val" id="dashPpcTacos">20%</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">Product-level estimate</div>
+                <div class="dash-card">
+                    <div class="dash-card-title">TACOS (EST.)</div>
+                    <div class="dash-card-val" id="dashPpcTacos">20%</div>
+                    <div class="dash-card-sub">Product-level estimate</div>
                 </div>
 
-                <div class="telemetry-card card-green-glow">
-                    <div class="telemetry-card-title" style="color:#34d399;">MAXIMUM CPC</div>
-                    <div class="telemetry-card-val" style="color:#34d399;" id="dashPpcMaxCpc">₹16</div>
-                    <div style="font-size:12px; color:#a7f3d0; margin-top:4px;">At target ACoS &amp; CVR</div>
+                <div class="dash-card dash-card-green">
+                    <div class="dash-card-title" style="color:#047857;">MAXIMUM CPC</div>
+                    <div class="dash-card-val" style="color:#047857;" id="dashPpcMaxCpc">₹16</div>
+                    <div class="dash-card-sub" style="color:#047857;">At target ACoS &amp; CVR</div>
                 </div>
 
-                <div class="telemetry-card">
-                    <div class="telemetry-card-title">REQUIRED CVR</div>
-                    <div class="telemetry-card-val" id="dashPpcReqCvr">5.1%</div>
-                    <div style="font-size:12px; color:#94a3b8; margin-top:4px;">At your average CPC</div>
+                <div class="dash-card">
+                    <div class="dash-card-title">REQUIRED CVR</div>
+                    <div class="dash-card-val" id="dashPpcReqCvr">5.1%</div>
+                    <div class="dash-card-sub">At your average CPC</div>
                 </div>
 
-                <div class="telemetry-card card-green-glow">
-                    <div class="telemetry-card-title" style="color:#34d399;">PROFIT AFTER PPC</div>
-                    <div class="telemetry-card-val" style="color:#34d399;" id="dashPpcProfitAfter">₹146</div>
-                    <div style="font-size:12px; color:#a7f3d0; margin-top:4px;" id="dashPpcMarginSub">14.6% margin</div>
+                <div class="dash-card dash-card-green">
+                    <div class="dash-card-title" style="color:#047857;">PROFIT AFTER PPC</div>
+                    <div class="dash-card-val" style="color:#047857;" id="dashPpcProfitAfter">₹146</div>
+                    <div class="dash-card-sub" style="color:#047857;" id="dashPpcMarginSub">14.6% margin</div>
                 </div>
             </div>
 
@@ -878,35 +942,35 @@
     </div>
 
     <!-- 4. WHERE YOUR MONEY GOES & WATERFALL DIAGRAM -->
-    <div class="dark-section-wrapper">
+    <div class="alt-light-section">
         <div class="resources-calc-container">
             
             <!-- STACKED BAR -->
             <div style="margin-bottom:48px;">
-                <h2 style="font-size:24px; font-weight:800; color:#ffffff; margin-bottom:20px; text-align:center;">Where Your Money Goes</h2>
+                <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:20px; text-align:center;">Where Your Money Goes</h2>
                 
-                <div class="dark-glass-card" style="max-width:920px; margin:0 auto;">
-                    <div style="height:26px; background:rgba(255,255,255,0.1); border-radius:13px; overflow:hidden; display:flex; margin-bottom:18px;">
-                        <div id="segBarCogs" style="width:41.04%; background:#475569;" title="Product Cost"></div>
-                        <div id="segBarAmz" style="width:23.82%; background:#f59e0b;" title="Amazon Fees"></div>
-                        <div id="segBarAds" style="width:20.02%; background:#2563eb;" title="Advertising"></div>
-                        <div id="segBarReturns" style="width:0.50%; background:#ef4444;" title="Returns"></div>
-                        <div id="segBarProfit" style="width:14.62%; background:#10b981;" title="Net Profit"></div>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:26px; box-shadow:0 6px 20px rgba(0,0,0,0.03); max-width:960px; margin:0 auto 20px auto;">
+                    <div class="bar-stacked-container">
+                        <div class="bar-seg seg-cogs" id="segBarCogs" style="width:41.04%;"></div>
+                        <div class="bar-seg seg-amz" id="segBarAmz" style="width:23.82%;"></div>
+                        <div class="bar-seg seg-ads" id="segBarAds" style="width:20.02%;"></div>
+                        <div class="bar-seg seg-returns" id="segBarReturns" style="width:0.50%;"></div>
+                        <div class="bar-seg seg-profit" id="segBarProfit" style="width:14.62%;"></div>
                     </div>
 
-                    <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:14px; font-size:13.5px; font-weight:700;">
-                        <span style="color:#cbd5e1;">■ Product Costs: <span id="lblBarCogs">₹410</span></span>
-                        <span style="color:#f59e0b;">■ Amazon Fees: <span id="lblBarAmz">₹238</span></span>
-                        <span style="color:#60a5fa;">■ Advertising: <span id="lblBarAds">₹200</span></span>
-                        <span style="color:#f87171;">■ Returns / Loss: <span id="lblBarReturns">₹5</span></span>
-                        <span style="color:#34d399;">■ Net Profit: <span id="lblBarProfit">₹146</span></span>
+                    <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:16px; font-size:13.5px; font-weight:700; color:#334155;">
+                        <div>■ Product &amp; Other Costs: <span id="lblBarCogs">₹410</span></div>
+                        <div>■ Amazon Fees: <span id="lblBarAmz">₹238</span></div>
+                        <div>■ Advertising: <span id="lblBarAds">₹200</span></div>
+                        <div>■ Returns / Loss: <span id="lblBarReturns">₹5</span></div>
+                        <div style="color:#047857;">■ Net Profit: <span id="lblBarProfit">₹146</span></div>
                     </div>
                 </div>
             </div>
 
             <!-- WATERFALL FLOW DIAGRAM -->
             <div>
-                <h2 style="font-size:24px; font-weight:800; color:#ffffff; margin-bottom:20px; text-align:center;">From Selling Price to Net Profit</h2>
+                <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:20px; text-align:center;">From Selling Price to Net Profit</h2>
                 
                 <div class="waterfall-container">
                     <div class="waterfall-row">
@@ -916,17 +980,17 @@
                     </div>
                     <div class="waterfall-row">
                         <div class="waterfall-label">− Product &amp; Packaging</div>
-                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarCogs" style="width:41.04%; background:#475569;"></div></div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarCogs" style="width:41.04%; background:#334155;"></div></div>
                         <div class="waterfall-val" id="wfCogs">−₹410.00</div>
                     </div>
                     <div class="waterfall-row">
                         <div class="waterfall-label">− Amazon Fees</div>
-                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarAmz" style="width:23.82%; background:#f59e0b;"></div></div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarAmz" style="width:23.82%; background:#d97706;"></div></div>
                         <div class="waterfall-val" id="wfAmz">−₹237.88</div>
                     </div>
                     <div class="waterfall-row">
                         <div class="waterfall-label">− Advertising Cost</div>
-                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarAd" style="width:20.02%; background:#3b82f6;"></div></div>
+                        <div class="waterfall-track"><div class="waterfall-bar" id="wfBarAd" style="width:20.02%; background:#2563eb;"></div></div>
                         <div class="waterfall-val" id="wfAd">−₹199.80</div>
                     </div>
                     <div class="waterfall-row">
@@ -935,25 +999,25 @@
                         <div class="waterfall-val" id="wfReturns">−₹5.20</div>
                     </div>
                     <div class="waterfall-row" style="margin-top:6px;">
-                        <div class="waterfall-label" style="font-weight:800; color:#34d399;">Remaining Net Profit</div>
+                        <div class="waterfall-label" style="font-weight:800; color:#047857;">Remaining Net Profit</div>
                         <div class="waterfall-track"><div class="waterfall-bar" id="wfBarProfit" style="width:14.62%; background:#10b981;"></div></div>
-                        <div class="waterfall-val" style="font-weight:800; color:#34d399;" id="wfProfit">₹146.12</div>
+                        <div class="waterfall-val" style="font-weight:800; color:#047857;" id="wfProfit">₹146.12</div>
                     </div>
                 </div>
             </div>
 
-            <!-- CPC BENCHMARK SCALE -->
-            <div style="margin-top:40px; max-width:840px; margin-left:auto; margin-right:auto;">
-                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#94a3b8; text-transform:uppercase; text-align:center;">CPC Alignment Benchmark Scale</div>
-                <div class="cpc-scale-track">
-                    <div class="cpc-marker marker-cpc-curr" id="markerCpcCurr" style="left:40%;">
-                        <span>Current CPC: ₹15.00</span>
+            <!-- RECOMMENDATIONS -->
+            <div style="margin-top:40px; max-width:960px; margin-left:auto; margin-right:auto;">
+                <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:18px;">Amazon PPC Recommendations</h2>
+                
+                <div id="recommendationsList">
+                    <div class="rec-alert-pill warn">
+                        <span>⚠️</span>
+                        <div>Your current ACoS (20%) is near your target ACoS (19.6%). Consider reducing bids on inefficient keywords and improving conversion rate.</div>
                     </div>
-                    <div class="cpc-marker marker-cpc-target" id="markerCpcTarget" style="left:52%;">
-                        <span>Target CPC: ₹16.00</span>
-                    </div>
-                    <div class="cpc-marker marker-cpc-be" id="markerCpcBe" style="left:90%;">
-                        <span>Break-Even CPC: ₹34.60</span>
+                    <div class="rec-alert-pill success">
+                        <span>✅</span>
+                        <div>Your product has reasonable PPC headroom. Consider controlled scaling while monitoring ACoS and TACoS.</div>
                     </div>
                 </div>
             </div>
@@ -962,21 +1026,21 @@
     </div>
 
     <!-- 5. STRESS-TEST YOUR NUMBERS (ADVANCED TOOLS GRID) -->
-    <div class="dark-section-alt">
+    <div class="light-content-section">
         <div class="resources-calc-container">
             <div style="margin-bottom:28px;">
                 <div class="section-tag-eyebrow">ADVANCED STRESS-TEST LAB</div>
-                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Stress-Test Your Numbers</h2>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Stress-Test Your Numbers</h2>
             </div>
 
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:26px; margin-bottom:26px;">
                 
                 <!-- STRESS SCENARIOS TABLE -->
-                <div class="dark-glass-card">
-                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 4px 0;">What If You Change Your Numbers?</h3>
-                    <p style="font-size:13px; color:#94a3b8; margin:0 0 16px 0;">Compare your current setup against three quick scenarios.</p>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:24px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">What If You Change Your Numbers?</h3>
+                    <p style="font-size:13px; color:#64748b; margin:0 0 16px 0;">Compare your current setup against three quick scenarios.</p>
 
-                    <table class="stress-table-dark">
+                    <table class="stress-table">
                         <thead>
                             <tr>
                                 <th>SCENARIO</th>
@@ -1020,18 +1084,18 @@
                 </div>
 
                 <!-- SELLING PRICE REPRICER -->
-                <div class="dark-glass-card">
-                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 4px 0;">What Selling Price Gives You Better Profit?</h3>
-                    <p style="font-size:13px; color:#94a3b8; margin:0 0 16px 0;">Enter a target net margin. We estimate the minimum selling price needed, holding your other costs constant.</p>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:24px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">What Selling Price Gives You Better Profit?</h3>
+                    <p style="font-size:13px; color:#64748b; margin:0 0 16px 0;">Enter a target net margin. We estimate the minimum selling price needed, holding your other costs constant.</p>
 
                     <div style="margin-bottom:20px;">
-                        <label class="dark-label" for="desiredMarginInput">Desired net margin (%)</label>
-                        <input type="number" id="desiredMarginInput" class="dark-input-field" value="20" placeholder="20%">
+                        <label class="light-input-label" for="desiredMarginInput">Desired net margin (%)</label>
+                        <input type="number" id="desiredMarginInput" class="light-input-field" value="20" placeholder="20%">
                     </div>
 
-                    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:16px; margin-bottom:12px;">
-                        <div style="font-size:12.5px; color:#94a3b8;">Estimated minimum selling price</div>
-                        <div style="font-size:26px; font-weight:800; color:#38bdf8; margin-top:2px;" id="minPriceResult">₹1,135</div>
+                    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:16px; margin-bottom:12px;">
+                        <div style="font-size:12.5px; color:#64748b;">Estimated minimum selling price</div>
+                        <div style="font-size:26px; font-weight:800; color:#2563eb; margin-top:2px;" id="minPriceResult">₹1,135</div>
                     </div>
 
                     <p style="font-size:11.5px; color:#94a3b8; margin:0;">*Actual marketplace fees vary by exact category, weight and Amazon's live fee schedule — verify in Seller Central before repricing.</p>
@@ -1042,40 +1106,40 @@
             <!-- LOWER PPC & TACOS CARDS -->
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:26px;">
                 
-                <div class="dark-glass-card">
-                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 4px 0;">How Much Can You Spend on PPC?</h3>
-                    <p style="font-size:13px; color:#94a3b8; margin:0 0 16px 0;">Based on your daily ad budget (₹750), CPC (₹15) and conversion rate (10%).</p>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:24px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">How Much Can You Spend on PPC?</h3>
+                    <p style="font-size:13px; color:#64748b; margin:0 0 16px 0;">Based on your daily ad budget (₹750), CPC (₹15) and conversion rate (10%).</p>
 
-                    <table class="stress-table-dark">
+                    <table class="stress-table">
                         <tbody>
                             <tr>
-                                <td style="color:#cbd5e1;">Estimated daily clicks</td>
+                                <td style="color:#64748b;">Estimated daily clicks</td>
                                 <td style="text-align:right;" id="ppcDailyClicks">50</td>
                             </tr>
                             <tr>
-                                <td style="color:#cbd5e1;">Estimated daily orders</td>
+                                <td style="color:#64748b;">Estimated daily orders</td>
                                 <td style="text-align:right;" id="ppcDailyOrders">5.0</td>
                             </tr>
                             <tr>
-                                <td style="color:#cbd5e1;">Estimated daily ad sales</td>
+                                <td style="color:#64748b;">Estimated daily ad sales</td>
                                 <td style="text-align:right;" id="ppcDailySales">₹4,995</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="dark-glass-card">
-                    <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 4px 0;">Estimated TACoS</h3>
-                    <p style="font-size:13px; color:#94a3b8; margin:0 0 16px 0;">TACoS measures total ad spend against total sales (ad + organic). This is a product-level estimate only.</p>
+                <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:24px; box-shadow:0 6px 20px rgba(0,0,0,0.03);">
+                    <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 4px 0;">Estimated TACoS</h3>
+                    <p style="font-size:13px; color:#64748b; margin:0 0 16px 0;">TACoS measures total ad spend against total sales (ad + organic). This is a product-level estimate only.</p>
 
-                    <table class="stress-table-dark">
+                    <table class="stress-table">
                         <tbody>
                             <tr>
-                                <td style="color:#cbd5e1;">Estimated TACoS</td>
+                                <td style="color:#64748b;">Estimated TACoS</td>
                                 <td style="text-align:right;" id="estTacosVal">12.5%</td>
                             </tr>
                             <tr>
-                                <td style="color:#cbd5e1;">Estimated ad-attributed sales (monthly)</td>
+                                <td style="color:#64748b;">Estimated ad-attributed sales (monthly)</td>
                                 <td style="text-align:right;" id="estAdSalesMonthly">₹1,49,850</td>
                             </tr>
                         </tbody>
@@ -1087,28 +1151,56 @@
         </div>
     </div>
 
-    <!-- 6. SENSITIVITY ANALYSIS (DARK SECTION) -->
-    <div class="dark-section-wrapper">
+    <!-- 6. SENSITIVITY ANALYSIS & DIAGNOSTIC PICKER -->
+    <div class="alt-light-section">
         <div class="resources-calc-container">
-            <div style="margin-bottom:20px;">
-                <div class="section-tag-eyebrow">LEVER RANKING</div>
-                <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">Which Lever Has the Biggest Impact?</h2>
-                <p style="font-size:14px; color:#94a3b8; margin:0;">Automated sensitivity analysis showing which standardized change moves your net profit most.</p>
+            <div style="margin-bottom:28px;">
+                <div class="section-tag-eyebrow">LEVER RANKING &amp; DIAGNOSTICS</div>
+                <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Which Lever Has the Biggest Impact?</h2>
+                <p style="font-size:14px; color:#64748b; margin:0;">Automated sensitivity analysis showing which standardized change moves your net profit most.</p>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;" id="sensitivityGrid">
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px; margin-bottom:40px;" id="sensitivityGrid">
                 <!-- LEVERS GENERATED DYNAMICALLY -->
             </div>
-            <div style="font-size:11.5px; color:#94a3b8; margin-top:14px; text-align:center;">
-                *Sensitivity analysis illustrates mathematical impact under standardized changes — not a direct strategic recommendation.
+
+            <!-- DIAGNOSTIC PICKER -->
+            <h3 style="font-size:22px; font-weight:800; color:#0f172a; margin-bottom:16px;">Is Your Product Margin Under Pressure?</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;" id="diagPickerGrid">
+                <div class="diag-card active" data-diag="acos">
+                    <div style="font-size:20px; margin-bottom:6px;">📈</div>
+                    <div style="font-weight:800; font-size:15px; color:#0f172a;">High PPC ACoS</div>
+                    <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Ad spend consumes >60% of pre-ad contribution margin.</div>
+                </div>
+                <div class="diag-card" data-diag="returns">
+                    <div style="font-size:20px; margin-bottom:6px;">📦</div>
+                    <div style="font-weight:800; font-size:15px; color:#0f172a;">High Return Losses</div>
+                    <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Return rates >5% wiping out net contribution.</div>
+                </div>
+                <div class="diag-card" data-diag="fba">
+                    <div style="font-size:20px; margin-bottom:6px;">🏢</div>
+                    <div style="font-weight:800; font-size:15px; color:#0f172a;">Heavy FBA Fees</div>
+                    <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Weight or size slab placing product in higher fee tier.</div>
+                </div>
+                <div class="diag-card" data-diag="cogs">
+                    <div style="font-size:20px; margin-bottom:6px;">🏷️</div>
+                    <div style="font-weight:800; font-size:15px; color:#0f172a;">High COGS Ratio</div>
+                    <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Landed product cost accounts for >45% of selling price.</div>
+                </div>
             </div>
+
+            <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:22px; margin-top:20px; box-shadow:0 4px 15px rgba(0,0,0,0.02);" id="diagSolutionBox">
+                <h4 style="margin:0 0 6px 0; font-size:16px; font-weight:800; color:#2563eb;" id="diagSolTitle">Action Solution: High PPC ACoS</h4>
+                <p style="margin:0; font-size:14px; color:#334155; line-height:1.6;" id="diagSolDesc">Audit search term report to eliminate non-converting customer search terms. Adjust target bids to align with target CPC reference.</p>
+            </div>
+
         </div>
     </div>
 
     <!-- 7. MATH & FORMULAS DRAWER (LIGHT SECTION) -->
-    <div class="light-section-wrapper">
+    <div class="light-content-section">
         <div class="resources-calc-container">
-            <details style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:22px; max-width:900px; margin:0 auto;">
+            <details style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:22px; max-width:920px; margin:0 auto;">
                 <summary style="font-size:18px; font-weight:800; color:#0f172a; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
                     <span>Show Calculation Steps &amp; Formulas 📐</span>
                     <span style="font-size:13.5px; color:#2563eb;">▾ Expand / Collapse</span>
@@ -1120,37 +1212,45 @@
         </div>
     </div>
 
-    <!-- 8. EDUCATIONAL CONTENT (LIGHT SECTION ALT) -->
-    <div class="light-section-wrapper" style="background:#f8fafc;">
+    <!-- 8. EDUCATIONAL CONTENT & RECOMMENDED CALCULATORS -->
+    <div class="alt-light-section">
         <div class="resources-calc-container">
             
-            <article class="calc-educational-prose" style="max-width:900px; margin:0 auto 48px auto;">
-                <h2>How to Use the Amazon Profit Calculator</h2>
-                <p>Start with the numbers you can verify directly from Seller Central and your own cost records. More accurate inputs produce more useful profitability estimates.</p>
+            <article class="calc-educational-prose" style="max-width:920px; margin:0 auto 48px auto;">
+                <h2>Complete Guide to Amazon Profitability &amp; Margin Management</h2>
+                <p>Selling on Amazon India involves multiple fee layers. To build a sustainable brand, sellers must track net contribution per unit rather than gross sales volume alone.</p>
 
-                <h3>1. Enter Your Product Economics</h3>
-                <p>Input your selling price and true landed product cost (including COGS, packaging, and inbound shipping to warehouse).</p>
+                <h3>1. Landed Product Cost (COGS &amp; Packaging)</h3>
+                <p>Your landed product cost includes manufacturing cost per unit, packaging materials, barcoding, and inbound freight to Amazon's fulfillment center. Reducing landed cost by 5% directly increases net profit per sale.</p>
 
-                <h3>2. Add Amazon &amp; Fulfilment Costs</h3>
-                <p>Select your fulfilment method (FBA, Easy Ship, or Self Ship) and verify referral and closing fees against Seller Central slabs.</p>
+                <h3>2. Amazon Marketplace Fees</h3>
+                <p>Amazon India charges category-specific Referral Fees (6% to 15%), Closing Fees based on price tiers, and FBA Weight Handling or Easy Ship fees based on volumetric weight slabs.</p>
 
-                <h3>3. Add Advertising &amp; Return Assumptions</h3>
-                <p>Use recent product-level ACoS or TACoS percentages rather than account-wide averages to get a realistic picture.</p>
+                <h3>3. Advertising Spend (ACoS vs TACoS)</h3>
+                <p>ACoS measures ad cost against ad sales, while TACoS measures total ad spend against total sales (ad + organic). Keeping TACoS under 10–15% ensures ads fuel growth without eroding profit.</p>
 
-                <h3>4. Review Profit, Break-Even &amp; Sensitivity</h3>
-                <p>Use the resulting break-even ACoS and CPC limits as decision-support boundaries for your Amazon campaigns.</p>
-
-                <h2>Amazon Profit Calculator Formulas</h2>
-                <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:16px; font-family:'DM Mono',monospace; font-size:13px; line-height:1.7; margin-bottom:20px;">
-                    <strong>Estimated Net Profit</strong> = Selling Price − (Product Cost + Amazon Fees + Fulfilment + Advertising + Return Loss)<br>
-                    <strong>Net Profit Margin</strong> = (Estimated Net Profit ÷ Selling Price) × 100<br>
-                    <strong>Break-Even ACoS</strong> = (Pre-Ad Contribution Margin ÷ Selling Price) × 100<br>
-                    <strong>Maximum (Break-Even) CPC</strong> = Selling Price × Conversion Rate × Break-Even ACoS
+                <h2>Recommended Amazon PPC Calculators</h2>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-top:20px;">
+                    <a href="amazon-acos-calculator.html" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; text-decoration:none; color:inherit; display:block; transition:all 0.25s ease;">
+                        <div style="font-size:24px; margin-bottom:6px;">📊</div>
+                        <div style="font-weight:800; font-size:16px; color:#0f172a;">Amazon ACoS Calculator</div>
+                        <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Calculate ad cost of sales and cost per rupee sale.</div>
+                    </a>
+                    <a href="amazon-break-even-acos-calculator.html" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; text-decoration:none; color:inherit; display:block; transition:all 0.25s ease;">
+                        <div style="font-size:24px; margin-bottom:6px;">⚖️</div>
+                        <div style="font-weight:800; font-size:16px; color:#0f172a;">Break-Even ACoS Calculator</div>
+                        <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Find maximum allowable ACoS before net loss.</div>
+                    </a>
+                    <a href="amazon-roas-calculator.html" style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:20px; text-decoration:none; color:inherit; display:block; transition:all 0.25s ease;">
+                        <div style="font-size:24px; margin-bottom:6px;">🚀</div>
+                        <div style="font-weight:800; font-size:16px; color:#0f172a;">ROAS Calculator</div>
+                        <div style="font-size:12.5px; color:#64748b; margin-top:4px;">Calculate return on ad spend multiple.</div>
+                    </a>
                 </div>
             </article>
 
             <!-- FAQ ACCORDION -->
-            <div style="max-width:900px; margin:0 auto;">
+            <div style="max-width:920px; margin:0 auto;">
                 <div style="text-align:center; margin-bottom:28px;">
                     <div class="section-tag-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
                     <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">Amazon Profit Calculator FAQs</h2>
@@ -1188,7 +1288,7 @@
     </div>
 
     <!-- 9. PPC AUDIT CTA BANNER -->
-    <div style="background:#080d1a; padding:60px 20px; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); text-align:center; color:#ffffff;">
+    <div style="background:#0f172a; padding:60px 20px; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); text-align:center; color:#ffffff;">
         <div class="resources-calc-container">
             <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:8px;">WANT TO IMPROVE THE PPC SIDE?</div>
             <h2 style="font-size:32px; font-weight:800; color:#ffffff; margin:0 0 14px 0;">Your Calculator Shows the Margin. We Help Find the PPC Leakage.</h2>
@@ -1302,7 +1402,7 @@
                     activeStep++;
                     switchStep(activeStep);
                 } else {
-                    window.scrollTo({ top: document.querySelector('.telemetry-card').offsetTop - 80, behavior: 'smooth' });
+                    window.scrollTo({ top: document.querySelector('.dash-card').offsetTop - 80, behavior: 'smooth' });
                 }
             });
 
@@ -1382,7 +1482,6 @@
                 // PPC METRICS
                 const preAdContrib = sp - (totalProdCost + totalAmzFees + returnLoss);
                 const breakEvenAcos = (preAdContrib / sp) * 100;
-                const targetCpcRef = (sp * (cvr / 100)) * (targetAcos / 100);
                 const maxCpc = (sp * (cvr / 100)) * (breakEvenAcos / 100);
                 const reqCvr = cpc > 0 ? (cpc / (sp * (breakEvenAcos / 100))) * 100 : 0;
 
@@ -1470,21 +1569,6 @@
                 document.getElementById('wfAd').innerText = `−${formatINR(adCost)}`;
                 document.getElementById('wfReturns').innerText = `−${formatINR(returnLoss)}`;
                 document.getElementById('wfProfit').innerText = formatINR(netProfit);
-
-                // UPDATE CPC SCALE MARKERS
-                const maxCpcScale = Math.max(50, cpc * 1.2, targetCpcRef * 1.2, maxCpc * 1.2);
-                const mCurr = document.getElementById('markerCpcCurr');
-                const mTarget = document.getElementById('markerCpcTarget');
-                const mBe = document.getElementById('markerCpcBe');
-
-                mCurr.style.left = Math.min(95, Math.max(5, (cpc / maxCpcScale) * 100)) + '%';
-                mCurr.querySelector('span').innerText = `Current CPC: ${formatINR(cpc)}`;
-
-                mTarget.style.left = Math.min(95, Math.max(5, (targetCpcRef / maxCpcScale) * 100)) + '%';
-                mTarget.querySelector('span').innerText = `Target CPC: ${formatINR(targetCpcRef)}`;
-
-                mBe.style.left = Math.min(95, Math.max(5, (maxCpc / maxCpcScale) * 100)) + '%';
-                mBe.querySelector('span').innerText = `Break-Even CPC: ${formatINR(maxCpc)}`;
 
                 // UPDATE STRESS SCENARIOS
                 document.getElementById('stCurrProfit').innerText = formatINR(netProfit, true);
@@ -1574,11 +1658,11 @@
 
                 const grid = document.getElementById('sensitivityGrid');
                 grid.innerHTML = levers.map((lev, idx) => `
-                    <div style="background:rgba(15, 23, 42, 0.8); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:18px;">
-                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8;">RANK #${idx + 1} IMPACT</div>
-                        <div style="font-size:15px; font-weight:800; color:#ffffff; margin-top:4px;">${lev.name}</div>
-                        <div style="font-size:18px; font-weight:800; color:#34d399; margin-top:4px;">+${formatINR(lev.impact)} / unit</div>
-                        <div style="font-size:12px; color:#94a3b8; margin-top:2px;">${lev.desc}</div>
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:16px; padding:18px; box-shadow:0 4px 15px rgba(0,0,0,0.02);">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb;">RANK #${idx + 1} IMPACT</div>
+                        <div style="font-size:15px; font-weight:800; color:#0f172a; margin-top:4px;">${lev.name}</div>
+                        <div style="font-size:18px; font-weight:800; color:#047857; margin-top:4px;">+${formatINR(lev.impact)} / unit</div>
+                        <div style="font-size:12px; color:#64748b; margin-top:2px;">${lev.desc}</div>
                     </div>
                 `).join('');
             }
@@ -1599,6 +1683,42 @@
                     <strong>Maximum Break-Even CPC:</strong> ${formatINR(sp)} × 10% CVR × ${breakEvenAcos.toFixed(1)}% Break-Even ACoS = <strong>${formatINR(maxCpc)}</strong>
                 `;
             }
+
+            // DIAGNOSTIC PICKER EVENT LISTENERS
+            const diagCards = document.querySelectorAll('.diag-card');
+            const diagSolTitle = document.getElementById('diagSolTitle');
+            const diagSolDesc = document.getElementById('diagSolDesc');
+
+            const solutions = {
+                acos: {
+                    title: "Action Solution: High PPC ACoS",
+                    desc: "Audit your Amazon search term report to eliminate non-converting customer search terms. Adjust target bids to align with target CPC reference rather than competitive bidding."
+                },
+                returns: {
+                    title: "Action Solution: High Return Losses",
+                    desc: "Review product listing title, bullet points, size charts, and main image accuracy to align customer expectations and prevent preventable return reasons."
+                },
+                fba: {
+                    title: "Action Solution: Heavy FBA Fees",
+                    desc: "Verify ASIN package dimensions and weight slab in Seller Central. Redesign outer packaging to stay strictly within standard size tiers."
+                },
+                cogs: {
+                    title: "Action Solution: High COGS Ratio",
+                    desc: "Negotiate bulk raw material purchasing, optimize inbound freight routing, or explore local supplier sourcing to reduce landed product cost."
+                }
+            };
+
+            diagCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    diagCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    const diag = this.getAttribute('data-diag');
+                    if (solutions[diag]) {
+                        diagSolTitle.innerText = solutions[diag].title;
+                        diagSolDesc.innerText = solutions[diag].desc;
+                    }
+                });
+            });
 
             document.getElementById('desiredMarginInput').addEventListener('input', calcProfit);
 
@@ -1661,7 +1781,7 @@
                 if (navigator.clipboard) {
                     navigator.clipboard.writeText(text).then(() => {
                         this.innerText = 'Copied! ✓';
-                        setTimeout(() => this.innerText = 'Copy Summary 📋', 2000);
+                        setTimeout(() => this.innerText = 'Copy 📋', 2000);
                     });
                 } else {
                     alert(text);
