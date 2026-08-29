@@ -224,7 +224,7 @@
         .cvr-page .cvr-gauge-track-dark {
             position: relative;
             height: 12px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #e2e8f0;
             border-radius: 6px;
             margin: 44px 16px 38px 16px;
         }
@@ -267,39 +267,44 @@
             margin-bottom: 2px;
         }
 
-        .cvr-page .marker-target { color: #38bdf8; }
-        .cvr-page .marker-current { color: #34d399; }
-        .cvr-page .marker-breakeven { color: #f59e0b; }
+        .cvr-page .marker-target { color: #0284c7; }
+        .cvr-page .marker-current { color: #059669; }
+        .cvr-page .marker-breakeven { color: #d97706; }
 
         /* SYMPTOM DIAGNOSTIC PILLS */
         .cvr-page .symptom-pills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
+            gap: 14px;
             margin-bottom: 24px;
         }
 
         .cvr-page .symptom-pill {
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
             border-radius: 12px;
             padding: 14px 16px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
         .cvr-page .symptom-pill:hover {
-            border-color: #38bdf8;
-            background: rgba(30, 41, 59, 0.9);
+            border-color: #2563eb;
+            background: #f0f6ff;
+        }
+
+        .cvr-page .symptom-pill:hover .symptom-text {
+            color: #2563eb;
         }
 
         .cvr-page .symptom-pill.active {
-            border-color: #38bdf8;
-            background: rgba(37, 99, 235, 0.4) !important;
-            box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+            border-color: #2563eb;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
         }
 
         .cvr-page .symptom-pill.active .symptom-text {
@@ -312,9 +317,10 @@
         }
 
         .cvr-page .symptom-text {
-            font-size: 13px;
-            font-weight: 600;
-            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #1e293b;
+            transition: color 0.2s ease;
         }
 
         /* SENSITIVITY MATRIX TABLE */
@@ -367,17 +373,19 @@
         .cvr-page .funnel-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            max-width: 720px;
+            gap: 14px;
+            max-width: 800px;
             margin: 0 auto;
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 32px 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .cvr-page .funnel-step {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            border-radius: 12px;
-            padding: 16px 24px;
-            color: #ffffff;
+            border-radius: 14px;
+            padding: 18px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -385,15 +393,16 @@
         }
 
         .cvr-page .funnel-step:hover {
-            transform: scale(1.01);
-            border-color: #38bdf8;
+            transform: translateY(-2px);
         }
 
         .cvr-page .funnel-arrow {
             text-align: center;
-            color: #38bdf8;
-            font-size: 18px;
-            font-weight: 800;
+            color: #475569;
+            font-size: 13.5px;
+            font-weight: 700;
+            font-family: 'DM Mono', monospace;
+            padding: 2px 0;
         }
 
         /* DRIVER MAP DIAGRAM */
@@ -486,39 +495,91 @@
 </head>
 
 <body class="cvr-page">
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
 
-    <!-- GLOBAL NAVBAR (LOADED VIA DYNAMIC SCRIPT) -->
-    <nav id="navbar"></nav>
+    <!-- NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-badge"><div class="logo-symbol"></div></div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="services.html" class="nav-item">Services</a>
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                <div class="nav-dropdown">
+                    <a href="resources.html" class="nav-item nav-dropdown-trigger active">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="amazon-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📊</span><div class="mega-item-text"><span class="mega-item-title">ACoS Calculator</span><span class="mega-item-desc">Calculate ad cost of sales</span></div></a>
+                                <a href="amazon-roas-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚀</span><div class="mega-item-text"><span class="mega-item-title">ROAS Calculator</span><span class="mega-item-desc">Calculate return on ad spend</span></div></a>
+                                <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item active"><span class="mega-item-icon">⚡</span><div class="mega-item-text"><span class="mega-item-title">Conversion Rate Calculator</span><span class="mega-item-desc">Measure clicks turning into orders</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="amazon-cpc-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💵</span><div class="mega-item-text"><span class="mega-item-title">CPC Calculator</span><span class="mega-item-desc">Calculate average cost per click</span></div></a>
+                                <a href="amazon-ctr-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">CTR Calculator</span><span class="mega-item-desc">Measure ad click-through rate</span></div></a>
+                                <a href="amazon-tacos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📈</span><div class="mega-item-text"><span class="mega-item-title">TACoS Calculator</span><span class="mega-item-desc">Compare ad spend vs total sales</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                                <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item"><span class="mega-item-icon">⚖️</span><div class="mega-item-text"><span class="mega-item-title">Break-Even ACoS Calculator</span><span class="mega-item-desc">Max ACoS before margin loss</span></div></a>
+                                <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💰</span><div class="mega-item-text"><span class="mega-item-title">PPC Budget Calculator</span><span class="mega-item-desc">Estimate working monthly budget</span></div></a>
+                                <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🎯</span><div class="mega-item-text"><span class="mega-item-title">Target ACoS &amp; Bid Calculator</span><span class="mega-item-desc">Estimate practical CPC &amp; bid</span></div></a>
+                            </div>
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="amazon-profit-calculator.html" class="mega-menu-item"><span class="mega-item-icon">📦</span><div class="mega-item-text"><span class="mega-item-title">Profit Calculator</span><span class="mega-item-desc">Amazon India net margin &amp; profit</span></div></a>
+                                <a href="amazon-fba-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🚚</span><div class="mega-item-text"><span class="mega-item-title">FBA Fee Calculator</span><span class="mega-item-desc">Fulfilment &amp; referral breakdown</span></div></a>
+                                <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item"><span class="mega-item-icon">🏢</span><div class="mega-item-text"><span class="mega-item-title">FBA Storage Calculator</span><span class="mega-item-desc">Monthly inventory storage cost</span></div></a>
+                                <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item"><span class="mega-item-icon">💸</span><div class="mega-item-text"><span class="mega-item-title">Ad ROI Calculator</span><span class="mega-item-desc">Net profit return after PPC</span></div></a>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer"><a href="resources.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a></div>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="status-pill"><span class="status-dot"></span>Audit Open</div>
+                <a href="contact.html" class="nav-btn"><span>Free Audit</span><span class="nav-btn-arrow">→</span></a>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)">☰</button>
+            </div>
+        </header>
+    </div>
 
     <!-- 01 · HERO SECTION -->
-    <header class="hero-compact" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding: 28px 0 24px 0;">
-        <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
-            <div style="font-size:12px; font-family:'DM Mono',monospace; color:#64748b; margin-bottom:10px;">
-                <a href="index.html" style="color:#64748b; text-decoration:none;">Home</a> / 
-                <a href="resources.html" style="color:#64748b; text-decoration:none;">Resources</a> / 
-                <span style="color:#0f172a; font-weight:600;">Amazon PPC Conversion Rate Calculator</span>
-            </div>
+    <div class="hero-compact">
+        <div class="resources-section-container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Home</a> /
+                <a href="resources.html">Resources</a> /
+                <span>Amazon PPC Conversion Rate Calculator</span>
+            </nav>
 
-            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
-                <span style="background:rgba(37, 99, 235, 0.1); color:#2563eb; font-size:11px; font-weight:700; font-family:'DM Mono',monospace; padding:3px 10px; border-radius:12px; text-transform:uppercase; letter-spacing:0.5px;">✦ AMAZON PPC CONVERSION ENGINE</span>
-            </div>
+            <div class="hero-eyebrow">✦ AMAZON PPC CONVERSION ENGINE</div>
+            <h1 class="hero-title" style="margin-bottom:12px;">Amazon PPC Conversion Rate Calculator</h1>
+            <p class="hero-description" style="margin-bottom:16px;">Calculate how efficiently your Amazon PPC clicks turn into attributed orders — then see the impact on cost per order, ACoS, ROAS, CPC capacity and the conversion rate required to reach your advertising targets.</p>
 
-            <h1 style="font-size: clamp(28px, 4vw, 42px); font-weight:800; color:#0f172a; margin:0 0 10px 0; letter-spacing:-0.5px; line-height:1.15;">
-                Amazon PPC Conversion Rate Calculator
-            </h1>
-
-            <p style="font-size:15px; color:#475569; max-width:860px; margin:0 0 16px 0; line-height:1.5;">
-                Calculate how efficiently your Amazon PPC clicks turn into attributed orders — then see the impact on cost per order, ACoS, ROAS, CPC capacity and the conversion rate required to reach your advertising targets.
-            </p>
-
-            <div style="display:flex; flex-wrap:wrap; gap:16px; font-size:12.5px; font-weight:600; color:#334155;">
-                <span>✓ Free to use</span>
-                <span>✓ Instant live analysis</span>
-                <span>✓ No sign-up required</span>
-                <span>✓ Downloadable PDF report</span>
+            <div style="display:flex; justify-content:center; gap:24px; font-size:13.5px; font-weight:700; color:#334155; flex-wrap:wrap;">
+                <span><strong style="color:#10b981;">✓</strong> Free to use</span>
+                <span><strong style="color:#10b981;">✓</strong> Instant live analysis</span>
+                <span><strong style="color:#10b981;">✓</strong> No sign-up required</span>
+                <span><strong style="color:#10b981;">✓</strong> Downloadable PDF report</span>
             </div>
         </div>
-    </header>
+    </div>
 
     <!-- MAIN CONTENT CONTAINER -->
     <main>
@@ -720,7 +781,7 @@
         </section>
 
         <!-- 04 · CLICK → ORDER FUNNEL VISUALIZATION -->
-        <section class="light-section-wrapper">
+        <section class="light-section-wrapper" style="padding:48px 0; background:#ffffff;">
             <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
                 <div style="text-align:center; margin-bottom:32px;">
                     <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase;">VISUAL TRAFFIC FLOW</div>
@@ -729,32 +790,32 @@
                 </div>
 
                 <div class="funnel-container">
-                    <div class="funnel-step" style="width:100%;">
+                    <div class="funnel-step funnel-step-1" style="width:100%; background:#eff6ff; border:1px solid #bfdbfe;">
                         <div>
-                            <span style="font-family:'DM Mono',monospace; font-size:11px; color:#94a3b8;">STEP 1 · PAID TRAFFIC</span>
-                            <div style="font-size:18px; font-weight:800; color:#ffffff;" id="funnelStep1Val">500 PPC Clicks</div>
+                            <span style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#1e40af;">STEP 1 · PAID TRAFFIC</span>
+                            <div style="font-size:18px; font-weight:800; color:#1e3a8a;" id="funnelStep1Val">500 PPC Clicks</div>
                         </div>
-                        <div style="font-family:'DM Mono',monospace; font-size:13px; color:#38bdf8;" id="funnelStep1Sub">Spend: ₹10,000</div>
+                        <div style="font-family:'DM Mono',monospace; font-size:13px; font-weight:700; color:#2563eb;" id="funnelStep1Sub">Spend: ₹10,000</div>
                     </div>
 
                     <div class="funnel-arrow">↓ 12.5 Clicks per Order</div>
 
-                    <div class="funnel-step" style="width:85%; margin:0 auto;">
+                    <div class="funnel-step funnel-step-2" style="width:88%; margin:0 auto; background:#ecfdf5; border:1px solid #a7f3d0;">
                         <div>
-                            <span style="font-family:'DM Mono',monospace; font-size:11px; color:#94a3b8;">STEP 2 · ATTRIBUTED CONVERSION</span>
-                            <div style="font-size:18px; font-weight:800; color:#34d399;" id="funnelStep2Val">40 Attributed Orders</div>
+                            <span style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#065f46;">STEP 2 · ATTRIBUTED CONVERSION</span>
+                            <div style="font-size:18px; font-weight:800; color:#064e3b;" id="funnelStep2Val">40 Attributed Orders</div>
                         </div>
-                        <div style="font-family:'DM Mono',monospace; font-size:13px; color:#34d399;" id="funnelStep2Sub">CVR: 8.00%</div>
+                        <div style="font-family:'DM Mono',monospace; font-size:13px; font-weight:700; color:#059669;" id="funnelStep2Sub">CVR: 8.00%</div>
                     </div>
 
                     <div class="funnel-arrow">↓ ₹1,000 Average Order Value</div>
 
-                    <div class="funnel-step" style="width:70%; margin:0 auto;">
+                    <div class="funnel-step funnel-step-3" style="width:76%; margin:0 auto; background:#f3e8ff; border:1px solid #ddd6fe;">
                         <div>
-                            <span style="font-family:'DM Mono',monospace; font-size:11px; color:#94a3b8;">STEP 3 · ADVERTISING REVENUE</span>
-                            <div style="font-size:18px; font-weight:800; color:#c084fc;" id="funnelStep3Val">₹40,000 Attributed Sales</div>
+                            <span style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#581c87;">STEP 3 · ADVERTISING REVENUE</span>
+                            <div style="font-size:18px; font-weight:800; color:#3b0764;" id="funnelStep3Val">₹40,000 Attributed Sales</div>
                         </div>
-                        <div style="font-family:'DM Mono',monospace; font-size:13px; color:#c084fc;" id="funnelStep3Sub">ACoS: 25.00% (4.00x ROAS)</div>
+                        <div style="font-family:'DM Mono',monospace; font-size:13px; font-weight:700; color:#7c3aed;" id="funnelStep3Sub">ACoS: 25.00% (4.00x ROAS)</div>
                     </div>
                 </div>
             </div>
@@ -816,61 +877,61 @@
         </section>
 
         <!-- 06 · TARGET CONVERSION PLANNER & GAP ENGINE -->
-        <section class="dark-section-alt">
+        <section class="light-section-wrapper" style="padding:56px 0; background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;">
             <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
                 <div style="margin-bottom:28px;">
-                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase;">TARGET CONVERSION PLANNER</div>
-                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:4px 0;">What Conversion Rate Do You Need?</h2>
-                    <p style="font-size:14px; color:#cbd5e1; margin:0;">Calculate the exact conversion rate required to reach your target ACoS, ROAS, or CPA goal.</p>
+                    <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">TARGET CONVERSION PLANNER</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:4px 0;">What Conversion Rate Do You Need?</h2>
+                    <p style="font-size:14px; color:#475569; margin:0;">Calculate the exact conversion rate required to reach your target ACoS, ROAS, or CPA goal.</p>
                 </div>
 
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:26px;">
-                    <div class="dark-glass-card">
-                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:12px;">CALCULATION MODEL</div>
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:24px; box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#2563eb; text-transform:uppercase; margin-bottom:12px;">CALCULATION MODEL</div>
                         
                         <div style="display:flex; gap:10px; margin-bottom:16px;">
                             <button type="button" id="tabAcos" class="active" style="background:#2563eb; color:#ffffff; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target ACoS</button>
-                            <button type="button" id="tabRoas" style="background:rgba(255,255,255,0.08); color:#cbd5e1; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target ROAS</button>
-                            <button type="button" id="tabCpa" style="background:rgba(255,255,255,0.08); color:#cbd5e1; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target CPA</button>
+                            <button type="button" id="tabRoas" style="background:#f1f5f9; color:#475569; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target ROAS</button>
+                            <button type="button" id="tabCpa" style="background:#f1f5f9; color:#475569; border:none; font-size:12px; font-weight:700; padding:8px 14px; border-radius:8px; cursor:pointer;">Target CPA</button>
                         </div>
 
-                        <div id="plannerBodyText" style="font-size:13px; color:#cbd5e1; line-height:1.6; margin-bottom:16px;">
+                        <div id="plannerBodyText" style="font-size:13px; color:#334155; line-height:1.6; margin-bottom:16px;">
                             Formula: <strong>CPC ÷ (AOV × Target ACoS)</strong><br>
                             At ₹20.00 CPC and ₹1,000 AOV with a 25% Target ACoS, your campaign requires an 8.00% conversion rate.
                         </div>
 
-                        <div style="background:rgba(30, 41, 59, 0.8); border-radius:12px; padding:16px; display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px; display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
                             <div>
-                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">REQUIRED CVR</div>
-                                <div style="font-size:24px; font-weight:800; color:#38bdf8; font-family:'DM Mono',monospace;" id="planReqCvr">8.00%</div>
+                                <div style="font-size:11px; color:#64748b; font-family:'DM Mono',monospace; font-weight:700;">REQUIRED CVR</div>
+                                <div style="font-size:24px; font-weight:800; color:#0284c7; font-family:'DM Mono',monospace;" id="planReqCvr">8.00%</div>
                             </div>
                             <div>
-                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">CONVERSION GAP</div>
-                                <div style="font-size:24px; font-weight:800; color:#34d399; font-family:'DM Mono',monospace;" id="planCvrGap">0.00pp</div>
+                                <div style="font-size:11px; color:#64748b; font-family:'DM Mono',monospace; font-weight:700;">CONVERSION GAP</div>
+                                <div style="font-size:24px; font-weight:800; color:#059669; font-family:'DM Mono',monospace;" id="planCvrGap">0.00pp</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="dark-glass-card">
-                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#34d399; text-transform:uppercase; margin-bottom:12px;">ACTIONABLE ORDER IMPACT</div>
-                        <h3 style="font-size:18px; font-weight:800; color:#ffffff; margin:0 0 12px 0;">Orders Needed at Current Traffic</h3>
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:24px; box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#059669; text-transform:uppercase; margin-bottom:12px;">ACTIONABLE ORDER IMPACT</div>
+                        <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 12px 0;">Orders Needed at Current Traffic</h3>
                         
-                        <div style="font-size:13px; color:#cbd5e1; line-height:1.6; margin-bottom:16px;">
+                        <div style="font-size:13px; color:#334155; line-height:1.6; margin-bottom:16px;">
                             At your entered 500 PPC clicks:
                         </div>
 
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:16px;">
-                            <div style="background:rgba(255,255,255,0.05); padding:14px; border-radius:10px;">
-                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">REQUIRED ORDERS</div>
-                                <div style="font-size:22px; font-weight:800; color:#ffffff; font-family:'DM Mono',monospace;" id="planReqOrders">40</div>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:14px; border-radius:10px;">
+                                <div style="font-size:11px; color:#64748b; font-family:'DM Mono',monospace; font-weight:700;">REQUIRED ORDERS</div>
+                                <div style="font-size:22px; font-weight:800; color:#0f172a; font-family:'DM Mono',monospace;" id="planReqOrders">40</div>
                             </div>
-                            <div style="background:rgba(255,255,255,0.05); padding:14px; border-radius:10px;">
-                                <div style="font-size:11px; color:#94a3b8; font-family:'DM Mono',monospace;">ADDITIONAL ORDERS</div>
-                                <div style="font-size:22px; font-weight:800; color:#38bdf8; font-family:'DM Mono',monospace;" id="planAddOrders">+0</div>
+                            <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:14px; border-radius:10px;">
+                                <div style="font-size:11px; color:#64748b; font-family:'DM Mono',monospace; font-weight:700;">ADDITIONAL ORDERS</div>
+                                <div style="font-size:22px; font-weight:800; color:#0284c7; font-family:'DM Mono',monospace;" id="planAddOrders">+0</div>
                             </div>
                         </div>
 
-                        <div style="font-size:12.5px; color:#94a3b8; line-height:1.5;" id="planActionableText">
+                        <div style="font-size:12.5px; color:#475569; line-height:1.5;" id="planActionableText">
                             Your observed conversion rate matches your target requirement. No additional conversion lift is required at current CPC and order value.
                         </div>
                     </div>
@@ -879,10 +940,10 @@
                 <!-- 07 · BENCHMARK ALIGNMENT GAUGE SCALE -->
                 <div style="margin-top:40px; max-width:960px; margin-left:auto; margin-right:auto;">
                     <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <span style="font-size:13.5px; font-weight:700; color:#ffffff;">Conversion Rate Benchmark Alignment Scale</span>
-                        <span style="font-size:12px; font-family:'DM Mono',monospace; color:#94a3b8;" id="gaugeStatusText">Status: Target Met</span>
+                        <span style="font-size:13.5px; font-weight:700; color:#0f172a;">Conversion Rate Benchmark Alignment Scale</span>
+                        <span style="font-size:12px; font-family:'DM Mono',monospace; color:#475569; font-weight:700;" id="gaugeStatusText">Status: Target Met</span>
                     </div>
-                    <div class="cvr-gauge-track-dark">
+                    <div class="cvr-gauge-track-dark" style="background:#e2e8f0;">
                         <div class="cvr-gauge-marker marker-breakeven" id="markerBe" style="left: 40%;">
                             <span>BE: <strong id="mValBe">6.25%</strong></span>
                         </div>
@@ -1378,8 +1439,109 @@
         </div>
     </div>
 
-    <!-- GLOBAL FOOTER (LOADED VIA DYNAMIC SCRIPT) -->
-    <footer id="footer"></footer>
+    <!-- GLOBAL FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
+        <div class="footer-container">
+            <!-- TOP GRID -->
+            <div class="footer-grid">
+                <!-- COL 1: BRAND GLASS CARD -->
+                <div class="footer-col brand-col">
+                    <div class="brand-card">
+                        <a href="index.html" class="footer-logo">
+                            <div class="logo-badge">
+                                <div class="logo-symbol"></div>
+                            </div>
+                            <span class="logo-text">
+                                PPC <span class="highlight">Growth</span> Expert
+                            </span>
+                        </a>
+
+                        <p class="footer-sub-tagline">
+                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
+                        </p>
+
+                        <p class="footer-tagline" itemprop="description">
+                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve
+                            advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon
+                            advertising.
+                        </p>
+
+                        <div class="footer-socials" aria-label="Social Media Links">
+                            <a href="https://wa.me/916397607291" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COL 2: SERVICES -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">SERVICES</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
+                        <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
+                        <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                        <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                        <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
+                        <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: CONTACT US -->
+                <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <div class="contact-icon-pill">📍</div>
+                            <div>
+                                <span itemprop="addressLocality">Noida</span>,<br>
+                                <span itemprop="addressRegion">Uttar Pradesh</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">📞</div>
+                            <a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">✉️</div>
+                            <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: COMPANY -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#founder">Our Founder</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MIDDLE BAR -->
+            <div class="footer-middle">
+                <p class="footer-meta-info">
+                    PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 · anmolpokhriyal3200@gmail.com
+                </p>
+            </div>
+
+            <!-- BOTTOM COPYRIGHT BAR -->
+            <div class="footer-bottom">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">
+                    ↑
+                </a>
+            </div>
+        </div>
+    </footer>
 
     <!-- SCRIPTS -->
     <script src="js/navbar.js?v=v42"></script>
