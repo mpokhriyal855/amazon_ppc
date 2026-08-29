@@ -151,16 +151,55 @@
     font-size: 15px;
     line-height: 1.65;
     color: #475569;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.about-ref-description h2 {
+    font-size: clamp(20px, 2.2vw, 24px);
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin: 24px 0 12px 0;
+}
+
+.about-ref-description h2:first-child {
+    margin-top: 6px;
+}
+
+.about-ref-description h3 {
+    font-size: clamp(17px, 1.8vw, 19px);
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.3px;
+    margin: 24px 0 10px 0;
 }
 
 .about-ref-description p {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    line-height: 1.7;
 }
 
 .about-ref-description strong {
     color: #0f172a;
-    font-weight: 600;
+    font-weight: 700;
+}
+
+.about-ref-description .bio-highlight-quote {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #1e3a8a;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 4px solid #2563eb;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.08);
+}
+
+.about-ref-description .bio-highlight-quote strong {
+    color: #1e3a8a;
+    font-weight: 800;
 }
 
 /* CHECKLIST GRID */
