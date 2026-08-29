@@ -602,173 +602,173 @@
             </div>
         </section>
 
-        <!-- 03 · MAIN CALCULATOR SECTION (LIGHT EXECUTIVE ENGINE) -->
-        <section class="light-section-wrapper" id="calculator" style="padding:48px 0; background:#ffffff; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;">
+        <!-- 03 · MAIN CALCULATOR SECTION (DARK GLASS ENGINE) -->
+        <section class="dark-section-wrapper" id="calculator">
             <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
 
                 <div style="display:grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap:28px; align-items:start;">
 
                     <!-- INPUTS PANEL -->
-                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:26px; box-shadow:0 4px 20px rgba(0,0,0,0.03);">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid #e2e8f0; padding-bottom:14px;">
+                    <div class="dark-glass-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:14px;">
                             <div>
-                                <span style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#2563eb; text-transform:uppercase;">INPUT PANEL</span>
-                                <h2 style="font-size:20px; font-weight:800; color:#0f172a; margin:2px 0 0 0;">Enter PPC Performance Data</h2>
+                                <span style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8; text-transform:uppercase;">INPUT PANEL</span>
+                                <h2 style="font-size:20px; font-weight:800; color:#ffffff; margin:2px 0 0 0;">Enter PPC Performance Data</h2>
                             </div>
                             <div style="display:flex; gap:8px;">
-                                <button type="button" id="btnLoadExample" style="background:#eff6ff; border:1px solid #bfdbfe; color:#2563eb; font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;">Example</button>
-                                <button type="button" id="btnReset" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#475569; font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;">Reset</button>
+                                <button type="button" id="btnLoadExample" style="background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.3); color:#38bdf8; font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;">Example</button>
+                                <button type="button" id="btnReset" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#94a3b8; font-size:12px; font-weight:700; padding:6px 12px; border-radius:8px; cursor:pointer;">Reset</button>
                             </div>
                         </div>
 
                         <!-- CORE OBSERVED INPUTS -->
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
-                            <div>
-                                <label style="display:block; font-size:13px; font-weight:700; color:#0f172a; margin-bottom:6px;" for="inputClicks">PPC Clicks *</label>
-                                <input type="number" id="inputClicks" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:10px; padding:10px 14px; font-size:14px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace; outline:none;" value="500" min="0" step="1" placeholder="e.g. 500">
-                                <div style="font-size:11.5px; color:#64748b; margin-top:4px;">Total paid ad clicks from reporting period.</div>
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputClicks">PPC Clicks *</label>
+                                <input type="number" id="inputClicks" class="dark-input-field" value="500" min="0" step="1" placeholder="e.g. 500">
+                                <div class="input-hint-dark">Total paid ad clicks from reporting period.</div>
                             </div>
 
-                            <div>
-                                <label style="display:block; font-size:13px; font-weight:700; color:#0f172a; margin-bottom:6px;" for="inputOrders">Attributed Orders *</label>
-                                <input type="number" id="inputOrders" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:10px; padding:10px 14px; font-size:14px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace; outline:none;" value="40" min="0" step="1" placeholder="e.g. 40">
-                                <div style="font-size:11.5px; color:#64748b; margin-top:4px;">Orders attributed to ad traffic in period.</div>
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputOrders">Attributed Orders *</label>
+                                <input type="number" id="inputOrders" class="dark-input-field" value="40" min="0" step="1" placeholder="e.g. 40">
+                                <div class="input-hint-dark">Orders attributed to ad traffic in period.</div>
                             </div>
                         </div>
 
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:14px;">
-                            <div>
-                                <label style="display:block; font-size:13px; font-weight:700; color:#0f172a; margin-bottom:6px;" for="inputSpend">Ad Spend (₹) [Optional]</label>
-                                <input type="number" id="inputSpend" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:10px; padding:10px 14px; font-size:14px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace; outline:none;" value="10000" min="0" step="100" placeholder="e.g. 10000">
-                                <div style="font-size:11.5px; color:#64748b; margin-top:4px;">Unlocks CPC and Cost per Order (CPA).</div>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputSpend">Ad Spend (₹) [Optional]</label>
+                                <input type="number" id="inputSpend" class="dark-input-field" value="10000" min="0" step="100" placeholder="e.g. 10000">
+                                <div class="input-hint-dark">Unlocks CPC and Cost per Order (CPA).</div>
                             </div>
 
-                            <div>
-                                <label style="display:block; font-size:13px; font-weight:700; color:#0f172a; margin-bottom:6px;" for="inputSales">Attributed Sales (₹) [Optional]</label>
-                                <input type="number" id="inputSales" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:10px; padding:10px 14px; font-size:14px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace; outline:none;" value="40000" min="0" step="100" placeholder="e.g. 40000">
-                                <div style="font-size:11.5px; color:#64748b; margin-top:4px;">Unlocks Revenue/Click, ACoS &amp; ROAS.</div>
+                            <div class="dark-input-group">
+                                <label class="dark-input-label" for="inputSales">Attributed Sales (₹) [Optional]</label>
+                                <input type="number" id="inputSales" class="dark-input-field" value="40000" min="0" step="100" placeholder="e.g. 40000">
+                                <div class="input-hint-dark">Unlocks Revenue/Click, ACoS &amp; ROAS.</div>
                             </div>
                         </div>
 
                         <!-- EXPANDABLE COLLAPSIBLE 1: PPC TARGETS -->
-                        <details style="margin-top:16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
-                            <summary style="font-size:13.5px; font-weight:700; color:#2563eb; cursor:pointer; user-select:none;">
+                        <details class="dark-glass-card" style="margin-top:14px; background:rgba(30, 41, 59, 0.4); border:1px solid rgba(255, 255, 255, 0.08); padding:16px;">
+                            <summary style="font-size:13.5px; font-weight:700; color:#38bdf8; cursor:pointer; user-select:none;">
                                 🎯 Add PPC Targets (Unlock Required CVR Planner)
                             </summary>
                             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputTargetAcos">Target ACoS (%)</label>
-                                    <input type="number" id="inputTargetAcos" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="25.0" min="0" step="0.5" placeholder="e.g. 25.0">
-                                    <div style="font-size:11px; color:#64748b; margin-top:3px;">Your benchmark ACoS threshold.</div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputTargetAcos">Target ACoS (%)</label>
+                                    <input type="number" id="inputTargetAcos" class="dark-input-field" value="25.0" min="0" step="0.5" placeholder="e.g. 25.0">
+                                    <div class="input-hint-dark">Your benchmark ACoS threshold.</div>
                                 </div>
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputTargetRoas">Target ROAS (x)</label>
-                                    <input type="number" id="inputTargetRoas" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="4.00" min="0" step="0.1" placeholder="e.g. 4.00">
-                                    <div style="font-size:11px; color:#64748b; margin-top:3px;">Target return multiplier.</div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputTargetRoas">Target ROAS (x)</label>
+                                    <input type="number" id="inputTargetRoas" class="dark-input-field" value="4.00" min="0" step="0.1" placeholder="e.g. 4.00">
+                                    <div class="input-hint-dark">Target return multiplier.</div>
                                 </div>
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputExpectedCpc">Target / Expected CPC (₹)</label>
-                                    <input type="number" id="inputExpectedCpc" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="20.00" min="0" step="0.5" placeholder="e.g. 20.00">
-                                    <div style="font-size:11px; color:#64748b; margin-top:3px;">Defaults to observed CPC if blank.</div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputExpectedCpc">Target / Expected CPC (₹)</label>
+                                    <input type="number" id="inputExpectedCpc" class="dark-input-field" value="20.00" min="0" step="0.5" placeholder="e.g. 20.00">
+                                    <div class="input-hint-dark">Defaults to observed CPC if blank.</div>
                                 </div>
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputAov">Average Order Value (₹)</label>
-                                    <input type="number" id="inputAov" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="1000" min="0" step="10" placeholder="e.g. 1000">
-                                    <div style="font-size:11px; color:#64748b; margin-top:3px;">Defaults to Sales ÷ Orders if blank.</div>
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputAov">Average Order Value (₹)</label>
+                                    <input type="number" id="inputAov" class="dark-input-field" value="1000" min="0" step="10" placeholder="e.g. 1000">
+                                    <div class="input-hint-dark">Defaults to Sales ÷ Orders if blank.</div>
                                 </div>
                             </div>
                         </details>
 
                         <!-- EXPANDABLE COLLAPSIBLE 2: PRODUCT ECONOMICS -->
-                        <details style="margin-top:10px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
-                            <summary style="font-size:13.5px; font-weight:700; color:#059669; cursor:pointer; user-select:none;">
+                        <details class="dark-glass-card" style="margin-top:10px; background:rgba(30, 41, 59, 0.4); border:1px solid rgba(255, 255, 255, 0.08); padding:16px;">
+                            <summary style="font-size:13.5px; font-weight:700; color:#34d399; cursor:pointer; user-select:none;">
                                 ⚖️ Add Product Economics (Unlock Break-Even CVR)
                             </summary>
                             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px;">
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputCogs">Product Cost / COGS (₹)</label>
-                                    <input type="number" id="inputCogs" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="400" min="0" step="10" placeholder="e.g. 400">
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputCogs">Product Cost / COGS (₹)</label>
+                                    <input type="number" id="inputCogs" class="dark-input-field" value="400" min="0" step="10" placeholder="e.g. 400">
                                 </div>
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputFees">Amazon Fees (₹)</label>
-                                    <input type="number" id="inputFees" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="150" min="0" step="5" placeholder="e.g. 150">
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputFees">Amazon Fees (₹)</label>
+                                    <input type="number" id="inputFees" class="dark-input-field" value="150" min="0" step="5" placeholder="e.g. 150">
                                 </div>
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputShipping">Shipping / FBA (₹)</label>
-                                    <input type="number" id="inputShipping" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="50" min="0" step="5" placeholder="e.g. 50">
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputShipping">Shipping / FBA (₹)</label>
+                                    <input type="number" id="inputShipping" class="dark-input-field" value="50" min="0" step="5" placeholder="e.g. 50">
                                 </div>
-                                <div>
-                                    <label style="display:block; font-size:12.5px; font-weight:700; color:#334155; margin-bottom:4px;" for="inputOtherCosts">Other Costs (₹)</label>
-                                    <input type="number" id="inputOtherCosts" style="width:100%; box-sizing:border-box; background:#ffffff; border:1.5px solid #cbd5e1; border-radius:8px; padding:8px 12px; font-size:13.5px; font-weight:700; color:#0f172a; font-family:'DM Mono',monospace;" value="20" min="0" step="5" placeholder="e.g. 20">
+                                <div class="dark-input-group">
+                                    <label class="dark-input-label" for="inputOtherCosts">Other Costs (₹)</label>
+                                    <input type="number" id="inputOtherCosts" class="dark-input-field" value="20" min="0" step="5" placeholder="e.g. 20">
                                 </div>
                             </div>
                         </details>
 
                         <!-- ACTION BUTTONS -->
                         <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:10px; margin-top:20px;">
-                            <button type="button" id="btnCalculate" style="background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color:#ffffff; border:none; font-size:14px; font-weight:800; padding:14px; border-radius:10px; cursor:pointer; box-shadow:0 4px 16px rgba(37,99,235,0.35);">Calculate CVR →</button>
-                            <button type="button" id="btnCopy" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f172a; font-size:13px; font-weight:700; padding:14px; border-radius:10px; cursor:pointer;">Copy Analysis 📋</button>
-                            <button type="button" id="btnPrintPdf" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f172a; font-size:13px; font-weight:700; padding:14px; border-radius:10px; cursor:pointer;">PDF Report 📄</button>
+                            <button type="button" id="btnCalculate" style="background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color:#ffffff; border:none; font-size:14px; font-weight:800; padding:14px; border-radius:10px; cursor:pointer; box-shadow:0 4px 16px rgba(37,99,235,0.4);">Calculate CVR →</button>
+                            <button type="button" id="btnCopy" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#ffffff; font-size:13px; font-weight:700; padding:14px; border-radius:10px; cursor:pointer;">Copy Analysis 📋</button>
+                            <button type="button" id="btnPrintPdf" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#ffffff; font-size:13px; font-weight:700; padding:14px; border-radius:10px; cursor:pointer;">PDF Report 📄</button>
                         </div>
 
                     </div>
 
                     <!-- PRIMARY RESULTS TELEMETRY PANEL -->
-                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:20px; padding:26px; box-shadow:0 4px 20px rgba(0,0,0,0.03);" id="resultPanel">
-                        <span style="display:inline-block; font-family:'DM Mono',monospace; font-size:10.5px; font-weight:700; color:#2563eb; background:#eff6ff; border:1px solid #bfdbfe; padding:4px 12px; border-radius:20px; margin-bottom:12px;">OBSERVED CVR RESULT</span>
+                    <div class="dark-result-panel" id="resultPanel">
+                        <span class="type-badge type-observed">OBSERVED CVR RESULT</span>
                         
-                        <div style="font-size:12px; font-family:'DM Mono',monospace; color:#64748b; text-transform:uppercase; font-weight:700;">PPC CONVERSION RATE</div>
+                        <div style="font-size:12px; font-family:'DM Mono',monospace; color:#94a3b8; text-transform:uppercase; font-weight:700;">PPC CONVERSION RATE</div>
                         
-                        <div style="font-size:48px; font-weight:800; font-family:'DM Mono',monospace; color:#0284c7; letter-spacing:-1px; margin:4px 0;" id="resCvrVal">8.00%</div>
+                        <div class="hero-metric-callout" id="resCvrVal">8.00%</div>
                         
-                        <div style="display:inline-block; background:#ecfdf5; border:1px solid #a7f3d0; color:#059669; font-size:12px; font-weight:700; font-family:'DM Mono',monospace; padding:4px 12px; border-radius:20px; margin-bottom:20px;" id="resClicksPerOrderBadge">
+                        <div style="display:inline-block; background:rgba(52, 211, 153, 0.15); border:1px solid rgba(52, 211, 153, 0.3); color:#34d399; font-size:12px; font-weight:700; font-family:'DM Mono',monospace; padding:4px 12px; border-radius:20px; margin-bottom:20px;" id="resClicksPerOrderBadge">
                             12.50 clicks per order
                         </div>
 
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:20px;">
 
-                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #0284c7; border-radius:12px; padding:14px;">
-                                <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">CLICKS / ORDER</div>
-                                <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#0284c7; margin:4px 0;" id="resClicksPerOrder">12.50</div>
-                                <div style="font-size:11.5px; color:#64748b;">Clicks ÷ Orders</div>
+                            <div class="dark-telemetry-card card-glow-blue">
+                                <div class="telemetry-title">CLICKS / ORDER</div>
+                                <div class="telemetry-val" style="color:#60a5fa;" id="resClicksPerOrder">12.50</div>
+                                <div class="telemetry-sub">Clicks ÷ Orders</div>
                             </div>
 
-                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #059669; border-radius:12px; padding:14px;">
-                                <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">COST / ORDER (CPA)</div>
-                                <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#059669; margin:4px 0;" id="resCostPerOrder">₹250.00</div>
-                                <div style="font-size:11.5px; color:#64748b;">Ad Spend ÷ Orders</div>
+                            <div class="dark-telemetry-card card-glow-green">
+                                <div class="telemetry-title">COST / ORDER (CPA)</div>
+                                <div class="telemetry-val" style="color:#34d399;" id="resCostPerOrder">₹250.00</div>
+                                <div class="telemetry-sub">Ad Spend ÷ Orders</div>
                             </div>
 
-                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:14px;">
-                                <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">AVERAGE CPC</div>
-                                <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#0f172a; margin:4px 0;" id="resCpc">₹20.00</div>
-                                <div style="font-size:11.5px; color:#64748b;">Ad Spend ÷ Clicks</div>
+                            <div class="dark-telemetry-card">
+                                <div class="telemetry-title">AVERAGE CPC</div>
+                                <div class="telemetry-val" id="resCpc">₹20.00</div>
+                                <div class="telemetry-sub">Ad Spend ÷ Clicks</div>
                             </div>
 
-                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:14px;">
-                                <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">REVENUE / CLICK</div>
-                                <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#0f172a; margin:4px 0;" id="resRpc">₹80.00</div>
-                                <div style="font-size:11.5px; color:#64748b;">Ad Sales ÷ Clicks</div>
+                            <div class="dark-telemetry-card">
+                                <div class="telemetry-title">REVENUE / CLICK</div>
+                                <div class="telemetry-val" id="resRpc">₹80.00</div>
+                                <div class="telemetry-sub">Ad Sales ÷ Clicks</div>
                             </div>
 
-                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #7c3aed; border-radius:12px; padding:14px;">
-                                <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">OBSERVED ACOS</div>
-                                <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#7c3aed; margin:4px 0;" id="resAcos">25.00%</div>
-                                <div style="font-size:11.5px; color:#64748b;">(Spend ÷ Sales) × 100</div>
+                            <div class="dark-telemetry-card card-glow-purple">
+                                <div class="telemetry-title">OBSERVED ACOS</div>
+                                <div class="telemetry-val" style="color:#c084fc;" id="resAcos">25.00%</div>
+                                <div class="telemetry-sub">(Spend ÷ Sales) × 100</div>
                             </div>
 
-                            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-left:4px solid #d97706; border-radius:12px; padding:14px;">
-                                <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#64748b;">OBSERVED ROAS</div>
-                                <div style="font-size:22px; font-weight:800; font-family:'DM Mono',monospace; color:#d97706; margin:4px 0;" id="resRoas">4.00x</div>
-                                <div style="font-size:11.5px; color:#64748b;">Ad Sales ÷ Ad Spend</div>
+                            <div class="dark-telemetry-card card-glow-amber">
+                                <div class="telemetry-title">OBSERVED ROAS</div>
+                                <div class="telemetry-val" style="color:#f59e0b;" id="resRoas">4.00x</div>
+                                <div class="telemetry-sub">Ad Sales ÷ Ad Spend</div>
                             </div>
 
                         </div>
 
                         <!-- DYNAMIC INTERPRETATION BOX -->
-                        <div style="background:#f0f9ff; border-left:4px solid #0284c7; border-radius:0 12px 12px 0; padding:16px; margin-top:8px;">
-                            <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#0284c7; text-transform:uppercase; margin-bottom:4px;">DYNAMIC ANALYSIS</div>
-                            <div style="font-size:13px; color:#334155; line-height:1.5;" id="resInterpretationText">
+                        <div style="background:rgba(15, 23, 42, 0.8); border-left:4px solid #38bdf8; border-radius:0 12px 12px 0; padding:16px; margin-top:8px;">
+                            <div style="font-size:11px; font-family:'DM Mono',monospace; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:4px;">DYNAMIC ANALYSIS</div>
+                            <div style="font-size:13px; color:#cbd5e1; line-height:1.5;" id="resInterpretationText">
                                 Your PPC traffic generated 40 attributed orders from 500 clicks, giving a conversion rate of 8.00%. Approximately 12.5 paid clicks were required per attributed order.
                             </div>
                         </div>
@@ -822,7 +822,7 @@
         </section>
 
         <!-- 05 · CONVERSION ECONOMICS DASHBOARD -->
-        <section class="light-section-wrapper" style="padding:48px 0; background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;">
+        <section class="light-section-wrapper" style="padding:48px 0; background:#ffffff; border-bottom:1px solid #e2e8f0;">
             <div class="resources-calc-container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
                 <div style="margin-bottom:28px;">
                     <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#2563eb; text-transform:uppercase;">CONVERSION TELEMETRY CENTER</div>
