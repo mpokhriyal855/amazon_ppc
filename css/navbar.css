@@ -775,6 +775,10 @@
     gap: 16px;
 }
 
+.mega-menu-col[data-hidden-col="profit-planning"] {
+    display: none !important;
+}
+
 .mega-col-title {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
