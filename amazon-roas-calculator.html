@@ -223,12 +223,12 @@
             height: 12px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 6px;
-            margin: 32px 16px 20px 16px;
+            margin: 44px 16px 38px 16px;
         }
 
         .roas-gauge-marker {
             position: absolute;
-            top: -26px;
+            top: -28px;
             transform: translateX(-50%);
             font-family: 'DM Mono', monospace;
             font-size: 11px;
@@ -237,7 +237,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: left 0.4s ease;
+            transition: left 0.4s ease, top 0.3s ease;
+            z-index: 2;
+        }
+
+        /* ANTI-COLLISION STAGGER VARIANTS */
+        .roas-gauge-marker.marker-below {
+            top: 12px;
+            flex-direction: column-reverse;
+        }
+
+        .roas-gauge-marker.marker-top-high {
+            top: -48px;
         }
 
         .roas-gauge-marker::after {
@@ -247,6 +258,11 @@
             margin-top: 2px;
             background: currentColor;
             border-radius: 1px;
+        }
+
+        .roas-gauge-marker.marker-below::after {
+            margin-top: 0;
+            margin-bottom: 2px;
         }
 
         .marker-target { color: #38bdf8; }
@@ -1652,7 +1668,7 @@
                 updatePdfReport(spend, sales, roas, acos, costPerRupee, targetRoas, targetAcosEquiv, targetSalesNeeded, targetSpendAllowable, beRoas, beAcos);
             }
 
-            // GAUGE SCALE POSITIONING
+            // GAUGE SCALE POSITIONING WITH ANTI-COLLISION STAGGERING
             function updateBenchmarkGauge(beRoas, currRoas, targetRoas) {
                 const mBe = document.getElementById('markerBeRoas');
                 const mCurr = document.getElementById('markerCurrRoas');
@@ -1671,6 +1687,40 @@
                 if (mBe) mBe.style.left = `${posBe}%`;
                 if (mCurr) mCurr.style.left = `${posCurr}%`;
                 if (mTgt) mTgt.style.left = `${posTgt}%`;
+
+                // ANTI-COLLISION LOGIC
+                const markers = [
+                    { el: mBe, pos: posBe },
+                    { el: mCurr, pos: posCurr },
+                    { el: mTgt, pos: posTgt }
+                ].filter(m => m.el !== null).sort((a, b) => a.pos - b.pos);
+
+                // Reset positioning classes
+                markers.forEach(m => m.el.classList.remove('marker-below', 'marker-top-high'));
+
+                const MIN_DIST = 16; // % distance threshold to prevent text overlap
+
+                // Check adjacent distance
+                for (let i = 0; i < markers.length - 1; i++) {
+                    const current = markers[i];
+                    const next = markers[i + 1];
+
+                    if (next.pos - current.pos < MIN_DIST) {
+                        if (!current.el.classList.contains('marker-below')) {
+                            next.el.classList.add('marker-below');
+                        } else {
+                            next.el.classList.add('marker-top-high');
+                        }
+                    }
+                }
+
+                // Handle tight 3-marker cluster
+                if (markers.length === 3 && (markers[2].pos - markers[0].pos < MIN_DIST * 1.5)) {
+                    markers[0].el.classList.add('marker-top-high');
+                    markers[1].el.classList.remove('marker-top-high');
+                    markers[1].el.classList.add('marker-below');
+                    markers[2].el.classList.remove('marker-below', 'marker-top-high');
+                }
             }
 
             // SCENARIO LAB
