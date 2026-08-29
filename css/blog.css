@@ -595,8 +595,9 @@ body.blog-page-body {
 
 .article-card-image {
     width: 100%;
-    height: 240px;
-    background: #090e1a;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    background: #0f172a;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -607,7 +608,7 @@ body.blog-page-body {
 .article-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     display: block;
 }
