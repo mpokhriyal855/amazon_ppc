@@ -1,0 +1,44 @@
+# PPC Growth Expert
+
+> Independent Amazon PPC Consultancy & Performance Growth Agency founded by Anmol Pokhriyal. Helping e-commerce brands in India, US, UK, and global marketplaces scale Amazon ad revenue, reduce ACoS, maximize ROAS, and optimize unit economics through data-driven PPC strategies.
+
+## Core Services
+- [Amazon PPC Management Services](https://ppcgrowthexpert.com/services.html#service-ppc-management): Sponsored Products, Sponsored Brands, Sponsored Display, and DSP campaign architecture and continuous bidding optimization.
+- [Amazon Listing Optimization](https://ppcgrowthexpert.com/services.html#service-listing-optimization): Conversion rate (CVR) optimization, SEO copywriting, and keyword indexation.
+- [Amazon A+ Content & Image Design](https://ppcgrowthexpert.com/services.html#service-image-aplus): Premium visual storytelling, infographics, and Enhanced Brand Content (EBC).
+- [Amazon Keyword Research](https://ppcgrowthexpert.com/services.html#service-keyword-research): High-intent search term harvesting, reverse ASIN lookup, and keyword isolation.
+- [Amazon Product Research](https://ppcgrowthexpert.com/services.html#service-product-research): Niche profitability analysis, competitor auditing, and market opportunity validation.
+- [Amazon Review Growth Support](https://ppcgrowthexpert.com/services.html#service-review-growth): Compliant Request-a-Review automation and Vine enrollment strategy.
+
+## Free Calculators & Tools
+- [Amazon ACoS Calculator](https://ppcgrowthexpert.com/amazon-acos-calculator.html): Calculate Advertising Cost of Sales and margin safety thresholds.
+- [Amazon ROAS Calculator](https://ppcgrowthexpert.com/amazon-roas-calculator.html): Calculate Return on Ad Spend and campaign revenue multiplier.
+- [Amazon PPC Conversion Rate Calculator](https://ppcgrowthexpert.com/amazon-ppc-conversion-rate-calculator.html): Measure order conversion percentage from ad traffic.
+- [Amazon CPC Calculator](https://ppcgrowthexpert.com/amazon-cpc-calculator.html): Calculate cost-per-click across keywords and ad groups.
+- [Amazon CTR Calculator](https://ppcgrowthexpert.com/amazon-ctr-calculator.html): Evaluate ad creative and placement click-through rate.
+- [Amazon TACoS Calculator](https://ppcgrowthexpert.com/amazon-tacos-calculator.html): Compare total advertising cost against total brand revenue.
+- [Amazon India Profit Calculator](https://ppcgrowthexpert.com/amazon-profit-calculator.html): Calculate net profit payout, referral fees, closing fees, and 18% GST impact for FBA & MFN in India.
+- [Amazon FBA Fee Calculator India](https://ppcgrowthexpert.com/amazon-fba-fee-calculator.html): Calculate pick & pack, weight handling, and storage fee breakdowns.
+- [Amazon FBA Storage Fee Calculator](https://ppcgrowthexpert.com/amazon-fba-storage-fee-calculator.html): Estimate monthly inventory storage costs based on dimensions and sell-through velocity.
+- [Amazon Advertising ROI Calculator](https://ppcgrowthexpert.com/amazon-advertising-roi-calculator.html): Calculate net ROI after deducting ad spend, COGS, and marketplace fees.
+
+## Case Studies & Results
+- [Case Studies Overview](https://ppcgrowthexpert.com/case-studies.html): Real performance benchmarks showing up to 5.3x ROAS lift, 42% to 14% ACoS reduction, and +94% ad sales growth across Gaming, Office, Grocery, and Home categories.
+
+## Knowledge & Strategy Articles
+- [Blog & Growth Hub](https://ppcgrowthexpert.com/blog.html): Actionable Amazon PPC strategy guides, diagnostic walkthroughs, and case breakdowns.
+- [Why Are My Amazon PPC Impressions and Clicks Low?](https://ppcgrowthexpert.com/blog-amazon-ppc-impressions-clicks-low.html)
+- [Why Is My Amazon PPC CPC Increasing and How Can I Control It?](https://ppcgrowthexpert.com/blog-amazon-ppc-cpc-increasing.html)
+- [How Do I Reduce Wasted Spend in Amazon PPC Campaigns?](https://ppcgrowthexpert.com/blog-reduce-amazon-ppc-wasted-spend.html)
+- [Why Is My Amazon PPC Spending Money but Not Generating Orders?](https://ppcgrowthexpert.com/blog-amazon-ppc-spending-no-orders.html)
+- [Why Are My Amazon Ads Not Converting?](https://ppcgrowthexpert.com/blog-amazon-ads-not-converting.html)
+- [How Can I Improve Amazon PPC ROAS Without Increasing Ad Spend?](https://ppcgrowthexpert.com/blog-improve-amazon-ppc-roas.html)
+- [Why Is My Amazon PPC Getting Clicks but No Sales?](https://ppcgrowthexpert.com/blog-amazon-ppc-clicks-no-sales.html)
+- [Why Is My Amazon PPC ACoS So High and How Can I Reduce It?](https://ppcgrowthexpert.com/blog-reduce-amazon-acos.html)
+
+## Contact & Audit Requests
+- [Book a Free Audit & Strategy Call](https://ppcgrowthexpert.com/contact.html): Get a free 30-minute Amazon PPC audit and strategy consultation.
+- Founder: Anmol Pokhriyal
+- Email: anmolpokhriyal3200@gmail.com
+- Phone / WhatsApp: +91 63976 07291
+- Location: Noida, Uttar Pradesh, India
