@@ -659,10 +659,13 @@ body.blog-page-body {
     color: #475569 !important;
     line-height: 1.55;
     margin-bottom: 18px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.article-card:has(.ext-ref-link:hover),
+.article-card-body:has(.ext-ref-link:hover) {
+    overflow: visible !important;
 }
 
 .article-card-footer {

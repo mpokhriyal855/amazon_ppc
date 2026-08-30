@@ -40,47 +40,60 @@
     <link rel="stylesheet" href="css/footer.css?v=v41">
     <link rel="stylesheet" href="css/whatsapp.css">
 
-    <!-- CUSTOM HOVER TOOLTIP FOR EXTERNAL REFERENCE LINKS -->
+    <!-- CUSTOM HIGH-CONTRAST HOVER TOOLTIP FOR EXTERNAL REFERENCE LINKS -->
     <style>
         .ext-ref-link {
             position: relative;
-            color: #38bdf8;
+            color: #0284c7;
             text-decoration: underline;
-            text-decoration-color: rgba(56, 189, 248, 0.5);
+            text-decoration-color: rgba(2, 132, 199, 0.4);
             text-underline-offset: 3px;
             font-weight: 600;
             transition: all 0.2s ease;
             display: inline-block;
         }
         .ext-ref-link:hover {
-            color: #00f0ff;
-            text-decoration-color: #00f0ff;
-            text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+            color: #0369a1;
+            text-decoration-color: #0369a1;
         }
         .ext-ref-link[data-ref]::after {
-            content: "✦ Ref: " attr(data-ref) " ↗";
+            content: "Ref: " attr(data-ref) " ↗";
             position: absolute;
-            bottom: 125%;
+            bottom: 130%;
             left: 50%;
             transform: translateX(-50%) translateY(4px);
-            background: #0f172a;
-            color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.4);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 11px;
-            font-family: 'DM Mono', monospace;
-            font-weight: 700;
-            white-space: nowrap;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.25);
-            backdrop-filter: blur(12px);
+            background: #ffffff !important;
+            color: #0f172a !important;
+            border: 1.5px solid #0f172a !important;
+            padding: 5px 11px !important;
+            border-radius: 6px !important;
+            font-size: 11px !important;
+            font-family: 'DM Mono', monospace !important;
+            font-weight: 700 !important;
+            white-space: nowrap !important;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12) !important;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.2s ease, transform 0.2s ease;
-            z-index: 9999;
-            letter-spacing: 0.5px;
+            z-index: 999999 !important;
+            letter-spacing: 0.3px;
         }
-        .ext-ref-link[data-ref]:hover::after {
+        .ext-ref-link[data-ref]::before {
+            content: "";
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            border-width: 6px 6px 0 6px;
+            border-style: solid;
+            border-color: #0f172a transparent transparent transparent;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 999999 !important;
+        }
+        .ext-ref-link[data-ref]:hover::after,
+        .ext-ref-link[data-ref]:hover::before {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
         }
