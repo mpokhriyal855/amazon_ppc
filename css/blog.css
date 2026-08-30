@@ -663,9 +663,18 @@ body.blog-page-body {
     z-index: 10;
 }
 
+.article-card-footer {
+    position: relative;
+    z-index: 1;
+}
+
 .article-card:has(.ext-ref-link:hover),
-.article-card-body:has(.ext-ref-link:hover) {
+.article-card-body:has(.ext-ref-link:hover),
+.article-card-body > div:has(.ext-ref-link:hover),
+.article-card-excerpt:has(.ext-ref-link:hover) {
     overflow: visible !important;
+    z-index: 999999 !important;
+    position: relative !important;
 }
 
 .article-card-footer {

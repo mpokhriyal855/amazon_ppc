@@ -51,6 +51,7 @@
             font-weight: 600;
             transition: all 0.2s ease;
             display: inline-block;
+            cursor: pointer;
         }
         .ext-ref-link:hover {
             color: #0369a1;
@@ -59,9 +60,9 @@
         .ext-ref-link[data-ref]::after {
             content: "Ref: " attr(data-ref) " ↗";
             position: absolute;
-            top: 135%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-4px);
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
             background: #ffffff !important;
             color: #0f172a !important;
             border: 1.5px solid #0f172a !important;
@@ -71,31 +72,33 @@
             font-family: 'DM Mono', monospace !important;
             font-weight: 700 !important;
             white-space: nowrap !important;
-            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12) !important;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3) !important;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            z-index: 999999 !important;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            z-index: 9999999 !important;
             letter-spacing: 0.3px;
+            transform: translateY(-4px);
         }
         .ext-ref-link[data-ref]::before {
             content: "";
             position: absolute;
-            top: 110%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-4px);
+            top: 100%;
+            left: 12px;
+            margin-top: 2px;
             border-width: 0 6px 6px 6px;
             border-style: solid;
             border-color: transparent transparent #0f172a transparent;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            z-index: 999999 !important;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+            z-index: 9999999 !important;
+            transform: translateY(-4px);
         }
         .ext-ref-link[data-ref]:hover::after,
         .ext-ref-link[data-ref]:hover::before {
             opacity: 1;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0);
         }
     </style>
 
@@ -941,6 +944,37 @@
     <script src="js/script.js?v=v27"></script>
     <script src="js/navbar.js?v=v27"></script>
     <script src="js/blog.js?v=v49"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.ext-ref-link').forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    const card = link.closest('.article-card');
+                    if (card) {
+                        card.style.zIndex = '999999';
+                        card.style.position = 'relative';
+                    }
+                    const body = link.closest('.article-card-body');
+                    if (body) {
+                        body.style.zIndex = '999999';
+                        body.style.position = 'relative';
+                    }
+                    const excerpt = link.closest('.article-card-excerpt');
+                    if (excerpt) {
+                        excerpt.style.zIndex = '999999';
+                        excerpt.style.position = 'relative';
+                    }
+                });
+                link.addEventListener('mouseleave', () => {
+                    const card = link.closest('.article-card');
+                    if (card) card.style.zIndex = '';
+                    const body = link.closest('.article-card-body');
+                    if (body) body.style.zIndex = '';
+                    const excerpt = link.closest('.article-card-excerpt');
+                    if (excerpt) excerpt.style.zIndex = '';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
