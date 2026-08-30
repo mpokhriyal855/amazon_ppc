@@ -50,55 +50,13 @@
             text-underline-offset: 3px;
             font-weight: 600;
             transition: all 0.2s ease;
-            display: inline-block;
             cursor: pointer;
         }
         .ext-ref-link:hover {
             color: #0369a1;
             text-decoration-color: #0369a1;
-        }
-        .ext-ref-link[data-ref]::after {
-            content: "Ref: " attr(data-ref) " ↗";
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 8px;
-            background: #ffffff !important;
-            color: #0f172a !important;
-            border: 1.5px solid #0f172a !important;
-            padding: 5px 11px !important;
-            border-radius: 6px !important;
-            font-size: 11px !important;
-            font-family: 'DM Mono', monospace !important;
-            font-weight: 700 !important;
-            white-space: nowrap !important;
-            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3) !important;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.15s ease, transform 0.15s ease;
-            z-index: 9999999 !important;
-            letter-spacing: 0.3px;
-            transform: translateY(-4px);
-        }
-        .ext-ref-link[data-ref]::before {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 12px;
-            margin-top: 2px;
-            border-width: 0 6px 6px 6px;
-            border-style: solid;
-            border-color: transparent transparent #0f172a transparent;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.15s ease, transform 0.15s ease;
-            z-index: 9999999 !important;
-            transform: translateY(-4px);
-        }
-        .ext-ref-link[data-ref]:hover::after,
-        .ext-ref-link[data-ref]:hover::before {
-            opacity: 1;
-            transform: translateY(0);
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 3px;
         }
     </style>
 
@@ -946,31 +904,61 @@
     <script src="js/blog.js?v=v49"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Create global floating tooltip element attached directly to document.body
+            let tooltip = document.getElementById('global-ref-tooltip');
+            if (!tooltip) {
+                tooltip = document.createElement('div');
+                tooltip.id = 'global-ref-tooltip';
+                tooltip.style.cssText = `
+                    position: fixed;
+                    background: #ffffff !important;
+                    color: #0f172a !important;
+                    border: 1.5px solid #0f172a !important;
+                    padding: 6px 12px !important;
+                    border-radius: 6px !important;
+                    font-size: 11.5px !important;
+                    font-family: 'DM Mono', monospace, sans-serif !important;
+                    font-weight: 700 !important;
+                    white-space: nowrap !important;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.15s ease, transform 0.15s ease;
+                    z-index: 999999999 !important;
+                    letter-spacing: 0.3px;
+                    transform: translateY(4px);
+                `;
+                document.body.appendChild(tooltip);
+            }
+
             document.querySelectorAll('.ext-ref-link').forEach(link => {
                 link.addEventListener('mouseenter', () => {
-                    const card = link.closest('.article-card');
-                    if (card) {
-                        card.style.zIndex = '999999';
-                        card.style.position = 'relative';
+                    const refText = link.getAttribute('data-ref');
+                    if (!refText) return;
+
+                    tooltip.innerHTML = `Ref: ${refText} ↗`;
+                    const rect = link.getBoundingClientRect();
+                    
+                    // Space check for top vs bottom placement
+                    const spaceBelow = window.innerHeight - rect.bottom;
+                    if (spaceBelow < 45) {
+                        tooltip.style.top = 'auto';
+                        tooltip.style.bottom = `${window.innerHeight - rect.top + 6}px`;
+                    } else {
+                        tooltip.style.bottom = 'auto';
+                        tooltip.style.top = `${rect.bottom + 6}px`;
                     }
-                    const body = link.closest('.article-card-body');
-                    if (body) {
-                        body.style.zIndex = '999999';
-                        body.style.position = 'relative';
-                    }
-                    const excerpt = link.closest('.article-card-excerpt');
-                    if (excerpt) {
-                        excerpt.style.zIndex = '999999';
-                        excerpt.style.position = 'relative';
-                    }
+
+                    // Clamp left edge so it stays visible on viewport
+                    let leftPos = Math.max(12, Math.min(rect.left, window.innerWidth - 260));
+                    tooltip.style.left = `${leftPos}px`;
+                    tooltip.style.opacity = '1';
+                    tooltip.style.transform = 'translateY(0)';
                 });
+
                 link.addEventListener('mouseleave', () => {
-                    const card = link.closest('.article-card');
-                    if (card) card.style.zIndex = '';
-                    const body = link.closest('.article-card-body');
-                    if (body) body.style.zIndex = '';
-                    const excerpt = link.closest('.article-card-excerpt');
-                    if (excerpt) excerpt.style.zIndex = '';
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transform = 'translateY(4px)';
                 });
             });
         });
