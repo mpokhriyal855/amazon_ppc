@@ -40,6 +40,52 @@
     <link rel="stylesheet" href="css/footer.css?v=v41">
     <link rel="stylesheet" href="css/whatsapp.css">
 
+    <!-- CUSTOM HOVER TOOLTIP FOR EXTERNAL REFERENCE LINKS -->
+    <style>
+        .ext-ref-link {
+            position: relative;
+            color: #38bdf8;
+            text-decoration: underline;
+            text-decoration-color: rgba(56, 189, 248, 0.5);
+            text-underline-offset: 3px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+        .ext-ref-link:hover {
+            color: #00f0ff;
+            text-decoration-color: #00f0ff;
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        }
+        .ext-ref-link[data-ref]::after {
+            content: "✦ Ref: " attr(data-ref) " ↗";
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            background: #0f172a;
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-family: 'DM Mono', monospace;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.25);
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 9999;
+            letter-spacing: 0.5px;
+        }
+        .ext-ref-link[data-ref]:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+
     <!-- STRUCTURED DATA SCHEMA -->
     <script type="application/ld+json">
     {
@@ -259,7 +305,7 @@
                         Strategies, Experiments &amp; Insights for <span class="gradient-text">Scaling on Amazon</span>
                     </h1>
                     <p class="blog-hero-subtitle">
-                        Practical <a href="https://advertising.amazon.com/" target="_blank" rel="noopener noreferrer" title="Official Reference: Amazon Ads Platform Documentation" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: text-decoration-color 0.2s, color 0.2s;" onmouseover="this.style.color='#38bdf8'; this.style.textDecorationColor='#38bdf8';" onmouseout="this.style.color='inherit'; this.style.textDecorationColor='rgba(56, 189, 248, 0.4)';">Amazon PPC</a>, listing optimization, marketplace strategy and growth insights built from real campaign experience.
+                        Practical <a href="https://advertising.amazon.com/" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Ads Documentation">Amazon PPC</a>, listing optimization, marketplace strategy and growth insights built from real campaign experience.
                     </p>
 
                     <!-- STATS ROW -->
@@ -407,7 +453,7 @@
                             <a href="blog-amazon-ppc-impressions-clicks-low.html">Why Are My Amazon PPC Impressions and Clicks Low?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            If your Amazon PPC impressions and clicks are low, your campaigns may not be getting enough visibility. Learn how to diagnose bids, search volume, targeting, budget, relevance, <a href="https://advertising.amazon.com/library/terms/click-through-rate" target="_blank" rel="noopener noreferrer" title="Official Definition: Amazon Ads CTR Metric Guide" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">CTR</a>, and listing performance to unlock qualified traffic.
+                            If your Amazon PPC impressions and clicks are low, your campaigns may not be getting enough visibility. Learn how to diagnose bids, search volume, targeting, budget, relevance, <a href="https://advertising.amazon.com/library/terms/click-through-rate" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Ads CTR Guide">CTR</a>, and listing performance to unlock qualified traffic.
                         </p>
                     </div>
                     <div class="article-card-footer">
@@ -432,7 +478,7 @@
                             <a href="blog-amazon-ppc-cpc-increasing.html">Why Is My Amazon PPC CPC Increasing and How Can I Control It?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            Rising Amazon PPC <a href="https://advertising.amazon.com/library/terms/cost-per-click" target="_blank" rel="noopener noreferrer" title="Official Definition: Amazon Cost Per Click (CPC) Guide" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">CPC</a> can quickly increase ad costs. Learn how to diagnose market competition via <a href="https://www.statista.com/topics/871/online-shopping/" target="_blank" rel="noopener noreferrer" title="Industry Report: Statista E-Commerce Research" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">e-commerce trends</a>, placements, search terms, and listing conversion.
+                            Rising Amazon PPC <a href="https://advertising.amazon.com/library/terms/cost-per-click" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon CPC Terms Guide">CPC</a> can quickly increase ad costs. Learn how to diagnose market competition via <a href="https://www.statista.com/topics/871/online-shopping/" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Statista E-Commerce Research">e-commerce trends</a>, placements, search terms, and listing conversion.
                         </p>
                     </div>
                     <div class="article-card-footer">
@@ -457,7 +503,7 @@
                             <a href="blog-reduce-amazon-ppc-wasted-spend.html">How Do I Reduce Wasted Spend in Amazon PPC Campaigns?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            Learn how to identify wasted spend across search terms, keywords, and budgets using <a href="https://sellercentral.amazon.in/" target="_blank" rel="noopener noreferrer" title="Official Documentation: Amazon Seller Central" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">Seller Central analytics</a> and tools like <a href="https://www.helium10.com/" target="_blank" rel="noopener noreferrer" title="External Platform: Helium 10 Analytics Suite" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">Helium 10</a>.
+                            Learn how to identify wasted spend across search terms, keywords, and budgets using <a href="https://sellercentral.amazon.in/" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Seller Central">Seller Central analytics</a> and tools like <a href="https://www.helium10.com/" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Helium 10 Analytics Suite">Helium 10</a>.
                         </p>
                     </div>
                     <div class="article-card-footer">
@@ -482,7 +528,7 @@
                             <a href="blog-amazon-ppc-spending-no-orders.html">Why Is My Amazon PPC Spending Money but Not Generating Orders?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            Amazon PPC spending without orders points to wasted traffic or compliance under <a href="https://advertising.amazon.com/resources/ad-policies" target="_blank" rel="noopener noreferrer" title="Official Policy: Amazon Advertising Guidelines & Compliance" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">Amazon Ad Policies</a>. Learn how to audit where budget is leaking.
+                            Amazon PPC spending without orders points to wasted traffic or compliance under <a href="https://advertising.amazon.com/resources/ad-policies" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Advertising Policies">Amazon Ad Policies</a>. Learn how to audit where budget is leaking.
                         </p>
                     </div>
                     <div class="article-card-footer">
@@ -507,7 +553,7 @@
                             <a href="blog-amazon-ads-not-converting.html">Why Are My Amazon Ads Not Converting? Is It PPC or My Listing?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            If your Amazon ads get clicks but no sales, diagnose targeting, CPC, or listing conversion while ensuring compliance with <a href="https://sellercentral.amazon.in/gp/help/external/202125990" target="_blank" rel="noopener noreferrer" title="Official Policy: Amazon Customer Review Guidelines" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">customer review guidelines</a>.
+                            If your Amazon ads get clicks but no sales, diagnose targeting, CPC, or listing conversion while ensuring compliance with <a href="https://sellercentral.amazon.in/gp/help/external/202125990" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Customer Review Guidelines">customer review guidelines</a>.
                         </p>
                     </div>
                     <div class="article-card-footer">
@@ -532,7 +578,7 @@
                             <a href="blog-improve-amazon-ppc-roas.html">How Can I Improve Amazon PPC ROAS Without Increasing Ad Spend?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            Learn how to improve your <a href="https://advertising.amazon.com/library/guides/return-on-ad-spend" target="_blank" rel="noopener noreferrer" title="Official Guide: Amazon Ads ROAS Metric Documentation" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">Return on Ad Spend (ROAS)</a> without increasing budget through search term isolation and conversion fixes.
+                            Learn how to improve your <a href="https://advertising.amazon.com/library/guides/return-on-ad-spend" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Ads ROAS Documentation">Return on Ad Spend (ROAS)</a> without increasing budget through search term isolation and conversion fixes.
                         </p>
                     </div>
                     <div class="article-card-footer">
@@ -557,7 +603,7 @@
                             <a href="blog-amazon-ppc-clicks-no-sales.html">Why Is My Amazon PPC Getting Clicks but No Sales?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            Amazon PPC getting clicks but no sales? Check search volume trends with <a href="https://trends.google.com/" target="_blank" rel="noopener noreferrer" title="External Tool: Google Trends Search Analytics" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">Google Trends</a> and diagnose listing conversion.
+                            Amazon PPC getting clicks but no sales? Check search volume trends with <a href="https://trends.google.com/" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Google Trends Search Analytics">Google Trends</a> and diagnose listing conversion.
                         </p>
                     </div>
                     <div class="article-card-footer">
@@ -582,7 +628,7 @@
                             <a href="blog-reduce-amazon-acos.html">Why Is My Amazon PPC ACoS So High and How Can I Reduce It?</a>
                         </h2>
                         <p class="article-card-excerpt">
-                            High <a href="https://advertising.amazon.com/library/terms/acos" target="_blank" rel="noopener noreferrer" title="Official Metric Definition: Amazon Advertising ACoS" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">ACoS</a> is a symptom of wasted spend or listing issues. Protect your brand using <a href="https://brandservices.amazon.com/" target="_blank" rel="noopener noreferrer" title="Official Portal: Amazon Brand Registry Services" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(56, 189, 248, 0.4); transition: color 0.2s;" onmouseover="this.style.color='#38bdf8';" onmouseout="this.style.color='inherit';">Brand Registry</a> tools.
+                            High <a href="https://advertising.amazon.com/library/terms/acos" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Advertising ACoS Guide">ACoS</a> is a symptom of wasted spend or listing issues. Protect your brand using <a href="https://brandservices.amazon.com/" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Brand Registry Services">Brand Registry</a> tools.
                         </p>
                     </div>
                     <div class="article-card-footer">
