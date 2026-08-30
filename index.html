@@ -68,6 +68,7 @@
     <link rel="stylesheet" href="css/sales-notifications.css">
     <link rel="stylesheet" href="css/the_problem.css">
     <link rel="stylesheet" href="css/about_section.css?v=v11">
+    <link rel="stylesheet" href="css/services.css?v=v11">
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/comparison.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -845,67 +846,82 @@
             Grow Amazon sales with expert PPC management in Noida. Lower ACOS, improve ROAS, reduce wasted ad spend, and scale profitably. Get a free audit.
         </p>
 
-        <div class="service-grid">
+        <div class="packages-grid">
+            <!-- 🟢 AMAZON PPC MANAGEMENT -->
+            <div class="package-card" itemscope itemtype="https://schema.org/Service">
+                <div>
+                    <div class="package-icon">🟢</div>
+                    <div class="package-name" itemprop="name">Amazon PPC Management</div>
+                    <div class="package-tagline" itemprop="description">Full Amazon PPC strategy &amp; profit scaling.</div>
 
-            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="package-price-box">
+                        <div class="package-price"><span class="old-price">₹19,999</span> ₹17,999</div>
+                        <div class="package-price-subtext">Monthly strategy &amp; active optimization</div>
+                    </div>
 
-                <div class="service-number">
-                    01
+                    <ul class="package-list">
+                        <li>PPC Strategy &amp; Campaign Structuring</li>
+                        <li>Advanced Keyword &amp; ASIN Targeting</li>
+                        <li>Bid &amp; Budget Optimization</li>
+                        <li>ACoS / ROAS &amp; Profitability Optimization</li>
+                        <li>Search Term Analysis &amp; Wasted Spend Reduction</li>
+                    </ul>
                 </div>
-
-                <h3 itemprop="name">
-                    Amazon PPC Management Services
-                </h3>
-
-                <p itemprop="description">
-                    <strong>Turn Amazon ad spend into profitable growth.</strong><br>
-                    End-to-end Amazon PPC management including campaign structure, keyword research, Sponsored Products,
-                    Sponsored Brands, Sponsored Display, bid optimization, search-term harvesting, negative keyword
-                    management, placement optimization, and continuous optimization of ACOS, TACOS, and ROAS.
-                </p>
-
+                <button class="package-cta-btn" onclick="openSingleServiceModal('Amazon PPC Management Package', '₹17,999', 17999)">
+                    Book PPC Package →
+                </button>
             </div>
 
+            <!-- 🔵 AMAZON ACCOUNT MANAGEMENT (MOST POPULAR) -->
+            <div class="package-card featured" itemscope itemtype="https://schema.org/Service">
+                <span class="package-badge">MOST POPULAR</span>
+                <div>
+                    <div class="package-icon">🔵</div>
+                    <div class="package-name" itemprop="name">Amazon Account Management</div>
+                    <div class="package-tagline" itemprop="description">Most popular Amazon account management service for maximum brand growth.</div>
 
-            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="package-price-box">
+                        <div class="package-price"><span class="old-price">₹29,999</span> ₹24,999</div>
+                        <div class="package-price-subtext">Full account growth &amp; revenue engine</div>
+                    </div>
 
-                <div class="service-number">
-                    02
+                    <ul class="package-list">
+                        <li>Complete listing optimization</li>
+                        <li>In-depth keyword &amp; competitor research</li>
+                        <li>Backend SEO &amp; search terms</li>
+                        <li>Profitable Campaign Creation</li>
+                        <li>Amazon Growth Roadmap</li>
+                    </ul>
                 </div>
-
-                <h3 itemprop="name">
-                    Amazon Listing Optimization
-                </h3>
-
-                <p itemprop="description">
-                    <strong>Turn Amazon traffic into more conversions.</strong><br>
-                    Conversion-focused Amazon listing optimization covering keyword research, SEO-optimized titles and
-                    bullet points, product descriptions, backend search terms, image strategy, and A+ Content designed
-                    to improve organic visibility and conversion rates.
-                </p>
-
+                <button class="package-cta-btn" onclick="openSingleServiceModal('Amazon Account Management Package', '₹24,999', 24999)">
+                    Book Account Management →
+                </button>
             </div>
 
+            <!-- 🎯 FREE MINI AUDIT -->
+            <div class="package-card" itemscope itemtype="https://schema.org/Service">
+                <div>
+                    <div class="package-icon">🎯</div>
+                    <div class="package-name" itemprop="name">Free Audit for Qualifying Amazon Brands</div>
+                    <div class="package-tagline" itemprop="description">Find out where your Amazon ad spend is leaking — FREE.</div>
 
-            <div class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="package-price-box">
+                        <div class="package-price" style="color: #10b981;">₹0</div>
+                        <div class="package-price-subtext">Free audit for qualifying Amazon brands</div>
+                    </div>
 
-                <div class="service-number">
-                    03
+                    <ul class="package-list">
+                        <li>Campaign structure check</li>
+                        <li>Wasted-spend &amp; negative check</li>
+                        <li>High-intent keyword opportunities</li>
+                        <li>ACoS / ROA efficiency overview</li>
+                        <li>3–5 actionable recommendations</li>
+                    </ul>
                 </div>
-
-                <h3 itemprop="name">
-                    Amazon Account Growth & Strategy
-                </h3>
-
-                <p itemprop="description">
-                    <strong>Build a stronger Amazon business beyond advertising.</strong><br>
-                    A complete Amazon growth strategy covering Seller Central account management, PPC performance,
-                    listing optimization, revenue planning, profitability analysis, and scalable marketplace growth
-                    strategies.
-                </p>
-
+                <button class="package-cta-btn free-btn" onclick="openSingleServiceModal('Free Audit for Qualifying Amazon Brands', 'FREE (₹0)', 0)">
+                    Get My Free Audit →
+                </button>
             </div>
-
         </div>
 
         <div class="services-cta-container">
@@ -2840,9 +2856,161 @@
         </button>
     </div>
 
+    <!-- MODAL POPUP FOR QUICK SERVICE CONSULTATION -->
+    <div class="service-modal-overlay" id="serviceModalOverlay">
+        <div class="service-modal-card">
+            <button class="modal-close-btn" onclick="closeServiceModal()">&times;</button>
+            <h3 class="modal-title" id="modalServiceName">Book a Strategy Session</h3>
+            <p class="modal-subtitle" id="modalServiceSubtitle">Fill in your details below. Your session booking will be dispatched &amp; opened directly on WhatsApp.</p>
+
+            <form id="modalBookingForm" class="modal-form" novalidate>
+                <input type="hidden" name="_to" value="anmolpokhriyal3200@gmail.com">
+                <input type="hidden" id="modalServiceField" name="serviceName" value="Amazon Service">
+                <input type="hidden" id="modalIsBundleField" name="isBundle" value="false">
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label" for="mFullName">Your Full Name *</label>
+                    <input type="text" id="mFullName" name="fullName" class="modal-form-input" placeholder="e.g. Rahul Sharma" required>
+                </div>
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label" for="mEmail">Email Address *</label>
+                    <input type="email" id="mEmail" name="email" class="modal-form-input" placeholder="name@yourbrand.com" required>
+                </div>
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label" for="mPhone">Phone / WhatsApp Number *</label>
+                    <input type="tel" id="mPhone" name="phone" class="modal-form-input" placeholder="+91 98765 43210" required>
+                </div>
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label" for="mAsin">Product ASIN / Store Link (Optional)</label>
+                    <input type="text" id="mAsin" name="asinLink" class="modal-form-input" placeholder="e.g. B08N5WRWNW">
+                </div>
+
+                <button type="submit" id="modalSubmitBtn" class="modal-whatsapp-submit-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    <span>Book Session &amp; Send Order →</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/navbar.js?v=v10"></script>
     <script src="js/testimonials.js"></script>
     <script src="js/whatsapp.js"></script>
+
+    <script>
+        let currentModalContext = {
+            isBundle: false,
+            serviceTitle: 'Amazon Service',
+            priceText: '',
+            singlePrice: 0
+        };
+
+        function openSingleServiceModal(serviceTitle, priceText, priceNum) {
+            currentModalContext = {
+                isBundle: false,
+                serviceTitle: serviceTitle,
+                priceText: priceText,
+                singlePrice: priceNum || 0
+            };
+
+            const titleEl = document.getElementById('modalServiceName');
+            const fieldEl = document.getElementById('modalServiceField');
+            const bundleEl = document.getElementById('modalIsBundleField');
+            const overlay = document.getElementById('serviceModalOverlay');
+
+            if (titleEl) titleEl.innerText = serviceTitle;
+            if (fieldEl) fieldEl.value = serviceTitle;
+            if (bundleEl) bundleEl.value = 'false';
+            if (overlay) overlay.classList.add('active');
+        }
+
+        function closeServiceModal() {
+            const overlay = document.getElementById('serviceModalOverlay');
+            if (overlay) overlay.classList.remove('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('serviceModalOverlay');
+            if (overlay) {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target.id === 'serviceModalOverlay') {
+                        closeServiceModal();
+                    }
+                });
+            }
+
+            const bookingForm = document.getElementById('modalBookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = document.getElementById('modalSubmitBtn');
+                    const fullName = document.getElementById('mFullName').value.trim();
+                    const email = document.getElementById('mEmail').value.trim();
+                    const phone = document.getElementById('mPhone').value.trim();
+                    const asin = document.getElementById('mAsin').value.trim() || 'N/A';
+
+                    if (!fullName || !email || !phone) {
+                        alert('Please fill in your Full Name, Email, and Phone Number.');
+                        return;
+                    }
+
+                    const originalBtnHtml = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span>Sending Order... ⌛</span>';
+
+                    const servicesListFormatted = `  • ${currentModalContext.serviceTitle}`;
+                    const pricingSummary = `PRICE: ${currentModalContext.priceText || 'Custom'}`;
+
+                    const params = new URLSearchParams();
+                    params.append('Order_Type', 'SINGLE SERVICE BOOKING');
+                    params.append('Requested_Services', currentModalContext.serviceTitle);
+                    params.append('Services_Breakdown', servicesListFormatted);
+                    params.append('Pricing_Summary', pricingSummary);
+                    params.append('Client_Name', fullName);
+                    params.append('Client_Email', email);
+                    params.append('Client_Phone', phone);
+                    params.append('ASIN_Store_Link', asin);
+                    params.append('_subject', `⚡ NEW AMAZON ORDER & SESSION BOOKING: ${fullName} (${currentModalContext.serviceTitle})`);
+
+                    fetch('api/contact.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'Accept': 'application/json'
+                        },
+                        body: params.toString()
+                    }).catch(err => console.log('Background email dispatch notice:', err));
+
+                    let waMessage = `🚨 *NEW SERVICE ORDER & SESSION BOOKING* 🚨\n` +
+                        `--------------------------------------------------\n` +
+                        `📋 *ORDER TYPE:* SINGLE SERVICE BOOKING\n\n` +
+                        `🛒 *SELECTED SERVICE:* ${currentModalContext.serviceTitle}\n` +
+                        `💰 *PRICING:* ${currentModalContext.priceText || 'Custom'}\n\n` +
+                        `👤 *CLIENT DETAILS:*\n` +
+                        `• Full Name: ${fullName}\n` +
+                        `• Email: ${email}\n` +
+                        `• Phone/WhatsApp: ${phone}\n` +
+                        `• ASIN / Store Link: ${asin}\n` +
+                        `--------------------------------------------------\n` +
+                        `Hi Team! Please confirm my order and book my strategy session.`;
+
+                    const waUrl = `https://wa.me/916397607291?text=${encodeURIComponent(waMessage)}`;
+                    window.open(waUrl, '_blank');
+
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHtml;
+                    closeServiceModal();
+                    this.reset();
+                });
+            }
+        });
+    </script>
 
 </body>
 
