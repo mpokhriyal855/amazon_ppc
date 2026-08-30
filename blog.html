@@ -59,9 +59,9 @@
         .ext-ref-link[data-ref]::after {
             content: "Ref: " attr(data-ref) " ↗";
             position: absolute;
-            bottom: 130%;
+            top: 135%;
             left: 50%;
-            transform: translateX(-50%) translateY(4px);
+            transform: translateX(-50%) translateY(-4px);
             background: #ffffff !important;
             color: #0f172a !important;
             border: 1.5px solid #0f172a !important;
@@ -81,12 +81,12 @@
         .ext-ref-link[data-ref]::before {
             content: "";
             position: absolute;
-            bottom: 110%;
+            top: 110%;
             left: 50%;
-            transform: translateX(-50%) translateY(4px);
-            border-width: 6px 6px 0 6px;
+            transform: translateX(-50%) translateY(-4px);
+            border-width: 0 6px 6px 6px;
             border-style: solid;
-            border-color: #0f172a transparent transparent transparent;
+            border-color: transparent transparent #0f172a transparent;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.2s ease, transform 0.2s ease;

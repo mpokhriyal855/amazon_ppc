@@ -580,7 +580,7 @@ body.blog-page-body {
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
     display: flex;
