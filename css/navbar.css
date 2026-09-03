@@ -758,8 +758,8 @@
 ========================================================= */
 .dropdown-menu.mega-dropdown-menu {
     width: max-content;
-    max-width: 680px;
-    min-width: 640px;
+    max-width: 920px;
+    min-width: 820px;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -771,13 +771,8 @@
 
 .mega-menu-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(190px, 1fr));
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
     gap: 16px;
-}
-
-.mega-menu-col[data-hidden-col="profit-planning"],
-.mega-menu-grid > .mega-menu-col:nth-child(3):not(:last-child) {
-    display: none !important;
 }
 
 .mega-col-title {

@@ -105,10 +105,39 @@
         }
     });
 
-    // Close on Escape Key
-    document.addEventListener("keydown", function(e) {
-        if (e.key === "Escape") {
-            window.closeMobileNav();
+    // Dynamic Navbar Sync & Active State Controller
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Ensure Quick Commerce item is present in mega-menu-grid
+        const megaGrid = document.querySelector(".mega-menu-grid");
+        if (megaGrid && !megaGrid.querySelector('a[href*="blinkit-cpm-calculator.html"]')) {
+            const qcCol = document.createElement("div");
+            qcCol.className = "mega-menu-col";
+            qcCol.innerHTML = `
+                <div class="mega-col-title">QUICK COMMERCE</div>
+                <a href="blinkit-cpm-calculator.html" class="mega-menu-item">
+                    <span class="mega-item-icon">⚡</span>
+                    <div class="mega-item-text">
+                        <span class="mega-item-title">Blinkit CPM Calculator</span>
+                        <span class="mega-item-desc">Measure cost per 1,000 impressions</span>
+                    </div>
+                </a>
+            `;
+            megaGrid.appendChild(qcCol);
         }
+
+        // 2. Set dynamic active states
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        const navItems = document.querySelectorAll(".nav-links > .nav-item, .nav-dropdown-trigger");
+        
+        navItems.forEach(item => {
+            const href = item.getAttribute("href");
+            if (href === currentPath) {
+                item.classList.add("active");
+            } else if (currentPath.includes("calculator") || currentPath.includes("resources")) {
+                if (item.classList.contains("nav-dropdown-trigger") || href === "resources.html") {
+                    item.classList.add("active");
+                }
+            }
+        });
     });
 })();
