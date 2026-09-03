@@ -420,6 +420,64 @@
             box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
         }
 
+        /* SMOOTH FAQ ACCORDION STYLES */
+        #faqSection details {
+            background: #ffffff !important;
+            border: 1.5px solid #e2e8f0 !important;
+            border-radius: 14px !important;
+            padding: 16px 20px !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            overflow: hidden !important;
+        }
+
+        #faqSection details summary {
+            font-weight: 700 !important;
+            font-size: 15.5px !important;
+            color: #0f172a !important;
+            cursor: pointer !important;
+            list-style: none !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            user-select: none !important;
+        }
+
+        #faqSection details summary::-webkit-details-marker {
+            display: none !important;
+        }
+
+        #faqSection details summary::after {
+            content: '+' !important;
+            font-family: 'DM Mono', monospace !important;
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            color: #0284c7 !important;
+            transition: transform 0.25s ease !important;
+            margin-left: 12px !important;
+        }
+
+        #faqSection details[open] summary::after {
+            content: '−' !important;
+        }
+
+        #faqSection details[open] {
+            border-color: #0284c7 !important;
+            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08) !important;
+        }
+
+        #faqSection details p {
+            margin-top: 10px !important;
+            font-size: 14px !important;
+            color: #475569 !important;
+            line-height: 1.6 !important;
+            animation: faqFadeIn 0.3s ease-out !important;
+        }
+
+        @keyframes faqFadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* TOOLTIP & ACTION BUTTONS */
         .tooltip-icon {
             display: inline-flex;
@@ -887,103 +945,103 @@
             </div>
         </div>
 
-        <!-- 3. FUNNEL & MEDIA PLANNERS SECTION -->
-        <div class="dark-section-alt" id="plannersSection">
+        <!-- 3. FUNNEL & MEDIA PLANNERS SECTION (LIGHT THEME) -->
+        <div class="light-section-wrapper" id="plannersSection" style="background:#ffffff; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; padding:60px 0;">
             <div class="resources-calc-container">
                 
                 <div style="text-align:center; margin-bottom:28px;">
                     <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#0284c7; letter-spacing:1.5px; text-transform:uppercase;">FULL-FUNNEL VISUALIZATION</div>
-                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:6px 0;">Impression to Revenue Conversion Funnel</h2>
-                    <p style="font-size:14.5px; color:#cbd5e1; max-width:700px; margin:0 auto;">Visualizing how 1,000 ad impressions cascade down into clicks, orders, and attributed GMV.</p>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:6px 0;">Impression to Revenue Conversion Funnel</h2>
+                    <p style="font-size:14.5px; color:#475569; max-width:700px; margin:0 auto;">Visualizing how 1,000 ad impressions cascade down into clicks, orders, and attributed GMV.</p>
                 </div>
 
-                <!-- VISUAL FUNNEL FLOW CONTAINER -->
-                <div class="funnel-flow-container">
+                <!-- VISUAL FUNNEL FLOW CONTAINER (LIGHT) -->
+                <div class="funnel-flow-container" style="background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:18px; padding:20px 24px; margin-bottom:30px;">
                     <div class="funnel-step">
-                        <div class="funnel-step-title">1,000 IMPRESSIONS</div>
-                        <div class="funnel-step-val" id="funnelCostVal">₹40 Media Cost</div>
+                        <div class="funnel-step-title" style="color:#64748b;">1,000 IMPRESSIONS</div>
+                        <div class="funnel-step-val" id="funnelCostVal" style="color:#0284c7;">₹40 Media Cost</div>
                     </div>
-                    <div class="funnel-arrow">→</div>
+                    <div class="funnel-arrow" style="color:#0284c7;">→</div>
                     <div class="funnel-step">
-                        <div class="funnel-step-title">CTR RESPONSE</div>
-                        <div class="funnel-step-val" id="funnelCtrVal">2.00% CTR</div>
+                        <div class="funnel-step-title" style="color:#64748b;">CTR RESPONSE</div>
+                        <div class="funnel-step-val" id="funnelCtrVal" style="color:#0284c7;">2.00% CTR</div>
                     </div>
-                    <div class="funnel-arrow">→</div>
+                    <div class="funnel-arrow" style="color:#0284c7;">→</div>
                     <div class="funnel-step">
-                        <div class="funnel-step-title">CLICKS GENERATED</div>
-                        <div class="funnel-step-val" id="funnelClicksVal">20 Clicks (₹2.00 CPC)</div>
+                        <div class="funnel-step-title" style="color:#64748b;">CLICKS GENERATED</div>
+                        <div class="funnel-step-val" id="funnelClicksVal" style="color:#0284c7;">20 Clicks (₹2.00 CPC)</div>
                     </div>
-                    <div class="funnel-arrow">→</div>
+                    <div class="funnel-arrow" style="color:#0284c7;">→</div>
                     <div class="funnel-step">
-                        <div class="funnel-step-title">CONVERSION RATE</div>
-                        <div class="funnel-step-val" id="funnelCvrVal">10.00% CVR</div>
+                        <div class="funnel-step-title" style="color:#64748b;">CONVERSION RATE</div>
+                        <div class="funnel-step-val" id="funnelCvrVal" style="color:#0284c7;">10.00% CVR</div>
                     </div>
-                    <div class="funnel-arrow">→</div>
+                    <div class="funnel-arrow" style="color:#0284c7;">→</div>
                     <div class="funnel-step">
-                        <div class="funnel-step-title">ORDERS &amp; REVENUE</div>
-                        <div class="funnel-step-val" id="funnelOrdersVal">2 Orders (₹1,000 GMV)</div>
+                        <div class="funnel-step-title" style="color:#64748b;">ORDERS &amp; REVENUE</div>
+                        <div class="funnel-step-val" id="funnelOrdersVal" style="color:#059669;">2 Orders (₹1,000 GMV)</div>
                     </div>
                 </div>
 
-                <!-- TARGET & BUDGET PLANNERS GRID -->
+                <!-- TARGET & BUDGET PLANNERS GRID (LIGHT CARDS) -->
                 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:22px;">
                     
                     <!-- PLANNER 1: TARGET CPM PLANNER -->
-                    <div class="dark-telemetry-card">
-                        <span class="type-badge type-modelled">MODELLED</span>
-                        <div class="telemetry-title">TARGET CPM PLANNER</div>
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:22px; box-shadow:0 10px 25px rgba(0,0,0,0.03); position:relative;">
+                        <span class="type-badge" style="background:#fef3c7; color:#d97706; border:1px solid #fde68a;">MODELLED</span>
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#0284c7; text-transform:uppercase; letter-spacing:0.8px;">TARGET CPM PLANNER</div>
                         <div style="margin-top:14px;">
-                            <label class="dark-label" for="plannerTargetCpm" style="font-size:12.5px !important;">Input Target CPM (₹)</label>
-                            <input type="number" id="plannerTargetCpm" class="dark-input-field" value="35" placeholder="e.g. 35">
+                            <label style="color:#0f172a; font-weight:700; font-size:12.5px; display:block; margin-bottom:6px;" for="plannerTargetCpm">Input Target CPM (₹)</label>
+                            <input type="number" id="plannerTargetCpm" class="light-input-field" value="35" placeholder="e.g. 35">
                         </div>
-                        <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
-                            <div style="font-size:12px; color:#cbd5e1; display:flex; justify-content:space-between;">
-                                <span>Current Spend:</span> <strong id="planCurrSpendText" style="color:#ffffff;">₹50,000</strong>
+                        <div style="margin-top:14px; padding-top:12px; border-top:1px solid #f1f5f9;">
+                            <div style="font-size:12.5px; color:#475569; display:flex; justify-content:space-between;">
+                                <span>Current Spend:</span> <strong id="planCurrSpendText" style="color:#0f172a;">₹50,000</strong>
                             </div>
-                            <div style="font-size:12px; color:#cbd5e1; display:flex; justify-content:space-between; margin-top:6px;">
-                                <span>Spend at Target CPM:</span> <strong id="planTargetSpendText" style="color:#38bdf8;">₹43,750</strong>
+                            <div style="font-size:12.5px; color:#475569; display:flex; justify-content:space-between; margin-top:6px;">
+                                <span>Spend at Target CPM:</span> <strong id="planTargetSpendText" style="color:#0284c7;">₹43,750</strong>
                             </div>
-                            <div style="font-size:12px; color:#cbd5e1; display:flex; justify-content:space-between; margin-top:6px;">
-                                <span>Modelled Spend Difference:</span> <strong id="planDiffText" style="color:#34d399;">−₹6,250</strong>
+                            <div style="font-size:12.5px; color:#475569; display:flex; justify-content:space-between; margin-top:6px;">
+                                <span>Modelled Spend Difference:</span> <strong id="planDiffText" style="color:#059669;">−₹6,250</strong>
                             </div>
                         </div>
                     </div>
 
                     <!-- PLANNER 2: IMPRESSION TARGET PLANNER -->
-                    <div class="dark-telemetry-card">
-                        <span class="type-badge type-modelled">MODELLED</span>
-                        <div class="telemetry-title">IMPRESSION TARGET PLANNER</div>
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:22px; box-shadow:0 10px 25px rgba(0,0,0,0.03); position:relative;">
+                        <span class="type-badge" style="background:#fef3c7; color:#d97706; border:1px solid #fde68a;">MODELLED</span>
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#0284c7; text-transform:uppercase; letter-spacing:0.8px;">IMPRESSION TARGET PLANNER</div>
                         <div style="margin-top:14px;">
-                            <label class="dark-label" for="plannerTargetImp" style="font-size:12.5px !important;">Input Target Impressions</label>
-                            <input type="number" id="plannerTargetImp" class="dark-input-field" value="2500000" placeholder="e.g. 2500000">
+                            <label style="color:#0f172a; font-weight:700; font-size:12.5px; display:block; margin-bottom:6px;" for="plannerTargetImp">Input Target Impressions</label>
+                            <input type="number" id="plannerTargetImp" class="light-input-field" value="2500000" placeholder="e.g. 2500000">
                         </div>
-                        <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.08);">
-                            <div style="font-size:12px; color:#cbd5e1; display:flex; justify-content:space-between;">
-                                <span>Current CPM:</span> <strong id="planImpCurrCpm" style="color:#ffffff;">₹40.00</strong>
+                        <div style="margin-top:14px; padding-top:12px; border-top:1px solid #f1f5f9;">
+                            <div style="font-size:12.5px; color:#475569; display:flex; justify-content:space-between;">
+                                <span>Current CPM:</span> <strong id="planImpCurrCpm" style="color:#0f172a;">₹40.00</strong>
                             </div>
-                            <div style="font-size:12px; color:#cbd5e1; display:flex; justify-content:space-between; margin-top:6px;">
-                                <span>Modelled Required Spend:</span> <strong id="planImpReqSpend" style="color:#38bdf8;">₹1,00,000</strong>
+                            <div style="font-size:12.5px; color:#475569; display:flex; justify-content:space-between; margin-top:6px;">
+                                <span>Modelled Required Spend:</span> <strong id="planImpReqSpend" style="color:#0284c7;">₹1,00,000</strong>
                             </div>
                         </div>
                     </div>
 
                     <!-- PLANNER 3: BUDGET REACH PLANNER -->
-                    <div class="dark-telemetry-card">
-                        <span class="type-badge type-modelled">MODELLED</span>
-                        <div class="telemetry-title">BUDGET → REACH PLANNER</div>
+                    <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:22px; box-shadow:0 10px 25px rgba(0,0,0,0.03); position:relative;">
+                        <span class="type-badge" style="background:#fef3c7; color:#d97706; border:1px solid #fde68a;">MODELLED</span>
+                        <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#0284c7; text-transform:uppercase; letter-spacing:0.8px;">BUDGET → REACH PLANNER</div>
                         <div style="margin-top:14px; display:flex; gap:6px; flex-wrap:wrap;">
-                            <button type="button" class="btn-budget-preset" data-budget="25000" style="background:rgba(255,255,255,0.08); color:#ffffff; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer;">₹25K</button>
-                            <button type="button" class="btn-budget-preset" data-budget="50000" style="background:rgba(255,255,255,0.08); color:#ffffff; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer;">₹50K</button>
-                            <button type="button" class="btn-budget-preset" data-budget="100000" style="background:rgba(255,255,255,0.08); color:#ffffff; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer;">₹1L</button>
-                            <button type="button" class="btn-budget-preset" data-budget="200000" style="background:rgba(255,255,255,0.08); color:#ffffff; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer;">₹2L</button>
+                            <button type="button" class="btn-budget-preset" data-budget="25000" style="background:#f1f5f9; color:#0f172a; border:1px solid #cbd5e1; border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer; font-weight:700;">₹25K</button>
+                            <button type="button" class="btn-budget-preset" data-budget="50000" style="background:#f1f5f9; color:#0f172a; border:1px solid #cbd5e1; border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer; font-weight:700;">₹50K</button>
+                            <button type="button" class="btn-budget-preset" data-budget="100000" style="background:#f1f5f9; color:#0f172a; border:1px solid #cbd5e1; border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer; font-weight:700;">₹1L</button>
+                            <button type="button" class="btn-budget-preset" data-budget="200000" style="background:#f1f5f9; color:#0f172a; border:1px solid #cbd5e1; border-radius:6px; padding:4px 10px; font-size:11.5px; cursor:pointer; font-weight:700;">₹2L</button>
                         </div>
                         <div style="margin-top:10px;">
-                            <label class="dark-label" for="plannerBudgetInput" style="font-size:12px !important;">Available Budget (₹)</label>
-                            <input type="number" id="plannerBudgetInput" class="dark-input-field" value="100000" placeholder="e.g. 100000">
+                            <label style="color:#0f172a; font-weight:700; font-size:12px; display:block; margin-bottom:6px;" for="plannerBudgetInput">Available Budget (₹)</label>
+                            <input type="number" id="plannerBudgetInput" class="light-input-field" value="100000" placeholder="e.g. 100000">
                         </div>
-                        <div style="margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.08);">
-                            <div style="font-size:12px; color:#cbd5e1; display:flex; justify-content:space-between;">
-                                <span>Modelled Impressions:</span> <strong id="planReachImpText" style="color:#34d399;">25,00,000</strong>
+                        <div style="margin-top:12px; padding-top:10px; border-top:1px solid #f1f5f9;">
+                            <div style="font-size:12.5px; color:#475569; display:flex; justify-content:space-between;">
+                                <span>Modelled Impressions:</span> <strong id="planReachImpText" style="color:#059669;">25,00,000</strong>
                             </div>
                         </div>
                     </div>
@@ -1138,14 +1196,14 @@
             </div>
         </div>
 
-        <!-- 6. BLINKIT MEDIA DIAGNOSTIC CONTROL CENTER -->
-        <div class="dark-section-wrapper" id="diagnosticsSection">
+        <!-- 6. BLINKIT MEDIA DIAGNOSTIC CONTROL CENTER (LIGHT THEME) -->
+        <div class="light-section-wrapper" id="diagnosticsSection" style="background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; padding:60px 0;">
             <div class="resources-calc-container">
                 
                 <div style="text-align:center; margin-bottom:28px;">
-                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; letter-spacing:1.5px; text-transform:uppercase;">QUICK COMMERCE DIAGNOSTICS</div>
-                    <h2 style="font-size:28px; font-weight:800; color:#ffffff; margin:6px 0;">What's Driving My Blinkit Media Efficiency?</h2>
-                    <p style="font-size:14.5px; color:#cbd5e1; max-width:740px; margin:0 auto;">Select a campaign symptom below to diagnose root causes and identify actionable optimization priorities.</p>
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#0284c7; letter-spacing:1.5px; text-transform:uppercase;">QUICK COMMERCE DIAGNOSTICS</div>
+                    <h2 style="font-size:28px; font-weight:800; color:#0f172a; margin:6px 0;">What's Driving My Blinkit Media Efficiency?</h2>
+                    <p style="font-size:14.5px; color:#475569; max-width:740px; margin:0 auto;">Select a campaign symptom below to diagnose root causes and identify actionable optimization priorities.</p>
                 </div>
 
                 <!-- 8 INTERACTIVE SYMPTOM PILLS -->
@@ -1160,18 +1218,18 @@
                     <button type="button" class="symptom-pill-btn" data-symptom="placement-outlier">8. Placement CPM Outlier 📊</button>
                 </div>
 
-                <!-- DYNAMIC DIAGNOSTIC OUTPUT BOX -->
-                <div style="background:linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.9) 100%); border:1px solid rgba(56, 189, 248, 0.3); border-radius:18px; padding:24px; margin-top:24px;" id="diagnosticResultCard">
-                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#38bdf8; text-transform:uppercase;" id="diagTitle">DIAGNOSIS: CPM INCREASED</div>
-                    <h4 style="margin:6px 0 12px 0; font-size:18px; color:#ffffff; font-weight:800;" id="diagHeading">CPM means each 1,000 impressions cost more than before</h4>
-                    <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6; margin:0;" id="diagText">
+                <!-- DYNAMIC DIAGNOSTIC OUTPUT BOX (LIGHT) -->
+                <div style="background:#f0f9ff; border:1.5px solid #bae6fd; border-radius:18px; padding:24px; margin-top:24px;" id="diagnosticResultCard">
+                    <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#0284c7; text-transform:uppercase;" id="diagTitle">DIAGNOSIS: CPM INCREASED</div>
+                    <h4 style="margin:6px 0 12px 0; font-size:18px; color:#0f172a; font-weight:800;" id="diagHeading">CPM means each 1,000 impressions cost more than before</h4>
+                    <p style="font-size:13.5px; color:#334155; line-height:1.6; margin:0;" id="diagText">
                         CPM means each 1,000 impressions cost more than before. That change alone does not tell whether the campaign became less efficient overall. Compare CTR, CPC, orders and ROAS where available. Investigate campaign type, placement, target city, season/time, competition, and creative relevance.
                     </p>
                 </div>
 
-                <!-- TOP 3 DYNAMIC PRIORITIES CARDS -->
+                <!-- TOP 3 DYNAMIC PRIORITIES CARDS (LIGHT) -->
                 <div style="margin-top:36px;">
-                    <h3 style="font-size:20px; font-weight:800; color:#ffffff; margin-bottom:16px;">Top 3 Dynamic Optimization Priorities</h3>
+                    <h3 style="font-size:20px; font-weight:800; color:#0f172a; margin-bottom:16px;">Top 3 Dynamic Optimization Priorities</h3>
                     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:18px;" id="topPrioritiesGrid">
                         <!-- Populated dynamically -->
                     </div>
@@ -1399,38 +1457,132 @@
             </div>
         </div>
 
-        <!-- FOOTER -->
-        <footer class="footer">
+        <!-- =========================================================
+             ULTRA-PREMIUM EXECUTIVE SEO FOOTER
+             File: footer.html
+        ========================================================= -->
+        <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
+
             <div class="footer-container">
+
+                <!-- TOP GRID -->
                 <div class="footer-grid">
-                    <div class="footer-brand">
-                        <a href="index.html" class="footer-logo">
-                            <div class="logo-badge"><div class="logo-symbol"></div></div>
-                            <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
-                        </a>
-                        <p class="footer-desc">Data-driven quick commerce &amp; Amazon PPC management services in India. Optimizing bids, scaling reach, and maximizing advertising ROAS.</p>
+
+                    <!-- COL 1: BRAND GLASS CARD -->
+                    <div class="footer-col brand-col">
+                        <div class="brand-card">
+                            <a href="index.html" class="footer-logo">
+                                <div class="logo-badge">
+                                    <div class="logo-symbol"></div>
+                                </div>
+                                <span class="logo-text">
+                                    PPC <span class="highlight">Growth</span> Expert
+                                </span>
+                            </a>
+
+                            <p class="footer-sub-tagline">
+                                Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
+                            </p>
+
+                            <p class="footer-tagline" itemprop="description">
+                                PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve
+                                advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon
+                                advertising.
+                            </p>
+
+                            <div class="footer-socials" aria-label="Social Media Links">
+                                <a href="https://wa.me/916397607291" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                </a>
+                                <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                                </a>
+                                <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                </a>
+                                <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z"/></svg>
+                                </a>
+                                <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+
+
+                    <!-- COL 2: SERVICES -->
                     <div class="footer-col">
-                        <div class="footer-col-title">Calculators</div>
-                        <a href="blinkit-cpm-calculator.html">Blinkit CPM Calculator</a>
-                        <a href="amazon-acos-calculator.html">ACoS Calculator</a>
-                        <a href="amazon-roas-calculator.html">ROAS Calculator</a>
-                        <a href="amazon-cpc-calculator.html">CPC Calculator</a>
-                        <a href="amazon-profit-calculator.html">Profit Calculator</a>
+                        <h3 class="footer-heading">SERVICES</h3>
+                        <ul class="footer-links">
+                            <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
+                            <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
+                            <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                            <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                            <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
+                            <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                        </ul>
                     </div>
+
+
+                    <!-- COL 3: CONTACT US -->
+                    <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <h3 class="footer-heading">CONTACT US</h3>
+                        <ul class="footer-contact-list">
+                            <li>
+                                <div class="contact-icon-pill">📍</div>
+                                <div>
+                                    <span itemprop="addressLocality">Noida</span>,<br>
+                                    <span itemprop="addressRegion">Uttar Pradesh</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="contact-icon-pill">📞</div>
+                                <a href="tel:+916397607291" itemprop="telephone">+91 63976 07291</a>
+                            </li>
+                            <li>
+                                <div class="contact-icon-pill">✉️</div>
+                                <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- COL 4: COMPANY -->
                     <div class="footer-col">
-                        <div class="footer-col-title">Company</div>
-                        <a href="about.html">About Us</a>
-                        <a href="services.html">Services</a>
-                        <a href="case-studies.html">Case Studies</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contact.html">Contact</a>
+                        <h3 class="footer-heading">COMPANY</h3>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="about.html#founder">Our Founder</a></li>
+                            <li><a href="case-studies.html">Case Studies</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
                     </div>
+
                 </div>
+
+
+                <!-- MIDDLE BAR -->
+                <div class="footer-middle">
+                    <p class="footer-meta-info">
+                        PPC Growth Expert · Noida, Uttar Pradesh, India · +91 63976 07291 · anmolpokhriyal3200@gmail.com
+                    </p>
+                </div>
+
+
+                <!-- BOTTOM COPYRIGHT BAR -->
                 <div class="footer-bottom">
-                    <p>© 2026 PPC Growth Expert. All rights reserved.</p>
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn"
+                        aria-label="Scroll to top">
+                        ↑
+                    </a>
                 </div>
+
             </div>
+
         </footer>
 
     </div>
@@ -1842,31 +1994,31 @@
             `;
         }
 
-        // 5. TOP PRIORITIES GENERATOR
+        // 5. TOP PRIORITIES GENERATOR (LIGHT CARDS)
         function updateTopPriorities(cpm, ctr, cpc, cvr, cpa, roas, spend, imp) {
             const container = document.getElementById('topPrioritiesGrid');
             if (!container) return;
             container.innerHTML = '';
 
             const p1 = document.createElement('div');
-            p1.className = 'dark-telemetry-card card-glow-blue';
+            p1.style.cssText = 'background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,0.03);';
             p1.innerHTML = `
-                <div class="telemetry-title">1. CPM &amp; CTR ECONOMICS</div>
-                <div class="telemetry-sub" style="margin-top:6px;">Your current impression cost is <strong>${fmtINR.format(cpm)} CPM</strong>. At <strong>${ctr.toFixed(2)}% CTR</strong>, every click costs <strong>${fmtINR.format(cpc)}</strong>. Focus on creative testing to raise CTR and drive lower CPC.</div>
+                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#0284c7; text-transform:uppercase; letter-spacing:0.8px;">1. CPM &amp; CTR ECONOMICS</div>
+                <div style="font-size:13px; color:#334155; margin-top:6px; line-height:1.5;">Your current impression cost is <strong>${fmtINR.format(cpm)} CPM</strong>. At <strong>${ctr.toFixed(2)}% CTR</strong>, every click costs <strong>${fmtINR.format(cpc)}</strong>. Focus on creative testing to raise CTR and drive lower CPC.</div>
             `;
 
             const p2 = document.createElement('div');
-            p2.className = 'dark-telemetry-card card-glow-green';
+            p2.style.cssText = 'background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,0.03);';
             p2.innerHTML = `
-                <div class="telemetry-title">2. REACH SCALING OPPORTUNITY</div>
-                <div class="telemetry-sub" style="margin-top:6px;">At <strong>${fmtINR.format(cpm)} CPM</strong>, scaling your budget by ₹25,000 adds mathematically <strong>${fmtNum.format(Math.round(25000 / cpm * 1000))} impressions</strong> to your Blinkit presence.</div>
+                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#059669; text-transform:uppercase; letter-spacing:0.8px;">2. REACH SCALING OPPORTUNITY</div>
+                <div style="font-size:13px; color:#334155; margin-top:6px; line-height:1.5;">At <strong>${fmtINR.format(cpm)} CPM</strong>, scaling your budget by ₹25,000 adds mathematically <strong>${fmtNum.format(Math.round(25000 / cpm * 1000))} impressions</strong> to your Blinkit presence.</div>
             `;
 
             const p3 = document.createElement('div');
-            p3.className = 'dark-telemetry-card card-glow-amber';
+            p3.style.cssText = 'background:#ffffff; border:1.5px solid #e2e8f0; border-radius:18px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,0.03);';
             p3.innerHTML = `
-                <div class="telemetry-title">3. DOWNSTREAM CONVERSION FOCUS</div>
-                <div class="telemetry-sub" style="margin-top:6px;">Your click-to-order conversion rate is <strong>${cvr.toFixed(2)}%</strong> with a CPA of <strong>${fmtINR.format(cpa)}</strong>. Ensure stock availability and instant delivery promise on Blinkit to maximize order velocity.</div>
+                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:#d97706; text-transform:uppercase; letter-spacing:0.8px;">3. DOWNSTREAM CONVERSION FOCUS</div>
+                <div style="font-size:13px; color:#334155; margin-top:6px; line-height:1.5;">Your click-to-order conversion rate is <strong>${cvr.toFixed(2)}%</strong> with a CPA of <strong>${fmtINR.format(cpa)}</strong>. Ensure stock availability and instant delivery promise on Blinkit to maximize order velocity.</div>
             `;
 
             container.appendChild(p1);
@@ -2170,6 +2322,19 @@ Calculated with PPC Growth Expert (ppcgrowthexpert.com)`;
 
         document.getElementById('btnAddCampaignRow').addEventListener('click', function() {
             addCampaignRow();
+        });
+
+        // FAQ ACCORDION: ONE OPEN, OTHERS CLOSE SMOOTHLY
+        document.querySelectorAll('#faqSection details').forEach(item => {
+            item.addEventListener('toggle', function() {
+                if (this.open) {
+                    document.querySelectorAll('#faqSection details').forEach(other => {
+                        if (other !== this && other.open) {
+                            other.open = false;
+                        }
+                    });
+                }
+            });
         });
 
         // INITIALIZE
