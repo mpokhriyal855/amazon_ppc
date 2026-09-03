@@ -1913,5 +1913,168 @@ body {
     box-shadow: 0 20px 45px rgba(37, 99, 235, 0.7) !important;
 }
 
+/* =========================================================
+   AMAZON PPC WASTE CALCULATOR STYLES
+========================================================= */
+.mode-toggle-bar {
+    display: flex;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 5px;
+    border-radius: 14px;
+    gap: 6px;
+    max-width: 540px;
+    margin: 0 auto 28px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.mode-toggle-btn {
+    flex: 1;
+    padding: 11px 18px;
+    border: none;
+    background: transparent;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #94a3b8;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mode-toggle-btn.active {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.leakage-bar-wrapper {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    height: 18px;
+    overflow: hidden;
+    display: flex;
+    margin: 16px 0 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.leakage-seg {
+    height: 100%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.seg-efficient { background: linear-gradient(90deg, #10b981 0%, #059669 100%); }
+.seg-above-target { background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%); }
+.seg-zero-order { background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%); }
+
+.csv-drop-zone {
+    border: 2px dashed rgba(56, 189, 248, 0.4);
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.csv-drop-zone:hover, .csv-drop-zone.dragover {
+    border-color: #38bdf8;
+    background: rgba(30, 58, 138, 0.3);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+.symptom-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.symptom-pill-btn {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.symptom-pill-btn:hover {
+    border-color: #2563eb;
+    background: #f0f6ff;
+    color: #2563eb;
+}
+
+.symptom-pill-btn.active {
+    border-color: #2563eb;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+}
+
+.waste-data-table-container {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(15, 23, 42, 0.8);
+    margin-top: 16px;
+}
+
+.waste-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: #e2e8f0;
+    text-align: left;
+}
+
+.waste-table th {
+    background: rgba(30, 41, 59, 0.9);
+    padding: 12px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+}
+
+.waste-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+}
+
+.waste-table tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.badge-waste {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-zero { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+.badge-high-acos { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+.badge-efficient { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+
 
 
