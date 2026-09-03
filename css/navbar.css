@@ -758,8 +758,8 @@
 ========================================================= */
 .dropdown-menu.mega-dropdown-menu {
     width: max-content;
-    max-width: 920px;
-    min-width: 820px;
+    max-width: 1100px;
+    min-width: 960px;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -771,8 +771,8 @@
 
 .mega-menu-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(180px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+    gap: 14px;
 }
 
 .mega-col-title {

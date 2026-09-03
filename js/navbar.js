@@ -107,8 +107,30 @@
 
     // Dynamic Navbar Sync & Active State Controller
     document.addEventListener("DOMContentLoaded", function() {
-        // 1. Ensure Quick Commerce item is present in mega-menu-grid
+        // 1. Ensure PPC OPTIMIZATION & Quick Commerce items are present in mega-menu-grid
         const megaGrid = document.querySelector(".mega-menu-grid");
+        if (megaGrid && !megaGrid.querySelector('a[href*="amazon-ppc-waste-calculator.html"]')) {
+            const optCol = document.createElement("div");
+            optCol.className = "mega-menu-col";
+            optCol.innerHTML = `
+                <div class="mega-col-title">PPC OPTIMIZATION</div>
+                <a href="amazon-ppc-waste-calculator.html" class="mega-menu-item">
+                    <span class="mega-item-icon">🧯</span>
+                    <div class="mega-item-text">
+                        <span class="mega-item-title">Amazon PPC Waste Calculator</span>
+                        <span class="mega-item-desc">Find inefficient ad spend</span>
+                    </div>
+                </a>
+            `;
+            // Insert before Quick Commerce or at end
+            const qcCol = megaGrid.querySelector('a[href*="blinkit-cpm-calculator.html"]')?.closest('.mega-menu-col');
+            if (qcCol) {
+                megaGrid.insertBefore(optCol, qcCol);
+            } else {
+                megaGrid.appendChild(optCol);
+            }
+        }
+
         if (megaGrid && !megaGrid.querySelector('a[href*="blinkit-cpm-calculator.html"]')) {
             const qcCol = document.createElement("div");
             qcCol.className = "mega-menu-col";
