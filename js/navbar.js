@@ -148,15 +148,24 @@
         }
 
         // 2. Set dynamic active states
-        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        const pathname = window.location.pathname.toLowerCase();
+        const currentPath = pathname.split("/").pop() || "index.html";
         const navItems = document.querySelectorAll(".nav-links > .nav-item, .nav-dropdown-trigger");
         
         navItems.forEach(item => {
-            const href = item.getAttribute("href");
-            if (href === currentPath) {
+            const href = (item.getAttribute("href") || "").toLowerCase();
+            if (href === currentPath || (currentPath !== "index.html" && href.endsWith("/" + currentPath))) {
                 item.classList.add("active");
-            } else if (currentPath.includes("calculator") || currentPath.includes("resources")) {
-                if (item.classList.contains("nav-dropdown-trigger") || href === "resources.html" || href.includes("calculators")) {
+            } else if (pathname.includes("/services/") || currentPath.includes("services")) {
+                if (href.includes("services")) {
+                    item.classList.add("active");
+                }
+            } else if (pathname.includes("/calculators/") || currentPath.includes("calculator") || currentPath.includes("resources")) {
+                if (item.classList.contains("nav-dropdown-trigger") && (href.includes("calculators") || href.includes("resources"))) {
+                    item.classList.add("active");
+                }
+            } else if (pathname.includes("/blog/") || currentPath.includes("blog")) {
+                if (href.includes("blog")) {
                     item.classList.add("active");
                 }
             }

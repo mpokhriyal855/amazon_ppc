@@ -13,10 +13,46 @@
     </image:image>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services.html</loc>
-    <lastmod>2026-08-19</lastmod>
+    <loc>https://ppcgrowthexpert.com/services/</loc>
+    <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ppcgrowthexpert.com/services/amazon-advertising-india.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-noida.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-delhi.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-moradabad.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ppcgrowthexpert.com/services/ecommerce-ppc-services.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://ppcgrowthexpert.com/case-studies.html</loc>

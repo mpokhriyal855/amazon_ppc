@@ -2,13 +2,14 @@
 
 > Independent Amazon PPC Consultancy & Performance Growth Agency founded by Anmol Pokhriyal. Helping e-commerce brands in India, US, UK, and global marketplaces scale Amazon ad revenue, reduce ACoS, maximize ROAS, and optimize unit economics through data-driven PPC strategies.
 
-## Core Services
-- [Amazon PPC Management Services](https://ppcgrowthexpert.com/services.html#service-ppc-management): Sponsored Products, Sponsored Brands, Sponsored Display, and DSP campaign architecture and continuous bidding optimization.
-- [Amazon Listing Optimization](https://ppcgrowthexpert.com/services.html#service-listing-optimization): Conversion rate (CVR) optimization, SEO copywriting, and keyword indexation.
-- [Amazon A+ Content & Image Design](https://ppcgrowthexpert.com/services.html#service-image-aplus): Premium visual storytelling, infographics, and Enhanced Brand Content (EBC).
-- [Amazon Keyword Research](https://ppcgrowthexpert.com/services.html#service-keyword-research): High-intent search term harvesting, reverse ASIN lookup, and keyword isolation.
-- [Amazon Product Research](https://ppcgrowthexpert.com/services.html#service-product-research): Niche profitability analysis, competitor auditing, and market opportunity validation.
-- [Amazon Review Growth Support](https://ppcgrowthexpert.com/services.html#service-review-growth): Compliant Request-a-Review automation and Vine enrollment strategy.
+## Core Services & Solutions
+- [Amazon & Marketplace Services Hub](https://ppcgrowthexpert.com/services/): Comprehensive marketplace activation, catalog management, pricing, inventory, reviews, and returns.
+- [Amazon PPC Management Services](https://ppcgrowthexpert.com/services/amazon-ppc-management-services.html): Dedicated full-funnel PPC management, TACoS reduction, negative harvesting, and campaign structuring.
+- [Amazon Advertising in India](https://ppcgrowthexpert.com/services/amazon-advertising-india.html): Specialized ad management for Amazon India (amazon.in) brands, Sponsored Products, DSP, and festive surge scaling.
+- [Amazon PPC Management Services in Noida](https://ppcgrowthexpert.com/services/amazon-ppc-management-services-noida.html): Localized enterprise Amazon advertising and seller account management in Noida and Delhi NCR.
+- [Amazon PPC Management Services in Delhi](https://ppcgrowthexpert.com/services/amazon-ppc-management-services-delhi.html): Strategic Amazon PPC agency services for direct-to-consumer and manufacturing brands across Delhi.
+- [Amazon PPC Management Services in Moradabad](https://ppcgrowthexpert.com/services/amazon-ppc-management-services-moradabad.html): Amazon global selling and export advertising for handicraft and brassware manufacturing hubs.
+- [Ecommerce PPC Services](https://ppcgrowthexpert.com/services/ecommerce-ppc-services.html): Cross-channel marketplace advertising management across Amazon, Flipkart, Blinkit, Zepto, and Instamart.
 
 ## Free Calculators & Tools
 - [Amazon ACoS Calculator](https://ppcgrowthexpert.com/calculators/amazon-acos-calculator.html): Calculate Advertising Cost of Sales and margin safety thresholds.
