@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="blog_title" placeholder="e.g. Why Is My Amazon PPC ACoS So High and How Can I Reduce It?" required>
 
             <label>Blog Article URL Link</label>
-            <input type="url" name="blog_url" placeholder="https://ppcgrowthexpert.com/blog-reduce-amazon-acos.html" required>
+            <input type="url" name="blog_url" placeholder="https://ppcgrowthexpert.com/blog/reduce-amazon-acos.html" required>
 
             <label>Short Excerpt / Summary (Optional)</label>
             <textarea name="blog_excerpt" rows="3" placeholder="Brief 2-line overview of what readers will learn in this post..."></textarea>

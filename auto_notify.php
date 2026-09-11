@@ -26,7 +26,10 @@ if (file_exists($sentBlogsFile)) {
 }
 
 // Scan directory for all blog-*.html files
-$blogFiles = glob(__DIR__ . '/blog-*.html');
+$blogFiles = array_filter(glob(__DIR__ . '/blog/*.html'), function($f) {
+    $b = basename($f);
+    return $b !== 'index.html' && $b !== 'blog.html';
+});
 $newlyNotified = [];
 
 foreach ($blogFiles as $file) {
@@ -54,7 +57,7 @@ foreach ($blogFiles as $file) {
     }
 
     // Determine Blog Full URL
-    $blogUrl = "https://ppcgrowthexpert.com/" . $filename;
+    $blogUrl = "https://ppcgrowthexpert.com/blog/" . $filename;
     if (preg_match('/<link\s+rel=["\']canonical["\']\s+href=["\'](.*?)["\']/is', $htmlContent, $matches)) {
         $blogUrl = trim($matches[1]);
     }

@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         Check out our latest published strategy guide below:
                     </p>
                     <div class="btn-wrapper">
-                        <a href="https://ppcgrowthexpert.com/blog-amazon-ppc-clicks-no-sales.html" class="btn" target="_blank">Read Latest Amazon PPC Guide →</a>
+                        <a href="https://ppcgrowthexpert.com/blog/amazon-ppc-clicks-no-sales.html" class="btn" target="_blank">Read Latest Amazon PPC Guide →</a>
                     </div>
                 </div>
                 <div class="footer">

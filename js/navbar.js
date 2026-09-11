@@ -156,7 +156,7 @@
             if (href === currentPath) {
                 item.classList.add("active");
             } else if (currentPath.includes("calculator") || currentPath.includes("resources")) {
-                if (item.classList.contains("nav-dropdown-trigger") || href === "resources.html") {
+                if (item.classList.contains("nav-dropdown-trigger") || href === "resources.html" || href.includes("calculators")) {
                     item.classList.add("active");
                 }
             }
