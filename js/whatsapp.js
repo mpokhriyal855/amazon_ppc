@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('whatsappForm');
 
 
-    const targetNumber = '916397607291'; // Number: 6397607291 with India country code 91
+    const targetNumber = '918433232647'; // Number: 8433232647 with India country code 91
 
 
     if (!triggerBtn || !chatBox) return;
