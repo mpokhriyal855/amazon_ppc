@@ -851,7 +851,508 @@
             background: rgba(255, 255, 255, 0.15);
         }
 
+        /* =========================================================
+           ADVANCED VISUAL FRAMEWORKS (CYBERNETIC INTERACTIVE PIPELINES)
+        ========================================================= */
+        .sp-diagrams-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        .sp-diagram-frame {
+            background: linear-gradient(145deg, #0b1329 0%, #0f172a 60%, #13223f 100%);
+            border: 1px solid rgba(56, 189, 248, 0.18);
+            border-radius: 20px;
+            padding: 36px 32px;
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sp-diagram-frame:hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 26px 65px -12px rgba(37, 99, 235, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .sp-diagram-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .sp-diagram-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 2;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 20px;
+        }
+
+        .sp-diag-title-wrap h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.4px;
+            margin: 0 0 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sp-diag-kicker {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .sp-diag-sub {
+            font-size: 0.92rem;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        .sp-diag-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: #38bdf8;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #38bdf8;
+            box-shadow: 0 0 10px #38bdf8;
+            animation: pulseGlow 1.8s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+        }
+
+        /* 1. Flow Pipeline */
+        .sp-flow-pipeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sp-flow-step {
+            flex: 1 1 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .sp-flow-node {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 22px 14px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sp-flow-node::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sp-flow-node:hover {
+            transform: translateY(-6px);
+            background: rgba(37, 99, 235, 0.14);
+            border-color: #38bdf8;
+            box-shadow: 0 16px 32px -6px rgba(56, 189, 248, 0.35);
+        }
+
+        .sp-flow-node:hover::before {
+            opacity: 1;
+        }
+
+        .sp-flow-num {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 0.8px;
+        }
+
+        .sp-flow-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            transition: all 0.3s ease;
+        }
+
+        .sp-flow-node:hover .sp-flow-icon {
+            transform: scale(1.12);
+            background: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 0 18px rgba(37, 99, 235, 0.6);
+        }
+
+        .sp-flow-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            margin: 0;
+        }
+
+        .sp-flow-desc {
+            font-size: 11.5px;
+            color: #94a3b8;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .sp-flow-node.scale-winner {
+            border-color: rgba(16, 185, 129, 0.4);
+            background: rgba(16, 185, 129, 0.08);
+        }
+
+        .sp-flow-node.scale-winner .sp-flow-num,
+        .sp-flow-node.scale-winner .sp-flow-icon {
+            color: #34d399;
+            border-color: rgba(52, 211, 153, 0.4);
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .sp-flow-node.scale-winner:hover {
+            border-color: #34d399;
+            background: rgba(16, 185, 129, 0.16);
+            box-shadow: 0 16px 32px -6px rgba(52, 211, 153, 0.4);
+        }
+
+        .sp-flow-node.scale-winner:hover .sp-flow-icon {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 18px rgba(16, 185, 129, 0.7);
+        }
+
+        .sp-flow-connector {
+            width: 24px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.15);
+            position: relative;
+            flex-shrink: 0;
+            margin: 0 2px;
+        }
+
+        .sp-flow-connector::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3px;
+            width: 0;
+            height: 0;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 6px solid rgba(56, 189, 248, 0.6);
+        }
+
+        .sp-flow-connector::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -1px;
+            width: 8px;
+            height: 4px;
+            border-radius: 2px;
+            background: #38bdf8;
+            box-shadow: 0 0 8px #38bdf8;
+            animation: flowParticle 2s infinite linear;
+        }
+
+        @keyframes flowParticle {
+            0% { left: 0; opacity: 0; }
+            30% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
+
+        /* 2. Search Term Decision Matrix */
+        .sp-st-matrix {
+            display: grid;
+            grid-template-columns: 1fr auto 1.3fr;
+            gap: 24px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sp-st-stream {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sp-st-step {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 12px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .sp-st-step:hover {
+            background: rgba(37, 99, 235, 0.12);
+            border-color: #38bdf8;
+            transform: translateX(4px);
+        }
+
+        .sp-st-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(37, 99, 235, 0.2);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .sp-st-gate {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(2, 132, 199, 0.25) 100%);
+            border: 2px solid #38bdf8;
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+            transition: all 0.35s ease;
+        }
+
+        .sp-st-gate:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.4);
+        }
+
+        .sp-st-branches {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .sp-st-branch-card {
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .sp-st-branch-card.branch-scale {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .sp-st-branch-card.branch-scale:hover {
+            background: rgba(16, 185, 129, 0.16);
+            border-color: #34d399;
+            transform: translateX(6px);
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3);
+        }
+
+        .sp-st-branch-card.branch-negate {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .sp-st-branch-card.branch-negate:hover {
+            background: rgba(239, 68, 68, 0.16);
+            border-color: #f87171;
+            transform: translateX(6px);
+            box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.3);
+        }
+
+        .sp-st-branch-card.branch-adjust {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .sp-st-branch-card.branch-adjust:hover {
+            background: rgba(245, 158, 11, 0.16);
+            border-color: #fbbf24;
+            transform: translateX(6px);
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3);
+        }
+
+        /* 3. Metrics Cascade */
+        .sp-metrics-cascade {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .sp-metric-node {
+            flex: 1 1 0;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 18px 12px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sp-metric-node:hover {
+            transform: translateY(-6px) scale(1.03);
+            border-color: #38bdf8;
+            background: rgba(37, 99, 235, 0.15);
+            box-shadow: 0 12px 28px -4px rgba(56, 189, 248, 0.35);
+        }
+
+        .sp-metric-node.profit-node {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .sp-metric-node.profit-node:hover {
+            border-color: #34d399;
+            background: rgba(16, 185, 129, 0.2);
+            box-shadow: 0 12px 28px -4px rgba(16, 185, 129, 0.45);
+        }
+
+        .sp-metric-code {
+            font-family: 'DM Mono', monospace;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #38bdf8;
+            letter-spacing: 0.5px;
+        }
+
+        .sp-metric-node.profit-node .sp-metric-code {
+            color: #34d399;
+        }
+
+        .sp-metric-label {
+            font-size: 11px;
+            color: #94a3b8;
+            line-height: 1.3;
+        }
+
+        .sp-metric-role {
+            font-family: 'DM Mono', monospace;
+            font-size: 9.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            text-transform: uppercase;
+        }
+
+        .cascade-arrow {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .sp-metric-node:hover + .cascade-arrow {
+            transform: translateX(4px);
+        }
+
         /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .sp-flow-pipeline {
+                flex-wrap: wrap;
+            }
+            .sp-flow-connector {
+                display: none;
+            }
+            .sp-flow-step {
+                flex: 1 1 calc(33.333% - 12px);
+            }
+            .sp-st-matrix {
+                grid-template-columns: 1fr;
+            }
+            .sp-metrics-cascade {
+                flex-wrap: wrap;
+            }
+            .cascade-arrow {
+                display: none;
+            }
+            .sp-metric-node {
+                flex: 1 1 calc(33.333% - 8px);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .sp-flow-step {
+                flex: 1 1 100%;
+            }
+            .sp-metric-node {
+                flex: 1 1 calc(50% - 8px);
+            }
+        }
+
         @media (max-width: 768px) {
             .sp-hero { padding: 40px 16px; }
             .sp-section { padding: 60px 16px; }
@@ -2127,142 +2628,273 @@
                 <h2 class="sp-section-title">Visual Frameworks</h2>
             </div>
 
-            <!-- SVG 1: OPTIMIZATION PROCESS FLOW -->
-            <div class="sp-diagram-frame">
-                <h3 style="font-size: 1.15rem; color: var(--brand-navy); margin-bottom: 18px;">Optimization Process Flow</h3>
-                <svg viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" style="background: #f8fafc; border-radius: 12px; padding: 1.5rem;">
-                    <defs>
-                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                            <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
-                        </marker>
-                    </defs>
-                    <g id="steps">
-                        <rect x="20" y="60" width="100" height="60" rx="8" fill="#1a2847" stroke="#0066cc" stroke-width="2"/>
-                        <text x="70" y="98" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Audit</text>
+            <div class="sp-diagrams-grid">
+                <!-- FRAMEWORK 1: OPTIMIZATION PROCESS FLOW -->
+                <div class="sp-diagram-frame">
+                    <div class="sp-diagram-header-bar">
+                        <div class="sp-diag-title-wrap">
+                            <span class="sp-diag-kicker">FRAMEWORK 01</span>
+                            <h3>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                                Optimization Process Flow
+                            </h3>
+                            <p class="sp-diag-sub">Systematic 6-stage algorithmic loop that audits performance, isolates spend waste, and scales proven profitable winners.</p>
+                        </div>
+                        <span class="sp-diag-badge"><span class="pulse-dot"></span> CONTINUOUS EXECUTION PIPELINE</span>
+                    </div>
 
-                        <line x1="130" y1="90" x2="160" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <div class="sp-flow-pipeline">
+                        <!-- Step 1 -->
+                        <div class="sp-flow-step">
+                            <div class="sp-flow-node">
+                                <span class="sp-flow-num">STEP 01</span>
+                                <div class="sp-flow-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                </div>
+                                <h4 class="sp-flow-title">Audit</h4>
+                                <p class="sp-flow-desc">Account Architecture &amp; Spend Distribution</p>
+                            </div>
+                            <div class="sp-flow-connector"></div>
+                        </div>
 
-                        <rect x="170" y="60" width="100" height="60" rx="8" fill="#1a2847" stroke="#0066cc" stroke-width="2"/>
-                        <text x="220" y="93" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Find</text>
-                        <text x="220" y="110" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Waste</text>
+                        <!-- Step 2 -->
+                        <div class="sp-flow-step">
+                            <div class="sp-flow-node">
+                                <span class="sp-flow-num">STEP 02</span>
+                                <div class="sp-flow-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                </div>
+                                <h4 class="sp-flow-title">Find Waste</h4>
+                                <p class="sp-flow-desc">Zero-Order Clicks &amp; Placement Bleed</p>
+                            </div>
+                            <div class="sp-flow-connector"></div>
+                        </div>
 
-                        <line x1="280" y1="90" x2="310" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <!-- Step 3 -->
+                        <div class="sp-flow-step">
+                            <div class="sp-flow-node">
+                                <span class="sp-flow-num">STEP 03</span>
+                                <div class="sp-flow-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                                </div>
+                                <h4 class="sp-flow-title">Analyze Data</h4>
+                                <p class="sp-flow-desc">Search Term Intent &amp; Elasticity Logs</p>
+                            </div>
+                            <div class="sp-flow-connector"></div>
+                        </div>
 
-                        <rect x="320" y="60" width="100" height="60" rx="8" fill="#1a2847" stroke="#0066cc" stroke-width="2"/>
-                        <text x="370" y="93" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Analyze</text>
-                        <text x="370" y="110" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Data</text>
+                        <!-- Step 4 -->
+                        <div class="sp-flow-step">
+                            <div class="sp-flow-node">
+                                <span class="sp-flow-num">STEP 04</span>
+                                <div class="sp-flow-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                </div>
+                                <h4 class="sp-flow-title">Optimize</h4>
+                                <p class="sp-flow-desc">Bid Adjustments &amp; Target Negative Silos</p>
+                            </div>
+                            <div class="sp-flow-connector"></div>
+                        </div>
 
-                        <line x1="430" y1="90" x2="460" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        <!-- Step 5 -->
+                        <div class="sp-flow-step">
+                            <div class="sp-flow-node">
+                                <span class="sp-flow-num">STEP 05</span>
+                                <div class="sp-flow-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <h4 class="sp-flow-title">Validate</h4>
+                                <p class="sp-flow-desc">ACOS Verification &amp; Attribution Check</p>
+                            </div>
+                            <div class="sp-flow-connector"></div>
+                        </div>
 
-                        <rect x="470" y="60" width="100" height="60" rx="8" fill="#1a2847" stroke="#0066cc" stroke-width="2"/>
-                        <text x="520" y="93" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Optimize</text>
-                        <text x="520" y="110" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Targeting</text>
+                        <!-- Step 6 (Scale Winner) -->
+                        <div class="sp-flow-step" style="flex-grow: 1.1;">
+                            <div class="sp-flow-node scale-winner">
+                                <span class="sp-flow-num" style="color: #34d399;">STEP 06 · GOAL</span>
+                                <div class="sp-flow-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                                </div>
+                                <h4 class="sp-flow-title" style="color: #34d399;">Scale</h4>
+                                <p class="sp-flow-desc">Budget Reallocation to Proven Winners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                        <line x1="580" y1="90" x2="610" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <!-- FRAMEWORK 2: SEARCH TERM TO DECISION -->
+                <div class="sp-diagram-frame">
+                    <div class="sp-diagram-header-bar">
+                        <div class="sp-diag-title-wrap">
+                            <span class="sp-diag-kicker">FRAMEWORK 02</span>
+                            <h3>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                Search Term to Optimization Decision
+                            </h3>
+                            <p class="sp-diag-sub">How raw shopper search traffic is filtered, audited for conversion intent, and routed to capital scaling or immediate negation.</p>
+                        </div>
+                        <span class="sp-diag-badge"><span class="pulse-dot"></span> SEARCH INTELLIGENCE ENGINE</span>
+                    </div>
 
-                        <rect x="620" y="60" width="100" height="60" rx="8" fill="#1a2847" stroke="#0066cc" stroke-width="2"/>
-                        <text x="670" y="93" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Validate</text>
-                        <text x="670" y="110" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Results</text>
+                    <div class="sp-st-matrix">
+                        <!-- Left: Ingestion Flow -->
+                        <div class="sp-st-stream">
+                            <div class="sp-st-step">
+                                <span class="sp-st-badge">01</span>
+                                <div>
+                                    <h4 style="font-size: 0.95rem; color: #ffffff; margin: 0 0 2px 0;">Target Keyword</h4>
+                                    <p style="font-size: 11.5px; color: #94a3b8; margin: 0;">Broad / Phrase targeting active in campaign</p>
+                                </div>
+                            </div>
 
-                        <line x1="730" y1="90" x2="760" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <div class="sp-st-step">
+                                <span class="sp-st-badge">02</span>
+                                <div>
+                                    <h4 style="font-size: 0.95rem; color: #ffffff; margin: 0 0 2px 0;">Customer Click</h4>
+                                    <p style="font-size: 11.5px; color: #94a3b8; margin: 0;">Shopper clicks Sponsored Ad at target placement</p>
+                                </div>
+                            </div>
 
-                        <rect x="770" y="60" width="100" height="60" rx="8" fill="#10b981" stroke="#0066cc" stroke-width="2"/>
-                        <text x="820" y="98" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Scale</text>
-                    </g>
-                </svg>
-            </div>
+                            <div class="sp-st-step">
+                                <span class="sp-st-badge">03</span>
+                                <div>
+                                    <h4 style="font-size: 0.95rem; color: #ffffff; margin: 0 0 2px 0;">Search Term Logged</h4>
+                                    <p style="font-size: 11.5px; color: #94a3b8; margin: 0;">Exact customer search string recorded in report</p>
+                                </div>
+                            </div>
+                        </div>
 
-            <!-- SVG 2: SEARCH TERM TO DECISION -->
-            <div class="sp-diagram-frame">
-                <h3 style="font-size: 1.15rem; color: var(--brand-navy); margin-bottom: 18px;">Search Term to Optimization Decision</h3>
-                <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="background: #f8fafc; border-radius: 12px; padding: 1.5rem;">
-                    <defs>
-                        <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                            <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
-                        </marker>
-                    </defs>
-                    <text x="450" y="30" text-anchor="middle" font-weight="bold" font-size="16" fill="#1a2847">How Search Terms Become Optimization Decisions</text>
+                        <!-- Center: Conversion Gate -->
+                        <div class="sp-st-gate">
+                            <div style="font-family: 'DM Mono', monospace; font-size: 11px; color: #38bdf8; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">EVALUATION GATE</div>
+                            <h4 style="font-size: 1.15rem; color: #ffffff; margin: 0 0 8px 0; font-weight: 800;">Did It Convert?</h4>
+                            <p style="font-size: 12px; color: #cbd5e1; margin: 0 0 14px 0; line-height: 1.4;">Orders, Revenue &amp; Unit Economics Audited</p>
+                            <div style="display: flex; gap: 8px; justify-content: center;">
+                                <span style="padding: 4px 10px; border-radius: 6px; background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 700; font-size: 11px;">YES</span>
+                                <span style="padding: 4px 10px; border-radius: 6px; background: rgba(239, 68, 68, 0.2); color: #f87171; font-weight: 700; font-size: 11px;">NO</span>
+                                <span style="padding: 4px 10px; border-radius: 6px; background: rgba(245, 158, 11, 0.2); color: #fbbf24; font-weight: 700; font-size: 11px;">MARGINAL</span>
+                            </div>
+                        </div>
 
-                    <g id="flow">
-                        <circle cx="50" cy="90" r="30" fill="#0066cc" stroke="#1a2847" stroke-width="2"/>
-                        <text x="50" y="95" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Keyword</text>
+                        <!-- Right: Decision Outcomes -->
+                        <div class="sp-st-branches">
+                            <!-- Branch 1: SCALE -->
+                            <div class="sp-st-branch-card branch-scale">
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                                        <span style="font-family: 'DM Mono', monospace; font-size: 10.5px; font-weight: 700; color: #34d399; background: rgba(16, 185, 129, 0.2); padding: 2px 8px; border-radius: 4px;">SCALE WINNER</span>
+                                        <span style="font-size: 12px; color: #e2e8f0; font-weight: 700;">Orders ≥ 3 · ACOS &lt; Target</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: #94a3b8; margin: 0;">Migrate query to dedicated Exact Match campaign with dedicated budget.</p>
+                                </div>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
 
-                        <line x1="85" y1="90" x2="115" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                            <!-- Branch 2: NEGATE -->
+                            <div class="sp-st-branch-card branch-negate">
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                                        <span style="font-family: 'DM Mono', monospace; font-size: 10.5px; font-weight: 700; color: #f87171; background: rgba(239, 68, 68, 0.2); padding: 2px 8px; border-radius: 4px;">NEGATE TERM</span>
+                                        <span style="font-size: 12px; color: #e2e8f0; font-weight: 700;">Clicks ≥ 10 · 0 Orders</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: #94a3b8; margin: 0;">Add as Negative Exact to immediately cut wasted spend and protect margins.</p>
+                                </div>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            </div>
 
-                        <circle cx="160" cy="90" r="30" fill="#0066cc" stroke="#1a2847" stroke-width="2"/>
-                        <text x="160" y="95" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Click</text>
+                            <!-- Branch 3: ADJUST -->
+                            <div class="sp-st-branch-card branch-adjust">
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                                        <span style="font-family: 'DM Mono', monospace; font-size: 10.5px; font-weight: 700; color: #fbbf24; background: rgba(245, 158, 11, 0.2); padding: 2px 8px; border-radius: 4px;">REDUCE BID</span>
+                                        <span style="font-size: 12px; color: #e2e8f0; font-weight: 700;">High CPC · Marginal CVR</span>
+                                    </div>
+                                    <p style="font-size: 12px; color: #94a3b8; margin: 0;">Lower bid ceiling or test rest-of-search placement to regain breakeven threshold.</p>
+                                </div>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                        <line x1="195" y1="90" x2="225" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                <!-- FRAMEWORK 3: METRICS CASCADE -->
+                <div class="sp-diagram-frame">
+                    <div class="sp-diagram-header-bar">
+                        <div class="sp-diag-title-wrap">
+                            <span class="sp-diag-kicker">FRAMEWORK 03</span>
+                            <h3>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                Amazon PPC Metrics Relationship
+                            </h3>
+                            <p class="sp-diag-sub">The causal value chain connecting front-end shopper clicks to ultimate bottom-line retained profit.</p>
+                        </div>
+                        <span class="sp-diag-badge"><span class="pulse-dot"></span> METRIC EQUATION CASCADE</span>
+                    </div>
 
-                        <circle cx="270" cy="90" r="30" fill="#0066cc" stroke="#1a2847" stroke-width="2"/>
-                        <text x="270" y="95" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Search Term</text>
+                    <div class="sp-metrics-cascade">
+                        <!-- CTR -->
+                        <div class="sp-metric-node">
+                            <span class="sp-metric-role">RELEVANCE</span>
+                            <div class="sp-metric-code">CTR</div>
+                            <span class="sp-metric-label">Click-Through Rate</span>
+                        </div>
 
-                        <line x1="305" y1="90" x2="335" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" class="cascade-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 
-                        <circle cx="380" cy="90" r="30" fill="#0066cc" stroke="#1a2847" stroke-width="2"/>
-                        <text x="380" y="88" text-anchor="middle" fill="white" font-weight="bold" font-size="11">Converts?</text>
-                        <text x="380" y="102" text-anchor="middle" fill="white" font-weight="bold" font-size="11">Yes / No</text>
+                        <!-- CPC -->
+                        <div class="sp-metric-node">
+                            <span class="sp-metric-role">BID COST</span>
+                            <div class="sp-metric-code">CPC</div>
+                            <span class="sp-metric-label">Cost Per Click</span>
+                        </div>
 
-                        <line x1="415" y1="90" x2="445" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" class="cascade-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 
-                        <circle cx="490" cy="90" r="30" fill="#10b981" stroke="#1a2847" stroke-width="2"/>
-                        <text x="490" y="95" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Decide</text>
+                        <!-- CVR -->
+                        <div class="sp-metric-node">
+                            <span class="sp-metric-role">OFFER APPEAL</span>
+                            <div class="sp-metric-code">CVR</div>
+                            <span class="sp-metric-label">Conversion Rate</span>
+                        </div>
 
-                        <line x1="525" y1="90" x2="555" y2="90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead2)"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" class="cascade-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 
-                        <rect x="565" y="60" width="150" height="60" rx="6" fill="#f5f8fb" stroke="#10b981" stroke-width="2"/>
-                        <text x="642" y="85" text-anchor="middle" fill="#1a2847" font-weight="bold" font-size="12">Scale / Reduce</text>
-                        <text x="642" y="105" text-anchor="middle" fill="#1a2847" font-weight="bold" font-size="12">/ Negate</text>
-                    </g>
-                </svg>
-            </div>
+                        <!-- Orders -->
+                        <div class="sp-metric-node">
+                            <span class="sp-metric-role">VOLUME</span>
+                            <div class="sp-metric-code" style="color: #60a5fa;">Orders</div>
+                            <span class="sp-metric-label">Paid Conversions</span>
+                        </div>
 
-            <!-- SVG 3: METRICS CASCADE -->
-            <div class="sp-diagram-frame">
-                <h3 style="font-size: 1.15rem; color: var(--brand-navy); margin-bottom: 18px;">Amazon PPC Metrics Relationship</h3>
-                <svg viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" style="background: #f8fafc; border-radius: 12px; padding: 1.5rem;">
-                    <defs>
-                        <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                            <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
-                        </marker>
-                    </defs>
-                    <text x="500" y="30" text-anchor="middle" font-weight="bold" font-size="16" fill="#1a2847">How Metrics Connect</text>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" class="cascade-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 
-                    <g id="metrics-flow">
-                        <rect x="30" y="60" width="70" height="50" rx="6" fill="#0066cc"/>
-                        <text x="65" y="92" text-anchor="middle" fill="white" font-weight="bold" font-size="12">CTR</text>
+                        <!-- ACOS -->
+                        <div class="sp-metric-node">
+                            <span class="sp-metric-role">EFFICIENCY</span>
+                            <div class="sp-metric-code" style="color: #f87171;">ACOS</div>
+                            <span class="sp-metric-label">Spend / Ad Sales</span>
+                        </div>
 
-                        <line x1="110" y1="85" x2="135" y2="85" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead3)"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" class="cascade-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 
-                        <rect x="145" y="60" width="70" height="50" rx="6" fill="#0066cc"/>
-                        <text x="180" y="92" text-anchor="middle" fill="white" font-weight="bold" font-size="12">CPC</text>
+                        <!-- ROAS -->
+                        <div class="sp-metric-node">
+                            <span class="sp-metric-role">MULTIPLIER</span>
+                            <div class="sp-metric-code" style="color: #34d399;">ROAS</div>
+                            <span class="sp-metric-label">Ad Sales / Spend</span>
+                        </div>
 
-                        <line x1="225" y1="85" x2="250" y2="85" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead3)"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" class="cascade-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 
-                        <rect x="260" y="60" width="70" height="50" rx="6" fill="#0066cc"/>
-                        <text x="295" y="92" text-anchor="middle" fill="white" font-weight="bold" font-size="12">CVR</text>
-
-                        <line x1="340" y1="85" x2="365" y2="85" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead3)"/>
-
-                        <rect x="375" y="60" width="70" height="50" rx="6" fill="#0066cc"/>
-                        <text x="410" y="92" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Orders</text>
-
-                        <line x1="455" y1="85" x2="480" y2="85" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead3)"/>
-
-                        <rect x="490" y="60" width="70" height="50" rx="6" fill="#0066cc"/>
-                        <text x="525" y="92" text-anchor="middle" fill="white" font-weight="bold" font-size="12">ACOS</text>
-
-                        <line x1="570" y1="85" x2="595" y2="85" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead3)"/>
-
-                        <rect x="605" y="60" width="70" height="50" rx="6" fill="#10b981"/>
-                        <text x="640" y="92" text-anchor="middle" fill="white" font-weight="bold" font-size="12">ROAS</text>
-
-                        <line x1="685" y1="85" x2="710" y2="85" stroke="#0066cc" stroke-width="2" marker-end="url(#arrowhead3)"/>
-
-                        <rect x="720" y="60" width="100" height="50" rx="6" fill="#10b981"/>
-                        <text x="770" y="92" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Profit</text>
-                    </g>
-                </svg>
+                        <!-- Net Profit (Goal) -->
+                        <div class="sp-metric-node profit-node" style="flex-grow: 1.15;">
+                            <span class="sp-metric-role" style="background: rgba(16, 185, 129, 0.25); color: #34d399;">ULTIMATE GOAL</span>
+                            <div class="sp-metric-code">Net Profit</div>
+                            <span class="sp-metric-label" style="color: #a7f3d0;">Retained Capital Growth</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
