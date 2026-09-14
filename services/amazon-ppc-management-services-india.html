@@ -267,7 +267,7 @@
         /* HERO SECTION (TRANSPARENT, FLOATING OVER GRID) */
         .sp-hero {
             position: relative;
-            padding: 55px 24px 65px;
+            padding: 55px 24px 40px;
             text-align: center;
             max-width: 980px;
             margin: 0 auto;
@@ -406,7 +406,7 @@
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 16px;
             max-width: 960px;
-            margin: 0 auto 36px;
+            margin: 0 auto 10px;
         }
 
         .sp-stat-item {
@@ -679,6 +679,28 @@
             width: 100%;
             height: auto;
             display: block;
+            object-fit: cover;
+        }
+
+        /* FULL-WIDTH HERO SHOWCASE BANNER SECTION (ZERO LEFT/RIGHT PADDING) */
+        .sp-hero-banner-section {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #020b18;
+            overflow: hidden;
+            display: block;
+            line-height: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sp-hero-banner-section img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding: 0;
             object-fit: cover;
         }
 
@@ -1813,12 +1835,12 @@
                 <span class="sp-stat-lbl">Client Rating</span>
             </div>
         </div>
-
-        <!-- HERO VISUAL SHOWCASE -->
-        <div class="sp-img-frame">
-            <img src="../images/Click_coming_in_sales_missing.png" alt="Amazon PPC Search Term and Click Waste Audit" width="900" height="420" loading="eager">
-        </div>
     </header>
+
+    <!-- HERO VISUAL SHOWCASE BANNER SECTION (FULL WIDTH NO LEFT/RIGHT PADDING) -->
+    <section class="sp-hero-banner-section" aria-label="Amazon PPC Management Framework">
+        <img src="../images/services_amaonppc_management.png" alt="Amazon PPC Management Services India - Audit, Optimize, Scale Strategy" width="1836" height="857" loading="eager">
+    </section>
 
     <!-- SECTION 1: WHAT IS AMAZON PPC MANAGEMENT (TRANSPARENT OVER GRID) -->
     <section class="sp-section" id="what-is">
