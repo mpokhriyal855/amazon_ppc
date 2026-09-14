@@ -1639,61 +1639,304 @@
         }
 
         /* =========================================================
-           14. SERVICE FIT QUIZ (DARK SECTION)
+           INTERACTIVE DIAGNOSTIC STUDIO (2-COLUMN MODERN CONSOLE)
         ========================================================= */
-        .sp-quiz-card {
-            background: rgba(15, 23, 42, 0.75);
-            border: 1.5px solid rgba(255, 255, 255, 0.1);
-            border-radius: 18px;
-            padding: 32px 28px;
-            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.3);
-            margin-top: 28px;
+        .sp-diag-studio {
+            display: grid;
+            grid-template-columns: 1.22fr 1fr;
+            gap: 32px;
+            align-items: start;
+            margin-top: 36px;
         }
-        .sp-quiz-question {
-            margin-bottom: 22px;
-        }
-        .sp-quiz-label {
-            font-size: 14px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .sp-quiz-options {
+        .sp-diag-stream {
             display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .sp-diag-stream-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Mono', monospace;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--brand-blue);
+            letter-spacing: 0.8px;
+            margin-bottom: 4px;
+        }
+        .sp-diag-pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+            animation: spPulse 2s infinite;
+        }
+        @keyframes spPulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        .sp-diag-q-card {
+            background: #ffffff;
+            border: 1.5px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px 22px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+            transition: all 0.25s ease;
+        }
+        .sp-diag-q-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        }
+        .sp-diag-q-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .sp-diag-q-step {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+        .sp-diag-q-cat {
+            font-family: 'DM Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--brand-blue);
+            background: rgba(37, 99, 235, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+        .sp-diag-q-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin: 0 0 14px;
+            line-height: 1.4;
+        }
+        .sp-diag-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 10px;
-            flex-wrap: wrap;
         }
-        .sp-quiz-opt-btn {
+        .sp-diag-opt {
+            background: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 10px 14px;
             font-size: 13px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
-            cursor: pointer;
             font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             transition: all 0.2s ease;
+            font-family: inherit;
         }
-        .sp-quiz-opt-btn:hover, .sp-quiz-opt-btn.selected {
-            background: var(--brand-blue);
-            color: #ffffff;
-            border-color: #38bdf8;
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+        .sp-diag-opt:hover {
+            border-color: var(--brand-blue);
+            background: #ffffff;
+            color: var(--brand-blue);
         }
-        .sp-quiz-result {
-            margin-top: 24px;
-            background: rgba(11, 19, 41, 0.95);
-            border: 1.5px solid #38bdf8;
-            border-radius: 12px;
-            padding: 20px;
-            display: none;
-            color: #cbd5e1;
+        .sp-diag-opt.selected {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+            border-color: #1d4ed8 !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
         }
-        .sp-quiz-result h4 {
-            color: #ffffff;
+        .opt-radio {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1.5px solid currentColor;
+            display: inline-block;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .sp-diag-opt.selected .opt-radio::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ffffff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
+        /* RIGHT: DYNAMIC LIVE SCOREBOARD */
+        .sp-diag-scoreboard {
+            background: linear-gradient(160deg, #090e1a 0%, #0f172a 100%);
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 28px 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+            color: #ffffff;
+            position: sticky;
+            top: 105px;
+        }
+        .sp-diag-score-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .sp-diag-board-tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 0.8px;
+        }
+        .sp-diag-match-badge {
+            font-family: 'DM Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 4px 10px;
+            border-radius: 9999px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        .sp-diag-score-meter-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 14px;
+        }
+        .sp-diag-score-number {
+            font-family: 'DM Mono', monospace;
+            font-size: 2.85rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #38bdf8;
+            transition: all 0.3s ease;
+        }
+        .sp-diag-score-details strong {
+            display: block;
+            font-size: 14px;
+            color: #f1f5f9;
+        }
+        .sp-diag-score-details span {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        .sp-diag-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .sp-diag-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2563eb, #38bdf8, #10b981);
+            border-radius: 9999px;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sp-diag-insights {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+        }
+        .sp-diag-insights-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .sp-diag-insights-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .sp-diag-insights-list li {
+            font-size: 12px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .insight-icon {
+            color: #10b981;
+            font-weight: 800;
+        }
+        .sp-diag-recommendation-box {
+            background: rgba(37, 99, 235, 0.12);
+            border: 1.5px solid rgba(37, 99, 235, 0.3);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+        .sp-diag-recommendation-box .rec-sub {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 0.8px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .sp-diag-recommendation-box h4 {
+            margin: 0 0 6px;
+            font-size: 15px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+        .sp-diag-recommendation-box p {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin: 0 0 8px;
+        }
+        .rec-pricing {
+            font-family: 'DM Mono', monospace;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #34d399;
+        }
+        .sp-diag-footer-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 960px) {
+            .sp-diag-studio {
+                grid-template-columns: 1fr;
+            }
+            .sp-diag-scoreboard {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+        
         /* =========================================================
            15. PRICING (LIGHT CHECK GRID SECTION)
         ========================================================= */
@@ -2065,45 +2308,7 @@
             }
         }
     
-        /* SERVICE FIT QUIZ IN LIGHT CHECK SECTION */
-        .sp-section-check .sp-quiz-card,
-        .sp-section .sp-quiz-card {
-            background: #ffffff !important;
-            border: 1.5px solid var(--card-border) !important;
-            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06) !important;
-        }
-        .sp-section-check .sp-quiz-card .sp-quiz-label,
-        .sp-section .sp-quiz-card .sp-quiz-label {
-            color: #0f172a !important;
-        }
-        .sp-section-check .sp-quiz-opt-btn,
-        .sp-section .sp-quiz-opt-btn {
-            background: #f8fafc !important;
-            border: 1.5px solid #cbd5e1 !important;
-            color: #334155 !important;
-        }
-        .sp-section-check .sp-quiz-opt-btn:hover,
-        .sp-section-check .sp-quiz-opt-btn.selected,
-        .sp-section .sp-quiz-opt-btn:hover,
-        .sp-section .sp-quiz-opt-btn.selected {
-            background: var(--brand-blue) !important;
-            border-color: var(--brand-blue) !important;
-            color: #ffffff !important;
-        }
-        .sp-section-check .sp-quiz-result,
-        .sp-section .sp-quiz-result {
-            background: #f8fafc !important;
-            border: 1px solid #e2e8f0 !important;
-        }
-        .sp-section-check .sp-quiz-result h3,
-        .sp-section .sp-quiz-result h3 {
-            color: #0f172a !important;
-        }
-        .sp-section-check .sp-quiz-result p,
-        .sp-section .sp-quiz-result p {
-            color: #475569 !important;
-        }
-
+        /* Diagnostic studio styles integrated above */
     </style>
 </head>
 
@@ -3649,76 +3854,181 @@
 <section class="sp-section-check" id="service-fit">
     <div class="sp-container">
         <div class="sp-section-header">
-            <span class="sp-section-tag">SELF-ASSESSMENT TOOL</span>
+            <span class="sp-section-tag">DIAGNOSTIC STUDIO</span>
             <h2 class="sp-section-title">Is Full Account Management Right for You?</h2>
-            <div class="sp-section-subtitle">Answer 5 quick operational questions to find whether full Seller Central management or a targeted audit is appropriate.</div>
+            <div class="sp-section-subtitle">Answer 5 quick operational questions to receive a live operational fit score and custom service roadmap.</div>
         </div>
 
-        <div class="sp-quiz-card">
-            <!-- Q1 -->
-            <div class="sp-quiz-question">
-                <span class="sp-quiz-label">1. How many active ASINs do you currently sell on Amazon?</span>
-                <div class="sp-quiz-options">
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(1, this, '1-3')">1 – 3 ASINs</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(1, this, '4-15')">4 – 15 ASINs</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(1, this, '16+')">16+ ASINs</button>
+        <div class="sp-diag-studio">
+            <!-- LEFT: 5 RAPID ASSESSMENT QUESTIONS -->
+            <div class="sp-diag-stream">
+                <div class="sp-diag-stream-header">
+                    <span class="sp-diag-pulse-dot"></span>
+                    <span>30-SECOND ASSESSMENT &bull; REAL-TIME FIT CALCULATION</span>
+                </div>
+
+                <!-- Q1 -->
+                <div class="sp-diag-q-card">
+                    <div class="sp-diag-q-meta">
+                        <span class="sp-diag-q-step">QUESTION 01 // 05</span>
+                        <span class="sp-diag-q-cat">CATALOG SCALE</span>
+                    </div>
+                    <h4 class="sp-diag-q-title">How many active ASINs do you currently sell on Amazon?</h4>
+                    <div class="sp-diag-options">
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(1, this, '1-3', 10)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">1 &ndash; 3 ASINs</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt selected" onclick="updateDiagnostic(1, this, '4-15', 25)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">4 &ndash; 15 ASINs</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(1, this, '16+', 30)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">16+ ASINs</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="sp-diag-q-card">
+                    <div class="sp-diag-q-meta">
+                        <span class="sp-diag-q-step">QUESTION 02 // 05</span>
+                        <span class="sp-diag-q-cat">ADVERTISING</span>
+                    </div>
+                    <h4 class="sp-diag-q-title">What is your current monthly Amazon PPC advertising spend?</h4>
+                    <div class="sp-diag-options">
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(2, this, 'no', 5)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Not yet / &lt; &#8377;50k</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt selected" onclick="updateDiagnostic(2, this, '50k-2L', 20)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">&#8377;50k &ndash; &#8377;2 Lakh / mo</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(2, this, '2L+', 25)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">&#8377;2 Lakh+ / mo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="sp-diag-q-card">
+                    <div class="sp-diag-q-meta">
+                        <span class="sp-diag-q-step">QUESTION 03 // 05</span>
+                        <span class="sp-diag-q-cat">FULFILLMENT</span>
+                    </div>
+                    <h4 class="sp-diag-q-title">What fulfillment method do you primarily utilize?</h4>
+                    <div class="sp-diag-options">
+                        <button type="button" class="sp-diag-opt selected" onclick="updateDiagnostic(3, this, 'fba', 20)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">100% Amazon FBA</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(3, this, 'hybrid', 15)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Hybrid (FBA + FBM)</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(3, this, 'fbm', 10)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Merchant Fulfilled</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="sp-diag-q-card">
+                    <div class="sp-diag-q-meta">
+                        <span class="sp-diag-q-step">QUESTION 04 // 05</span>
+                        <span class="sp-diag-q-cat">CATALOG HEALTH</span>
+                    </div>
+                    <h4 class="sp-diag-q-title">Do catalog errors, broken variations, or suppressed ASINs consume your team&#8217;s time?</h4>
+                    <div class="sp-diag-options">
+                        <button type="button" class="sp-diag-opt selected" onclick="updateDiagnostic(4, this, 'yes', 20)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Yes, frequent headache</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(4, this, 'occasional', 12)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Occasional glitches</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(4, this, 'no', 5)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Rarely an issue</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="sp-diag-q-card">
+                    <div class="sp-diag-q-meta">
+                        <span class="sp-diag-q-step">QUESTION 05 // 05</span>
+                        <span class="sp-diag-q-cat">INTERNAL CAPACITY</span>
+                    </div>
+                    <h4 class="sp-diag-q-title">Do you have a dedicated in-house specialist managing Seller Central daily?</h4>
+                    <div class="sp-diag-options">
+                        <button type="button" class="sp-diag-opt selected" onclick="updateDiagnostic(5, this, 'no', 20)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">No, founder / team juggles</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(5, this, 'junior', 15)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Junior VA / freelancer</span>
+                        </button>
+                        <button type="button" class="sp-diag-opt" onclick="updateDiagnostic(5, this, 'yes', 5)">
+                            <span class="opt-radio"></span>
+                            <span class="opt-text">Yes, senior in-house lead</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Q2 -->
-            <div class="sp-quiz-question">
-                <span class="sp-quiz-label">2. Are you currently running Amazon PPC advertising?</span>
-                <div class="sp-quiz-options">
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(2, this, 'no')">Not yet / Barely running</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(2, this, 'under50k')">Yes, spending &lt; ₹50k/mo</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(2, this, '50k+')">Yes, spending ₹50k – ₹5L+/mo</button>
+            <!-- RIGHT: DYNAMIC LIVE SCOREBOARD -->
+            <div class="sp-diag-scoreboard">
+                <div class="sp-diag-score-header">
+                    <span class="sp-diag-board-tag">REAL-TIME DIAGNOSTIC</span>
+                    <span class="sp-diag-match-badge" id="diagMatchBadge">HIGH FIT DETECTED</span>
                 </div>
-            </div>
 
-            <!-- Q3 -->
-            <div class="sp-quiz-question">
-                <span class="sp-quiz-label">3. What fulfillment method do you primarily utilize?</span>
-                <div class="sp-quiz-options">
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(3, this, 'fba')">100% Amazon FBA</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(3, this, 'hybrid')">Hybrid (FBA + Easy Ship/FBM)</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(3, this, 'fbm')">Merchant Fulfilled (FBM)</button>
+                <div class="sp-diag-score-meter-wrap">
+                    <div class="sp-diag-score-number" id="diagScoreNumber">92%</div>
+                    <div class="sp-diag-score-details">
+                        <strong id="diagFitLevel">Seller Central Fit: High Priority</strong>
+                        <span>Synchronized management required</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Q4 -->
-            <div class="sp-quiz-question">
-                <span class="sp-quiz-label">4. Are catalog, variation, or suppressed listing issues consuming your team's time?</span>
-                <div class="sp-quiz-options">
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(4, this, 'yes')">Yes, constant headache</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(4, this, 'occasional')">Occasional glitches</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(4, this, 'no')">Rarely an issue</button>
+                <div class="sp-diag-progress-bar">
+                    <div class="sp-diag-progress-fill" id="diagProgressFill" style="width: 92%;"></div>
                 </div>
-            </div>
 
-            <!-- Q5 -->
-            <div class="sp-quiz-question">
-                <span class="sp-quiz-label">5. Do you have a dedicated in-house expert monitoring Seller Central daily?</span>
-                <div class="sp-quiz-options">
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(5, this, 'no')">No, founder/busy team handles it</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(5, this, 'junior')">Junior VA / freelancer</button>
-                    <button class="sp-quiz-opt-btn" onclick="selectQuiz(5, this, 'yes')">Yes, seasoned full-time lead</button>
+                <div class="sp-diag-insights">
+                    <div class="sp-diag-insights-title">Live Account Signals</div>
+                    <ul class="sp-diag-insights-list" id="diagInsightsList">
+                        <li><span class="insight-icon">&#10003;</span> Multi-SKU catalog requires active variation &amp; title sync</li>
+                        <li><span class="insight-icon">&#10003;</span> Active ad spend has high leakage risk without hourly bid guarding</li>
+                        <li><span class="insight-icon">&#10003;</span> FBA inventory buffers need stock-out protection formulas</li>
+                        <li><span class="insight-icon">&#10003;</span> Founder bandwidth is compromised by routine operations</li>
+                    </ul>
                 </div>
-            </div>
 
-            <button class="sp-btn-primary" onclick="evaluateQuiz()" style="margin-top:14px;">
-                Calculate Service Recommendation →
-            </button>
+                <div class="sp-diag-recommendation-box">
+                    <span class="rec-sub">RECOMMENDED SOLUTION</span>
+                    <h4 id="diagRecTitle">Full Amazon Seller Account Management</h4>
+                    <p id="diagRecDesc">
+                        Your account profile has multiple active ASINs and recurring ad spend. Dedicated end-to-end management will liberate 15+ founder hours weekly while protecting account health and boosting net margin.
+                    </p>
+                    <div class="rec-pricing" id="diagRecPricing">Starting at &#8377;24,999 / month</div>
+                </div>
 
-            <!-- RESULT BOX -->
-            <div class="sp-quiz-result" id="quizResult">
-                <div style="font-family:'DM Mono',monospace; font-size:11px; font-weight:800; color:#2563eb; text-transform:uppercase; margin-bottom:4px;">RECOMMENDATION:</div>
-                <h3 style="margin:0 0 6px; font-size:1.2rem; color:#0f172a;" id="quizRecTitle">Full Account Management Is Strongly Recommended</h3>
-                <p style="font-size:13.5px; color:#475569; line-height:1.6; margin:0 0 16px;" id="quizRecDesc">
-                    With multiple active SKUs and ongoing advertising spend, delegating day-to-day operations will eliminate catalog headaches, protect your FBA inventory buffers, and significantly improve advertising efficiency.
-                </p>
-                <button class="sp-btn-primary" onclick="openAuditModal('QuizRecommendation')">
-                    Claim Your Free Amazon Account Audit
+                <button class="sp-btn-primary" style="width:100%; justify-content:center;" onclick="openAuditModal('DiagnosticCalculator')">
+                    Claim Your Tailored Audit &amp; Proposal &rarr;
                 </button>
+
+                <div class="sp-diag-footer-note">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>Zero commitment &bull; 100% confidential &bull; 24-hr turnaround</span>
+                </div>
             </div>
         </div>
     </div>
@@ -4298,38 +4608,133 @@
         if (targetPane) targetPane.classList.add('active');
     }
 
-    // Service Fit Quiz State
-    const quizAnswers = { 1: null, 2: null, 3: null, 4: null, 5: null };
+    // Service Fit Diagnostic Studio Logic
+    const diagState = {
+        1: { val: '4-15', score: 25 },
+        2: { val: '50k-2L', score: 20 },
+        3: { val: 'fba', score: 20 },
+        4: { val: 'yes', score: 20 },
+        5: { val: 'no', score: 20 }
+    };
 
-    function selectQuiz(qNum, btn, val) {
-        quizAnswers[qNum] = val;
-        const parent = btn.parentElement;
-        parent.querySelectorAll('.sp-quiz-opt-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
+    function updateDiagnostic(qNum, btn, val, scoreWeight) {
+        diagState[qNum] = { val: val, score: scoreWeight };
+        
+        // Update button states in question card
+        const card = btn.closest('.sp-diag-q-card');
+        if (card) {
+            card.querySelectorAll('.sp-diag-opt').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        }
+
+        // Recalculate total score
+        let totalScore = 0;
+        for (let k in diagState) {
+            totalScore += diagState[k].score;
+        }
+
+        // Bound score between 18% and 98%
+        totalScore = Math.min(98, Math.max(18, totalScore));
+
+        // Update Score UI
+        const scoreNum = document.getElementById('diagScoreNumber');
+        const progressFill = document.getElementById('diagProgressFill');
+        const badge = document.getElementById('diagMatchBadge');
+        const fitLevel = document.getElementById('diagFitLevel');
+        const recTitle = document.getElementById('diagRecTitle');
+        const recDesc = document.getElementById('diagRecDesc');
+        const recPricing = document.getElementById('diagRecPricing');
+        const insightsList = document.getElementById('diagInsightsList');
+
+        if (scoreNum) scoreNum.innerText = totalScore + '%';
+        if (progressFill) progressFill.style.width = totalScore + '%';
+
+        // Update Signals List
+        let signals = [];
+        if (diagState[1].val === '16+') {
+            signals.push('High-SKU catalog needs structured parent-child variation management');
+        } else if (diagState[1].val === '4-15') {
+            signals.push('Multi-SKU catalog requires active variation & title sync');
+        } else {
+            signals.push('Focused catalog: maximum listing optimization potential per ASIN');
+        }
+
+        if (diagState[2].val === '2L+') {
+            signals.push('High ad spend: algorithm bid protection saves significant monthly waste');
+        } else if (diagState[2].val === '50k-2L') {
+            signals.push('Active ad spend has high leakage risk without hourly bid guarding');
+        } else {
+            signals.push('Untapped ad potential: listing conversion readiness needed before scale');
+        }
+
+        if (diagState[3].val === 'fba') {
+            signals.push('FBA inventory buffers need stock-out protection formulas');
+        } else if (diagState[3].val === 'hybrid') {
+            signals.push('Hybrid fulfillment requires split inventory routing governance');
+        } else {
+            signals.push('FBM shipping metrics & Buy Box retention require tight monitoring');
+        }
+
+        if (diagState[4].val === 'yes') {
+            signals.push('Critical catalog suppressed alerts require dedicated ticket management');
+        } else if (diagState[4].val === 'occasional') {
+            signals.push('Periodic glitches risk revenue leakage during peak traffic windows');
+        } else {
+            signals.push('Clean catalog: focus shifts to aggressive conversion and scaling');
+        }
+
+        if (diagState[5].val === 'no') {
+            signals.push('Founder bandwidth is compromised by routine Seller Central tasks');
+        } else if (diagState[5].val === 'junior') {
+            signals.push('Junior oversight leaves strategic SEO & advertising alpha on table');
+        } else {
+            signals.push('Internal lead would benefit from specialist audit & PPC co-pilot');
+        }
+
+        if (insightsList) {
+            insightsList.innerHTML = signals.slice(0, 4).map(s => `<li><span class="insight-icon">&#10003;</span> ${s}</li>`).join('');
+        }
+
+        // Tiers
+        if (badge && fitLevel && recTitle && recDesc && recPricing) {
+            if (totalScore >= 70) {
+                badge.innerText = 'HIGH FIT DETECTED';
+                badge.style.color = '#10b981';
+                badge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+                badge.style.background = 'rgba(16, 185, 129, 0.12)';
+                fitLevel.innerText = 'Seller Central Fit: High Priority';
+                recTitle.innerText = 'Full Amazon Seller Account Management';
+                recDesc.innerText = 'Your catalog scale, ad spend, and operational complexity strongly justify complete Seller Central outsourcing. We take full ownership of listings, inventory buffers, Brand Registry, and PPC.';
+                recPricing.innerText = 'Starting at \u20B924,999 / month';
+            } else if (totalScore >= 45) {
+                badge.innerText = 'TARGETED FIT';
+                badge.style.color = '#38bdf8';
+                badge.style.borderColor = 'rgba(56, 189, 248, 0.3)';
+                badge.style.background = 'rgba(56, 189, 248, 0.12)';
+                fitLevel.innerText = 'Service Fit: Targeted PPC + Catalog';
+                recTitle.innerText = 'Amazon PPC Management + Catalog Co-Pilot';
+                recDesc.innerText = 'Your operations are stable, but ad performance and catalog conversion rates have high upside. Dedicated campaign structuring and keyword harvesting will immediately reduce wasted spend.';
+                recPricing.innerText = 'Starting at \u20B917,999 / month';
+            } else {
+                badge.innerText = 'AUDIT RECOMMENDED';
+                badge.style.color = '#f59e0b';
+                badge.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+                badge.style.background = 'rgba(245, 158, 11, 0.12)';
+                fitLevel.innerText = 'Service Fit: Strategic Account Audit';
+                recTitle.innerText = 'Free Comprehensive Seller Central Audit';
+                recDesc.innerText = 'At your current stage, a complete operational audit is the smartest zero-risk move. We identify hidden suppression risks, indexing gaps, and ad efficiency bottlenecks before onboarding.';
+                recPricing.innerText = 'Complimentary \u2022 \u20B90';
+            }
+        }
     }
 
+    // Compatibility stubs
+    function selectQuiz(qNum, btn, val) {
+        updateDiagnostic(qNum, btn, val, 20);
+    }
     function evaluateQuiz() {
-        const resultBox = document.getElementById('quizResult');
-        const recTitle = document.getElementById('quizRecTitle');
-        const recDesc = document.getElementById('quizRecDesc');
-
-        let score = 0;
-        if (quizAnswers[1] === '4-15' || quizAnswers[1] === '16+') score += 2;
-        if (quizAnswers[2] === '50k+') score += 2;
-        if (quizAnswers[3] === 'fba' || quizAnswers[3] === 'hybrid') score += 1;
-        if (quizAnswers[4] === 'yes' || quizAnswers[4] === 'occasional') score += 2;
-        if (quizAnswers[5] === 'no' || quizAnswers[5] === 'junior') score += 2;
-
-        resultBox.style.display = 'block';
-
-        if (score >= 4) {
-            recTitle.innerText = "Full Account Management Is Strongly Recommended";
-            recDesc.innerText = "Your account complexity, SKU count, and active advertising require dedicated daily oversight. Outsourcing Seller Central operations will free your internal team, resolve catalog headaches, and maximize your net advertising return.";
-        } else {
-            recTitle.innerText = "A Free Strategic Audit Is Recommended First";
-            recDesc.innerText = "With your current catalog structure, an initial diagnostic audit or focused PPC management may be the most cost-effective first step. We can evaluate your exact listing health and suggest the ideal roadmap.";
-        }
-        resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const board = document.querySelector('.sp-diag-scoreboard');
+        if (board) board.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     // FAQ Accordion
