@@ -682,26 +682,47 @@
             object-fit: cover;
         }
 
-        /* FULL-WIDTH HERO SHOWCASE BANNER SECTION (ZERO LEFT/RIGHT PADDING) */
+        /* HERO SHOWCASE BANNER SECTION (60% WIDTH, NO EXTRA BLANK SPACE, WHOLE IMAGE VISIBLE) */
         .sp-hero-banner-section {
             width: 100%;
-            margin: 0;
-            padding: 0;
-            background: #020b18;
-            overflow: hidden;
-            display: block;
-            line-height: 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 10px auto 45px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            box-sizing: border-box;
         }
         .sp-hero-banner-section img {
-            width: 100%;
+            width: 60%;
             max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
             padding: 0;
-            object-fit: cover;
+            border-radius: 16px;
+            border: 1.5px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.18), 0 6px 18px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sp-hero-banner-section img:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 28px 55px -12px rgba(37, 99, 235, 0.22), 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 1100px) {
+            .sp-hero-banner-section img {
+                width: 75%;
+            }
+        }
+        @media (max-width: 768px) {
+            .sp-hero-banner-section {
+                margin: 10px auto 30px;
+                padding: 0 16px;
+            }
+            .sp-hero-banner-section img {
+                width: 100%;
+                border-radius: 12px;
+            }
         }
 
         /* WASTED SPEND FAILURE CARDS */
@@ -1530,7 +1551,7 @@
                                 </div>
                             </a>
 
-                            <a href="index.html#service-ppc-management" class="services-menu-item">
+                            <a href="amazon-seller-account-management-services.html" class="services-menu-item">
                                 <div class="mega-item-text">
                                     <span class="mega-item-title">Amazon Account Management</span>
                                     <span class="mega-item-desc">Full Seller Central operations</span>
@@ -1544,10 +1565,10 @@
                                 </div>
                             </a>
 
-                            <a href="index.html" class="services-menu-item">
+                            <a href="amazon-seller-account-management-services.html" class="services-menu-item">
                                 <div class="mega-item-text">
-                                    <span class="mega-item-title">Amazon DSP</span>
-                                    <span class="mega-item-desc">Programmatic display ads</span>
+                                    <span class="mega-item-title">Amazon Seller Account Management Services</span>
+                                    <span class="mega-item-desc">Full-service Seller Central operations &amp; growth</span>
                                 </div>
                             </a>
 
