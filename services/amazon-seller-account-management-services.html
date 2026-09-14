@@ -2064,6 +2064,46 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* SERVICE FIT QUIZ IN LIGHT CHECK SECTION */
+        .sp-section-check .sp-quiz-card,
+        .sp-section .sp-quiz-card {
+            background: #ffffff !important;
+            border: 1.5px solid var(--card-border) !important;
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06) !important;
+        }
+        .sp-section-check .sp-quiz-card .sp-quiz-label,
+        .sp-section .sp-quiz-card .sp-quiz-label {
+            color: #0f172a !important;
+        }
+        .sp-section-check .sp-quiz-opt-btn,
+        .sp-section .sp-quiz-opt-btn {
+            background: #f8fafc !important;
+            border: 1.5px solid #cbd5e1 !important;
+            color: #334155 !important;
+        }
+        .sp-section-check .sp-quiz-opt-btn:hover,
+        .sp-section-check .sp-quiz-opt-btn.selected,
+        .sp-section .sp-quiz-opt-btn:hover,
+        .sp-section .sp-quiz-opt-btn.selected {
+            background: var(--brand-blue) !important;
+            border-color: var(--brand-blue) !important;
+            color: #ffffff !important;
+        }
+        .sp-section-check .sp-quiz-result,
+        .sp-section .sp-quiz-result {
+            background: #f8fafc !important;
+            border: 1px solid #e2e8f0 !important;
+        }
+        .sp-section-check .sp-quiz-result h3,
+        .sp-section .sp-quiz-result h3 {
+            color: #0f172a !important;
+        }
+        .sp-section-check .sp-quiz-result p,
+        .sp-section .sp-quiz-result p {
+            color: #475569 !important;
+        }
+
     </style>
 </head>
 
@@ -2283,10 +2323,10 @@
         <a href="#process" class="sp-nav-link">Operating OS</a>
         <a href="#decision-engine" class="sp-nav-link">Decision Engine</a>
         <a href="#metrics" class="sp-nav-link">Metrics</a>
-        <a href="#reporting" class="sp-nav-link">Reporting</a>
-        <a href="#who-does-what" class="sp-nav-link">Scope</a>
-        <a href="#service-fit" class="sp-nav-link">Service Fit</a>
         <a href="#pricing" class="sp-nav-link">Pricing</a>
+        <a href="#who-does-what" class="sp-nav-link">Scope</a>
+        <a href="#reporting" class="sp-nav-link">Reporting</a>
+        <a href="#service-fit" class="sp-nav-link">Service Fit</a>
         <a href="#faqs" class="sp-nav-link">FAQs</a>
     </div>
 </div>
@@ -2338,63 +2378,7 @@
         </div>
     </div>
 
-    <!-- HERO ECOSYSTEM VISUAL DIAGRAM -->
-    <div class="sp-hero-diagram-wrap">
-        <div class="sp-diagram-header">
-            <span class="sp-diagram-tag">ECOSYSTEM ARCHITECTURE</span>
-            <div class="sp-diagram-title">How Every Component Connects to Net Profit</div>
-            <div class="sp-diagram-sub">Advertising alone cannot fix a broken listing or an empty FBA shelf. We synchronize all eight operational nodes.</div>
-        </div>
-
-        <div class="sp-ecosystem-nodes-grid">
-            <div class="sp-node-chip">
-                <strong>01. Listings &amp; SEO</strong>
-                <span>Title, Bullets &amp; Backend Search</span>
-            </div>
-            <div class="sp-node-chip">
-                <strong>02. Creative Assets</strong>
-                <span>Hero Images, Infographics &amp; A+</span>
-            </div>
-            <div class="sp-node-chip">
-                <strong>03. PPC &amp; Advertising</strong>
-                <span>Sponsored Products, Brands &amp; Display</span>
-            </div>
-            <div class="sp-node-chip">
-                <strong>04. Catalog Integrity</strong>
-                <span>ASIN Variations &amp; Suppression Fixes</span>
-            </div>
-            <div class="sp-node-chip">
-                <strong>05. FBA &amp; Inventory</strong>
-                <span>Days of Cover &amp; Restock Alerts</span>
-            </div>
-            <div class="sp-node-chip">
-                <strong>06. Account Health</strong>
-                <span>Policy Checks &amp; Voice of Customer</span>
-            </div>
-            <div class="sp-node-chip">
-                <strong>07. Sales Analytics</strong>
-                <span>TACoS, CVR &amp; Unit Economics</span>
-            </div>
-            <div class="sp-node-chip">
-                <strong>08. Commercial Strategy</strong>
-                <span>SKU Prioritization &amp; Margin Focus</span>
-            </div>
-        </div>
-
-        <div class="sp-diagram-center-hub">
-            <div class="sp-hub-badge">
-                <strong>SELLER CENTRAL</strong>
-                <span>Central Operations Engine</span>
-            </div>
-            <div class="sp-hub-arrow">➔</div>
-            <div class="sp-growth-target">
-                <strong>✓ BUSINESS GROWTH</strong>
-                <span>Sustainable Margin &amp; Brand Equity</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- HERO OPERATIONS WORKSPACE VISUAL -->
+<!-- HERO OPERATIONS WORKSPACE VISUAL -->
     <div class="sp-feature-visual-frame" style="margin-top: 36px; margin-bottom: 10px;">
         <img src="../images/amazon-seller-account-management-dashboard.webp" 
              alt="Amazon Seller Central Operations Management Workspace Dashboard" 
@@ -2570,7 +2554,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">01. CONTENT</span>
-                    <div class="sp-eco-icon">📝</div>
                 </div>
                 <h3>Listing Optimization &amp; SEO</h3>
                 <p>Amazon SEO is not keyword stuffing. It is intent-matching: building high-converting product titles, bullet points answering customer objections, and 249-byte backend keywords that index cleanly.</p>
@@ -2585,7 +2568,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">02. CREATIVE</span>
-                    <div class="sp-eco-icon">🎨</div>
                 </div>
                 <h3>Images &amp; A+ Content Architecture</h3>
                 <p>Shoppers buy with their eyes. We guide your product photography, infographics, dimension visuals, and Brand Story modules to eradicate uncertainty and drive higher conversion rates.</p>
@@ -2600,7 +2582,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">03. ADVERTISING</span>
-                    <div class="sp-eco-icon">🎯</div>
                 </div>
                 <h3>PPC &amp; Advertising Management</h3>
                 <p>Advertising engineered for net profit. We structure Sponsored Products, Sponsored Brands, and Sponsored Display with isolated exact campaigns, product targeting, and daily negative harvesting.</p>
@@ -2615,7 +2596,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">04. CATALOG</span>
-                    <div class="sp-eco-icon">🗂️</div>
                 </div>
                 <h3>Catalog &amp; Variation Maintenance</h3>
                 <p>Catalog errors quietly bleed sales. We monitor ASIN variations, parent-child relationships, category browser nodes, and suppressed listings to ensure your catalog stays active.</p>
@@ -2630,7 +2610,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">05. FULFILLMENT</span>
-                    <div class="sp-eco-icon">📦</div>
                 </div>
                 <h3>FBA &amp; Inventory Coordination</h3>
                 <p>Stockouts destroy organic rankings. We calculate sales velocity, days of cover, and reorder lead times, coordinating FBA shipment creation and warning before inventory runs dry.</p>
@@ -2645,7 +2624,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">06. COMPLIANCE</span>
-                    <div class="sp-eco-icon">🛡️</div>
                 </div>
                 <h3>Account Health &amp; Policy Guard</h3>
                 <p>Proactive protection against policy violations. We monitor Performance Notifications, Voice of the Customer CX feedback, return dissatisfaction rates, and compliance alerts.</p>
@@ -2660,7 +2638,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">07. ANALYTICS</span>
-                    <div class="sp-eco-icon">📊</div>
                 </div>
                 <h3>Sales &amp; Unit Economics</h3>
                 <p>We analyze the numbers that matter to business owners: gross revenue, ordered units, refund rates, ACoS, TACoS, and product-by-product net margin contributions.</p>
@@ -2675,7 +2652,6 @@
             <div class="sp-eco-card">
                 <div class="sp-eco-top">
                     <span class="sp-eco-num">08. STRATEGY</span>
-                    <div class="sp-eco-icon">🚀</div>
                 </div>
                 <h3>Growth Roadmap &amp; Budgeting</h3>
                 <p>We don't operate blindly. Every month ends with clear operational priorities: identifying winning ASINs for budget expansion, launching new variants, and sunsetting unprofitable SKUs.</p>
@@ -2995,8 +2971,8 @@
             </div>
         </div>
 
-        <p style="font-size:1rem; color:#475569; line-height:1.7; max-width:900px; margin:0 auto; text-align:center;">
-            If an agency manages only PPC without watching inventory, they will aggressively bid on a product with only 5 days of stock left, causing an out-of-stock disaster that wipes out organic rank. In our full-service management model, when stock levels drop, PPC bids automatically adjust to maintain profitability without cannibalizing inventory.
+        <p style="font-size:1.02rem; color:#e2e8f0; line-height:1.75; max-width:920px; margin:0 auto; text-align:center; padding:18px 24px; background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.08); border-radius:12px;">
+            <strong style="color:#38bdf8;">Crucial Synchronization:</strong> If an agency manages only PPC without watching inventory, they will aggressively bid on a product with only 5 days of stock left, causing an out-of-stock disaster that wipes out organic rank. In our full-service management model, when stock levels drop, PPC bids automatically adjust to maintain profitability without cannibalizing inventory.
         </p>
     </div>
 </section>
@@ -3012,6 +2988,22 @@
             <div class="sp-section-subtitle">Illustrative operational tracking matrix showing how stock levels dictate advertising and restock decisions.</div>
         </div>
 
+        
+        <!-- INVENTORY AND FBA MANAGEMENT VISUAL -->
+        <div class="sp-feature-visual-frame light" style="margin: 0 auto 32px;">
+            <img src="../images/amazon-inventory-fba-management.webp" 
+                 alt="Amazon Inventory Management and FBA Shipment Restock Console" 
+                 width="1376" height="768" loading="lazy" class="sp-feature-visual-img">
+            <div class="sp-visual-caption">
+                <span class="sp-caption-dot"></span>
+                <span>FBA Supply Chain Control · SKU Runways, Inbound Shipment Stages &amp; Ad Throttle Safeguards</span>
+            </div>
+        </div>
+
+        <div style="text-align:center; max-width:820px; margin:36px auto 18px;">
+            <h3 style="font-size:1.25rem; font-weight:700; color:#0f172a; margin-bottom:8px;">Operational Restock &amp; Ad Throttle Matrix</h3>
+            <p style="font-size:13.5px; color:#64748b; margin:0;">How our account managers translate real-time Days of Cover (DoC) into immediate advertising bid adjustments:</p>
+        </div>
         <div class="sp-table-wrap">
             <table class="sp-fba-table">
                 <thead>
@@ -3063,17 +3055,6 @@
 
         <div style="font-size:12.5px; color:#94a3b8; text-align:center; margin-top:8px;">
             ✦ Note: Values are illustrative dashboard examples. We coordinate FBA workflows and shipment preparation; clients or their 3PL handle physical dispatch.
-        </div>
-
-        <!-- INVENTORY AND FBA MANAGEMENT VISUAL -->
-        <div class="sp-feature-visual-frame light" style="margin-top: 28px;">
-            <img src="../images/amazon-inventory-fba-management.webp" 
-                 alt="Amazon Inventory Management and FBA Shipment Restock Console" 
-                 width="1376" height="768" loading="lazy" class="sp-feature-visual-img">
-            <div class="sp-visual-caption">
-                <span class="sp-caption-dot"></span>
-                <span>FBA Supply Chain Control · SKU Runways, Inbound Shipment Stages &amp; Ad Throttle Safeguards</span>
-            </div>
         </div>
     </div>
 </section>
@@ -3404,7 +3385,151 @@
 </section>
 
 <!-- =========================================================
-     14. SAMPLE MONTHLY REPORTING PREVIEW (TABBED)
+     14. AMAZON PPC & ACCOUNT MANAGEMENT PACKAGES
+========================================================= -->
+<section class="curated-packages-section" id="pricing">
+    <div class="curated-packages-container">
+        <h2 class="packages-section-title">Amazon PPC Management Packages</h2>
+        <p class="packages-section-subtitle">
+            Choose a focused Amazon PPC management plan or a complete account growth package based on your brand's goals, advertising spend, and growth stage.
+        </p>
+
+        <div class="packages-grid">
+            <!-- 🟢 AMAZON PPC MANAGEMENT -->
+            <div class="package-card">
+                <div>
+                    <div class="package-icon">🟢</div>
+                    <div class="package-name">Amazon PPC Management</div>
+                    <div class="package-tagline">Full Amazon PPC strategy &amp; profit scaling.</div>
+
+                    <div class="package-price-box">
+                        <div class="package-price"><span class="old-price">₹19,999</span> ₹17,999</div>
+                        <div class="package-price-subtext">Monthly strategy &amp; active optimization</div>
+                    </div>
+
+                    <ul class="package-list">
+                        <li>PPC Strategy &amp; Campaign Structuring</li>
+                        <li>Advanced Keyword &amp; ASIN Targeting</li>
+                        <li>Bid &amp; Budget Optimization</li>
+                        <li>ACoS / ROAS &amp; Profitability Optimization</li>
+                        <li>Search Term Analysis &amp; Wasted Spend Reduction</li>
+                    </ul>
+                </div>
+                <button class="package-cta-btn" onclick="openAuditModal('PricingPPC')">
+                    Book PPC Package →
+                </button>
+            </div>
+
+            <!-- 🔵 AMAZON ACCOUNT MANAGEMENT (MOST POPULAR) -->
+            <div class="package-card featured">
+                <span class="package-badge">MOST POPULAR</span>
+                <div>
+                    <div class="package-icon">🔵</div>
+                    <div class="package-name">Amazon Account Management</div>
+                    <div class="package-tagline">Most popular Amazon account management service for maximum brand growth.</div>
+
+                    <div class="package-price-box">
+                        <div class="package-price"><span class="old-price">₹29,999</span> ₹24,999</div>
+                        <div class="package-price-subtext">Full account growth &amp; revenue engine</div>
+                    </div>
+
+                    <ul class="package-list">
+                        <li>Complete listing optimization</li>
+                        <li>In-depth keyword &amp; competitor research</li>
+                        <li>Backend SEO &amp; search terms</li>
+                        <li>Profitable Campaign Creation</li>
+                        <li>Amazon Growth Roadmap</li>
+                    </ul>
+                </div>
+                <button class="package-cta-btn" onclick="openAuditModal('PricingAccount')">
+                    Book Account Management →
+                </button>
+            </div>
+
+            <!-- 🎯 FREE MINI AUDIT -->
+            <div class="package-card">
+                <div>
+                    <div class="package-icon">🎯</div>
+                    <div class="package-name">Free Audit for Qualifying Amazon Brands</div>
+                    <div class="package-tagline">Find out where your Amazon ad spend is leaking — FREE.</div>
+
+                    <div class="package-price-box">
+                        <div class="package-price" style="color: #10b981;">₹0</div>
+                        <div class="package-price-subtext">Free audit for qualifying Amazon brands</div>
+                    </div>
+
+                    <ul class="package-list">
+                        <li>Campaign structure check</li>
+                        <li>Wasted-spend &amp; negative check</li>
+                        <li>High-intent keyword opportunities</li>
+                        <li>ACoS / ROA efficiency overview</li>
+                        <li>3–5 actionable recommendations</li>
+                    </ul>
+                </div>
+                <button class="package-cta-btn free-btn" style="background:#10b981;" onclick="openAuditModal('PricingFreeAudit')">
+                    Get My Free Audit →
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     15. WHO DOES WHAT & WHAT WE DO NOT DO
+========================================================= -->
+<section class="sp-section-check" id="who-does-what">
+    <div class="sp-container">
+        <div class="sp-section-header">
+            <span class="sp-section-tag">CLEAR OPERATIONAL BOUNDARIES</span>
+            <h2 class="sp-section-title">Who Does What? Transparent Roles</h2>
+            <div class="sp-section-subtitle">We believe great agency partnerships are built on crystal-clear operational boundaries with zero false promises.</div>
+        </div>
+
+        <div class="sp-scope-grid">
+            <!-- OUR TEAM -->
+            <div class="sp-scope-box">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Our Account Management Team
+                </h3>
+                <ul class="sp-scope-list">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Daily Seller Central operations, monitoring &amp; performance checks</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Amazon SEO, listing copywriting &amp; backend keyword indexing</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Product image recommendations &amp; A+ Content wireframing</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Full PPC advertising campaign management &amp; negative harvesting</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> FBA shipment workflow preparation, box labels &amp; restock alerts</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Catalog issue resolution, flat file feeds &amp; variation management</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Transparent monthly reporting and strategic executive roadmaps</li>
+                </ul>
+            </div>
+
+            <!-- CLIENT TEAM -->
+            <div class="sp-scope-box">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Your Brand Team
+                </h3>
+                <ul class="sp-scope-list">
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Manufacturing, packaging, and factory inventory production</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Dispatching boxed/palletized stock to Amazon FBA fulfillment centers</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Providing high-resolution raw product photography &amp; brand assets</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Final commercial approval on product pricing and promotional discount tiers</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Primary Seller Central account administrative &amp; banking ownership</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-left:4px solid #ef4444; border-radius:14px; padding:22px; margin-top:24px; box-shadow: 0 4px 16px rgba(15,23,42,0.04);">
+            <strong style="color:#dc2626; font-size:14px; display:block; margin-bottom:6px;">✦ What We Do NOT Do (Honest Scope Boundaries):</strong>
+            <p style="color:#475569; font-size:13.5px; line-height:1.6; margin:0;">
+                We do not operate a physical packing warehouse, physically pack boxes, fabricate fake client testimonials, guarantee #1 permanent organic rankings, promise fixed revenue gains, or override Amazon's policy decisions. We deliver rigorous, disciplined execution within the boundaries of Amazon's Terms of Service.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     15. SAMPLE MONTHLY REPORTING PREVIEW (TABBED)
 ========================================================= -->
 <section class="sp-section-dark-grid" id="reporting">
     <div class="sp-container">
@@ -3517,64 +3642,11 @@
     </div>
 </section>
 
-<!-- =========================================================
-     15. WHO DOES WHAT & WHAT WE DO NOT DO
-========================================================= -->
-<section class="sp-section-check" id="who-does-what">
-    <div class="sp-container">
-        <div class="sp-section-header">
-            <span class="sp-section-tag">CLEAR OPERATIONAL BOUNDARIES</span>
-            <h2 class="sp-section-title">Who Does What? Transparent Roles</h2>
-            <div class="sp-section-subtitle">We believe great agency partnerships are built on crystal-clear operational boundaries with zero false promises.</div>
-        </div>
-
-        <div class="sp-scope-grid">
-            <!-- OUR TEAM -->
-            <div class="sp-scope-box">
-                <h3>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Our Account Management Team
-                </h3>
-                <ul class="sp-scope-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Daily Seller Central operations, monitoring &amp; performance checks</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Amazon SEO, listing copywriting &amp; backend keyword indexing</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Product image recommendations &amp; A+ Content wireframing</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Full PPC advertising campaign management &amp; negative harvesting</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> FBA shipment workflow preparation, box labels &amp; restock alerts</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Catalog issue resolution, flat file feeds &amp; variation management</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Transparent monthly reporting and strategic executive roadmaps</li>
-                </ul>
-            </div>
-
-            <!-- CLIENT TEAM -->
-            <div class="sp-scope-box">
-                <h3>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Your Brand Team
-                </h3>
-                <ul class="sp-scope-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Manufacturing, packaging, and factory inventory production</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Dispatching boxed/palletized stock to Amazon FBA fulfillment centers</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Providing high-resolution raw product photography &amp; brand assets</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Final commercial approval on product pricing and promotional discount tiers</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Primary Seller Central account administrative &amp; banking ownership</li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="background:#ffffff; border:1.5px solid #e2e8f0; border-left:4px solid #ef4444; border-radius:14px; padding:22px; margin-top:24px; box-shadow: 0 4px 16px rgba(15,23,42,0.04);">
-            <strong style="color:#dc2626; font-size:14px; display:block; margin-bottom:6px;">✦ What We Do NOT Do (Honest Scope Boundaries):</strong>
-            <p style="color:#475569; font-size:13.5px; line-height:1.6; margin:0;">
-                We do not operate a physical packing warehouse, physically pack boxes, fabricate fake client testimonials, guarantee #1 permanent organic rankings, promise fixed revenue gains, or override Amazon's policy decisions. We deliver rigorous, disciplined execution within the boundaries of Amazon's Terms of Service.
-            </p>
-        </div>
-    </div>
-</section>
 
 <!-- =========================================================
      16. INTERACTIVE SERVICE FIT / QUALIFICATION TOOL
 ========================================================= -->
-<section class="sp-section-dark" id="service-fit">
+<section class="sp-section-check" id="service-fit">
     <div class="sp-container">
         <div class="sp-section-header">
             <span class="sp-section-tag">SELF-ASSESSMENT TOOL</span>
@@ -3652,71 +3724,7 @@
     </div>
 </section>
 
-<!-- =========================================================
-     17. PRICING & FREE AUDIT
-========================================================= -->
-<section class="sp-section-check" id="pricing">
-    <div class="sp-container">
-        <div class="sp-section-header">
-            <span class="sp-section-tag">CLEAR &amp; TRANSPARENT</span>
-            <h2 class="sp-section-title">Amazon Account Management Pricing</h2>
-            <div class="sp-section-subtitle">Straightforward monthly retainer without hidden percentages or lock-in contracts.</div>
-        </div>
 
-        <div class="sp-pricing-grid">
-            <!-- FULL SERVICE RETAINER -->
-            <div class="sp-pricing-card featured">
-                <div class="sp-pricing-badge">ALL-INCLUSIVE</div>
-                <div class="sp-pricing-title">Amazon Account Management</div>
-                <div class="sp-pricing-desc">Full Seller Central operations, advertising, and growth engine.</div>
-
-                <div class="sp-pricing-price">
-                    <span class="old-price">₹29,999</span>
-                    <span>₹24,999</span>
-                </div>
-                <div class="sp-pricing-sub">per month · billed monthly · no annual lock-in</div>
-
-                <ul class="sp-pricing-features">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Complete Seller Central management &amp; monitoring</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Listing copywriting, SEO &amp; backend keywords</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Full PPC campaign creation, bidding &amp; negative harvesting</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> FBA shipment workflow coordination &amp; restock alerts</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Catalog error resolution, variations &amp; suppression fixes</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Account health &amp; policy notification triage</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Transparent monthly executive performance reporting</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated account manager + priority WhatsApp channel</li>
-                </ul>
-
-                <button class="sp-btn-primary" onclick="openAuditModal('PricingCard')" style="width:100%; justify-content:center;">
-                    Book Account Management
-                </button>
-            </div>
-
-            <!-- FREE AUDIT CARD -->
-            <div class="sp-pricing-card">
-                <div class="sp-pricing-title">Free Amazon Account Audit</div>
-                <div class="sp-pricing-desc">Discover where your Amazon ad spend and conversions are leaking.</div>
-
-                <div class="sp-pricing-price">
-                    <span>₹0</span>
-                </div>
-                <div class="sp-pricing-sub">100% Free · No obligation · Qualifying brands</div>
-
-                <ul class="sp-pricing-features">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 360° Account structure &amp; listing health inspection</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> PPC search-term waste &amp; negative keyword audit</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Keyword indexing &amp; organic ranking gap analysis</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> FBA inventory velocity &amp; stockout risk review</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 3–5 high-impact actionable remediation steps</li>
-                </ul>
-
-                <button class="sp-btn-secondary" onclick="openAuditModal('FreeAuditPricing')" style="width:100%; justify-content:center;">
-                    Request Free Account Audit
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- =========================================================
      18. ONBOARDING ROADMAP
