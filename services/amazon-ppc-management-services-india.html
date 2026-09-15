@@ -682,11 +682,11 @@
             object-fit: cover;
         }
 
-        /* HERO SHOWCASE BANNER SECTION (60% WIDTH, NO EXTRA BLANK SPACE, WHOLE IMAGE VISIBLE) */
+        /* HERO SHOWCASE BANNER SECTION (NO EXTRA LEFT/RIGHT PADDING) */
         .sp-hero-banner-section {
             width: 100%;
             margin: 10px auto 45px;
-            padding: 0 20px;
+            padding: 0 !important;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -717,7 +717,7 @@
         @media (max-width: 768px) {
             .sp-hero-banner-section {
                 margin: 10px auto 30px;
-                padding: 0 16px;
+                padding: 0 !important;
             }
             .sp-hero-banner-section img {
                 width: 100%;
@@ -1712,6 +1712,28 @@
                 gap: 28px;
             }
         }
+
+        /* CAMPAIGN STRUCTURE SECTION (WHITE WITH CHECK BG) */
+        #campaign-structure {
+            background: #ffffff !important;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+                linear-gradient(rgba(216, 223, 233, 0.45) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(216, 223, 233, 0.45) 1px, transparent 1px) !important;
+            background-size: 100% 100%, 40px 40px, 40px 40px !important;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* CHECKLIST IN CASE STUDY & SECTIONS */
+        .sp-check-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+        }
     </style>
 </head>
 
@@ -2142,7 +2164,7 @@
     </header>
 
     <!-- HERO VISUAL SHOWCASE BANNER SECTION (FULL WIDTH NO LEFT/RIGHT PADDING) -->
-    <section class="sp-hero-banner-section" aria-label="Amazon PPC Management Framework">
+    <section class="sp-hero-banner-section" style="padding: 0 !important;" aria-label="Amazon PPC Management Framework">
         <img src="../images/services_amaonppc_management4.png" alt="Amazon PPC Management Services India - Drive Profitable Growth Framework" width="1672" height="941" loading="eager">
     </section>
 
@@ -2561,8 +2583,8 @@
         </div>
     </section>
 
-    <!-- SECTION 4: CAMPAIGN STRUCTURE & ARCHITECTURE (DARK) -->
-    <section class="sp-section sp-section-dark" id="campaign-structure">
+    <!-- SECTION 4: CAMPAIGN STRUCTURE & ARCHITECTURE (WHITE WITH CHECK BG) -->
+    <section class="sp-section" id="campaign-structure">
         <div class="sp-container">
             <div class="sp-section-header">
                 <span class="sp-section-tag">TAXONOMY &amp; CONTROL</span>
@@ -2572,22 +2594,22 @@
                 </div>
             </div>
 
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-left: 4px solid #38bdf8; border-radius: 14px; padding: 26px 30px; margin-bottom: 36px; line-height: 1.8;">
-                <p style="margin: 0.4rem 0; color: #f1f5f9;"><strong style="color: #38bdf8;">Auto Campaigns:</strong> Let Amazon match your product to searches. Collect vital data on high-converting shopper search terms.</p>
-                <p style="margin: 0.4rem 0; color: #f1f5f9;"><strong style="color: #38bdf8;">Manual Broad Match:</strong> Target keywords with broader intent. Lower conversion rate initially, but discovers new customer queries.</p>
-                <p style="margin: 0.4rem 0; color: #f1f5f9;"><strong style="color: #38bdf8;">Manual Phrase Match:</strong> Target keywords with specific purchase intent. Mid-range conversion, ideal for scaling proven volume.</p>
-                <p style="margin: 0.4rem 0; color: #f1f5f9;"><strong style="color: #38bdf8;">Manual Exact Match:</strong> Target highly specific buyer keywords with dedicated bid control. Highest conversion and profit consistency.</p>
-                <p style="margin: 0.4rem 0; color: #f1f5f9;"><strong style="color: #38bdf8;">Product Targeting (PAT):</strong> Target competitor ASINs and category pages. Defends your own detail pages and captures market share.</p>
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid var(--brand-blue); border-radius: 14px; padding: 26px 30px; margin-bottom: 36px; line-height: 1.8; box-shadow: var(--card-shadow);">
+                <p style="margin: 0.4rem 0; color: #334155;"><strong style="color: var(--brand-blue);">Auto Campaigns:</strong> Let Amazon match your product to searches. Collect vital data on high-converting shopper search terms.</p>
+                <p style="margin: 0.4rem 0; color: #334155;"><strong style="color: var(--brand-blue);">Manual Broad Match:</strong> Target keywords with broader intent. Lower conversion rate initially, but discovers new customer queries.</p>
+                <p style="margin: 0.4rem 0; color: #334155;"><strong style="color: var(--brand-blue);">Manual Phrase Match:</strong> Target keywords with specific purchase intent. Mid-range conversion, ideal for scaling proven volume.</p>
+                <p style="margin: 0.4rem 0; color: #334155;"><strong style="color: var(--brand-blue);">Manual Exact Match:</strong> Target highly specific buyer keywords with dedicated bid control. Highest conversion and profit consistency.</p>
+                <p style="margin: 0.4rem 0; color: #334155;"><strong style="color: var(--brand-blue);">Product Targeting (PAT):</strong> Target competitor ASINs and category pages. Defends your own detail pages and captures market share.</p>
             </div>
 
-            <div class="sp-def-box-dark">
+            <div class="sp-def-box-light">
                 <strong>The Capital Progression Theory:</strong> Discovery (Broad / Auto) → Validation (Phrase / Broad) → Conversion (Exact) → Scaling (High-Performing Winners).
             </div>
 
             <div class="sp-grid-2col" style="margin-top: 28px;">
-                <div class="sp-dark-card">
-                    <h3 style="color: #38bdf8;">Factors Dictating Your Account Architecture:</h3>
-                    <ul style="margin: 10px 0 0 18px; padding: 0; line-height: 1.8; color: #cbd5e1; font-size: 0.94rem;">
+                <div class="sp-card">
+                    <h3 style="color: var(--brand-navy);">Factors Dictating Your Account Architecture:</h3>
+                    <ul style="margin: 10px 0 0 18px; padding: 0; line-height: 1.8; color: #475569; font-size: 0.94rem;">
                         <li>Your product category and competitor aggressiveness on Amazon.in</li>
                         <li>Your unit economics, retail pricing, and gross profit margins</li>
                         <li>Whether your listings are in launch phase or mature scaling phase</li>
@@ -2595,9 +2617,9 @@
                         <li>Historical conversion rates and review velocity</li>
                     </ul>
                 </div>
-                <div class="sp-dark-card">
-                    <h3 style="color: #38bdf8;">Why Custom Architecture Beats Generic Templates:</h3>
-                    <p>
+                <div class="sp-card">
+                    <h3 style="color: var(--brand-navy);">Why Custom Architecture Beats Generic Templates:</h3>
+                    <p style="color: #475569;">
                         A one-size-fits-all structure creates budget cannibalization. When all keywords live in a single campaign, Amazon's algorithm allocates budget to the fastest-spending term, not the most profitable one. We architect isolated campaign silos that give you surgical bid control and clear data visibility.
                     </p>
                 </div>
@@ -3393,53 +3415,81 @@
                 <div class="sp-section-subtitle">Real performance transformation for a high-growth consumer electronics brand in India</div>
             </div>
 
-            <div class="sp-case-study">
-                <h3 style="color: #ffffff; font-size: 1.35rem; margin: 0 0 16px;">
-                    From Inefficient to Scaled: Consumer Electronics &amp; Gaming Peripherals
-                </h3>
-
-                <!-- KPI METRICS GRID -->
-                <div class="sp-case-kpi-grid">
-                    <div class="sp-case-kpi-card">
-                        <div class="sp-case-kpi-lbl">Monthly Amazon Sales</div>
-                        <div style="font-size: 12px; color: #94a3b8;">Before: ₹60 Lakh</div>
-                        <div class="sp-case-kpi-val">₹2.78 Cr</div>
-                        <div class="sp-case-kpi-sub">+363% Revenue Surge</div>
-                    </div>
-
-                    <div class="sp-case-kpi-card">
-                        <div class="sp-case-kpi-lbl">PPC ACOS</div>
-                        <div style="font-size: 12px; color: #94a3b8;">Before: 42%</div>
-                        <div class="sp-case-kpi-val" style="color: #34d399;">14%</div>
-                        <div class="sp-case-kpi-sub">66% ACOS Reduction</div>
-                    </div>
-
-                    <div class="sp-case-kpi-card">
-                        <div class="sp-case-kpi-lbl">Monthly PPC Orders</div>
-                        <div style="font-size: 12px; color: #94a3b8;">Before: 2,400</div>
-                        <div class="sp-case-kpi-val">11,120</div>
-                        <div class="sp-case-kpi-sub">4.6x Order Velocity</div>
-                    </div>
+            <!-- 4 METRICS -->
+            <div class="sp-case-kpi-grid">
+                <div class="sp-case-kpi-card">
+                    <div class="sp-case-kpi-lbl">Monthly PPC Sales</div>
+                    <div class="sp-case-kpi-val">₹60L → ₹2.78Cr</div>
+                    <div class="sp-case-kpi-sub">+363% growth</div>
                 </div>
+                <div class="sp-case-kpi-card">
+                    <div class="sp-case-kpi-lbl">PPC ACOS</div>
+                    <div class="sp-case-kpi-val">42% → 14%</div>
+                    <div class="sp-case-kpi-sub">-28 percentage points</div>
+                </div>
+                <div class="sp-case-kpi-card">
+                    <div class="sp-case-kpi-lbl">Monthly PPC Orders</div>
+                    <div class="sp-case-kpi-val">2,400 → 11,120</div>
+                    <div class="sp-case-kpi-sub">+363% increase</div>
+                </div>
+                <div class="sp-case-kpi-card">
+                    <div class="sp-case-kpi-lbl">Timeline</div>
+                    <div class="sp-case-kpi-val">12 months</div>
+                    <div class="sp-case-kpi-sub">Progressive optimization</div>
+                </div>
+            </div>
 
-                <div style="margin-top: 24px; color: #cbd5e1; font-size: 0.95rem; line-height: 1.8;">
-                    <p><strong>The Challenge:</strong> High 42% ACOS eroding gross margins, inconsistent SKU performance, cluttered campaign taxonomy, and heavy ad spend wasted on generic non-converting tech queries.</p>
-
-                    <p><strong>Strategy Applied:</strong></p>
-                    <ul style="margin: 6px 0 16px 20px; padding: 0;">
-                        <li>Complete structural overhaul separating branded defense, category conquesting, and exact match harvesting.</li>
-                        <li>Automated negative keyword harvesting preventing spend on incompatible device queries.</li>
-                        <li>Dynamic bid adjustments calibrated against SKU unit margins and placement performance.</li>
-                        <li>Strategic budget concentration favoring high-margin gaming peripherals.</li>
-                        <li>Top of Search placement modifiers dialed to dominate prime mobile shopping hours.</li>
+            <!-- 2-COL DETAILS & RELEVANT DASHBOARD IMAGE -->
+            <div class="sp-problem-layout" style="margin-bottom: 28px;">
+                <div>
+                    <h3 style="color: #38bdf8; font-size: 1.2rem; margin-bottom: 14px;">What We Did</h3>
+                    <ul class="sp-check-list">
+                        <li class="sp-problem-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Restructured campaign architecture for better segmentation and control</span>
+                        </li>
+                        <li class="sp-problem-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Harvested high-performing search terms and scaled with exact-match keywords</span>
+                        </li>
+                        <li class="sp-problem-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Implemented aggressive negative keyword strategy (eliminated 30%+ irrelevant traffic)</span>
+                        </li>
+                        <li class="sp-problem-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Optimized bids by keyword performance tier and product profitability</span>
+                        </li>
+                        <li class="sp-problem-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Reallocated budget from low-efficiency to high-efficiency areas</span>
+                        </li>
+                        <li class="sp-problem-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Tested new keyword discovery and product-targeting approaches</span>
+                        </li>
+                        <li class="sp-problem-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Optimized placement strategy (top-of-search vs rest-of-search bids)</span>
+                        </li>
                     </ul>
-
-                    <p><strong>Results:</strong> Revenue scaled from ₹60 Lakh to ₹2.78 Crore monthly. ACOS dropped dramatically from 42% to 14%, while monthly PPC orders multiplied by 4.6x.</p>
-
-                    <div style="font-size: 11.5px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px; margin-top: 20px;">
-                        Disclaimer: Results vary significantly by product, category competition, listing quality, reviews, inventory levels, and ad budgets. Past performance does not guarantee future results. This case study represents one specific client outcome and is not a universal guarantee.
-                    </div>
                 </div>
+
+                <!-- RELEVANT IMAGE WITH SMOOTH TRANSITION -->
+                <div class="sp-img-frame">
+                    <img src="../images/LowerACoSHigherProfit.png" alt="Lower ACoS Higher Profit Performance Dashboard">
+                </div>
+            </div>
+
+            <div class="sp-dark-insight" style="margin-bottom: 20px;">
+                <h4 style="color: #38bdf8; font-size: 1.1rem; margin-bottom: 8px;">Why Results Were Strong</h4>
+                <p style="margin: 0; line-height: 1.7;">
+                    This brand had good fundamentals: solid product quality, competitive pricing, decent reviews. They were just running inefficient PPC. Once we optimized account structure, targeting, and bids, the same ad budget produced 3-4x sales volume at 1/3 the ACOS. The account scaled because the foundation was solid.
+                </p>
+            </div>
+
+            <div style="font-size: 0.85rem; color: #94a3b8; font-style: italic; text-align: center;">
+                Results vary significantly by product, category, competition, listing quality, pricing, reviews, inventory, and advertising budget. Past performance does not guarantee future results. This case study represents one client's experience, not a typical or guaranteed outcome.
             </div>
         </div>
     </section>
