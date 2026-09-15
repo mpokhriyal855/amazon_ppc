@@ -682,46 +682,41 @@
             object-fit: cover;
         }
 
-        /* HERO SHOWCASE BANNER SECTION (NO EXTRA LEFT/RIGHT PADDING) */
+        /* HERO SHOWCASE BANNER SECTION (FULL WIDTH - NO LEFT/RIGHT PADDING) */
         .sp-hero-banner-section {
-            width: 100%;
-            margin: 10px auto 45px;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 0 45px 0 !important;
             padding: 0 !important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: block !important;
             background: transparent;
             box-sizing: border-box;
+            overflow: hidden;
         }
         .sp-hero-banner-section img {
-            width: 60%;
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            padding: 0;
-            border-radius: 16px;
-            border: 1.5px solid rgba(15, 23, 42, 0.08);
-            box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.18), 0 6px 18px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            transition: none !important;
         }
         .sp-hero-banner-section img:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 28px 55px -12px rgba(37, 99, 235, 0.22), 0 8px 24px rgba(0, 0, 0, 0.06);
-        }
-        @media (max-width: 1100px) {
-            .sp-hero-banner-section img {
-                width: 75%;
-            }
+            transform: none !important;
+            box-shadow: none !important;
         }
         @media (max-width: 768px) {
             .sp-hero-banner-section {
-                margin: 10px auto 30px;
+                margin: 0 0 30px 0 !important;
                 padding: 0 !important;
             }
             .sp-hero-banner-section img {
-                width: 100%;
-                border-radius: 12px;
+                width: 100% !important;
+                border-radius: 0 !important;
             }
         }
 
@@ -2163,9 +2158,9 @@
         </div>
     </header>
 
-    <!-- HERO VISUAL SHOWCASE BANNER SECTION (FULL WIDTH NO LEFT/RIGHT PADDING) -->
-    <section class="sp-hero-banner-section" style="padding: 0 !important;" aria-label="Amazon PPC Management Framework">
-        <img src="../images/services_amaonppc_management4.png" alt="Amazon PPC Management Services India - Drive Profitable Growth Framework" width="1672" height="941" loading="eager">
+    <!-- HERO VISUAL SHOWCASE BANNER SECTION (FULL WIDTH - NO LEFT/RIGHT PADDING) -->
+    <section class="sp-section sp-hero-banner-section" id="growth-framework" style="width: 100% !important; max-width: 100% !important; margin: 0 0 45px 0 !important; padding: 0 !important;" aria-label="Amazon PPC Management Framework">
+        <img src="../images/services_amaonppc_management4.png" alt="Amazon PPC Management Services India - Drive Profitable Growth Framework" width="1672" height="941" loading="eager" style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block !important; margin: 0 !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important;">
     </section>
 
     <!-- SECTION 1: WHAT IS AMAZON PPC MANAGEMENT (TRANSPARENT OVER GRID) -->
