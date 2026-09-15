@@ -223,12 +223,16 @@
             --dark-muted: #94a3b8;
         }
 
+        html, body {
+            overflow-x: clip !important;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--brand-navy);
             line-height: 1.65;
             background-color: #ffffff;
-            overflow-x: hidden;
+            overflow-x: clip;
         }
 
         /* READING PROGRESS BAR */
@@ -267,48 +271,151 @@
             color: #94a3b8;
         }
 
-        /* STICKY SECTION SUB-NAV */
+        /* =========================================================
+           EXECUTIVE FLOATING SUB-NAV (MATCHES PRIMARY NAVBAR SYSTEM)
+        ========================================================= */
         .sp-sticky-nav-wrap {
             position: sticky;
-            top: 70px;
-            z-index: 80;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s ease;
-        }
-        .sp-sticky-nav {
-            max-width: 1140px;
+            top: 76px;
+            z-index: 900;
+            width: 100%;
+            max-width: 1240px;
             margin: 0 auto;
+            padding: 0 20px;
+            pointer-events: none;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sp-sticky-nav-bar {
+            pointer-events: auto;
             display: flex;
             align-items: center;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(226, 232, 240, 0.85);
+            border-radius: 9999px;
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.95) inset;
+            padding: 5px 8px;
+            gap: 8px;
+            position: relative;
+        }
+        .sp-subnav-badge {
+            display: inline-flex;
+            align-items: center;
             gap: 6px;
-            padding: 10px 20px;
+            padding: 5px 12px;
+            border-radius: 9999px;
+            background: #0f172a;
+            color: #ffffff;
+            font-family: 'DM Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-left: 2px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2);
+        }
+        .sp-subnav-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 6px #10b981;
+            animation: spPulse 2s infinite;
+        }
+        .sp-sticky-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
             overflow-x: auto;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            padding: 2px 4px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            flex-grow: 1;
+            mask-image: linear-gradient(to right, transparent 0%, black 14px, black calc(100% - 14px), transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14px, black calc(100% - 14px), transparent 100%);
         }
         .sp-sticky-nav::-webkit-scrollbar {
             display: none;
         }
         .sp-nav-link {
-            font-family: 'DM Mono', monospace;
-            font-size: 11.5px;
-            font-weight: 700;
-            color: #64748b;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #475569;
             text-decoration: none;
             padding: 6px 14px;
             border-radius: 9999px;
             white-space: nowrap;
-            transition: all 0.2s ease;
-            background: rgba(241, 245, 249, 0.85);
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            background: transparent;
             border: 1px solid transparent;
+            flex-shrink: 0;
         }
-        .sp-nav-link:hover, .sp-nav-link.active {
+        .sp-nav-link:hover {
             color: var(--brand-blue);
-            background: rgba(37, 99, 235, 0.08);
-            border-color: rgba(37, 99, 235, 0.25);
+            background: #ffffff;
+            border-color: rgba(226, 232, 240, 0.9);
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+        }
+        .sp-nav-link.active {
+            color: #ffffff !important;
+            background: #0f172a !important;
+            border-color: #0f172a !important;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.22);
+            font-weight: 700;
+        }
+        .sp-subnav-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            color: #475569;
+            font-size: 14px;
+            line-height: 1;
+            cursor: pointer;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+            transition: all 0.2s ease;
+        }
+        .sp-subnav-arrow:hover {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+        }
+
+        @media (max-width: 768px) {
+            .sp-sticky-nav-wrap {
+                top: 10px;
+                padding: 0 10px;
+                z-index: 999;
+            }
+            .sp-sticky-nav-bar {
+                padding: 4px 6px;
+                gap: 4px;
+            }
+            .sp-subnav-badge {
+                display: none;
+            }
+            .sp-subnav-arrow {
+                display: none;
+            }
+            .sp-sticky-nav {
+                mask-image: none;
+                -webkit-mask-image: none;
+                padding: 2px 2px;
+            }
+            .sp-nav-link {
+                font-size: 11.5px;
+                padding: 5px 11px;
+            }
         }
 
         /* =========================================================
@@ -2512,27 +2619,35 @@
     <span>Amazon Seller Account Management Services</span>
 </div>
 
-<!-- STICKY SECTION NAVIGATOR -->
+<!-- STICKY SECTION NAVIGATOR (MATCHES EXECUTIVE PRIMARY NAVBAR) -->
 <div class="sp-sticky-nav-wrap" id="stickySubNav">
-    <div class="sp-sticky-nav">
-        <a href="#overview" class="sp-nav-link active">Overview</a>
-        <a href="#command-center" class="sp-nav-link">Command Center</a>
-        <a href="#what-we-manage" class="sp-nav-link">What We Manage</a>
-        <a href="#scenarios" class="sp-nav-link">Inside Account</a>
-        <a href="#account-health" class="sp-nav-link">Account Health</a>
-        <a href="#listing-seo" class="sp-nav-link">Listing &amp; SEO</a>
-        <a href="#images-aplus" class="sp-nav-link">Images &amp; A+</a>
-        <a href="#ppc-ads" class="sp-nav-link">PPC System</a>
-        <a href="#inventory-fba" class="sp-nav-link">Inventory &amp; FBA</a>
-        <a href="#catalog-board" class="sp-nav-link">Catalog Board</a>
-        <a href="#process" class="sp-nav-link">Operating OS</a>
-        <a href="#decision-engine" class="sp-nav-link">Decision Engine</a>
-        <a href="#metrics" class="sp-nav-link">Metrics</a>
-        <a href="#pricing" class="sp-nav-link">Pricing</a>
-        <a href="#who-does-what" class="sp-nav-link">Scope</a>
-        <a href="#reporting" class="sp-nav-link">Reporting</a>
-        <a href="#service-fit" class="sp-nav-link">Service Fit</a>
-        <a href="#faqs" class="sp-nav-link">FAQs</a>
+    <div class="sp-sticky-nav-bar">
+        <div class="sp-subnav-badge">
+            <span class="sp-subnav-dot"></span>
+            <span>DIRECTORY</span>
+        </div>
+        <button type="button" class="sp-subnav-arrow" onclick="scrollSubNav(-1)" aria-label="Scroll left">&#8249;</button>
+        <div class="sp-sticky-nav" id="subnavTrack">
+            <a href="#overview" class="sp-nav-link active">Overview</a>
+            <a href="#command-center" class="sp-nav-link">Command Center</a>
+            <a href="#what-we-manage" class="sp-nav-link">What We Manage</a>
+            <a href="#scenarios" class="sp-nav-link">Inside Account</a>
+            <a href="#account-health" class="sp-nav-link">Account Health</a>
+            <a href="#listing-seo" class="sp-nav-link">Listing &amp; SEO</a>
+            <a href="#images-aplus" class="sp-nav-link">Images &amp; A+</a>
+            <a href="#ppc-ads" class="sp-nav-link">PPC System</a>
+            <a href="#inventory-fba" class="sp-nav-link">Inventory &amp; FBA</a>
+            <a href="#catalog-board" class="sp-nav-link">Catalog Board</a>
+            <a href="#process" class="sp-nav-link">Operating OS</a>
+            <a href="#decision-engine" class="sp-nav-link">Decision Engine</a>
+            <a href="#metrics" class="sp-nav-link">Metrics</a>
+            <a href="#pricing" class="sp-nav-link">Pricing</a>
+            <a href="#who-does-what" class="sp-nav-link">Scope</a>
+            <a href="#reporting" class="sp-nav-link">Reporting</a>
+            <a href="#service-fit" class="sp-nav-link">Service Fit</a>
+            <a href="#faqs" class="sp-nav-link">FAQs</a>
+        </div>
+        <button type="button" class="sp-subnav-arrow" onclick="scrollSubNav(1)" aria-label="Scroll right">&#8250;</button>
     </div>
 </div>
 
@@ -4443,29 +4558,79 @@
         updateSubNavHighlight();
     });
 
-    // Sub-Nav Active Highlight ScrollSpy
+    // Sub-Nav Active Highlight ScrollSpy & Auto-Scroll
     function updateSubNavHighlight() {
-        const sections = document.querySelectorAll('header.sp-hero, section.sp-section');
+        const sections = document.querySelectorAll('header.sp-hero, section[id]');
         const navLinks = document.querySelectorAll('.sp-nav-link');
+        const navTrack = document.getElementById('subnavTrack');
         let currentSectionId = '';
 
+        const scrollPos = window.scrollY + 170;
+
         sections.forEach(sec => {
-            const secTop = sec.offsetTop - 140;
+            const secTop = sec.offsetTop;
             const secHeight = sec.offsetHeight;
-            if (window.scrollY >= secTop && window.scrollY < secTop + secHeight) {
+            if (scrollPos >= secTop && scrollPos < secTop + secHeight) {
                 currentSectionId = sec.getAttribute('id');
             }
         });
 
         if (currentSectionId) {
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + currentSectionId) {
+                const isMatch = link.getAttribute('href') === '#' + currentSectionId;
+                if (isMatch && !link.classList.contains('active')) {
+                    navLinks.forEach(l => l.classList.remove('active'));
                     link.classList.add('active');
+                    
+                    // Smoothly center active item in horizontal scrollbar
+                    if (navTrack) {
+                        const linkLeft = link.offsetLeft;
+                        const linkWidth = link.offsetWidth;
+                        const trackWidth = navTrack.offsetWidth;
+                        navTrack.scrollTo({
+                            left: linkLeft - (trackWidth / 2) + (linkWidth / 2),
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         }
     }
+
+    // Scroll subnav left/right with arrows
+    function scrollSubNav(direction) {
+        const track = document.getElementById('subnavTrack');
+        if (track) {
+            track.scrollBy({ left: direction * 220, behavior: 'smooth' });
+        }
+    }
+
+    // Smooth scroll for sub-nav links with accurate sticky header offset
+    document.querySelectorAll('.sp-nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 140; // main navbar + subnav bar + buffer
+                    const bodyTop = document.body.getBoundingClientRect().top;
+                    const elemTop = target.getBoundingClientRect().top;
+                    const elemPos = elemTop - bodyTop;
+                    const scrollTarget = elemPos - offset;
+
+                    window.scrollTo({
+                        top: Math.max(0, scrollTarget),
+                        behavior: 'smooth'
+                    });
+
+                    // Update active immediately
+                    document.querySelectorAll('.sp-nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            }
+        });
+    });
 
     // Command Center Diagnostic Tile Selector
     const cmdDetails = [
