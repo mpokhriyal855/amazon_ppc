@@ -942,8 +942,8 @@
 ========================================================= */
 .dropdown-menu.services-mega-dropdown {
     width: max-content;
-    max-width: 860px;
-    min-width: 760px;
+    max-width: 580px;
+    min-width: 460px;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.16), 0 8px 24px -4px rgba(0, 0, 0, 0.06);
@@ -956,7 +956,7 @@
 
 .services-menu-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(330px, 1fr));
+    grid-template-columns: 1fr;
     gap: 16px 28px;
 }
 
