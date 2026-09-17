@@ -766,6 +766,342 @@
             color: #38bdf8;
         }
 
+        /* LOCAL CONTEXT: MORADABAD-BASED SELLERS & DECISION FRAMEWORK */
+        .sp-local-context {
+            background-color: #ffffff;
+            position: relative;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .sp-local-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: start;
+            margin-top: 36px;
+        }
+        .sp-local-content p.sp-local-lead {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: #334155;
+            margin-bottom: 20px;
+        }
+        .sp-local-shapes-title {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: var(--brand-navy);
+            margin: 28px 0 16px;
+            letter-spacing: -0.2px;
+        }
+        .sp-factors-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .sp-factors-list li {
+            position: relative;
+            padding-left: 26px;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            color: #475569;
+        }
+        .sp-factors-list li::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--brand-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+        .sp-factors-list li strong {
+            color: var(--brand-navy);
+            font-weight: 700;
+        }
+        .sp-local-profiles {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .sp-seller-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px 22px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+            transition: all 0.25s ease;
+        }
+        .sp-seller-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -5px rgba(37, 99, 235, 0.1);
+        }
+        .sp-seller-card h4 {
+            font-size: 1.02rem;
+            font-weight: 800;
+            color: var(--brand-navy);
+            margin: 0 0 6px;
+            letter-spacing: -0.2px;
+        }
+        .sp-seller-card p {
+            font-size: 0.9rem;
+            line-height: 1.55;
+            color: #64748b;
+            margin: 0;
+        }
+        .sp-lever-note {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #475569;
+            padding: 16px 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #94a3b8;
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        /* DECISION FRAMEWORK VISUAL (MCKINSEY / ANALYTICS STYLE) */
+        .sp-framework-visual {
+            max-width: 1040px;
+            margin: 44px auto 20px;
+            background: linear-gradient(180deg, #09101f 0%, #0d1733 60%, #080e1c 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 30px 34px;
+            box-shadow: 0 20px 45px -10px rgba(8, 14, 28, 0.45);
+            position: relative;
+            overflow: hidden;
+        }
+        .sp-framework-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 18px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .sp-framework-title-badge {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+        .sp-framework-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #38bdf8;
+            box-shadow: 0 0 8px #38bdf8;
+        }
+        .sp-framework-flow-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: #94a3b8;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .sp-framework-body {
+            display: grid;
+            grid-template-columns: 1fr auto 1.75fr auto 1.35fr;
+            align-items: center;
+            gap: 14px;
+        }
+        .sp-fw-col-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .sp-fw-step-num {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 800;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .sp-fw-col-header h5 {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .sp-fw-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .sp-fw-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            transition: all 0.2s ease;
+        }
+        .sp-fw-pill:hover {
+            background: rgba(56, 189, 248, 0.08);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .sp-fw-pill-indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #38bdf8;
+            flex-shrink: 0;
+        }
+        .sp-fw-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(56, 189, 248, 0.45);
+        }
+        .sp-fw-connector svg {
+            width: 22px;
+            height: 22px;
+        }
+        .sp-fw-inputs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+        .sp-fw-input-card {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(56, 189, 248, 0.16);
+            border-radius: 10px;
+            padding: 10px 12px;
+            transition: all 0.2s ease;
+        }
+        .sp-fw-input-card:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+            background: rgba(15, 23, 42, 0.85);
+        }
+        .sp-fw-input-tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 0.6px;
+            margin-bottom: 3px;
+        }
+        .sp-fw-input-card h6 {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 3px;
+            line-height: 1.3;
+        }
+        .sp-fw-input-card p {
+            font-size: 10px;
+            line-height: 1.35;
+            color: #94a3b8;
+            margin: 0;
+        }
+        .sp-fw-decisions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .sp-fw-decision-item {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 9px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            transition: all 0.2s ease;
+        }
+        .sp-fw-decision-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .sp-fw-dot-action {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #38bdf8;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        .sp-fw-dot-green {
+            background: #10b981;
+            box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+        }
+        .sp-fw-decision-text strong {
+            font-size: 11.5px;
+            color: #ffffff;
+            display: block;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .sp-fw-decision-text span {
+            font-size: 10px;
+            color: #94a3b8;
+            display: block;
+            line-height: 1.3;
+        }
+        .sp-framework-insight {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 22px;
+            padding-top: 16px;
+            text-align: center;
+            font-size: 12.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .sp-insight-accent {
+            color: #38bdf8;
+            font-size: 11px;
+        }
+
+        @media (max-width: 960px) {
+            .sp-local-layout {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .sp-framework-body {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .sp-fw-connector {
+                display: none;
+            }
+            .sp-framework-visual {
+                padding: 22px 18px;
+            }
+            .sp-fw-inputs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* PROBLEM CHECKLIST */
         .sp-problem-layout {
             display: grid;
@@ -1438,6 +1774,7 @@
             <nav class="sp-sticky-nav">
                 <a href="#overview" class="sp-nav-link active">Overview</a>
                 <a href="#what-included" class="sp-nav-link">PPC Scope</a>
+                <a href="#moradabad-sellers" class="sp-nav-link">Moradabad Sellers</a>
                 <a href="#export-advantage" class="sp-nav-link">Export Advantage</a>
                 <a href="#the-problem" class="sp-nav-link">Ad Spend Audit</a>
                 <a href="#packages" class="sp-nav-link">Packages</a>
@@ -1666,6 +2003,233 @@
                     <div class="sp-card-highlight">
                         <strong>Why it matters:</strong> You need to know what's happening in your account—not guesses, actual numbers.
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION: LOCAL CONTEXT - MORADABAD-BASED SELLERS
+    ========================================================= -->
+    <section class="sp-section sp-local-context" id="moradabad-sellers">
+        <div class="sp-container">
+            <div class="sp-section-header">
+                <span class="sp-section-tag">LOCAL CONTEXT</span>
+                <h2 class="sp-section-title">Amazon PPC management for Moradabad-based sellers</h2>
+            </div>
+
+            <!-- 2-COLUMN INTRO & SELLER CARDS -->
+            <div class="sp-local-layout">
+                <!-- Left Column: Context & Bullet Factors -->
+                <div class="sp-local-content">
+                    <p class="sp-local-lead">
+                        A business can be run entirely from Moradabad and still sell to customers in Chennai, Pune or Guwahati. Amazon handles the reach; your advertising account decides what that reach costs. Seller Central and the Amazon Ads console are accessed remotely, so campaigns are managed the same way whether your team sits in Moradabad, elsewhere in Uttar Pradesh, or anywhere else in India.
+                    </p>
+                    <p class="sp-local-lead">
+                        Moradabad has a long manufacturing and export tradition, and many of those businesses are now moving from wholesale supply into selling directly under their own brand. That shift changes what advertising has to do. A manufacturer with strong margins and a thin catalog needs a different approach than a private-label seller competing on price in a crowded category.
+                    </p>
+
+                    <div class="sp-local-shapes-title">
+                        What actually shapes the strategy is the account itself:
+                    </div>
+
+                    <ul class="sp-factors-list">
+                        <li>
+                            <strong>Product category and price</strong> — a ₹499 product cannot absorb the same CPC as a ₹4,999 one.
+                        </li>
+                        <li>
+                            <strong>Margin</strong> — this sets the break-even ACOS, which sets the bid ceiling.
+                        </li>
+                        <li>
+                            <strong>Competition</strong> — how many established sellers hold the top placements for your keywords.
+                        </li>
+                        <li>
+                            <strong>Conversion rate and reviews</strong> — the same click is worth far more on a listing that converts.
+                        </li>
+                        <li>
+                            <strong>Inventory</strong> — there is no point scaling spend on an ASIN that is about to go out of stock.
+                        </li>
+                        <li>
+                            <strong>Search demand and business stage</strong> — a launch needs data; a mature ASIN needs efficiency.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Column: 4 Seller Profile Cards & Callout -->
+                <div class="sp-local-profiles">
+                    <div class="sp-seller-card">
+                        <h4>Manufacturers moving to D2C</h4>
+                        <p>Own production, little advertising history. Structure gets built around real margin rather than borrowed benchmarks.</p>
+                    </div>
+
+                    <div class="sp-seller-card">
+                        <h4>Private-label brands</h4>
+                        <p>Competing against established listings. Needs disciplined keyword coverage and tight negative management.</p>
+                    </div>
+
+                    <div class="sp-seller-card">
+                        <h4>Established multi-ASIN sellers</h4>
+                        <p>The problem is rarely traffic. It's that budget isn't distributed according to which ASINs and targets actually earn it.</p>
+                    </div>
+
+                    <div class="sp-seller-card">
+                        <h4>Exporters and wholesalers entering Amazon</h4>
+                        <p>Early spend is used to gather search-term data, not to chase a target ACOS on day one.</p>
+                    </div>
+
+                    <div class="sp-lever-note">
+                        Raising bids is the fastest lever available in Amazon advertising and usually the least useful one on its own. Higher bids buy more of the same traffic, including the traffic that was already losing money.
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================================
+                 STRATEGY DECISION FRAMEWORK VISUAL
+                 Seller Type → Business Inputs → PPC Strategy
+            ========================================================= -->
+            <div class="sp-framework-visual">
+                <div class="sp-framework-topbar">
+                    <div class="sp-framework-title-badge">
+                        <span class="sp-framework-dot"></span>
+                        <span>DECISION ARCHITECTURE · ACCOUNT-DRIVEN PPC FRAMEWORK</span>
+                    </div>
+                    <div class="sp-framework-flow-label">SELLER PROFILE → BUSINESS INPUTS → PPC STRATEGY</div>
+                </div>
+
+                <div class="sp-framework-body">
+                    <!-- Column 1: Seller Profiles (25%) -->
+                    <div class="sp-fw-col sp-fw-col-profiles">
+                        <div class="sp-fw-col-header">
+                            <span class="sp-fw-step-num">01</span>
+                            <h5>SELLER PROFILE</h5>
+                        </div>
+                        <div class="sp-fw-items">
+                            <div class="sp-fw-pill">
+                                <span class="sp-fw-pill-indicator"></span>
+                                <span>Manufacturers moving to D2C</span>
+                            </div>
+                            <div class="sp-fw-pill">
+                                <span class="sp-fw-pill-indicator"></span>
+                                <span>Private-label brands</span>
+                            </div>
+                            <div class="sp-fw-pill">
+                                <span class="sp-fw-pill-indicator"></span>
+                                <span>Established multi-ASIN sellers</span>
+                            </div>
+                            <div class="sp-fw-pill">
+                                <span class="sp-fw-pill-indicator"></span>
+                                <span>Exporters &amp; wholesalers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connector 1 -->
+                    <div class="sp-fw-connector" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+
+                    <!-- Column 2: Strategy Inputs (45%) -->
+                    <div class="sp-fw-col sp-fw-col-inputs">
+                        <div class="sp-fw-col-header">
+                            <span class="sp-fw-step-num">02</span>
+                            <h5>BUSINESS &amp; ACCOUNT INPUTS</h5>
+                        </div>
+                        <div class="sp-fw-inputs-grid">
+                            <div class="sp-fw-input-card">
+                                <div class="sp-fw-input-tag">ECONOMICS</div>
+                                <h6>Product Category &amp; Price</h6>
+                                <p>Ticket size determines absorbable CPC</p>
+                            </div>
+                            <div class="sp-fw-input-card">
+                                <div class="sp-fw-input-tag">CEILING</div>
+                                <h6>Gross Margin &amp; Break-even</h6>
+                                <p>Sets maximum target ACoS threshold</p>
+                            </div>
+                            <div class="sp-fw-input-card">
+                                <div class="sp-fw-input-tag">MARKET</div>
+                                <h6>Competition &amp; Top Placements</h6>
+                                <p>Density of established category incumbents</p>
+                            </div>
+                            <div class="sp-fw-input-card">
+                                <div class="sp-fw-input-tag">CONVERSION</div>
+                                <h6>Listing Conversion &amp; Reviews</h6>
+                                <p>Traffic value multiplier on the detail page</p>
+                            </div>
+                            <div class="sp-fw-input-card">
+                                <div class="sp-fw-input-tag">SUPPLY CHAIN</div>
+                                <h6>Inventory &amp; Restock Coverage</h6>
+                                <p>Prevents ad spend acceleration on low stock</p>
+                            </div>
+                            <div class="sp-fw-input-card">
+                                <div class="sp-fw-input-tag">LIFECYCLE</div>
+                                <h6>Search Demand &amp; Stage</h6>
+                                <p>Launch discovery vs. mature SKU harvesting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connector 2 -->
+                    <div class="sp-fw-connector" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+
+                    <!-- Column 3: Management Decisions (30%) -->
+                    <div class="sp-fw-col sp-fw-col-decisions">
+                        <div class="sp-fw-col-header">
+                            <span class="sp-fw-step-num">03</span>
+                            <h5>MANAGEMENT DECISIONS</h5>
+                        </div>
+                        <div class="sp-fw-decisions-list">
+                            <div class="sp-fw-decision-item">
+                                <span class="sp-fw-dot-action"></span>
+                                <div class="sp-fw-decision-text">
+                                    <strong>Calibrated Bid Ceilings</strong>
+                                    <span>Tied directly to SKU net margins</span>
+                                </div>
+                            </div>
+                            <div class="sp-fw-decision-item">
+                                <span class="sp-fw-dot-action"></span>
+                                <div class="sp-fw-decision-text">
+                                    <strong>Disciplined Keyword Coverage</strong>
+                                    <span>High-intent exact match isolation</span>
+                                </div>
+                            </div>
+                            <div class="sp-fw-decision-item">
+                                <span class="sp-fw-dot-action"></span>
+                                <div class="sp-fw-decision-text">
+                                    <strong>Negative Keyword Control</strong>
+                                    <span>Eliminates zero-order search waste</span>
+                                </div>
+                            </div>
+                            <div class="sp-fw-decision-item">
+                                <span class="sp-fw-dot-action"></span>
+                                <div class="sp-fw-decision-text">
+                                    <strong>Profit-First Budget Allocation</strong>
+                                    <span>Capital routed to highest-ROAS targets</span>
+                                </div>
+                            </div>
+                            <div class="sp-fw-decision-item">
+                                <span class="sp-fw-dot-action"></span>
+                                <div class="sp-fw-decision-text">
+                                    <strong>ASIN Portfolio Prioritization</strong>
+                                    <span>Separates hero volume from test catalog</span>
+                                </div>
+                            </div>
+                            <div class="sp-fw-decision-item">
+                                <span class="sp-fw-dot-action sp-fw-dot-green"></span>
+                                <div class="sp-fw-decision-text">
+                                    <strong>Inventory-Aware Bid Scaling</strong>
+                                    <span>Throttles bids before stockouts occur</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Understated Insight Line -->
+                <div class="sp-framework-insight">
+                    <span class="sp-insight-accent">✦</span>
+                    <span>Location sets the business context. Account economics set the advertising strategy.</span>
                 </div>
             </div>
         </div>
