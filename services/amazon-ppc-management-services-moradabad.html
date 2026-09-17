@@ -1305,6 +1305,284 @@
             }
         }
 
+        /* =========================================================
+           BID DECISIONS SECTION (DARK THEME WITH ADVANCED UI)
+        ========================================================= */
+        .sp-bid-decisions-section {
+            padding: 85px 24px;
+            position: relative;
+            background-color: #070d1e;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.09) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(239, 68, 68, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.07) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            color: #f1f5f9;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+        .sp-bid-decisions-section .sp-section-tag {
+            color: #38bdf8;
+        }
+        .sp-bid-decisions-section .sp-section-title {
+            color: #ffffff;
+        }
+        .sp-bid-decisions-section .sp-section-subtitle {
+            color: #94a3b8;
+            max-width: 780px;
+        }
+
+        /* Bid decisions visual showcase */
+        .sp-bid-visual-showcase {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 20px;
+            padding: 24px 26px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+            margin-bottom: 48px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .sp-bid-showcase-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .sp-bid-badge {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+        .sp-bid-pulsing-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+            animation: sp-pulse 2s infinite;
+        }
+        .sp-bid-status-pill {
+            font-family: 'DM Mono', monospace;
+            font-size: 10.5px;
+            color: #cbd5e1;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        .sp-bid-visual-inner {
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+            background: #091124;
+        }
+        .sp-bid-framework-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 14px;
+        }
+
+        /* 2-Column Decision Grid */
+        .sp-bid-decision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-bottom: 40px;
+        }
+        .sp-bid-col-card {
+            border-radius: 20px;
+            padding: 34px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+        }
+        .sp-bid-col-card.scale {
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.07) 0%, rgba(15, 23, 42, 0.75) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+        }
+        .sp-bid-col-card.scale:hover {
+            transform: translateY(-4px);
+            border-color: #10b981;
+            box-shadow: 0 20px 45px rgba(16, 185, 129, 0.18);
+        }
+        .sp-bid-col-card.control {
+            background: linear-gradient(180deg, rgba(239, 68, 68, 0.07) 0%, rgba(15, 23, 42, 0.75) 100%);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+        }
+        .sp-bid-col-card.control:hover {
+            transform: translateY(-4px);
+            border-color: #ef4444;
+            box-shadow: 0 20px 45px rgba(239, 68, 68, 0.18);
+        }
+
+        .sp-bid-card-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 18px;
+        }
+        .sp-bid-col-title-wrap h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 6px;
+            letter-spacing: -0.3px;
+        }
+        .sp-bid-col-tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+        .sp-bid-col-card.scale .sp-bid-col-tag {
+            color: #10b981;
+        }
+        .sp-bid-col-card.control .sp-bid-col-tag {
+            color: #f87171;
+        }
+        .sp-bid-col-subtitle {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .sp-bid-icon-badge {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .sp-bid-col-card.scale .sp-bid-icon-badge {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .sp-bid-col-card.control .sp-bid-icon-badge {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .sp-bid-signals-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .sp-bid-signal-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+        .sp-bid-signal-item:hover {
+            background: rgba(255, 255, 255, 0.055);
+        }
+        .sp-bid-signal-indicator {
+            font-size: 13px;
+            font-weight: 900;
+            line-height: 1.4;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .sp-bid-col-card.scale .sp-bid-signal-indicator {
+            color: #10b981;
+        }
+        .sp-bid-col-card.control .sp-bid-signal-indicator {
+            color: #f87171;
+        }
+        .sp-bid-signal-text {
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: #cbd5e1;
+            margin: 0;
+        }
+        .sp-bid-signal-text strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* Bottom takeaway bar */
+        .sp-bid-takeaway-bar {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 14px;
+            padding: 22px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .sp-bid-takeaway-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            max-width: 780px;
+        }
+        .sp-bid-takeaway-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .sp-bid-takeaway-text {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .sp-bid-takeaway-text strong {
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .sp-bid-decision-grid {
+                grid-template-columns: 1fr;
+            }
+            .sp-bid-col-card {
+                padding: 24px 20px;
+            }
+            .sp-bid-takeaway-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 1024px) {
             .sp-archetypes-deck {
@@ -2044,6 +2322,7 @@
                 <a href="#packages" class="sp-nav-link">Packages</a>
                 <a href="#moradabad-sellers" class="sp-nav-link">Moradabad Sellers</a>
                 <a href="#optimization-framework" class="sp-nav-link">PPC Framework</a>
+                <a href="#bid-decisions" class="sp-nav-link">Bid Decisions</a>
                 <a href="#export-advantage" class="sp-nav-link">Export Advantage</a>
                 <a href="#the-problem" class="sp-nav-link">Ad Spend Audit</a>
                 <a href="#case-study" class="sp-nav-link">Case Study</a>
@@ -2594,6 +2873,151 @@
                 <a href="#what-included" class="sp-framework-btn-secondary">
                     See our full Amazon PPC management service
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         BID DECISIONS SECTION (DARK THEME WITH ADVANCED UI)
+    ========================================================= -->
+    <section class="sp-section sp-bid-decisions-section" id="bid-decisions">
+        <div class="sp-container">
+            <div class="sp-section-header">
+                <span class="sp-section-tag">BID DECISIONS</span>
+                <h2 class="sp-section-title">When Should Amazon PPC Bids Go Up or Down?</h2>
+                <div class="sp-section-subtitle">
+                    These are directional signals, not fixed rules. The same data can point either way depending on margin, stage, and objective.
+                </div>
+            </div>
+
+            <!-- VISUAL DECISION SHOWCASE CONSOLE -->
+            <div class="sp-bid-visual-showcase">
+                <div class="sp-bid-showcase-bar">
+                    <div class="sp-console-controls">
+                        <span class="sp-console-dot red"></span>
+                        <span class="sp-console-dot amber"></span>
+                        <span class="sp-console-dot green"></span>
+                    </div>
+                    <div class="sp-bid-badge">
+                        <span class="sp-bid-pulsing-dot"></span>
+                        <span>DYNAMIC BIDDING ARCHITECTURE · DECISION MATRIX</span>
+                    </div>
+                    <div class="sp-bid-status-pill">REAL-TIME SIGNALS</div>
+                </div>
+
+                <div class="sp-bid-visual-inner">
+                    <img src="../images/amazon-ppc-bid-decisions-framework.jpg" alt="Amazon PPC Bid Decisions Architecture - When Bids Scale Up vs When Bids Should Be Reduced and Controlled" class="sp-bid-framework-img" width="1920" height="1080" loading="lazy">
+                </div>
+            </div>
+
+            <!-- 2-COLUMN STRATEGIC DECISION MATRIX -->
+            <div class="sp-bid-decision-grid">
+                <!-- 🟢 INCREASE OR TEST A HIGHER BID -->
+                <div class="sp-bid-col-card scale">
+                    <div class="sp-bid-card-head">
+                        <div class="sp-bid-col-title-wrap">
+                            <span class="sp-bid-col-tag">Scale &amp; Harvest</span>
+                            <h3>Increase or test a higher bid</h3>
+                            <p class="sp-bid-col-subtitle">When unit economics confirm profitable room for aggressive impression capture.</p>
+                        </div>
+                        <div class="sp-bid-icon-badge">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                        </div>
+                    </div>
+
+                    <ul class="sp-bid-signals-list">
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▲</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Strong Conversion Efficiency:</strong> Conversion efficiency is strong relative to break-even ACOS.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▲</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Room in Unit Economics:</strong> Unit economics leave room above the current CPC.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▲</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Statistically Trustworthy:</strong> Enough clicks and orders to trust the result.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▲</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Unclaimed Demand:</strong> Impression share suggests real unclaimed demand.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▲</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Strategic Dominance:</strong> The term is strategically important to defend or own.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 🔴 REDUCE OR CONTROL -->
+                <div class="sp-bid-col-card control">
+                    <div class="sp-bid-card-head">
+                        <div class="sp-bid-col-title-wrap">
+                            <span class="sp-bid-col-tag">Protect &amp; Prune</span>
+                            <h3>Reduce or control</h3>
+                            <p class="sp-bid-col-subtitle">When spend accumulates past break-even limits without driving sales velocity.</p>
+                        </div>
+                        <div class="sp-bid-icon-badge">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                        </div>
+                    </div>
+
+                    <ul class="sp-bid-signals-list">
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▼</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Spend Leaking Past Break-Even:</strong> Spend is accumulating well past break-even without orders.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▼</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Weak Conversion Velocity:</strong> Conversion rate is weak against category norms.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▼</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Unsustainable CPC Floor:</strong> CPC has risen to a level the product can't support.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▼</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Poor Search Query Relevance:</strong> Relevance is poor — the query isn't really your product.
+                            </div>
+                        </li>
+                        <li class="sp-bid-signal-item">
+                            <span class="sp-bid-signal-indicator">▼</span>
+                            <div class="sp-bid-signal-text">
+                                <strong>Margin / Price Disconnect:</strong> Margin or price doesn't justify competing at that level.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BOTTOM ADVISORY / CTA BAR -->
+            <div class="sp-bid-takeaway-bar">
+                <div class="sp-bid-takeaway-left">
+                    <span class="sp-bid-takeaway-icon">💡</span>
+                    <p class="sp-bid-takeaway-text">
+                        <strong>The Strategic Bid Rule:</strong> Never adjust bids in isolation. A high bid on a 35% margin brassware piece can print scalable profit, while the exact same bid on an 18% margin SKU bleeds capital daily. We audit every target at the SKU-profit level.
+                    </p>
+                </div>
+                <button class="sp-btn-primary" onclick="openAuditModal('Bid Decisions Audit')" style="white-space: nowrap;">
+                    Audit Your Account Bids Free →
+                </button>
             </div>
         </div>
     </section>
