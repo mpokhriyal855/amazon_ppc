@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation()">
+
+    <!-- SEO META & NOINDEX FOR 404 -->
+    <title>404 - Page Not Found | PPC Growth Expert</title>
+    <meta name="description" content="Sorry, the page you're looking for doesn't exist or may have been moved. Let's get you back to the right place on PPC Growth Expert.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/404.html">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/founder.png">
+
+    <!-- PRECONNECT FOR PERFORMANCE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css?v=v48">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/whatsapp.css">
+
+    <style>
+        /* =========================================================
+           404 ERROR PAGE CUSTOM STYLES
+           Minimal, executive aesthetic aligned with site design
+        ========================================================= */
+        .error-section {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 130px 20px 70px;
+            position: relative;
+            background: radial-gradient(circle at 50% 25%, rgba(37, 99, 235, 0.05) 0%, transparent 65%), #f8fafc;
+        }
+
+        .error-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.07), 0 1px 3px rgba(15, 23, 42, 0.04);
+            max-width: 640px;
+            width: 100%;
+            padding: 56px 44px 44px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .error-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1), 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
+
+        .error-code {
+            font-size: 88px;
+            font-weight: 800;
+            line-height: 1;
+            color: #1d4ed8;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .error-desc {
+            font-size: 16px;
+            line-height: 1.65;
+            color: #64748b;
+            margin: 0 auto 32px;
+            max-width: 480px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .error-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .btn-404-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1d4ed8;
+            color: #ffffff !important;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-404-primary:hover {
+            background: #1e40af;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35);
+        }
+
+        .btn-404-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #1d4ed8 !important;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1.5px solid #2563eb;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .btn-404-secondary:hover {
+            background: #eff6ff;
+            border-color: #1d4ed8;
+            color: #1e40af !important;
+            transform: translateY(-1px);
+        }
+
+        .error-divider {
+            border: none;
+            border-top: 1px solid #f1f5f9;
+            margin: 0 0 28px;
+        }
+
+        .error-explore-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 18px;
+            letter-spacing: -0.01em;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .error-explore-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px 24px;
+            flex-wrap: wrap;
+        }
+
+        .error-explore-link {
+            color: #2563eb !important;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.15s ease, transform 0.15s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .error-explore-link:hover {
+            color: #1d4ed8 !important;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .error-section {
+                padding: 110px 16px 50px;
+            }
+
+            .error-card {
+                padding: 40px 22px 32px;
+                border-radius: 20px;
+            }
+
+            .error-code {
+                font-size: 72px;
+            }
+
+            .error-title {
+                font-size: 26px;
+            }
+
+            .error-desc {
+                font-size: 15px;
+                margin-bottom: 26px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 30px;
+            }
+
+            .btn-404-primary,
+            .btn-404-secondary {
+                width: 100%;
+            }
+
+            .error-explore-links {
+                gap: 12px 16px;
+            }
+
+            .error-explore-link {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body class="error-404-page">
+
+    <!-- AMBIENT BACKGROUND GLOW & GRID -->
+    <div class="ambient-glow-top"></div>
+    <div class="background-grid"></div>
+
+    <!-- NAVBAR -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+
+            <!-- LOGO -->
+            <a href="/" class="logo">
+                <div class="logo-badge">
+                    <div class="logo-symbol"></div>
+                </div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <!-- NAVIGATION LINKS -->
+            <nav class="nav-links" id="navLinks">
+                <a href="/" class="nav-item">Home</a>
+                
+                <!-- SERVICES MEGA DROPDOWN -->
+                <div class="nav-dropdown">
+                    <a href="services/index.html" class="nav-item nav-dropdown-trigger">
+                        Services <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu services-mega-dropdown">
+                        <div class="services-menu-grid">
+                            
+                            <!-- AMAZON SPECIALIZED -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON SPECIALIZED</div>
+
+                                <a href="services/amazon-ppc-management-services-india.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services India</span>
+                                        <span class="mega-item-desc">Turn ad spend into profitable growth</span>
+                                    </div>
+                                </a>
+
+                                <a href="services/amazon-seller-account-management-services.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon Seller Account Management Services in India</span>
+                                        <span class="mega-item-desc">Full Seller Central operations</span>
+                                    </div>
+                                </a>
+
+                                <a href="services/amazon-ppc-management-services-moradabad.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services Moradabad</span>
+                                        <span class="mega-item-desc">Scale handicraft &amp; brassware export</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="mega-menu-footer">
+                            <div class="mega-menu-footer-content">
+                                <a href="services/index.html" class="mega-footer-link">
+                                    <span>Explore All Marketplace Services</span>
+                                    <span class="footer-arrow">→</span>
+                                </a>
+                                <div class="mega-footer-tags">
+                                    <span class="footer-tag-label">REGIONAL HUBS</span>
+                                    <a href="services/amazon-ppc-management-services-delhi.html" class="hub-pill">Delhi</a>
+                                    <a href="services/amazon-ppc-management-services-noida.html" class="hub-pill">Noida</a>
+                                    <a href="services/amazon-ppc-management-services-moradabad.html" class="hub-pill">Moradabad</a>
+                                    <a href="services/ecommerce-ppc-services.html" class="hub-pill">Ecommerce PPC</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="case-studies.html" class="nav-item">Case Studies</a>
+                <a href="index.html#results" class="nav-item">Results</a>
+                <a href="about.html" class="nav-item">About</a>
+                
+                <!-- RESOURCES MEGA DROPDOWN -->
+                <div class="nav-dropdown">
+                    <a href="calculators/index.html" class="nav-item nav-dropdown-trigger">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            
+                            <!-- 1. PPC PERFORMANCE -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="calculators/amazon-acos-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📊</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">ACoS Calculator</span>
+                                        <span class="mega-item-desc">Calculate advertising cost of sales</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-roas-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🚀</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">ROAS Calculator</span>
+                                        <span class="mega-item-desc">Calculate return on ad spend</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">⚡</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Conversion Rate Calculator</span>
+                                        <span class="mega-item-desc">Measure clicks turning into orders</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 2. COST & TRAFFIC -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="calculators/amazon-cpc-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">💵</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">CPC Calculator</span>
+                                        <span class="mega-item-desc">Calculate average cost per click</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-ctr-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🎯</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">CTR Calculator</span>
+                                        <span class="mega-item-desc">Measure ad click-through rate</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-tacos-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📈</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">TACoS Calculator</span>
+                                        <span class="mega-item-desc">Compare ad spend vs total sales</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 3. PPC OPTIMIZATION -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC OPTIMIZATION</div>
+                                <a href="calculators/amazon-ppc-waste-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🧯</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Waste Calculator</span>
+                                        <span class="mega-item-desc">Find inefficient ad spend</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-keyword-profitability-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🔑</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Keyword Profitability Calculator</span>
+                                        <span class="mega-item-desc">Analyze keyword net margin &amp; ROI</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 4. AMAZON INDIA TOOLS -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="calculators/amazon-profit-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📦</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Profit Calculator</span>
+                                        <span class="mega-item-desc">Amazon India net margin &amp; profit</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-fba-fee-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🚚</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">FBA Fee Calculator</span>
+                                        <span class="mega-item-desc">Fulfilment &amp; referral breakdown</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-fba-storage-fee-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🏢</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">FBA Storage Calculator</span>
+                                        <span class="mega-item-desc">Monthly inventory storage cost</span>
+                                    </div>
+                                </a>
+                                <a href="calculators/amazon-advertising-roi-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">💸</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Ad ROI Calculator</span>
+                                        <span class="mega-item-desc">Net profit return after PPC</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 5. QUICK COMMERCE -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">QUICK COMMERCE</div>
+                                <a href="calculators/blinkit-cpm-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">⚡</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Blinkit CPM Calculator</span>
+                                        <span class="mega-item-desc">Measure cost per 1,000 impressions</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="mega-menu-footer">
+                            <a href="calculators/index.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="blog/index.html" class="nav-item">Blog</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <!-- RIGHT ACTION BUTTONS -->
+            <div class="nav-actions">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    Audit Open
+                </div>
+
+                <a href="contact.html" class="nav-btn">
+                    <span>Free Audit</span>
+                    <span class="nav-btn-arrow">→</span>
+                </a>
+
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)" aria-label="Toggle navigation">
+                    ☰
+                </button>
+            </div>
+
+        </header>
+    </div>
+
+    <!-- MAIN 404 CONTENT -->
+    <main class="error-section" role="main">
+        <div class="error-card">
+            <!-- 404 CODE -->
+            <div class="error-code">404</div>
+
+            <!-- TITLE -->
+            <h1 class="error-title">Page Not Found</h1>
+
+            <!-- DESCRIPTION -->
+            <p class="error-desc">
+                Sorry, the page you're looking for doesn't exist or may have been moved.<br>
+                Let's get you back to the right place.
+            </p>
+
+            <!-- CALL TO ACTIONS -->
+            <div class="error-actions">
+                <a href="/" class="btn-404-primary">Back to Homepage</a>
+                <a href="contact.html" class="btn-404-secondary">Get Free PPC Audit</a>
+            </div>
+
+            <!-- DIVIDER -->
+            <hr class="error-divider">
+
+            <!-- RECOVERY QUICK LINKS -->
+            <div class="error-explore">
+                <h2 class="error-explore-title">Explore PPC Growth Expert</h2>
+                <nav class="error-explore-links" aria-label="Helpful recovery links">
+                    <a href="/" class="error-explore-link">Home</a>
+                    <a href="services/amazon-ppc-management-services-india.html" class="error-explore-link">Amazon PPC Management</a>
+                    <a href="services/amazon-seller-account-management-services.html" class="error-explore-link">Amazon Account Management</a>
+                    <a href="contact.html" class="error-explore-link">Free PPC Audit</a>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <!-- ULTRA-PREMIUM EXECUTIVE SEO FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
+        <div class="footer-container">
+            <div class="footer-grid">
+
+                <!-- COL 1: BRAND GLASS CARD -->
+                <div class="footer-col brand-col">
+                    <div class="brand-card">
+                        <a href="/" class="footer-logo">
+                            <div class="logo-badge">
+                                <div class="logo-symbol"></div>
+                            </div>
+                            <span class="logo-text">
+                                PPC <span class="highlight">Growth</span> Expert
+                            </span>
+                        </a>
+
+                        <p class="footer-sub-tagline">
+                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
+                        </p>
+
+                        <p class="footer-tagline" itemprop="description">
+                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve
+                            advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon
+                            advertising.
+                        </p>
+
+                        <div class="footer-socials" aria-label="Social Media Links">
+                            <a href="https://wa.me/918433232647" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z"/></svg>
+                            </a>
+                            <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COL 2: SERVICES -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">SERVICES</h3>
+                    <ul class="footer-links">
+                        <li><a href="services/amazon-ppc-management-services-india.html">Amazon PPC Management Services</a></li>
+                        <li><a href="services/amazon-seller-account-management-services.html">Amazon Account Management</a></li>
+                        <li><a href="services/amazon-ppc-management-services-moradabad.html">Moradabad PPC Services</a></li>
+                        <li><a href="services/ecommerce-ppc-services.html">Ecommerce PPC Services</a></li>
+                        <li><a href="calculators/index.html">PPC Calculators &amp; Tools</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: CONTACT US -->
+                <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <div class="contact-icon-pill">📍</div>
+                            <div>
+                                <span itemprop="addressLocality">Noida</span>,<br>
+                                <span itemprop="addressRegion">Uttar Pradesh</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">📞</div>
+                            <a href="tel:+918433232647" itemprop="telephone">+91 84332 32647</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">✉️</div>
+                            <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: COMPANY -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#founder">Our Founder</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- MIDDLE BAR -->
+            <div class="footer-middle">
+                <p class="footer-meta-info">© 2026 PPC Growth Expert · Noida, Uttar Pradesh, India · +91 84332 32647 · anmolpokhriyal3200@gmail.com</p>
+            </div>
+
+            <!-- BOTTOM COPYRIGHT BAR -->
+            <div class="footer-bottom">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">
+                    ↑
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING CHAT WIDGET -->
+    <div class="whatsapp-widget-container" id="whatsappWidget">
+        <div class="whatsapp-chat-box" id="whatsappChatBox" aria-hidden="true" role="dialog" aria-labelledby="waChatTitle">
+            <button class="whatsapp-close-btn" id="whatsappCloseBtn" aria-label="Close WhatsApp chat">&times;</button>
+            <div class="whatsapp-header">
+                <div class="whatsapp-header-title">
+                    <svg class="whatsapp-title-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    <h3 id="waChatTitle">Chat with us on WhatsApp</h3>
+                </div>
+                <p class="whatsapp-subtitle">Share your details (all optional) so our team can follow up.</p>
+            </div>
+            <form class="whatsapp-form" id="whatsappForm" action="javascript:void(0);">
+                <div class="wa-form-group">
+                    <label for="waName">Name</label>
+                    <input type="text" id="waName" placeholder="Your name" class="wa-input" autocomplete="name">
+                </div>
+                <div class="wa-form-group">
+                    <label for="waMobile">Mobile</label>
+                    <input type="tel" id="waMobile" placeholder="+91 98xxxxxxxx" class="wa-input" autocomplete="tel">
+                </div>
+                <div class="wa-form-group">
+                    <label for="waEmail">Email</label>
+                    <input type="email" id="waEmail" placeholder="you@brand.com" class="wa-input" autocomplete="email">
+                </div>
+                <button type="submit" class="whatsapp-submit-btn">
+                    <svg class="wa-btn-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    <span>Continue to WhatsApp</span>
+                </button>
+            </form>
+        </div>
+
+        <button class="whatsapp-trigger-btn" id="whatsappTriggerBtn" aria-label="Open WhatsApp Chat" aria-expanded="false">
+            <svg class="whatsapp-trigger-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/whatsapp.js"></script>
+
+</body>
+</html>
