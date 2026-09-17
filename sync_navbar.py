@@ -44,6 +44,7 @@ SKIP_FILES = {
     "the_problem.html",
     "resources.html",
     "services.html",
+    "404.html",
 }
 
 # Regex pattern to match the full navbar block in target files
