@@ -1199,35 +1199,64 @@
             background-size: 100% 100%, 40px 40px, 40px 40px;
             border-top: 1px solid #e2e8f0;
             border-bottom: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+        .curated-packages-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .packages-section-title {
+            text-align: center;
+            font-size: clamp(1.85rem, 3.6vw, 2.5rem);
+            font-weight: 800;
+            color: var(--brand-navy) !important;
+            letter-spacing: -0.8px;
+            line-height: 1.25;
+            margin: 0 0 12px;
+        }
+        .packages-section-subtitle {
+            text-align: center;
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #64748b !important;
+            max-width: 760px;
+            margin: 0 auto 48px;
         }
         .packages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 28px;
-            max-width: 1140px;
+            max-width: 1180px;
             margin: 0 auto;
         }
         .package-card {
             background: #ffffff !important;
             border: 1px solid #e2e8f0 !important;
-            border-radius: 20px !important;
+            border-radius: 22px !important;
             padding: 36px 30px !important;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05) !important;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
             display: flex !important;
             flex-direction: column !important;
             justify-content: space-between !important;
             position: relative !important;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            color: #0f172a !important;
         }
         .package-card:hover {
             transform: translateY(-6px) !important;
-            border-color: #2563eb !important;
-            box-shadow: 0 20px 45px rgba(37, 99, 235, 0.14) !important;
+            border-color: rgba(37, 99, 235, 0.35) !important;
+            box-shadow: 0 22px 45px rgba(37, 99, 235, 0.12) !important;
         }
         .package-card.featured {
             background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%) !important;
             border: 2px solid #2563eb !important;
             box-shadow: 0 15px 40px rgba(37, 99, 235, 0.12) !important;
+        }
+        .package-card.featured:hover {
+            transform: translateY(-6px) !important;
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2) !important;
         }
         .package-badge {
             position: absolute !important;
@@ -1245,7 +1274,7 @@
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
         }
         .package-icon {
-            font-size: 36px !important;
+            font-size: 34px !important;
             margin-bottom: 16px !important;
             display: inline-block !important;
         }
@@ -1308,45 +1337,43 @@
         }
         .package-list li::before {
             content: "✓" !important;
-            color: #10b981 !important;
+            color: #059669 !important;
             font-weight: 800 !important;
-            font-size: 15px !important;
+            font-size: 14px !important;
+            margin-top: 1px !important;
             flex-shrink: 0 !important;
         }
-        .package-cta {
+        .package-cta-btn, .package-cta {
             width: 100% !important;
-            padding: 14px !important;
-            border-radius: 12px !important;
+            padding: 14px 20px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
             font-size: 15px !important;
             font-weight: 700 !important;
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+            border: none !important;
+            border-radius: 12px !important;
+            cursor: pointer !important;
+            transition: all 0.25s ease !important;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25) !important;
             text-align: center !important;
             display: block !important;
-            text-decoration: none !important;
-            transition: all 0.25s ease !important;
-            border: none !important;
-            cursor: pointer !important;
             box-sizing: border-box !important;
+            text-decoration: none !important;
         }
-        .package-cta.primary {
-            background: #2563eb !important;
-            color: #ffffff !important;
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3) !important;
-        }
-        .package-cta.primary:hover {
-            background: #1d4ed8 !important;
+        .package-cta-btn:hover, .package-cta:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
             transform: translateY(-2px) !important;
-            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.4) !important;
+            box-shadow: 0 8px 22px rgba(37, 99, 235, 0.4) !important;
         }
-        .package-cta.secondary {
-            background: #f8fafc !important;
-            color: #0f172a !important;
-            border: 1px solid #cbd5e1 !important;
+        .package-cta-btn.free-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25) !important;
         }
-        .package-cta.secondary:hover {
-            background: #ffffff !important;
-            border-color: #2563eb !important;
-            color: #2563eb !important;
+        .package-cta-btn.free-btn:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
             transform: translateY(-2px) !important;
+            box-shadow: 0 8px 22px rgba(16, 185, 129, 0.4) !important;
         }
 
         /* FAQS */
@@ -2064,6 +2091,96 @@
     </section>
 
     <!-- =========================================================
+         AMAZON PPC MANAGEMENT PACKAGES
+    ========================================================= -->
+    <section class="curated-packages-section" id="packages">
+        <div class="curated-packages-container">
+            <h2 class="packages-section-title">Amazon PPC Management Packages</h2>
+            <p class="packages-section-subtitle">
+                Choose a focused Amazon PPC management plan or a complete account growth package based on your brand's goals, advertising spend, and growth stage.
+            </p>
+
+            <div class="packages-grid">
+                <!-- 🟢 AMAZON PPC MANAGEMENT -->
+                <div class="package-card">
+                    <div>
+                        <div class="package-icon">🟢</div>
+                        <div class="package-name">Amazon PPC Management</div>
+                        <div class="package-tagline">Full Amazon PPC strategy &amp; profit scaling.</div>
+
+                        <div class="package-price-box">
+                            <div class="package-price"><span class="old-price">₹19,999</span> ₹17,999</div>
+                            <div class="package-price-subtext">Monthly strategy &amp; active optimization</div>
+                        </div>
+
+                        <ul class="package-list">
+                            <li>PPC Strategy &amp; Campaign Structuring</li>
+                            <li>Advanced Keyword &amp; ASIN Targeting</li>
+                            <li>Bid &amp; Budget Optimization</li>
+                            <li>ACoS / ROAS &amp; Profitability Optimization</li>
+                            <li>Search Term Analysis &amp; Wasted Spend Reduction</li>
+                        </ul>
+                    </div>
+                    <button class="package-cta-btn" onclick="openSingleServiceModal('Amazon PPC Management Package', '₹17,999', 17999)">
+                        Book PPC Package →
+                    </button>
+                </div>
+
+                <!-- 🔵 AMAZON ACCOUNT MANAGEMENT (MOST POPULAR) -->
+                <div class="package-card featured">
+                    <span class="package-badge">MOST POPULAR</span>
+                    <div>
+                        <div class="package-icon">🔵</div>
+                        <div class="package-name">Amazon Account Management</div>
+                        <div class="package-tagline">Most popular Amazon account management service for maximum brand growth.</div>
+
+                        <div class="package-price-box">
+                            <div class="package-price"><span class="old-price">₹29,999</span> ₹24,999</div>
+                            <div class="package-price-subtext">Full account growth &amp; revenue engine</div>
+                        </div>
+
+                        <ul class="package-list">
+                            <li>Complete listing optimization</li>
+                            <li>In-depth keyword &amp; competitor research</li>
+                            <li>Backend SEO &amp; search terms</li>
+                            <li>Profitable Campaign Creation</li>
+                            <li>Amazon Growth Roadmap</li>
+                        </ul>
+                    </div>
+                    <button class="package-cta-btn" onclick="openSingleServiceModal('Amazon Account Management Package', '₹24,999', 24999)">
+                        Book Account Management →
+                    </button>
+                </div>
+
+                <!-- 🎯 FREE MINI AUDIT -->
+                <div class="package-card">
+                    <div>
+                        <div class="package-icon">🎯</div>
+                        <div class="package-name">Free Audit for Qualifying Amazon Brands</div>
+                        <div class="package-tagline">Find out where your Amazon ad spend is leaking — FREE.</div>
+
+                        <div class="package-price-box">
+                            <div class="package-price" style="color: #10b981;">₹0</div>
+                            <div class="package-price-subtext">Free audit for qualifying Amazon brands</div>
+                        </div>
+
+                        <ul class="package-list">
+                            <li>Campaign structure check</li>
+                            <li>Wasted-spend &amp; negative check</li>
+                            <li>High-intent keyword opportunities</li>
+                            <li>ACoS / ROA efficiency overview</li>
+                            <li>3–5 actionable recommendations</li>
+                        </ul>
+                    </div>
+                    <button class="package-cta-btn free-btn" onclick="openSingleServiceModal('Free Audit for Qualifying Amazon Brands', 'FREE (₹0)', 0)">
+                        Get My Free Audit →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
          SECTION: LOCAL CONTEXT - MORADABAD-BASED SELLERS
     ========================================================= -->
     <section class="sp-section sp-local-context" id="moradabad-sellers">
@@ -2376,116 +2493,7 @@
     </section>
 
     <!-- =========================================================
-         SECTION 4: CURATED PACKAGES
-    ========================================================= -->
-    <section class="curated-packages-section" id="packages">
-        <div class="sp-container">
-            <div class="sp-section-header">
-                <span class="sp-section-tag">TRANSPARENT INVESTMENT</span>
-                <h2 class="sp-section-title">Moradabad Amazon PPC &amp; Growth Packages</h2>
-                <p class="sp-section-subtitle">
-                    Choose a focused Amazon PPC management plan or a complete account growth package based on your brand's goals, advertising spend, and export stage.
-                </p>
-            </div>
-
-            <div class="packages-grid">
-                <!-- 🟢 AMAZON PPC MANAGEMENT -->
-                <div class="package-card">
-                    <div>
-                        <div class="package-icon">🟢</div>
-                        <div class="package-name">Amazon PPC Management</div>
-                        <div class="package-tagline">Complete advertising optimization, bid management &amp; ACOS reduction</div>
-
-                        <div class="package-price-box">
-                            <div class="package-price">
-                                ₹17,999 <span class="old-price">₹22,999</span>
-                            </div>
-                            <div class="package-price-subtext">per month · billed monthly</div>
-                        </div>
-
-                        <ul class="package-list">
-                            <li>Full PPC Account Audit &amp; Strategy</li>
-                            <li>Sponsored Products, Brands &amp; Display Management</li>
-                            <li>Weekly Keyword Harvesting &amp; Negative Mining</li>
-                            <li>Placement &amp; Dynamic Bid Optimization</li>
-                            <li>TACoS, ACOS &amp; ROAS Tracking</li>
-                            <li>Dedicated Account Manager (WhatsApp &amp; Call)</li>
-                            <li>Transparent Bi-Weekly Reporting</li>
-                        </ul>
-                    </div>
-
-                    <button class="package-cta primary" onclick="openAuditModal('PPC Package')">
-                        Get Free PPC Audit &amp; Start
-                    </button>
-                </div>
-
-                <!-- 🔵 AMAZON ACCOUNT MANAGEMENT (FEATURED) -->
-                <div class="package-card featured">
-                    <span class="package-badge">MOST POPULAR</span>
-                    <div>
-                        <div class="package-icon">🔵</div>
-                        <div class="package-name">Amazon Account Management</div>
-                        <div class="package-tagline">Full-service Seller Central operations, listing SEO &amp; PPC scaling</div>
-
-                        <div class="package-price-box">
-                            <div class="package-price">
-                                ₹24,999 <span class="old-price">₹29,999</span>
-                            </div>
-                            <div class="package-price-subtext">per month · billed monthly</div>
-                        </div>
-
-                        <ul class="package-list">
-                            <li><strong>Everything in Amazon PPC Management</strong></li>
-                            <li>End-to-End Seller Central Operations</li>
-                            <li>Listing Copywriting &amp; Backend Search Term SEO</li>
-                            <li>A+ Content &amp; Brand Story Implementation</li>
-                            <li>Suppressed Listing &amp; Catalog Bug Resolution</li>
-                            <li>FBA Inbound Workflow &amp; Inventory Alerts</li>
-                            <li>Account Health Monitoring &amp; Compliance</li>
-                            <li>Monthly Strategic Business Review Call</li>
-                        </ul>
-                    </div>
-
-                    <button class="package-cta primary" onclick="openAuditModal('Account Management Package')">
-                        Book Full Account Audit &amp; Start
-                    </button>
-                </div>
-
-                <!-- 🟣 GLOBAL SELLING EXPORT SCALE -->
-                <div class="package-card">
-                    <div>
-                        <div class="package-icon">🟣</div>
-                        <div class="package-name">Global Selling Export Scale</div>
-                        <div class="package-tagline">Cross-border Amazon US, UK &amp; UAE export launch &amp; high-volume ad scale</div>
-
-                        <div class="package-price-box">
-                            <div class="package-price">
-                                ₹39,999 <span class="old-price">₹49,999</span>
-                            </div>
-                            <div class="package-price-subtext">per month · custom tier</div>
-                        </div>
-
-                        <ul class="package-list">
-                            <li>Amazon US, UK &amp; UAE Multi-Marketplace PPC</li>
-                            <li>Cross-Border Currency &amp; VAT Consultation</li>
-                            <li>International Brand Registry Defense</li>
-                            <li>High-Volume SKU Catalog Segmentation</li>
-                            <li>Seasonal Western Holiday Surges (Q4 Strategy)</li>
-                            <li>Fragile Packaging &amp; Return Rate Mitigation</li>
-                            <li>Direct On-Site Moradabad Factory Visits</li>
-                        </ul>
-                    </div>
-
-                    <button class="package-cta secondary" onclick="openWhatsAppChat()">
-                        Consult With Export Specialist
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================
-         SECTION 5: MORADABAD CASE STUDY
+         MORADABAD CASE STUDY
     ========================================================= -->
     <section class="sp-section sp-section-dark" id="case-study">
         <div class="sp-container">
@@ -2780,12 +2788,25 @@
             }
         }
 
+        let selectedAuditPackage = '';
+
         function openAuditModal(source) {
+            selectedAuditPackage = source || '';
             const modal = document.getElementById('auditModal');
             if (modal) {
+                const titleEl = document.getElementById('auditModalTitle');
+                if (titleEl && source && source !== 'Hero') {
+                    titleEl.textContent = `Get Started: ${source}`;
+                } else if (titleEl) {
+                    titleEl.textContent = 'Request Moradabad Amazon PPC Audit';
+                }
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
+        }
+
+        function openSingleServiceModal(serviceTitle, priceText, priceNum) {
+            openAuditModal(serviceTitle + (priceText ? ' (' + priceText + ')' : ''));
         }
 
         function closeAuditModal() {
@@ -2807,8 +2828,9 @@
             const phone = document.getElementById('auditPhone').value;
             const store = document.getElementById('auditStore').value;
             const spend = document.getElementById('auditSpend').value;
+            const pkgInfo = selectedAuditPackage ? `\nPlan: ${selectedAuditPackage}` : '';
             
-            const msg = encodeURIComponent(`*New Moradabad Audit Request*\nName: ${name}\nPhone: ${phone}\nStore: ${store}\nMonthly Spend: ${spend}`);
+            const msg = encodeURIComponent(`*New Moradabad Audit Request*${pkgInfo}\nName: ${name}\nPhone: ${phone}\nStore: ${store}\nMonthly Spend: ${spend}`);
             window.open(`https://wa.me/918433232647?text=${msg}`, '_blank');
             closeAuditModal();
         }
