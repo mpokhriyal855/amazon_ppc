@@ -781,20 +781,49 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* LOCAL CONTEXT SECTION (DARK MATCHING FRAMEWORK IMAGE #091124) */
+        .sp-local-context {
+            padding: 85px 24px;
+            position: relative;
+            background-color: #091124;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(37, 99, 235, 0.12) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            color: #f1f5f9;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sp-local-context .sp-section-tag {
+            color: #38bdf8;
+        }
+        .sp-local-context .sp-section-title {
+            color: #ffffff;
+        }
+        .sp-local-context .sp-text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .sp-local-context .sp-section-subtitle {
+            color: #94a3b8;
+        }
+
         .sp-local-intro-card {
-            background: #ffffff;
-            border: 1px solid var(--card-border);
-            border-left: 4px solid var(--brand-blue);
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-left: 4px solid #38bdf8;
             border-radius: 14px;
             padding: 24px 30px;
-            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
             margin-top: 36px;
             margin-bottom: 32px;
         }
         .sp-local-intro-card p {
             font-size: 1.02rem;
             line-height: 1.75;
-            color: #334155;
+            color: #cbd5e1;
             margin: 0;
         }
 
@@ -806,11 +835,11 @@
             margin-bottom: 44px;
         }
         .sp-archetype-card-v2 {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 14px;
             padding: 22px 20px;
-            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -830,9 +859,10 @@
             transition: opacity 0.25s ease;
         }
         .sp-archetype-card-v2:hover {
-            border-color: #93c5fd;
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(255, 255, 255, 0.06);
             transform: translateY(-4px);
-            box-shadow: 0 14px 30px -6px rgba(37, 99, 235, 0.12);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
         }
         .sp-archetype-card-v2:hover::before {
             opacity: 1;
@@ -846,8 +876,8 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(37, 99, 235, 0.08);
-            color: var(--brand-blue);
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -861,9 +891,9 @@
             font-family: 'DM Mono', monospace;
             font-size: 9px;
             font-weight: 700;
-            color: #0284c7;
-            background: rgba(2, 132, 199, 0.08);
-            border: 1px solid rgba(2, 132, 199, 0.18);
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             padding: 3px 8px;
             border-radius: 6px;
             letter-spacing: 0.5px;
@@ -872,7 +902,7 @@
         .sp-archetype-card-v2 h4 {
             font-size: 1.05rem;
             font-weight: 800;
-            color: var(--brand-navy);
+            color: #ffffff;
             margin: 0;
             letter-spacing: -0.2px;
             line-height: 1.35;
@@ -880,7 +910,7 @@
         .sp-archetype-card-v2 p {
             font-size: 0.88rem;
             line-height: 1.55;
-            color: #64748b;
+            color: #94a3b8;
             margin: 0;
         }
 
@@ -888,11 +918,11 @@
            DECISION FRAMEWORK VISUAL SHOWCASE (MCKINSEY / SAAS CONSOLE)
         ========================================================= */
         .sp-framework-showcase {
-            background: #09101f;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 18px;
             padding: 24px 28px;
-            box-shadow: 0 24px 60px -12px rgba(10, 17, 40, 0.45);
+            box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6);
             margin-bottom: 48px;
             overflow: hidden;
             box-sizing: border-box;
@@ -960,8 +990,8 @@
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            background: #080e21;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+            background: #091124;
         }
         .sp-framework-img {
             width: 100%;
@@ -1003,11 +1033,11 @@
             font-family: 'DM Mono', monospace;
             font-size: 11px;
             font-weight: 700;
-            color: var(--brand-blue);
+            color: #38bdf8;
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            background: rgba(37, 99, 235, 0.07);
-            border: 1px solid rgba(37, 99, 235, 0.16);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             padding: 3px 10px;
             border-radius: 6px;
             display: inline-block;
@@ -1016,13 +1046,13 @@
         .sp-drivers-header h3 {
             font-size: 1.55rem;
             font-weight: 800;
-            color: var(--brand-navy);
+            color: #ffffff;
             letter-spacing: -0.4px;
             margin: 0 0 8px;
         }
         .sp-drivers-header p {
             font-size: 0.95rem;
-            color: #64748b;
+            color: #94a3b8;
             margin: 0;
             line-height: 1.6;
         }
@@ -1032,40 +1062,41 @@
             gap: 20px;
         }
         .sp-driver-card-v2 {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 14px;
             padding: 22px 22px;
-            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
         .sp-driver-card-v2:hover {
-            border-color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(255, 255, 255, 0.06);
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px -5px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
         }
         .sp-driver-tag-v2 {
             font-family: 'DM Mono', monospace;
             font-size: 10px;
             font-weight: 700;
-            color: var(--brand-blue);
+            color: #38bdf8;
             letter-spacing: 0.6px;
             margin-bottom: 2px;
         }
         .sp-driver-card-v2 h4 {
             font-size: 1.05rem;
             font-weight: 800;
-            color: var(--brand-navy);
+            color: #ffffff;
             margin: 0;
             letter-spacing: -0.2px;
         }
         .sp-driver-card-v2 p {
             font-size: 0.88rem;
             line-height: 1.55;
-            color: #64748b;
+            color: #94a3b8;
             margin: 0;
         }
 
@@ -1073,12 +1104,12 @@
            THE BID LAW ADVISORY BANNER
         ========================================================= */
         .sp-bid-law-banner {
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-            border: 1.5px solid #fde68a;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.03) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.35);
             border-left: 5px solid #f59e0b;
             border-radius: 14px;
             padding: 22px 26px;
-            box-shadow: 0 6px 18px rgba(245, 158, 11, 0.09);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
             display: flex;
             align-items: flex-start;
             gap: 18px;
@@ -1087,8 +1118,8 @@
             width: 42px;
             height: 42px;
             border-radius: 10px;
-            background: rgba(245, 158, 11, 0.15);
-            color: #b45309;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1108,16 +1139,170 @@
             font-family: 'DM Mono', monospace;
             font-size: 11px;
             font-weight: 800;
-            color: #b45309;
+            color: #fbbf24;
             letter-spacing: 0.8px;
             text-transform: uppercase;
         }
         .sp-bid-law-content p {
             font-size: 0.95rem;
             line-height: 1.62;
-            color: #78350f;
+            color: #fef3c7;
             font-style: italic;
             margin: 0;
+        }
+
+        /* =========================================================
+           OPTIMIZATION FRAMEWORK SECTION (WHITE WITH CHECKS)
+        ========================================================= */
+        .sp-optimization-framework {
+            padding: 85px 24px;
+            position: relative;
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.05) 0%, transparent 60%),
+                linear-gradient(rgba(216, 223, 233, 0.45) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(216, 223, 233, 0.45) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+        }
+        .sp-framework-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .sp-framework-step-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 26px 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sp-framework-step-card:hover {
+            transform: translateY(-5px);
+            border-color: #2563eb;
+            box-shadow: 0 16px 32px rgba(37, 99, 235, 0.12);
+        }
+        @media (min-width: 1100px) {
+            .sp-framework-step-card:not(:last-child)::after {
+                content: '›';
+                position: absolute;
+                right: -13px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 24px;
+                height: 24px;
+                background: #ffffff;
+                border: 1px solid #cbd5e1;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 15px;
+                font-weight: 800;
+                color: #2563eb;
+                z-index: 3;
+                box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+            }
+        }
+        .sp-step-num {
+            font-family: 'DM Mono', monospace;
+            font-size: 13px;
+            font-weight: 800;
+            color: #2563eb;
+            background: rgba(37, 99, 235, 0.08);
+            width: fit-content;
+            padding: 3px 9px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        .sp-step-title {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 0 0 10px;
+            letter-spacing: -0.3px;
+        }
+        .sp-step-desc {
+            font-size: 0.88rem;
+            line-height: 1.58;
+            color: #64748b;
+            margin: 0;
+        }
+        .sp-framework-cta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .sp-framework-btn-primary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.32);
+            text-decoration: none;
+        }
+        .sp-framework-btn-primary:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.42);
+        }
+        .sp-framework-btn-secondary {
+            background: #0f172a;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+            text-decoration: none;
+        }
+        .sp-framework-btn-secondary:hover {
+            background: #1e293b;
+            border-color: #475569;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+        }
+        @media (max-width: 1100px) {
+            .sp-framework-steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+        @media (max-width: 640px) {
+            .sp-framework-steps-grid {
+                grid-template-columns: 1fr;
+            }
+            .sp-framework-btn-primary, .sp-framework-btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         /* RESPONSIVE BREAKPOINTS */
@@ -1856,10 +2041,11 @@
             <nav class="sp-sticky-nav">
                 <a href="#overview" class="sp-nav-link active">Overview</a>
                 <a href="#what-included" class="sp-nav-link">PPC Scope</a>
+                <a href="#packages" class="sp-nav-link">Packages</a>
                 <a href="#moradabad-sellers" class="sp-nav-link">Moradabad Sellers</a>
+                <a href="#optimization-framework" class="sp-nav-link">PPC Framework</a>
                 <a href="#export-advantage" class="sp-nav-link">Export Advantage</a>
                 <a href="#the-problem" class="sp-nav-link">Ad Spend Audit</a>
-                <a href="#packages" class="sp-nav-link">Packages</a>
                 <a href="#case-study" class="sp-nav-link">Case Study</a>
                 <a href="#faqs" class="sp-nav-link">FAQs</a>
             </nav>
@@ -2347,6 +2533,67 @@
                         "Raising bids is the fastest lever available in Amazon advertising and usually the least useful one on its own. Higher bids buy more of the same traffic, including the traffic that was already losing money. Sustainable scale comes from search-term discipline, negative filtration, and SKU-level margin protection."
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         OPTIMIZATION FRAMEWORK SECTION (WHITE WITH CHECKS)
+    ========================================================= -->
+    <section class="sp-section sp-optimization-framework" id="optimization-framework">
+        <div class="sp-container">
+            <div class="sp-section-header">
+                <span class="sp-section-tag">HOW WE WORK</span>
+                <h2 class="sp-section-title">Our Amazon PPC Optimization Framework</h2>
+                <div class="sp-section-subtitle">
+                    Diagnose, segment, optimize, validate, scale — run as a loop rather than a one-time project.
+                </div>
+            </div>
+
+            <div class="sp-framework-steps-grid">
+                <!-- 01 Diagnose -->
+                <div class="sp-framework-step-card">
+                    <div class="sp-step-num">01</div>
+                    <h3 class="sp-step-title">Diagnose</h3>
+                    <p class="sp-step-desc">Audit the account and identify the constraints actually holding performance back.</p>
+                </div>
+
+                <!-- 02 Segment -->
+                <div class="sp-framework-step-card">
+                    <div class="sp-step-num">02</div>
+                    <h3 class="sp-step-title">Segment</h3>
+                    <p class="sp-step-desc">Separate discovery, proven targets, branded demand and scaling opportunities where it's useful to do so.</p>
+                </div>
+
+                <!-- 03 Optimize -->
+                <div class="sp-framework-step-card">
+                    <div class="sp-step-num">03</div>
+                    <h3 class="sp-step-title">Optimize</h3>
+                    <p class="sp-step-desc">Adjust bids, budgets, keywords, negatives and placements against current data.</p>
+                </div>
+
+                <!-- 04 Validate -->
+                <div class="sp-framework-step-card">
+                    <div class="sp-step-num">04</div>
+                    <h3 class="sp-step-title">Validate</h3>
+                    <p class="sp-step-desc">Measure whether the change improved efficiency. Some don't, and those get reversed.</p>
+                </div>
+
+                <!-- 05 Scale -->
+                <div class="sp-framework-step-card">
+                    <div class="sp-step-num">05</div>
+                    <h3 class="sp-step-title">Scale</h3>
+                    <p class="sp-step-desc">Increase investment only where the economics support additional spend.</p>
+                </div>
+            </div>
+
+            <div class="sp-framework-cta-row">
+                <button class="sp-framework-btn-primary" onclick="openAuditModal('PPC Optimization Framework')">
+                    Get Your Free Amazon PPC Audit
+                </button>
+                <a href="#what-included" class="sp-framework-btn-secondary">
+                    See our full Amazon PPC management service
+                </a>
             </div>
         </div>
     </section>
