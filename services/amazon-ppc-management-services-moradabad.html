@@ -1335,71 +1335,6 @@
             max-width: 780px;
         }
 
-        /* Bid decisions visual showcase */
-        .sp-bid-visual-showcase {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            border-radius: 20px;
-            padding: 24px 26px;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
-            margin-bottom: 48px;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-        .sp-bid-showcase-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 16px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .sp-bid-badge {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            color: #38bdf8;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-        }
-        .sp-bid-pulsing-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #10b981;
-            box-shadow: 0 0 10px #10b981;
-            animation: sp-pulse 2s infinite;
-        }
-        .sp-bid-status-pill {
-            font-family: 'DM Mono', monospace;
-            font-size: 10.5px;
-            color: #cbd5e1;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-        }
-        .sp-bid-visual-inner {
-            width: 100%;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
-            background: #091124;
-        }
-        .sp-bid-framework-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 14px;
-        }
-
         /* 2-Column Decision Grid */
         .sp-bid-decision-grid {
             display: grid;
@@ -1580,6 +1515,220 @@
             .sp-bid-takeaway-bar {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+        }
+
+        /* =========================================================
+           TRACK RECORD / PERFORMANCE HIGHLIGHTS (WHITE WITH CHECKS)
+        ========================================================= */
+        .sp-track-record-section {
+            padding: 90px 24px;
+            position: relative;
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06) 0%, transparent 65%),
+                linear-gradient(rgba(216, 223, 233, 0.45) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(216, 223, 233, 0.45) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+        }
+        .sp-track-record-section .sp-section-tag {
+            color: var(--brand-blue);
+        }
+        .sp-track-record-section .sp-section-title {
+            color: var(--brand-navy);
+            font-size: clamp(2rem, 3.8vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin: 0 0 14px;
+        }
+        .sp-track-record-section .sp-section-subtitle {
+            color: #64748b;
+            font-size: 1.08rem;
+            max-width: 760px;
+            margin: 0 auto 48px;
+            line-height: 1.65;
+        }
+
+        /* 4 Performance Highlights Grid */
+        .sp-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .sp-highlight-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 32px 24px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sp-highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .sp-highlight-card.neutral::before {
+            background: linear-gradient(90deg, #2563eb, #38bdf8);
+        }
+        .sp-highlight-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(37, 99, 235, 0.35);
+            box-shadow: 0 20px 45px rgba(37, 99, 235, 0.12);
+        }
+        .sp-highlight-card:hover::before {
+            opacity: 1;
+        }
+
+        .sp-highlight-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .sp-highlight-pill {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        .sp-highlight-pill.green {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+        .sp-highlight-pill.blue {
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+        .sp-highlight-pill.purple {
+            background: rgba(124, 58, 237, 0.08);
+            color: #7c3aed;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        .sp-highlight-sparkline {
+            width: 44px;
+            height: 24px;
+            opacity: 0.85;
+        }
+
+        .sp-highlight-val {
+            font-size: clamp(2.4rem, 3.6vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -1.2px;
+            margin-bottom: 12px;
+        }
+        .sp-highlight-val.green {
+            color: #059669;
+        }
+        .sp-highlight-val.dark {
+            color: #0f172a;
+        }
+
+        .sp-highlight-label {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin: 0 0 6px;
+            letter-spacing: -0.2px;
+        }
+        .sp-highlight-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Disclaimer capsule */
+        .sp-highlights-disclaimer {
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto 36px;
+        }
+        .sp-disclaimer-inner {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            font-size: 12.5px;
+            color: #64748b;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .sp-disclaimer-inner svg {
+            flex-shrink: 0;
+            color: #94a3b8;
+        }
+
+        /* Bottom Benchmark CTA Bar */
+        .sp-highlights-cta-bar {
+            background: #0f172a;
+            border-radius: 18px;
+            padding: 26px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+            color: #ffffff;
+            flex-wrap: wrap;
+        }
+        .sp-highlights-cta-bar h4 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 6px;
+            letter-spacing: -0.3px;
+        }
+        .sp-highlights-cta-bar p {
+            font-size: 0.92rem;
+            color: #94a3b8;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1024px) {
+            .sp-highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+            }
+        }
+        @media (max-width: 640px) {
+            .sp-highlights-grid {
+                grid-template-columns: 1fr;
+            }
+            .sp-highlights-cta-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 22px 20px;
+            }
+            .sp-highlights-cta-bar .sp-btn-primary {
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -2323,6 +2472,7 @@
                 <a href="#moradabad-sellers" class="sp-nav-link">Moradabad Sellers</a>
                 <a href="#optimization-framework" class="sp-nav-link">PPC Framework</a>
                 <a href="#bid-decisions" class="sp-nav-link">Bid Decisions</a>
+                <a href="#track-record" class="sp-nav-link">Track Record</a>
                 <a href="#export-advantage" class="sp-nav-link">Export Advantage</a>
                 <a href="#the-problem" class="sp-nav-link">Ad Spend Audit</a>
                 <a href="#case-study" class="sp-nav-link">Case Study</a>
@@ -2890,26 +3040,6 @@
                 </div>
             </div>
 
-            <!-- VISUAL DECISION SHOWCASE CONSOLE -->
-            <div class="sp-bid-visual-showcase">
-                <div class="sp-bid-showcase-bar">
-                    <div class="sp-console-controls">
-                        <span class="sp-console-dot red"></span>
-                        <span class="sp-console-dot amber"></span>
-                        <span class="sp-console-dot green"></span>
-                    </div>
-                    <div class="sp-bid-badge">
-                        <span class="sp-bid-pulsing-dot"></span>
-                        <span>DYNAMIC BIDDING ARCHITECTURE · DECISION MATRIX</span>
-                    </div>
-                    <div class="sp-bid-status-pill">REAL-TIME SIGNALS</div>
-                </div>
-
-                <div class="sp-bid-visual-inner">
-                    <img src="../images/amazon-ppc-bid-decisions-framework.jpg" alt="Amazon PPC Bid Decisions Architecture - When Bids Scale Up vs When Bids Should Be Reduced and Controlled" class="sp-bid-framework-img" width="1920" height="1080" loading="lazy">
-                </div>
-            </div>
-
             <!-- 2-COLUMN STRATEGIC DECISION MATRIX -->
             <div class="sp-bid-decision-grid">
                 <!-- 🟢 INCREASE OR TEST A HIGHER BID -->
@@ -3017,6 +3147,131 @@
                 </div>
                 <button class="sp-btn-primary" onclick="openAuditModal('Bid Decisions Audit')" style="white-space: nowrap;">
                     Audit Your Account Bids Free →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         TRACK RECORD / SELECTED PERFORMANCE HIGHLIGHTS (WHITE WITH CHECKS)
+    ========================================================= -->
+    <section class="sp-section sp-track-record-section" id="track-record">
+        <div class="sp-container">
+            <div class="sp-section-header">
+                <span class="sp-section-tag">TRACK RECORD</span>
+                <h2 class="sp-section-title">Selected Performance Highlights</h2>
+                <div class="sp-section-subtitle">
+                    Individual results recorded across different accounts and categories. These are separate outcomes, not one combined case.
+                </div>
+            </div>
+
+            <!-- 4 PERFORMANCE HIGHLIGHT CARDS -->
+            <div class="sp-highlights-grid">
+                <!-- Highlight 1: +240% -->
+                <div class="sp-highlight-card">
+                    <div>
+                        <div class="sp-highlight-header">
+                            <span class="sp-highlight-pill green">SCALE ACCELERATION</span>
+                            <svg class="sp-highlight-sparkline" viewBox="0 0 44 24" fill="none">
+                                <path d="M2 20L12 15L22 18L32 8L42 3" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 20L12 15L22 18L32 8L42 3V24H2Z" fill="url(#greenGrad)" opacity="0.15"/>
+                                <defs>
+                                    <linearGradient id="greenGrad" x1="22" y1="3" x2="22" y2="24" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#10b981"/>
+                                        <stop offset="1" stop-color="#10b981" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="sp-highlight-val green">+240%</div>
+                        <h3 class="sp-highlight-label">Ad sales growth</h3>
+                        <p class="sp-highlight-desc">Top-line ad revenue expansion achieved through campaign restructuring and search term isolation.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 2: -18% -->
+                <div class="sp-highlight-card neutral">
+                    <div>
+                        <div class="sp-highlight-header">
+                            <span class="sp-highlight-pill blue">COST EFFICIENCY</span>
+                            <svg class="sp-highlight-sparkline" viewBox="0 0 44 24" fill="none">
+                                <path d="M2 4L12 9L22 7L32 17L42 21" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 4L12 9L22 7L32 17L42 21V24H2Z" fill="url(#blueGrad)" opacity="0.15"/>
+                                <defs>
+                                    <linearGradient id="blueGrad" x1="22" y1="4" x2="22" y2="24" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#2563eb"/>
+                                        <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="sp-highlight-val dark">-18%</div>
+                        <h3 class="sp-highlight-label">ACoS improvement</h3>
+                        <p class="sp-highlight-desc">Direct advertising cost reduction driven by aggressive negative matching and bid pruning.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 3: 5.2x -->
+                <div class="sp-highlight-card">
+                    <div>
+                        <div class="sp-highlight-header">
+                            <span class="sp-highlight-pill green">RETURN MULTIPLIER</span>
+                            <svg class="sp-highlight-sparkline" viewBox="0 0 44 24" fill="none">
+                                <path d="M2 22L12 16L22 17L32 9L42 2" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 22L12 16L22 17L32 9L42 2V24H2Z" fill="url(#greenGrad2)" opacity="0.15"/>
+                                <defs>
+                                    <linearGradient id="greenGrad2" x1="22" y1="2" x2="22" y2="24" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#10b981"/>
+                                        <stop offset="1" stop-color="#10b981" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="sp-highlight-val green">5.2x</div>
+                        <h3 class="sp-highlight-label">ROAS</h3>
+                        <p class="sp-highlight-desc">Peak return on ad spend unlocked on high-intent product targeting and brand defense placements.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 4: +185% -->
+                <div class="sp-highlight-card">
+                    <div>
+                        <div class="sp-highlight-header">
+                            <span class="sp-highlight-pill purple">PORTFOLIO YIELD</span>
+                            <svg class="sp-highlight-sparkline" viewBox="0 0 44 24" fill="none">
+                                <path d="M2 19L12 14L22 15L32 7L42 2" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 19L12 14L22 15L32 7L42 2V24H2Z" fill="url(#purpleGrad)" opacity="0.15"/>
+                                <defs>
+                                    <linearGradient id="purpleGrad" x1="22" y1="2" x2="22" y2="24" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#7c3aed"/>
+                                        <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="sp-highlight-val green">+185%</div>
+                        <h3 class="sp-highlight-label">Account efficiency</h3>
+                        <p class="sp-highlight-desc">Overall account velocity increase combining organic ranking spillover with paid conversion lifts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DISCLAIMER CAPSULE -->
+            <div class="sp-highlights-disclaimer">
+                <div class="sp-disclaimer-inner">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span>Performance varies by product, category, pricing, competition, reviews, inventory, budget and conversion rate. Past performance does not guarantee future results.</span>
+                </div>
+            </div>
+
+            <!-- BOTTOM BENCHMARK CTA BAR -->
+            <div class="sp-highlights-cta-bar">
+                <div>
+                    <h4>Ready to Benchmark Your Account's Real Potential?</h4>
+                    <p>We'll analyze your current ad spend, search term waste, and break-even targets free of charge.</p>
+                </div>
+                <button class="sp-btn-primary" onclick="openAuditModal('Performance Highlights Benchmark')" style="white-space: nowrap;">
+                    Request Free Account Benchmark →
                 </button>
             </div>
         </div>
