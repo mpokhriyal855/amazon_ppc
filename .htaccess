@@ -1,0 +1,6 @@
+# =========================================================
+# PPC Growth Expert - Server Configuration (.htaccess)
+# =========================================================
+
+# Custom 404 Error Page Handler
+ErrorDocument 404 /404.html
