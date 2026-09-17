@@ -1732,6 +1732,308 @@
             }
         }
 
+        /* =========================================================
+           WHY CHOOSE US / WORKING WITH US (DARK THEME ADVANCED)
+        ========================================================= */
+        .sp-why-choose-section {
+            padding: 95px 24px;
+            position: relative;
+            background: #080d1a;
+            background-image: 
+                radial-gradient(circle at 20% 15%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 85%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+            color: #ffffff;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+        .sp-why-choose-section .sp-section-tag {
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+        }
+        .sp-why-choose-section .sp-section-title {
+            color: #ffffff;
+            font-size: clamp(2rem, 3.8vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin: 0 0 14px;
+        }
+        .sp-why-choose-section .sp-section-subtitle {
+            color: #94a3b8;
+            font-size: 1.08rem;
+            max-width: 780px;
+            margin: 0 auto 52px;
+            line-height: 1.65;
+        }
+
+        .sp-why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+
+        .sp-why-choose-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 20px;
+            padding: 34px 28px;
+            position: relative;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        .sp-why-choose-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #2563eb, #8b5cf6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .sp-why-choose-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(17, 28, 52, 0.85);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 30px rgba(56, 189, 248, 0.12);
+        }
+        .sp-why-choose-card:hover::before {
+            opacity: 1;
+        }
+
+        .sp-why-card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px;
+        }
+        .sp-why-pill {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #94a3b8;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sp-why-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .sp-why-choose-card:hover .sp-why-icon-wrap {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #38bdf8;
+            transform: scale(1.05);
+        }
+        .sp-why-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 12px;
+            letter-spacing: -0.4px;
+            line-height: 1.35;
+        }
+        .sp-why-desc {
+            font-size: 0.94rem;
+            color: #94a3b8;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* =========================================================
+           WHO THIS SERVICE IS FOR / FIT (WHITE THEME ADVANCED)
+        ========================================================= */
+        .sp-fit-section {
+            padding: 95px 24px;
+            position: relative;
+            background: #ffffff;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.04) 0%, transparent 60%),
+                linear-gradient(rgba(226, 232, 240, 0.45) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            color: #0f172a;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .sp-fit-section .sp-section-tag {
+            color: var(--brand-blue);
+        }
+        .sp-fit-section .sp-section-title {
+            color: var(--brand-navy);
+            font-size: clamp(2rem, 3.8vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin: 0 0 14px;
+        }
+        .sp-fit-section .sp-section-subtitle {
+            color: #64748b;
+            font-size: 1.08rem;
+            max-width: 780px;
+            margin: 0 auto 52px;
+            line-height: 1.65;
+        }
+
+        .sp-fit-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-bottom: 38px;
+        }
+
+        .sp-fit-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 28px 24px;
+            position: relative;
+            box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+        .sp-fit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3.5px;
+            background: linear-gradient(90deg, #2563eb, #38bdf8);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .sp-fit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(37, 99, 235, 0.35);
+            box-shadow: 0 16px 36px rgba(37, 99, 235, 0.1);
+        }
+        .sp-fit-card:hover::before {
+            opacity: 1;
+        }
+
+        .sp-fit-card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        .sp-fit-pill {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            padding: 4px 9px;
+            border-radius: 6px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+        .sp-fit-icon-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+
+        .sp-fit-card-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 0 0 10px;
+            letter-spacing: -0.3px;
+            line-height: 1.35;
+        }
+        .sp-fit-card-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .sp-fit-bottom-bar {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .sp-fit-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .sp-fit-bottom-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .sp-fit-bottom-text {
+            font-size: 0.95rem;
+            color: #334155;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .sp-fit-bottom-text strong {
+            color: #0f172a;
+        }
+
+        @media (max-width: 1024px) {
+            .sp-why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sp-fit-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .sp-why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+            .sp-fit-grid {
+                grid-template-columns: 1fr;
+            }
+            .sp-fit-bottom-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .sp-fit-bottom-bar .sp-btn-primary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
         /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 1024px) {
             .sp-archetypes-deck {
@@ -2473,6 +2775,8 @@
                 <a href="#optimization-framework" class="sp-nav-link">PPC Framework</a>
                 <a href="#bid-decisions" class="sp-nav-link">Bid Decisions</a>
                 <a href="#track-record" class="sp-nav-link">Track Record</a>
+                <a href="#why-choose-us" class="sp-nav-link">Why Choose Us</a>
+                <a href="#who-its-for" class="sp-nav-link">Who It's For</a>
                 <a href="#export-advantage" class="sp-nav-link">Export Advantage</a>
                 <a href="#the-problem" class="sp-nav-link">Ad Spend Audit</a>
                 <a href="#case-study" class="sp-nav-link">Case Study</a>
@@ -3272,6 +3576,217 @@
                 </div>
                 <button class="sp-btn-primary" onclick="openAuditModal('Performance Highlights Benchmark')" style="white-space: nowrap;">
                     Request Free Account Benchmark →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         WHY CHOOSE US / WORKING WITH US (DARK THEME ADVANCED)
+    ========================================================= -->
+    <section class="sp-section sp-why-choose-section" id="why-choose-us">
+        <div class="sp-container">
+            <div class="sp-section-header">
+                <span class="sp-section-tag">WORKING WITH US</span>
+                <h2 class="sp-section-title">Why Amazon sellers choose PPC Growth Expert</h2>
+                <div class="sp-section-subtitle">
+                    Direct senior execution, zero agency bloat, and decisions anchored strictly in unit-level profitability.
+                </div>
+            </div>
+
+            <div class="sp-why-choose-grid">
+                <!-- Card 1: 5+ years -->
+                <div class="sp-why-choose-card">
+                    <div>
+                        <div class="sp-why-card-head">
+                            <span class="sp-why-pill">01 · TENURE</span>
+                            <div class="sp-why-icon-wrap">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                        </div>
+                        <h3 class="sp-why-title">5+ years in Amazon advertising</h3>
+                        <p class="sp-why-desc">Time spent inside Seller Central and Amazon Ads across categories, which mainly means knowing what does and doesn't transfer between accounts.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: 100+ brands -->
+                <div class="sp-why-choose-card">
+                    <div>
+                        <div class="sp-why-card-head">
+                            <span class="sp-why-pill">02 · SCALE</span>
+                            <div class="sp-why-icon-wrap">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            </div>
+                        </div>
+                        <h3 class="sp-why-title">100+ brands managed</h3>
+                        <p class="sp-why-desc">Enough range to tell whether a problem is specific to your account or a familiar category pattern with a known fix.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: ₹100Cr+ GMV -->
+                <div class="sp-why-choose-card">
+                    <div>
+                        <div class="sp-why-card-head">
+                            <span class="sp-why-pill">03 · CAPITAL</span>
+                            <div class="sp-why-icon-wrap">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="sp-why-title">₹100Cr+ GMV experience</h3>
+                        <p class="sp-why-desc">Advertising attached to substantial revenue, where a bidding mistake is expensive and decisions have to hold up.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Dedicated account management -->
+                <div class="sp-why-choose-card">
+                    <div>
+                        <div class="sp-why-card-head">
+                            <span class="sp-why-pill">04 · DIRECT ACCESS</span>
+                            <div class="sp-why-icon-wrap">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7.5" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </div>
+                        </div>
+                        <h3 class="sp-why-title">Dedicated account management</h3>
+                        <p class="sp-why-desc">You deal directly with the person working on your campaigns — no handoffs, no intermediary relaying messages to an unnamed team.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Data-driven decisions -->
+                <div class="sp-why-choose-card">
+                    <div>
+                        <div class="sp-why-card-head">
+                            <span class="sp-why-pill">05 · METHODOLOGY</span>
+                            <div class="sp-why-icon-wrap">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="sp-why-title">Data-driven decisions</h3>
+                        <p class="sp-why-desc">Changes are made against data from your own account, and reversed when the data doesn't support them.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Transparent reporting -->
+                <div class="sp-why-choose-card">
+                    <div>
+                        <div class="sp-why-card-head">
+                            <span class="sp-why-pill">06 · INTEGRITY</span>
+                            <div class="sp-why-icon-wrap">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            </div>
+                        </div>
+                        <h3 class="sp-why-title">Transparent reporting</h3>
+                        <p class="sp-why-desc">You see what changed, why, and what it did to spend, sales and efficiency. No guaranteed ACOS or revenue figures — those aren't ours to promise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         WHO THIS SERVICE IS FOR / FIT (WHITE THEME ADVANCED)
+    ========================================================= -->
+    <section class="sp-section sp-fit-section" id="who-its-for">
+        <div class="sp-container">
+            <div class="sp-section-header">
+                <span class="sp-section-tag">FIT</span>
+                <h2 class="sp-section-title">Who this service is for</h2>
+                <div class="sp-section-subtitle">
+                    Tailored PPC architectures engineered for sellers where generic automated bidding and standard agency handoffs fail.
+                </div>
+            </div>
+
+            <div class="sp-fit-grid">
+                <!-- 1. New Amazon sellers -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">STAGE · 01</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">New Amazon sellers</h3>
+                    <p class="sp-fit-card-desc">Campaigns built from scratch with a structure that won't need rebuilding in six months.</p>
+                </div>
+
+                <!-- 2. Established brands -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">STAGE · 02</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">Established brands</h3>
+                    <p class="sp-fit-card-desc">Efficiency and incremental growth rather than starting over.</p>
+                </div>
+
+                <!-- 3. Private-label sellers -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">STAGE · 03</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">Private-label sellers</h3>
+                    <p class="sp-fit-card-desc">Keyword coverage and negative discipline in competitive categories.</p>
+                </div>
+
+                <!-- 4. Manufacturers -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">STAGE · 04</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">Manufacturers</h3>
+                    <p class="sp-fit-card-desc">Moving from B2B supply into direct selling under your own brand.</p>
+                </div>
+
+                <!-- 5. Multi-ASIN sellers -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">AUDIT · 05</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">Multi-ASIN sellers</h3>
+                    <p class="sp-fit-card-desc">Budget distributed across products by performance, not evenly.</p>
+                </div>
+
+                <!-- 6. Product launches -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">AUDIT · 06</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">Product launches</h3>
+                    <p class="sp-fit-card-desc">Early campaigns built to gather data and initial sales, not to hit a target ACOS immediately.</p>
+                </div>
+
+                <!-- 7. High-ACOS accounts -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">AUDIT · 07</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">High-ACOS accounts</h3>
+                    <p class="sp-fit-card-desc">Finding the specific targets and placements driving the cost up.</p>
+                </div>
+
+                <!-- 8. Wasted-spend accounts -->
+                <div class="sp-fit-card">
+                    <div class="sp-fit-card-head">
+                        <span class="sp-fit-pill">AUDIT · 08</span>
+                        <span class="sp-fit-icon-dot"></span>
+                    </div>
+                    <h3 class="sp-fit-card-title">Wasted-spend accounts</h3>
+                    <p class="sp-fit-card-desc">Clicks arriving steadily, orders not following. Usually a search-term problem.</p>
+                </div>
+            </div>
+
+            <!-- FIT ADVISORY / REASSURANCE BAR -->
+            <div class="sp-fit-bottom-bar">
+                <div class="sp-fit-bottom-left">
+                    <span class="sp-fit-bottom-icon">🎯</span>
+                    <p class="sp-fit-bottom-text">
+                        <strong>Direct Alignment Guarantee:</strong> If after auditing your ASINs, margins, or category saturation we determine PPC is not your highest-leverage growth lever right now, we will tell you directly before onboarding.
+                    </p>
+                </div>
+                <button class="sp-btn-primary" onclick="openAuditModal('Service Fit Diagnostic')" style="white-space: nowrap;">
+                    Check Account Eligibility Free →
                 </button>
             </div>
         </div>
