@@ -218,8 +218,17 @@
             --dark-muted: #94a3b8;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         html, body {
             overflow-x: clip !important;
+        }
+
+        header.sp-hero,
+        section[id] {
+            scroll-margin-top: 140px;
         }
 
         body {
@@ -264,7 +273,6 @@
             margin: 0 auto;
             padding: 0 20px;
             pointer-events: none;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .sp-sticky-nav-bar {
             pointer-events: auto;
@@ -277,7 +285,7 @@
             border-radius: 9999px;
             box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.95) inset;
             padding: 5px 8px;
-            gap: 8px;
+            gap: 6px;
             position: relative;
         }
         .sp-subnav-badge {
@@ -305,6 +313,28 @@
             box-shadow: 0 0 6px #10b981;
             animation: spPulse 2s infinite;
         }
+        .sp-subnav-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            color: #475569;
+            font-size: 14px;
+            line-height: 1;
+            cursor: pointer;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+            transition: all 0.2s ease;
+        }
+        .sp-subnav-arrow:hover {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #0f172a;
+        }
         .sp-sticky-nav {
             display: flex;
             align-items: center;
@@ -321,14 +351,14 @@
             display: none;
         }
         .sp-nav-link {
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 600;
             color: #475569;
             text-decoration: none;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 9999px;
             white-space: nowrap;
-            transition: all 0.22s ease;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             background: transparent;
             border: 1px solid transparent;
             flex-shrink: 0;
@@ -344,7 +374,7 @@
             background: #0f172a !important;
             border-color: #0f172a !important;
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.22);
-            font-weight: 700;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
@@ -354,6 +384,9 @@
                 z-index: 999;
             }
             .sp-subnav-badge {
+                display: none;
+            }
+            .sp-subnav-arrow {
                 display: none;
             }
             .sp-nav-link {
@@ -2768,13 +2801,14 @@
     <!-- =========================================================
          FLOATING STICKY SUB-NAV
     ========================================================= -->
-    <div class="sp-sticky-nav-wrap">
+    <div class="sp-sticky-nav-wrap" id="stickySubNav">
         <div class="sp-sticky-nav-bar">
             <div class="sp-subnav-badge">
                 <span class="sp-subnav-dot"></span>
                 MORADABAD HUB
             </div>
-            <nav class="sp-sticky-nav">
+            <button type="button" class="sp-subnav-arrow" onclick="scrollSubNav(-1)" aria-label="Scroll left">&#8249;</button>
+            <nav class="sp-sticky-nav" id="subnavTrack">
                 <a href="#overview" class="sp-nav-link active">Overview</a>
                 <a href="#what-included" class="sp-nav-link">PPC Scope</a>
                 <a href="#packages" class="sp-nav-link">Packages</a>
@@ -2787,6 +2821,7 @@
                 <a href="#the-problem" class="sp-nav-link">Ad Spend Audit</a>
                 <a href="#faqs" class="sp-nav-link">FAQs</a>
             </nav>
+            <button type="button" class="sp-subnav-arrow" onclick="scrollSubNav(1)" aria-label="Scroll right">&#8250;</button>
         </div>
     </div>
 
@@ -4189,21 +4224,98 @@
             if (nav) nav.classList.toggle('active');
         }
 
-        // Subnav active scroll spy
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('header[id], section[id]');
+        // Scroll subnav left/right with arrows
+        function scrollSubNav(direction) {
+            const track = document.getElementById('subnavTrack');
+            if (track) {
+                track.scrollBy({ left: direction * 220, behavior: 'smooth' });
+            }
+        }
+
+        // Subnav Active Highlight ScrollSpy & Auto-Center
+        function updateSubNavHighlight() {
+            const sections = document.querySelectorAll('header.sp-hero, section[id]');
             const navLinks = document.querySelectorAll('.sp-nav-link');
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                if (window.pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
+            const navTrack = document.getElementById('subnavTrack');
+            let currentSectionId = '';
+
+            const scrollPos = window.scrollY + 170;
+            const nearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 80);
+
+            if (window.scrollY < 100) {
+                currentSectionId = 'overview';
+            } else if (nearBottom) {
+                currentSectionId = 'faqs';
+            } else {
+                sections.forEach(sec => {
+                    const rect = sec.getBoundingClientRect();
+                    const secTop = rect.top + window.scrollY;
+                    if (scrollPos >= secTop - 20) {
+                        currentSectionId = sec.getAttribute('id');
+                    }
+                });
+            }
+
+            if (currentSectionId) {
+                navLinks.forEach(link => {
+                    const isMatch = link.getAttribute('href') === '#' + currentSectionId;
+                    if (isMatch && !link.classList.contains('active')) {
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+
+                        // Smoothly center active item in horizontal scrollbar
+                        if (navTrack) {
+                            const linkLeft = link.offsetLeft;
+                            const linkWidth = link.offsetWidth;
+                            const trackWidth = navTrack.offsetWidth;
+                            navTrack.scrollTo({
+                                left: linkLeft - (trackWidth / 2) + (linkWidth / 2),
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', updateSubNavHighlight, { passive: true });
+        window.addEventListener('DOMContentLoaded', updateSubNavHighlight);
+        updateSubNavHighlight();
+
+        // Smooth scroll for sub-nav links with accurate sticky header offset
+        document.querySelectorAll('.sp-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 140; // main navbar + subnav bar + buffer
+                        const bodyTop = document.body.getBoundingClientRect().top;
+                        const elemTop = target.getBoundingClientRect().top;
+                        const elemPos = elemTop - bodyTop;
+                        const scrollTarget = elemPos - offset;
+
+                        window.scrollTo({
+                            top: Math.max(0, scrollTarget),
+                            behavior: 'smooth'
+                        });
+
+                        // Update active immediately
+                        document.querySelectorAll('.sp-nav-link').forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const navTrack = document.getElementById('subnavTrack');
+                        if (navTrack) {
+                            const linkLeft = this.offsetLeft;
+                            const linkWidth = this.offsetWidth;
+                            const trackWidth = navTrack.offsetWidth;
+                            navTrack.scrollTo({
+                                left: linkLeft - (trackWidth / 2) + (linkWidth / 2),
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
                 }
             });
         });
