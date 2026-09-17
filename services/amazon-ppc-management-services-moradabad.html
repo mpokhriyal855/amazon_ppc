@@ -767,55 +767,38 @@
         }
 
         /* =========================================================
-           LOCAL CONTEXT: ADVANCED EXECUTIVE BRIEFING & FRAMEWORK (DARK THEME)
+           LOCAL CONTEXT: ADVANCED EXECUTIVE BRIEFING & FRAMEWORK
         ========================================================= */
         .sp-local-context {
-            background: linear-gradient(180deg, #070e1f 0%, #0c1836 50%, #070e20 100%);
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #ffffff 100%);
             position: relative;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid #e2e8f0;
             padding: 85px 24px;
-            color: #f1f5f9;
         }
-        .sp-local-context .sp-section-tag {
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            padding: 4px 12px;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .sp-local-context .sp-section-title {
-            color: #ffffff;
-        }
-        .sp-local-context .sp-text-gradient {
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        .sp-text-gradient {
+            background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .sp-local-context .sp-section-subtitle {
-            color: #94a3b8;
-        }
 
         .sp-local-intro-card {
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 4px solid #38bdf8;
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-left: 4px solid var(--brand-blue);
             border-radius: 14px;
             padding: 24px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
             margin-top: 36px;
-            margin-bottom: 36px;
+            margin-bottom: 32px;
         }
         .sp-local-intro-card p {
             font-size: 1.02rem;
             line-height: 1.75;
-            color: #cbd5e1;
+            color: #334155;
             margin: 0;
         }
 
-        /* 4 SELLER ARCHETYPES DECK (DARK THEME) */
+        /* 4 SELLER ARCHETYPES DECK */
         .sp-archetypes-deck {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -823,11 +806,11 @@
             margin-bottom: 44px;
         }
         .sp-archetype-card-v2 {
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 14px;
             padding: 22px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -842,14 +825,14 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            background: linear-gradient(90deg, #2563eb, #38bdf8);
             opacity: 0;
             transition: opacity 0.25s ease;
         }
         .sp-archetype-card-v2:hover {
-            border-color: rgba(56, 189, 248, 0.4);
+            border-color: #93c5fd;
             transform: translateY(-4px);
-            box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.1);
+            box-shadow: 0 14px 30px -6px rgba(37, 99, 235, 0.12);
         }
         .sp-archetype-card-v2:hover::before {
             opacity: 1;
@@ -863,8 +846,8 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--brand-blue);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -878,9 +861,9 @@
             font-family: 'DM Mono', monospace;
             font-size: 9px;
             font-weight: 700;
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.12);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: #0284c7;
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.18);
             padding: 3px 8px;
             border-radius: 6px;
             letter-spacing: 0.5px;
@@ -889,7 +872,7 @@
         .sp-archetype-card-v2 h4 {
             font-size: 1.05rem;
             font-weight: 800;
-            color: #ffffff;
+            color: var(--brand-navy);
             margin: 0;
             letter-spacing: -0.2px;
             line-height: 1.35;
@@ -897,7 +880,7 @@
         .sp-archetype-card-v2 p {
             font-size: 0.88rem;
             line-height: 1.55;
-            color: #94a3b8;
+            color: #64748b;
             margin: 0;
         }
 
@@ -905,11 +888,11 @@
            DECISION FRAMEWORK VISUAL SHOWCASE (MCKINSEY / SAAS CONSOLE)
         ========================================================= */
         .sp-framework-showcase {
-            background: #060b18;
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: #09101f;
+            border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 18px;
             padding: 24px 28px;
-            box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.08);
+            box-shadow: 0 24px 60px -12px rgba(10, 17, 40, 0.45);
             margin-bottom: 48px;
             overflow: hidden;
             box-sizing: border-box;
@@ -977,7 +960,7 @@
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             background: #080e21;
         }
         .sp-framework-img {
@@ -1006,7 +989,7 @@
         }
 
         /* =========================================================
-           THE 6 ACCOUNT DRIVERS (3x2 INTELLIGENCE GRID - DARK THEME)
+           THE 6 ACCOUNT DRIVERS (3x2 INTELLIGENCE GRID)
         ========================================================= */
         .sp-drivers-section {
             margin-bottom: 40px;
@@ -1020,11 +1003,11 @@
             font-family: 'DM Mono', monospace;
             font-size: 11px;
             font-weight: 700;
-            color: #38bdf8;
+            color: var(--brand-blue);
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            background: rgba(37, 99, 235, 0.07);
+            border: 1px solid rgba(37, 99, 235, 0.16);
             padding: 3px 10px;
             border-radius: 6px;
             display: inline-block;
@@ -1033,13 +1016,13 @@
         .sp-drivers-header h3 {
             font-size: 1.55rem;
             font-weight: 800;
-            color: #ffffff;
+            color: var(--brand-navy);
             letter-spacing: -0.4px;
             margin: 0 0 8px;
         }
         .sp-drivers-header p {
             font-size: 0.95rem;
-            color: #94a3b8;
+            color: #64748b;
             margin: 0;
             line-height: 1.6;
         }
@@ -1049,53 +1032,53 @@
             gap: 20px;
         }
         .sp-driver-card-v2 {
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 14px;
             padding: 22px 22px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
         .sp-driver-card-v2:hover {
-            border-color: rgba(56, 189, 248, 0.4);
+            border-color: #38bdf8;
             transform: translateY(-3px);
-            box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.08);
+            box-shadow: 0 12px 28px -5px rgba(37, 99, 235, 0.1);
         }
         .sp-driver-tag-v2 {
             font-family: 'DM Mono', monospace;
             font-size: 10px;
             font-weight: 700;
-            color: #38bdf8;
+            color: var(--brand-blue);
             letter-spacing: 0.6px;
             margin-bottom: 2px;
         }
         .sp-driver-card-v2 h4 {
             font-size: 1.05rem;
             font-weight: 800;
-            color: #ffffff;
+            color: var(--brand-navy);
             margin: 0;
             letter-spacing: -0.2px;
         }
         .sp-driver-card-v2 p {
             font-size: 0.88rem;
             line-height: 1.55;
-            color: #94a3b8;
+            color: #64748b;
             margin: 0;
         }
 
         /* =========================================================
-           THE BID LAW ADVISORY BANNER (DARK THEME)
+           THE BID LAW ADVISORY BANNER
         ========================================================= */
         .sp-bid-law-banner {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.09) 0%, rgba(180, 83, 9, 0.05) 100%);
-            border: 1.5px solid rgba(245, 158, 11, 0.3);
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 1.5px solid #fde68a;
             border-left: 5px solid #f59e0b;
             border-radius: 14px;
             padding: 22px 26px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 18px rgba(245, 158, 11, 0.09);
             display: flex;
             align-items: flex-start;
             gap: 18px;
@@ -1105,7 +1088,7 @@
             height: 42px;
             border-radius: 10px;
             background: rgba(245, 158, 11, 0.15);
-            color: #f59e0b;
+            color: #b45309;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1125,14 +1108,14 @@
             font-family: 'DM Mono', monospace;
             font-size: 11px;
             font-weight: 800;
-            color: #fbbf24;
+            color: #b45309;
             letter-spacing: 0.8px;
             text-transform: uppercase;
         }
         .sp-bid-law-content p {
             font-size: 0.95rem;
             line-height: 1.62;
-            color: #fef3c7;
+            color: #78350f;
             font-style: italic;
             margin: 0;
         }
@@ -1845,8 +1828,8 @@
             </div>
             <nav class="sp-sticky-nav">
                 <a href="#overview" class="sp-nav-link active">Overview</a>
-                <a href="#moradabad-sellers" class="sp-nav-link">Moradabad Sellers</a>
                 <a href="#what-included" class="sp-nav-link">PPC Scope</a>
+                <a href="#moradabad-sellers" class="sp-nav-link">Moradabad Sellers</a>
                 <a href="#export-advantage" class="sp-nav-link">Export Advantage</a>
                 <a href="#the-problem" class="sp-nav-link">Ad Spend Audit</a>
                 <a href="#packages" class="sp-nav-link">Packages</a>
@@ -1912,6 +1895,174 @@
             </div>
         </div>
     </header>
+
+    <!-- =========================================================
+         SCOPE OF WORK (WHAT PPC MANAGEMENT INCLUDES)
+    ========================================================= -->
+    <section class="sp-section sp-section-dark" id="what-included">
+        <div class="sp-container">
+            <div class="sp-section-header">
+                <span class="sp-section-tag">SCOPE OF WORK</span>
+                <h2 class="sp-section-title">What Does Amazon PPC Management Include?</h2>
+                <div class="sp-section-subtitle">
+                    Here's exactly what professional Amazon PPC management covers. Think of these as the layers of work that happen every month to keep your campaigns efficient.
+                </div>
+            </div>
+
+            <div class="sp-grid-2col">
+                <!-- 1. Audit -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </div>
+                        <span class="sp-dark-badge">Initial Work</span>
+                    </div>
+                    <h3>PPC Account Audit &amp; Analysis</h3>
+                    <p>We review your existing campaigns, identify structural issues, spot wasted spend, analyze your current targeting, and benchmark performance against your product margins and business goals.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> You can't optimize what you don't understand. An audit reveals exactly where money is leaking.
+                    </div>
+                </div>
+
+                <!-- 2. Setup -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        </div>
+                        <span class="sp-dark-badge">Setup Phase</span>
+                    </div>
+                    <h3>Campaign Setup &amp; Restructuring</h3>
+                    <p>We design campaign architecture tailored to your products, budget, and objectives. This might mean splitting auto campaigns, creating separate exact-match structures, or organizing by product category—whatever makes sense for your business.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Good structure gives you control. Poor structure creates noise.
+                    </div>
+                </div>
+
+                <!-- 3. Keyword Research -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <span class="sp-dark-badge">Ongoing</span>
+                    </div>
+                    <h3>Keyword Research &amp; Targeting</h3>
+                    <p>We identify high-intent keywords your customers are searching for, evaluate search volume and competition, and build targeting that attracts qualified traffic without overpaying.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Targeting determines everything. Wrong keywords = wasted budget.
+                    </div>
+                </div>
+
+                <!-- 4. Search Term Analysis -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        </div>
+                        <span class="sp-dark-badge">Daily Work</span>
+                    </div>
+                    <h3>Search-Term Analysis &amp; Optimization</h3>
+                    <p>We review search terms regularly, identify high-performers to scale, zero-order terms to evaluate or negate, and build negative keyword lists that protect your budget from irrelevant searches.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Search terms are where you discover waste. One analysis can save thousands.
+                    </div>
+                </div>
+
+                <!-- 5. Bid Optimization -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <span class="sp-dark-badge">Ongoing</span>
+                    </div>
+                    <h3>Bid Optimization</h3>
+                    <p>We adjust keyword and product target bids based on performance, placement, conversion rate, and profitability. Some keywords deserve higher bids. Others should be paused. Adjustments are data-driven, not arbitrary.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Bids directly control your visibility and cost. Wrong bids kill your ROAS.
+                    </div>
+                </div>
+
+                <!-- 6. Budget Allocation -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <span class="sp-dark-badge">Strategic</span>
+                    </div>
+                    <h3>Budget Management &amp; Allocation</h3>
+                    <p>We don't just increase budgets everywhere. We analyze which campaigns are delivering profit, which are exploring new opportunities, and how to allocate budget to maximize total return—not just spending more.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Budget without strategy is just spending. Strategy turns budget into revenue.
+                    </div>
+                </div>
+
+                <!-- 7. Negative Management -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <span class="sp-dark-badge">Protection</span>
+                    </div>
+                    <h3>Negative Keyword Management</h3>
+                    <p>We build negative keyword lists at campaign and ad group level, exclude non-converting product targets, and use exact-match negatives to prevent budget waste on irrelevant searches.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Negatives protect your ACOS by filtering out traffic that won't convert.
+                    </div>
+                </div>
+
+                <!-- 8. Placement Optimization -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <span class="sp-dark-badge">Ongoing</span>
+                    </div>
+                    <h3>Placement Optimization</h3>
+                    <p>We monitor how your ads perform across Top of Search, Rest of Search, and Product Pages. Placement performance varies by keyword and objective, and we adjust placement bids accordingly.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Placement efficiency is money left on the table if ignored.
+                    </div>
+                </div>
+
+                <!-- 9. Product Targeting -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        </div>
+                        <span class="sp-dark-badge">Targeting</span>
+                    </div>
+                    <h3>Product Targeting Strategy</h3>
+                    <p>For Sponsored Products campaigns with product targeting, we identify high-performing competitor ASINs, evaluate category targets, and adjust bids or pause underperforming targets.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> Product targets can be goldmines—or budget black holes.
+                    </div>
+                </div>
+
+                <!-- 10. Reporting -->
+                <div class="sp-dark-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="sp-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        </div>
+                        <span class="sp-dark-badge">Visibility</span>
+                    </div>
+                    <h3>Performance Reporting</h3>
+                    <p>We provide clear, honest reporting on what's working, where money is going, what changed month-to-month, and what decisions we made and why. You understand your data.</p>
+                    <div class="sp-card-highlight">
+                        <strong>Why it matters:</strong> You need to know what's happening in your account—not guesses, actual numbers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- =========================================================
          SECTION: LOCAL CONTEXT - MORADABAD-BASED SELLERS
     ========================================================= -->
@@ -2078,173 +2229,6 @@
                     <p>
                         "Raising bids is the fastest lever available in Amazon advertising and usually the least useful one on its own. Higher bids buy more of the same traffic, including the traffic that was already losing money. Sustainable scale comes from search-term discipline, negative filtration, and SKU-level margin protection."
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================
-         SCOPE OF WORK (WHAT PPC MANAGEMENT INCLUDES)
-    ========================================================= -->
-    <section class="sp-section sp-section-dark" id="what-included">
-        <div class="sp-container">
-            <div class="sp-section-header">
-                <span class="sp-section-tag">SCOPE OF WORK</span>
-                <h2 class="sp-section-title">What Does Amazon PPC Management Include?</h2>
-                <div class="sp-section-subtitle">
-                    Here's exactly what professional Amazon PPC management covers. Think of these as the layers of work that happen every month to keep your campaigns efficient.
-                </div>
-            </div>
-
-            <div class="sp-grid-2col">
-                <!-- 1. Audit -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        </div>
-                        <span class="sp-dark-badge">Initial Work</span>
-                    </div>
-                    <h3>PPC Account Audit &amp; Analysis</h3>
-                    <p>We review your existing campaigns, identify structural issues, spot wasted spend, analyze your current targeting, and benchmark performance against your product margins and business goals.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> You can't optimize what you don't understand. An audit reveals exactly where money is leaking.
-                    </div>
-                </div>
-
-                <!-- 2. Setup -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                        </div>
-                        <span class="sp-dark-badge">Setup Phase</span>
-                    </div>
-                    <h3>Campaign Setup &amp; Restructuring</h3>
-                    <p>We design campaign architecture tailored to your products, budget, and objectives. This might mean splitting auto campaigns, creating separate exact-match structures, or organizing by product category—whatever makes sense for your business.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Good structure gives you control. Poor structure creates noise.
-                    </div>
-                </div>
-
-                <!-- 3. Keyword Research -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                        </div>
-                        <span class="sp-dark-badge">Ongoing</span>
-                    </div>
-                    <h3>Keyword Research &amp; Targeting</h3>
-                    <p>We identify high-intent keywords your customers are searching for, evaluate search volume and competition, and build targeting that attracts qualified traffic without overpaying.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Targeting determines everything. Wrong keywords = wasted budget.
-                    </div>
-                </div>
-
-                <!-- 4. Search Term Analysis -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                        </div>
-                        <span class="sp-dark-badge">Daily Work</span>
-                    </div>
-                    <h3>Search-Term Analysis &amp; Optimization</h3>
-                    <p>We review search terms regularly, identify high-performers to scale, zero-order terms to evaluate or negate, and build negative keyword lists that protect your budget from irrelevant searches.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Search terms are where you discover waste. One analysis can save thousands.
-                    </div>
-                </div>
-
-                <!-- 5. Bid Optimization -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        </div>
-                        <span class="sp-dark-badge">Ongoing</span>
-                    </div>
-                    <h3>Bid Optimization</h3>
-                    <p>We adjust keyword and product target bids based on performance, placement, conversion rate, and profitability. Some keywords deserve higher bids. Others should be paused. Adjustments are data-driven, not arbitrary.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Bids directly control your visibility and cost. Wrong bids kill your ROAS.
-                    </div>
-                </div>
-
-                <!-- 6. Budget Allocation -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                        </div>
-                        <span class="sp-dark-badge">Strategic</span>
-                    </div>
-                    <h3>Budget Management &amp; Allocation</h3>
-                    <p>We don't just increase budgets everywhere. We analyze which campaigns are delivering profit, which are exploring new opportunities, and how to allocate budget to maximize total return—not just spending more.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Budget without strategy is just spending. Strategy turns budget into revenue.
-                    </div>
-                </div>
-
-                <!-- 7. Negative Management -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <span class="sp-dark-badge">Protection</span>
-                    </div>
-                    <h3>Negative Keyword Management</h3>
-                    <p>We build negative keyword lists at campaign and ad group level, exclude non-converting product targets, and use exact-match negatives to prevent budget waste on irrelevant searches.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Negatives protect your ACOS by filtering out traffic that won't convert.
-                    </div>
-                </div>
-
-                <!-- 8. Placement Optimization -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                        </div>
-                        <span class="sp-dark-badge">Ongoing</span>
-                    </div>
-                    <h3>Placement Optimization</h3>
-                    <p>We monitor how your ads perform across Top of Search, Rest of Search, and Product Pages. Placement performance varies by keyword and objective, and we adjust placement bids accordingly.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Placement efficiency is money left on the table if ignored.
-                    </div>
-                </div>
-
-                <!-- 9. Product Targeting -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-                        </div>
-                        <span class="sp-dark-badge">Targeting</span>
-                    </div>
-                    <h3>Product Targeting Strategy</h3>
-                    <p>For Sponsored Products campaigns with product targeting, we identify high-performing competitor ASINs, evaluate category targets, and adjust bids or pause underperforming targets.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> Product targets can be goldmines—or budget black holes.
-                    </div>
-                </div>
-
-                <!-- 10. Reporting -->
-                <div class="sp-dark-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <div class="sp-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                        </div>
-                        <span class="sp-dark-badge">Visibility</span>
-                    </div>
-                    <h3>Performance Reporting</h3>
-                    <p>We provide clear, honest reporting on what's working, where money is going, what changed month-to-month, and what decisions we made and why. You understand your data.</p>
-                    <div class="sp-card-highlight">
-                        <strong>Why it matters:</strong> You need to know what's happening in your account—not guesses, actual numbers.
-                    </div>
                 </div>
             </div>
         </div>
