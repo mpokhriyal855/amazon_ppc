@@ -909,111 +909,156 @@
     margin-right: -14px;
 }
 
-/* Section 10 Contact Cards Grid */
+/* ===================================================
+   SECTION 10: ICON-FREE MODERN CONTACT CARDS
+   =================================================== */
 .privacy-contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin: 20px 0 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 22px 0 24px;
+}
+
+@media (max-width: 768px) {
+    .privacy-contact-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .privacy-contact-card {
-    background: #f8fafc;
+    background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    padding: 16px 18px;
+    padding: 18px 20px;
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction: column;
+    gap: 6px;
     text-decoration: none;
     color: inherit;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 a.privacy-contact-card:hover {
     background: #ffffff;
     border-color: #10b981;
-    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.12);
+    box-shadow: 0 8px 22px rgba(16, 185, 129, 0.12);
     transform: translateY(-2px);
 }
 
-.contact-card-icon {
-    font-size: 22px;
-    line-height: 1;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.contact-card-body {
+.contact-card-header {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
-    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .contact-card-label {
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 700;
     color: #64748b;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.contact-card-value {
-    font-size: 13.5px;
-    font-weight: 600;
-    color: #0f172a;
-    word-break: break-word;
-    line-height: 1.4;
+    letter-spacing: 0.06em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .contact-card-action {
     font-size: 12px;
     font-weight: 600;
     color: #10b981;
-    margin-top: 4px;
+    transition: transform 0.15s ease;
 }
 
+a.privacy-contact-card:hover .contact-card-action {
+    transform: translate(2px, -2px);
+}
+
+.contact-card-badge {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 9999px;
+}
+
+.contact-card-value {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+a.privacy-contact-card:hover .contact-card-value {
+    color: #059669;
+}
+
+.contact-card-note {
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+/* Callout in Section 10 */
 .privacy-rights-callout {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    background: #f0fdf4;
-    border: 1.5px solid #a7f3d0;
+    gap: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #10b981;
     border-radius: 12px;
-    padding: 16px 20px;
-    margin: 18px 0 16px;
+    padding: 20px 22px;
+    margin: 22px 0 18px;
     flex-wrap: wrap;
 }
 
-.privacy-rights-callout .callout-icon {
-    font-size: 26px;
-    flex-shrink: 0;
-}
-
-.privacy-rights-callout .callout-text {
+.callout-content {
     flex: 1;
-    min-width: 200px;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.privacy-rights-callout .callout-text strong {
-    font-size: 14.5px;
-    color: #065f46;
-    display: block;
+.callout-pill {
+    display: inline-block;
+    align-self: flex-start;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 9999px;
     margin-bottom: 2px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.privacy-rights-callout .callout-text p {
+.callout-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
     margin: 0;
-    font-size: 13px;
-    color: #047857;
-    line-height: 1.45;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.callout-text {
+    margin: 0;
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.5;
 }
 
 .btn-pill-primary.btn-sm {
-    padding: 8px 18px !important;
-    font-size: 13px !important;
+    padding: 9px 20px !important;
+    font-size: 13.5px !important;
 }
 
 /* RESPONSIVE DESIGN */

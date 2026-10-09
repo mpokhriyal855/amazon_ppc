@@ -44,8 +44,308 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css?v=v48">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/privacy-policy.css">
+    <link rel="stylesheet" href="css/privacy-policy.css?v=v3">
     <link rel="stylesheet" href="css/whatsapp.css">
+
+    <!-- CRITICAL INLINE STYLES FOR PRIVACY MODAL & SECTION 10 -->
+    <style id="privacy-interactive-styles">
+    /* Section 10 Contact Cards */
+    .privacy-contact-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        margin: 22px 0 24px !important;
+    }
+    @media (max-width: 768px) {
+        .privacy-contact-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+    .privacy-contact-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 18px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        text-decoration: none !important;
+        color: inherit !important;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+    }
+    a.privacy-contact-card:hover {
+        background: #ffffff !important;
+        border-color: #10b981 !important;
+        box-shadow: 0 8px 22px rgba(16, 185, 129, 0.12) !important;
+        transform: translateY(-2px) !important;
+    }
+    .contact-card-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+    }
+    .contact-card-label {
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    .contact-card-action {
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        color: #10b981 !important;
+        transition: transform 0.15s ease !important;
+    }
+    a.privacy-contact-card:hover .contact-card-action {
+        transform: translate(2px, -2px) !important;
+    }
+    .contact-card-badge {
+        font-size: 10.5px !important;
+        font-weight: 600 !important;
+        color: #475569 !important;
+        background: #f1f5f9 !important;
+        padding: 2px 8px !important;
+        border-radius: 9999px !important;
+    }
+    .contact-card-value {
+        font-size: 14.5px !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        word-break: break-all !important;
+        line-height: 1.4 !important;
+    }
+    a.privacy-contact-card:hover .contact-card-value {
+        color: #059669 !important;
+    }
+    .contact-card-note {
+        font-size: 12.5px !important;
+        color: #64748b !important;
+        line-height: 1.4 !important;
+        margin-top: 2px !important;
+    }
+    /* Section 10 Callout */
+    .privacy-rights-callout {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 20px !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-left: 4px solid #10b981 !important;
+        border-radius: 12px !important;
+        padding: 20px 22px !important;
+        margin: 22px 0 18px !important;
+        flex-wrap: wrap !important;
+    }
+    .callout-content {
+        flex: 1 !important;
+        min-width: 240px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+    }
+    .callout-pill {
+        display: inline-block !important;
+        align-self: flex-start !important;
+        background: #ecfdf5 !important;
+        color: #059669 !important;
+        border: 1px solid #a7f3d0 !important;
+        font-size: 10.5px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        padding: 2px 8px !important;
+        border-radius: 9999px !important;
+        margin-bottom: 2px !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    .callout-title {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        margin: 0 !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    .callout-text {
+        margin: 0 !important;
+        font-size: 13.5px !important;
+        color: #475569 !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Modal Interactive Styling */
+    .modal-badge-wrapper {
+        margin-bottom: 8px !important;
+    }
+    .privacy-badge {
+        display: inline-block !important;
+        background: #ecfdf5 !important;
+        color: #059669 !important;
+        border: 1px solid #a7f3d0 !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        padding: 3px 10px !important;
+        border-radius: 9999px !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    .privacy-modal-title {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 22px !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        margin: 0 0 8px !important;
+        line-height: 1.25 !important;
+    }
+    .privacy-modal-desc {
+        font-size: 13.5px !important;
+        color: #64748b !important;
+        line-height: 1.55 !important;
+        margin: 0 0 18px !important;
+    }
+    .modal-mode-switch {
+        display: flex !important;
+        background: #f1f5f9 !important;
+        border-radius: 10px !important;
+        padding: 4px !important;
+        gap: 4px !important;
+        margin-bottom: 18px !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+    .mode-tab {
+        flex: 1 !important;
+        border: none !important;
+        outline: none !important;
+        background: transparent !important;
+        padding: 9px 14px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: #64748b !important;
+        border-radius: 7px !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        text-align: center !important;
+    }
+    .mode-tab:hover {
+        color: #0f172a !important;
+    }
+    .mode-tab.is-active {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+        font-weight: 700 !important;
+    }
+    .privacy-modal-options {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .modal-option-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 14px 18px !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        background: #f8fafc !important;
+        text-decoration: none !important;
+        color: #0f172a !important;
+        transition: all 0.2s ease !important;
+        gap: 14px !important;
+    }
+    .modal-option-btn:hover {
+        background: #f0fdf4 !important;
+        border-color: #10b981 !important;
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.1) !important;
+        transform: translateY(-1px) !important;
+    }
+    .modal-opt-info {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3px !important;
+        text-align: left !important;
+        flex: 1 !important;
+    }
+    .modal-opt-title {
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        font-size: 14px !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        transition: color 0.15s ease !important;
+    }
+    .modal-option-btn:hover .modal-opt-title {
+        color: #059669 !important;
+    }
+    .modal-opt-desc {
+        font-size: 12.5px !important;
+        color: #64748b !important;
+        font-weight: 400 !important;
+        line-height: 1.45 !important;
+    }
+    .modal-opt-arrow {
+        color: #94a3b8 !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        transition: all 0.2s ease !important;
+        flex-shrink: 0 !important;
+    }
+    .modal-option-btn:hover .modal-opt-arrow {
+        color: #10b981 !important;
+        transform: translateX(3px) !important;
+    }
+    .btn-submit-request {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        background: #10b981 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 14px !important;
+        padding: 12px 20px !important;
+        border: none !important;
+        border-radius: 9999px !important;
+        cursor: pointer !important;
+        margin-top: 6px !important;
+        transition: all 0.2s ease !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+    }
+    .btn-submit-request:hover {
+        background: #059669 !important;
+        box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35) !important;
+        transform: translateY(-1px) !important;
+    }
+    .modal-privacy-footer {
+        margin-top: 20px !important;
+        padding-top: 14px !important;
+        border-top: 1px solid #e2e8f0 !important;
+        font-size: 13px !important;
+        color: #64748b !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    .modal-switch-link {
+        color: #10b981 !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    .modal-switch-link:hover {
+        color: #059669 !important;
+        text-decoration: underline !important;
+    }
+    </style>
 
     <!-- SCHEMA.ORG BREADCRUMB LIST -->
     <script type="application/ld+json">
@@ -812,49 +1112,49 @@
                 
                 <div class="privacy-contact-grid">
                     <a href="mailto:anmolpokhriyal3200@gmail.com" class="privacy-contact-card">
-                        <div class="contact-card-icon">✉️</div>
-                        <div class="contact-card-body">
-                            <span class="contact-card-label">Email Privacy Support</span>
-                            <span class="contact-card-value">anmolpokhriyal3200@gmail.com</span>
-                            <span class="contact-card-action">Send Email →</span>
+                        <div class="contact-card-header">
+                            <span class="contact-card-label">Email Support</span>
+                            <span class="contact-card-action">Send Email ↗</span>
                         </div>
+                        <div class="contact-card-value">anmolpokhriyal3200@gmail.com</div>
+                        <div class="contact-card-note">Direct privacy inquiries &amp; correspondence</div>
                     </a>
 
                     <a href="https://wa.me/918433232647?text=Hello%2C%20I%20have%20a%20privacy%20enquiry" target="_blank" rel="noopener noreferrer" class="privacy-contact-card">
-                        <div class="contact-card-icon">💬</div>
-                        <div class="contact-card-body">
-                            <span class="contact-card-label">WhatsApp Direct</span>
-                            <span class="contact-card-value">+91 84332 32647</span>
-                            <span class="contact-card-action">Open WhatsApp →</span>
+                        <div class="contact-card-header">
+                            <span class="contact-card-label">WhatsApp</span>
+                            <span class="contact-card-action">Chat ↗</span>
                         </div>
+                        <div class="contact-card-value">+91 84332 32647</div>
+                        <div class="contact-card-note">Fastest response for urgent privacy queries</div>
                     </a>
 
                     <a href="tel:+918433232647" class="privacy-contact-card">
-                        <div class="contact-card-icon">📞</div>
-                        <div class="contact-card-body">
+                        <div class="contact-card-header">
                             <span class="contact-card-label">Phone Support</span>
-                            <span class="contact-card-value">+91 84332 32647</span>
-                            <span class="contact-card-action">Call Directly →</span>
+                            <span class="contact-card-action">Call Direct ↗</span>
                         </div>
+                        <div class="contact-card-value">+91 84332 32647</div>
+                        <div class="contact-card-note">Available Mon–Sat, 10:00 AM – 7:00 PM IST</div>
                     </a>
 
-                    <div class="privacy-contact-card">
-                        <div class="contact-card-icon">📍</div>
-                        <div class="contact-card-body">
+                    <div class="privacy-contact-card is-static">
+                        <div class="contact-card-header">
                             <span class="contact-card-label">Registered Office</span>
-                            <span class="contact-card-value">D-34, Sector-11, Noida, Uttar Pradesh, 201301, India</span>
-                            <span class="contact-card-action">In-Person / Postal</span>
+                            <span class="contact-card-badge">Headquarters</span>
                         </div>
+                        <div class="contact-card-value">D-34, Sector-11, Noida</div>
+                        <div class="contact-card-note">Uttar Pradesh, 201301, India</div>
                     </div>
                 </div>
 
                 <div class="privacy-rights-callout">
-                    <div class="callout-icon">🛡️</div>
-                    <div class="callout-text">
-                        <strong>Exercising Statutory Data Rights?</strong>
-                        <p>Under the DPDP Act 2023, you can request access, correction, or erasure of your personal data at any time free of charge.</p>
+                    <div class="callout-content">
+                        <span class="callout-pill">Statutory Rights</span>
+                        <h3 class="callout-title">Exercising Data Subject Rights?</h3>
+                        <p class="callout-text">Under the DPDP Act 2023, you can request access, correction, or erasure of your personal data at any time free of charge.</p>
                     </div>
-                    <button type="button" class="btn-pill-primary btn-sm" id="sec10MakeReqBtn">Make a Privacy Request</button>
+                    <button type="button" class="btn-pill-primary btn-sm" id="sec10MakeReqBtn">Make a Privacy Request →</button>
                 </div>
 
                 <p class="policy-paragraph" style="margin-top: 22px;">If you suspect that we have handled your personal information in a way that does not comply with this policy, please email us a short explanation and we will investigate and respond promptly within 48 business hours.</p>
@@ -874,11 +1174,11 @@
             <button type="button" class="privacy-modal-close" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
             
             <div class="modal-badge-wrapper">
-                <span class="privacy-badge">DPDP Act 2023 &amp; GDPR Rights</span>
+                <span class="privacy-badge">DPDP Act 2023 &amp; GDPR</span>
             </div>
 
             <h3 class="privacy-modal-title" id="modalTitle">Make a Privacy Request</h3>
-            <p class="privacy-modal-desc">Exercise your legal data privacy rights regarding personal data collected by PPC Growth Expert. Choose a statutory request type below or submit the verifiable form:</p>
+            <p class="privacy-modal-desc">Exercise your statutory privacy rights regarding personal data collected by PPC Growth Expert. Choose an official request channel or submit the request form below:</p>
 
             <!-- TAB SWITCHER -->
             <div class="modal-mode-switch" role="tablist">
@@ -891,34 +1191,34 @@
                 <div class="privacy-modal-options">
                     <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Data%20Access%20Request%20(DPDP%20Act)&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20am%20exercising%20my%20statutory%20right%20to%20access%20under%20the%20DPDP%20Act%202023.%20Please%20provide%20a%20summary%20of%20all%20personal%20data%20associated%20with%20my%20email%20address%20and%20details%20of%20any%20processing%20activities.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20%0APhone%20(if%20provided)%3A%20" class="modal-option-btn">
                         <div class="modal-opt-info">
-                            <span class="modal-opt-title">📄 Request Data Summary / Access</span>
-                            <span class="modal-opt-desc">Receive a copy/summary of personal data we maintain about you</span>
+                            <span class="modal-opt-title">Request Data Summary &amp; Access</span>
+                            <span class="modal-opt-desc">Receive a summary of personal information maintained about you</span>
                         </div>
-                        <span class="arrow">✉</span>
+                        <span class="modal-opt-arrow">→</span>
                     </a>
 
                     <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Data%20Erasure%20Request%20(DPDP%20Act)&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20am%20exercising%20my%20right%20to%20erasure%20(right%20to%20be%20forgotten)%20under%20applicable%20data%20protection%20regulations.%20Please%20permanently%20delete%20all%20personal%20data%20and%20contact%20records%20associated%20with%20my%20details.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20" class="modal-option-btn">
                         <div class="modal-opt-info">
-                            <span class="modal-opt-title">🗑️ Request Erasure / Deletion</span>
-                            <span class="modal-opt-desc">Request permanent deletion of your contact records from our systems</span>
+                            <span class="modal-opt-title">Request Erasure &amp; Deletion</span>
+                            <span class="modal-opt-desc">Permanently remove contact records from our systems (Right to be Forgotten)</span>
                         </div>
-                        <span class="arrow">✉</span>
+                        <span class="modal-opt-arrow">→</span>
                     </a>
 
                     <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Data%20Correction%20Request%20(DPDP%20Act)&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20am%20exercising%20my%20right%20to%20correction%20under%20the%20DPDP%20Act%202023.%20Please%20update%20or%20rectify%20my%20personal%20information%20with%20the%20corrected%20details%20specified%20below.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20%0ACorrected%20Information%3A%20" class="modal-option-btn">
                         <div class="modal-opt-info">
-                            <span class="modal-opt-title">✏️ Request Correction / Update</span>
-                            <span class="modal-opt-desc">Update outdated or inaccurate personal details</span>
+                            <span class="modal-opt-title">Request Correction &amp; Update</span>
+                            <span class="modal-opt-desc">Update or rectify inaccurate or outdated personal details</span>
                         </div>
-                        <span class="arrow">✉</span>
+                        <span class="modal-opt-arrow">→</span>
                     </a>
 
                     <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Consent%20Withdrawal%20Request&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20hereby%20withdraw%20my%20consent%20for%20any%20further%20communications%2C%20consultations%20or%20processing%20of%20my%20data.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20" class="modal-option-btn">
                         <div class="modal-opt-info">
-                            <span class="modal-opt-title">🚫 Withdraw Consent / Opt-Out</span>
-                            <span class="modal-opt-desc">Revoke previously provided consent for communications</span>
+                            <span class="modal-opt-title">Withdraw Consent &amp; Opt-Out</span>
+                            <span class="modal-opt-desc">Revoke previously provided consent for consultations or marketing</span>
                         </div>
-                        <span class="arrow">✉</span>
+                        <span class="modal-opt-arrow">→</span>
                     </a>
                 </div>
             </div>
