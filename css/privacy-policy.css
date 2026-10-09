@@ -601,9 +601,11 @@
     background: #ffffff;
     border-radius: 16px;
     width: 100%;
-    max-width: 540px;
+    max-width: 580px;
+    max-height: 92vh;
+    overflow-y: auto;
     box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-    padding: 32px 36px;
+    padding: 32px 34px;
     position: relative;
     transform: scale(0.95);
     transition: transform 0.25s ease;
@@ -619,14 +621,32 @@
     right: 20px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 26px;
     color: #64748b;
     cursor: pointer;
     line-height: 1;
+    transition: color 0.15s ease;
 }
 
 .privacy-modal-close:hover {
     color: #0f172a;
+}
+
+.modal-badge-wrapper {
+    margin-bottom: 8px;
+}
+
+.privacy-badge {
+    display: inline-block;
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: 9999px;
 }
 
 .privacy-modal-title {
@@ -634,35 +654,65 @@
     font-size: 22px;
     font-weight: 800;
     color: #0f172a;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .privacy-modal-desc {
-    font-size: 14.5px;
+    font-size: 14px;
     color: #475569;
     line-height: 1.55;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
+}
+
+/* Modal Mode / Tab Switcher */
+.modal-mode-switch {
+    display: flex;
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 4px;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+.mode-tab {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    text-align: center;
+}
+
+.mode-tab.is-active {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .privacy-modal-options {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .modal-option-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 18px;
+    padding: 13px 16px;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
     background: #f8fafc;
     text-decoration: none;
     color: #0f172a;
-    font-weight: 600;
-    font-size: 14.5px;
     transition: all 0.2s ease;
+    gap: 12px;
 }
 
 .modal-option-btn:hover {
@@ -671,9 +721,299 @@
     color: #059669;
 }
 
+.modal-option-btn .modal-opt-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.modal-option-btn .modal-opt-title {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.modal-option-btn:hover .modal-opt-title {
+    color: #059669;
+}
+
+.modal-option-btn .modal-opt-desc {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
 .modal-option-btn span.arrow {
     color: #10b981;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* Modal Request Form */
+.privacy-request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-label .required {
+    color: #ef4444;
+}
+
+.form-label .optional {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 11.5px;
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-family: inherit;
+    color: #0f172a;
+    background: #ffffff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.btn-submit-request {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #10b981;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    font-family: inherit;
+}
+
+.btn-submit-request:hover {
+    background: #059669;
+    transform: translateY(-1px);
+}
+
+.request-success-notice {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #065f46;
+    line-height: 1.5;
+}
+
+.request-success-notice .notice-icon {
+    background: #10b981;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
     font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.request-success-notice p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #047857;
+}
+
+.modal-privacy-footer {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.modal-switch-link {
+    color: #10b981;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.modal-switch-link:hover {
+    color: #059669;
+    text-decoration: underline;
+}
+
+/* Section 10 Highlight Animation */
+@keyframes sectionHighlightPulse {
+    0% {
+        background-color: rgba(16, 185, 129, 0.18);
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.25);
+    }
+    60% {
+        background-color: rgba(16, 185, 129, 0.08);
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    }
+    100% {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+.section-highlight {
+    animation: sectionHighlightPulse 2.4s ease;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+/* Section 10 Contact Cards Grid */
+.privacy-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 20px 0 22px;
+}
+
+.privacy-contact-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+a.privacy-contact-card:hover {
+    background: #ffffff;
+    border-color: #10b981;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.12);
+    transform: translateY(-2px);
+}
+
+.contact-card-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.contact-card-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.contact-card-value {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #0f172a;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.contact-card-action {
+    font-size: 12px;
+    font-weight: 600;
+    color: #10b981;
+    margin-top: 4px;
+}
+
+.privacy-rights-callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #f0fdf4;
+    border: 1.5px solid #a7f3d0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 18px 0 16px;
+    flex-wrap: wrap;
+}
+
+.privacy-rights-callout .callout-icon {
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.privacy-rights-callout .callout-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.privacy-rights-callout .callout-text strong {
+    font-size: 14.5px;
+    color: #065f46;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.privacy-rights-callout .callout-text p {
+    margin: 0;
+    font-size: 13px;
+    color: #047857;
+    line-height: 1.45;
+}
+
+.btn-pill-primary.btn-sm {
+    padding: 8px 18px !important;
+    font-size: 13px !important;
 }
 
 /* RESPONSIVE DESIGN */

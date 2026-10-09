@@ -462,7 +462,7 @@
             <span aria-current="page">Privacy Policy</span>
         </nav>
         <div class="privacy-action-btns">
-            <button type="button" class="btn-pill-secondary" id="btnPastRequests">Contact Privacy Support</button>
+            <a href="#section-10" class="btn-pill-secondary modal-jump-link" id="btnContactSupport">Contact Privacy Support</a>
             <button type="button" class="btn-pill-primary" id="btnMakeRequest">Make a Privacy Request</button>
         </div>
     </div>
@@ -808,14 +808,56 @@
             <!-- SECTION 10 -->
             <section class="policy-section" id="section-10">
                 <h2 class="policy-section-heading">10. CONTACT US</h2>
-                <p class="policy-paragraph">If you have any questions about this Privacy Policy, want to exercise your rights, or wish to get in touch with our team, please contact us:</p>
-                <ul class="policy-bullet-list">
-                    <li><strong>Company:</strong> PPC Growth Expert</li>
-                    <li><strong>Email:</strong> <a href="mailto:anmolpokhriyal3200@gmail.com">anmolpokhriyal3200@gmail.com</a></li>
-                    <li><strong>Phone / WhatsApp:</strong> <a href="tel:+918433232647">+91 84332 32647</a></li>
-                    <li><strong>Address:</strong> D-34, Sector-11, Noida, Uttar Pradesh, 201301, India</li>
-                </ul>
-                <p class="policy-paragraph">If you suspect that we have handled your personal information in a way that does not comply with this policy, please email us a short explanation and we will look into it promptly.</p>
+                <p class="policy-paragraph">If you have any questions about this Privacy Policy, wish to speak with our privacy team, or need assistance, please connect with us directly through any of our channels below:</p>
+                
+                <div class="privacy-contact-grid">
+                    <a href="mailto:anmolpokhriyal3200@gmail.com" class="privacy-contact-card">
+                        <div class="contact-card-icon">✉️</div>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Email Privacy Support</span>
+                            <span class="contact-card-value">anmolpokhriyal3200@gmail.com</span>
+                            <span class="contact-card-action">Send Email →</span>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/918433232647?text=Hello%2C%20I%20have%20a%20privacy%20enquiry" target="_blank" rel="noopener noreferrer" class="privacy-contact-card">
+                        <div class="contact-card-icon">💬</div>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">WhatsApp Direct</span>
+                            <span class="contact-card-value">+91 84332 32647</span>
+                            <span class="contact-card-action">Open WhatsApp →</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+918433232647" class="privacy-contact-card">
+                        <div class="contact-card-icon">📞</div>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Phone Support</span>
+                            <span class="contact-card-value">+91 84332 32647</span>
+                            <span class="contact-card-action">Call Directly →</span>
+                        </div>
+                    </a>
+
+                    <div class="privacy-contact-card">
+                        <div class="contact-card-icon">📍</div>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Registered Office</span>
+                            <span class="contact-card-value">D-34, Sector-11, Noida, Uttar Pradesh, 201301, India</span>
+                            <span class="contact-card-action">In-Person / Postal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="privacy-rights-callout">
+                    <div class="callout-icon">🛡️</div>
+                    <div class="callout-text">
+                        <strong>Exercising Statutory Data Rights?</strong>
+                        <p>Under the DPDP Act 2023, you can request access, correction, or erasure of your personal data at any time free of charge.</p>
+                    </div>
+                    <button type="button" class="btn-pill-primary btn-sm" id="sec10MakeReqBtn">Make a Privacy Request</button>
+                </div>
+
+                <p class="policy-paragraph" style="margin-top: 22px;">If you suspect that we have handled your personal information in a way that does not comply with this policy, please email us a short explanation and we will investigate and respond promptly within 48 business hours.</p>
             </section>
 
         </article>
@@ -826,30 +868,112 @@
         ↑
     </button>
 
-    <!-- PRIVACY REQUEST INTERACTIVE MODAL -->
+    <!-- PRIVACY REQUEST INTERACTIVE MODAL (DEDICATED FOR STATUTORY DATA RIGHTS) -->
     <div class="privacy-modal-overlay" id="privacyModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="privacy-modal">
             <button type="button" class="privacy-modal-close" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
-            <h3 class="privacy-modal-title" id="modalTitle">Privacy &amp; Data Rights</h3>
-            <p class="privacy-modal-desc">To submit a request regarding your personal data or ask a privacy-related question, choose your preferred channel below:</p>
-            <div class="privacy-modal-options">
-                <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Privacy%20Data%20Request" class="modal-option-btn">
-                    <span>Email Privacy Support (anmolpokhriyal3200@gmail.com)</span>
-                    <span class="arrow">✉</span>
-                </a>
-                <a href="https://wa.me/918433232647?text=Hello%2C%20I%20have%20a%20privacy%20enquiry" target="_blank" rel="noopener noreferrer" class="modal-option-btn">
-                    <span>Chat on WhatsApp (+91 84332 32647)</span>
-                    <span class="arrow">💬</span>
-                </a>
-                <a href="tel:+918433232647" class="modal-option-btn">
-                    <span>Direct Call (+91 84332 32647)</span>
-                    <span class="arrow">📞</span>
-                </a>
-                <a href="#section-5" class="modal-option-btn modal-jump-link">
-                    <span>Review Your Rights &amp; Choices</span>
-                    <span class="arrow">→</span>
-                </a>
+            
+            <div class="modal-badge-wrapper">
+                <span class="privacy-badge">DPDP Act 2023 &amp; GDPR Rights</span>
             </div>
+
+            <h3 class="privacy-modal-title" id="modalTitle">Make a Privacy Request</h3>
+            <p class="privacy-modal-desc">Exercise your legal data privacy rights regarding personal data collected by PPC Growth Expert. Choose a statutory request type below or submit the verifiable form:</p>
+
+            <!-- TAB SWITCHER -->
+            <div class="modal-mode-switch" role="tablist">
+                <button type="button" class="mode-tab is-active" id="tabQuickRequests" role="tab" aria-selected="true">Quick Request Channels</button>
+                <button type="button" class="mode-tab" id="tabRequestForm" role="tab" aria-selected="false">Submit Request Form</button>
+            </div>
+
+            <!-- PANEL 1: QUICK REQUEST OPTIONS -->
+            <div class="modal-tab-panel" id="panelQuickRequests" role="tabpanel">
+                <div class="privacy-modal-options">
+                    <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Data%20Access%20Request%20(DPDP%20Act)&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20am%20exercising%20my%20statutory%20right%20to%20access%20under%20the%20DPDP%20Act%202023.%20Please%20provide%20a%20summary%20of%20all%20personal%20data%20associated%20with%20my%20email%20address%20and%20details%20of%20any%20processing%20activities.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20%0APhone%20(if%20provided)%3A%20" class="modal-option-btn">
+                        <div class="modal-opt-info">
+                            <span class="modal-opt-title">📄 Request Data Summary / Access</span>
+                            <span class="modal-opt-desc">Receive a copy/summary of personal data we maintain about you</span>
+                        </div>
+                        <span class="arrow">✉</span>
+                    </a>
+
+                    <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Data%20Erasure%20Request%20(DPDP%20Act)&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20am%20exercising%20my%20right%20to%20erasure%20(right%20to%20be%20forgotten)%20under%20applicable%20data%20protection%20regulations.%20Please%20permanently%20delete%20all%20personal%20data%20and%20contact%20records%20associated%20with%20my%20details.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20" class="modal-option-btn">
+                        <div class="modal-opt-info">
+                            <span class="modal-opt-title">🗑️ Request Erasure / Deletion</span>
+                            <span class="modal-opt-desc">Request permanent deletion of your contact records from our systems</span>
+                        </div>
+                        <span class="arrow">✉</span>
+                    </a>
+
+                    <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Data%20Correction%20Request%20(DPDP%20Act)&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20am%20exercising%20my%20right%20to%20correction%20under%20the%20DPDP%20Act%202023.%20Please%20update%20or%20rectify%20my%20personal%20information%20with%20the%20corrected%20details%20specified%20below.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20%0ACorrected%20Information%3A%20" class="modal-option-btn">
+                        <div class="modal-opt-info">
+                            <span class="modal-opt-title">✏️ Request Correction / Update</span>
+                            <span class="modal-opt-desc">Update outdated or inaccurate personal details</span>
+                        </div>
+                        <span class="arrow">✉</span>
+                    </a>
+
+                    <a href="mailto:anmolpokhriyal3200@gmail.com?subject=Consent%20Withdrawal%20Request&body=Hello%20PPC%20Growth%20Expert%20Team%2C%0A%0AI%20hereby%20withdraw%20my%20consent%20for%20any%20further%20communications%2C%20consultations%20or%20processing%20of%20my%20data.%0A%0AFull%20Name%3A%20%0AEmail%20Address%3A%20" class="modal-option-btn">
+                        <div class="modal-opt-info">
+                            <span class="modal-opt-title">🚫 Withdraw Consent / Opt-Out</span>
+                            <span class="modal-opt-desc">Revoke previously provided consent for communications</span>
+                        </div>
+                        <span class="arrow">✉</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PANEL 2: INTERACTIVE REQUEST FORM -->
+            <div class="modal-tab-panel" id="panelRequestForm" role="tabpanel" style="display: none;">
+                <form id="privacyRequestForm" class="privacy-request-form">
+                    <div class="form-row">
+                        <label for="reqFullName" class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" id="reqFullName" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="reqEmail" class="form-label">Email Address <span class="required">*</span></label>
+                        <input type="email" id="reqEmail" class="form-input" placeholder="e.g. rahul@example.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="reqType" class="form-label">Request Type <span class="required">*</span></label>
+                        <select id="reqType" class="form-select" required>
+                            <option value="" disabled selected>Select Request Category...</option>
+                            <option value="Data Access / Summary (DPDP Act)">Access / Summary of Personal Data</option>
+                            <option value="Data Erasure / Deletion">Erasure / Deletion (Right to be Forgotten)</option>
+                            <option value="Data Correction / Update">Correction / Updating of Information</option>
+                            <option value="Consent Withdrawal">Withdraw Consent / Stop Communications</option>
+                            <option value="Other Privacy Grievance">Other Privacy Rights Request</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="reqDetails" class="form-label">Specific Details / Notes <span class="optional">(optional)</span></label>
+                        <textarea id="reqDetails" class="form-textarea" rows="3" placeholder="Provide any details to help us locate your record or explain your request..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit-request">
+                        <span>Submit Verifiable Request</span>
+                        <span class="arrow">→</span>
+                    </button>
+                    
+                    <div id="requestSuccessNotice" class="request-success-notice" style="display: none;">
+                        <span class="notice-icon">✓</span>
+                        <div>
+                            <strong>Request Drafted!</strong>
+                            <p>We've prepared your email request. Please ensure you send it from your email so we can verify your identity. Per the DPDP Act 2023, requests are acknowledged within 48 hours and processed within 30 days.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- MODAL FOOTER NOTE -->
+            <div class="modal-privacy-footer">
+                <span>Looking for general questions or support instead?</span>
+                <a href="#section-10" class="modal-switch-link" id="modalLinkToSupport">Contact Privacy Support →</a>
+            </div>
+
         </div>
     </div>
 
@@ -1033,7 +1157,7 @@
         window.addEventListener('scroll', updateActiveToc, { passive: true });
         updateActiveToc();
 
-        // Smooth scroll for TOC links
+        // Smooth scroll for TOC links & Contact Support jump
         document.querySelectorAll('.privacy-toc-link, .modal-jump-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href');
@@ -1060,6 +1184,13 @@
                         const modalOverlay = document.getElementById('privacyModalOverlay');
                         if (modalOverlay) {
                             modalOverlay.classList.remove('is-active');
+                        }
+
+                        // Highlight Section 10 if jumping to contact
+                        if (targetId === '#section-10') {
+                            targetEl.classList.remove('section-highlight');
+                            void targetEl.offsetWidth; // trigger reflow
+                            targetEl.classList.add('section-highlight');
                         }
                     }
                 }
@@ -1092,11 +1223,12 @@
             });
         }
 
-        // Privacy Request Modal Handlers
+        // Make a Privacy Request Modal Handlers
         const modalOverlay = document.getElementById('privacyModalOverlay');
-        const btnPastRequests = document.getElementById('btnPastRequests');
         const btnMakeRequest = document.getElementById('btnMakeRequest');
+        const sec10MakeReqBtn = document.getElementById('sec10MakeReqBtn');
         const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const modalLinkToSupport = document.getElementById('modalLinkToSupport');
 
         function openModal() {
             if (modalOverlay) modalOverlay.classList.add('is-active');
@@ -1106,9 +1238,88 @@
             if (modalOverlay) modalOverlay.classList.remove('is-active');
         }
 
-        if (btnPastRequests) btnPastRequests.addEventListener('click', openModal);
         if (btnMakeRequest) btnMakeRequest.addEventListener('click', openModal);
+        if (sec10MakeReqBtn) sec10MakeReqBtn.addEventListener('click', openModal);
         if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+
+        if (modalLinkToSupport) {
+            modalLinkToSupport.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeModal();
+                const sec10 = document.getElementById('section-10');
+                if (sec10) {
+                    const headerOffset = 90;
+                    const offsetPosition = sec10.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    sec10.classList.remove('section-highlight');
+                    void sec10.offsetWidth;
+                    sec10.classList.add('section-highlight');
+                }
+            });
+        }
+
+        // Modal Tabs Switcher (Quick Channels vs Verifiable Form)
+        const tabQuick = document.getElementById('tabQuickRequests');
+        const tabForm = document.getElementById('tabRequestForm');
+        const panelQuick = document.getElementById('panelQuickRequests');
+        const panelForm = document.getElementById('panelRequestForm');
+
+        if (tabQuick && tabForm && panelQuick && panelForm) {
+            tabQuick.addEventListener('click', () => {
+                tabQuick.classList.add('is-active');
+                tabQuick.setAttribute('aria-selected', 'true');
+                tabForm.classList.remove('is-active');
+                tabForm.setAttribute('aria-selected', 'false');
+                panelQuick.style.display = 'block';
+                panelForm.style.display = 'none';
+            });
+
+            tabForm.addEventListener('click', () => {
+                tabForm.classList.add('is-active');
+                tabForm.setAttribute('aria-selected', 'true');
+                tabQuick.classList.remove('is-active');
+                tabQuick.setAttribute('aria-selected', 'false');
+                panelForm.style.display = 'block';
+                panelQuick.style.display = 'none';
+            });
+        }
+
+        // Privacy Request Form Handler
+        const privacyReqForm = document.getElementById('privacyRequestForm');
+        const requestSuccessNotice = document.getElementById('requestSuccessNotice');
+
+        if (privacyReqForm) {
+            privacyReqForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('reqFullName').value.trim();
+                const email = document.getElementById('reqEmail').value.trim();
+                const reqType = document.getElementById('reqType').value;
+                const details = document.getElementById('reqDetails').value.trim();
+
+                const mailSubject = encodeURIComponent(`${reqType} - ${name}`);
+                const mailBody = encodeURIComponent(
+`PRIVACY RIGHTS REQUEST (DPDP ACT 2023 & GDPR)
+
+Full Name: ${name}
+Email Address: ${email}
+Request Category: ${reqType}
+
+Specific Details / Notes:
+${details || 'No additional notes provided.'}
+
+---
+Submitted via PPC Growth Expert Privacy Request Form (https://ppcgrowthexpert.com/privacy-policy.html)`
+                );
+
+                if (requestSuccessNotice) {
+                    requestSuccessNotice.style.display = 'flex';
+                }
+
+                setTimeout(() => {
+                    window.location.href = `mailto:anmolpokhriyal3200@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+                }, 700);
+            });
+        }
 
         if (modalOverlay) {
             modalOverlay.addEventListener('click', (e) => {
