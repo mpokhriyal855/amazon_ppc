@@ -4671,8 +4671,8 @@
                     <input type="tel" id="auditPhone" required placeholder="+91 98765 43210" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
                 </div>
                 <div style="margin-bottom: 14px;">
-                    <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">Amazon Store / ASIN Link *</label>
-                    <input type="text" id="auditStore" required placeholder="https://amazon.com/... or Brand Name" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                    <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">Amazon Store / ASIN Link <span style="font-weight: 400; color: #64748b;">(Optional)</span></label>
+                    <input type="text" id="auditStore" placeholder="https://amazon.com/... or Brand Name (Optional)" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
                 </div>
                 <div style="margin-bottom: 18px;">
                     <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">Approx. Monthly Ad Budget</label>
@@ -4797,11 +4797,12 @@
             event.preventDefault();
             const name = document.getElementById('auditName').value;
             const phone = document.getElementById('auditPhone').value;
-            const store = document.getElementById('auditStore').value;
+            const store = document.getElementById('auditStore').value.trim();
             const spend = document.getElementById('auditSpend').value;
             const pkgInfo = selectedAuditPackage ? `\nPlan: ${selectedAuditPackage}` : '';
+            const storeText = store || 'Not provided';
             
-            const msg = encodeURIComponent(`*New Moradabad Audit Request*${pkgInfo}\nName: ${name}\nPhone: ${phone}\nStore: ${store}\nMonthly Spend: ${spend}`);
+            const msg = encodeURIComponent(`*New Moradabad Audit Request*${pkgInfo}\nName: ${name}\nPhone: ${phone}\nStore: ${storeText}\nMonthly Spend: ${spend}`);
             window.open(`https://wa.me/918433232647?text=${msg}`, '_blank');
             closeAuditModal();
         }
