@@ -4556,8 +4556,8 @@
                 <input type="tel" id="auditPhone" required="" placeholder="+91 98765 43210" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
             </div>
             <div style="margin-bottom: 14px;">
-                <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">Amazon Brand / Store Link *</label>
-                <input type="text" id="auditStore" required="" placeholder="https://amazon.in/dp/... or Brand Name" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
+                <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">Amazon Brand / Store Link <span style="font-weight: 400; color: #64748b;">(Optional)</span></label>
+                <input type="text" id="auditStore" placeholder="https://amazon.in/dp/... or Brand Name (Optional)" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box;">
             </div>
             <div style="margin-bottom: 18px;">
                 <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">Approx. Monthly Revenue</label>
@@ -5134,14 +5134,15 @@
         e.preventDefault();
         const name = document.getElementById('auditName').value;
         const phone = document.getElementById('auditPhone').value;
-        const store = document.getElementById('auditStore').value;
+        const store = document.getElementById('auditStore').value.trim();
         const spend = document.getElementById('auditSpend').value;
+        const storeText = store || 'Not provided';
 
         const text = encodeURIComponent(
             'Hello! I would like to request a Free Amazon Account Audit.\n\n' +
             'Name: ' + name + '\n' +
             'Phone: ' + phone + '\n' +
-            'Store / Brand: ' + store + '\n' +
+            'Store / Brand: ' + storeText + '\n' +
             'Monthly Revenue / Spend: ' + spend
         );
 
