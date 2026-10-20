@@ -1,235 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>https://ppcgrowthexpert.com/</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://ppcgrowthexpert.com/images/anmol.jpeg</image:loc>
-      <image:title>Anmol Pokhriyal - Founder &amp; Amazon PPC Expert</image:title>
-      <image:caption>Anmol Pokhriyal, founder of PPC Growth Expert, Amazon Advertising Consultant</image:caption>
-    </image:image>
+       <loc>https://ppcgrowthexpert.com/</loc>
+       <lastmod>2026-09-15T20:27:31+00:00</lastmod>
+       <priority>1.0000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+       <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-india.html</loc>
+       <lastmod>2026-09-15T20:27:38+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+       <loc>https://ppcgrowthexpert.com/services/amazon-seller-account-management-services.html</loc>
+       <lastmod>2026-09-15T20:27:42+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/amazon-advertising-india.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+       <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-delhi.html</loc>
+       <lastmod>2026-09-15T20:27:36+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-india.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+       <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-noida.html</loc>
+       <lastmod>2026-09-15T20:27:40+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-noida.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+       <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-moradabad.html</loc>
+       <lastmod>2026-09-15T20:27:39+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-delhi.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+       <loc>https://ppcgrowthexpert.com/services/ecommerce-ppc-services.html</loc>
+       <lastmod>2026-09-15T20:27:43+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services-moradabad.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+       <loc>https://ppcgrowthexpert.com/case-studies.html</loc>
+       <lastmod>2026-09-15T20:27:29+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/ecommerce-ppc-services.html</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+       <loc>https://ppcgrowthexpert.com/about.html</loc>
+       <lastmod>2026-09-15T20:26:48+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/services/amazon-seller-account-management-services.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-acos-calculator.html</loc>
+       <lastmod>2026-09-15T20:26:59+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/case-studies.html</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-roas-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:18+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/about.html</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://ppcgrowthexpert.com/images/anmol.jpeg</image:loc>
-      <image:title>Anmol Pokhriyal - Amazon Advertising Specialist</image:title>
-    </image:image>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-ppc-conversion-rate-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:12+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/contact.html</loc>
-    <lastmod>2026-08-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-cpc-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:03+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-keyword-profitability-calculator.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-ctr-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:04+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-tacos-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:20+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/reduce-amazon-acos.html</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-ppc-waste-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:14+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-clicks-no-sales.html</loc>
-    <lastmod>2026-07-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-keyword-profitability-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:08+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/improve-amazon-ppc-roas.html</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-profit-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:16+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/amazon-ads-not-converting.html</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-fba-fee-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:06+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-spending-no-orders.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-fba-storage-fee-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:07+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/reduce-amazon-ppc-wasted-spend.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-advertising-roi-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:00+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-cpc-increasing.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/blinkit-cpm-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:23+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-impressions-clicks-low.html</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/contact.html</loc>
+       <lastmod>2026-09-15T20:27:30+00:00</lastmod>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+       <loc>https://ppcgrowthexpert.com/services/</loc>
+       <lastmod>2026-09-15T20:27:44+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-acos-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/services/amazon-ppc-expert.html</loc>
+       <lastmod>2026-09-15T20:27:35+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-roas-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/services/amazon-ppc-management-services.html</loc>
+       <lastmod>2026-09-15T20:35:18+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-break-even-acos-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/</loc>
+       <lastmod>2026-09-15T20:27:25+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-tacos-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-break-even-acos-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:01+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-ppc-conversion-rate-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-ppc-budget-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:11+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-cpc-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/calculators/amazon-target-acos-bid-calculator.html</loc>
+       <lastmod>2026-09-15T20:27:21+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-ctr-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/blog/reduce-amazon-ppc-wasted-spend.html</loc>
+       <lastmod>2026-08-05T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-ppc-budget-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/blog/</loc>
+       <lastmod>2026-09-15T20:26:56+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-target-acos-bid-calculator.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-impressions-clicks-low.html</loc>
+       <lastmod>2026-08-29T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-fba-fee-calculator.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-cpc-increasing.html</loc>
+       <lastmod>2026-08-27T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-fba-storage-fee-calculator.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-spending-no-orders.html</loc>
+       <lastmod>2026-08-02T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/blinkit-cpm-calculator.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/blog/amazon-ads-not-converting.html</loc>
+       <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://ppcgrowthexpert.com/calculators/amazon-ppc-waste-calculator.html</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+       <loc>https://ppcgrowthexpert.com/blog/improve-amazon-ppc-roas.html</loc>
+       <lastmod>2026-08-28T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://ppcgrowthexpert.com/blog/amazon-ppc-clicks-no-sales.html</loc>
+       <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://ppcgrowthexpert.com/blog/reduce-amazon-acos.html</loc>
+       <lastmod>2026-07-27T00:00:00+00:00</lastmod>
+       <priority>0.6400</priority>
   </url>
 </urlset>
