@@ -10,17 +10,19 @@
     // Global toggle function
     window.toggleMobileNav = function(e) {
         if (e) {
+            if (e._navToggleDone) return;
+            e._navToggleDone = true;
             if (typeof e.preventDefault === 'function') e.preventDefault();
             if (typeof e.stopPropagation === 'function') e.stopPropagation();
         }
         const now = Date.now();
-        if (now - lastToggleTime < 250) return;
+        if (now - lastToggleTime < 80) return;
         lastToggleTime = now;
 
         const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         
-        if (!mobileToggle || !navLinks) return;
+        if (!navLinks) return;
 
         const isOpen = navLinks.classList.contains("mobile-open") || navLinks.classList.contains("active");
         if (isOpen) {
@@ -56,6 +58,10 @@
             mobileToggle.setAttribute("aria-expanded", "false");
             mobileToggle.innerHTML = "☰";
         }
+        // Collapse sub-accordions when closing mobile menu
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+            d.classList.remove('is-open');
+        });
     };
 
     // Global Event Delegation for clicks and mobile navigation
@@ -63,6 +69,8 @@
         // 1. Mobile toggle button click
         const toggleBtn = e.target.closest("#mobileToggle, .mobile-toggle");
         if (toggleBtn) {
+            if (e._navToggleDone) return;
+            e._navToggleDone = true;
             e.preventDefault();
             e.stopPropagation();
             window.toggleMobileNav(e);
@@ -86,11 +94,13 @@
         }
 
         // 3. Close open desktop dropdowns when clicking outside
-        document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
-            if (!d.contains(e.target)) {
-                d.classList.remove('is-open');
-            }
-        });
+        if (window.innerWidth > 900) {
+            document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+                if (!d.contains(e.target)) {
+                    d.classList.remove('is-open');
+                }
+            });
+        }
 
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         if (!navLinks) return;
@@ -108,6 +118,7 @@
             }
         }
     });
+
 
     // Dynamic Navbar Sync & Active State Controller
     document.addEventListener("DOMContentLoaded", function() {
