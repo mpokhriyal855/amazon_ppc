@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="../css/style.css?v=v41">
     <link rel="stylesheet" href="../css/navbar.css?v=v49">
     <link rel="stylesheet" href="css/services.css?v=v40">
+    <link rel="stylesheet" href="../css/testimonials.css">
     <link rel="stylesheet" href="../css/footer.css?v=v42">
     <link rel="stylesheet" href="../css/whatsapp.css?v=v40">
 
@@ -2358,9 +2359,17 @@
             display: inline-block;
         }
 
-        .sp-browser-dot.red { background: #ef4444; }
-        .sp-browser-dot.amber { background: #f59e0b; }
-        .sp-browser-dot.green { background: #10b981; }
+        .sp-browser-dot.red {
+            background: #ef4444;
+        }
+
+        .sp-browser-dot.amber {
+            background: #f59e0b;
+        }
+
+        .sp-browser-dot.green {
+            background: #10b981;
+        }
 
         .sp-browser-url {
             display: inline-flex;
@@ -3150,6 +3159,43 @@
             box-shadow: 0 8px 22px rgba(16, 185, 129, 0.4) !important;
         }
 
+        /* TESTIMONIALS ANIMATION & SECTION TRANSITION */
+        @keyframes orbPulse1 {
+
+            0%,
+            100% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.85;
+            }
+
+            50% {
+                transform: scale(1.08) translate(15px, 10px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes orbPulse2 {
+
+            0%,
+            100% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.75;
+            }
+
+            50% {
+                transform: scale(1.06) translate(-15px, -10px);
+                opacity: 0.95;
+            }
+        }
+
+        .testimonials-section .orb-glow-1 {
+            animation: orbPulse1 8s ease-in-out infinite alternate;
+        }
+
+        .testimonials-section .orb-glow-2 {
+            animation: orbPulse2 10s ease-in-out infinite alternate;
+        }
+
         /* FAQS - MINIMALIST LINE-DIVIDED MODERN ACCORDION (MATCHING SCREENSHOT) */
         .sp-faq-section {
             background: #ffffff;
@@ -3670,6 +3716,7 @@
                 <a href="#overview" class="sp-nav-link active">Overview</a>
                 <a href="#what-included" class="sp-nav-link">PPC Scope</a>
                 <a href="#packages" class="sp-nav-link">Packages</a>
+                <a href="#testimonials" class="sp-nav-link">Testimonials</a>
                 <!-- <a href="#moradabad-sellers" class="sp-nav-link">Moradabad Sellers</a> -->
                 <a href="#optimization-framework" class="sp-nav-link">PPC Framework</a>
                 <a href="#account-management" class="sp-nav-link">Account Services</a>
@@ -3701,7 +3748,11 @@
             <div class="sp-hero-subhead">Amazon PPC Management for Moradabad Brands Selling on Amazon India and Global
                 Marketplaces</div>
             <p class="sp-hero-desc">
-                We help Moradabad manufacturers, exporters, private-label brands and established Amazon sellers grow their businesses through Amazon PPC management, Seller Central account management and product listing optimization services. From campaign setup, keyword targeting and bid optimization to listing improvements and account performance monitoring, we help businesses improve advertising efficiency, strengthen product visibility and support profitable growth across Amazon India and global marketplaces.
+                We help Moradabad manufacturers, exporters, private-label brands and established Amazon sellers grow
+                their businesses through Amazon PPC management, Seller Central account management and product listing
+                optimization services. From campaign setup, keyword targeting and bid optimization to listing
+                improvements and account performance monitoring, we help businesses improve advertising efficiency,
+                strengthen product visibility and support profitable growth across Amazon India and global marketplaces.
             </p>
 
             <div class="sp-hero-cta">
@@ -4078,6 +4129,414 @@
     </section>
 
     <!-- =========================================================
+         CLIENT TESTIMONIALS (3D FLIP GLASS CARDS)
+    ========================================================= -->
+    <section class="testimonials-section" id="testimonials" itemscope="" itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="PPC Growth Expert">
+        <div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="5.0">
+            <meta itemprop="reviewCount" content="4">
+            <meta itemprop="bestRating" content="5">
+            <meta itemprop="worstRating" content="1">
+        </div>
+        <div class="orb-glow-1"></div>
+        <div class="orb-glow-2"></div>
+        <div class="testimonials-container">
+
+            <!-- SECTION HEADER -->
+            <div class="testimonials-header">
+                <div class="section-tag-orange">
+                    ✦ CLIENT TESTIMONIALS
+                </div>
+                <h2 class="testimonials-title">
+                    Amazon PPC <span class="highlight-text">Client Testimonials</span>
+                </h2>
+
+                <div class="testimonials-pills-row">
+                    <div class="pill-badge-glass">
+                        <span>⭐ 4.7/5 Client Rating</span>
+                    </div>
+                    <div class="pill-badge-glass">
+                        <span>📈 100+ Brands Managed</span>
+                    </div>
+                    <div class="pill-badge-glass">
+                        <span>💰 Performance-Focused PPC</span>
+                    </div>
+                    <div class="pill-badge-glass">
+                        <span>🤝 Long-Term Client Partnerships</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D CARDS GRID -->
+            <div class="testimonials-grid">
+
+                <!-- TESTIMONIAL 01: Amit Sharma -->
+                <article class="testimonial-flip-card" itemprop="review" itemscope=""
+                    itemtype="http://schema.org/Review">
+                    <div class="testimonial-flip-inner">
+
+                        <!-- FRONT SIDE -->
+                        <div class="card-front">
+                            <div>
+                                <div class="card-top-header">
+                                    <svg class="testimonial-quote-icon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z">
+                                        </path>
+                                    </svg>
+                                    <div class="testimonial-stars" itemprop="reviewRating" itemscope=""
+                                        itemtype="http://schema.org/Rating">
+                                        <meta itemprop="ratingValue" content="5">
+                                        ★★★★★
+                                    </div>
+                                </div>
+
+                                <div class="verified-client-tag">
+                                    <span class="verified-dot"></span> Verified Client
+                                </div>
+
+                                <blockquote class="testimonial-text" itemprop="reviewBody">
+                                    "The team restructured our campaigns, improved search term targeting, and helped us
+                                    identify wasted ad spend. We now have <strong>better visibility into campaign
+                                        performance</strong>."
+                                </blockquote>
+                            </div>
+
+                            <div>
+                                <footer class="testimonial-author" itemprop="author" itemscope=""
+                                    itemtype="http://schema.org/Person">
+                                    <div class="author-avatar-badge avatar-amit" aria-hidden="true">A</div>
+                                    <div class="author-info">
+                                        <div class="author-name-row">
+                                            <cite class="author-name" itemprop="name">Amit Sharma</cite>
+                                            <svg class="author-check" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <span class="author-role" itemprop="jobTitle">Amazon Seller</span>
+                                    </div>
+                                </footer>
+                                <div class="flip-hint-badge">Hover / Tap to Reveal Key Results ⚡</div>
+                            </div>
+                        </div>
+
+                        <!-- BACK SIDE (COOL RESULTS REVEAL) -->
+                        <div class="card-back">
+                            <div>
+                                <div class="back-header">
+                                    <span class="back-title-badge">KEY OUTCOMES</span>
+                                    <span class="back-verified-icon">✓ Verified Result</span>
+                                </div>
+
+                                <div class="metrics-stack">
+                                    <div class="metric-row">
+                                        <span class="metric-label">Ad Sales Growth</span>
+                                        <span class="metric-value highlight-gold">+40%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">ACoS Reduction</span>
+                                        <span class="metric-value highlight-green">−18%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">Search Term Review</span>
+                                        <span class="metric-value">100%</span>
+                                    </div>
+                                </div>
+
+                                <div class="impact-summary-box">
+                                    <p class="impact-summary-text">"Campaign restructuring and search term optimization
+                                        to stop budget bleeding."</p>
+                                </div>
+                            </div>
+
+                            <div class="back-footer">
+                                <span class="back-author-name">Amit's Brand</span>
+                                <span class="back-flip-icon">↺ Flip back</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- TESTIMONIAL 02: Rahul Verma -->
+                <article class="testimonial-flip-card" itemprop="review" itemscope=""
+                    itemtype="http://schema.org/Review">
+                    <div class="testimonial-flip-inner">
+
+                        <!-- FRONT SIDE -->
+                        <div class="card-front">
+                            <div>
+                                <div class="card-top-header">
+                                    <svg class="testimonial-quote-icon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z">
+                                        </path>
+                                    </svg>
+                                    <div class="testimonial-stars" itemprop="reviewRating" itemscope=""
+                                        itemtype="http://schema.org/Rating">
+                                        <meta itemprop="ratingValue" content="5">
+                                        ★★★★★
+                                    </div>
+                                </div>
+
+                                <div class="verified-client-tag">
+                                    <span class="verified-dot"></span> Verified Client
+                                </div>
+
+                                <blockquote class="testimonial-text" itemprop="reviewBody">
+                                    "Launching a new product felt challenging until we had a <strong>structured PPC
+                                        strategy</strong>. The team helped us organize campaigns, refine keyword
+                                    targeting, and <strong>make better budget decisions</strong>."
+                                </blockquote>
+                            </div>
+
+                            <div>
+                                <footer class="testimonial-author" itemprop="author" itemscope=""
+                                    itemtype="http://schema.org/Person">
+                                    <div class="author-avatar-badge avatar-rahul" aria-hidden="true">R</div>
+                                    <div class="author-info">
+                                        <div class="author-name-row">
+                                            <cite class="author-name" itemprop="name">Rahul Verma</cite>
+                                            <svg class="author-check" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <span class="author-role" itemprop="jobTitle">E-commerce Business Owner</span>
+                                    </div>
+                                </footer>
+                                <div class="flip-hint-badge">Hover / Tap to Reveal Key Results ⚡</div>
+                            </div>
+                        </div>
+
+                        <!-- BACK SIDE (COOL RESULTS REVEAL) -->
+                        <div class="card-back">
+                            <div>
+                                <div class="back-header">
+                                    <span class="back-title-badge">KEY OUTCOMES</span>
+                                    <span class="back-verified-icon">✓ Verified Result</span>
+                                </div>
+
+                                <div class="metrics-stack">
+                                    <div class="metric-row">
+                                        <span class="metric-label">Ad Sales Growth</span>
+                                        <span class="metric-value highlight-gold">+35%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">ROAS Improvement</span>
+                                        <span class="metric-value highlight-green">+25%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">Campaign Structure</span>
+                                        <span class="metric-value">Optimized</span>
+                                    </div>
+                                </div>
+
+                                <div class="impact-summary-box">
+                                    <p class="impact-summary-text">"Structured new launch architecture with precision
+                                        keyword targeting."</p>
+                                </div>
+                            </div>
+
+                            <div class="back-footer">
+                                <span class="back-author-name">Rahul's Store</span>
+                                <span class="back-flip-icon">↺ Flip back</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- TESTIMONIAL 03: Neha Gupta -->
+                <article class="testimonial-flip-card is-flipped" itemprop="review" itemscope=""
+                    itemtype="http://schema.org/Review">
+                    <div class="testimonial-flip-inner">
+
+                        <!-- FRONT SIDE -->
+                        <div class="card-front">
+                            <div>
+                                <div class="card-top-header">
+                                    <svg class="testimonial-quote-icon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z">
+                                        </path>
+                                    </svg>
+                                    <div class="testimonial-stars" itemprop="reviewRating" itemscope=""
+                                        itemtype="http://schema.org/Rating">
+                                        <meta itemprop="ratingValue" content="5">
+                                        ★★★★★
+                                    </div>
+                                </div>
+
+                                <div class="verified-client-tag">
+                                    <span class="verified-dot"></span> Verified Client
+                                </div>
+
+                                <blockquote class="testimonial-text" itemprop="reviewBody">
+                                    "We wanted to grow our Amazon business without increasing ad spend blindly. The team
+                                    <strong>focused on profitability</strong>, campaign performance, and <strong>better
+                                        advertising decisions</strong>."
+                                </blockquote>
+                            </div>
+
+                            <div>
+                                <footer class="testimonial-author" itemprop="author" itemscope=""
+                                    itemtype="http://schema.org/Person">
+                                    <div class="author-avatar-badge avatar-neha" aria-hidden="true">N</div>
+                                    <div class="author-info">
+                                        <div class="author-name-row">
+                                            <cite class="author-name" itemprop="name">Neha Gupta</cite>
+                                            <svg class="author-check" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <span class="author-role" itemprop="jobTitle">Amazon Brand Owner</span>
+                                    </div>
+                                </footer>
+                                <div class="flip-hint-badge">Hover / Tap to Reveal Key Results ⚡</div>
+                            </div>
+                        </div>
+
+                        <!-- BACK SIDE (COOL RESULTS REVEAL) -->
+                        <div class="card-back">
+                            <div>
+                                <div class="back-header">
+                                    <span class="back-title-badge">KEY OUTCOMES</span>
+                                    <span class="back-verified-icon">✓ Verified Result</span>
+                                </div>
+
+                                <div class="metrics-stack">
+                                    <div class="metric-row">
+                                        <span class="metric-label">Total Sales Growth</span>
+                                        <span class="metric-value highlight-gold">+50%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">TACoS Reduction</span>
+                                        <span class="metric-value highlight-green">−12%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">Budget Optimization</span>
+                                        <span class="metric-value">Improved</span>
+                                    </div>
+                                </div>
+
+                                <div class="impact-summary-box">
+                                    <p class="impact-summary-text">"Profitability-first strategy scaling sales while
+                                        driving down overall TACoS."</p>
+                                </div>
+                            </div>
+
+                            <div class="back-footer">
+                                <span class="back-author-name">Neha's Brand</span>
+                                <span class="back-flip-icon">↺ Flip back</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- TESTIMONIAL 04: Karan Mehta -->
+                <article class="testimonial-flip-card" itemprop="review" itemscope=""
+                    itemtype="http://schema.org/Review">
+                    <div class="testimonial-flip-inner">
+
+                        <!-- FRONT SIDE -->
+                        <div class="card-front">
+                            <div>
+                                <div class="card-top-header">
+                                    <svg class="testimonial-quote-icon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z">
+                                        </path>
+                                    </svg>
+                                    <div class="testimonial-stars" itemprop="reviewRating" itemscope=""
+                                        itemtype="http://schema.org/Rating">
+                                        <meta itemprop="ratingValue" content="5">
+                                        ★★★★★
+                                    </div>
+                                </div>
+
+                                <div class="verified-client-tag">
+                                    <span class="verified-dot"></span> Verified Client
+                                </div>
+
+                                <blockquote class="testimonial-text" itemprop="reviewBody">
+                                    "The team reviewed our <strong>listing content alongside our PPC campaigns</strong>.
+                                    Their combined approach helped us focus on keyword relevance, product page quality,
+                                    and campaign optimization."
+                                </blockquote>
+                            </div>
+
+                            <div>
+                                <footer class="testimonial-author" itemprop="author" itemscope=""
+                                    itemtype="http://schema.org/Person">
+                                    <div class="author-avatar-badge avatar-karan" aria-hidden="true">K</div>
+                                    <div class="author-info">
+                                        <div class="author-name-row">
+                                            <cite class="author-name" itemprop="name">Karan Mehta</cite>
+                                            <svg class="author-check" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <span class="author-role" itemprop="jobTitle">Amazon Seller</span>
+                                    </div>
+                                </footer>
+                                <div class="flip-hint-badge">Hover / Tap to Reveal Key Results ⚡</div>
+                            </div>
+                        </div>
+
+                        <!-- BACK SIDE (COOL RESULTS REVEAL) -->
+                        <div class="card-back">
+                            <div>
+                                <div class="back-header">
+                                    <span class="back-title-badge">KEY OUTCOMES</span>
+                                    <span class="back-verified-icon">✓ Verified Result</span>
+                                </div>
+
+                                <div class="metrics-stack">
+                                    <div class="metric-row">
+                                        <span class="metric-label">Conversion Rate Growth</span>
+                                        <span class="metric-value highlight-gold">+22%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">CTR Improvement</span>
+                                        <span class="metric-value highlight-green">+15%</span>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">Listing &amp; PPC Review</span>
+                                        <span class="metric-value">Completed</span>
+                                    </div>
+                                </div>
+
+                                <div class="impact-summary-box">
+                                    <p class="impact-summary-text">"Listing content &amp; PPC sync delivering higher
+                                        buyer intent and conversions."</p>
+                                </div>
+                            </div>
+
+                            <div class="back-footer">
+                                <span class="back-author-name">Karan's Business</span>
+                                <span class="back-flip-icon">↺ Flip back</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
          SECTION: LOCAL CONTEXT - MORADABAD-BASED SELLERS
     ========================================================= -->
     <!--
@@ -4393,7 +4852,10 @@
                         </div>
                         <h3 class="sp-acct-card-title">Amazon Product Listing & Listing Optimization Services</h3>
                         <p class="sp-acct-card-desc">
-                            We provide Amazon product listing services, including product title optimization, bullet points, descriptions, backend search terms and A+ Content. Our Amazon listing optimization process improves product discoverability, listing relevance and conversion potential while keeping content aligned with Amazon's guidelines.
+                            We provide Amazon product listing services, including product title optimization, bullet
+                            points, descriptions, backend search terms and A+ Content. Our Amazon listing optimization
+                            process improves product discoverability, listing relevance and conversion potential while
+                            keeping content aligned with Amazon's guidelines.
                         </p>
                         <div class="sp-acct-tags-wrap">
                             <span class="sp-acct-tag">Title &amp; Bullet Copy</span>
@@ -4428,7 +4890,10 @@
                         </div>
                         <h3 class="sp-acct-card-title">Inventory &amp; FBA Management</h3>
                         <p class="sp-acct-card-desc">
-                            Our Amazon Seller Central management services include inventory monitoring, FBA replenishment planning, stockout prevention and stranded inventory tracking. We coordinate inventory availability with advertising activity to reduce wasted spend and help maintain consistent product sales.
+                            Our Amazon Seller Central management services include inventory monitoring, FBA
+                            replenishment planning, stockout prevention and stranded inventory tracking. We coordinate
+                            inventory availability with advertising activity to reduce wasted spend and help maintain
+                            consistent product sales.
                         </p>
                         <div class="sp-acct-tags-wrap">
                             <span class="sp-acct-tag">Days of Cover (DoC) Alerts</span>
@@ -4461,7 +4926,10 @@
                         </div>
                         <h3 class="sp-acct-card-title">Account Health &amp; Compliance</h3>
                         <p class="sp-acct-card-desc">
-                            Our Amazon seller account management services cover account health monitoring, suppressed listing checks, policy compliance and issue identification. We help sellers identify operational risks, maintain catalog accuracy and coordinate corrective actions to support uninterrupted selling.
+                            Our Amazon seller account management services cover account health monitoring, suppressed
+                            listing checks, policy compliance and issue identification. We help sellers identify
+                            operational risks, maintain catalog accuracy and coordinate corrective actions to support
+                            uninterrupted selling.
                         </p>
                         <div class="sp-acct-tags-wrap">
                             <span class="sp-acct-tag">ODR (&lt;1%) Protection</span>
@@ -4534,7 +5002,10 @@
                         </div>
                         <h3 class="sp-acct-card-title">Seller Central Reporting</h3>
                         <p class="sp-acct-card-desc">
-                            Our Amazon Seller Central account management process provides visibility into sales, advertising performance, account health and product-level profitability. We review relevant Seller Central reports, reconcile advertising metrics with overall sales and identify opportunities for operational improvements and profitable growth.
+                            Our Amazon Seller Central account management process provides visibility into sales,
+                            advertising performance, account health and product-level profitability. We review relevant
+                            Seller Central reports, reconcile advertising metrics with overall sales and identify
+                            opportunities for operational improvements and profitable growth.
                         </p>
                         <div class="sp-acct-tags-wrap">
                             <span class="sp-acct-tag">Total TACoS vs. ACoS Reconciliation</span>
@@ -4563,9 +5034,13 @@
                         </svg>
                     </div>
                     <div>
-                        <h4 class="sp-acct-banner-title">Why Amazon PPC Needs Complete Seller Central Account Management</h4>
+                        <h4 class="sp-acct-banner-title">Why Amazon PPC Needs Complete Seller Central Account Management
+                        </h4>
                         <p class="sp-acct-banner-text">
-                            Amazon PPC alone cannot fix a broken listing, unavailable inventory or a suppressed Buy Box. We coordinate advertising with product listing optimization, inventory planning, pricing and Seller Central operations to help sellers reduce wasted ad spend and improve overall marketplace performance.
+                            Amazon PPC alone cannot fix a broken listing, unavailable inventory or a suppressed Buy Box.
+                            We coordinate advertising with product listing optimization, inventory planning, pricing and
+                            Seller Central operations to help sellers reduce wasted ad spend and improve overall
+                            marketplace performance.
                         </p>
                     </div>
                 </div>
@@ -4594,7 +5069,9 @@
                 <span class="sp-section-tag">BID DECISIONS</span>
                 <h2 class="sp-section-title">When Should Amazon PPC Bids Go Up or Down?</h2>
                 <div class="sp-section-subtitle">
-                    Amazon PPC bid optimization depends on conversion performance, break-even ACOS, product margins and search-term relevance. We evaluate campaign data before increasing or reducing bids, helping Moradabad sellers control advertising costs and scale profitable Amazon PPC campaigns.
+                    Amazon PPC bid optimization depends on conversion performance, break-even ACOS, product margins and
+                    search-term relevance. We evaluate campaign data before increasing or reducing bids, helping
+                    Moradabad sellers control advertising costs and scale profitable Amazon PPC campaigns.
                 </div>
             </div>
 
@@ -4806,7 +5283,8 @@
                                 <svg class="sp-highlight-sparkline" viewBox="0 0 44 24" fill="none">
                                     <path d="M2 22L12 16L22 17L32 9L42 2" stroke="#10b981" stroke-width="2.5"
                                         stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M2 22L12 16L22 17L32 9L42 2V24H2Z" fill="url(#greenGrad2)" opacity="0.15" />
+                                    <path d="M2 22L12 16L22 17L32 9L42 2V24H2Z" fill="url(#greenGrad2)"
+                                        opacity="0.15" />
                                     <defs>
                                         <linearGradient id="greenGrad2" x1="22" y1="2" x2="22" y2="24"
                                             gradientUnits="userSpaceOnUse">
@@ -4830,7 +5308,8 @@
                                 <svg class="sp-highlight-sparkline" viewBox="0 0 44 24" fill="none">
                                     <path d="M2 19L12 14L22 15L32 7L42 2" stroke="#7c3aed" stroke-width="2.5"
                                         stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M2 19L12 14L22 15L32 7L42 2V24H2Z" fill="url(#purpleGrad)" opacity="0.15" />
+                                    <path d="M2 19L12 14L22 15L32 7L42 2V24H2Z" fill="url(#purpleGrad)"
+                                        opacity="0.15" />
                                     <defs>
                                         <linearGradient id="purpleGrad" x1="22" y1="2" x2="22" y2="24"
                                             gradientUnits="userSpaceOnUse">
@@ -4857,7 +5336,8 @@
                                 <span class="sp-browser-dot green"></span>
                             </div>
                             <div class="sp-browser-url">
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
                                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                 </svg>
@@ -5053,7 +5533,8 @@
                 <span class="sp-section-tag">FIT</span>
                 <h2 class="sp-section-title">Amazon PPC Management for Moradabad Sellers at Every Growth Stage</h2>
                 <div class="sp-section-subtitle">
-                    From new Amazon sellers to established handicraft exporters, we build PPC strategies around your products, margins, competition, and growth goals.
+                    From new Amazon sellers to established handicraft exporters, we build PPC strategies around your
+                    products, margins, competition, and growth goals.
                 </div>
             </div>
 
@@ -5078,7 +5559,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">New Amazon sellers</h3>
-                        <p class="sp-fit-card-desc">Launching your first products on Amazon? Build structured campaigns, identify relevant search terms, and gather conversion data without wasting your initial advertising budget.</p>
+                        <p class="sp-fit-card-desc">Launching your first products on Amazon? Build structured campaigns,
+                            identify relevant search terms, and gather conversion data without wasting your initial
+                            advertising budget.</p>
                     </div>
                 </div>
 
@@ -5096,7 +5579,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">Established Amazon</h3>
-                        <p class="sp-fit-card-desc">Already generating sales but struggling to improve ACoS or scale revenue? Optimize existing campaigns, refine keyword targeting, and allocate budgets based on performance.</p>
+                        <p class="sp-fit-card-desc">Already generating sales but struggling to improve ACoS or scale
+                            revenue? Optimize existing campaigns, refine keyword targeting, and allocate budgets based
+                            on performance.</p>
                     </div>
                 </div>
 
@@ -5113,7 +5598,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">Private-label sellers</h3>
-                        <p class="sp-fit-card-desc">Selling brass decor, metal handicrafts, or home accessories? Target relevant shopping searches and optimize campaigns around product-specific demand, pricing, and profit margins.</p>
+                        <p class="sp-fit-card-desc">Selling brass decor, metal handicrafts, or home accessories? Target
+                            relevant shopping searches and optimize campaigns around product-specific demand, pricing,
+                            and profit margins.</p>
                     </div>
                 </div>
 
@@ -5131,7 +5618,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">Manufacturers & Exporters</h3>
-                        <p class="sp-fit-card-desc">Taking your Moradabad-made products to Amazon marketplaces? Build advertising strategies suited to your catalog, target marketplace, and retail objectives.</p>
+                        <p class="sp-fit-card-desc">Taking your Moradabad-made products to Amazon marketplaces? Build
+                            advertising strategies suited to your catalog, target marketplace, and retail objectives.
+                        </p>
                     </div>
                 </div>
 
@@ -5151,7 +5640,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">Multi-ASIN sellers</h3>
-                        <p class="sp-fit-card-desc">Managing multiple products across your Amazon catalog? Segment campaigns by product, prioritize profitable ASINs, and control spend across different performance levels.</p>
+                        <p class="sp-fit-card-desc">Managing multiple products across your Amazon catalog? Segment
+                            campaigns by product, prioritize profitable ASINs, and control spend across different
+                            performance levels.</p>
                     </div>
                 </div>
 
@@ -5168,7 +5659,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">Product launches</h3>
-                        <p class="sp-fit-card-desc">Building your own brand on Amazon? Combine keyword research, product-level campaign structures, and listing optimization to support discoverability and conversions.</p>
+                        <p class="sp-fit-card-desc">Building your own brand on Amazon? Combine keyword research,
+                            product-level campaign structures, and listing optimization to support discoverability and
+                            conversions.</p>
                     </div>
                 </div>
 
@@ -5187,7 +5680,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">High-ACOS accounts</h3>
-                        <p class="sp-fit-card-desc">Spending heavily without satisfactory returns? Identify inefficient search terms, review bids and placements, and redirect budgets toward more promising opportunities.</p>
+                        <p class="sp-fit-card-desc">Spending heavily without satisfactory returns? Identify inefficient
+                            search terms, review bids and placements, and redirect budgets toward more promising
+                            opportunities.</p>
                     </div>
                 </div>
 
@@ -5206,7 +5701,9 @@
                             </div>
                         </div>
                         <h3 class="sp-fit-card-title">Wasted-spend accounts</h3>
-                        <p class="sp-fit-card-desc">Getting clicks but few orders? Investigate search-term relevance, listing quality, pricing, and conversion barriers before deciding where to reduce advertising spend.</p>
+                        <p class="sp-fit-card-desc">Getting clicks but few orders? Investigate search-term relevance,
+                            listing quality, pricing, and conversion barriers before deciding where to reduce
+                            advertising spend.</p>
                     </div>
                 </div>
             </div>
@@ -5237,57 +5734,84 @@
             <div class="sp-section-header">
                 <span class="sp-section-tag" style="color: #f87171;">AMAZON PPC PROFITABILITY AUDIT</span>
                 <h2 class="sp-section-title">Where Moradabad Sellers Bleed Money on Amazon PPC</h2>
-                <p class="sp-section-subtitle">From brass handicrafts and metal home decor to other locally manufactured products, Amazon sellers face challenges that can make advertising less profitable. We identify wasted spend, improve targeting, and align campaigns with product margins and listing performance.</p>
+                <p class="sp-section-subtitle">From brass handicrafts and metal home decor to other locally manufactured
+                    products, Amazon sellers face challenges that can make advertising less profitable. We identify
+                    wasted spend, improve targeting, and align campaigns with product margins and listing performance.
+                </p>
             </div>
 
             <div class="sp-problem-layout">
                 <div class="sp-problem-checklist">
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">01. Overspending on Broad Keywords</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Generic searches can attract shoppers whose intent doesn't match your specific product, consuming budget without enough orders.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">01. Overspending on
+                                Broad Keywords</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Generic
+                                searches can attract shoppers whose intent doesn't match your specific product,
+                                consuming budget without enough orders.</span>
                         </div>
                     </div>
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">02. Clicks Without Conversions</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">When clicks don't turn into sales, search-term relevance, pricing, product images, reviews, and listing quality all need attention.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">02. Clicks Without
+                                Conversions</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">When clicks
+                                don't turn into sales, search-term relevance, pricing, product images, reviews, and
+                                listing quality all need attention.</span>
                         </div>
                     </div>
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">03. Incorrect ACoS Targets</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Using the same advertising cost target for every product can hurt profitability because margins, selling prices, and conversion rates vary.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">03. Incorrect ACoS
+                                Targets</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Using the
+                                same advertising cost target for every product can hurt profitability because margins,
+                                selling prices, and conversion rates vary.</span>
                         </div>
                     </div>
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">04. Poor Campaign Structure</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Mixing products, search intents, and match types without a clear strategy makes it harder to identify profitable targets and control spend.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">04. Poor Campaign
+                                Structure</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Mixing
+                                products, search intents, and match types without a clear strategy makes it harder to
+                                identify profitable targets and control spend.</span>
                         </div>
                     </div>
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">05. Inventory and Listing Issues</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Stockouts, suppressed listings, weak product content, and Buy Box problems can undermine advertising performance even when campaign targeting is sound.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">05. Inventory and
+                                Listing Issues</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Stockouts,
+                                suppressed listings, weak product content, and Buy Box problems can undermine
+                                advertising performance even when campaign targeting is sound.</span>
                         </div>
                     </div>
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">06. Unoptimized Seasonal Campaigns</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Failing to plan budgets and campaigns around relevant shopping periods can mean missed opportunities or spending without sufficient returns.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">06. Unoptimized Seasonal
+                                Campaigns</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Failing to
+                                plan budgets and campaigns around relevant shopping periods can mean missed
+                                opportunities or spending without sufficient returns.</span>
                         </div>
                     </div>
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">07. High CPC and Weak Placement Efficiency</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Competitive bids and poorly performing placements can increase acquisition costs without delivering enough incremental sales.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">07. High CPC and Weak
+                                Placement Efficiency</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Competitive
+                                bids and poorly performing placements can increase acquisition costs without delivering
+                                enough incremental sales.</span>
                         </div>
                     </div>
                     <div class="sp-problem-item">
                         <div>
-                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">08. Advertising Without Profit-Level Reporting</strong>
-                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Looking at ACoS or ROAS alone can hide product costs, fulfilment fees, and other expenses that affect actual profitability.</span>
+                            <strong style="display: block; color: #f1f5f9; margin-bottom: 3px;">08. Advertising Without
+                                Profit-Level Reporting</strong>
+                            <span style="display: block; font-size: 13px; color: #94a3b8; line-height: 1.5;">Looking at
+                                ACoS or ROAS alone can hide product costs, fulfilment fees, and other expenses that
+                                affect actual profitability.</span>
                         </div>
                     </div>
                 </div>
@@ -5561,7 +6085,9 @@
                 READY TO GROW YOUR AMAZON BUSINESS IN INDIA?
             </h2>
             <p class="sp-section-subtitle" style="max-width: 680px; margin: 0 auto 36px; color: #cbd5e1;">
-                Get a personalized Amazon PPC audit to identify wasted ad spend, uncover keyword opportunities, and improve campaign performance. We’ll assess your advertising data and recommend practical next steps based on your products, profit margins, and business goals.
+                Get a personalized Amazon PPC audit to identify wasted ad spend, uncover keyword opportunities, and
+                improve campaign performance. We’ll assess your advertising data and recommend practical next steps
+                based on your products, profit margins, and business goals.
             </p>
             <div class="sp-hero-cta">
                 <button class="sp-btn-primary" onclick="openAuditModal('FinalCTA')">
@@ -5655,23 +6181,49 @@
                             and scale profitably across marketplaces.</p>
 
                         <div class="footer-socials" aria-label="Social Media Links">
-                            <a href="https://wa.me/918433232647" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            <a href="https://wa.me/918433232647" target="_blank" rel="noopener noreferrer"
+                                aria-label="WhatsApp" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                                </svg>
                             </a>
-                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 1 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank"
+                                rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 1 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
                             </a>
-                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios"
+                                target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+                                </svg>
                             </a>
-                            <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
                             </a>
-                            <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z"/></svg>
+                            <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer"
+                                aria-label="Pinterest" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z" />
+                                </svg>
                             </a>
-                            <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                            <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer"
+                                aria-label="Medium" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -5884,6 +6436,7 @@
         });
     </script>
     <script src="../js/navbar.js"></script>
+    <script src="../js/testimonials.js"></script>
     <script src="../js/script.js"></script>
 </body>
 
