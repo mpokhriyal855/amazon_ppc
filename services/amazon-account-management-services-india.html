@@ -5523,14 +5523,17 @@
 
         // Mobile nav toggle
         function toggleMobileNav(e) {
-            e.preventDefault();
-            const navLinks = document.getElementById('navLinks');
-            if (navLinks) {
-                navLinks.classList.toggle('active');
+            if (e) {
+                if (typeof e.preventDefault === 'function') e.preventDefault();
+                if (typeof e.stopPropagation === 'function') e.stopPropagation();
+            }
+            if (window.toggleMobileNav) {
+                window.toggleMobileNav(e);
             }
         }
     </script>
-
+    <script src="../js/navbar.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

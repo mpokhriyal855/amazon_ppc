@@ -5,18 +5,24 @@
 ========================================================= */
 
 (function() {
+    let lastToggleTime = 0;
+
     // Global toggle function
     window.toggleMobileNav = function(e) {
-        if (e && typeof e.preventDefault === 'function') {
-            e.preventDefault();
-            e.stopPropagation();
+        if (e) {
+            if (typeof e.preventDefault === 'function') e.preventDefault();
+            if (typeof e.stopPropagation === 'function') e.stopPropagation();
         }
+        const now = Date.now();
+        if (now - lastToggleTime < 250) return;
+        lastToggleTime = now;
+
         const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         
         if (!mobileToggle || !navLinks) return;
 
-        const isOpen = navLinks.classList.contains("mobile-open");
+        const isOpen = navLinks.classList.contains("mobile-open") || navLinks.classList.contains("active");
         if (isOpen) {
             window.closeMobileNav();
         } else {
@@ -27,12 +33,15 @@
     window.openMobileNav = function() {
         const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
-        if (!mobileToggle || !navLinks) return;
+        if (!navLinks) return;
 
         navLinks.classList.add("mobile-open");
-        mobileToggle.classList.add("is-active");
-        mobileToggle.setAttribute("aria-expanded", "true");
-        mobileToggle.innerHTML = "✕";
+        navLinks.classList.add("active");
+        if (mobileToggle) {
+            mobileToggle.classList.add("is-active");
+            mobileToggle.setAttribute("aria-expanded", "true");
+            mobileToggle.innerHTML = "✕";
+        }
     };
 
     window.closeMobileNav = function() {
@@ -41,6 +50,7 @@
         if (!navLinks) return;
 
         navLinks.classList.remove("mobile-open");
+        navLinks.classList.remove("active");
         if (mobileToggle) {
             mobileToggle.classList.remove("is-active");
             mobileToggle.setAttribute("aria-expanded", "false");
@@ -48,40 +58,34 @@
         }
     };
 
-    // Global Event Delegation for clicks and touch
-    let lastToggleTime = 0;
-    function handleToggleEvent(e) {
+    // Global Event Delegation for clicks and mobile navigation
+    document.addEventListener("click", function(e) {
+        // 1. Mobile toggle button click
         const toggleBtn = e.target.closest("#mobileToggle, .mobile-toggle");
         if (toggleBtn) {
-            const now = Date.now();
-            if (now - lastToggleTime < 300) return; // Prevent double trigger on mobile
-            lastToggleTime = now;
-            
             e.preventDefault();
             e.stopPropagation();
             window.toggleMobileNav(e);
-            return true;
-        }
-        return false;
-    }
-
-    document.addEventListener("pointerdown", function(e) {
-        const toggleBtn = e.target.closest("#mobileToggle, .mobile-toggle");
-        if (toggleBtn) {
-            handleToggleEvent(e);
-        }
-    }, { passive: false });
-
-    document.addEventListener("click", function(e) {
-        if (handleToggleEvent(e)) return;
-
-        // Dropdown toggle click handling (inline onclick handles toggle; prevent double toggle)
-        const dropdownTrigger = e.target.closest('.nav-dropdown-trigger');
-        if (dropdownTrigger) {
             return;
         }
 
-        // Close dropdown when clicking outside
+        // 2. On mobile: dropdown trigger click toggles submenu accordion
+        const dropdownTrigger = e.target.closest('.nav-dropdown-trigger');
+        if (dropdownTrigger && window.innerWidth <= 900) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentDropdown = dropdownTrigger.closest('.nav-dropdown');
+            if (parentDropdown) {
+                const wasOpen = parentDropdown.classList.contains('is-open');
+                document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
+                    if (d !== parentDropdown) d.classList.remove('is-open');
+                });
+                parentDropdown.classList.toggle('is-open', !wasOpen);
+            }
+            return;
+        }
+
+        // 3. Close open desktop dropdowns when clicking outside
         document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
             if (!d.contains(e.target)) {
                 d.classList.remove('is-open');
@@ -91,15 +95,15 @@
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         if (!navLinks) return;
 
-        // 2. Click on normal link inside Nav Links
+        // 4. Click on normal link inside Nav Links -> close mobile menu
         if (navLinks.contains(e.target) && e.target.closest("a:not(.nav-dropdown-trigger)")) {
             window.closeMobileNav();
             return;
         }
 
-        // 3. Click outside Nav Links when open
-        if (navLinks.classList.contains("mobile-open")) {
-            if (!navLinks.contains(e.target)) {
+        // 5. Click outside Nav Links when open -> close mobile menu
+        if (navLinks.classList.contains("mobile-open") || navLinks.classList.contains("active")) {
+            if (!navLinks.contains(e.target) && !e.target.closest("#mobileToggle, .mobile-toggle")) {
                 window.closeMobileNav();
             }
         }

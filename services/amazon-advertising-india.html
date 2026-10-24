@@ -910,9 +910,13 @@
             }
         }
         function toggleMobileNav(event) {
-            event.preventDefault();
-            const nav = document.getElementById('navLinks');
-            if (nav) nav.classList.toggle('active');
+            if (event) {
+                if (typeof event.preventDefault === 'function') event.preventDefault();
+                if (typeof event.stopPropagation === 'function') event.stopPropagation();
+            }
+            if (window.toggleMobileNav) {
+                window.toggleMobileNav(event);
+            }
         }
     </script>
     <script src="../js/navbar.js"></script>

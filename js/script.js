@@ -110,30 +110,38 @@ setTimeout(
 ========================================================= */
 
 window.toggleMobileNav = function(e) {
-    if (e) e.stopPropagation();
+    if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
     const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
     const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
     if (!mobileToggle || !navLinks) return;
 
-    const isOpen = navLinks.classList.contains("mobile-open");
+    const isOpen = navLinks.classList.contains("mobile-open") || navLinks.classList.contains("active");
     if (isOpen) {
-        navLinks.classList.remove("mobile-open");
-        mobileToggle.classList.remove("is-active");
-        mobileToggle.setAttribute("aria-expanded", "false");
-        mobileToggle.innerHTML = "☰";
+        if (typeof window.closeMobileNav === 'function') {
+            window.closeMobileNav();
+        } else {
+            navLinks.classList.remove("mobile-open", "active");
+            mobileToggle.classList.remove("is-active");
+            mobileToggle.setAttribute("aria-expanded", "false");
+            mobileToggle.innerHTML = "☰";
+        }
     } else {
-        navLinks.classList.add("mobile-open");
-        mobileToggle.classList.add("is-active");
-        mobileToggle.setAttribute("aria-expanded", "true");
-        mobileToggle.innerHTML = "✕";
+        if (typeof window.openMobileNav === 'function') {
+            window.openMobileNav();
+        } else {
+            navLinks.classList.add("mobile-open", "active");
+            mobileToggle.classList.add("is-active");
+            mobileToggle.setAttribute("aria-expanded", "true");
+            mobileToggle.innerHTML = "✕";
+        }
     }
 };
 
 window.closeMobileNav = function() {
     const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
     const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
-    if (navLinks && navLinks.classList.contains("mobile-open")) {
-        navLinks.classList.remove("mobile-open");
+    if (navLinks) {
+        navLinks.classList.remove("mobile-open", "active");
         if (mobileToggle) {
             mobileToggle.classList.remove("is-active");
             mobileToggle.setAttribute("aria-expanded", "false");
@@ -148,8 +156,8 @@ function initMobileMenuSystem() {
 
     if (!navLinks) return;
 
-    // Auto-close menu when clicking any link inside the nav menu
-    const links = navLinks.querySelectorAll("a");
+    // Auto-close menu when clicking destination links (excluding dropdown triggers)
+    const links = navLinks.querySelectorAll("a:not(.nav-dropdown-trigger)");
     links.forEach(link => {
         link.addEventListener("click", () => {
             window.closeMobileNav();
@@ -158,7 +166,7 @@ function initMobileMenuSystem() {
 
     // Auto-close menu when clicking outside the menu / toggle
     document.addEventListener("click", (e) => {
-        if (navLinks.classList.contains("mobile-open")) {
+        if (navLinks.classList.contains("mobile-open") || navLinks.classList.contains("active")) {
             if (!navLinks.contains(e.target) && mobileToggle && !mobileToggle.contains(e.target)) {
                 window.closeMobileNav();
             }
