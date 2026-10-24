@@ -170,9 +170,13 @@
 }
 
 /* FLIP ON HOVER OR ACTIVE CLASS */
-.testimonial-flip-card:hover .testimonial-flip-inner,
-.testimonial-flip-card.is-flipped .testimonial-flip-inner {
+.testimonial-flip-card:hover:not(.unflipped) .testimonial-flip-inner,
+.testimonial-flip-card.is-flipped:not(.unflipped) .testimonial-flip-inner {
     transform: rotateY(180deg);
+}
+
+.testimonial-flip-card.unflipped .testimonial-flip-inner {
+    transform: rotateY(0deg) !important;
 }
 
 /* FRONT & BACK CARD FACES */
@@ -487,10 +491,24 @@
 .back-flip-icon {
     font-size: 11px;
     color: #93c5fd;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
     font-weight: 600;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 50px;
+    background: rgba(96, 165, 250, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.back-flip-icon:hover {
+    background: rgba(245, 158, 11, 0.25);
+    color: #fbbf24;
+    border-color: rgba(245, 158, 11, 0.5);
+    transform: scale(1.05);
 }
 
 /* RESPONSIVE BREAKPOINTS */

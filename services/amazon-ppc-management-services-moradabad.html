@@ -3196,6 +3196,39 @@
             animation: orbPulse2 10s ease-in-out infinite alternate;
         }
 
+        /* 3D Flip Card Hover & Accurate Flip-Back Overrides */
+        .testimonial-flip-card:hover:not(.unflipped) .testimonial-flip-inner,
+        .testimonial-flip-card.is-flipped:not(.unflipped) .testimonial-flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .testimonial-flip-card.unflipped .testimonial-flip-inner {
+            transform: rotateY(0deg) !important;
+        }
+
+        .back-flip-icon {
+            font-size: 11px;
+            color: #93c5fd;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 50px;
+            background: rgba(96, 165, 250, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.35);
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        .back-flip-icon:hover {
+            background: rgba(245, 158, 11, 0.25);
+            color: #fbbf24;
+            border-color: rgba(245, 158, 11, 0.5);
+            transform: scale(1.05);
+        }
+
         /* FAQS - MINIMALIST LINE-DIVIDED MODERN ACCORDION (MATCHING SCREENSHOT) */
         .sp-faq-section {
             background: #ffffff;
@@ -4352,7 +4385,7 @@
                 </article>
 
                 <!-- TESTIMONIAL 03: Neha Gupta -->
-                <article class="testimonial-flip-card is-flipped" itemprop="review" itemscope=""
+                <article class="testimonial-flip-card" itemprop="review" itemscope=""
                     itemtype="http://schema.org/Review">
                     <div class="testimonial-flip-inner">
 
