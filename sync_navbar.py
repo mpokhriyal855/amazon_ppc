@@ -33,7 +33,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 NAVBAR_SOURCE = os.path.join(ROOT_DIR, "navbar.html")
 
 # Directories to scan for HTML files (relative to ROOT_DIR)
-SCAN_DIRS = [".", "services", "calculators", "blog"]
+SCAN_DIRS = [".", "services", "calculators", "blog", "amazon-ecommerce-training"]
 
 # Files to skip
 SKIP_FILES = {
