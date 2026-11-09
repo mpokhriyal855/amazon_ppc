@@ -2263,3 +2263,10 @@
     align-items: flex-start;
   }
 }
+
+/* Temporarily Hidden Sections */
+.tr-section-dark-bonuses,
+.tr-section-dark-navy {
+  display: none !important;
+}
+
