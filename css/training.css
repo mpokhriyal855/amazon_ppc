@@ -1061,11 +1061,11 @@
 .tr-timeline-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 26px 24px;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  border-radius: 18px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
   position: relative;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1080,13 +1080,13 @@
   height: 3px;
   background: linear-gradient(90deg, #2563eb, #06b6d4);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .tr-timeline-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: #93c5fd;
-  box-shadow: 0 18px 40px -10px rgba(37, 99, 235, 0.12), 0 4px 12px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.14), 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
 .tr-timeline-card:hover::before {
@@ -1101,80 +1101,124 @@
 }
 
 .tr-roadmap-step-pill {
-  font-family: var(--tr-font-mono);
+  font-family: var(--tr-font-mono, monospace);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: #2563eb;
   background: #eff6ff;
-  border: 1px solid #dbeafe;
-  padding: 4px 10px;
+  border: 1px solid #bfdbfe;
+  padding: 3px 9px;
   border-radius: 6px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.3;
 }
 
 .tr-roadmap-phase-tag {
-  font-family: var(--tr-font-mono);
-  font-size: 10.5px;
+  font-family: var(--tr-font-mono, monospace);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   color: #64748b;
-  background: #f1f5f9;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
-  padding: 3px 9px;
+  padding: 3px 8px;
   border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.3;
 }
 
 .tr-timeline-card h3 {
-  font-size: 17.5px;
+  font-size: 16.5px;
   font-weight: 800;
   color: #0f172a;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   letter-spacing: -0.015em;
   line-height: 1.35;
 }
 
-.tr-roadmap-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
+.tr-roadmap-list,
+.tr-timeline-card ul {
+  list-style: none !important;
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
 }
 
-.tr-roadmap-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 13.5px;
-  color: #475569;
-  line-height: 1.5;
-  font-weight: 500;
+.tr-roadmap-list li,
+.tr-timeline-card li {
+  list-style: none !important;
+  list-style-type: none !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  font-size: 13.5px !important;
+  color: #334155 !important;
+  line-height: 1.45 !important;
+  font-weight: 500 !important;
+  padding: 6px 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px dashed #f1f5f9 !important;
+  position: static !important;
 }
 
-.tr-roadmap-list li span {
-  flex: 1;
+.tr-roadmap-list li:last-child,
+.tr-timeline-card li:last-child {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
-.tr-step-ico {
+.tr-roadmap-list li::before,
+.tr-timeline-card li::before {
+  display: none !important;
+  content: none !important;
+}
+
+.tr-step-ico-wrap {
   flex-shrink: 0;
-  margin-top: 2px;
-  width: 17px;
-  height: 17px;
-  color: #2563eb;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 6px;
   background: #eff6ff;
-  border: 1px solid #dbeafe;
-  border-radius: 5px;
-  padding: 2.5px;
-  transition: all 0.2s ease;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.tr-timeline-card:hover .tr-step-ico {
+.tr-timeline-card:hover .tr-step-ico-wrap {
   background: #2563eb;
   color: #ffffff;
   border-color: #2563eb;
+}
+
+.tr-step-ico {
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  min-height: 12px !important;
+  max-width: 12px !important;
+  max-height: 12px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.tr-roadmap-list li span:last-child {
+  flex: 1;
 }
 
 .tr-timeline-card p {

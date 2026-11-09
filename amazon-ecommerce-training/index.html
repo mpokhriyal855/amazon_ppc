@@ -30,7 +30,7 @@
     <!-- CSS STYLESHEETS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css?v=v48">
-    <link rel="stylesheet" href="../css/training.css?v=v16">
+    <link rel="stylesheet" href="../css/training.css?v=v18">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/whatsapp.css">
 
@@ -1224,10 +1224,177 @@
             </div>
         </section>
 
-        <!-- ==========================================
+                <!-- ==========================================
              7. YOUR AMAZON BUSINESS ROADMAP (LIGHT - CRISP PURE WHITE)
              ========================================== -->
         <section class="tr-section-pure-white" id="roadmap">
+            <style>
+                #roadmap .tr-timeline-grid {
+                    display: grid !important;
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 24px !important;
+                    margin-top: 40px !important;
+                }
+                @media (max-width: 992px) {
+                    #roadmap .tr-timeline-grid {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                        gap: 20px !important;
+                    }
+                }
+                @media (max-width: 640px) {
+                    #roadmap .tr-timeline-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 16px !important;
+                    }
+                }
+                #roadmap .tr-timeline-card {
+                    background: #ffffff !important;
+                    border: 1px solid #e2e8f0 !important;
+                    border-radius: 18px !important;
+                    padding: 24px 22px !important;
+                    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04) !important;
+                    position: relative !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    overflow: hidden !important;
+                    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+                }
+                #roadmap .tr-timeline-card:hover {
+                    transform: translateY(-4px) !important;
+                    border-color: #93c5fd !important;
+                    box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.14), 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+                }
+                #roadmap .tr-timeline-card::before {
+                    content: '' !important;
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    height: 3px !important;
+                    background: linear-gradient(90deg, #2563eb, #06b6d4) !important;
+                    opacity: 0 !important;
+                    transition: opacity 0.25s ease !important;
+                }
+                #roadmap .tr-timeline-card:hover::before {
+                    opacity: 1 !important;
+                }
+                #roadmap .tr-roadmap-card-header {
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: space-between !important;
+                    margin-bottom: 14px !important;
+                }
+                #roadmap .tr-roadmap-step-pill {
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 11px !important;
+                    font-weight: 800 !important;
+                    letter-spacing: 0.8px !important;
+                    text-transform: uppercase !important;
+                    color: #2563eb !important;
+                    background: #eff6ff !important;
+                    border: 1px solid #bfdbfe !important;
+                    padding: 3px 9px !important;
+                    border-radius: 6px !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    line-height: 1.3 !important;
+                }
+                #roadmap .tr-roadmap-phase-tag {
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 10px !important;
+                    font-weight: 700 !important;
+                    letter-spacing: 0.5px !important;
+                    text-transform: uppercase !important;
+                    color: #64748b !important;
+                    background: #f8fafc !important;
+                    border: 1px solid #e2e8f0 !important;
+                    padding: 3px 8px !important;
+                    border-radius: 6px !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    line-height: 1.3 !important;
+                }
+                #roadmap .tr-timeline-card h3 {
+                    font-size: 16.5px !important;
+                    font-weight: 800 !important;
+                    color: #0f172a !important;
+                    margin: 0 0 14px 0 !important;
+                    letter-spacing: -0.015em !important;
+                    line-height: 1.35 !important;
+                }
+                #roadmap .tr-roadmap-list,
+                #roadmap .tr-timeline-card ul {
+                    list-style: none !important;
+                    list-style-type: none !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 8px !important;
+                }
+                #roadmap .tr-roadmap-list li,
+                #roadmap .tr-timeline-card li {
+                    list-style: none !important;
+                    list-style-type: none !important;
+                    display: flex !important;
+                    align-items: flex-start !important;
+                    gap: 10px !important;
+                    font-size: 13.5px !important;
+                    color: #334155 !important;
+                    line-height: 1.45 !important;
+                    font-weight: 500 !important;
+                    padding: 6px 0 !important;
+                    margin: 0 !important;
+                    border-bottom: 1px dashed #f1f5f9 !important;
+                    position: static !important;
+                }
+                #roadmap .tr-roadmap-list li:last-child,
+                #roadmap .tr-timeline-card li:last-child {
+                    border-bottom: none !important;
+                    padding-bottom: 0 !important;
+                }
+                #roadmap .tr-roadmap-list li::before,
+                #roadmap .tr-timeline-card li::before {
+                    display: none !important;
+                    content: none !important;
+                }
+                #roadmap .tr-step-ico-wrap {
+                    flex-shrink: 0 !important;
+                    width: 20px !important;
+                    height: 20px !important;
+                    min-width: 20px !important;
+                    min-height: 20px !important;
+                    max-width: 20px !important;
+                    max-height: 20px !important;
+                    border-radius: 6px !important;
+                    background: #eff6ff !important;
+                    border: 1px solid #bfdbfe !important;
+                    color: #2563eb !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    margin-top: 1px !important;
+                    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+                }
+                #roadmap .tr-timeline-card:hover .tr-step-ico-wrap {
+                    background: #2563eb !important;
+                    color: #ffffff !important;
+                    border-color: #2563eb !important;
+                }
+                #roadmap .tr-step-ico {
+                    width: 12px !important;
+                    height: 12px !important;
+                    min-width: 12px !important;
+                    min-height: 12px !important;
+                    max-width: 12px !important;
+                    max-height: 12px !important;
+                    display: block !important;
+                    flex-shrink: 0 !important;
+                }
+                #roadmap .tr-roadmap-list li span:last-child {
+                    flex: 1 !important;
+                }
+            </style>
             <div class="tr-container">
                 <div class="tr-section-header">
                     <div class="tr-eyebrow-pill">
@@ -1248,15 +1415,15 @@
                         <h3>Understand the Amazon Business Model</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Private Label, Wholesale, Reselling and other selling models</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>How Amazon India marketplace works</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Understanding the Amazon seller ecosystem</span>
                             </li>
                         </ul>
@@ -1271,15 +1438,15 @@
                         <h3>Product Research &amp; Market Analysis</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Identify products with market demand</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Analyse competitors, pricing and search demand</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Discover potential product opportunities</span>
                             </li>
                         </ul>
@@ -1294,15 +1461,15 @@
                         <h3>Validate Product Demand &amp; Profitability</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Evaluate competition and market potential</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Calculate Amazon fees and estimated profit margins</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Understand investment and break-even requirements</span>
                             </li>
                         </ul>
@@ -1317,15 +1484,15 @@
                         <h3>Product Sourcing &amp; Inventory Planning</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Find and evaluate product suppliers</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Understand sourcing costs and product quality</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Plan inventory and working capital</span>
                             </li>
                         </ul>
@@ -1340,15 +1507,15 @@
                         <h3>Understand GST &amp; Seller Documentation</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>PAN, GST and bank account requirements</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Understand business registration requirements</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Prepare documents for Amazon seller verification</span>
                             </li>
                         </ul>
@@ -1363,15 +1530,15 @@
                         <h3>Amazon Seller Account Registration</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Create your Amazon Seller Central account</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Complete seller verification</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Configure marketplace and account settings</span>
                             </li>
                         </ul>
@@ -1386,15 +1553,15 @@
                         <h3>Amazon Product Listing Creation &amp; SEO</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Create keyword-optimised product titles and bullet points</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Conduct keyword research and backend search term optimisation</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Improve product images and listing conversion potential</span>
                             </li>
                         </ul>
@@ -1409,15 +1576,15 @@
                         <h3>Choose Your Amazon Fulfilment Method</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Understand FBA, Easy Ship and Self Ship</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Compare fulfilment costs and operational requirements</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Manage orders, shipping and customer experience</span>
                             </li>
                         </ul>
@@ -1432,15 +1599,15 @@
                         <h3>Product Launch &amp; Sales Strategy</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Prepare your product launch strategy</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Plan initial pricing and advertising budgets</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Build product visibility and generate initial sales</span>
                             </li>
                         </ul>
@@ -1455,15 +1622,15 @@
                         <h3>Amazon PPC Advertising &amp; Campaign Optimisation</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Create Sponsored Products campaigns</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Understand keyword targeting, bids and budgets</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Analyse ACoS, ROAS, CTR and conversion rates</span>
                             </li>
                         </ul>
@@ -1478,15 +1645,15 @@
                         <h3>Amazon Business Management &amp; Profitability</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Monitor sales, advertising costs and business expenses</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Track inventory, returns and account health</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Calculate net profit and identify optimisation opportunities</span>
                             </li>
                         </ul>
@@ -1501,15 +1668,15 @@
                         <h3>Scale Your Amazon Business with Data</h3>
                         <ul class="tr-roadmap-list">
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Identify profitable products and growth opportunities</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Improve organic rankings and advertising performance</span>
                             </li>
                             <li>
-                                <svg class="tr-step-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="tr-step-ico-wrap"><svg class="tr-step-ico" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;display:block;"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                                 <span>Build a structured long-term business growth strategy</span>
                             </li>
                         </ul>
