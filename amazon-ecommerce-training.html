@@ -30,7 +30,7 @@
     <!-- CSS STYLESHEETS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css?v=v48">
-    <link rel="stylesheet" href="css/training.css?v=v21">
+    <link rel="stylesheet" href="css/training.css?v=v22">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/whatsapp.css">
 
@@ -2321,20 +2321,343 @@
         </section>
 
         <!-- ==========================================
-             10. FAQ ACCORDION (LIGHT - CRISP PURE WHITE)
+             10. FAQ ACCORDION (LITTLE DARK THEME - WITH SMOOTH TRANSITIONS)
              ========================================== -->
-        <section class="tr-section-light-faq">
+        <style>
+            .tr-section-dark-faq {
+                position: relative;
+                padding: 105px 0;
+                background: radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.22) 0%, transparent 60%), linear-gradient(180deg, #0b1120 0%, #0f172a 50%, #0b1120 100%);
+                overflow: hidden;
+                border-top: 1px solid rgba(59, 130, 246, 0.15);
+                border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+            }
+            .tr-section-dark-faq::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0;
+                height: 80px;
+                background: linear-gradient(180deg, rgba(248, 250, 252, 0.05) 0%, transparent 100%);
+                pointer-events: none;
+                z-index: 1;
+            }
+            .tr-section-dark-faq::after {
+                content: '';
+                position: absolute;
+                bottom: 0; left: 0; right: 0;
+                height: 80px;
+                background: linear-gradient(0deg, rgba(240, 247, 255, 0.05) 0%, transparent 100%);
+                pointer-events: none;
+                z-index: 1;
+            }
+            .tr-section-dark-faq .tr-container {
+                position: relative;
+                z-index: 2;
+            }
+            .tr-section-dark-faq .tr-faq-card {
+                background: rgba(15, 23, 42, 0.68);
+                border: 1px solid rgba(255, 255, 255, 0.09);
+                border-radius: 16px;
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                overflow: hidden;
+                transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+                margin-bottom: 14px;
+            }
+            .tr-section-dark-faq .tr-faq-card:hover {
+                border-color: rgba(59, 130, 246, 0.4);
+                background: rgba(22, 34, 62, 0.78);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 0 16px rgba(59, 130, 246, 0.12);
+            }
+            .tr-section-dark-faq .tr-faq-card[open] {
+                border-color: rgba(59, 130, 246, 0.55);
+                background: rgba(22, 34, 62, 0.88);
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 22px rgba(59, 130, 246, 0.18);
+            }
+            .tr-section-dark-faq .tr-faq-card summary {
+                padding: 20px 26px;
+                font-size: 16.5px;
+                font-weight: 600;
+                color: #f8fafc;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 18px;
+                list-style: none;
+                user-select: none;
+            }
+            .tr-section-dark-faq .tr-faq-card summary::-webkit-details-marker {
+                display: none;
+            }
+            .tr-section-dark-faq .tr-faq-icon-disc {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: rgba(59, 130, 246, 0.12);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                font-weight: 500;
+                color: #60a5fa;
+                flex-shrink: 0;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .tr-section-dark-faq .tr-faq-card[open] .tr-faq-icon-disc {
+                transform: rotate(45deg);
+                background: #2563eb;
+                color: #ffffff;
+                border-color: #3b82f6;
+                box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+            }
+            .tr-section-dark-faq .tr-faq-body {
+                padding: 0 26px 22px;
+                font-size: 15px;
+                color: #cbd5e1;
+                line-height: 1.68;
+                border-top: 1px solid rgba(255, 255, 255, 0.06);
+                padding-top: 16px;
+            }
+
+            /* Final CTA Exact Replica Styling */
+            .tr-final-cta-replica {
+                position: relative;
+                padding: 100px 20px 90px;
+                background: radial-gradient(circle at 50% 15%, rgba(219, 234, 254, 0.6) 0%, transparent 65%), linear-gradient(180deg, #f0f7ff 0%, #ffffff 55%, #eaf2fd 100%);
+                text-align: center;
+                overflow: hidden;
+            }
+            .tr-final-ambient-waves {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 120px;
+                pointer-events: none;
+                z-index: 1;
+                opacity: 0.85;
+            }
+            .tr-final-inner {
+                position: relative;
+                z-index: 2;
+                max-width: 820px;
+                margin: 0 auto;
+            }
+            .tr-final-eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: #dbeafe;
+                border: 1px solid rgba(147, 197, 253, 0.8);
+                color: #1d4ed8;
+                font-size: 11.5px;
+                font-weight: 800;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                padding: 6px 16px;
+                border-radius: 9999px;
+                margin-bottom: 22px;
+                box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+            }
+            .tr-final-title {
+                font-size: clamp(32px, 4vw, 46px);
+                font-weight: 800;
+                color: #0f172a;
+                line-height: 1.25;
+                letter-spacing: -0.025em;
+                margin: 0 0 16px;
+            }
+            .tr-final-accent-word {
+                color: #1d4ed8;
+                position: relative;
+                display: inline-block;
+                white-space: nowrap;
+            }
+            .tr-title-underline-svg {
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                width: 100%;
+                height: 10px;
+                overflow: visible;
+            }
+            .tr-final-plan-wrap {
+                position: relative;
+                display: inline-block;
+            }
+            .tr-sparkle-burst {
+                position: absolute;
+                top: -8px;
+                right: -24px;
+                width: 22px;
+                height: 22px;
+                pointer-events: none;
+            }
+            .tr-sparkle-burst span {
+                position: absolute;
+                background: #2563eb;
+                border-radius: 2px;
+            }
+            .tr-sparkle-burst span:nth-child(1) {
+                width: 2px;
+                height: 10px;
+                top: 2px;
+                left: 6px;
+                transform: rotate(-35deg);
+            }
+            .tr-sparkle-burst span:nth-child(2) {
+                width: 2px;
+                height: 12px;
+                top: -4px;
+                left: 13px;
+                transform: rotate(10deg);
+            }
+            .tr-sparkle-burst span:nth-child(3) {
+                width: 2px;
+                height: 8px;
+                top: 6px;
+                left: 18px;
+                transform: rotate(50deg);
+            }
+            .tr-final-sub {
+                font-size: clamp(16px, 1.8vw, 18px);
+                color: #475569;
+                line-height: 1.6;
+                margin: 0 auto 30px;
+                max-width: 640px;
+            }
+            .tr-final-meta-pill-bar {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: #ffffff;
+                border: 1px solid #dbeafe;
+                border-radius: 9999px;
+                padding: 10px 26px;
+                gap: 20px;
+                box-shadow: 0 6px 20px rgba(37, 99, 235, 0.06);
+                margin-bottom: 34px;
+            }
+            .tr-final-meta-item {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14.5px;
+                font-weight: 600;
+                color: #1e293b;
+            }
+            .tr-final-meta-div {
+                width: 1px;
+                height: 18px;
+                background: #cbd5e1;
+            }
+            .tr-final-actions-row {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                flex-wrap: wrap;
+                margin-bottom: 34px;
+            }
+            .tr-cta-btn-blue {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                background: #1d4ed8;
+                color: #ffffff !important;
+                font-size: 15.5px;
+                font-weight: 600;
+                padding: 14px 28px;
+                border-radius: 12px;
+                text-decoration: none;
+                box-shadow: 0 8px 20px -3px rgba(29, 78, 216, 0.35);
+                transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .tr-cta-btn-blue:hover {
+                background: #1e40af;
+                transform: translateY(-2px);
+                box-shadow: 0 12px 26px -3px rgba(29, 78, 216, 0.45);
+            }
+            .tr-cta-btn-green {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                background: #16a34a;
+                color: #ffffff !important;
+                font-size: 15.5px;
+                font-weight: 600;
+                padding: 14px 28px;
+                border-radius: 12px;
+                text-decoration: none;
+                box-shadow: 0 8px 20px -3px rgba(22, 163, 74, 0.35);
+                transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .tr-cta-btn-green:hover {
+                background: #15803d;
+                transform: translateY(-2px);
+                box-shadow: 0 12px 26px -3px rgba(22, 163, 74, 0.45);
+            }
+            .tr-cta-btn-green svg {
+                width: 18px;
+                height: 18px;
+                fill: currentColor;
+            }
+            .tr-final-related {
+                font-size: 13.5px;
+                color: #64748b;
+                margin-top: 10px;
+            }
+            .tr-final-related a {
+                color: #2563eb;
+                font-weight: 600;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+            .tr-final-related a:hover {
+                text-decoration: underline;
+                color: #1d4ed8;
+            }
+            @media (max-width: 640px) {
+                .tr-final-meta-pill-bar {
+                    flex-direction: column;
+                    border-radius: 20px;
+                    gap: 10px;
+                    padding: 14px 20px;
+                }
+                .tr-final-meta-div {
+                    display: none;
+                }
+                .tr-final-actions-row {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                .tr-cta-btn-blue, .tr-cta-btn-green {
+                    width: 100%;
+                }
+            }
+        </style>
+        <section class="tr-section-dark-faq" id="faq">
+            <div class="tr-dark-ambient-mesh" aria-hidden="true" style="opacity: 0.35;"></div>
+
             <div class="tr-container">
                 <div class="tr-section-header">
-                    <div class="tr-eyebrow-pill">
-                        <span class="pulsing-dot"></span>
+                    <div class="tr-eyebrow-pill" style="color: #60a5fa; background: rgba(59, 130, 246, 0.12); border-color: rgba(59, 130, 246, 0.3);">
+                        <span class="pulsing-dot" style="background-color: #60a5fa; box-shadow: 0 0 10px #60a5fa;"></span>
                         FAQ
                     </div>
-                    <h2 class="tr-h2-title">Frequently Asked <span class="gradient-accent">Questions</span></h2>
-                    <p class="tr-subtitle-lead">Everything you need to know about our one-on-one Amazon e-commerce training.</p>
+                    <h2 class="tr-h2-title" style="color: #ffffff;">Frequently Asked <span class="gradient-accent" style="background: linear-gradient(135deg, #60a5fa, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Questions</span></h2>
+                    <p class="tr-subtitle-lead" style="color: #94a3b8;">Everything you need to know about our one-on-one Amazon e-commerce training.</p>
                 </div>
 
                 <div class="tr-faq-stack">
+                    <!-- Q1 -->
                     <details class="tr-faq-card" open>
                         <summary>
                             <span>What is Amazon E-Commerce Training?</span>
@@ -2345,6 +2668,84 @@
                         </div>
                     </details>
 
+                    <!-- Q2 (New) -->
+                    <details class="tr-faq-card">
+                        <summary>
+                            <span>How can I start an Amazon business in India?</span>
+                            <span class="tr-faq-icon-disc">+</span>
+                        </summary>
+                        <div class="tr-faq-body">
+                            <p>The usual sequence is to understand the business model, research and validate a product, arrange sourcing, prepare documents, register a seller account, create the listing, choose a fulfilment model, launch, and then manage advertising and operations. The course covers each step.</p>
+                        </div>
+                    </details>
+
+                    <!-- Q3 (New) -->
+                    <details class="tr-faq-card">
+                        <summary>
+                            <span>Do I need GST to sell on Amazon?</span>
+                            <span class="tr-faq-icon-disc">+</span>
+                        </summary>
+                        <div class="tr-faq-body">
+                            <p>It depends on your business type, turnover and products. The course explains GST requirements and the applicable exceptions. For your own filing decisions, consult a qualified tax professional and check current rules on official government and Amazon pages.</p>
+                        </div>
+                    </details>
+
+                    <!-- Q4 (New) -->
+                    <details class="tr-faq-card">
+                        <summary>
+                            <span>How much investment is needed to start an Amazon business?</span>
+                            <span class="tr-faq-icon-disc">+</span>
+                        </summary>
+                        <div class="tr-faq-body">
+                            <p>It varies widely. The course shows three hypothetical scenarios and explains each cost head: sourcing, inventory, packaging, GST and compliance, shipping, Amazon fees, advertising, returns and working capital.</p>
+                        </div>
+                    </details>
+
+                    <!-- Q5 (New) -->
+                    <details class="tr-faq-card">
+                        <summary>
+                            <span>What is Amazon FBA?</span>
+                            <span class="tr-faq-icon-disc">+</span>
+                        </summary>
+                        <div class="tr-faq-body">
+                            <p>Fulfilment by Amazon is a model where you send stock to Amazon's fulfilment centres and Amazon stores, packs and ships orders for you. Fees apply, and they are covered on Day 2.</p>
+                        </div>
+                    </details>
+
+                    <!-- Q6 (New) -->
+                    <details class="tr-faq-card">
+                        <summary>
+                            <span>What is the difference between FBA and Easy Ship?</span>
+                            <span class="tr-faq-icon-disc">+</span>
+                        </summary>
+                        <div class="tr-faq-body">
+                            <p>With FBA, Amazon stores and ships the stock. With Easy Ship, you hold the stock while Amazon's courier collects and delivers orders from your location. The comparison table on this page sets out the differences.</p>
+                        </div>
+                    </details>
+
+                    <!-- Q7 (New) -->
+                    <details class="tr-faq-card">
+                        <summary>
+                            <span>Will I learn Amazon PPC advertising?</span>
+                            <span class="tr-faq-icon-disc">+</span>
+                        </summary>
+                        <div class="tr-faq-body">
+                            <p>Yes. Day 3 covers Sponsored Products, Sponsored Brands, Sponsored Display, match types, bids, budgets and the core metrics such as ACoS, ROAS and TACoS.</p>
+                        </div>
+                    </details>
+
+                    <!-- Q8 (New) -->
+                    <details class="tr-faq-card">
+                        <summary>
+                            <span>Will I learn product listing optimisation?</span>
+                            <span class="tr-faq-icon-disc">+</span>
+                        </summary>
+                        <div class="tr-faq-body">
+                            <p>Yes. Day 2 covers titles, bullet points, descriptions, backend search terms, images, variations and listing SEO basics.</p>
+                        </div>
+                    </details>
+
+                    <!-- Q9 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>Is this Amazon training suitable for beginners?</span>
@@ -2355,6 +2756,7 @@
                         </div>
                     </details>
 
+                    <!-- Q10 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>Can existing Amazon sellers join?</span>
@@ -2365,6 +2767,7 @@
                         </div>
                     </details>
 
+                    <!-- Q11 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>Is the training conducted online?</span>
@@ -2375,6 +2778,7 @@
                         </div>
                     </details>
 
+                    <!-- Q12 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>Is the training one-on-one?</span>
@@ -2385,6 +2789,7 @@
                         </div>
                     </details>
 
+                    <!-- Q13 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>What is the fee for the training?</span>
@@ -2395,6 +2800,7 @@
                         </div>
                     </details>
 
+                    <!-- Q14 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>What topics will I learn?</span>
@@ -2405,6 +2811,7 @@
                         </div>
                     </details>
 
+                    <!-- Q15 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>Do I need an existing Amazon seller account?</span>
@@ -2415,6 +2822,7 @@
                         </div>
                     </details>
 
+                    <!-- Q16 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>What language is the training conducted in?</span>
@@ -2425,6 +2833,7 @@
                         </div>
                     </details>
 
+                    <!-- Q17 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>Will I receive an official Amazon certificate?</span>
@@ -2435,6 +2844,7 @@
                         </div>
                     </details>
 
+                    <!-- Q18 -->
                     <details class="tr-faq-card">
                         <summary>
                             <span>How can I enquire about the next available session?</span>
@@ -2449,19 +2859,80 @@
         </section>
 
         <!-- ==========================================
-             11. FINAL CALL TO ACTION (DARK - DEEP INDIGO MESH)
+             11. FINAL CALL TO ACTION (EXACT REPLICA DESIGN)
              ========================================== -->
-        <section class="tr-final-cta-mesh">
-            <div class="tr-final-mesh-glow" aria-hidden="true"></div>
-            
-            <div class="tr-container tr-final-wrapper">
-                <h2>Ready to Build Your Amazon E-Commerce Skills?</h2>
-                <p>Get started with personalized online training designed around your Amazon business learning goals. Fee: ₹4,999.</p>
-                
-                <a class="tr-whatsapp-cta-btn" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-                    <span>Enquire About ATES Training</span>
-                </a>
+        <section class="tr-final-cta-replica" id="final-cta">
+            <!-- Ambient Waves at bottom matching image -->
+            <svg class="tr-final-ambient-waves" viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 60C320 120 420 0 720 50C1020 100 1180 20 1440 60V120H0V60Z" fill="rgba(224, 237, 255, 0.45)"/>
+                <path d="M0 80C360 25 540 110 840 70C1140 30 1260 90 1440 85V120H0V80Z" fill="rgba(219, 234, 254, 0.65)"/>
+            </svg>
+
+            <div class="tr-container tr-final-inner">
+                <!-- Eyebrow Pill -->
+                <div class="tr-final-eyebrow">
+                    <span>🚀</span> READY TO BEGIN?
+                </div>
+
+                <!-- Main Title with curved underline and sparkles -->
+                <h2 class="tr-final-title">
+                    Start Your 
+                    <span class="tr-final-accent-word">
+                        Amazon Business
+                        <svg class="tr-title-underline-svg" viewBox="0 0 260 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M3 9.5C65 2.5 195 2.5 257 9.5" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </span> 
+                    with a Clear 
+                    <span class="tr-final-plan-wrap">
+                        Plan
+                        <span class="tr-sparkle-burst" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="tr-final-sub">Three days, six hours, and a practical roadmap at the end.</p>
+
+                <!-- Unified Meta Pill Bar -->
+                <div class="tr-final-meta-pill-bar">
+                    <div class="tr-final-meta-item">
+                        <span>🗓️</span>
+                        <span>3 Days Training</span>
+                    </div>
+                    <div class="tr-final-meta-div" aria-hidden="true"></div>
+                    <div class="tr-final-meta-item">
+                        <span>⏱️</span>
+                        <span>6 Hours Live Sessions</span>
+                    </div>
+                    <div class="tr-final-meta-div" aria-hidden="true"></div>
+                    <div class="tr-final-meta-item">
+                        <span>🎯</span>
+                        <span>Actionable Roadmap</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons Row -->
+                <div class="tr-final-actions-row">
+                    <a href="#enquire" class="tr-cta-btn-blue">
+                        <span>🎓</span>
+                        <span>Enrol in Amazon Seller Training</span>
+                        <span>&rarr;</span>
+                    </a>
+                    <a href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer" class="tr-cta-btn-green">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+                        <span>WhatsApp Enquiry</span>
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Related Links Line -->
+                <div class="tr-final-related">
+                    Related: <a href="services/amazon-ppc-management.html">Amazon PPC Management</a> &middot; <a href="services/amazon-account-management.html">Amazon Account Management</a>
+                </div>
             </div>
         </section>
 
