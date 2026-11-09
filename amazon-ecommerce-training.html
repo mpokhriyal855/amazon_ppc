@@ -30,11 +30,11 @@
     <!-- CSS STYLESHEETS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css?v=v48">
-    <link rel="stylesheet" href="css/training.css?v=v1">
+    <link rel="stylesheet" href="css/training.css?v=v2">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/whatsapp.css">
 
-    <!-- STRUCTURED DATA (JSON-LD FAQ SCHEMA) -->
+    <!-- JSON-LD FAQ SCHEMA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -126,7 +126,7 @@
 </head>
 <body class="training-page">
 
-    <!-- MASTER NAVBAR -->
+    <!-- MASTER NAVBAR CONTAINER -->
     <!-- NAVBAR -->
 <div class="navbar-container" id="navbarContainer">
     <header class="navbar">
@@ -502,130 +502,207 @@
 
     <main id="main-content">
 
-        <!-- 1. HERO SECTION -->
-        <section class="tr-hero">
-            <div class="tr-hero-glow" aria-hidden="true"></div>
-            <div class="tr-wrap tr-hero-grid">
+        <!-- ==========================================
+             1. HERO SECTION (ULTRA-ADVANCED DUAL COLUMN)
+             ========================================== -->
+        <section class="tr-hero-section">
+            <div class="tr-ambient-glow" aria-hidden="true"></div>
+            
+            <div class="tr-container tr-hero-grid">
+                <!-- LEFT HERO CONTENT -->
                 <div class="tr-hero-content">
-                    <div class="tr-eyebrow">
-                        <span class="dot"></span>
+                    <div class="tr-eyebrow-pill">
+                        <span class="pulsing-dot"></span>
                         Live 1-on-1 Amazon Training
                     </div>
-                    <h1>Learn to <span class="gradient-text">Start, Manage &amp; Grow</span> Your Amazon Business</h1>
-                    <p class="tr-hero-lead">Build practical Amazon e-commerce skills through personalized, live online training. Learn product research, listing optimization, Amazon PPC fundamentals, and business profitability with guidance tailored to your experience and goals.</p>
-                    
-                    <ul class="tr-hero-points">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Personalized 1-on-1 online sessions</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Practical, structured curriculum</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Beginner-friendly step-by-step guidance</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Amazon business &amp; PPC fundamentals</span>
-                        </li>
-                    </ul>
 
-                    <div class="tr-hero-actions">
-                        <a class="tr-btn-primary" href="#enquire">
+                    <h1>Learn to <span class="hero-gradient-text">Start, Manage &amp; Grow</span> Your Amazon Business</h1>
+                    
+                    <p class="tr-hero-lead-text">
+                        Build practical Amazon e-commerce skills through personalized, live online training. Learn product research, listing optimization, Amazon PPC fundamentals, and business profitability with guidance tailored to your experience and goals.
+                    </p>
+
+                    <!-- 4 VALUE CAPSULES -->
+                    <div class="tr-hero-value-grid">
+                        <div class="tr-value-capsule">
+                            <div class="tr-value-icon">🎯</div>
+                            <div class="tr-value-text">Personalized 1-on-1 online sessions</div>
+                        </div>
+                        <div class="tr-value-capsule">
+                            <div class="tr-value-icon">📚</div>
+                            <div class="tr-value-text">Practical, structured learning</div>
+                        </div>
+                        <div class="tr-value-capsule">
+                            <div class="tr-value-icon">🌱</div>
+                            <div class="tr-value-text">Beginner-friendly guidance</div>
+                        </div>
+                        <div class="tr-value-capsule">
+                            <div class="tr-value-icon">📈</div>
+                            <div class="tr-value-text">Amazon business &amp; PPC fundamentals</div>
+                        </div>
+                    </div>
+
+                    <!-- HERO CTAS -->
+                    <div class="tr-hero-cta-group">
+                        <a class="tr-btn-glow-primary" href="#enquire">
                             <span>Enquire About Training</span>
                             <span aria-hidden="true">→</span>
                         </a>
-                        <a class="tr-btn-ghost" href="#curriculum">
+                        <a class="tr-btn-glow-ghost" href="#curriculum">
                             <span>Explore the Curriculum</span>
                             <span aria-hidden="true">↓</span>
                         </a>
                     </div>
+
+                    <!-- TRUST STRIP -->
+                    <div class="tr-hero-trust-strip">
+                        <div class="tr-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>100+ Brands Scaled</span>
+                        </div>
+                        <div class="tr-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>₹100Cr+ GMV Managed</span>
+                        </div>
+                        <div class="tr-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>5+ Years SPN Experience</span>
+                        </div>
+                        <div class="tr-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                            <span>100% Practical &amp; Live</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- HERO PRICING BADGE ASIDE -->
-                <aside class="tr-price-badge-card" aria-label="Training fee overview">
-                    <span class="tr-badge-tag">COMPLETE 1-ON-1 PROGRAM</span>
-                    <div class="tr-badge-amt">₹4,999 <small>INR</small></div>
-                    <div class="tr-badge-sub">One-on-one live online training · Personalized curriculum</div>
-                    
-                    <div class="tr-badge-divider"></div>
+                <!-- RIGHT HERO PASS CARD -->
+                <div class="tr-vip-pass-wrapper">
+                    <div class="tr-vip-glow-ring" aria-hidden="true"></div>
 
-                    <ul class="tr-badge-features">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Live interactive sessions via Google Meet</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Tailored pace &amp; direct Q&amp;A with trainer</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Hands-on practice with free calculators</span>
-                        </li>
-                    </ul>
+                    <div class="tr-float-badge-top">
+                        <span>🔥 1-on-1 Intake Open</span>
+                    </div>
 
-                    <a class="tr-whatsapp-btn" style="width: 100%; font-size: 15px; padding: 14px 20px;" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-                        <span>WhatsApp Quick Enquiry</span>
-                    </a>
-                </aside>
+                    <div class="tr-float-badge-bottom">
+                        <span style="color: #f59e0b;">⭐ 4.9/5</span>
+                        <span>Rated by Sellers</span>
+                    </div>
+
+                    <div class="tr-vip-pass-card">
+                        <div class="tr-pass-header">
+                            <div class="tr-pass-title">PROGRAM OVERVIEW // 1-ON-1</div>
+                            <h3 class="tr-pass-h3">ATES E-Commerce Training</h3>
+                            
+                            <div class="tr-pass-price-box">
+                                <span class="tr-pass-price">₹4,999</span>
+                                <span class="tr-pass-currency">INR · ONE-TIME</span>
+                            </div>
+                            <div class="tr-pass-scope">One-on-one live online training · Tailored curriculum</div>
+                        </div>
+
+                        <ul class="tr-pass-checklist">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Personalized learning objectives</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Structured six-module curriculum</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Instructor-led live sessions with screen share</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Opportunity to ask live questions</span>
+                            </li>
+                        </ul>
+
+                        <a class="tr-whatsapp-cta-btn" style="width: 100%;" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+                            <span>Enquire on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 2. AUDIENCE SECTION -->
-        <section class="tr-section">
-            <div class="tr-wrap">
-                <div class="tr-sec-head">
-                    <span class="tr-eyebrow">Who is this for?</span>
-                    <h2 class="tr-h2">Built for Beginners and Existing Sellers</h2>
-                    <p class="tr-lead">The learning path is personalized to your experience and goals, so you spend time on what matters for your business.</p>
+        <!-- ==========================================
+             2. AUDIENCE SECTION (BEGINNERS VS SELLERS)
+             ========================================== -->
+        <section class="tr-section-light">
+            <div class="tr-container">
+                <div class="tr-section-header">
+                    <div class="tr-eyebrow-pill">
+                        <span class="pulsing-dot"></span>
+                        Who is this for?
+                    </div>
+                    <h2 class="tr-h2-title">Built for <span class="gradient-accent">Beginners &amp; Existing Sellers</span></h2>
+                    <p class="tr-subtitle-lead">The learning path is personalized to your experience and goals, so you spend time on what matters for your business.</p>
                 </div>
 
-                <div class="tr-audience-grid">
+                <div class="tr-audience-container">
+                    <!-- CARD 1: BEGINNERS -->
                     <article class="tr-audience-card">
-                        <div class="icon-wrap" aria-hidden="true">🌱</div>
+                        <div class="tr-aud-top">
+                            <div class="tr-aud-icon-box" aria-hidden="true">🌱</div>
+                            <span class="tr-aud-pill beginner">New to Selling</span>
+                        </div>
                         <h3>Beginners Starting an Amazon Business</h3>
                         <p>Understand the essential steps behind Amazon selling: how the marketplace works, product research and evaluation, seller account setup, listings, pricing, and advertising.</p>
-                        <div class="tr-audience-tags">
-                            <span class="tr-tag">Account Setup</span>
-                            <span class="tr-tag">Product Discovery</span>
-                            <span class="tr-tag">FBA vs FBM</span>
-                            <span class="tr-tag">First Listing</span>
+                        
+                        <div class="tr-aud-tags-row">
+                            <span class="tr-aud-tag">Seller Account Setup</span>
+                            <span class="tr-aud-tag">Product Research</span>
+                            <span class="tr-aud-tag">FBA vs FBM</span>
+                            <span class="tr-aud-tag">Listing Creation</span>
+                            <span class="tr-aud-tag">Launch Strategy</span>
                         </div>
                     </article>
 
+                    <!-- CARD 2: EXISTING SELLERS -->
                     <article class="tr-audience-card">
-                        <div class="icon-wrap" aria-hidden="true">📊</div>
+                        <div class="tr-aud-top">
+                            <div class="tr-aud-icon-box" aria-hidden="true">📊</div>
+                            <span class="tr-aud-pill seller">Scaling &amp; Growth</span>
+                        </div>
                         <h3>Existing Amazon Sellers</h3>
                         <p>Strengthen listing optimization, learn how PPC campaigns are structured, read advertising metrics with confidence, and analyse your business performance more clearly.</p>
-                        <div class="tr-audience-tags">
-                            <span class="tr-tag">PPC Optimization</span>
-                            <span class="tr-tag">ACoS / ROAS Control</span>
-                            <span class="tr-tag">Conversion Rate</span>
-                            <span class="tr-tag">Margin Health</span>
+                        
+                        <div class="tr-aud-tags-row">
+                            <span class="tr-aud-tag">PPC Campaign Architecture</span>
+                            <span class="tr-aud-tag">ACoS / ROAS Optimization</span>
+                            <span class="tr-aud-tag">Keyword Harvesting</span>
+                            <span class="tr-aud-tag">Profit Calculations</span>
+                            <span class="tr-aud-tag">Conversion Rate Audit</span>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- 3. CURRICULUM SECTION -->
-        <section class="tr-section alt" id="curriculum">
-            <div class="tr-wrap">
-                <div class="tr-sec-head">
-                    <span class="tr-eyebrow">What you will learn</span>
-                    <h2 class="tr-h2">A Six-Module Amazon E-Commerce Curriculum</h2>
-                    <p class="tr-lead">Proposed modules that can be customized to your goals. Depth varies by engagement.</p>
+        <!-- ==========================================
+             3. CURRICULUM SECTION (6 MODULES + CALCULATORS)
+             ========================================== -->
+        <section class="tr-section-slate" id="curriculum">
+            <div class="tr-container">
+                <div class="tr-section-header">
+                    <div class="tr-eyebrow-pill">
+                        <span class="pulsing-dot"></span>
+                        What you will learn
+                    </div>
+                    <h2 class="tr-h2-title">A Six-Module <span class="gradient-accent">Amazon E-Commerce Curriculum</span></h2>
+                    <p class="tr-subtitle-lead">Proposed modules that can be customized to your goals. Depth varies by engagement.</p>
                 </div>
 
                 <div class="tr-modules-grid">
                     <!-- Module 1 -->
                     <article class="tr-module-card">
-                        <span class="mod-num">Module 1</span>
+                        <div class="tr-mod-badge-row">
+                            <span class="tr-mod-num-tag">Module 1</span>
+                            <span class="tr-mod-icon">🏢</span>
+                        </div>
                         <h3>Amazon Business Fundamentals</h3>
                         <ul>
                             <li>Amazon marketplace business models</li>
@@ -637,7 +714,10 @@
 
                     <!-- Module 2 -->
                     <article class="tr-module-card">
-                        <span class="mod-num">Module 2</span>
+                        <div class="tr-mod-badge-row">
+                            <span class="tr-mod-num-tag">Module 2</span>
+                            <span class="tr-mod-icon">🔍</span>
+                        </div>
                         <h3>Product Research and Selection</h3>
                         <ul>
                             <li>Product demand and competition</li>
@@ -649,7 +729,10 @@
 
                     <!-- Module 3 -->
                     <article class="tr-module-card">
-                        <span class="mod-num">Module 3</span>
+                        <div class="tr-mod-badge-row">
+                            <span class="tr-mod-num-tag">Module 3</span>
+                            <span class="tr-mod-icon">📝</span>
+                        </div>
                         <h3>Listing Creation and Optimization</h3>
                         <ul>
                             <li>Product titles, bullet points, and descriptions</li>
@@ -661,7 +744,10 @@
 
                     <!-- Module 4 -->
                     <article class="tr-module-card">
-                        <span class="mod-num">Module 4</span>
+                        <div class="tr-mod-badge-row">
+                            <span class="tr-mod-num-tag">Module 4</span>
+                            <span class="tr-mod-icon">🎯</span>
+                        </div>
                         <h3>Amazon PPC Fundamentals</h3>
                         <ul>
                             <li>Sponsored Products advertising concepts</li>
@@ -674,7 +760,10 @@
 
                     <!-- Module 5 -->
                     <article class="tr-module-card">
-                        <span class="mod-num">Module 5</span>
+                        <div class="tr-mod-badge-row">
+                            <span class="tr-mod-num-tag">Module 5</span>
+                            <span class="tr-mod-icon">💰</span>
+                        </div>
                         <h3>Business Operations and Profitability</h3>
                         <ul>
                             <li>Pricing and Amazon selling fees</li>
@@ -686,7 +775,10 @@
 
                     <!-- Module 6 -->
                     <article class="tr-module-card">
-                        <span class="mod-num">Module 6</span>
+                        <div class="tr-mod-badge-row">
+                            <span class="tr-mod-num-tag">Module 6</span>
+                            <span class="tr-mod-icon">🚀</span>
+                        </div>
                         <h3>Launch and Growth Strategy</h3>
                         <ul>
                             <li>Product launch planning</li>
@@ -698,121 +790,196 @@
                 </div>
 
                 <!-- Practical Tools Banner -->
-                <div class="tr-calc-banner">
-                    <p>Practical tools for hands-on practice: explore our free <a href="calculators/index.html">PPC Growth Expert calculators</a> covering ACoS, ROAS, CPC, and Amazon India fees.</p>
-                    <div class="tr-calc-pills">
-                        <a href="calculators/amazon-acos-calculator.html" class="tr-calc-pill">ACoS Tool →</a>
-                        <a href="calculators/amazon-roas-calculator.html" class="tr-calc-pill">ROAS Tool →</a>
-                        <a href="calculators/amazon-profit-calculator.html" class="tr-calc-pill">Profit Tool →</a>
-                        <a href="calculators/amazon-fba-fee-calculator.html" class="tr-calc-pill">FBA Tool →</a>
+                <div class="tr-calc-callout-card">
+                    <div class="tr-calc-left">
+                        <div class="tr-calc-glow-icon">🧮</div>
+                        <p>
+                            Practical tools for hands-on practice: the free <a href="calculators/index.html">PPC Growth Expert calculators</a> cover ACOS, ROAS, CPC and Amazon India fees.
+                        </p>
+                    </div>
+                    <div class="tr-calc-interactive-pills">
+                        <a href="calculators/amazon-acos-calculator.html" class="tr-tool-pill">ACoS Calculator →</a>
+                        <a href="calculators/amazon-roas-calculator.html" class="tr-tool-pill">ROAS Calculator →</a>
+                        <a href="calculators/amazon-profit-calculator.html" class="tr-tool-pill">Profit Calculator →</a>
+                        <a href="calculators/amazon-fba-fee-calculator.html" class="tr-tool-pill">FBA Fees →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. WHY ONE-ON-ONE SECTION -->
-        <section class="tr-section">
-            <div class="tr-wrap tr-why-split">
-                <div>
-                    <span class="tr-eyebrow">Why one-on-one</span>
-                    <h2 class="tr-h2">Instruction Tailored to You</h2>
-                    <p class="tr-lead">Instead of a generic recorded course where questions go unanswered, you learn directly from the specialist in live, personalized sessions.</p>
+        <!-- ==========================================
+             4. WHY ONE-ON-ONE (SPLIT + COMPARISON TABLE)
+             ========================================== -->
+        <section class="tr-section-light">
+            <div class="tr-container">
+                <div class="tr-why-split-container">
+                    <div>
+                        <div class="tr-eyebrow-pill">
+                            <span class="pulsing-dot"></span>
+                            Why one-on-one
+                        </div>
+                        <h2 class="tr-h2-title">Instruction <span class="gradient-accent">Tailored to You</span></h2>
+                        <p class="tr-subtitle-lead" style="margin-bottom: 24px;">
+                            Instead of a generic recorded course where your questions go unanswered, you learn directly from the trainer in live sessions paced to your exact needs.
+                        </p>
+                        <a class="tr-btn-glow-primary" href="#enquire">
+                            <span>Get Started 1-on-1</span>
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+
+                    <div class="tr-why-checklist-card">
+                        <div class="tr-check-item">
+                            <div class="tr-check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg></div>
+                            <div class="tr-check-title">Dedicated trainer attention in every session</div>
+                        </div>
+                        <div class="tr-check-item">
+                            <div class="tr-check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg></div>
+                            <div class="tr-check-title">Learning paced to your experience level</div>
+                        </div>
+                        <div class="tr-check-item">
+                            <div class="tr-check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg></div>
+                            <div class="tr-check-title">Room to ask questions as you go</div>
+                        </div>
+                        <div class="tr-check-item">
+                            <div class="tr-check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg></div>
+                            <div class="tr-check-title">Focus on your specific business goals</div>
+                        </div>
+                        <div class="tr-check-item">
+                            <div class="tr-check-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg></div>
+                            <div class="tr-check-title">Guidance through examples and practical exercises where included in your plan</div>
+                        </div>
+                    </div>
                 </div>
 
-                <ul class="tr-checklist">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Dedicated trainer attention in every single session</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Learning paced comfortably to your experience level</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Room to ask real-time questions as you go</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>100% focus on your specific business categories and goals</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                        <span>Guidance through real-world examples and practical exercises where included in your plan</span>
-                    </li>
-                </ul>
+                <!-- COMPARISON TABLE -->
+                <div class="tr-comparison-box">
+                    <table class="tr-cmp-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 34%;">LEARNING PILLAR</th>
+                                <th style="width: 33%;">PRE-RECORDED COURSES</th>
+                                <th style="width: 33%;" class="highlight-th">ATES 1-ON-1 MENTORSHIP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Teaching Format</strong></td>
+                                <td class="status-bad">❌ Static, pre-recorded videos</td>
+                                <td class="status-good highlight-td">✔ 100% Live 1-on-1 screen share</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Question &amp; Answer</strong></td>
+                                <td class="status-bad">❌ No live Q&amp;A or delayed forums</td>
+                                <td class="status-good highlight-td">✔ Real-time direct dialogue with mentor</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Curriculum Customization</strong></td>
+                                <td class="status-bad">❌ One-size-fits-all generic syllabus</td>
+                                <td class="status-good highlight-td">✔ Tailored to your category &amp; goals</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Real Account Application</strong></td>
+                                <td class="status-bad">❌ Theoretical examples only</td>
+                                <td class="status-good highlight-td">✔ Practical exercises &amp; live metric analysis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pacing &amp; Flexibility</strong></td>
+                                <td class="status-bad">❌ Fixed speed, no adaptation</td>
+                                <td class="status-good highlight-td">✔ Comfortable learning pace for you</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
-        <!-- 5. HOW IT WORKS SECTION -->
-        <section class="tr-section alt">
-            <div class="tr-wrap">
-                <div class="tr-sec-head">
-                    <span class="tr-eyebrow">How it works</span>
-                    <h2 class="tr-h2">From Enquiry to Learning</h2>
-                    <p class="tr-lead">A seamless 4-step process designed to get you started quickly and smoothly.</p>
+        <!-- ==========================================
+             5. HOW IT WORKS (CONNECTED TIMELINE)
+             ========================================== -->
+        <section class="tr-section-slate">
+            <div class="tr-container">
+                <div class="tr-section-header">
+                    <div class="tr-eyebrow-pill">
+                        <span class="pulsing-dot"></span>
+                        How it works
+                    </div>
+                    <h2 class="tr-h2-title">From Enquiry to <span class="gradient-accent">Active Learning</span></h2>
+                    <p class="tr-subtitle-lead">Four straightforward steps to embark on your personalized Amazon mentorship.</p>
                 </div>
 
-                <div class="tr-steps-grid">
-                    <div class="tr-step-card">
-                        <div class="tr-step-num">1</div>
+                <div class="tr-timeline-grid">
+                    <!-- Step 1 -->
+                    <div class="tr-timeline-card">
+                        <div class="tr-timeline-step-badge">01</div>
                         <h3>Submit an enquiry</h3>
-                        <p>Share your experience level, current selling status, and specific learning objectives.</p>
+                        <p>Share your experience level and learning objectives.</p>
                     </div>
 
-                    <div class="tr-step-card">
-                        <div class="tr-step-num">2</div>
+                    <!-- Step 2 -->
+                    <div class="tr-timeline-card">
+                        <div class="tr-timeline-step-badge">02</div>
                         <h3>Discuss requirements</h3>
-                        <p>We clarify your goals, course scope, preferred schedule, and an agreed training plan.</p>
+                        <p>We clarify your goals, course scope and a suitable training plan.</p>
                     </div>
 
-                    <div class="tr-step-card">
-                        <div class="tr-step-num">3</div>
+                    <!-- Step 3 -->
+                    <div class="tr-timeline-card">
+                        <div class="tr-timeline-step-badge">03</div>
                         <h3>Attend live sessions</h3>
-                        <p>The trainer teaches the agreed topics one-on-one, online with screen sharing and direct dialogue.</p>
+                        <p>The trainer teaches the agreed topics one-on-one, online.</p>
                     </div>
 
-                    <div class="tr-step-card">
-                        <div class="tr-step-num">4</div>
+                    <!-- Step 4 -->
+                    <div class="tr-timeline-card">
+                        <div class="tr-timeline-step-badge">04</div>
                         <h3>Review and apply</h3>
-                        <p>Work through the agreed exercises, analyze your listings, or implement your launch plan.</p>
+                        <p>Work through the agreed exercises or learning plan.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. TRAINER PROFILE SECTION -->
-        <section class="tr-section">
-            <div class="tr-wrap">
-                <div class="tr-trainer-card">
-                    <div class="tr-trainer-avatar-col">
-                        <img src="images/founder2.png?v=v5" alt="Anmol Pokhriyal, founder of PPC Growth Expert" class="tr-trainer-avatar" width="220" height="220" loading="lazy">
+        <!-- ==========================================
+             6. ABOUT THE TRAINER (EXECUTIVE DOSSIER)
+             ========================================== -->
+        <section class="tr-section-light">
+            <div class="tr-container">
+                <div class="tr-trainer-dossier">
+                    <div class="tr-trainer-photo-wrap">
+                        <img src="images/founder2.png?v=v5" alt="Anmol Pokhriyal, founder of PPC Growth Expert" class="tr-trainer-img" width="240" height="240" loading="lazy">
                         <div>
-                            <span class="tr-trainer-status">
-                                <span class="pulse-dot"></span>
+                            <span class="tr-trainer-pill">
+                                <span class="pulsing-dot"></span>
                                 Active Mentor &amp; Consultant
                             </span>
                         </div>
                     </div>
 
-                    <div class="tr-trainer-info">
-                        <span class="tr-eyebrow">About the trainer</span>
+                    <div class="tr-trainer-info-content">
+                        <div class="tr-eyebrow-pill">
+                            <span class="pulsing-dot"></span>
+                            About the trainer
+                        </div>
                         <h2>Learn with Practical Amazon E-Commerce Guidance</h2>
-                        <div class="tr-trainer-title">Anmol Pokhriyal · Founder &amp; Amazon PPC Specialist</div>
-                        <p class="tr-trainer-bio">PPC Growth Expert is an independent Amazon PPC consultancy founded by Anmol Pokhriyal, based in Noida. The training is designed to help aspiring entrepreneurs and existing sellers build a clearer understanding of Amazon business operations, product listings, advertising, and performance analysis.</p>
+                        <div class="tr-trainer-role-tag">Anmol Pokhriyal · Founder &amp; Amazon PPC Specialist</div>
+                        
+                        <p class="tr-trainer-narrative">
+                            PPC Growth Expert is an independent Amazon PPC consultancy founded by Anmol Pokhriyal, based in Noida. The training is designed to help aspiring entrepreneurs and existing sellers build a clearer understanding of Amazon business operations, product listings, advertising, and performance analysis.
+                        </p>
 
-                        <div class="tr-trainer-stats-row">
-                            <div class="tr-trainer-stat">
-                                <div class="s-num">5+ Years</div>
-                                <div class="s-lbl">Seller &amp; Vendor Central Exp.</div>
+                        <div class="tr-stats-quad">
+                            <div class="tr-stat-block">
+                                <div class="stat-num">5+ Years</div>
+                                <div class="stat-desc">Seller &amp; Vendor Central Exp.</div>
                             </div>
-                            <div class="tr-trainer-stat">
-                                <div class="s-num">₹100Cr+</div>
-                                <div class="s-lbl">GMV Managed &amp; Scaled</div>
+                            <div class="tr-stat-block">
+                                <div class="stat-num">₹100Cr+</div>
+                                <div class="stat-desc">GMV Managed &amp; Scaled</div>
                             </div>
-                            <div class="tr-trainer-stat">
-                                <div class="s-num">1-on-1</div>
-                                <div class="s-lbl">Direct Specialist Guidance</div>
+                            <div class="tr-stat-block">
+                                <div class="stat-num">1-on-1</div>
+                                <div class="stat-desc">Direct Specialist Mentorship</div>
                             </div>
                         </div>
                     </div>
@@ -820,158 +987,178 @@
             </div>
         </section>
 
-        <!-- 7. PRICING SECTION -->
-        <section class="tr-section alt" id="enquire">
-            <div class="tr-wrap">
-                <div class="tr-sec-head">
-                    <span class="tr-eyebrow">Pricing</span>
-                    <h2 class="tr-h2">Simple, Transparent Pricing</h2>
-                    <p class="tr-lead">No hidden fees or recurring subscriptions. Invest directly in your Amazon e-commerce mastery.</p>
+        <!-- ==========================================
+             7. PRICING SECTION (STRIPE-GRADE GLASS TIER)
+             ========================================== -->
+        <section class="tr-section-slate" id="enquire">
+            <div class="tr-container">
+                <div class="tr-section-header">
+                    <div class="tr-eyebrow-pill">
+                        <span class="pulsing-dot"></span>
+                        Pricing
+                    </div>
+                    <h2 class="tr-h2-title">Simple, <span class="gradient-accent">Transparent Pricing</span></h2>
+                    <p class="tr-subtitle-lead">No hidden fees, recurring memberships, or generic upsells. Straightforward 1-on-1 training.</p>
                 </div>
 
-                <div class="tr-pricing-box">
-                    <span class="tr-pricing-pill">LIVE 1-ON-1 ONLINE COURSE</span>
-                    <div class="tr-pricing-program">ATES E-Commerce Training</div>
-                    <div class="tr-pricing-price">₹4,999 <small>INR</small></div>
-                    <div class="tr-pricing-desc">Live online one-on-one training tailored to your objectives.</div>
+                <div class="tr-pricing-wrapper">
+                    <div class="tr-pricing-ambient" aria-hidden="true"></div>
 
-                    <ul class="tr-pricing-list">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Personalized learning objectives &amp; scope</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Structured six-module curriculum</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Instructor-led live sessions with screen share</span>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                            <span>Unrestricted opportunity to ask questions &amp; review metrics</span>
-                        </li>
-                    </ul>
+                    <div class="tr-pricing-tier-card">
+                        <span class="tr-pricing-tag-pill">LIVE 1-ON-1 ONLINE COURSE</span>
+                        
+                        <div class="tr-tier-name">ATES E-Commerce Training</div>
 
-                    <div class="tr-pricing-note">
-                        <strong>Before starting:</strong> We confirm your schedule, session topics, and specific starting point via WhatsApp so your learning plan is completely customized before payment.
+                        <div class="tr-tier-price-row">
+                            <span class="tr-tier-big-price">₹4,999</span>
+                            <span class="tr-tier-currency-badge">INR · ALL INCLUSIVE</span>
+                        </div>
+
+                        <div class="tr-tier-desc">Live online one-on-one training.</div>
+
+                        <ul class="tr-tier-checklist">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Personalized learning objectives</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Structured curriculum</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Instructor-led sessions</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Opportunity to ask questions</span>
+                            </li>
+                        </ul>
+
+                        <div class="tr-tier-notice">
+                            <strong>Before publishing / starting:</strong> We clarify your exact starting level, product category, preferred schedule, and training plan on WhatsApp before beginning.
+                        </div>
+
+                        <a class="tr-whatsapp-cta-btn" style="width: 100%; font-size: 17px;" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+                            <span>Enquire About the ₹4,999 Training</span>
+                        </a>
                     </div>
-
-                    <a class="tr-whatsapp-btn" style="width: 100%;" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-                        <span>Enquire About the ₹4,999 Training</span>
-                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- 8. FREQUENTLY ASKED QUESTIONS -->
-        <section class="tr-section">
-            <div class="tr-wrap">
-                <div class="tr-sec-head">
-                    <span class="tr-eyebrow">FAQ</span>
-                    <h2 class="tr-h2">Frequently Asked Questions</h2>
-                    <p class="tr-lead">Everything you need to know about the one-on-one training program.</p>
+        <!-- ==========================================
+             8. FAQ ACCORDION (SMOOTH GLASS ACCORDIONS)
+             ========================================== -->
+        <section class="tr-section-light">
+            <div class="tr-container">
+                <div class="tr-section-header">
+                    <div class="tr-eyebrow-pill">
+                        <span class="pulsing-dot"></span>
+                        FAQ
+                    </div>
+                    <h2 class="tr-h2-title">Frequently Asked <span class="gradient-accent">Questions</span></h2>
+                    <p class="tr-subtitle-lead">Everything you need to know about our one-on-one Amazon e-commerce training.</p>
                 </div>
 
-                <div class="tr-faq-container">
-                    <details class="tr-faq-item" open>
+                <div class="tr-faq-stack">
+                    <details class="tr-faq-card" open>
                         <summary>
                             <span>What is Amazon E-Commerce Training?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>ATES E-Commerce Training is a live, one-on-one online course offered independently by PPC Growth Expert. It covers Amazon selling basics, product research, listing optimization, Amazon PPC fundamentals and profitability.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>Is this Amazon training suitable for beginners?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>Yes. Beginners who want to understand how Amazon selling works receive structured guidance, with the learning path adjusted to their starting point.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>Can existing Amazon sellers join?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>Yes. Existing sellers can focus on listing optimization, PPC campaign structure, ACOS and ROAS analysis, and profitability.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>Is the training conducted online?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
-                            <p>Yes. Sessions are live and online via Google Meet or Zoom.</p>
+                        <div class="tr-faq-body">
+                            <p>Yes. Sessions are live and online.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>Is the training one-on-one?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>Yes. Training is personalized and delivered one-on-one with the trainer.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>What is the fee for the training?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>The training fee is ₹4,999 INR.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>What topics will I learn?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>The proposed curriculum covers six modules: business fundamentals, product research, listing optimization, PPC fundamentals, operations and profitability, and launch and growth strategy. The scope can be customized to your goals.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>Do I need an existing Amazon seller account?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>No. Beginners can learn before they have an account. Sellers with an existing account can apply the training to their own business.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>Will I receive an official Amazon certificate?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>No. This training is offered independently by PPC Growth Expert. It is not an official Amazon programme and does not carry an Amazon certification.</p>
                         </div>
                     </details>
 
-                    <details class="tr-faq-item">
+                    <details class="tr-faq-card">
                         <summary>
                             <span>How can I enquire about the next available session?</span>
-                            <span class="tr-faq-icon">+</span>
+                            <span class="tr-faq-icon-disc">+</span>
                         </summary>
-                        <div class="tr-faq-answer">
+                        <div class="tr-faq-body">
                             <p>Message us on WhatsApp using the enquiry button on this page. We will discuss your goals and the training plan with you.</p>
                         </div>
                     </details>
@@ -979,14 +1166,18 @@
             </div>
         </section>
 
-        <!-- 9. FINAL CALL TO ACTION SECTION -->
-        <section class="tr-final-cta-section">
-            <div class="tr-final-glow" aria-hidden="true"></div>
-            <div class="tr-wrap tr-final-content">
+        <!-- ==========================================
+             9. FINAL CALL TO ACTION (DEEP INDIGO MESH)
+             ========================================== -->
+        <section class="tr-final-cta-mesh">
+            <div class="tr-final-mesh-glow" aria-hidden="true"></div>
+            
+            <div class="tr-container tr-final-wrapper">
                 <h2>Ready to Build Your Amazon E-Commerce Skills?</h2>
                 <p>Get started with personalized online training designed around your Amazon business learning goals. Fee: ₹4,999.</p>
-                <a class="tr-whatsapp-btn" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+                
+                <a class="tr-whatsapp-cta-btn" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
                     <span>Enquire About ATES Training</span>
                 </a>
             </div>
