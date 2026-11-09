@@ -1685,3 +1685,183 @@
   color: #991b1b;
 }
 
+/* =========================================================
+   OPENAI VISION & ADVANCED AI CONTROLS
+========================================================= */
+.ai-api-box {
+  background: #ffffff;
+  border: 1px solid var(--tool-line);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+.ai-api-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.ai-api-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ai-status-badge {
+  font-family: var(--tool-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ai-status-badge.connected {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+.ai-status-badge.offline {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+.ai-api-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 16px;
+  align-items: flex-end;
+}
+@media (max-width: 760px) {
+  .ai-api-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.api-key-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.api-key-input-wrap .form-input {
+  padding-right: 42px;
+}
+.btn-toggle-key {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--tool-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-toggle-key:hover {
+  color: var(--tool-ink);
+}
+.ai-api-privacy-note {
+  font-size: 0.78rem;
+  color: var(--tool-muted);
+  margin-top: 8px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   KEYWORD CSV IMPORT & VERIFIED RESEARCH METRICS
+========================================================= */
+.keyword-import-box {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.keyword-import-box:hover {
+  border-color: var(--tool-accent);
+}
+.keyword-import-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+}
+.verified-kw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  margin-top: 12px;
+}
+.verified-kw-table th {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.75rem;
+  font-family: var(--tool-mono);
+  text-transform: uppercase;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+.verified-kw-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+/* =========================================================
+   INDEPENDENT SECTION REGENERATION
+========================================================= */
+.section-regen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.btn-regen-section {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-regen-section:hover {
+  border-color: var(--tool-accent);
+  color: var(--tool-accent);
+  background: var(--tool-accent-soft);
+}
+.btn-regen-section.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
