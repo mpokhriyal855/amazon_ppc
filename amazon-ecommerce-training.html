@@ -30,7 +30,7 @@
     <!-- CSS STYLESHEETS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css?v=v48">
-    <link rel="stylesheet" href="css/training.css?v=v18">
+    <link rel="stylesheet" href="css/training.css?v=v19">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/whatsapp.css">
 
@@ -1686,13 +1686,188 @@
         </section>
 
         <!-- ==========================================
-             8. ABOUT THE TRAINER (LIGHT - REFINED EXECUTIVE)
+             8. ABOUT THE TRAINER (DARK - DEEP OBSIDIAN & SAPPHIRE GLOW)
              ========================================== -->
-        <section class="tr-section-light-exec">
+        <section class="tr-section-dark tr-section-dark-trainer" id="trainer">
+            <style>
+                #trainer.tr-section-dark-trainer {
+                    padding: 100px 0 !important;
+                    background: linear-gradient(180deg, #090e1f 0%, #0d152e 100%) !important;
+                    color: #ffffff !important;
+                    position: relative !important;
+                    overflow: hidden !important;
+                    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+                }
+                #trainer .tr-trainer-dossier {
+                    background: rgba(15, 23, 42, 0.8) !important;
+                    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                    border-radius: 28px !important;
+                    padding: 48px 46px !important;
+                    display: grid !important;
+                    grid-template-columns: 280px 1fr !important;
+                    gap: 48px !important;
+                    align-items: center !important;
+                    box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.5), 0 0 40px rgba(37, 99, 235, 0.08) !important;
+                    backdrop-filter: blur(12px) !important;
+                    position: relative !important;
+                    overflow: hidden !important;
+                }
+                #trainer .tr-trainer-dossier::before {
+                    content: '' !important;
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    bottom: 0 !important;
+                    width: 5px !important;
+                    background: linear-gradient(180deg, #2563eb, #06b6d4, #10b981) !important;
+                }
+                #trainer .tr-trainer-photo-wrap {
+                    text-align: center !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                }
+                #trainer .tr-trainer-img {
+                    width: 260px !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                    aspect-ratio: 1023 / 1357 !important;
+                    border-radius: 22px !important;
+                    object-fit: cover !important;
+                    object-position: center 10% !important;
+                    border: 3px solid rgba(255, 255, 255, 0.12) !important;
+                    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 99, 235, 0.2) !important;
+                    margin-bottom: 16px !important;
+                    display: block !important;
+                }
+                #trainer .tr-trainer-pill {
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    gap: 8px !important;
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 11.5px !important;
+                    font-weight: 700 !important;
+                    color: #34d399 !important;
+                    background: rgba(16, 185, 129, 0.12) !important;
+                    border: 1px solid rgba(52, 211, 153, 0.35) !important;
+                    padding: 6px 14px !important;
+                    border-radius: 50px !important;
+                    text-transform: uppercase !important;
+                    letter-spacing: 0.5px !important;
+                }
+                #trainer .tr-trainer-info-content h2 {
+                    font-size: clamp(26px, 2.6vw, 34px) !important;
+                    font-weight: 800 !important;
+                    color: #ffffff !important;
+                    margin: 12px 0 8px !important;
+                    letter-spacing: -0.02em !important;
+                    line-height: 1.25 !important;
+                }
+                #trainer .tr-trainer-role-tag {
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 12px !important;
+                    font-weight: 700 !important;
+                    letter-spacing: 0.8px !important;
+                    text-transform: uppercase !important;
+                    color: #60a5fa !important;
+                    margin-bottom: 18px !important;
+                    line-height: 1.5 !important;
+                }
+                #trainer .tr-trainer-narrative {
+                    margin-bottom: 22px !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 12px !important;
+                }
+                #trainer .tr-trainer-narrative p {
+                    font-size: 15px !important;
+                    color: #cbd5e1 !important;
+                    line-height: 1.68 !important;
+                    margin: 0 !important;
+                    font-weight: 400 !important;
+                }
+                #trainer .tr-trainer-highlights-title {
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 11.5px !important;
+                    font-weight: 800 !important;
+                    letter-spacing: 1px !important;
+                    text-transform: uppercase !important;
+                    color: #94a3b8 !important;
+                    margin-bottom: 12px !important;
+                }
+                #trainer .tr-stats-quad {
+                    display: grid !important;
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 16px !important;
+                    margin-bottom: 26px !important;
+                    background: transparent !important;
+                    border: none !important;
+                    padding: 0 !important;
+                }
+                #trainer .tr-stat-block {
+                    background: rgba(255, 255, 255, 0.035) !important;
+                    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                    border-radius: 14px !important;
+                    padding: 16px 18px !important;
+                    transition: all 0.25s ease !important;
+                }
+                #trainer .tr-stat-block:hover {
+                    background: rgba(37, 99, 235, 0.1) !important;
+                    border-color: rgba(96, 165, 250, 0.35) !important;
+                    transform: translateY(-2px) !important;
+                }
+                #trainer .tr-stat-block .stat-num {
+                    font-size: 24px !important;
+                    font-weight: 800 !important;
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    color: #60a5fa !important;
+                    letter-spacing: -0.5px !important;
+                    margin-bottom: 4px !important;
+                    line-height: 1.2 !important;
+                }
+                #trainer .tr-stat-block .stat-desc {
+                    font-size: 12.5px !important;
+                    color: #94a3b8 !important;
+                    line-height: 1.45 !important;
+                    font-weight: 500 !important;
+                }
+                #trainer .tr-trainer-cta-wrap {
+                    display: flex !important;
+                    align-items: center !important;
+                }
+                @media (max-width: 992px) {
+                    #trainer .tr-trainer-dossier {
+                        grid-template-columns: 1fr !important;
+                        text-align: center !important;
+                        padding: 36px 24px !important;
+                        gap: 28px !important;
+                    }
+                    #trainer .tr-trainer-photo-wrap {
+                        margin: 0 auto !important;
+                    }
+                    #trainer .tr-trainer-narrative {
+                        text-align: left !important;
+                    }
+                    #trainer .tr-trainer-cta-wrap {
+                        justify-content: center !important;
+                    }
+                }
+                @media (max-width: 640px) {
+                    #trainer .tr-stats-quad {
+                        grid-template-columns: 1fr !important;
+                        gap: 12px !important;
+                    }
+                    #trainer .tr-trainer-img {
+                        width: 220px !important;
+                    }
+                }
+            </style>
+            <div class="tr-dark-ambient-mesh" aria-hidden="true"></div>
             <div class="tr-container">
                 <div class="tr-trainer-dossier">
                     <div class="tr-trainer-photo-wrap">
-                        <img src="images/founder2.png?v=v5" alt="Anmol Pokhriyal, founder of PPC Growth Expert" class="tr-trainer-img" width="240" height="240" loading="lazy">
+                        <img src="images/founder2.png?v=v6" alt="Anmol Pokhriyal, founder of PPC Growth Expert" class="tr-trainer-img" width="260" height="345" loading="lazy">
                         <div>
                             <span class="tr-trainer-pill">
                                 <span class="pulsing-dot"></span>
@@ -1704,19 +1879,24 @@
                     <div class="tr-trainer-info-content">
                         <div class="tr-eyebrow-pill">
                             <span class="pulsing-dot"></span>
-                            About the trainer
+                            ABOUT THE TRAINER
                         </div>
-                        <h2>Learn with Practical Amazon E-Commerce Guidance</h2>
-                        <div class="tr-trainer-role-tag">Anmol Pokhriyal · Founder &amp; Amazon PPC Specialist</div>
+                        <h2>Learn Amazon Business from a Practitioner, <span class="gradient-accent">Not Just a Trainer</span></h2>
+                        <div class="tr-trainer-role-tag">ANMOL POKHRIYAL | FOUNDER, PPC GROWTH EXPERT &amp; AMAZON E-COMMERCE SPECIALIST</div>
                         
-                        <p class="tr-trainer-narrative">
-                            PPC Growth Expert is an independent Amazon PPC consultancy founded by Anmol Pokhriyal, based in Noida. The training is designed to help aspiring entrepreneurs and existing sellers build a clearer understanding of Amazon business operations, product listings, advertising, and performance analysis.
-                        </p>
+                        <div class="tr-trainer-narrative">
+                            <p>I'm Anmol Pokhriyal, founder of PPC Growth Expert and an Amazon E-commerce professional based in Noida, India.</p>
+                            <p>With 5+ years of hands-on experience in Amazon marketplace operations, advertising and business growth, I help aspiring entrepreneurs and existing sellers understand how to build, manage and scale an Amazon business.</p>
+                            <p>This training goes beyond theory. You'll learn practical workflows covering product research, seller account setup, listing optimisation, Amazon SEO, PPC advertising, inventory planning, profitability analysis and business scaling.</p>
+                            <p>My goal is to help you understand how Amazon actually works, make smarter business decisions and develop the skills needed to manage your own Amazon business confidently.</p>
+                        </div>
+
+                        <div class="tr-trainer-highlights-title">EXPERIENCE HIGHLIGHTS</div>
 
                         <div class="tr-stats-quad">
                             <div class="tr-stat-block">
                                 <div class="stat-num">5+ Years</div>
-                                <div class="stat-desc">Seller &amp; Vendor Central Exp.</div>
+                                <div class="stat-desc">Hands-on Amazon Marketplace Experience</div>
                             </div>
                             <div class="tr-stat-block">
                                 <div class="stat-num">₹100Cr+</div>
@@ -1724,8 +1904,15 @@
                             </div>
                             <div class="tr-stat-block">
                                 <div class="stat-num">1-on-1</div>
-                                <div class="stat-desc">Direct Specialist Mentorship</div>
+                                <div class="stat-desc">Direct Expert Mentorship</div>
                             </div>
+                        </div>
+
+                        <div class="tr-trainer-cta-wrap">
+                            <a class="tr-btn-glow-primary" href="#enquire">
+                                Learn Amazon Business with Practical Guidance
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:8px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
                         </div>
                     </div>
                 </div>

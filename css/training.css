@@ -1238,16 +1238,31 @@
   position: relative;
 }
 
+/* ==========================================================================
+   6. SECTION: ABOUT TRAINER (ALTERNATE COLOR: DEEP OBSIDIAN DARK)
+   ========================================================================== */
+.tr-section-dark-trainer,
+.tr-section-light-exec {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #090e1f 0%, #0d152e 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .tr-trainer-dossier {
-  background: #ffffff;
-  border: 2px solid rgba(226, 232, 240, 0.95);
-  border-radius: 30px;
-  padding: 54px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 48px 46px;
   display: grid;
-  grid-template-columns: 310px 1fr;
-  gap: 56px;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
   align-items: center;
-  box-shadow: 0 20px 60px -15px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.5), 0 0 40px rgba(37, 99, 235, 0.08);
+  backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
 }
@@ -1257,90 +1272,163 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(180deg, #2563eb, #06b6d4);
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #2563eb, #06b6d4, #10b981);
 }
 
 .tr-trainer-photo-wrap {
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tr-trainer-img {
-  width: 240px;
-  height: 240px;
-  border-radius: 28px;
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1023 / 1357;
+  border-radius: 22px;
   object-fit: cover;
-  border: 4px solid #ffffff;
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
-  margin-bottom: 18px;
+  object-position: center 10%;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 99, 235, 0.2);
+  margin-bottom: 16px;
+  display: block;
 }
 
 .tr-trainer-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--tr-font-mono);
+  font-family: var(--tr-font-mono, monospace);
   font-size: 11.5px;
   font-weight: 700;
-  color: var(--tr-emerald-600);
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
   padding: 6px 14px;
   border-radius: 50px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .tr-trainer-info-content h2 {
-  font-size: 32px;
+  font-size: clamp(26px, 2.6vw, 34px);
   font-weight: 800;
-  color: var(--tr-dark-900);
-  margin: 0 0 8px;
-  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 12px 0 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .tr-trainer-role-tag {
-  font-family: var(--tr-font-mono);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
+  font-family: var(--tr-font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--tr-blue-600);
+  color: #60a5fa;
   margin-bottom: 18px;
+  line-height: 1.5;
 }
 
 .tr-trainer-narrative {
-  font-size: 16px;
-  color: var(--tr-slate-600);
-  line-height: 1.7;
-  margin: 0 0 28px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tr-trainer-narrative p {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.68;
+  margin: 0;
+  font-weight: 400;
+}
+
+.tr-trainer-highlights-title {
+  font-family: var(--tr-font-mono, monospace);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 12px;
 }
 
 .tr-stats-quad {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 22px;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.tr-stat-block {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 18px;
+  transition: all 0.25s ease;
+}
+
+.tr-stat-block:hover {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(96, 165, 250, 0.35);
+  transform: translateY(-2px);
 }
 
 .tr-stat-block .stat-num {
-  font-family: var(--tr-font-mono);
-  font-size: 26px;
+  font-family: var(--tr-font-mono, monospace);
+  font-size: 24px;
   font-weight: 800;
-  color: var(--tr-dark-900);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  color: #60a5fa;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+  line-height: 1.2;
 }
 
 .tr-stat-block .stat-desc {
   font-size: 12.5px;
-  color: var(--tr-slate-500);
-  font-weight: 600;
-  margin-top: 4px;
+  color: #94a3b8;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.tr-trainer-cta-wrap {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .tr-trainer-dossier {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 36px 24px;
+    gap: 28px;
+  }
+  .tr-trainer-photo-wrap {
+    margin: 0 auto;
+  }
+  .tr-trainer-narrative {
+    text-align: left;
+  }
+  .tr-trainer-cta-wrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .tr-stats-quad {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .tr-trainer-img {
+    width: 220px;
+  }
 }
 
 /* ==========================================================================
