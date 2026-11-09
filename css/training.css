@@ -153,7 +153,7 @@
    ========================================================================== */
 .tr-hero-section {
   position: relative;
-  padding: 140px 0 90px;
+  padding: 64px 0 90px;
   background: radial-gradient(circle at 50% 0%, rgba(239, 246, 255, 0.8) 0%, #ffffff 70%);
   background-image: 
     radial-gradient(circle at 50% 10%, rgba(37, 99, 235, 0.12) 0%, transparent 65%),
@@ -1485,7 +1485,7 @@
 
 @media (max-width: 640px) {
   .tr-hero-section {
-    padding: 120px 0 60px;
+    padding: 40px 0 60px;
   }
   .tr-section-dark, .tr-section-light-slate, .tr-section-dark-navy, 
   .tr-section-pure-white, .tr-section-light-exec, .tr-section-dark-pricing, 
