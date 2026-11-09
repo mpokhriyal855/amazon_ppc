@@ -1447,3 +1447,241 @@
   border-color: rgba(255, 255, 255, 0.6);
 }
 
+/* Confidence Level Badges */
+.conf-badge {
+  font-family: var(--tool-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.conf-high {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.conf-med {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.conf-warn {
+  background: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+/* Fact Verification 3-Col Box */
+.fact-verif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.fact-col-card {
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.fact-col-card.verified {
+  border-color: #a7f3d0;
+  background: #f0fdf4;
+}
+
+.fact-col-card.uncertain {
+  border-color: #fde68a;
+  background: #fffdf5;
+}
+
+.fact-col-card.missing {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.fact-col-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.fact-item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.fact-item-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+/* Keyword Classification Grid */
+.kw-research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.kw-category-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.kw-category-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.kw-category-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kw-source-tag {
+  font-family: var(--tool-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.kw-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.kw-chip-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.kw-chip-pill.primary {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.kw-intent-badge {
+  font-size: 0.65rem;
+  font-family: var(--tool-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* Weighted Audit Table */
+.weighted-audit-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.weighted-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.88rem;
+}
+
+.weighted-row:last-child {
+  border-bottom: none;
+}
+
+.weighted-label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.weighted-score {
+  font-family: var(--tool-mono);
+  font-weight: 700;
+  color: #0f172a;
+  text-align: right;
+}
+
+.weighted-bar-track {
+  height: 6px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.weighted-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+  border-radius: 3px;
+}
+
+/* Compliance Alert Box */
+.compliance-alert-banner {
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-top: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.compliance-alert-banner.alert-ok {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.compliance-alert-banner.alert-warn {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.compliance-alert-banner.alert-danger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
