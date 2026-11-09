@@ -18,6 +18,7 @@
 
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/listing-tool.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/whatsapp.css">
 
   <script type="application/ld+json">
@@ -496,268 +497,112 @@
       <!-- STEP 1: INPUT VIEW -->
       <div id="s-input" style="display:grid;gap:22px">
 
-        <!-- Optional API Key banner (works if configured on server or entered here) -->
-        <div class="api-key-config-row">
-          <div>
-            <strong>AI Service Connection</strong>
-            <span class="cap" style="display:block;margin-top:2px">Server API configured by default. You can also provide an Anthropic Claude or OpenAI key if needed.</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px">
-            <input type="password" id="user-api-key" placeholder="Optional API Key (sk-ant-... or sk-...)" autocomplete="off">
-            <label style="font-size:0.75rem;display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" id="save-key-check"> Remember</label>
-          </div>
+        
+
+
+            <!-- COL 2: SERVICES -->
+            <div class="footer-col">
+                <h3 class="footer-heading">SERVICES</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#service-ppc-management">Amazon PPC Management Services</a></li>
+                    <li><a href="services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
+                    <li><a href="services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                    <li><a href="services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                    <li><a href="services.html#service-product-research">Amazon Product Research</a></li>
+                    <li><a href="services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                </ul>
+            </div>
+
+
+            <!-- COL 3: CONTACT US -->
+            <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <h3 class="footer-heading">CONTACT US</h3>
+                <ul class="footer-contact-list">
+                    <li>
+                        <div class="contact-icon-pill">📍</div>
+                        <div>
+                            <span itemprop="addressLocality">Noida</span>,<br>
+                            <span itemprop="addressRegion">Uttar Pradesh</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon-pill">📞</div>
+                        <a href="tel:+918433232647" itemprop="telephone">+91 84332 32647</a>
+                    </li>
+                    <li>
+                        <div class="contact-icon-pill">✉️</div>
+                        <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- COL 4: COMPANY -->
+            <div class="footer-col">
+                <h3 class="footer-heading">COMPANY</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#founder">Our Founder</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+
         </div>
 
-        <div style="max-width:320px">
-          <label class="lbl" for="mp">Marketplace</label>
-          <select class="inp" id="mp"></select>
-          <p class="cap" id="mp-note" style="margin-top:6px"></p>
+
+        <!-- MIDDLE BAR -->
+        <div class="footer-middle">
+            <p class="footer-meta-info">© 2026 PPC Growth Expert · Noida, Uttar Pradesh, India · +91 84332 32647 · anmolpokhriyal3200@gmail.com</p>
+            <div class="footer-legal-links">
+                <a href="privacy-policy.html" class="legal-pill">Privacy Policy</a>
+                <a href="terms.html" class="legal-pill">Terms &amp; Conditions</a>
+            </div>
         </div>
 
-        <div>
-          <div class="drop" id="drop">
-            <svg class="icon" style="width:28px;height:28px;color:var(--accent)"><use href="#i-upload"/></svg>
-            <strong>Drag and drop 4–5 product images here</strong>
-            <span class="cap">JPG, PNG or WEBP · up to 10 MB each · up to 6 images</span>
-            <button type="button" class="btn btn-primary btn-sm" id="pick-many" style="margin-top:6px">Choose images</button>
-          </div>
-          <input type="file" id="file" accept="image/jpeg,image/png,image/webp" multiple hidden aria-label="Choose product images">
+
+        <!-- BOTTOM COPYRIGHT BAR -->
+        <div class="footer-bottom">
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn"
+                aria-label="Scroll to top">
+                ↑
+            </a>
         </div>
 
-        <ul class="slots" id="slots" aria-label="Product image slots"></ul>
-
-        <details class="opts">
-          <summary>Optional details (improves accuracy)</summary>
-          <div class="grid2">
-            <div><label class="lbl" for="o-brand">Brand name</label><input class="inp" id="o-brand" autocomplete="off" placeholder="Leave blank to read it from the images"></div>
-            <div><label class="lbl" for="o-name">Product name</label><input class="inp" id="o-name" autocomplete="off" placeholder="Leave blank to detect it"></div>
-            <div><label class="lbl" for="o-kw">Your own keywords</label><input class="inp" id="o-kw" autocomplete="off" placeholder="Comma separated. Blank = AI suggests"></div>
-            <div><label class="lbl" for="o-facts">Confirmed facts</label><input class="inp" id="o-facts" autocomplete="off" placeholder="Size, weight, material, pack of, etc."></div>
-            <div style="grid-column:1/-1"><label class="lbl" for="o-prio">Top 5 priority keywords</label><textarea class="inp" id="o-prio" rows="5" placeholder="One keyword per line (maximum 5). These are placed first in the title, bullets and description when they match your product."></textarea></div>
-          </div>
-        </details>
-
-        <div class="runrow">
-          <p class="status" id="count" aria-live="polite"></p>
-          <button type="button" class="btn btn-primary" id="go" disabled>Generate Listing <svg class="icon"><use href="#i-arrow"/></svg></button>
-        </div>
-        <p class="cap">Your images are analyzed by AI only to create this listing and are not stored. The result is a draft: review every claim before you publish.</p>
-      </div>
-
-      <!-- STEP 2: RUNNING PROGRESS VIEW -->
-      <div id="s-run" hidden>
-        <h3 style="font-size:1.15rem;margin-bottom:6px">Generating your listing</h3>
-        <p class="cap" style="margin-bottom:16px">Each step turns on when the AI model starts writing that section.</p>
-        <ol class="prog" id="prog"></ol>
-        <button type="button" class="btn btn-ghost btn-sm" id="stop" style="margin-top:18px">Stop</button>
-      </div>
-
-      <!-- STEP 3: RESULTS VIEW -->
-      <div id="s-result" hidden style="display:grid;gap:18px">
-        <div class="runrow">
-          <div class="big">
-            <div class="bigno" id="r-score">0</div>
-            <div class="cap">Internal content score out of 100.<br>Not an official Amazon score.</div>
-          </div>
-          <div class="actions">
-            <button type="button" class="btn btn-ghost btn-sm" id="copy-all">Copy everything</button>
-            <button type="button" class="btn btn-ghost btn-sm" id="dl-txt">Download TXT</button>
-            <button type="button" class="btn btn-ghost btn-sm" id="dl-csv">Download CSV</button>
-            <button type="button" class="btn btn-ghost btn-sm" id="regen">Regenerate</button>
-            <button type="button" class="btn btn-ghost btn-sm" id="again">Start over</button>
-          </div>
-        </div>
-
-        <p class="msg info" id="r-info" hidden></p>
-        <div class="rtabs" role="tablist" aria-label="Listing sections" id="rtabs"></div>
-        <div id="r-panels"></div>
-      </div>
-
-      <p class="msg err" id="err" role="alert" hidden></p>
     </div>
-  </section>
 
-  <!-- How It Works Section -->
-  <section class="block wrap" id="how" aria-labelledby="how-h">
-    <div class="head">
-      <p class="eyebrow">How it works</p>
-      <h2 id="how-h">From product photos to a finished listing in four steps</h2>
-    </div>
-    <ol class="steps">
-      <li><span class="n">STEP 1</span><h3>Upload Product Images</h3><p>Add up to six photos: main, front, side, back, feature close-up and lifestyle.</p></li>
-      <li><span class="n">STEP 2</span><h3>AI Analyzes Your Product</h3><p>A multimodal model reads the images and pre-fills only what is visible. You confirm or correct it.</p></li>
-      <li><span class="n">STEP 3</span><h3>Generate Your Amazon Listing</h3><p>Get title variations, five bullet points, a description and backend search terms.</p></li>
-      <li><span class="n">STEP 4</span><h3>Edit and Download Your Results</h3><p>Fine-tune every section, check the score and compliance, then export TXT, DOCX or CSV.</p></li>
-    </ol>
-  </section>
-
-  <!-- Core Features Section -->
-  <section class="block wrap" id="features" aria-labelledby="feat-h" style="padding-top:0">
-    <div class="head">
-      <p class="eyebrow">Core features</p>
-      <h2 id="feat-h">Everything you need to write an Amazon listing</h2>
-    </div>
-    <div class="feats">
-      <article class="feat"><div class="ic"><svg class="icon"><use href="#i-type"/></svg></div><h3>AI Amazon Title Generator</h3><p>Three title variants (SEO-focused, conversion-focused and balanced) with character counts, keyword placement and readability checks, so you can pick what fits your strategy.</p></article>
-      <article class="feat"><div class="ic"><svg class="icon"><use href="#i-list"/></svg></div><h3>Amazon Bullet Point Generator</h3><p>Five scannable bullets, each pairing one real feature with one customer benefit. Regenerate or edit any bullet on its own without touching the rest.</p></article>
-      <article class="feat"><div class="ic"><svg class="icon"><use href="#i-file"/></svg></div><h3>Amazon Product Description Generator</h3><p>A structured description covering introduction, features, benefits, usage scenarios and confirmed specifications, with a live editor and length tracking.</p></article>
-      <article class="feat"><div class="ic"><svg class="icon"><use href="#i-search"/></svg></div><h3>Amazon Backend Keywords Generator</h3><p>Synonyms, alternate names and long-tail phrases, de-duplicated and trimmed to the marketplace byte limit, with remaining capacity shown as you edit.</p></article>
-      <article class="feat"><div class="ic"><svg class="icon"><use href="#i-scan"/></svg></div><h3>AI Product Image Analyzer</h3><p>Reads your photos for product type, colour, shape, components and printed text. Anything it cannot see is flagged for you to confirm instead of guessed.</p></article>
-      <article class="feat"><div class="ic"><svg class="icon"><use href="#i-gauge"/></svg></div><h3>Amazon Listing SEO Score Checker</h3><p>A transparent 100-point internal content-quality score with section scores, improvement tips and a compliance checklist. It is not an official Amazon score.</p></article>
-    </div>
-  </section>
-
-  <!-- Before and After Section -->
-  <section class="block wrap" id="example" aria-labelledby="ex-h" style="padding-top:0">
-    <div class="head">
-      <p class="eyebrow">Before and after</p>
-      <h2 id="ex-h">What better listing structure looks like</h2>
-      <p>An <strong>illustrative example</strong> using a fictional stainless steel water bottle. The brand and product are made up, and this is not a real result.</p>
-    </div>
-    <div class="ba">
-      <div class="col">
-        <div class="top"><h3>Basic listing</h3><span class="pill bad"><svg class="icon"><use href="#i-x"/></svg>Needs work</span></div>
-        <dl>
-          <dt>Title</dt><dd>Steel water bottle 1 litre best quality</dd>
-          <dt>Bullet points</dt><dd><ul><li>Good quality bottle</li><li>Keeps water cold</li><li>Nice design and colours</li><li>Easy to carry</li></ul></dd>
-          <dt>Description</dt><dd>This is a steel water bottle. Good for office and gym. Buy now.</dd>
-          <dt>Backend search terms</dt><dd class="mono">bottle water steel</dd>
-        </dl>
-      </div>
-      <div class="col after">
-        <div class="top"><h3>AI-optimized listing</h3><span class="pill good"><svg class="icon"><use href="#i-check"/></svg>Improved</span></div>
-        <dl>
-          <dt>Title</dt><dd><mark>Aquora</mark> <mark>Stainless Steel Water Bottle</mark> 1 Litre, Insulated, Leak-Proof Lid, Reusable Sports Bottle for Gym, Office and Travel</dd>
-          <dt>Bullet points</dt><dd><ul><li><strong>Insulated Double-Wall Body:</strong> helps keep drinks cold or hot for longer during commutes, workouts and travel.</li><li><strong>Leak-Proof Lid:</strong> secure screw-on lid is designed to prevent spills inside a gym bag.</li><li><strong>Easy-Carry 1 Litre Capacity:</strong> fits most bag side pockets and car cup holders.</li><li><strong>Reusable Stainless Steel:</strong> a durable alternative to single-use plastic bottles.</li><li><strong>Wide-Mouth Opening:</strong> add ice cubes and clean the inside easily.</li></ul></dd>
-          <dt>Description</dt><dd>Stay hydrated through the day with a reusable stainless steel bottle built for gym sessions, office desks and weekend travel…</dd>
-          <dt>Backend search terms</dt><dd class="mono">flask thermos vacuum sipper hydration jug cold hot gym travel office reusable</dd>
-        </dl>
-      </div>
-    </div>
-    <ul class="wins">
-      <li><svg class="icon"><use href="#i-check"/></svg>Title structure: brand, product, attributes and use cases in order</li>
-      <li><svg class="icon"><use href="#i-check"/></svg>Keyword placement: main terms early, in natural language</li>
-      <li><svg class="icon"><use href="#i-check"/></svg>Bullet quality: one feature and one benefit per bullet</li>
-      <li><svg class="icon"><use href="#i-check"/></svg>Description clarity: scannable and specific</li>
-      <li><svg class="icon"><use href="#i-check"/></svg>Backend relevance: synonyms and alternates, not repeats</li>
-    </ul>
-  </section>
-
-  <!-- Target Audience Section -->
-  <section class="block wrap" id="who" aria-labelledby="who-h" style="padding-top:0">
-    <div class="head">
-      <p class="eyebrow">Built for sellers</p>
-      <h2 id="who-h">Who can use this tool?</h2>
-    </div>
-    <div class="auds">
-      <div class="aud"><h3>Amazon FBA Sellers</h3><p>Launch new ASINs faster and keep listing quality consistent across your catalogue.</p></div>
-      <div class="aud"><h3>Private Label Brands</h3><p>Turn product photos into brand-ready copy without writing every field from scratch.</p></div>
-      <div class="aud"><h3>Amazon Agencies</h3><p>Produce first drafts for many client SKUs, then refine and review with your team.</p></div>
-      <div class="aud"><h3>E-commerce Businesses</h3><p>Bring products from your own store to Amazon with marketplace-aware content.</p></div>
-      <div class="aud"><h3>Marketplace Managers</h3><p>Audit and rewrite weak listings with a clear checklist of what to fix.</p></div>
-      <div class="aud"><h3>New Amazon Sellers</h3><p>Learn what a well-structured listing looks like, with explanations built into the results.</p></div>
-    </div>
-  </section>
-
-  <!-- SEO Guide Section -->
-  <section class="block wrap" aria-labelledby="seo-h" style="padding-top:0">
-    <div class="prose">
-      <h2 id="seo-h">Amazon listing optimization, built around your product images</h2>
-      <p>An Amazon listing is more than a product name. Shoppers decide from the title, the first few bullet points, the images and the description, while Amazon's search system uses all of those fields plus your backend search terms to understand what you sell. A good Amazon listing generator should help with each of them.</p>
-      <p>This Amazon SEO listing generator starts with your images, so the title, bullet points and description reflect what the product visibly is. You stay in control: confirm the product details, choose or enter your own keywords, edit every section and check the compliance warnings before you publish.</p>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="block wrap" id="faq" aria-labelledby="faq-h" style="padding-top:0">
-    <div class="head">
-      <p class="eyebrow">FAQ</p>
-      <h2 id="faq-h">Frequently asked questions</h2>
-    </div>
-    <div class="faq">
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">What is an AI Amazon listing generator?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>An AI Amazon listing generator is a tool that creates the content fields of an Amazon product page, such as the title, bullet points, description and backend search terms, using artificial intelligence. This tool starts from your product images and the details you confirm, so the copy is based on what the product actually is.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">How many product images should I upload?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>Upload five or six images for the best result: a main image, front, side and back views, a feature close-up and a lifestyle shot. You can generate a listing with fewer images, but more angles give the AI more visible detail to work with and leave fewer gaps for you to fill in.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">What image formats and sizes are supported?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>JPG, JPEG, PNG and WEBP files up to 10 MB each, with up to six images per listing. Files are checked on the server, not just by their extension, and invalid files are rejected with a clear message.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">How does the AI analyze my product images?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>A multimodal AI model looks at every image and extracts visible information: product type, category, colour, shape, visible components, possible usage and any printed text or packaging details. It pre-fills the product form where it is confident and marks everything else as missing for you to confirm.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">Will the AI invent specifications I did not provide?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>It is instructed not to. Dimensions, weight, material, certifications, ingredients and compatibility are only used when they are visible or entered by you. Missing details are listed for confirmation instead of being guessed. You should still review every claim before publishing, because AI output can contain mistakes.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">Is this tool good for Amazon SEO?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>It helps you apply Amazon SEO fundamentals: relevant keywords in the title, benefit-led bullets, a clear description and well-used backend search terms. SEO results also depend on price, reviews, images, advertising and competition, so no tool can promise a ranking.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">Does it show keyword search volume?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>No. Keywords are AI suggestions based on your product and marketplace, and they are labelled that way. The tool does not show search volume or ranking difficulty because it does not have verified data. Check priorities in a dedicated keyword research tool or Amazon Brand Analytics.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">Which Amazon marketplaces are supported?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>Amazon India, USA, UK, Canada, Australia, UAE and Germany. Amazon India is selected by default. Each marketplace has its own length limits and notes. Always confirm category-specific rules in Seller Central.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">What are Amazon backend search terms?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>Backend search terms, or generic keywords, are hidden keywords you add in Seller Central to help your product be found for synonyms, alternate names and spelling variants that do not appear in your visible listing. The tool de-duplicates terms and trims them to the byte limit.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">Can I edit the generated listing?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>Yes. Every section is editable: titles, each bullet, the description and the backend terms. Scores, character counts and compliance checks update as you edit. You can also regenerate a single section or the whole listing.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">How do I download or export my listing?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>Copy any section with one click, or download the complete listing as TXT, DOCX or CSV. The CSV organizes content into listing fields such as title, bullet_point1 to bullet_point5, description and generic_keywords.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">Can it publish directly to Seller Central?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>No. There is no Amazon Seller Central integration, so you copy or export the content and add it to your listing yourself. We will not claim direct publishing unless an authorized integration is built and tested.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">What does the SEO score mean?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>It is an internal content-quality score out of 100 covering title, keyword coverage, bullets, description, backend keywords and accuracy. It is a guide for improving your copy and is not an official Amazon score and not a ranking prediction.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">How is my data and are my images handled?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>Images are checked in your browser and sent to an AI service only to create your listing. This page does not store them.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">What are the limitations I should know about?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>AI can misread an image, miss a detail or write something inaccurate. It cannot verify certifications, safety standards, restricted-category approvals or trademark issues. Treat the output as a strong first draft and review it against Amazon policies and your product facts.</p></details>
-      <details><summary><h3 style="font-size:1rem;font-family:var(--body);letter-spacing:0">How much does it cost?</h3><svg class="icon"><use href="#i-down"/></svg></summary><p>Pricing is not implemented in this version. Usage is limited per visitor by a rate limit to control AI costs. Paid plans, accounts and saved history can be added later.</p></details>
-    </div>
-  </section>
-
-  <!-- Final CTA Section -->
-  <section class="block wrap" id="start" style="padding-top:0">
-    <div class="final">
-      <h2>Ready to Create Your Amazon Product Listing?</h2>
-      <p>Upload your product images and generate your Amazon listing with AI.</p>
-      <a class="btn" href="#tool">Start Generating Now <svg class="icon"><use href="#i-arrow"/></svg></a>
-    </div>
-  </section>
-</main>
-
-<!-- UNIVERSAL FOOTER -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="index.html" class="footer-logo">
-          <span class="brand-text">PPC Growth Expert</span>
-        </a>
-        <p class="brand-desc">Data-driven Amazon PPC management that turns ad spend into profitable revenue. 100+ brands managed, 100Cr+ GMV generated.</p>
-        <div class="footer-contact-info">
-          <a href="mailto:info@ppcgrowthexpert.com" class="footer-contact-item">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>info@ppcgrowthexpert.com</span>
-          </a>
-          <a href="tel:+919876543210" class="footer-contact-item">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>+91 98765 43210</span>
-          </a>
-        </div>
-      </div>
-      <div class="footer-nav-col">
-        <h4 class="footer-col-title">Services</h4>
-        <ul class="footer-links">
-          <li><a href="services/amazon-ppc-management-services.html">Amazon PPC Management</a></li>
-          <li><a href="services/amazon-ppc-management-services-india.html">Amazon India PPC</a></li>
-          <li><a href="services/ecommerce-ppc-services.html">E-Commerce PPC</a></li>
-          <li><a href="services/amazon-seller-account-management-services.html">Seller Account Management</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav-col">
-        <h4 class="footer-col-title">Calculators</h4>
-        <ul class="footer-links">
-          <li><a href="calculators/amazon-acos-calculator.html">ACoS Calculator</a></li>
-          <li><a href="calculators/amazon-roas-calculator.html">ROAS Calculator</a></li>
-          <li><a href="calculators/amazon-cpc-calculator.html">CPC Calculator</a></li>
-          <li><a href="free-amazon-listing-optimisation-tool.html">AI Listing Generator</a></li>
-        </ul>
-      </div>
-      <div class="footer-nav-col">
-        <h4 class="footer-col-title">Company</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="blog/index.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 PPC Growth Expert. All rights reserved. Amazon and all related logos are trademarks of Amazon.com, Inc. or its affiliates.</p>
-    </div>
-  </div>
 </footer>
+
+<!-- SCHEMA.ORG JSON-LD FOR SEARCH ENGINES -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "PPC Growth Expert",
+  "description": "Full-stack E-commerce Amazon PPC agency helping brands scale on marketplaces in India and globally since 2021.",
+  "url": "https://ppcgrowthexpert.com/",
+  "telephone": "+91-8433232647",
+  "email": "anmolpokhriyal3200@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "D-34, Sector-11",
+    "addressLocality": "Noida",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "201301",
+    "addressCountry": "IN"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "4",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "priceRange": "$"
+}
+</script>
 
 <script src="js/navbar.js"></script>
 <script src="js/whatsapp.js"></script>

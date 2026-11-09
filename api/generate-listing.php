@@ -223,3 +223,4 @@ if ($isAnthropic || (!empty($anthropicKey) && !$isOpenAI)) {
     echo $j['choices'][0]['message']['content'];
     exit;
 }
+
