@@ -30,7 +30,7 @@
     <!-- CSS STYLESHEETS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css?v=v48">
-    <link rel="stylesheet" href="css/training.css?v=v19">
+    <link rel="stylesheet" href="css/training.css?v=v20">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/whatsapp.css">
 
@@ -1922,64 +1922,380 @@
         <!-- ==========================================
              9. PRICING (DARK - DEEP OBSIDIAN & SAPPHIRE GLOW)
              ========================================== -->
-        <section class="tr-section-dark-pricing" id="enquire">
+        <!-- ==========================================
+             9. PRICING (LIGHT - EXACT REPLICA)
+             ========================================== -->
+        <section class="tr-section-pricing-light" id="enquire">
+            <style>
+                #enquire.tr-section-pricing-light {
+                    padding: 100px 0 !important;
+                    background: radial-gradient(circle at 50% 0%, rgba(239, 246, 255, 0.9) 0%, #ffffff 75%) !important;
+                    position: relative !important;
+                    border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+                }
+                #enquire .tr-section-header {
+                    text-align: center !important;
+                    max-width: 720px !important;
+                    margin: 0 auto 52px !important;
+                }
+                #enquire .tr-eyebrow-pill {
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    gap: 8px !important;
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 11px !important;
+                    font-weight: 800 !important;
+                    letter-spacing: 1px !important;
+                    text-transform: uppercase !important;
+                    color: #2563eb !important;
+                    background: #eff6ff !important;
+                    border: 1px solid #dbeafe !important;
+                    padding: 5px 14px !important;
+                    border-radius: 50px !important;
+                    margin-bottom: 16px !important;
+                }
+                #enquire .tr-h2-title {
+                    font-size: clamp(28px, 3.2vw, 42px) !important;
+                    font-weight: 800 !important;
+                    color: #0f172a !important;
+                    line-height: 1.22 !important;
+                    letter-spacing: -0.025em !important;
+                    margin: 0 0 14px !important;
+                }
+                #enquire .tr-subtitle-lead {
+                    font-size: 16px !important;
+                    color: #475569 !important;
+                    line-height: 1.65 !important;
+                    margin: 0 auto !important;
+                }
+                #enquire .tr-pricing-replica-card {
+                    max-width: 660px !important;
+                    margin: 0 auto !important;
+                    background: #ffffff !important;
+                    border: 1.5px solid #dbeafe !important;
+                    border-radius: 26px !important;
+                    padding: 44px 38px 36px !important;
+                    box-shadow: 0 20px 50px -10px rgba(37, 99, 235, 0.08), 0 4px 18px rgba(15, 23, 42, 0.04) !important;
+                    position: relative !important;
+                    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+                }
+                #enquire .tr-pricing-replica-card:hover {
+                    transform: translateY(-4px) !important;
+                    box-shadow: 0 28px 65px -12px rgba(37, 99, 235, 0.14), 0 8px 24px rgba(15, 23, 42, 0.05) !important;
+                    border-color: #93c5fd !important;
+                }
+                #enquire .tr-pricing-top-pill {
+                    position: absolute !important;
+                    top: -16px !important;
+                    left: 50% !important;
+                    transform: translateX(-50%) !important;
+                    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+                    color: #ffffff !important;
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 11.5px !important;
+                    font-weight: 800 !important;
+                    letter-spacing: 0.8px !important;
+                    text-transform: uppercase !important;
+                    padding: 6px 18px !important;
+                    border-radius: 50px !important;
+                    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35) !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    gap: 8px !important;
+                    white-space: nowrap !important;
+                }
+                #enquire .tr-pricing-card-title {
+                    font-size: 25px !important;
+                    font-weight: 800 !important;
+                    color: #0f172a !important;
+                    text-align: center !important;
+                    margin: 8px 0 14px !important;
+                    letter-spacing: -0.015em !important;
+                }
+                #enquire .tr-pricing-meta-strip {
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    flex-wrap: wrap !important;
+                    gap: 12px !important;
+                    margin-bottom: 24px !important;
+                }
+                #enquire .tr-pricing-meta-pill {
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 12px !important;
+                    font-weight: 700 !important;
+                    color: #1e40af !important;
+                    background: #eff6ff !important;
+                    border: 1px solid #dbeafe !important;
+                    padding: 4px 12px !important;
+                    border-radius: 8px !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    gap: 6px !important;
+                }
+                #enquire .tr-pricing-meta-div {
+                    color: #cbd5e1 !important;
+                    font-weight: 300 !important;
+                }
+                #enquire .tr-pricing-price-row {
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    gap: 14px !important;
+                    margin-bottom: 24px !important;
+                }
+                #enquire .tr-pricing-big-val {
+                    font-size: clamp(44px, 5vw, 54px) !important;
+                    font-weight: 900 !important;
+                    color: #0f172a !important;
+                    line-height: 1 !important;
+                    letter-spacing: -1.5px !important;
+                    font-family: var(--tr-font-mono, monospace) !important;
+                }
+                #enquire .tr-pricing-badge-onetime {
+                    font-family: var(--tr-font-mono, monospace) !important;
+                    font-size: 11px !important;
+                    font-weight: 800 !important;
+                    letter-spacing: 0.8px !important;
+                    text-transform: uppercase !important;
+                    color: #1d4ed8 !important;
+                    background: #eff6ff !important;
+                    border: 1px solid #bfdbfe !important;
+                    padding: 6px 12px !important;
+                    border-radius: 6px !important;
+                    display: inline-block !important;
+                }
+                #enquire .tr-pricing-hr {
+                    border: none !important;
+                    height: 1px !important;
+                    background: #e2e8f0 !important;
+                    margin: 0 0 24px !important;
+                }
+                #enquire .tr-pricing-inc-title {
+                    font-size: 16px !important;
+                    font-weight: 800 !important;
+                    color: #0f172a !important;
+                    margin-bottom: 14px !important;
+                    text-align: left !important;
+                }
+                #enquire .tr-pricing-checklist {
+                    list-style: none !important;
+                    padding: 0 !important;
+                    margin: 0 0 24px !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 12px !important;
+                }
+                #enquire .tr-pricing-checklist li {
+                    list-style: none !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    gap: 12px !important;
+                    font-size: 14.5px !important;
+                    color: #334155 !important;
+                    font-weight: 500 !important;
+                    line-height: 1.45 !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+                #enquire .tr-pricing-checklist li::before {
+                    display: none !important;
+                    content: none !important;
+                }
+                #enquire .tr-pricing-check-icon {
+                    width: 20px !important;
+                    height: 20px !important;
+                    min-width: 20px !important;
+                    min-height: 20px !important;
+                    border-radius: 50% !important;
+                    background: #22c55e !important;
+                    color: #ffffff !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    flex-shrink: 0 !important;
+                }
+                #enquire .tr-pricing-check-icon svg {
+                    width: 12px !important;
+                    height: 12px !important;
+                    display: block !important;
+                }
+                #enquire .tr-pricing-notice-box {
+                    background: #f0f7ff !important;
+                    border: 1px solid #bfdbfe !important;
+                    border-radius: 14px !important;
+                    padding: 16px 18px !important;
+                    display: flex !important;
+                    align-items: flex-start !important;
+                    gap: 14px !important;
+                    margin-bottom: 24px !important;
+                    text-align: left !important;
+                }
+                #enquire .tr-pricing-notice-ico {
+                    width: 22px !important;
+                    height: 22px !important;
+                    min-width: 22px !important;
+                    min-height: 22px !important;
+                    color: #2563eb !important;
+                    flex-shrink: 0 !important;
+                    margin-top: 1px !important;
+                }
+                #enquire .tr-pricing-notice-content h4 {
+                    font-size: 13.5px !important;
+                    font-weight: 700 !important;
+                    color: #1e3a8a !important;
+                    margin: 0 0 3px !important;
+                }
+                #enquire .tr-pricing-notice-content p {
+                    font-size: 13px !important;
+                    color: #475569 !important;
+                    line-height: 1.5 !important;
+                    margin: 0 !important;
+                }
+                #enquire .tr-pricing-whatsapp-cta {
+                    width: 100% !important;
+                    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+                    color: #ffffff !important;
+                    font-size: 16.5px !important;
+                    font-weight: 800 !important;
+                    border-radius: 50px !important;
+                    padding: 16px 24px !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    gap: 10px !important;
+                    text-decoration: none !important;
+                    box-shadow: 0 8px 24px -4px rgba(34, 197, 94, 0.45) !important;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+                }
+                #enquire .tr-pricing-whatsapp-cta:hover {
+                    transform: translateY(-2px) !important;
+                    box-shadow: 0 12px 30px -4px rgba(34, 197, 94, 0.55) !important;
+                    color: #ffffff !important;
+                }
+                #enquire .tr-pricing-caption-note {
+                    text-align: center !important;
+                    font-size: 13px !important;
+                    color: #64748b !important;
+                    margin: 14px 0 0 !important;
+                    font-weight: 500 !important;
+                }
+                #enquire .tr-pricing-caption-note a {
+                    color: #2563eb !important;
+                    text-decoration: underline !important;
+                }
+                @media (max-width: 640px) {
+                    #enquire .tr-pricing-replica-card {
+                        padding: 36px 20px 28px !important;
+                    }
+                    #enquire .tr-pricing-top-pill {
+                        font-size: 10.5px !important;
+                        padding: 5px 14px !important;
+                    }
+                    #enquire .tr-pricing-meta-strip {
+                        gap: 8px !important;
+                    }
+                    #enquire .tr-pricing-meta-div {
+                        display: none !important;
+                    }
+                    #enquire .tr-pricing-meta-pill {
+                        font-size: 11px !important;
+                    }
+                    #enquire .tr-pricing-price-row {
+                        flex-direction: column !important;
+                        gap: 8px !important;
+                    }
+                }
+            </style>
             <div class="tr-container">
                 <div class="tr-section-header">
                     <div class="tr-eyebrow-pill">
                         <span class="pulsing-dot"></span>
-                        Pricing
+                        PRICING
                     </div>
-                    <h2 class="tr-h2-title">Simple, <span class="gradient-accent">Transparent Pricing</span></h2>
-                    <p class="tr-subtitle-lead">No hidden fees, recurring memberships, or generic upsells. Straightforward 1-on-1 training.</p>
+                    <h2 class="tr-h2-title">Transparent Pricing for <span class="gradient-accent">Practical Amazon Seller Training</span></h2>
+                    <p class="tr-subtitle-lead">One-time payment. No hidden fees. No recurring subscriptions. Get 3 days of live, personalized Amazon seller training with practical guidance.</p>
                 </div>
 
-                <div class="tr-pricing-wrapper-dark">
-                    <div class="tr-pricing-ambient-dark" aria-hidden="true"></div>
-
-                    <div class="tr-pricing-tier-card-dark">
-                        <span class="tr-pricing-tag-pill-dark">LIVE 1-ON-1 ONLINE COURSE</span>
-                        
-                        <div class="tr-tier-name-dark">ATES E-Commerce Training</div>
-
-                        <div class="tr-tier-price-row-dark">
-                            <span class="tr-tier-big-price-dark">₹4,999</span>
-                            <span class="tr-tier-currency-badge-dark">INR · ALL INCLUSIVE</span>
-                        </div>
-
-                        <div class="tr-tier-desc-dark">Live online one-on-one training tailored to your objectives.</div>
-
-                        <ul class="tr-tier-checklist-dark">
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
-                                <span>Personalized learning objectives &amp; customized curriculum</span>
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
-                                <span>Complete 3-Day Curriculum with practical assignments</span>
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
-                                <span>Instructor-led live sessions with screen share</span>
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
-                                <span>Opportunity to ask questions &amp; receive feedback</span>
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6L9 17l-5-5"/></svg>
-                                <span>All 5 bonus spreadsheets, templates &amp; negative keyword bank</span>
-                            </li>
-                        </ul>
-
-                        <div class="tr-tier-notice-dark">
-                            <strong>Before publishing / starting:</strong> We clarify your exact starting level, product category, preferred schedule, and training plan on WhatsApp before beginning.
-                        </div>
-
-                        <a class="tr-whatsapp-cta-btn" style="width: 100%; font-size: 17px;" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20ATES%20Amazon%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-                            <span>Enquire About the ₹4,999 Training</span>
-                        </a>
+                <div class="tr-pricing-replica-card">
+                    <!-- Top Badge Pill -->
+                    <div class="tr-pricing-top-pill">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                        <span>LIVE 1-ON-1 ONLINE TRAINING</span>
                     </div>
+
+                    <!-- Title -->
+                    <h3 class="tr-pricing-card-title">Amazon ATES E-Commerce Training</h3>
+
+                    <!-- Meta Strip -->
+                    <div class="tr-pricing-meta-strip">
+                        <span class="tr-pricing-meta-pill">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="18" y2="10"></line></svg>
+                            3 Days
+                        </span>
+                        <span class="tr-pricing-meta-div">|</span>
+                        <span class="tr-pricing-meta-pill">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            2 Hours Per Day
+                        </span>
+                        <span class="tr-pricing-meta-div">|</span>
+                        <span class="tr-pricing-meta-pill">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            6 Hours of Live Training
+                        </span>
+                    </div>
+
+                    <!-- Price Row -->
+                    <div class="tr-pricing-price-row">
+                        <span class="tr-pricing-big-val">₹4,999</span>
+                        <span class="tr-pricing-badge-onetime">ONE-TIME PAYMENT · INR</span>
+                    </div>
+
+                    <!-- Divider -->
+                    <hr class="tr-pricing-hr">
+
+                    <!-- What's Included -->
+                    <div class="tr-pricing-inc-title">What's Included</div>
+                    <ul class="tr-pricing-checklist">
+                        <li>
+                            <span class="tr-pricing-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span>Personalized 1-on-1 learning sessions</span>
+                        </li>
+                        <li>
+                            <span class="tr-pricing-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span>Complete 3-day structured Amazon seller curriculum</span>
+                        </li>
+                        <li>
+                            <span class="tr-pricing-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span>Practical assignments and real-world examples</span>
+                        </li>
+                        <li>
+                            <span class="tr-pricing-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span>Live instructor-led sessions with screen sharing</span>
+                        </li>
+                        <li>
+                            <span class="tr-pricing-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span>Opportunity to ask questions and receive feedback</span>
+                        </li>
+                    </ul>
+
+                    <!-- Before Your Training Begins Notice Box -->
+                    <div class="tr-pricing-notice-box">
+                        <svg class="tr-pricing-notice-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <div class="tr-pricing-notice-content">
+                            <h4>Before Your Training Begins</h4>
+                            <p>We discuss your experience level, business goals and product category on WhatsApp to prepare your training plan.</p>
+                        </div>
+                    </div>
+
+                    <!-- Green CTA Button -->
+                    <a class="tr-pricing-whatsapp-cta" href="https://wa.me/918433232647?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20the%20Amazon%20ATES%20E-Commerce%20Training%20(%E2%82%B94%2C999)." target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+                        <span>Enquire About the ₹4,999 Course</span>
+                    </a>
+
+                    <!-- Bottom Caption -->
+                    <p class="tr-pricing-caption-note">Have questions? <a href="https://wa.me/918433232647?text=Hi%2C%20I%20have%20a%20few%20questions%20before%20enrolling%20in%20the%20Amazon%20Training." target="_blank" rel="noopener noreferrer">Contact us before enrolling</a>.</p>
                 </div>
             </div>
         </section>
