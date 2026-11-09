@@ -1432,48 +1432,50 @@
 }
 
 /* ==========================================================================
-   7. SECTION: PRICING (LIGHT - CRISP EXECUTIVE REPLICA)
+   7. SECTION: PRICING (HIGH-CONTRAST SAAS LIGHT)
    ========================================================================== */
 .tr-section-pricing-light {
   padding: 100px 0;
-  background: radial-gradient(circle at 50% 0%, rgba(239, 246, 255, 0.8) 0%, #ffffff 75%);
+  background: #f8fafc;
+  background-image: radial-gradient(at 50% 0%, #eff6ff 0%, #f8fafc 70%);
   position: relative;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .tr-pricing-replica-card {
-  max-width: 660px;
-  margin: 0 auto;
+  max-width: 620px;
+  margin: 30px auto 0;
   background: #ffffff;
-  border: 1.5px solid #dbeafe;
-  border-radius: 26px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 24px;
   padding: 44px 38px 36px;
-  box-shadow: 0 20px 50px -10px rgba(37, 99, 235, 0.08), 0 4px 18px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.1), 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(15, 23, 42, 0.04);
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .tr-pricing-replica-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 28px 65px -12px rgba(37, 99, 235, 0.14), 0 8px 24px rgba(15, 23, 42, 0.05);
-  border-color: #93c5fd;
+  box-shadow: 0 32px 75px -15px rgba(15, 23, 42, 0.16), 0 12px 28px -5px rgba(15, 23, 42, 0.08);
+  border-color: #94a3b8;
 }
 
 .tr-pricing-top-pill {
   position: absolute;
-  top: -16px;
+  top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: #0f172a;
   color: #ffffff;
   font-family: var(--tr-font-mono, monospace);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   padding: 6px 18px;
   border-radius: 50px;
-  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1481,40 +1483,50 @@
 }
 
 .tr-pricing-card-title {
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 800;
   color: #0f172a;
   text-align: center;
-  margin: 8px 0 14px;
-  letter-spacing: -0.015em;
+  margin: 8px 0 16px;
+  letter-spacing: -0.02em;
 }
 
-.tr-pricing-meta-strip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
+.tr-pricing-meta-strip-wrap {
+  text-align: center;
   margin-bottom: 24px;
 }
 
-.tr-pricing-meta-pill {
-  font-family: var(--tr-font-mono, monospace);
-  font-size: 12px;
-  font-weight: 700;
-  color: #1e40af;
-  background: #eff6ff;
-  border: 1px solid #dbeafe;
-  padding: 4px 12px;
-  border-radius: 8px;
+.tr-pricing-unified-meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 50px;
+  padding: 7px 18px;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.tr-meta-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--tr-font-mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  padding: 0 10px;
 }
 
-.tr-pricing-meta-div {
-  color: #cbd5e1;
-  font-weight: 300;
+.tr-meta-item svg {
+  color: #2563eb;
+}
+
+.tr-meta-divider {
+  width: 1px;
+  height: 14px;
+  background: #cbd5e1;
+  display: inline-block;
 }
 
 .tr-pricing-price-row {
@@ -1526,7 +1538,7 @@
 }
 
 .tr-pricing-big-val {
-  font-size: clamp(44px, 5vw, 54px);
+  font-size: clamp(46px, 5.5vw, 56px);
   font-weight: 900;
   color: #0f172a;
   line-height: 1;
@@ -1540,9 +1552,9 @@
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: #1d4ed8;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
+  color: #0f172a;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
   padding: 6px 12px;
   border-radius: 6px;
   display: inline-block;
@@ -1561,6 +1573,7 @@
   color: #0f172a;
   margin-bottom: 14px;
   text-align: left;
+  letter-spacing: -0.01em;
 }
 
 .tr-pricing-checklist {
@@ -1569,7 +1582,7 @@
   margin: 0 0 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .tr-pricing-checklist li {
@@ -1578,10 +1591,10 @@
   align-items: center;
   gap: 12px;
   font-size: 14.5px;
-  color: #334155;
-  font-weight: 500;
+  color: #1e293b;
+  font-weight: 600;
   line-height: 1.45;
-  padding: 0;
+  padding: 4px 0;
   margin: 0;
 }
 
@@ -1591,17 +1604,18 @@
 }
 
 .tr-pricing-check-icon {
-  width: 20px;
-  height: 20px;
-  min-width: 20px;
-  min-height: 20px;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
   border-radius: 50%;
-  background: #22c55e;
+  background: #16a34a;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
 }
 
 .tr-pricing-check-icon svg {
@@ -1611,8 +1625,8 @@
 }
 
 .tr-pricing-notice-box {
-  background: #f0f7ff;
-  border: 1px solid #bfdbfe;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
   border-radius: 14px;
   padding: 16px 18px;
   display: flex;
@@ -1634,8 +1648,8 @@
 
 .tr-pricing-notice-content h4 {
   font-size: 13.5px;
-  font-weight: 700;
-  color: #1e3a8a;
+  font-weight: 800;
+  color: #0f172a;
   margin: 0 0 3px;
 }
 
@@ -1644,11 +1658,12 @@
   color: #475569;
   line-height: 1.5;
   margin: 0;
+  font-weight: 500;
 }
 
 .tr-pricing-whatsapp-cta {
   width: 100%;
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
   color: #ffffff;
   font-size: 16.5px;
   font-weight: 800;
@@ -1659,13 +1674,14 @@
   justify-content: center;
   gap: 10px;
   text-decoration: none;
-  box-shadow: 0 8px 24px -4px rgba(34, 197, 94, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(22, 163, 74, 0.4), 0 2px 6px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tr-pricing-whatsapp-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -4px rgba(34, 197, 94, 0.55);
+  box-shadow: 0 14px 30px -4px rgba(22, 163, 74, 0.5);
   color: #ffffff;
 }
 
@@ -1678,26 +1694,29 @@
 }
 
 .tr-pricing-caption-note a {
-  color: #2563eb;
+  color: #0f172a;
+  font-weight: 700;
   text-decoration: underline;
 }
 
 @media (max-width: 640px) {
   .tr-pricing-replica-card {
     padding: 36px 20px 28px;
+    margin-top: 24px;
   }
   .tr-pricing-top-pill {
-    font-size: 10.5px;
+    font-size: 10px;
     padding: 5px 14px;
   }
-  .tr-pricing-meta-strip {
-    gap: 8px;
+  .tr-pricing-unified-meta {
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 10px 14px;
+    gap: 6px;
+    width: 100%;
   }
-  .tr-pricing-meta-div {
+  .tr-meta-divider {
     display: none;
-  }
-  .tr-pricing-meta-pill {
-    font-size: 11px;
   }
   .tr-pricing-price-row {
     flex-direction: column;
