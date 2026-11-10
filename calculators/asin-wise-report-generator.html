@@ -9,9 +9,9 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Amazon ASIN-Wise Report Generator | Combine PPC &amp; Business Reports</title>
+    <title>Amazon ASIN Wise Report Generator – Free Amazon PPC Analytics Tool</title>
     <meta name="description"
-        content="Free 100% client-side Amazon ASIN-Wise Report Generator. Combine Sponsored Products, Sponsored Display, and Business Reports by ASIN to calculate CPC, CTR, ROAS, TROAS, ACoS &amp; TACoS and export formatted Excel &amp; CSV reports.">
+        content="Generate detailed Amazon ASIN-wise reports by combining Sponsored Products, Sponsored Display and Business Reports. Analyze sales, spend, ROAS, TACoS and ASIN performance. Export to Excel or CSV for free.">
     <meta name="keywords"
         content="Amazon ASIN wise report generator, combine Amazon PPC and business report, Amazon TROAS report by ASIN, Sponsored Products Business Report merger, Amazon ASIN performance Excel">
     <meta name="author" content="PPC Growth Expert">
@@ -19,17 +19,17 @@
 
     <!-- OPEN GRAPH / SOCIAL -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Amazon ASIN-Wise Report Generator | Combine PPC &amp; Business Reports">
+    <meta property="og:title" content="Amazon ASIN Wise Report Generator – Free Amazon PPC Analytics Tool">
     <meta property="og:description"
-        content="Combine Sponsored Products, Sponsored Display, and Amazon Business Reports by ASIN directly in your browser. Export formatted 13-column or Expanded Excel workbooks instantly.">
+        content="Generate detailed Amazon ASIN-wise reports by combining Sponsored Products, Sponsored Display and Business Reports. Analyze sales, spend, ROAS, TACoS and ASIN performance. Export to Excel or CSV for free.">
     <meta property="og:url" content="https://ppcgrowthexpert.com/calculators/asin-wise-report-generator.html">
     <meta property="og:site_name" content="PPC Growth Expert">
 
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Amazon ASIN-Wise Report Generator | PPC Growth Expert">
+    <meta name="twitter:title" content="Amazon ASIN Wise Report Generator – Free Amazon PPC Analytics Tool">
     <meta name="twitter:description"
-        content="Merge Amazon Ads reports and Business Reports by ASIN with accurate CPC, CTR, ROAS, and TROAS calculations. Zero server uploads.">
+        content="Generate detailed Amazon ASIN-wise reports by combining Sponsored Products, Sponsored Display and Business Reports. Analyze sales, spend, ROAS, TACoS and ASIN performance. Export to Excel or CSV for free.">
 
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
@@ -268,7 +268,9 @@
 
         .rep-hero .hero-description {
             color: #cbd5e1;
+            max-width: 900px;
             margin-bottom: 28px;
+            line-height: 1.72;
         }
 
         .rep-hero-badges {
@@ -313,31 +315,31 @@
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 16px;
-            max-width: 1080px;
+            max-width: 1220px;
             margin: 34px auto 0 auto;
             text-align: left;
         }
 
-        @media (max-width: 860px) {
+        @media (max-width: 960px) {
             .rep-flow-strip {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        @media (max-width: 520px) {
+        @media (max-width: 560px) {
             .rep-flow-strip {
                 grid-template-columns: 1fr;
             }
         }
 
         .rep-flow-step {
-            background: rgba(15, 23, 42, 0.78);
+            background: rgba(15, 23, 42, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 16px;
-            padding: 16px 18px;
+            padding: 20px 18px;
             display: flex;
-            align-items: center;
-            gap: 12px;
+            align-items: flex-start;
+            gap: 13px;
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
         }
 
@@ -353,22 +355,79 @@
             display: grid;
             place-items: center;
             flex: none;
+            margin-top: 1px;
         }
 
         .rep-flow-text strong {
             display: block;
-            font-size: 13.5px;
+            font-size: 14px;
             font-weight: 800;
             color: #ffffff;
-            line-height: 1.28;
+            line-height: 1.32;
+            margin-bottom: 5px;
         }
 
         .rep-flow-text span {
             display: block;
-            font-size: 12px;
+            font-size: 12.5px;
             color: #94a3b8;
-            line-height: 1.35;
+            line-height: 1.5;
+        }
+
+        .rep-hero-capsule {
+            max-width: 1220px;
+            margin: 24px auto 0 auto;
+            padding: 22px 26px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(19, 34, 66, 0.84) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            border-left: 4px solid #38bdf8;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .rep-capsule-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(56, 189, 248, 0.14);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: #7dd3fc;
+            display: grid;
+            place-items: center;
+            flex: none;
             margin-top: 2px;
+        }
+
+        .rep-capsule-content {
+            min-width: 0;
+        }
+
+        .rep-capsule-title {
+            margin: 0 0 6px 0;
+            font-size: 16.5px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.2px;
+            line-height: 1.3;
+        }
+
+        .rep-capsule-text {
+            margin: 0;
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.68;
+        }
+
+        @media (max-width: 640px) {
+            .rep-hero-capsule {
+                flex-direction: column;
+                padding: 18px 20px;
+                gap: 12px;
+            }
         }
 
         /* 2. LIGHT EXECUTIVE WORKBENCH SECTION */
@@ -2379,46 +2438,61 @@
             </nav>
 
             <div class="hero-eyebrow">✦ REPORTING &amp; ANALYTICS · CLIENT-SIDE MERGER</div>
-            <h1 class="hero-title">ASIN-Wise <span class="highlight-blue">Report Generator</span></h1>
+            <h1 class="hero-title">Amazon ASIN-Wise <span class="highlight-blue">Report Generator</span></h1>
             <p class="hero-description">
-                Combine your Amazon Sponsored Products, Sponsored Display, and Business Reports by ASIN in seconds —
-                eliminating VLOOKUP errors, duplicate-row inflation, and averaged ratios.
+                Combine your Amazon Sponsored Products, Sponsored Display, and Business Reports into one accurate ASIN-level performance report. Analyze advertising spend, attributed sales, total revenue, ROAS, ACoS, and TACoS in one place. Identify top-performing products, uncover inefficient ad spend, and make smarter Amazon PPC optimization decisions with downloadable Excel reports.
             </p>
 
             <div class="rep-hero-badges">
-                <span class="rep-trust-pill secure"><span class="rep-pulse-dot"></span> Files Stay on Your Computer · Zero Server Uploads</span>
-                <span class="rep-trust-pill">📊 Standard 13-Col &amp; Expanded SP/SD Formats</span>
-                <span class="rep-trust-pill">📑 Formatted Excel (.xlsx) &amp; UTF-8 CSV Export</span>
+                <span class="rep-trust-pill secure"><span class="rep-pulse-dot"></span> 100% Local File Processing – No Server Uploads</span>
+                <span class="rep-trust-pill">📊 Supports Standard &amp; Expanded Amazon Reports</span>
+                <span class="rep-trust-pill">📑 Download Excel (.xlsx) &amp; CSV Reports</span>
             </div>
 
             <div class="rep-flow-strip" aria-label="4 step workflow overview">
                 <div class="rep-flow-step">
                     <span class="rep-flow-num">1</span>
                     <div class="rep-flow-text">
-                        <strong>Upload Reports</strong>
-                        <span>SP, optional SD &amp; Child Business CSV/XLSX</span>
+                        <strong>Upload Your Amazon Reports</strong>
+                        <span>Upload your Sponsored Products, optional Sponsored Display, and Child Item Business Reports in CSV or XLSX format.</span>
                     </div>
                 </div>
                 <div class="rep-flow-step">
                     <span class="rep-flow-num">2</span>
                     <div class="rep-flow-text">
-                        <strong>Auto-Validate Columns</strong>
-                        <span>Detects INR/USD headers &amp; date order</span>
+                        <strong>Automatically Validate Your Data</strong>
+                        <span>Detect report formats, validate column headers, identify date ranges, and check currency compatibility.</span>
                     </div>
                 </div>
                 <div class="rep-flow-step">
                     <span class="rep-flow-num">3</span>
                     <div class="rep-flow-text">
-                        <strong>Inspect ASIN Telemetry</strong>
-                        <span>Filter, sort &amp; compare ROAS vs TROAS</span>
+                        <strong>Analyze ASIN-Level Performance</strong>
+                        <span>Compare advertising spend, attributed sales, total revenue, ROAS, ACoS, and TACoS across your products.</span>
                     </div>
                 </div>
                 <div class="rep-flow-step">
                     <span class="rep-flow-num">4</span>
                     <div class="rep-flow-text">
-                        <strong>Download Client Excel</strong>
-                        <span>Yellow-header sheet + Audit Notes tab</span>
+                        <strong>Download Your Detailed Excel Report</strong>
+                        <span>Export a formatted ASIN-wise performance report with detailed metrics and audit notes.</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="rep-hero-capsule">
+                <div class="rep-capsule-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                </div>
+                <div class="rep-capsule-content">
+                    <h2 class="rep-capsule-title">What Is an Amazon ASIN-Wise Report Generator?</h2>
+                    <p class="rep-capsule-text">
+                        An Amazon ASIN-Wise Report Generator is an analytics tool that combines advertising and business reports to analyze the performance of individual Amazon products. It helps sellers understand product-level ad spend, sales, ROAS, ACoS, TACoS, and overall revenue performance, making it easier to identify growth opportunities and optimize Amazon PPC campaigns.
+                    </p>
                 </div>
             </div>
         </div>
