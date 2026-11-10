@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+    <!-- SEO TITLE & METADATA -->
+    <title>How AI Agents & AMC Data Are Transforming Bidding in 2027 | Amazon PPC Guide</title>
+    <meta name="description"
+        content="Discover how AI agents and Amazon Marketing Cloud (AMC) SQL datasets are revolutionizing PPC bidding in 2027. Learn multi-touch attribution, dayparting, and CLV-driven bidding.">
+    <meta name="keywords"
+        content="Amazon Marketing Cloud, AMC PPC bidding, AI agents Amazon advertising, AMC SQL queries, multi touch attribution Amazon, dayparting Amazon PPC, customer lifetime value bidding, DSP Sponsored Products overlap">
+    <meta name="author" content="Anmol Pokhriyal">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- CANONICAL URL & OPEN GRAPH -->
+    <link rel="canonical" href="https://ppcgrowthexpert.com/blog/how-ai-agents-amc-data-transforming-bidding-2027.html">
+    <meta property="og:title" content="How AI Agents & AMC Data Are Transforming Bidding in 2027 | Amazon PPC Guide">
+    <meta property="og:description" content="Discover how 8-figure Amazon brands use autonomous AI agents and AMC SQL queries to replace last-touch attribution with event-level multi-touch bidding.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ppcgrowthexpert.com/blog/how-ai-agents-amc-data-transforming-bidding-2027.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How AI Agents & AMC Data Are Transforming Bidding in 2027">
+    <meta name="twitter:description" content="Explore event-level AMC queries, path-to-purchase frequency, and AI agent bidding loops for Amazon sellers.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../css/style.css?v=v41">
+    <link rel="stylesheet" href="../css/navbar.css?v=v52">
+    <link rel="stylesheet" href="css/blog.css?v=v42">
+    <link rel="stylesheet" href="../css/footer.css?v=v41">
+    <link rel="stylesheet" href="../css/whatsapp.css">
+
+    <!-- JSON-LD STRUCTURED DATA SCHEMA FOR SEO, AEO, GEO & AI ENGINES -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How AI Agents & AMC (Amazon Marketing Cloud) Data Are Transforming Bidding in 2027",
+      "description": "In-depth guide exploring how enterprise Amazon brands use Amazon Marketing Cloud (AMC) SQL event-level datasets and autonomous AI agents to optimize ad bids, multi-touch attribution, dayparting, and customer lifetime value.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Anmol Pokhriyal",
+        "jobTitle": "Amazon PPC Growth Expert & Founder",
+        "url": "https://ppcgrowthexpert.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PPC Growth Expert",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ppcgrowthexpert.com/images/logo.png"
+        }
+      },
+      "datePublished": "2026-09-15",
+      "dateModified": "2026-09-15",
+      "mainEntityOfPage": "https://ppcgrowthexpert.com/blog/how-ai-agents-amc-data-transforming-bidding-2027.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ppcgrowthexpert.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://ppcgrowthexpert.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Agents & AMC Bidding (2027)",
+          "item": "https://ppcgrowthexpert.com/blog/how-ai-agents-amc-data-transforming-bidding-2027.html"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Amazon Marketing Cloud (AMC) and how is it different from Campaign Manager?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Campaign Manager provides aggregated, last-touch attribution metrics (e.g., 7-day or 14-day total clicks and sales). Amazon Marketing Cloud (AMC) is a privacy-safe, cloud-based data clean room that provides pseudonymized, event-level impression and conversion data across Sponsored Products, Sponsored Brands, Sponsored Display, and Amazon DSP, queryable via SQL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do AI agents use AMC data for real-time bidding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI agents automatically execute scheduled SQL queries against AMC tables, compute multi-touch attribution weights (first-touch, mid-funnel assistance, and last-touch), calculate hourly conversion propensity, and adjust Campaign Manager target bids via the Amazon Advertising API without manual human latency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the cross-media overlap between Sponsored Products and Amazon DSP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AMC data consistently shows that shoppers exposed to both Amazon DSP upper-funnel display/video ads and bottom-funnel Sponsored Products ads exhibit a 250% to 320% higher conversion rate compared to shoppers who only see a single Sponsored ad touchpoint."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can small-to-mid sellers access Amazon Marketing Cloud in 2027?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. While AMC previously required a dedicated Amazon DSP contract, Amazon has expanded AMC access to brand-registered Sponsored Ads advertisers, and AI SaaS middleware enables sellers to run pre-built SQL query templates without needing dedicated data engineers."
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+
+<body>
+
+    <!-- READING PROGRESS BAR -->
+    <div class="article-progress-bar" id="articleProgressBar"></div>
+
+    <!-- =========================================================
+         EXECUTIVE NAVBAR
+    ========================================================= -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+
+            <!-- LOGO -->
+            <a href="../index.html" class="logo">
+                <div class="logo-badge">
+                    <div class="logo-symbol"></div>
+                </div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <!-- NAVIGATION LINKS -->
+            <nav class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-item">Home</a>
+
+                <!-- SERVICES MEGA DROPDOWN -->
+                <div class="nav-dropdown">
+                    <a href="../services/index.html" class="nav-item nav-dropdown-trigger">
+                        Services <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu services-mega-dropdown">
+                        <div class="services-menu-grid">
+
+                            <!-- AMAZON SPECIALIZED -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON SPECIALIZED</div>
+
+                                <a href="../services/amazon-ppc-management-services-india.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services India</span>
+                                        <span class="mega-item-desc">Turn ad spend into profitable growth</span>
+                                    </div>
+                                </a>
+
+                                <a href="../services/amazon-seller-account-management-services.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon Seller Account Management Services in India</span>
+                                        <span class="mega-item-desc">Full Seller Central operations</span>
+                                    </div>
+                                </a>
+
+                                <a href="../services/amazon-ppc-management-services-delhi.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services Delhi</span>
+                                        <span class="mega-item-desc">Data-driven ad scaling for Delhi brands</span>
+                                    </div>
+                                </a>
+
+                                <a href="../services/amazon-ppc-management-services-moradabad.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services Moradabad</span>
+                                        <span class="mega-item-desc">Scale handicraft &amp; brassware export</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="mega-menu-footer">
+                            <div class="mega-menu-footer-content">
+                                <a href="../services/index.html" class="mega-footer-link">
+                                    <span>Explore All Marketplace Services</span>
+                                    <span class="footer-arrow">→</span>
+                                </a>
+                                <div class="mega-footer-tags">
+                                    <span class="footer-tag-label">REGIONAL HUBS</span>
+                                    <a href="../services/amazon-ppc-management-services-delhi.html" class="hub-pill">Delhi</a>
+                                    <a href="../services/amazon-ppc-management-services-noida.html" class="hub-pill">Noida</a>
+                                    <a href="../services/amazon-ppc-management-services-moradabad.html" class="hub-pill">Moradabad</a>
+                                    <a href="../services/ecommerce-ppc-services.html" class="hub-pill">Ecommerce PPC</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../case-studies.html" class="nav-item">Case Studies</a>
+                <a href="../amazon-ecommerce-training.html" class="nav-item">Amazon ATES</a>
+
+                <!-- CALCULATORS & RESOURCES MEGA DROPDOWN -->
+                <div class="nav-dropdown">
+                    <a href="../calculators/index.html" class="nav-item nav-dropdown-trigger">
+                        Calculators <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="calculators-menu-grid">
+
+                            <!-- 1. CORE EFFICIENCY -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">CORE EFFICIENCY</div>
+                                <a href="../calculators/amazon-acos-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📊</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">ACoS Calculator</span>
+                                        <span class="mega-item-desc">Measure advertising cost of sales</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-roas-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">⚡</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">ROAS Calculator</span>
+                                        <span class="mega-item-desc">Track return on advertising spend</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-conversion-rate-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📈</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Conversion Rate Calculator</span>
+                                        <span class="mega-item-desc">Optimize traffic into buyers</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 2. BIDDING & SPEND -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">BIDDING &amp; SPEND</div>
+                                <a href="../calculators/amazon-cpc-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">💵</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">CPC Calculator</span>
+                                        <span class="mega-item-desc">Calculate average cost per click</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-ctr-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🎯</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">CTR Calculator</span>
+                                        <span class="mega-item-desc">Measure ad click-through rate</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-tacos-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📈</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">TACoS Calculator</span>
+                                        <span class="mega-item-desc">Compare ad spend vs total sales</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 3. PPC OPTIMIZATION -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC OPTIMIZATION</div>
+                                <a href="../calculators/ai-amazon-listing-generator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🪄</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">AI Amazon Listing Generator</span>
+                                        <span class="mega-item-desc">Turn product photos into SEO listings</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-ppc-waste-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🧯</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Waste Calculator</span>
+                                        <span class="mega-item-desc">Find inefficient ad spend</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-keyword-profitability-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🔑</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Keyword Profitability Calculator</span>
+                                        <span class="mega-item-desc">Analyze keyword net margin &amp; ROI</span>
+                                    </div>
+                                </a>
+                                <a href="../amazon-ecommerce-training.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🎓</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">E-Commerce Training</span>
+                                        <span class="mega-item-desc">Live 1-on-1 Amazon Course · ₹4,999</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 4. AMAZON INDIA TOOLS -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="../calculators/amazon-profit-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📦</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Profit Calculator</span>
+                                        <span class="mega-item-desc">Amazon India net margin &amp; profit</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-fba-fee-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🚚</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">FBA Fee Calculator</span>
+                                        <span class="mega-item-desc">Fulfilment &amp; referral breakdown</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-fba-storage-fee-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🏢</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">FBA Storage Calculator</span>
+                                        <span class="mega-item-desc">Monthly inventory storage cost</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-advertising-roi-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">💸</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Ad ROI Calculator</span>
+                                        <span class="mega-item-desc">Net profit return after PPC</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="mega-menu-footer">
+                            <a href="../calculators/index.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html" class="nav-item">Blog</a>
+                <a href="../contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <!-- CTA BUTTON -->
+            <a href="../contact.html" class="cta-button primary-btn">Free PPC Audit</a>
+
+            <!-- MOBILE MENU TOGGLE -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </header>
+    </div>
+
+    <!-- =========================================================
+         ARTICLE CONTAINER & HEADER (EXACT SAME FORMATTING)
+    ========================================================= -->
+    <div class="article-page-container">
+
+        <!-- BREADCRUMBS -->
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a> / 
+            <a href="index.html">Blog</a> / 
+            <a href="index.html">AI for Amazon</a> / 
+            <span>AI Agents &amp; AMC Bidding</span>
+        </nav>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                <span class="category-pill">AI FOR AMAZON</span>
+                <span style="font-family: 'DM Mono', monospace; font-size: 11px; color: #f59e0b; font-weight: 700; background: rgba(245, 158, 11, 0.12); padding: 4px 12px; border-radius: 50px;">ENTERPRISE PROTOCOL</span>
+                <span class="read-time" style="font-weight: 600; color: #64748b;">20 min read</span>
+            </div>
+
+            <h1 class="article-main-title">
+                How AI Agents &amp; AMC (Amazon Marketing Cloud) Data Are Transforming Bidding in 2027
+            </h1>
+
+            <p class="article-lead">
+                Static bid rules and 14-day last-touch attribution are obsolete. Discover how 8-figure Amazon operators are combining <strong>Amazon Marketing Cloud (AMC) SQL clean-room datasets</strong> with <strong>autonomous AI bidding agents</strong> to optimize multi-touch attribution, dayparting, and Customer Lifetime Value (CLV).
+            </p>
+
+            <div class="article-meta-bar">
+                <div class="article-author-box">
+                    <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-img">
+                    <div class="article-author-details">
+                        <strong>Anmol Pokhriyal</strong>
+                        <span>Amazon PPC &amp; Growth Specialist · Updated September 2026</span>
+                    </div>
+                </div>
+
+                <div class="article-actions-row">
+                    <button class="btn-action-icon" id="saveArticleBtn">♡ Save</button>
+                    <button class="btn-action-icon" id="copyLinkBtn">🔗 Copy Link</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO VISUAL SVG ARCHITECTURE DIAGRAM -->
+        <div class="article-hero-graphic">
+            <svg viewBox="0 0 800 280" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="280" rx="16" fill="#0f172a" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+
+                <!-- EVENT-LEVEL INPUTS -->
+                <rect x="40" y="45" width="160" height="50" rx="8" fill="rgba(56, 189, 248, 0.1)" stroke="#38bdf8"/>
+                <text x="120" y="70" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="11.5" font-weight="800">SPONSORED ADS</text>
+                <text x="120" y="86" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="9.5">Keyword Click Stream</text>
+
+                <rect x="40" y="115" width="160" height="50" rx="8" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24"/>
+                <text x="120" y="140" text-anchor="middle" fill="#fbbf24" font-family="Plus Jakarta Sans" font-size="11.5" font-weight="800">AMAZON DSP</text>
+                <text x="120" y="156" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="9.5">Video &amp; Display Views</text>
+
+                <rect x="40" y="185" width="160" height="50" rx="8" fill="rgba(192, 132, 252, 0.12)" stroke="#c084fc"/>
+                <text x="120" y="210" text-anchor="middle" fill="#c084fc" font-family="Plus Jakarta Sans" font-size="11.5" font-weight="800">ORGANIC &amp; RUFUS</text>
+                <text x="120" y="226" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="9.5">Conversational Intent</text>
+
+                <!-- FLOW TO AMC -->
+                <path d="M 200 70 L 290 140" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,4"/>
+                <path d="M 200 140 L 290 140" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,4"/>
+                <path d="M 200 210 L 290 140" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+                <!-- AMC CLEAN ROOM (MIDDLE) -->
+                <rect x="290" y="80" width="200" height="120" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="390" y="118" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="13" font-weight="800">AMAZON MARKETING</text>
+                <text x="390" y="136" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="13" font-weight="800">CLOUD (AMC)</text>
+                <text x="390" y="160" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="10.5">Event-Level SQL Tables</text>
+                <text x="390" y="180" text-anchor="middle" fill="#10b981" font-family="DM Mono" font-size="10">Multi-Touch Attribution</text>
+
+                <!-- FLOW TO AI AGENT -->
+                <path d="M 490 140 L 570 140" stroke="#10b981" stroke-width="2"/>
+                <text x="530" y="132" fill="#10b981" font-size="12" font-weight="700">→</text>
+
+                <!-- AUTONOMOUS AI BIDDING AGENT (RIGHT) -->
+                <rect x="570" y="65" width="190" height="150" rx="12" fill="rgba(16, 185, 129, 0.08)" stroke="#10b981" stroke-width="2"/>
+                <text x="665" y="100" text-anchor="middle" fill="#10b981" font-family="Plus Jakarta Sans" font-size="13" font-weight="800">AUTONOMOUS AI AGENT</text>
+                <text x="665" y="125" text-anchor="middle" fill="#ffffff" font-family="DM Mono" font-size="10.5">• Real-Time Bid Decay</text>
+                <text x="665" y="145" text-anchor="middle" fill="#ffffff" font-family="DM Mono" font-size="10.5">• Dayparting Multipliers</text>
+                <text x="665" y="165" text-anchor="middle" fill="#ffffff" font-family="DM Mono" font-size="10.5">• CLV-Adjusted Targets</text>
+                <text x="665" y="195" text-anchor="middle" fill="#38bdf8" font-family="DM Mono" font-size="10">Amazon Ads API v3 Sync</text>
+            </svg>
+            <div style="text-align: center; margin-top: 10px; font-weight: 700; color: #38bdf8; font-size: 15px;">
+                💡 Replacing last-touch guessing with event-level multi-touch bidding increases cross-channel ROAS by 38%+.
+            </div>
+        </div>
+
+        <!-- TL;DR SUMMARY BOX -->
+        <div class="tldr-box">
+            <div class="tldr-title">✦ TL;DR — KEY SUMMARY</div>
+            <ul class="tldr-list">
+                <li><strong>The Limitation of Seller Central:</strong> Campaign Manager only reports the final ad clicked before purchase, completely ignoring awareness and consideration touchpoints.</li>
+                <li><strong>What AMC Solves:</strong> Amazon Marketing Cloud unlocks SQL-level access to full cross-channel customer journeys, time-to-purchase, frequency distributions, and Sponsored Ads + DSP synergy.</li>
+                <li><strong>The AI Agent Advantage:</strong> Autonomous AI agents query AMC tables every hour, calculate actual multi-touch attribution values, and push algorithmic bid adjustments via the Amazon Ads API.</li>
+                <li><strong>Cross-Media Halo:</strong> AMC data proves shoppers who see both DSP upper-funnel video and Sponsored Products convert at a <strong>3.2x higher rate</strong> than single-touch ad shoppers.</li>
+                <li><strong>Bidding by CLV:</strong> Instead of bidding against a flat Target ACoS, AI agents set higher bids on search terms that produce high repeat-purchase (LTV) customers.</li>
+            </ul>
+        </div>
+
+        <!-- KEY NUMBERS HIGHLIGHT CARDS -->
+        <div class="key-numbers-grid">
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #0284c7;">3.2x</div>
+                <div class="stat-card-label">CVR MULTIPLIER (DSP + SP)</div>
+            </div>
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #059669;">+38%</div>
+                <div class="stat-card-label">TRUE ROAS LIFT VIA AMC</div>
+            </div>
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #d97706;">Sub-Hour</div>
+                <div class="stat-card-label">AI BID EXECUTION LATENCY</div>
+            </div>
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #7c3aed;">100%</div>
+                <div class="stat-card-label">EVENT-LEVEL PRIVACY SAFE</div>
+            </div>
+        </div>
+
+        <!-- MAIN ARTICLE LAYOUT (GRID: TOC + PROSE + SIDEBAR) -->
+        <div class="article-layout-grid">
+
+            <!-- LEFT STICKY TABLE OF CONTENTS -->
+            <aside class="article-toc-col">
+                <div class="article-toc-box">
+                    <div class="toc-title">ON THIS PAGE</div>
+                    <ul class="toc-links">
+                        <li><a href="#sec-death-of-last-touch">1. The Death of Last-Touch</a></li>
+                        <li><a href="#sec-what-is-amc">2. What is Amazon Marketing Cloud?</a></li>
+                        <li><a href="#sec-4-sql-queries">3. 4 Essential AMC SQL Queries</a></li>
+                        <li><a href="#sec-ai-loop">4. How Autonomous AI Agents Work</a></li>
+                        <li><a href="#sec-ltv-bidding">5. Bidding by CLV Instead of ACoS</a></li>
+                        <li><a href="#sec-dayparting">6. Precision Dayparting via AMC</a></li>
+                        <li><a href="#sec-checklist">7. The AMC AI Readiness Checklist</a></li>
+                        <li><a href="#sec-calculator">8. Interactive AMC ROAS Estimator</a></li>
+                        <li><a href="#sec-faqs">9. Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- CENTER MAIN ARTICLE BODY -->
+            <main class="article-body-prose">
+
+                <!-- SECTION 1 -->
+                <section id="sec-death-of-last-touch">
+                    <h2>1. The Death of 14-Day Last-Touch Attribution in 2027</h2>
+                    <p>
+                        For over a decade, Amazon PPC optimization has been shackled to a primitive concept: <strong>Last-Touch Attribution</strong>.
+                    </p>
+                    <p>
+                        If a shopper discovers your brand via a Sponsored Brands Video ad on Monday, searches your product category on Wednesday, and finally clicks a Sponsored Products ad for your exact brand name on Friday before purchasing, <strong>Campaign Manager attributes 100% of the sale to the branded ad</strong>!
+                    </p>
+
+                    <div class="callout-box callout-warning">
+                        <div class="callout-title">⚠️ THE LAST-TOUCH BLINDSPOT</div>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.7;">
+                            Under last-touch attribution, your upper-funnel video and generic keyword campaigns appear to have terrible ACoS (60%+), prompting sellers to pause them. But the moment you pause them, your branded ad sales drop by 40% two weeks later! Last-touch models cannot see the multi-touch customer journey.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SECTION 2 -->
+                <section id="sec-what-is-amc">
+                    <h2>2. What is Amazon Marketing Cloud (AMC) &amp; Why AI Agents Change Everything?</h2>
+                    <p>
+                        <a href="https://advertising.amazon.com/solutions/products/amazon-marketing-cloud" target="_blank" rel="noopener noreferrer" class="ext-ref-link" data-ref="Amazon Marketing Cloud Official">Amazon Marketing Cloud (AMC)</a> is a secure, privacy-safe cloud clean room built on Amazon Web Services (AWS). It aggregates event-level data across your entire Amazon footprint:
+                    </p>
+                    <ul>
+                        <li>Every Sponsored Products impression, click, and placement.</li>
+                        <li>Every Sponsored Brands and Video watch duration.</li>
+                        <li>Every Amazon DSP display, audio, and Streaming TV (STV) impression.</li>
+                        <li>Every add-to-cart, detail page view, and purchase timestamp.</li>
+                    </ul>
+                    <p>
+                        In 2024, running AMC required an enterprise data science team writing complex SQL queries into dashboards that human media buyers reviewed once a month. In 2027, <strong>autonomous AI agents execute these SQL queries continuously, translating raw clean-room telemetry into real-time API bid adjustments every 60 minutes</strong>.
+                    </p>
+                </section>
+
+                <!-- SECTION 3 -->
+                <section id="sec-4-sql-queries">
+                    <h2>3. 4 Essential AMC SQL Queries Every Modern Seller Runs</h2>
+                    <p>
+                        Modern AI bidding agents rely on four core SQL data models to make algorithmic bid adjustments:
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin: 20px 0;">
+                        <div style="background: #f8fafc; border-left: 4px solid #0284c7; border: 1px solid #e2e8f0; border-left-width: 4px; padding: 18px; border-radius: 0 10px 10px 0;">
+                            <strong style="color: #0284c7; font-size: 15px;">Query 1: Cross-Media Overlap &amp; Synergy</strong>
+                            <p style="margin: 6px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.7;">
+                                Evaluates the incremental conversion lift when a shopper is exposed to both DSP and Sponsored Products vs. Sponsored Products alone. If synergy lifts CVR by 250%, the AI agent automatically increases Sponsored Products bids on users who have already seen a DSP video ad.
+                            </p>
+                        </div>
+
+                        <div style="background: #f8fafc; border-left: 4px solid #059669; border: 1px solid #e2e8f0; border-left-width: 4px; padding: 18px; border-radius: 0 10px 10px 0;">
+                            <strong style="color: #059669; font-size: 15px;">Query 2: Frequency &amp; Optimal Exposure Capping</strong>
+                            <p style="margin: 6px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.7;">
+                                Identifies the exact point of diminishing returns. AMC queries reveal that while 3 to 5 ad impressions increase purchase probability, impression 7+ yields zero incremental CVR while doubling ad spend. The AI agent throttles bids once frequency caps are reached.
+                            </p>
+                        </div>
+
+                        <div style="background: #f8fafc; border-left: 4px solid #d97706; border: 1px solid #e2e8f0; border-left-width: 4px; padding: 18px; border-radius: 0 10px 10px 0;">
+                            <strong style="color: #d97706; font-size: 15px;">Query 3: Hour-of-Week Conversion Propensity (True Dayparting)</strong>
+                            <p style="margin: 6px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.7;">
+                                Pulls conversion rates and sales velocity by the exact hour of day and day of week. Unlike basic Seller Central reports that only show click times, AMC matches the exact click timestamp to the actual checkout timestamp.
+                            </p>
+                        </div>
+
+                        <div style="background: #f8fafc; border-left: 4px solid #7c3aed; border: 1px solid #e2e8f0; border-left-width: 4px; padding: 18px; border-radius: 0 10px 10px 0;">
+                            <strong style="color: #7c3aed; font-size: 15px;">Query 4: New-to-Brand (NTB) Lifetime Value Clustering</strong>
+                            <p style="margin: 6px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.7;">
+                                Tracks 30, 60, and 90-day repeat purchase rates by keyword. Identifies high-ACoS generic keywords (e.g., 40% ACoS) that produce customers who re-order 4 times within 6 months, justifying aggressive bids.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4 -->
+                <section id="sec-ai-loop">
+                    <h2>4. How Autonomous AI Agents Execute AMC Insights</h2>
+                    <p>
+                        The true revolution of 2027 is the <strong>closed feedback loop</strong> between data clean rooms and ad APIs.
+                    </p>
+
+                    <div class="callout-box callout-takeaway">
+                        <div class="callout-title">🤖 THE AUTONOMOUS AGENTIC LOOP</div>
+                        <ol style="margin: 8px 0 0 0; padding-left: 20px; line-height: 1.8; font-size: 14px;">
+                            <li><strong>Telemetry Ingestion:</strong> AMC generates fresh event-level tables every hour.</li>
+                            <li><strong>SQL Analysis:</strong> The AI agent triggers automated SQL queries, evaluating multi-touch weights and placement fatigue.</li>
+                            <li><strong>Algorithmic Decisioning:</strong> If a keyword demonstrates high first-touch assisted conversions, the agent overrides the 45% last-touch ACoS constraint.</li>
+                            <li><strong>API Execution:</strong> The agent updates bids, negative match lists, and hourly budget allocations via the Amazon Advertising API v3.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- SECTION 5 -->
+                <section id="sec-ltv-bidding">
+                    <h2>5. Shifting from Target ACoS to LTV-Adjusted Bidding</h2>
+                    <p>
+                        The traditional target ACoS bid formula assumes every customer is worth the exact retail price of their first purchase:
+                    </p>
+                    <div style="background: #0f172a; border-radius: 8px; padding: 14px 18px; color: #ef4444; font-family: 'DM Mono', monospace; font-size: 13px; margin: 16px 0;">
+                        Legacy Bid = Target ACoS × Product Selling Price × CVR
+                    </div>
+                    <p>
+                        In categories with repeat purchases (supplements, beauty, pet food, FMCG, apparel), this formula systematically underbids on high-value conquest keywords. The modern AI formula incorporates <strong>6-Month Customer Lifetime Value (CLV)</strong> derived from AMC:
+                    </p>
+                    <div style="background: #0f172a; border-radius: 8px; padding: 14px 18px; color: #10b981; font-family: 'DM Mono', monospace; font-size: 13.5px; font-weight: 700; margin: 16px 0;">
+                        CLV-Adjusted Bid = Target Allowable CAC × 6-Month CLV × Keyword CVR
+                    </div>
+                    <p>
+                        If a supplement brand sells a $30 protein tub at a 35% first-order margin, but AMC reveals that 42% of buyers purchase 3 more tubs within 6 months (CLV = $105), the brand can comfortably bid $3.50 instead of $1.10—completely crowding competitors out of the Top-of-Search placement!
+                    </p>
+                </section>
+
+                <!-- SECTION 6 -->
+                <section id="sec-dayparting">
+                    <h2>6. Precision Dayparting: Eliminating Off-Peak Budget Depletion</h2>
+                    <p>
+                        Amazon's native dynamic bidding adjusts for conversion likelihood, but it lacks clock-driven discipline. Without dayparting, high-velocity keywords exhaust their daily budgets by 1:00 PM—hours before peak evening purchasing hours (7:00 PM – 11:00 PM).
+                    </p>
+                    <p>
+                        By analyzing checkout timestamps inside AMC, AI agents enforce <strong>hourly multiplier curves</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>1:00 AM – 6:00 AM (Dead Zone):</strong> Bids reduced by <strong>-40% to -60%</strong> to prevent accidental browsing clicks.</li>
+                        <li><strong>11:00 AM – 3:00 PM (Research Window):</strong> Neutral bids (0% adjustment) targeting discovery keywords.</li>
+                        <li><strong>7:00 PM – 11:30 PM (Peak Checkout):</strong> Bids boosted by <strong>+30% to +50%</strong> with Top-of-Search multipliers to maximize cart conversions.</li>
+                    </ul>
+                </section>
+
+                <!-- CHECKLIST CARD COMPONENT -->
+                <div class="checklist-card" id="sec-checklist">
+                    <div class="checklist-title">📋 The AMC AI Implementation Readiness Audit</div>
+                    <div class="checklist-items">
+                        <div class="checklist-item" onclick="this.classList.toggle('checked');">
+                            <div class="checklist-checkbox">✓</div>
+                            <span>Amazon Brand Registry 2.0 active with Amazon Ads API v3 credentials</span>
+                        </div>
+                        <div class="checklist-item" onclick="this.classList.toggle('checked');">
+                            <div class="checklist-checkbox">✓</div>
+                            <span>Amazon Marketing Cloud (AMC) instance provisioned and verified</span>
+                        </div>
+                        <div class="checklist-item" onclick="this.classList.toggle('checked');">
+                            <div class="checklist-checkbox">✓</div>
+                            <span>Both Sponsored Ads and Amazon DSP linked to the same AMC entity ID</span>
+                        </div>
+                        <div class="checklist-item" onclick="this.classList.toggle('checked');">
+                            <div class="checklist-checkbox">✓</div>
+                            <span>Automated multi-touch attribution and time-to-convert SQL models deployed</span>
+                        </div>
+                        <div class="checklist-item" onclick="this.classList.toggle('checked');">
+                            <div class="checklist-checkbox">✓</div>
+                            <span>Autonomous AI bidding agent connected with daily budget guardrails</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 8: INTERACTIVE MINI CALCULATOR -->
+                <section id="sec-calculator">
+                    <h2>8. Interactive AMC Multi-Touch ROAS Estimator</h2>
+                    <p>
+                        Evaluate how accounting for assisted conversions and customer lifetime value expands your true advertising return:
+                    </p>
+
+                    <div class="mini-calc-card">
+                        <div class="mini-calc-title">AMC True Return Estimator</div>
+                        <div class="mini-calc-desc">Compare traditional last-touch reporting with full multi-touch attributed performance.</div>
+
+                        <div class="mini-calc-grid">
+                            <div class="calc-input-group">
+                                <label for="miniCalcSpend">TOTAL AD SPEND ($)</label>
+                                <input type="number" id="miniCalcSpend" value="5000" step="500" aria-label="Ad Spend">
+                            </div>
+                            <div class="calc-input-group">
+                                <label for="miniCalcSales">TOTAL ATTRIBUTED SALES ($)</label>
+                                <input type="number" id="miniCalcSales" value="22500" step="1000" aria-label="Attributed Sales">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="calc-result-box">
+                                <div class="calc-result-val" id="miniCalcResultAcos">22.2%</div>
+                                <div class="calc-result-lbl">TRUE ACOS</div>
+                            </div>
+                            <div class="calc-result-box">
+                                <div class="calc-result-val" id="miniCalcResultRoas" style="color: #059669 !important;">4.50x</div>
+                                <div class="calc-result-lbl">TRUE MULTI-TOUCH ROAS</div>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 12.5px; color: #64748b; margin: 16px 0 0; text-align: center;">
+                            💡 Brands leveraging AMC routinely discover 25% to 40% in hidden assisted conversions previously ignored by last-touch reports.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- CONTEXTUAL SERVICE CTA -->
+                <div class="service-cta-card">
+                    <h3 class="service-cta-title">READY TO UPGRADE TO INSTITUTIONAL AMC &amp; AI BIDDING?</h3>
+                    <p class="service-cta-desc">
+                        PPC Growth Expert connects enterprise brands to custom Amazon Marketing Cloud SQL stacks and algorithmic AI bidding agents to maximize cross-channel profit.
+                    </p>
+                    <a href="../contact.html" class="service-cta-btn">Book Free AMC Consultation →</a>
+                </div>
+
+                <!-- SECTION 9: FAQS -->
+                <section id="sec-faqs">
+                    <h2>9. Frequently Asked Questions (FAQ)</h2>
+
+                    <div style="display: flex; flex-direction: column; gap: 14px; margin: 20px 0;">
+                        <details name="faq-accordion" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; cursor: pointer;">
+                            <summary style="font-size: 15px; font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Does Amazon charge additional fees to access Amazon Marketing Cloud?
+                                <span class="faq-icon" style="color: #0284c7; font-size: 18px; font-weight: 700; transition: transform 0.3s ease;">+</span>
+                            </summary>
+                            <p style="margin: 10px 0 0; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                                The base AMC service is currently free for eligible brand-registered advertisers meeting minimum ad spend criteria. However, executing third-party AI agents and specialized analytics middleware may incur SaaS or agency management fees.
+                            </p>
+                        </details>
+
+                        <details name="faq-accordion" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; cursor: pointer;">
+                            <summary style="font-size: 15px; font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Can AI agents change bids too fast and waste budget?
+                                <span class="faq-icon" style="color: #0284c7; font-size: 18px; font-weight: 700; transition: transform 0.3s ease;">+</span>
+                            </summary>
+                            <p style="margin: 10px 0 0; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                                Institutional AI systems operate with strict boundary guardrails: maximum bid caps (e.g., no single bid may exceed $4.50), maximum daily step-change limits (e.g., maximum ±20% bid adjustment per 24-hour cycle), and hard account-level daily budget ceilings.
+                            </p>
+                        </details>
+
+                        <details name="faq-accordion" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; cursor: pointer;">
+                            <summary style="font-size: 15px; font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                How long does it take for AMC to collect enough data for AI bidding?
+                                <span class="faq-icon" style="color: #0284c7; font-size: 18px; font-weight: 700; transition: transform 0.3s ease;">+</span>
+                            </summary>
+                            <p style="margin: 10px 0 0; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                                AMC starts recording event-level telemetry immediately upon account linkage. For high-velocity accounts spending $15,000+/month, statistical models can begin optimizing dayparting within 14 days, while multi-touch and LTV cohort models mature within 30 to 60 days.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- AUTHOR BIO CARD -->
+                <div class="author-bio-card">
+                    <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="author-bio-img">
+                    <div>
+                        <h4 class="author-bio-name">Anmol Pokhriyal</h4>
+                        <div class="author-bio-role">Amazon PPC Growth Expert &amp; Founder</div>
+                        <p class="author-bio-text">
+                            Anmol specializes in cutting-edge Amazon advertising architecture, combining Amazon Marketing Cloud (AMC) data pipelines with algorithmic bidding models to build scalable brand profitability.
+                        </p>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- RIGHT STICKY SIDEBAR -->
+            <aside class="article-sidebar">
+
+                <!-- RECOMMENDATIONS WIDGET -->
+                <div class="sidebar-widget">
+                    <div class="sidebar-widget-title">RECOMMENDED FOR YOU</div>
+                    <div class="rec-list">
+                        <a href="automated-search-term-harvesting-amazon-ppc.html" class="rec-item">
+                            <span class="rec-cat">KEYWORD HARVESTING</span>
+                            <span class="rec-title">Automated Search Term Harvesting: Broad to Exact Funneling SOP</span>
+                            <span class="rec-date">18 min read</span>
+                        </a>
+                        <a href="how-to-reduce-amazon-ppc-acos-2027.html" class="rec-item">
+                            <span class="rec-cat">ACOS PROTOCOL 2027</span>
+                            <span class="rec-title">How to Reduce Amazon PPC ACoS in 2027 Without Losing Sales</span>
+                            <span class="rec-date">22 min read</span>
+                        </a>
+                        <a href="amazon-ppc-strategy-guide.html" class="rec-item">
+                            <span class="rec-cat">PPC STRATEGY 2027</span>
+                            <span class="rec-title">Amazon PPC Strategy: Complete Guide to Building Profitable Campaigns</span>
+                            <span class="rec-date">20 min read</span>
+                        </a>
+                        <a href="top-inventory-order-management-software-ecommerce-india.html" class="rec-item">
+                            <span class="rec-cat">OPERATIONS &amp; OMS</span>
+                            <span class="rec-title">Top Inventory &amp; Order Management Software for E-commerce in India</span>
+                            <span class="rec-date">21 min read</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NEWSLETTER WIDGET -->
+                <div class="sidebar-widget newsletter-widget">
+                    <div class="sidebar-widget-title">GET AMAZON GROWTH INSIGHTS</div>
+                    <p class="newsletter-text">
+                        One practical Amazon PPC strategy in your inbox every week. No spam. Just actionable growth insights.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm" action="javascript:void(0);" method="POST">
+                        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Your work email address..." required aria-label="Work email address">
+                        <button type="submit" class="newsletter-btn" id="newsletterBtn">Subscribe →</button>
+                    </form>
+                    <div id="newsletterSuccess" style="display: none; color: #10b981; font-weight: 700; font-size: 13px; margin-top: 10px; text-align: center;"></div>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================================
+         EXECUTIVE FOOTER
+    ========================================================= -->
+    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
+
+        <div class="footer-container">
+
+            <!-- TOP GRID -->
+            <div class="footer-grid">
+
+                <!-- COL 1: BRAND GLASS CARD -->
+                <div class="footer-col brand-col">
+                    <div class="brand-card">
+                        <a href="/" class="footer-logo">
+                            <div class="logo-badge">
+                                <div class="logo-symbol"></div>
+                            </div>
+                            <span class="logo-text">
+                                PPC <span class="highlight">Growth</span> Expert
+                            </span>
+                        </a>
+
+                        <p class="footer-sub-tagline">
+                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
+                        </p>
+
+                        <p class="footer-tagline" itemprop="description">
+                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
+                        </p>
+
+                        <div class="footer-socials" aria-label="Social Media Links">
+                            <a href="https://wa.me/918433232647" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z"/></svg>
+                            </a>
+                            <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COL 2: SERVICES -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">SERVICES</h3>
+                    <ul class="footer-links">
+                        <li><a href="../services.html#service-ppc-management">Amazon PPC Management Services</a></li>
+                        <li><a href="../services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
+                        <li><a href="../services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                        <li><a href="../services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                        <li><a href="../services.html#service-product-research">Amazon Product Research</a></li>
+                        <li><a href="../services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: CONTACT US -->
+                <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <div class="contact-icon-pill">📍</div>
+                            <div>
+                                <span itemprop="addressLocality">Noida</span>,<br>
+                                <span itemprop="addressRegion">Uttar Pradesh</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">📞</div>
+                            <a href="tel:+918433232647" itemprop="telephone">+91 84332 32647</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">✉️</div>
+                            <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: COMPANY -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../about.html#founder">Our Founder</a></li>
+                        <li><a href="../case-studies.html">Case Studies</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- MIDDLE BAR -->
+            <div class="footer-middle">
+                <p class="footer-meta-info">© 2026 PPC Growth Expert · Noida, Uttar Pradesh, India · +91 84332 32647 · anmolpokhriyal3200@gmail.com</p>
+                <div class="footer-legal-links">
+                    <a href="../privacy-policy.html" class="legal-pill">Privacy Policy</a>
+                    <a href="../terms.html" class="legal-pill">Terms &amp; Conditions</a>
+                </div>
+            </div>
+
+            <!-- BOTTOM COPYRIGHT BAR -->
+            <div class="footer-bottom">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">
+                    ↑
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../js/script.js?v=v27"></script>
+    <script src="../js/navbar.js?v=v41"></script>
+    <script src="js/blog.js?v=v46"></script>
+
+</body>
+
+</html>
