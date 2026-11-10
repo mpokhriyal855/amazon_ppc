@@ -1,0 +1,3206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Amazon ASIN-Wise Report Generator | Combine PPC &amp; Business Reports</title>
+    <meta name="description"
+        content="Free 100% client-side Amazon ASIN-Wise Report Generator. Combine Sponsored Products, Sponsored Display, and Business Reports by ASIN to calculate CPC, CTR, ROAS, TROAS, ACoS &amp; TACoS and export formatted Excel &amp; CSV reports.">
+    <meta name="keywords"
+        content="Amazon ASIN wise report generator, combine Amazon PPC and business report, Amazon TROAS report by ASIN, Sponsored Products Business Report merger, Amazon ASIN performance Excel">
+    <meta name="author" content="PPC Growth Expert">
+    <link rel="canonical" href="https://ppcgrowthexpert.com/calculators/asin-wise-report-generator.html">
+
+    <!-- OPEN GRAPH / SOCIAL -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amazon ASIN-Wise Report Generator | Combine PPC &amp; Business Reports">
+    <meta property="og:description"
+        content="Combine Sponsored Products, Sponsored Display, and Amazon Business Reports by ASIN directly in your browser. Export formatted 13-column or Expanded Excel workbooks instantly.">
+    <meta property="og:url" content="https://ppcgrowthexpert.com/calculators/asin-wise-report-generator.html">
+    <meta property="og:site_name" content="PPC Growth Expert">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amazon ASIN-Wise Report Generator | PPC Growth Expert">
+    <meta name="twitter:description"
+        content="Merge Amazon Ads reports and Business Reports by ASIN with accurate CPC, CTR, ROAS, and TROAS calculations. Zero server uploads.">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+
+    <!-- FONTS & STYLES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=v41">
+    <link rel="stylesheet" href="../css/navbar.css?v=v52">
+    <link rel="stylesheet" href="css/resources.css?v=v19">
+    <link rel="stylesheet" href="../css/footer.css?v=v41">
+    <link rel="stylesheet" href="../css/whatsapp.css">
+
+    <!-- STRUCTURED DATA (SCHEMA.ORG) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ppcgrowthexpert.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Resources",
+              "item": "https://ppcgrowthexpert.com/calculators/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "ASIN-Wise Report Generator",
+              "item": "https://ppcgrowthexpert.com/calculators/asin-wise-report-generator.html"
+            }
+          ]
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Amazon ASIN-Wise Report Generator",
+          "url": "https://ppcgrowthexpert.com/calculators/asin-wise-report-generator.html",
+          "description": "Combine Amazon Sponsored Products, Sponsored Display, and Business Reports by ASIN inside your browser to calculate ASIN-level Impressions, Clicks, CPC, CTR, Ad Spend, Ad Sales, ROAS, Total Sales, Total Orders, and TROAS.",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the ASIN-Wise Report Generator match Advertising and Business Reports?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The engine strictly matches the normalized Advertised ASIN (or Promoted ASIN) from your Sponsored Products and Sponsored Display reports against the Child ASIN from your Business Report. Each advertising report is summed by ASIN first and exact duplicate rows are removed so spend, clicks, and sales are never double counted."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are my Amazon Seller Central or Advertising files uploaded to a server?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. All CSV, TSV, and XLSX file parsing, ASIN aggregation, ratio computation, and Excel workbook generation run 100% locally in your browser memory. Your business data never leaves your computer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why are some cells greyed out with 0 in the ASIN-Wise report?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A grey cell indicates that the ASIN does not appear in the source report responsible for that column (for example, an organic SKU in the Business Report with no ad spend, or an advertised ASIN missing from the Business Report). It distinguishes missing source coverage from a measured zero."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why can Ad Sales sometimes exceed Total Business Sales for an ASIN?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Amazon Advertising reports attribute sales over a 7-day or 14-day click/view window and can include brand-halo purchases or delayed checkouts falling outside the exact Business Report date slice. The generator automatically flags these ASINs in the diagnostics panel so you can review them before sharing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between Standard (13 columns) and Expanded report format?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard format blends Sponsored Products and Sponsored Display into a clean 13-column executive view (ASIN, Product Name, Impressions, Clicks, CPC, CTR, Ad Spend, Ad Sales, ROAS, Ad Orders, Total Sales, Total Orders, TROAS). Expanded format keeps separate columns for SP and SD metrics alongside combined portfolio totals."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens if Excel corrupted my numeric ASINs into scientific notation like 1.23E+09?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If a CSV was opened and re-saved in Excel, numeric 10-digit ASINs or ISBNs lose trailing digits when formatted as 1.23E+09. The tool detects scientific notation ASINs automatically and prompts you to upload the untouched original export from Amazon Seller Central."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* =========================================================
+           ASIN-WISE REPORT GENERATOR — EXECUTIVE STUDIO STYLES
+           Blends PPC Growth Expert Light Grid + Dark Telemetry UI
+           Preserves Client Yellow-Header Spreadsheet Format
+        ========================================================= */
+        :root {
+            --rep-surface: rgba(15, 23, 42, 0.82);
+            --rep-surface-solid: #0f172a;
+            --rep-border: rgba(255, 255, 255, 0.13);
+            --rep-border-strong: rgba(56, 189, 248, 0.35);
+            --rep-ink: #f8fafc;
+            --rep-muted: #94a3b8;
+            --rep-cyan: #38bdf8;
+            --rep-blue: #2563eb;
+            --rep-gold: #e9cd86;
+            --rep-ok: #34d399;
+            --rep-ok-bg: rgba(16, 185, 129, 0.14);
+            --rep-warn: #fbbf24;
+            --rep-warn-bg: rgba(245, 158, 11, 0.14);
+            --rep-bad: #f87171;
+            --rep-bad-bg: rgba(239, 68, 68, 0.14);
+            --rep-info: #93c5fd;
+            --rep-info-bg: rgba(37, 99, 235, 0.16);
+            --rep-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --rep-mono: 'DM Mono', ui-monospace, Menlo, Consolas, monospace;
+
+            /* Authentic client yellow spreadsheet surface */
+            --sheet-bg: #ffffff;
+            --sheet-ink: #0f172a;
+            --sheet-line: #cbd5e1;
+            --sheet-stripe: #f8fafc;
+            --sheet-na: #eef2f6;
+            --sheet-na-ink: #64748b;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: var(--rep-font);
+            margin: 0;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        .rep-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 1. COMPACT EXECUTIVE HERO */
+        .rep-hero {
+            padding: 24px 0 42px 0;
+            background: #ffffff;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.09) 0%, transparent 62%),
+                linear-gradient(rgba(216, 223, 233, 0.42) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(216, 223, 233, 0.42) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rep-hero-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin: 22px auto 0 auto;
+        }
+
+        .rep-trust-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #1e293b;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+
+        .rep-trust-pill.secure {
+            background: #ecfdf5;
+            border-color: #a7f3d0;
+            color: #065f46;
+        }
+
+        .rep-pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22);
+            flex: none;
+        }
+
+        .rep-flow-strip {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            max-width: 1040px;
+            margin: 26px auto 0 auto;
+            text-align: left;
+        }
+
+        @media (max-width: 860px) {
+            .rep-flow-strip {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .rep-flow-strip {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .rep-flow-step {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+        }
+
+        .rep-flow-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+            color: #ffffff;
+            font-family: var(--rep-mono);
+            font-size: 12px;
+            font-weight: 700;
+            display: grid;
+            place-items: center;
+            flex: none;
+        }
+
+        .rep-flow-text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.25;
+        }
+
+        .rep-flow-text span {
+            display: block;
+            font-size: 11.5px;
+            color: #64748b;
+            line-height: 1.3;
+        }
+
+        /* 2. DARK EXECUTIVE WORKBENCH */
+        .rep-workbench-section {
+            background-color: #080d1a;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 44px 0 60px 0;
+            color: var(--rep-ink);
+        }
+
+        .rep-studio-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px 20px;
+            margin-bottom: 22px;
+            padding: 18px 22px;
+            border-radius: 18px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .rep-studio-bar-left h2 {
+            margin: 4px 0 0 0;
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+        }
+
+        .rep-studio-eyebrow {
+            font-family: var(--rep-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--rep-cyan);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .rep-studio-eyebrow::before {
+            content: '●';
+            color: #10b981;
+            font-size: 8px;
+        }
+
+        .rep-studio-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .rep-privacy-note {
+            font-size: 12.5px;
+            color: #cbd5e1;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .rep-guide-jump {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #38bdf8;
+            text-decoration: none;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        .rep-guide-jump:hover {
+            background: rgba(56, 189, 248, 0.18);
+            color: #ffffff;
+        }
+
+        /* 3 UPLOAD CARDS GRID */
+        .uploads {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        @media (max-width: 1060px) {
+            .uploads {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .rep-card {
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-width: 0;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .rep-card:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .card-h {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .step {
+            flex: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+            color: #ffffff;
+            font-family: var(--rep-mono);
+            font-weight: 700;
+            font-size: 13px;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        .card-h h3 {
+            margin: 0;
+            font-size: 15.5px;
+            font-weight: 800;
+            line-height: 1.3;
+            color: #ffffff;
+        }
+
+        .card-h p {
+            margin: 3px 0 0;
+            font-size: 12.5px;
+            color: var(--rep-muted);
+        }
+
+        .opt {
+            font-family: var(--rep-mono);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--rep-cyan);
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 99px;
+            padding: 2px 8px;
+            margin-left: 6px;
+            vertical-align: 1px;
+        }
+
+        .drop {
+            border: 2px dashed rgba(56, 189, 248, 0.38);
+            background: rgba(8, 13, 26, 0.55);
+            border-radius: 14px;
+            padding: 24px 16px;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+            min-height: 104px;
+            transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            min-width: 0;
+            color: #e2e8f0;
+        }
+
+        .drop strong {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .drop:hover,
+        .drop.over {
+            border-color: #38bdf8;
+            background: rgba(30, 58, 138, 0.28);
+            box-shadow: 0 0 22px rgba(56, 189, 248, 0.2);
+        }
+
+        .drop span {
+            font-size: 12px;
+            color: var(--rep-muted);
+        }
+
+        .drop u {
+            color: #38bdf8;
+            font-weight: 700;
+        }
+
+        .drop.has {
+            border-style: solid;
+            border-color: rgba(56, 189, 248, 0.35);
+            background: rgba(30, 41, 59, 0.72);
+            padding: 13px 16px;
+            min-height: 0;
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        .fname {
+            font-weight: 700;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: var(--rep-mono);
+            font-size: 13px;
+            color: #ffffff;
+        }
+
+        .cardbody {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .rep-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 99px;
+            padding: 3px 11px;
+            font-family: var(--rep-mono);
+            font-size: 11px;
+            font-weight: 700;
+            border: 1px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .chip.ok {
+            background: var(--rep-ok-bg);
+            color: var(--rep-ok);
+            border-color: rgba(52, 211, 153, 0.35);
+        }
+
+        .chip.warn {
+            background: var(--rep-warn-bg);
+            color: var(--rep-warn);
+            border-color: rgba(251, 191, 36, 0.35);
+        }
+
+        .chip.bad {
+            background: var(--rep-bad-bg);
+            color: var(--rep-bad);
+            border-color: rgba(248, 113, 113, 0.35);
+        }
+
+        .meta {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.45;
+        }
+
+        .msgs {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .msgs li {
+            font-size: 12.5px;
+            padding: 9px 12px;
+            border-radius: 8px;
+            border-left: 3px solid;
+            overflow-wrap: anywhere;
+            line-height: 1.5;
+            color: #f1f5f9;
+        }
+
+        .msgs li.bad {
+            background: rgba(127, 29, 29, 0.45);
+            border-color: #ef4444;
+            color: #fecaca;
+        }
+
+        .msgs li.warn {
+            background: rgba(120, 53, 15, 0.42);
+            border-color: #f59e0b;
+            color: #fde68a;
+        }
+
+        .msgs li.info {
+            background: rgba(30, 58, 138, 0.36);
+            border-color: #38bdf8;
+            color: #dbeafe;
+        }
+
+        details.map {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(8, 13, 26, 0.55);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        details.map summary {
+            cursor: pointer;
+            padding: 9px 12px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #e2e8f0;
+            user-select: none;
+        }
+
+        details.map summary:hover {
+            color: #38bdf8;
+        }
+
+        .maprows {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+            gap: 8px 12px;
+            padding: 6px 12px 12px;
+            align-items: center;
+        }
+
+        .maprows label {
+            font-size: 12px;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        .maprows label i {
+            color: #f87171;
+            font-style: normal;
+        }
+
+        /* WORKBENCH CONTROLS */
+        .rep-workbench-section select,
+        .rep-workbench-section input[type=date],
+        .rep-workbench-section input[type=search] {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            padding: 8px 11px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            min-width: 0;
+            max-width: 100%;
+            font-family: var(--rep-font);
+        }
+
+        .rep-workbench-section select:focus,
+        .rep-workbench-section input[type=date]:focus,
+        .rep-workbench-section input[type=search]:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+        }
+
+        .rep-btn {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #f8fafc;
+            border-radius: 10px;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-family: var(--rep-font);
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .rep-btn:hover {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.16);
+            color: #ffffff;
+        }
+
+        .rep-btn.sm {
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 8px;
+        }
+
+        .rep-btn.primary {
+            background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            font-weight: 800;
+            padding: 12px 24px;
+            font-size: 14.5px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+        }
+
+        .rep-btn.primary:disabled {
+            background: rgba(51, 65, 85, 0.6);
+            color: #94a3b8;
+            border-color: rgba(255, 255, 255, 0.1);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .rep-btn.primary:not(:disabled):hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.65);
+        }
+
+        .spin {
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-top-color: #38bdf8;
+            border-radius: 50%;
+            animation: sp 0.7s linear infinite;
+            display: inline-block;
+            vertical-align: -2px;
+            margin-right: 8px;
+        }
+
+        @keyframes sp {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spin {
+                animation-duration: 2s;
+            }
+        }
+
+        /* RUN BAR (STEPS 4 & 5) */
+        .runbar {
+            margin-top: 18px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 20px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+            padding: 22px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 28px;
+            align-items: flex-end;
+        }
+
+        .runbar .step {
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field>span {
+            font-family: var(--rep-mono);
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .dates {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .grow {
+            flex: 1 1 280px;
+            min-width: 0;
+        }
+
+        .hint {
+            font-size: 12.5px;
+            color: #cbd5e1;
+            line-height: 1.45;
+        }
+
+        .check {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 13px;
+            color: #e2e8f0;
+            background: rgba(37, 99, 235, 0.14);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            padding: 10px 14px;
+            border-radius: 12px;
+            max-width: 560px;
+            cursor: pointer;
+        }
+
+        .check input {
+            margin-top: 3px;
+            accent-color: #38bdf8;
+            width: 16px;
+            height: 16px;
+            flex: none;
+        }
+
+        #runissues {
+            margin-top: 14px;
+        }
+
+        #runissues:empty {
+            display: none;
+        }
+
+        /* RESULTS COCKPIT & KPI TELEMETRY */
+        .results {
+            margin-top: 28px;
+        }
+
+        .kgroup {
+            margin-bottom: 18px;
+        }
+
+        .kgroup h3 {
+            margin: 0 0 10px;
+            font-family: var(--rep-mono);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: #38bdf8;
+            padding-left: 12px;
+            border-left: 3px solid #38bdf8;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .kgroup h3 span {
+            font-family: var(--rep-font);
+            font-weight: 500;
+            color: #94a3b8;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 12.5px;
+        }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .kpi {
+            padding: 13px 16px;
+            min-width: 0;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .kpi small {
+            display: block;
+            font-family: var(--rep-mono);
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        .kpi b {
+            display: block;
+            font-family: var(--rep-mono);
+            font-weight: 700;
+            font-size: 18px;
+            font-variant-numeric: tabular-nums;
+            color: #ffffff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .kpi .kpi-sub {
+            display: block;
+            font-family: var(--rep-mono);
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        .kpi.hl {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.32) 0%, rgba(14, 116, 144, 0.25) 100%);
+            border-color: rgba(56, 189, 248, 0.25);
+        }
+
+        .kpi.hl small {
+            color: #7dd3fc;
+        }
+
+        .kpi.hl b {
+            color: #ffffff;
+            text-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
+        }
+
+        .kpi.hl .kpi-sub {
+            color: #bae6fd;
+        }
+
+        /* SPREADSHEET PRESENTATION CARD (AUTHENTIC YELLOW CLIENT SHEET ON CRISP PORCELAIN FRAME) */
+        .sheet-panel {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 20px;
+            padding: 18px;
+            color: #0f172a;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+            margin-top: 18px;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin: 0 0 12px 0;
+        }
+
+        .toolbar .sp {
+            flex: 1 1 20px;
+        }
+
+        .sheet-panel input[type=search],
+        .sheet-panel select {
+            background: #f8fafc;
+            border: 1.5px solid #cbd5e1;
+            color: #0f172a;
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .sheet-panel input[type=search] {
+            width: min(260px, 100%);
+        }
+
+        .sheet-panel input[type=search]:focus,
+        .sheet-panel select:focus {
+            background: #ffffff;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+        }
+
+        .sheet-panel .rep-btn {
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            color: #0f172a;
+        }
+
+        .sheet-panel .rep-btn:hover {
+            background: #eff6ff;
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        .sheet-panel .rep-btn.primary {
+            background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+            color: #ffffff;
+            border-color: transparent;
+            padding: 8px 18px;
+            font-size: 13.5px;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+        }
+
+        .count {
+            font-family: var(--rep-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .sheet-panel .msgs li.info {
+            background: #eff6ff;
+            border-color: #2563eb;
+            color: #1e3a8a;
+        }
+
+        .sheet-panel .msgs li.warn {
+            background: #fefce8;
+            border-color: #d97706;
+            color: #78350f;
+        }
+
+        .sheet-panel .msgs li.bad {
+            background: #fef2f2;
+            border-color: #dc2626;
+            color: #991b1b;
+        }
+
+        .sheet-wrap {
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--sheet-bg);
+            box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+        }
+
+        .scroller {
+            overflow: auto;
+            max-height: 620px;
+            background: var(--sheet-bg);
+            color: var(--sheet-ink);
+        }
+
+        table.grid {
+            border-collapse: separate;
+            border-spacing: 0;
+            table-layout: fixed;
+            font-size: 13px;
+        }
+
+        .grid th,
+        .grid td {
+            box-sizing: border-box;
+            border-right: 1px solid var(--sheet-line);
+            border-bottom: 1px solid var(--sheet-line);
+            padding: 0 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .grid thead th {
+            position: sticky;
+            background: #FFFF00;
+            color: #000000;
+            font-weight: 700;
+            height: 36px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .grid thead tr.h th {
+            top: 0;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .grid thead tr.h th:hover {
+            background: #F2F200;
+        }
+
+        .grid thead tr.f th {
+            top: 36px;
+            background: #FFFF66;
+            height: 34px;
+            padding: 3px 4px;
+            z-index: 2;
+            cursor: default;
+        }
+
+        .grid thead tr.f input {
+            width: 100%;
+            padding: 3px 6px;
+            font-size: 12px;
+            background: #ffffff;
+            color: #000000;
+            border: 1px solid #94a3b8;
+            border-radius: 3px;
+        }
+
+        .arr {
+            font-size: 10px;
+            margin-left: 4px;
+        }
+
+        .grid tbody td {
+            height: 32px;
+            line-height: 31px;
+            background: var(--sheet-bg);
+            color: var(--sheet-ink);
+        }
+
+        .grid tbody tr.alt td {
+            background: var(--sheet-stripe);
+        }
+
+        .grid td.t {
+            text-align: left;
+        }
+
+        .grid td.n {
+            text-align: right;
+            font-family: var(--rep-mono);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .grid td.a {
+            font-family: var(--rep-mono);
+            font-size: 12.5px;
+            font-weight: 700;
+        }
+
+        .grid td.na {
+            background: var(--sheet-na) !important;
+            color: var(--sheet-na-ink);
+        }
+
+        .grid td.noname {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .grid tr.spc td {
+            height: auto;
+            padding: 0;
+            border: 0;
+            background: var(--sheet-bg) !important;
+        }
+
+        .empty {
+            padding: 36px;
+            text-align: center;
+            color: #475569;
+            font-size: 13.5px;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-top: 12px;
+            font-size: 12.5px;
+            color: #475569;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sw {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: var(--sheet-na);
+            border: 1px solid #94a3b8;
+            vertical-align: -2px;
+            margin-right: 6px;
+            border-radius: 2px;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 13, 26, 0.72);
+            backdrop-filter: blur(4px);
+            display: grid;
+            place-items: center;
+            z-index: 2000;
+        }
+
+        .overlay[hidden] {
+            display: none;
+        }
+
+        .overlay div {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 22px 28px;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 3. INFORMATIONAL ARCHITECTURE CARDS */
+        .rep-sec-head {
+            max-width: 820px;
+            margin: 0 auto 36px auto;
+            text-align: center;
+        }
+
+        .rep-sec-title {
+            font-size: clamp(26px, 3.5vw, 36px);
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            margin: 6px 0 10px 0;
+            line-height: 1.18;
+        }
+
+        .rep-sec-sub {
+            font-size: 15.5px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .rep-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .rep-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .rep-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        @media (max-width: 1020px) {
+            .rep-grid-4 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .rep-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .rep-grid-4,
+            .rep-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .rep-info-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 26px;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .rep-info-card:hover {
+            transform: translateY(-4px);
+            border-color: #2563eb;
+            box-shadow: 0 18px 38px rgba(37, 99, 235, 0.12);
+        }
+
+        .rep-info-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, 0.09);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+            margin-bottom: 16px;
+        }
+
+        .rep-info-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .rep-info-card p,
+        .rep-info-card li {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.65;
+        }
+
+        .rep-formula-dark {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        .rep-formula-tag {
+            font-family: var(--rep-mono);
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.14);
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            padding: 3px 10px;
+            border-radius: 99px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .rep-formula-dark h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .rep-formula-eq {
+            font-family: var(--rep-mono);
+            font-size: 13px;
+            font-weight: 700;
+            color: #e9cd86;
+            background: rgba(8, 13, 26, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .rep-formula-dark p {
+            margin: 0;
+            font-size: 13.5px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .rep-path-box {
+            margin-top: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            font-family: var(--rep-mono);
+            font-size: 12px;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+
+        .rep-badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .rep-col-pill {
+            font-family: var(--rep-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND GRID & GLOW -->
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <!-- NAVBAR -->
+<div class="navbar-container" id="navbarContainer">
+    <header class="navbar">
+
+        <!-- LOGO -->
+        <a href="../index.html" class="logo">
+            <div class="logo-badge">
+                <div class="logo-symbol"></div>
+            </div>
+            <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+        </a>
+
+        <!-- NAVIGATION LINKS -->
+        <nav class="nav-links" id="navLinks">
+            <a href="../index.html" class="nav-item">Home</a>
+            
+            <!-- SERVICES MEGA DROPDOWN -->
+            <div class="nav-dropdown">
+                <a href="../services/index.html" class="nav-item nav-dropdown-trigger">
+                    Services <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                </a>
+                <div class="dropdown-menu mega-dropdown-menu services-mega-dropdown">
+                    <div class="services-menu-grid">
+                        
+                        <!-- 1. CORE MARKETPLACE SERVICES -->
+                        <!-- <div class="mega-menu-col">
+                            <div class="mega-col-title">CORE MARKETPLACE SERVICES</div>
+                            
+                            <a href="../services/index.html#service-activation" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Marketplace Activation</span>
+                                    <span class="mega-item-desc">Launch on any platform</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/index.html#service-listing-optimization" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Catalog Management</span>
+                                    <span class="mega-item-desc">Optimized listings &amp; A+</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/index.html#service-pricing" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Pricing Management</span>
+                                    <span class="mega-item-desc">Dynamic competitive pricing</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/index.html#service-inventory" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Inventory Management</span>
+                                    <span class="mega-item-desc">Real-time stock tracking</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/index.html#service-review-growth" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Reviews Management</span>
+                                    <span class="mega-item-desc">Build trust &amp; ratings</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/index.html#service-returns" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Return Management</span>
+                                    <span class="mega-item-desc">Efficient value recovery</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/ecommerce-ppc-services.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Ecommerce PPC Services</span>
+                                    <span class="mega-item-desc">Amazon, Flipkart &amp; Quick Commerce</span>
+                                </div>
+                            </a>
+                        </div> -->
+
+                        <!-- 2. AMAZON SPECIALIZED -->
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">AMAZON SPECIALIZED</div>
+
+                            <!--
+                            <a href="../about.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon Agency (SPN Verified)</span>
+                                    <span class="mega-item-desc">India's leading Amazon agency partner</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/amazon-ppc-expert.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon PPC Expert</span>
+                                    <span class="mega-item-desc">Data-driven strategy &amp; optimization</span>
+                                </div>
+                            </a>
+                            -->
+
+                            <a href="../services/amazon-ppc-management-services-india.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon PPC Management Services India</span>
+                                    <span class="mega-item-desc">Turn ad spend into profitable growth</span>
+                                </div>
+                            </a>
+
+                            <!--
+                            <a href="../services/amazon-ppc-management-services.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon PPC Management Services</span>
+                                    <span class="mega-item-desc">Lower ACOS, improve ROAS</span>
+                                </div>
+                            </a>
+                            -->
+
+                            <a href="../services/amazon-seller-account-management-services.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon Seller Account Management Services in India</span>
+                                    <span class="mega-item-desc">Full Seller Central operations</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/amazon-ppc-management-services-delhi.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon PPC Management Services Delhi</span>
+                                    <span class="mega-item-desc">Data-driven ad scaling for Delhi brands</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/amazon-ppc-management-services-moradabad.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon PPC Management Services Moradabad</span>
+                                    <span class="mega-item-desc">Scale handicraft &amp; brassware export</span>
+                                </div>
+                            </a>
+
+                            <!--
+                            <a href="../services/amazon-account-management-services-india.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon Account Management Services India</span>
+                                    <span class="mega-item-desc">Full Seller Central operations</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/amazon-seller-account-management-services.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon Seller Account Management Services</span>
+                                    <span class="mega-item-desc">Full-service Seller Central operations &amp; growth</span>
+                                </div>
+                            </a>
+
+                            <a href="../services/index.html" class="services-menu-item">
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon Global Selling</span>
+                                    <span class="mega-item-desc">Sell in 15+ global marketplaces</span>
+                                </div>
+                            </a>
+                            -->
+                        </div>
+
+                    </div>
+                    <div class="mega-menu-footer">
+                        <div class="mega-menu-footer-content">
+                            <a href="../services/index.html" class="mega-footer-link">
+                                <span>Explore All Marketplace Services</span>
+                                <span class="footer-arrow">→</span>
+                            </a>
+                            <div class="mega-footer-tags">
+                                <span class="footer-tag-label">REGIONAL HUBS</span>
+                                <a href="../services/amazon-ppc-management-services-delhi.html" class="hub-pill">Delhi</a>
+                                <a href="../services/amazon-ppc-management-services-noida.html" class="hub-pill">Noida</a>
+                                <a href="../services/amazon-ppc-management-services-moradabad.html" class="hub-pill">Moradabad</a>
+                                <a href="../services/ecommerce-ppc-services.html" class="hub-pill">Ecommerce PPC</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../case-studies.html" class="nav-item">Case Studies</a>
+            <a href="../amazon-ecommerce-training.html" class="nav-item">Amazon ATES</a>
+            <a href="../about.html" class="nav-item">About</a>
+            
+            <!-- RESOURCES MEGA DROPDOWN -->
+            <div class="nav-dropdown">
+                <a href="index.html" class="nav-item nav-dropdown-trigger">
+                    Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                </a>
+                <div class="dropdown-menu mega-dropdown-menu">
+                    <div class="mega-menu-grid">
+                        
+                        <!-- 1. PPC PERFORMANCE -->
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">PPC PERFORMANCE</div>
+                            <a href="amazon-acos-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">📊</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">ACoS Calculator</span>
+                                    <span class="mega-item-desc">Calculate advertising cost of sales</span>
+                                </div>
+                            </a>
+                            <a href="amazon-roas-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🚀</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">ROAS Calculator</span>
+                                    <span class="mega-item-desc">Calculate return on ad spend</span>
+                                </div>
+                            </a>
+                            <a href="amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">⚡</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Conversion Rate Calculator</span>
+                                    <span class="mega-item-desc">Measure clicks turning into orders</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- 2. COST & TRAFFIC -->
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                            <a href="amazon-cpc-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">💵</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">CPC Calculator</span>
+                                    <span class="mega-item-desc">Calculate average cost per click</span>
+                                </div>
+                            </a>
+                            <a href="amazon-ctr-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🎯</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">CTR Calculator</span>
+                                    <span class="mega-item-desc">Measure ad click-through rate</span>
+                                </div>
+                            </a>
+                            <a href="amazon-tacos-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">📈</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">TACoS Calculator</span>
+                                    <span class="mega-item-desc">Compare ad spend vs total sales</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- 3. PPC OPTIMIZATION -->
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">PPC OPTIMIZATION</div>
+                            <a href="amazon-ppc-waste-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🧯</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Amazon PPC Waste Calculator</span>
+                                    <span class="mega-item-desc">Find inefficient ad spend</span>
+                                </div>
+                            </a>
+                            <a href="amazon-keyword-profitability-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🔑</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Keyword Profitability Calculator</span>
+                                    <span class="mega-item-desc">Analyze keyword net margin &amp; ROI</span>
+                                </div>
+                            </a>
+                            <a href="../amazon-ecommerce-training.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🎓</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">E-Commerce Training</span>
+                                    <span class="mega-item-desc">Live 1-on-1 Amazon Course · ₹4,999</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- 4. PROFIT & PLANNING (COMMENTED OUT) -->
+                        <!--
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">PROFIT &amp; PLANNING</div>
+                            <a href="amazon-break-even-acos-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">⚖️</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Break-Even ACoS Calculator</span>
+                                    <span class="mega-item-desc">Max ACoS before margin loss</span>
+                                </div>
+                            </a>
+                            <a href="amazon-ppc-budget-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">💰</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">PPC Budget Calculator</span>
+                                    <span class="mega-item-desc">Estimate working monthly budget</span>
+                                </div>
+                            </a>
+                            <a href="amazon-target-acos-bid-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🎯</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Target ACoS &amp; Bid Calculator</span>
+                                    <span class="mega-item-desc">Estimate practical CPC &amp; bid</span>
+                                </div>
+                            </a>
+                        </div>
+                        -->
+
+                        <!-- 5. AMAZON INDIA TOOLS -->
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                            <a href="amazon-profit-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">📦</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Profit Calculator</span>
+                                    <span class="mega-item-desc">Amazon India net margin &amp; profit</span>
+                                </div>
+                            </a>
+                            <a href="amazon-fba-fee-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🚚</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">FBA Fee Calculator</span>
+                                    <span class="mega-item-desc">Fulfilment &amp; referral breakdown</span>
+                                </div>
+                            </a>
+                            <a href="amazon-fba-storage-fee-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">🏢</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">FBA Storage Calculator</span>
+                                    <span class="mega-item-desc">Monthly inventory storage cost</span>
+                                </div>
+                            </a>
+                            <a href="amazon-advertising-roi-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">💸</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Ad ROI Calculator</span>
+                                    <span class="mega-item-desc">Net profit return after PPC</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- 6. REPORTING AND ANALYTICS -->
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">REPORTING AND ANALYTICS</div>
+                            <a href="asin-wise-report-generator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">📑</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">ASIN-Wise Report Generator</span>
+                                    <span class="mega-item-desc">Combine PPC &amp; Business Reports by ASIN</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- 7. QUICK COMMERCE -->
+                        <div class="mega-menu-col">
+                            <div class="mega-col-title">QUICK COMMERCE</div>
+                            <a href="blinkit-cpm-calculator.html" class="mega-menu-item">
+                                <span class="mega-item-icon">⚡</span>
+                                <div class="mega-item-text">
+                                    <span class="mega-item-title">Blinkit CPM Calculator</span>
+                                    <span class="mega-item-desc">Measure cost per 1,000 impressions</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="mega-menu-footer">
+                        <a href="index.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="../blog/index.html" class="nav-item">Blog</a>
+            <a href="../contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <!-- RIGHT ACTION BUTTONS -->
+        <div class="nav-actions">
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                Audit Open
+            </div>
+
+            <a href="../contact.html" class="nav-btn">
+                <span>Free Audit</span>
+                <span class="nav-btn-arrow">→</span>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </div>
+
+    </header>
+</div>
+
+
+    <!-- =========================================================
+         1. HERO SECTION (LIGHT ARCHITECTURAL GRID)
+    ========================================================= -->
+    <section class="rep-hero">
+        <div class="rep-container">
+            <nav class="breadcrumbs-bar" aria-label="Breadcrumb">
+                <a href="../index.html">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </a>
+                <span class="breadcrumb-sep">&gt;</span>
+                <a href="index.html">Resources</a>
+                <span class="breadcrumb-sep">&gt;</span>
+                <span class="breadcrumb-active">ASIN-Wise Report Generator</span>
+            </nav>
+
+            <div class="hero-eyebrow">✦ REPORTING &amp; ANALYTICS · CLIENT-SIDE MERGER</div>
+            <h1 class="hero-title">ASIN-Wise <span class="highlight-blue">Report Generator</span></h1>
+            <p class="hero-description">
+                Combine your Amazon Sponsored Products, Sponsored Display, and Business Reports by ASIN in seconds —
+                eliminating VLOOKUP errors, duplicate-row inflation, and averaged ratios.
+            </p>
+
+            <div class="rep-hero-badges">
+                <span class="rep-trust-pill secure"><span class="rep-pulse-dot"></span> Files Stay on Your Computer · Zero Server Uploads</span>
+                <span class="rep-trust-pill">📊 Standard 13-Col &amp; Expanded SP/SD Formats</span>
+                <span class="rep-trust-pill">📑 Formatted Excel (.xlsx) &amp; UTF-8 CSV Export</span>
+            </div>
+
+            <div class="rep-flow-strip" aria-label="4 step workflow overview">
+                <div class="rep-flow-step">
+                    <span class="rep-flow-num">1</span>
+                    <div class="rep-flow-text">
+                        <strong>Upload Reports</strong>
+                        <span>SP, optional SD &amp; Child Business CSV/XLSX</span>
+                    </div>
+                </div>
+                <div class="rep-flow-step">
+                    <span class="rep-flow-num">2</span>
+                    <div class="rep-flow-text">
+                        <strong>Auto-Validate Columns</strong>
+                        <span>Detects INR/USD headers &amp; date order</span>
+                    </div>
+                </div>
+                <div class="rep-flow-step">
+                    <span class="rep-flow-num">3</span>
+                    <div class="rep-flow-text">
+                        <strong>Inspect ASIN Telemetry</strong>
+                        <span>Filter, sort &amp; compare ROAS vs TROAS</span>
+                    </div>
+                </div>
+                <div class="rep-flow-step">
+                    <span class="rep-flow-num">4</span>
+                    <div class="rep-flow-text">
+                        <strong>Download Client Excel</strong>
+                        <span>Yellow-header sheet + Audit Notes tab</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         2. DARK EXECUTIVE WORKBENCH
+    ========================================================= -->
+    <section class="rep-workbench-section" id="workbench" aria-label="ASIN-Wise Report Generator Workbench">
+        <div class="rep-container">
+
+            <div class="rep-studio-bar">
+                <div class="rep-studio-bar-left">
+                    <div class="rep-studio-eyebrow">LOCAL DATA RECONCILIATION ENGINE</div>
+                    <h2>Upload Amazon Reports to Build Combined ASIN Sheet</h2>
+                </div>
+                <div class="rep-studio-actions">
+                    <span class="rep-privacy-note">🔒 100% Browser Tab Processing</span>
+                    <a href="#export-guide" class="rep-guide-jump">Which Reports to Upload? ↓</a>
+                </div>
+            </div>
+
+            <!-- UPLOAD CARDS -->
+            <section class="uploads" aria-label="Upload reports">
+                <section class="rep-card" id="card-ads" data-kind="ads">
+                    <div class="card-h">
+                        <span class="step">1</span>
+                        <div>
+                            <h3>Sponsored Products Advertising Report</h3>
+                            <p>Advertised Product report · CSV or XLSX</p>
+                        </div>
+                    </div>
+                    <div class="drop" tabindex="0" role="button" aria-label="Upload Sponsored Products Advertising Report"></div>
+                    <input type="file" id="file-ads" accept=".csv,.tsv,.txt,.xlsx,.xlsm,.xls" hidden>
+                    <div class="cardbody"></div>
+                </section>
+
+                <section class="rep-card" id="card-sd" data-kind="sd">
+                    <div class="card-h">
+                        <span class="step">2</span>
+                        <div>
+                            <h3>Sponsored Display Report<span class="opt">Optional</span></h3>
+                            <p>Advertised Product report · CSV or XLSX</p>
+                        </div>
+                    </div>
+                    <div class="drop" tabindex="0" role="button" aria-label="Upload Sponsored Display Report"></div>
+                    <input type="file" id="file-sd" accept=".csv,.tsv,.txt,.xlsx,.xlsm,.xls" hidden>
+                    <div class="cardbody"></div>
+                </section>
+
+                <section class="rep-card" id="card-biz" data-kind="biz">
+                    <div class="card-h">
+                        <span class="step">3</span>
+                        <div>
+                            <h3>Amazon Business Report</h3>
+                            <p>Detail Page Sales and Traffic by Child Item · CSV or XLSX</p>
+                        </div>
+                    </div>
+                    <div class="drop" tabindex="0" role="button" aria-label="Upload Amazon Business Report"></div>
+                    <input type="file" id="file-biz" accept=".csv,.tsv,.txt,.xlsx,.xlsm,.xls" hidden>
+                    <div class="cardbody"></div>
+                </section>
+            </section>
+
+            <!-- REPORTING PERIOD & GENERATE -->
+            <section class="runbar" aria-label="Reporting period and generate">
+                <div class="field">
+                    <span><b class="step" style="display:inline-grid;vertical-align:middle;margin-right:6px">4</b>Reporting period</span>
+                    <div class="dates">
+                        <label class="field"><span>From</span><input type="date" id="d-start"></label>
+                        <label class="field"><span>To</span><input type="date" id="d-end"></label>
+                    </div>
+                    <div class="hint" id="dateHint"></div>
+                </div>
+                <div class="grow field" id="confirmBox" hidden>
+                    <label class="check"><input type="checkbox" id="bizDateOk"><span>The Business Report has no date column. I confirm it covers the same period as the Advertising Report.</span></label>
+                </div>
+                <div class="field">
+                    <span><b class="step" style="display:inline-grid;vertical-align:middle;margin-right:6px">5</b>Check and build</span>
+                    <button class="rep-btn primary" id="gen" disabled>Generate ASIN-Wise Report</button>
+                    <div class="hint" id="genHint" aria-live="polite"></div>
+                </div>
+            </section>
+            <div id="runissues"></div>
+
+            <!-- RESULTS DASHBOARD & VIRTUALIZED CLIENT-FORMAT SPREADSHEET -->
+            <section class="results" id="results" hidden>
+                <div id="kgroups"></div>
+
+                <div class="sheet-panel">
+                    <div class="toolbar">
+                        <input type="search" id="q" placeholder="Search ASIN or product name" aria-label="Search ASIN or product name">
+                        <select id="sortSel" aria-label="Sort by">
+                            <option value="spend">Sort: Highest Ad Spend</option>
+                            <option value="adSales">Sort: Highest Ad Sales</option>
+                            <option value="tSales">Sort: Highest Total Sales</option>
+                            <option value="roas">Sort: Highest ROAS</option>
+                            <option value="troas">Sort: Highest TROAS</option>
+                            <option value="imp">Sort: Highest Impressions</option>
+                            <option value="clk">Sort: Highest Clicks</option>
+                            <option value="asin">Sort: ASIN A to Z</option>
+                            <option value="" hidden>Sort: custom column</option>
+                        </select>
+                        <select id="fmtSel" aria-label="Report format">
+                            <option value="std">Standard format (13 columns)</option>
+                            <option value="exp">Expanded format (SP and SD columns)</option>
+                        </select>
+                        <select id="matchSel" aria-label="Filter by source coverage">
+                            <option value="all">All ASINs</option>
+                            <option value="both">In both reports</option>
+                            <option value="ads">Advertising report only</option>
+                            <option value="biz">Business report only</option>
+                        </select>
+                        <button type="button" class="rep-btn sm" id="resetFiltersBtn" hidden>Reset Filters</button>
+                        <span class="count" id="count"></span>
+                        <span class="sp"></span>
+                        <button type="button" class="rep-btn" id="dlCsv">Download CSV</button>
+                        <button type="button" class="rep-btn primary" id="dlXlsx">Download Excel (.xlsx)</button>
+                    </div>
+
+                    <ul class="msgs" id="blendNote" style="margin-bottom:10px"></ul>
+                    <div class="sheet-wrap">
+                        <div class="scroller" id="scroller">
+                            <table class="grid" id="grid">
+                                <colgroup></colgroup>
+                                <thead></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="legend">
+                        <span><i class="sw"></i>Grey cell: the ASIN is missing from the source report behind that column, so the 0 means no data, not a measured zero.</span>
+                        <span id="exportNote"></span>
+                    </div>
+                    <ul class="msgs" id="resultNotes" style="margin-top:12px"></ul>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         3. DATA RECONCILIATION ARCHITECTURE (LIGHT GRID)
+    ========================================================= -->
+    <section class="section-light-grid">
+        <div class="rep-container">
+            <div class="rep-sec-head">
+                <div class="section-tag-eyebrow">ACCURACY BY DESIGN</div>
+                <h2 class="rep-sec-title" style="color:#0f172a;">How the Reconciliation Engine Guarantees Clean ASIN Numbers</h2>
+                <p class="rep-sec-sub" style="color:#475569;">
+                    Manual Excel VLOOKUP sheets break on multi-campaign SKUs, duplicate rows, and averaged ratios. This engine follows strict accounting rules before calculating a single metric.
+                </p>
+            </div>
+
+            <div class="rep-grid-3">
+                <div class="rep-info-card">
+                    <div class="rep-info-icon">🔑</div>
+                    <h3>Strict ASIN-Key Matching</h3>
+                    <p>
+                        Advertising reports are matched using <strong>Advertised ASIN / Promoted ASIN</strong> directly against the Business Report’s <strong>Child ASIN</strong>.
+                        Product titles are never used as join keys, and <em>Purchased ASIN</em> (cross-sell conversions) or <em>Parent ASIN</em> columns require explicit confirmation.
+                    </p>
+                </div>
+
+                <div class="rep-info-card">
+                    <div class="rep-info-icon">🧮</div>
+                    <h3>Per-ASIN Pre-Aggregation &amp; Dedup</h3>
+                    <p>
+                        A single ASIN often appears across dozens of campaigns, ad groups, dates, or Seller SKUs. Each report is deduplicated row-by-row for identical lines and summed per ASIN <em>before</em> SP, SD, and Business data are joined — preventing double counting.
+                    </p>
+                </div>
+
+                <div class="rep-info-card">
+                    <div class="rep-info-icon">📐</div>
+                    <h3>Weighted-Total Ratio Math</h3>
+                    <p>
+                        CPC, CTR, ROAS, and TROAS are never averaged across rows or campaigns. The generator sums Impressions, Clicks, Spend, Ad Sales, and Business Sales per ASIN (and for account totals) first, then divides numerators by summed denominators.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         4. FORMULA BREAKDOWN & ATTRIBUTION NUANCES (DARK ALT)
+    ========================================================= -->
+    <section class="section-dark-alt">
+        <div class="rep-container">
+            <div class="rep-sec-head">
+                <div class="section-tag-eyebrow dark">METRICS &amp; FORMULAS</div>
+                <h2 class="rep-sec-title" style="color:#ffffff;">Column Definitions &amp; Ratio Formulas</h2>
+                <p class="rep-sec-sub" style="color:#cbd5e1;">
+                    Every ratio in both the dashboard and exported Excel sheet is computed from exact summed numerators and denominators (shown as <code style="color:#e9cd86;">N/A</code> when the denominator is zero).
+                </p>
+            </div>
+
+            <div class="rep-grid-4">
+                <div class="rep-formula-dark">
+                    <span class="rep-formula-tag">TRAFFIC COST</span>
+                    <h3>CPC (Cost Per Click)</h3>
+                    <div class="rep-formula-eq">Ad Spend ÷ Clicks</div>
+                    <p>Measures blended cost per click across SP (and SD if uploaded). Use Expanded mode to isolate SP CPC from SD CPC.</p>
+                </div>
+
+                <div class="rep-formula-dark">
+                    <span class="rep-formula-tag">ENGAGEMENT</span>
+                    <h3>CTR (Click-Through Rate)</h3>
+                    <div class="rep-formula-eq">(Clicks ÷ Impressions) × 100</div>
+                    <p>Percentage of ad impressions generating clicks. Note that SD view-optimized campaigns can have different baseline CTRs than SP.</p>
+                </div>
+
+                <div class="rep-formula-dark">
+                    <span class="rep-formula-tag">AD EFFICIENCY</span>
+                    <h3>ROAS &amp; ACoS</h3>
+                    <div class="rep-formula-eq">ROAS = Ad Sales ÷ Ad Spend</div>
+                    <p>Measures direct attributed ad revenue per ₹1 spent. Equivalent ACoS (<code style="color:#38bdf8;">Spend ÷ Ad Sales</code>) is displayed in the KPI cards above the table.</p>
+                </div>
+
+                <div class="rep-formula-dark">
+                    <span class="rep-formula-tag">BUSINESS IMPACT</span>
+                    <h3>TROAS &amp; TACoS</h3>
+                    <div class="rep-formula-eq">TROAS = Total Sales ÷ Ad Spend</div>
+                    <p>Compares Total Business Revenue (Paid + Organic) against Ad Spend. Equivalent TACoS (<code style="color:#38bdf8;">Spend ÷ Total Sales</code>) tracks overall profitability.</p>
+                </div>
+            </div>
+
+            <div class="rep-grid-2" style="margin-top:26px;">
+                <div class="rep-formula-dark">
+                    <span class="rep-formula-tag">RECONCILIATION NOTE 01</span>
+                    <h3>Standard vs. Expanded Formats &amp; Grey Cells</h3>
+                    <p>
+                        <strong>Standard format (13 columns)</strong> keeps the exact executive layout: <code style="color:#e9cd86;">ASIN, Product Name, Impression, Clicks, CPC, CTR, Ad Spend, Ad Sales, ROAS, Ad Orders, Total Sales, Total Orders, TROAS</code>. When both SP and SD are loaded, advertising columns blend both channels.<br><br>
+                        <strong>Expanded format</strong> outputs separate 8-column blocks for <strong>SP</strong> and <strong>SD</strong> plus Combined Totals, so channel-level attribution differences remain visible.<br><br>
+                        <strong>Grey cells (0 / N/A):</strong> Shaded cells flag ASINs absent from that source file (for example, organic-only SKUs missing from the Ads report, or advertised ASINs with zero Business Report traffic) so you never confuse "no report row" with a measured zero.
+                    </p>
+                </div>
+
+                <div class="rep-formula-dark">
+                    <span class="rep-formula-tag">RECONCILIATION NOTE 02</span>
+                    <h3>Why Ad Sales Can Exceed Total Business Sales</h3>
+                    <p>
+                        Occasionally, an individual ASIN shows higher <strong>Ad Sales</strong> than <strong>Total Ordered Product Sales</strong> for the same date range. Common causes flagged automatically by the generator include:<br><br>
+                        • <strong>Attribution Window Spillover:</strong> Amazon attributes 7-day / 14-day sales back to the click date, whereas Business Reports record order timestamps.<br>
+                        • <strong>Brand Halo / Other-SKU Conversions:</strong> Total Sales columns in SP &amp; SD reports include sibling ASINs bought by the shopper after clicking that ad.<br>
+                        • <strong>SP + SD Date Mismatch:</strong> Always keep both advertising files on the exact same date window; the validator blocks mismatched SP &amp; SD date ranges automatically.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         5. SELLER CENTRAL & ADS CONSOLE EXPORT GUIDE (PURE LIGHT)
+    ========================================================= -->
+    <section class="section-pure-light" id="export-guide">
+        <div class="rep-container">
+            <div class="rep-sec-head">
+                <div class="section-tag-eyebrow">EXPORT CHECKLIST</div>
+                <h2 class="rep-sec-title" style="color:#0f172a;">How to Download the Right Reports from Amazon</h2>
+                <p class="rep-sec-sub" style="color:#475569;">
+                    Follow these exact paths in Amazon Ads Console and Seller Central so all columns, attribution windows, and Child ASINs align seamlessly.
+                </p>
+            </div>
+
+            <div class="rep-grid-3">
+                <div class="rep-info-card">
+                    <div class="rep-info-icon">1️⃣</div>
+                    <h3>Sponsored Products Report</h3>
+                    <p>Download at campaign-type level so every advertised ASIN, click, spend, and 7-day attributed sale is captured.</p>
+                    <div class="rep-path-box">
+                        Amazon Ads Console → Measurement &amp; Reporting → Sponsored Ads Reports → Create Report → Category: Sponsored Products → Report Type: Advertised product
+                    </div>
+                    <div class="rep-badge-list">
+                        <span class="rep-col-pill">Advertised ASIN</span>
+                        <span class="rep-col-pill">Impressions</span>
+                        <span class="rep-col-pill">Clicks</span>
+                        <span class="rep-col-pill">Spend</span>
+                        <span class="rep-col-pill">7 Day Total Sales</span>
+                    </div>
+                </div>
+
+                <div class="rep-info-card">
+                    <div class="rep-info-icon">2️⃣</div>
+                    <h3>Sponsored Display Report (Optional)</h3>
+                    <p>Add SD only if you actively run Display retargeting or product-targeting campaigns over the <strong>exact same date range</strong> as SP.</p>
+                    <div class="rep-path-box">
+                        Amazon Ads Console → Measurement &amp; Reporting → Sponsored Ads Reports → Create Report → Category: Sponsored Display → Report Type: Advertised product
+                    </div>
+                    <div class="rep-badge-list">
+                        <span class="rep-col-pill">Promoted / Advertised ASIN</span>
+                        <span class="rep-col-pill">14 Day Total Sales</span>
+                        <span class="rep-col-pill">Same Date Range</span>
+                    </div>
+                </div>
+
+                <div class="rep-info-card">
+                    <div class="rep-info-icon">3️⃣</div>
+                    <h3>Business Report (By Child ASIN)</h3>
+                    <p>Provides organic + paid total store sales and titles. Because Business Report exports omit a date column, double-check the date picker before exporting.</p>
+                    <div class="rep-path-box">
+                        Seller Central → Reports → Business Reports → By ASIN → Detail Page Sales and Traffic by Child Item → Download (.csv)
+                    </div>
+                    <div class="rep-badge-list">
+                        <span class="rep-col-pill">(Child) ASIN</span>
+                        <span class="rep-col-pill">Title</span>
+                        <span class="rep-col-pill">Ordered Product Sales</span>
+                        <span class="rep-col-pill">Total Order Items</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top:26px; background:#fff7ed; border:1.5px solid #fed7aa; border-radius:16px; padding:18px 22px; display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center;">
+                <strong style="color:#9a3412; font-size:14.5px;">⚠️ Pro Tip — Never Open &amp; Re-Save CSVs in Excel Before Uploading:</strong>
+                <span style="color:#7c2d12; font-size:13.5px; line-height:1.55;">
+                    Re-saving an Amazon CSV inside Microsoft Excel often turns numeric 10-digit ASINs into scientific notation (<code style="background:#ffedd5;padding:1px 6px;border-radius:4px;">1.23E+09</code>), permanently destroying ASIN digits. Upload the raw downloaded <code style="background:#ffedd5;padding:1px 6px;border-radius:4px;">.csv</code> or <code style="background:#ffedd5;padding:1px 6px;border-radius:4px;">.xlsx</code> straight from Amazon.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         6. RELATED TOOLS & FAQ & CTA & MASTER FOOTER
+    ========================================================= -->
+    <section class="section-dark-telemetry" style="padding:48px 0;">
+        <div class="rep-container">
+            <div class="rep-sec-head" style="margin-bottom:28px;">
+                <div class="section-tag-eyebrow dark">COMPLETE PPC WORKFLOW</div>
+                <h2 class="rep-sec-title" style="color:#ffffff;">Related Amazon PPC &amp; Profitability Tools</h2>
+            </div>
+
+            <div class="calculators-grid">
+                <a href="amazon-tacos-calculator.html" class="calc-card">
+                    <div class="calc-card-top">
+                        <div class="calc-card-header">
+                            <div class="calc-card-icon">📈</div>
+                            <span class="calc-card-category">ACCOUNT HEALTH</span>
+                        </div>
+                        <h3 class="calc-card-title">Amazon TACoS Calculator</h3>
+                        <p class="calc-card-desc">Translate your ASIN-level TROAS into TACoS% to track paid-vs-organic revenue dependency.</p>
+                    </div>
+                    <div class="calc-card-footer">
+                        <span class="calc-btn-link">Calculate TACoS →</span>
+                    </div>
+                </a>
+
+                <a href="amazon-ppc-waste-calculator.html" class="calc-card">
+                    <div class="calc-card-top">
+                        <div class="calc-card-header">
+                            <div class="calc-card-icon">🧯</div>
+                            <span class="calc-card-category">PPC OPTIMIZATION</span>
+                        </div>
+                        <h3 class="calc-card-title">Amazon PPC Waste Calculator</h3>
+                        <p class="calc-card-desc">Audit Search Term Reports to uncover zero-order clicks and high-ACoS budget leakage.</p>
+                    </div>
+                    <div class="calc-card-footer">
+                        <span class="calc-btn-link">Audit Wasted Spend →</span>
+                    </div>
+                </a>
+
+                <a href="amazon-profit-calculator.html" class="calc-card">
+                    <div class="calc-card-top">
+                        <div class="calc-card-header">
+                            <div class="calc-card-icon">📦</div>
+                            <span class="calc-card-category">AMAZON INDIA</span>
+                        </div>
+                        <h3 class="calc-card-title">Amazon India Profit Calculator</h3>
+                        <p class="calc-card-desc">Verify whether low-ROAS ASINs in your report remain profitable after FBA, referral &amp; GST fees.</p>
+                    </div>
+                    <div class="calc-card-footer">
+                        <span class="calc-btn-link">Calculate Net Profit →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light-grid">
+        <div class="rep-container">
+            <div style="max-width:900px; margin:0 auto;">
+                <div style="text-align:center; margin-bottom:28px;">
+                    <div class="hero-eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+                    <h2 style="font-size:30px; font-weight:800; color:#0f172a; margin:4px 0;">ASIN-Wise Reporting FAQs</h2>
+                </div>
+
+                <div class="faq-accordion-list">
+                    <details class="faq-item" open>
+                        <summary><span>How does the tool combine Sponsored Products, Sponsored Display, and Business Reports?</span><span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            It aggregates each uploaded file independently by normalized 10-character ASIN first (matching <code>Advertised ASIN</code> or <code>Promoted ASIN</code> to <code>Child ASIN</code>), removes exact duplicate rows, and then joins the full union of ASINs into a single table with recalculated totals and ratios.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Is my Seller Central CSV or XLSX data uploaded anywhere?</span><span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            Never. Everything runs 100% client-side in your browser tab using local memory. Even the formatted <code>.xlsx</code> workbook export is generated directly inside your browser without transmitting any file to a backend server.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>What currency formats and column headers are supported?</span><span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            The parser handles Indian locale commas (<code>1,23,456.78</code>), Western commas, parenthesized negative accounting values, and currency prefixes/suffixes (INR, Rs., ₹, USD, $, €, £, AED, SAR, GBP) — including Seller Central India headers such as <code>Spend (INR)</code>, <code>7 Day Total Sales (INR)</code>, and <code>Ordered Product Sales (INR)</code>.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>What do grey cells mean in the table and Excel export?</span><span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            A grey-shaded cell indicates that the ASIN did not appear in the source report behind that metric. For instance, an ASIN only present in the Business Report displays greyed-out <code>0</code>s and <code>N/A</code> ratios under advertising columns so you know no ads were recorded rather than assuming ad spend was measured at zero.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Why can an ASIN have Ad Sales higher than Total Sales?</span><span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            Amazon Ads reports credit orders over a 7-day or 14-day attribution window to the ad click date and can include brand-halo cross-ASIN orders, whereas the Business Report only captures exact Child ASIN orders placed within the selected calendar dates. These ASINs are flagged in the post-run diagnostics panel.
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>What is included in the downloaded Excel workbook?</span><span class="faq-icon">+</span></summary>
+                        <div class="faq-answer">
+                            The exported <code>.xlsx</code> preserves the bright yellow header bar (<code>#FFFF00</code>), frozen top header row, Excel AutoFilter, Indian comma number formatting, grey source-missing cells, plus a complete second worksheet named <strong>Notes</strong> documenting file names, date range, attribution headers, portfolio totals, formulas, and unmatched ASINs.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE AUDIT CTA BANNER -->
+    <div style="background:#080d1a; padding:60px 20px; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); text-align:center; color:#ffffff;">
+        <div class="rep-container">
+            <div style="font-family:'DM Mono',monospace; font-size:11.5px; font-weight:700; color:#38bdf8; text-transform:uppercase; margin-bottom:8px;">TURN DATA INTO PROFIT</div>
+            <h2 style="font-size:clamp(26px,3.6vw,36px); font-weight:800; color:#ffffff; margin:0 0 14px 0;">Want Expert Help Optimizing Your Low-TROAS ASINs?</h2>
+            <p style="font-size:16px; color:#cbd5e1; max-width:740px; margin:0 auto 26px auto; line-height:1.65;">
+                Found ASINs burning ad spend without lifting total business revenue? Request a free 1-on-1 Amazon PPC account audit with Anmol Pokhriyal.
+            </p>
+            <div style="display:flex; justify-content:center; gap:18px; flex-wrap:wrap; align-items:center;">
+                <a href="../contact.html" class="btn-cta-primary" style="padding:15px 32px; font-size:15px;">Request Free PPC Audit →</a>
+                <a href="../services/amazon-ppc-management-services-india.html" class="btn-cta-secondary" style="padding:14px 28px; font-size:14.5px;">Explore PPC Management Services</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="brand-card">
+                        <a href="../index.html" class="footer-logo">
+                            <div class="logo-badge">
+                                <div class="logo-symbol"></div>
+                            </div>
+                            <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+                        </a>
+                        <p class="footer-sub-tagline">Independent Amazon PPC consultancy founded by Anmol Pokhriyal.</p>
+                        <p class="footer-tagline" itemprop="description">
+                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve
+                            advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon
+                            advertising.
+                        </p>
+                        <div class="footer-socials" aria-label="Social Media Links">
+                            <a href="https://wa.me/918433232647" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" /></svg>
+                            </a>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" /></svg>
+                            </a>
+                            <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+                            </a>
+                            <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z" /></svg>
+                            </a>
+                            <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">SERVICES</h3>
+                    <ul class="footer-links">
+                        <li><a href="../services.html#service-ppc-management">Amazon PPC Management Services</a></li>
+                        <li><a href="../services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
+                        <li><a href="../services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                        <li><a href="../services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                        <li><a href="../services.html#service-product-research">Amazon Product Research</a></li>
+                        <li><a href="../services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <div class="contact-icon-pill">📍</div>
+                            <div>
+                                <span itemprop="addressLocality">Noida</span>,<br>
+                                <span itemprop="addressRegion">Uttar Pradesh</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">📞</div>
+                            <a href="tel:+918433232647" itemprop="telephone">+91 84332 32647</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">✉️</div>
+                            <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../about.html#founder">Our Founder</a></li>
+                        <li><a href="../case-studies.html">Case Studies</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <p class="footer-meta-info">© 2026 PPC Growth Expert · Noida, Uttar Pradesh, India · +91 84332 32647 · anmolpokhriyal3200@gmail.com</p>
+                <div class="footer-legal-links">
+                    <a href="../privacy-policy.html" class="legal-pill">Privacy Policy</a>
+                    <a href="../terms.html" class="legal-pill">Terms &amp; Conditions</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="overlay" id="overlay" hidden><div><span class="spin"></span><span id="overlayMsg">Working…</span></div></div>
+
+    <!-- SCRIPTS -->
+    <script src="../js/navbar.js?v=v42"></script>
+    <script src="../js/whatsapp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+    <script>(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var tick=function(){return new Promise(function(r){setTimeout(r,25)})};
+var norm=function(h){return String(h==null?'':h).replace(/^\uFEFF/,'').toLowerCase().replace(/[^a-z0-9]/g,'')};
+var fmtInt=function(n){return Math.round(n).toLocaleString('en-IN')};
+var fmtMoney=function(n){return n.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})};
+var fmtSize=function(b){return b>1048576?(b/1048576).toFixed(1)+' MB':Math.max(1,Math.round(b/1024))+' KB'};
+var MON=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+var fmtDate=function(ms){var d=new Date(ms);return String(d.getUTCDate()).padStart(2,'0')+' '+MON[d.getUTCMonth()][0].toUpperCase()+MON[d.getUTCMonth()].slice(1)+' '+d.getUTCFullYear()};
+var isoDate=function(ms){return new Date(ms).toISOString().slice(0,10)};
+var parseIsoUtc=function(s){var m=String(s||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?Date.UTC(+m[1],+m[2]-1,+m[3]):null};
+var KINDS=['ads','sd','biz'];
+var CUR='(?:inr|usd|gbp|eur|aed|sar|cad|aud|sgd|jpy)?';
+
+/* ---------- Column specs: patterns match normalized headers (lowercase, letters and digits only) ---------- */
+function adFields(){return [
+  {k:'asin',label:'Advertised ASIN',req:1,pats:[/^advertisedasin$/,/^promotedasin$/,/^asin$/]},
+  {k:'name',label:'Product Name',req:0,pats:[/^advertisedproductname$/,/^promotedproductname$/,/^productname$/,/^producttitle$/,/^itemname$/,/^title$/]},
+  {k:'imp',label:'Impressions',req:1,pats:[/^impressions$/,/^viewableimpressions$/]},
+  {k:'clk',label:'Clicks',req:1,pats:[/^clicks$/]},
+  {k:'spend',label:'Spend',req:1,pats:[new RegExp('^spend'+CUR+'$'),new RegExp('^adspend'+CUR+'$'),new RegExp('^cost'+CUR+'$'),new RegExp('^totalspend'+CUR+'$'),new RegExp('^totalcost'+CUR+'$')]},
+  {k:'sales',label:'Attributed Sales',req:1,pats:[new RegExp('^\\d+daytotalsales'+CUR+'$'),new RegExp('^\\d+daytotalsalesclick'+CUR+'$'),new RegExp('^\\d+daysales'+CUR+'$'),new RegExp('^sales'+CUR+'$'),new RegExp('^totalsales'+CUR+'$')]},
+  {k:'orders',label:'Attributed Orders',req:1,pats:[/^\d+daytotalorders$/, /^\d+daytotalordersclick$/, /^\d+dayorders$/, /^\d+daytotalpurchases$/, /^\d+daypurchases$/, /^purchases$/, /^purchasesclick$/, /^orders$/, /^totalorders$/]}];}
+var AD_METRICS=[['imp','Impressions'],['clk','Clicks'],['spend','Spend'],['sales','Attributed Sales'],['orders','Attributed Orders']];
+var SPECS={
+  ads:{title:'Sponsored Products Advertising Report',short:'SP',long:'Sponsored Products',strong:/^(advertisedasin|promotedasin)$/,keyName:'advertised ASIN',fields:adFields(),metrics:AD_METRICS},
+  sd:{title:'Sponsored Display Report',short:'SD',long:'Sponsored Display',strong:/^(advertisedasin|promotedasin)$/,keyName:'advertised ASIN',fields:adFields(),metrics:AD_METRICS},
+  biz:{title:'Amazon Business Report',short:'Business',long:'Business Report',strong:/^childasin$/,keyName:'Child ASIN',
+    fields:[
+      {k:'asin',label:'Child ASIN',req:1,pats:[/^childasin$/,/^asin$/]},
+      {k:'name',label:'Product Name / Title',req:0,pats:[/^title$/,/^productname$/,/^itemname$/]},
+      {k:'sales',label:'Ordered Product Sales',req:1,pats:[new RegExp('^orderedproductsales'+CUR+'$'),new RegExp('^totalsales'+CUR+'$')]},
+      {k:'orders',label:'Total Order Items',req:1,pats:[/^totalorderitems$/,/^totalorders$/,/^orders$/]}],
+    metrics:[['sales','Ordered Product Sales'],['orders','Total Order Items']]}
+};
+var isAd=function(k){return k==='ads'||k==='sd'};
+var state={ads:null,sd:null,biz:null,loading:{},err:{},bizOk:false,dateAuto:true,dateAutoSet:false,result:null,cross:null,crossKey:''};
+
+/* ---------- Parsing helpers ---------- */
+function num(v){
+  if(typeof v==='number') return isFinite(v)?{v:v}:{bad:1};
+  var s=String(v==null?'':v).trim();
+  if(s===''||/^(-|--|n\/a|na|null|none)$/i.test(s)) return {blank:1,v:0};
+  var neg=false, m=s.match(/^\((.*)\)$/); if(m){neg=true;s=m[1];}
+  s=s.replace(/\b(?:us|ca|au|sg|hk)(?=\$)|\b(?:inr|usd|aed|sar|gbp|eur|cad|aud|sgd|jpy)(?=\b|\d)|\brs\.?(?=\s|\d|$)|[₹$€£¥,\s]/gi,'').replace(/%$/,'');
+  if(!/^-?(\d+\.?\d*|\.\d+)(e[+-]?\d+)?$/i.test(s)) return {bad:1};
+  var x=parseFloat(s); if(!isFinite(x)) return {bad:1}; return {v:neg?-x:x};
+}
+function makeUtcDate(y,mo,d){
+  if(y<1990||y>2100||mo<1||mo>12||d<1||d>31) return null;
+  var ms=Date.UTC(y,mo-1,d), dt=new Date(ms);
+  return (dt.getUTCFullYear()===y&&dt.getUTCMonth()===mo-1&&dt.getUTCDate()===d)?ms:null;
+}
+function detectDateOrder(rows,dsI,deI){
+  var hasMdy=false,hasDmy=false,setA=new Set(),setB=new Set();
+  var scan=function(v){
+    if(v==null||typeof v==='number') return;
+    var m=String(v).trim().match(/^(\d{1,2})([-\/.])(\d{1,2})\2(\d{2,4})(?:\s+\d{1,2}:\d{2}(?::\d{2})?(?:\s*[AP]M)?)?$/i);
+    if(!m) return;
+    var a=+m[1],b=+m[3];
+    if(b>12&&a<=12) hasMdy=true;
+    else if(a>12&&b<=12) hasDmy=true;
+    setA.add(a); setB.add(b);
+  };
+  for(var i=0;i<rows.length;i++){
+    if(dsI>=0) scan(rows[i][dsI]);
+    if(deI>=0) scan(rows[i][deI]);
+  }
+  if(hasMdy&&!hasDmy) return 'MDY';
+  if(hasDmy&&!hasMdy) return 'DMY';
+  if(setA.size===1&&setB.size>1&&Array.from(setA)[0]<=12) return 'MDY';
+  if(setB.size===1&&setA.size>1&&Array.from(setB)[0]<=12) return 'DMY';
+  return 'DMY';
+}
+function parseDate(v,prefOrder){
+  if(v==null||v==='') return null;
+  if(typeof v==='number'){ return (v>20000&&v<80000)?Math.round((Math.floor(v)-25569)*864e5):null; }
+  var s=String(v).trim(), m;
+  if((m=s.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})(?:[T\s].*)?$/))) return makeUtcDate(+m[1],+m[2],+m[3]);
+  if((m=s.match(/^(\d{1,2})([-\/.])(\d{1,2})\2(\d{2,4})(?:\s+\d{1,2}:\d{2}(?::\d{2})?(?:\s*[AP]M)?)?$/i))){
+    var a=+m[1],b=+m[3],y=+m[4]; if(y<100)y+=2000;
+    var d,mo;
+    if(b>12&&a<=12){d=b;mo=a;}
+    else if(a>12&&b<=12){d=a;mo=b;}
+    else if(prefOrder==='MDY'){mo=a;d=b;}
+    else{d=a;mo=b;}
+    return makeUtcDate(y,mo,d);
+  }
+  if((m=s.match(/^([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})$/))){var i=MON.indexOf(m[1].toLowerCase()); if(i>=0) return makeUtcDate(+m[3],i+1,+m[2]);}
+  if((m=s.match(/^(\d{1,2})[\s-]+([A-Za-z]{3})[a-z]*[\s,-]+(\d{2,4})$/))){var j=MON.indexOf(m[2].toLowerCase()); var yy=+m[3]; if(yy<100)yy+=2000; if(j>=0) return makeUtcDate(yy,j+1,+m[1]);}
+  return null;
+}
+function hash(s){
+  var h1=0xdeadbeef,h2=0x41c6ce57;
+  for(var i=0,ch;i<s.length;i++){ch=s.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677);}
+  h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);
+  h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);
+  return (4294967296*(2097151&h2)+(h1>>>0));
+}
+function headerScore(kind,row){
+  var hs=row.map(norm), score=0;
+  SPECS[kind].fields.forEach(function(f){ if(hs.some(function(h){return f.pats.some(function(p){return p.test(h)})})) score++; });
+  return score;
+}
+function detectHeader(kind,aoa){
+  var best=-1,row=0, lim=Math.min(aoa.length,30);
+  for(var i=0;i<lim;i++){var s=headerScore(kind,aoa[i]); if(s>best){best=s;row=i;}}
+  return {row:row,score:best};
+}
+function candidates(fld,headers){
+  var hs=headers.map(norm), out=[];
+  fld.pats.forEach(function(p){hs.forEach(function(h,i){ if(h&&p.test(h)&&out.indexOf(i)<0) out.push(i); });});
+  return out;
+}
+function buildFile(kind,name,size,aoa){
+  var det=detectHeader(kind,aoa);
+  var headers=(aoa[det.row]||[]).map(function(h){return String(h==null?'':h).replace(/^\uFEFF/,'').trim()});
+  var rows=aoa.slice(det.row+1).filter(function(r){return r.some(function(c){return String(c==null?'':c).trim()!==''})});
+  var f={kind:kind,name:name,size:size,headers:headers,rows:rows,headerRow:det.row,map:{},cands:{},confirmed:false,keyConfirmed:false,touched:false,ver:0};
+  SPECS[kind].fields.forEach(function(fld){var c=candidates(fld,headers); f.cands[fld.k]=c; f.map[fld.k]=c.length?c[0]:null;});
+  return f;
+}
+function ambiguous(f){
+  return SPECS[f.kind].fields.filter(function(fld){return fld.k!=='name'&&fld.k!=='asin'&&f.cands[fld.k].length>1&&!f.touched});
+}
+function keyWeak(f){ var i=f.map.asin; if(i==null) return false; return !SPECS[f.kind].strong.test(norm(f.headers[i])); }
+function needKey(f){ return keyWeak(f)&&!f.keyConfirmed; }
+function ok(f){ return !!(f&&f.v&&!f.v.errors.length); }
+function attribOf(f){
+  var out={sales:'',orders:'',label:''};
+  if(f.map.sales!=null) out.sales=f.headers[f.map.sales];
+  if(f.map.orders!=null) out.orders=f.headers[f.map.orders];
+  var m=(out.sales||out.orders).match(/(\d+)\s*-?\s*day/i); if(m) out.label=m[1]+' Day';
+  return out;
+}
+
+/* ---------- Extraction + validation ---------- */
+function validate(f){
+  var spec=SPECS[f.kind], m=f.map, errors=[], warnings=[], infos=[];
+  var hs=f.headers.map(norm);
+  f.ver++;
+  f.v={errors:errors,warnings:warnings,infos:infos,agg:new Map(),st:null,dates:null,hasDate:false,fp:null};
+  if(!f.rows.length){errors.push('The file has a header but no data rows.');return;}
+  if(m.asin==null&&isAd(f.kind)&&hs.indexOf('purchasedasin')>=0)
+    errors.push('This report has a Purchased ASIN column but no Advertised or Promoted ASIN column. Purchased ASIN is the product the shopper bought, not the one that was advertised, so it is not used automatically. If you are sure it is the right key, select it in "Column mapping" and confirm.');
+  if(m.asin==null&&f.kind==='biz'&&hs.some(function(h){return h==='parentasin'}))
+    errors.push('This report has only a Parent ASIN column. Download "Detail Page Sales and Traffic by Child Item" so every row has a Child ASIN.');
+  spec.fields.forEach(function(fld){
+    if(fld.req&&(m[fld.k]==null||m[fld.k]===''))
+      errors.push('Missing required column: '+fld.label+'. Pick the matching column in "Column mapping" below.');
+  });
+  var usedIdx={};
+  spec.fields.forEach(function(fld){
+    var idx=m[fld.k]; if(idx==null||idx==='') return;
+    if(usedIdx[idx]&&fld.k!=='name'&&usedIdx[idx]!=='name'){
+      errors.push('Two metrics ('+usedIdx[idx]+' and '+fld.label+') are mapped to the same column "'+f.headers[idx]+'". Select distinct columns.');
+    } else if(!usedIdx[idx]) usedIdx[idx]=fld.label;
+  });
+  if(errors.length) return;
+  var st={rows:0,dups:0,blankAsin:0,blankAsinData:0,bad:[],badN:0,blankNums:0,sci:0,odd:[],oddN:0,multi:0};
+  var agg=f.v.agg, seen=new Set(), dmin=null, dmax=null, dsI=-1, deI=-1, fp=0;
+  if(isAd(f.kind)){ dsI=hs.findIndex(function(h){return /^(startdate|date)$/.test(h)}); deI=hs.findIndex(function(h){return h==='enddate'}); }
+  f.v.hasDate=dsI>=0;
+  var dateOrder=dsI>=0?detectDateOrder(f.rows,dsI,deI):'DMY';
+  for(var i=0;i<f.rows.length;i++){
+    var row=f.rows[i], key=hash(row.join('\u0001'));
+    fp=(fp+key)%9007199254740881;
+    if(seen.has(key)){st.dups++;continue;} seen.add(key);
+    st.rows++;
+    var rowNo=f.headerRow+i+2;
+    var asin=String(row[m.asin]==null?'':row[m.asin]).trim().toUpperCase();
+    var vals={}, any=false;
+    for(var q=0;q<spec.metrics.length;q++){
+      var k=spec.metrics[q][0], label=spec.metrics[q][1];
+      var r=num(row[m[k]]);
+      if(r.bad){st.badN++; if(st.bad.length<6) st.bad.push('Row '+rowNo+': "'+row[m[k]]+'" in '+label); vals[k]=0;}
+      else{ if(r.blank) st.blankNums++; vals[k]=r.v; if(r.v) any=true; }
+    }
+    if(dsI>=0){
+      var d1=parseDate(row[dsI],dateOrder), d2=deI>=0?parseDate(row[deI],dateOrder):d1;
+      if(d1!=null&&(dmin==null||d1<dmin)) dmin=d1;
+      if(d2!=null){ if(dmax==null||d2>dmax) dmax=d2; } else if(d1!=null&&(dmax==null||d1>dmax)) dmax=d1;
+    }
+    if(!asin||/^(TOTAL|GRAND TOTAL|SUMMARY)$/i.test(asin)){st.blankAsin++; if(any&&!asin) st.blankAsinData++; continue;}
+    if(/^\d+(\.\d+)?e\+?\d+$/i.test(asin)){st.sci++; continue;}
+    if(!/^[A-Z0-9]{10}$/.test(asin)){st.oddN++; if(st.odd.length<3) st.odd.push(asin);}
+    var e=agg.get(asin);
+    if(!e){e={imp:0,clk:0,spend:0,sales:0,orders:0,name:'',n:0}; agg.set(asin,e);}
+    e.n++; if(e.n===2) st.multi++;
+    for(var key2 in vals) e[key2]+=vals[key2];
+    if(!e.name&&m.name!=null){var nm=String(row[m.name]==null?'':row[m.name]).trim(); if(nm) e.name=nm;}
+  }
+  f.v.st=st; f.v.fp=f.rows.length+':'+fp;
+  if(dmin!=null&&dmax!=null) f.v.dates={min:dmin,max:dmax};
+  if(st.badN) errors.push(st.badN+' invalid numeric value'+(st.badN>1?'s':'')+' found, e.g. '+st.bad.join('; ')+'. Fix the file and upload again.');
+  if(st.sci) errors.push(st.sci+' ASIN value'+(st.sci>1?'s are':' is')+' in scientific notation (for example 1.23E+09). The file was probably saved through Excel and the ASINs were damaged. Re-download the report from Seller Central.');
+  if(!agg.size&&!errors.length) errors.push('No rows with a valid ASIN were found. Check that the ASIN column is mapped correctly.');
+  if(st.blankAsin) warnings.push(st.blankAsin+' row'+(st.blankAsin>1?'s have':' has')+' a blank/summary ASIN and '+(st.blankAsin>1?'were':'was')+' left out'+(st.blankAsinData?' ('+st.blankAsinData+' of them had non-zero metrics)':'')+'.');
+  if(st.oddN) warnings.push(st.oddN+' ASIN value'+(st.oddN>1?'s':'')+' not in the usual 10-character format (e.g. '+st.odd.join(', ')+'). They are kept as they are.');
+  if(st.dups) warnings.push(st.dups+' exact duplicate row'+(st.dups>1?'s':'')+' removed to avoid double counting.');
+  if(st.blankNums) warnings.push(st.blankNums+' blank metric cell'+(st.blankNums>1?'s':'')+' counted as 0.');
+  if(isAd(f.kind)&&!f.v.hasDate) warnings.push('No date column found, so the reporting period cannot be checked against this file.');
+  if(isAd(f.kind)&&f.v.hasDate&&!f.v.dates) warnings.push('A date column exists but its values could not be read, so the period cannot be checked.');
+  if(f.kind==='ads'&&hs.some(function(h){return /detailpageview|dpv|viewableimpression|bidoptimization/.test(h)})) warnings.push('Some columns (such as detail page views or viewable impressions) are typical of a Sponsored Display report. Check this is the Sponsored Products report.');
+  if(f.kind==='sd'&&hs.some(function(h){return /^(matchtype|keyword|customersearchterm|campaignbiddingstrategy|placement)/.test(h)})) warnings.push('Some columns (such as match type or keyword) are typical of a Sponsored Products report. Check this is the Sponsored Display report.');
+  if(st.multi) infos.push(st.multi+' ASIN'+(st.multi>1?'s appear':' appears')+' on more than one row (campaigns, ad groups or SKUs) and '+(st.multi>1?'were':'was')+' summed into one row.');
+}
+
+/* ---------- File loading ---------- */
+async function loadFile(kind,file){
+  state.loading[kind]=true; state.err[kind]=null; state[kind]=null; refresh(); await tick();
+  try{
+    if(typeof XLSX==='undefined') throw new Error('Spreadsheet library could not load. Please check your internet connection and reload the page.');
+    var buf=await file.arrayBuffer(), ext=file.name.split('.').pop().toLowerCase(), wb;
+    if(['csv','tsv','txt'].indexOf(ext)>=0){
+      var u8=new Uint8Array(buf), enc='utf-8';
+      if(u8[0]===0xFF&&u8[1]===0xFE) enc='utf-16le'; else if(u8[0]===0xFE&&u8[1]===0xFF) enc='utf-16be';
+      var txt=new TextDecoder(enc).decode(buf).replace(/^\uFEFF/,'');
+      wb=XLSX.read(txt,{type:'string',raw:true});
+    } else if(['xlsx','xlsm','xls'].indexOf(ext)>=0){
+      wb=XLSX.read(buf,{type:'array',cellDates:false});
+    } else throw new Error('Unsupported file type ".'+ext+'". Upload a CSV or XLSX file.');
+    var bestAoa=null,bestScore=-1;
+    for(var s=0;s<wb.SheetNames.length;s++){
+      var aoa=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[s]],{header:1,raw:true,defval:''});
+      if(!aoa.length) continue;
+      var sc=detectHeader(kind,aoa).score;
+      if(sc>bestScore){bestScore=sc;bestAoa=aoa;}
+    }
+    if(!bestAoa) throw new Error('The file is empty.');
+    await tick();
+    var f=buildFile(kind,file.name,file.size,bestAoa); bestAoa=null;
+    validate(f);
+    state[kind]=f;
+    applyDetectedDates(false);
+  }catch(e){ state.err[kind]=e.message||String(e); }
+  state.loading[kind]=false; state.cross=null; refresh();
+}
+function periods(){
+  var out=[];
+  KINDS.slice(0,2).forEach(function(k){ var f=state[k]; if(f&&f.v&&f.v.dates) out.push({kind:k,name:SPECS[k].long,min:f.v.dates.min,max:f.v.dates.max}); });
+  return out;
+}
+function applyDetectedDates(force){
+  var p=periods()[0], ds=$('#d-start'), de=$('#d-end');
+  if(!p) return;
+  if(force||(state.dateAuto&&((!ds.value&&!de.value)||state.dateAutoSet))){ ds.value=isoDate(p.min); de.value=isoDate(p.max); state.dateAuto=true; state.dateAutoSet=true; }
+}
+
+/* ---------- Rendering: cards ---------- */
+function dropHtml(kind){ return '<strong>Drag &amp; drop file here</strong><span>or <u>browse</u> · CSV or XLSX'+(kind==='sd'?' · optional':'')+'</span>'; }
+function renderCard(kind){
+  var f=state[kind], card=$('#card-'+kind), dz=$('.drop',card), body=$('.cardbody',card);
+  if(state.loading[kind]){ dz.className='drop has'; dz.innerHTML='<div class="fname">Reading file…</div>'; body.innerHTML='<div class="meta"><span class="spin"></span>Reading and checking the file</div>'; return; }
+  if(state.err[kind]){ dz.className='drop'; dz.innerHTML=dropHtml(kind); body.innerHTML='<ul class="msgs"><li class="bad">'+esc(state.err[kind])+'</li></ul>'; return; }
+  if(!f){ dz.className='drop'; dz.innerHTML=dropHtml(kind); body.innerHTML=kind==='sd'?'<div class="meta">Skip this card to report on Sponsored Products and the Business Report only.</div>':''; return; }
+  dz.className='drop has';
+  dz.innerHTML='<div class="fname" title="'+esc(f.name)+'">'+esc(f.name)+'</div><span>'+fmtSize(f.size)+' · drop a file or click to replace</span>';
+  var v=f.v, spec=SPECS[kind], amb=ambiguous(f), needConfirm=amb.length&&!f.confirmed, nk=needKey(f);
+  var chip=v.errors.length?'<span class="chip bad">Needs attention</span>':nk?'<span class="chip warn">Confirm ASIN column</span>':needConfirm?'<span class="chip warn">Confirm mapping</span>':'<span class="chip ok">Ready</span>';
+  var stat=v.st&&v.agg.size?'<span class="meta">'+fmtInt(v.agg.size)+' ASINs · '+fmtInt(v.st.rows)+' rows read'+(v.dates?' · '+fmtDate(v.dates.min)+' to '+fmtDate(v.dates.max):'')+'</span>':'';
+  var h='<div class="rep-row">'+chip+stat+'<span class="sp" style="flex:1"></span><button type="button" class="rep-btn sm" data-act="remove">Remove</button></div>';
+  var msgs='';
+  v.errors.forEach(function(e){msgs+='<li class="bad">'+esc(e)+'</li>'});
+  if(nk){
+    var hd=f.headers[f.map.asin]||'';
+    var why=/purchased/i.test(hd)?'"'+hd+'" is the product the shopper bought, not the product that was advertised.':/title|name/i.test(hd)?'"'+hd+'" is a product name, and names are not a reliable key.':'No explicit '+spec.keyName+' column was found, so "'+hd+'" would be used.';
+    msgs+='<li class="warn">'+esc(why)+' Matching only works if this column holds the '+esc(spec.keyName)+' of the product that earned these numbers. <div style="margin-top:6px"><button type="button" class="rep-btn sm" data-act="confirmkey">Yes, "'+esc(hd)+'" is the '+esc(spec.keyName)+'</button></div></li>';
+  }
+  if(needConfirm){
+    amb.forEach(function(fld){
+      var names=f.cands[fld.k].map(function(i){return f.headers[i]});
+      msgs+='<li class="warn">More than one column could be <b>'+esc(fld.label)+'</b>: '+esc(names.join(', '))+'. Selected "'+esc(names[0])+'". Check the mapping below, then confirm.</li>';
+    });
+  }
+  v.warnings.forEach(function(e){msgs+='<li class="warn">'+esc(e)+'</li>'});
+  v.infos.forEach(function(e){msgs+='<li class="info">'+esc(e)+'</li>'});
+  if(isAd(kind)&&!v.errors.length){
+    var at=attribOf(f);
+    if(at.sales) msgs+='<li class="info">Attribution as reported: sales from "'+esc(at.sales)+'"'+(at.orders?', orders from "'+esc(at.orders)+'"':'')+'.</li>';
+  }
+  if(msgs) h+='<ul class="msgs">'+msgs+'</ul>';
+  var found=spec.fields.filter(function(x){return f.map[x.k]!=null}).length;
+  var open=(v.errors.length||needConfirm||nk)?' open':'';
+  h+='<details class="map"'+open+'><summary>Column mapping ('+found+' of '+spec.fields.length+' fields matched)</summary><div class="maprows">';
+  spec.fields.forEach(function(fld){
+    var opts='<option value="">'+(fld.req?'Select a column':'Not available')+'</option>';
+    f.headers.forEach(function(hd,i){ opts+='<option value="'+i+'"'+(f.map[fld.k]===i?' selected':'')+'>'+esc(hd||('Column '+(i+1)))+'</option>'; });
+    h+='<label for="m-'+kind+'-'+fld.k+'">'+esc(fld.label)+(fld.req?' <i>*</i>':'')+'</label><select id="m-'+kind+'-'+fld.k+'" data-kind="'+kind+'" data-key="'+fld.k+'">'+opts+'</select>';
+  });
+  h+='</div>';
+  if(needConfirm) h+='<div style="padding:0 12px 12px"><button type="button" class="rep-btn sm" data-act="confirm">Confirm mapping</button></div>';
+  h+='</details>';
+  body.innerHTML=h;
+}
+
+/* ---------- Cross-file checks and run bar ---------- */
+function crossInfo(){
+  var a=state.ads,b=state.biz,s=state.sd;
+  if(!ok(a)||!ok(b)||(s&&!ok(s))) return null;
+  var key=a.ver+'-'+b.ver+'-'+(s?s.ver:0); if(state.cross&&state.crossKey===key) return state.cross;
+  var U=new Set(); a.v.agg.forEach(function(_,k){U.add(k)}); if(s) s.v.agg.forEach(function(_,k){U.add(k)});
+  var both=0; U.forEach(function(k){ if(b.v.agg.has(k)) both++; });
+  var c={both:both,adsOnly:U.size-both,bizOnly:b.v.agg.size-both,sdOnly:0,sdNotBiz:0,dupAds:false};
+  if(s){
+    var same=0;
+    s.v.agg.forEach(function(e,k){
+      if(!a.v.agg.has(k)) c.sdOnly++;
+      if(!b.v.agg.has(k)) c.sdNotBiz++;
+      var p=a.v.agg.get(k);
+      if(p&&p.imp===e.imp&&p.clk===e.clk&&Math.abs(p.spend-e.spend)<0.005&&(e.spend>0||e.clk>0)) same++;
+    });
+    c.dupAds=same>=Math.max(1,Math.ceil(s.v.agg.size*0.5));
+  }
+  state.cross=c; state.crossKey=key; return c;
+}
+function fileBlockers(f,label,out){
+  if(!f) return;
+  if(f.v.errors.length) out.push('Fix the issues in the '+label+'.');
+  else if(needKey(f)) out.push('Confirm the ASIN column for the '+label+'.');
+  else if(ambiguous(f).length&&!f.confirmed) out.push('Confirm the column mapping for the '+label+'.');
+}
+function renderRun(){
+  var a=state.ads,s=state.sd,b=state.biz,ds=$('#d-start').value,de=$('#d-end').value,blockers=[],issues='';
+  var ps=periods(), det=ps[0]||null;
+  var dh='';
+  if(det){ dh=det.name+' report covers '+fmtDate(det.min)+' to '+fmtDate(det.max)+'.'; if(ds!==isoDate(det.min)||de!==isoDate(det.max)) dh+=' <button type="button" class="rep-btn sm" id="useDates">Use this range</button>'; }
+  else if(a||s) dh='Pick the period these reports cover. It is used in the file name and notes.';
+  else dh='Dates fill in automatically from the advertising report when it has a date column.';
+  $('#dateHint').innerHTML=dh;
+  $('#confirmBox').hidden=!(ok(b)&&ok(a));
+  if(ds&&de&&ds>de){ blockers.push('The start date is after the end date.'); issues+='<li class="bad">The start date is after the end date.</li>'; }
+  if(ps.length>1&&(ps[0].min!==ps[1].min||ps[0].max!==ps[1].max)){
+    blockers.push('Sponsored Products and Sponsored Display cover different periods.');
+    issues+='<li class="bad">Sponsored Products covers '+fmtDate(ps[0].min)+' to '+fmtDate(ps[0].max)+', but Sponsored Display covers '+fmtDate(ps[1].min)+' to '+fmtDate(ps[1].max)+'. Adding them together would mix two periods. Upload both reports for the same period.</li>';
+  }
+  ps.forEach(function(p){
+    var dsMs=parseIsoUtc(ds), deMs=parseIsoUtc(de);
+    if(dsMs!=null&&deMs!=null&&(ds!==isoDate(p.min)||de!==isoDate(p.max)))
+      issues+='<li class="warn">The period you selected ('+fmtDate(dsMs)+' to '+fmtDate(deMs)+') differs from the dates inside the '+esc(p.name)+' report ('+fmtDate(p.min)+' to '+fmtDate(p.max)+'). Make sure every report covers the period you want.</li>';
+  });
+  if(!a) blockers.push('Upload the Sponsored Products Advertising Report.');
+  fileBlockers(a,'Sponsored Products report',blockers);
+  fileBlockers(s,'Sponsored Display report',blockers);
+  if(!b) blockers.push('Upload the Amazon Business Report.');
+  fileBlockers(b,'Business Report',blockers);
+  var loaded=[['ads',a],['sd',s],['biz',b]].filter(function(x){return x[1]&&x[1].v&&x[1].v.fp});
+  for(var i=0;i<loaded.length;i++) for(var j=i+1;j<loaded.length;j++){
+    if(loaded[i][1].v.fp===loaded[j][1].v.fp){
+      blockers.push('The same file was uploaded twice.');
+      issues+='<li class="bad">'+esc(loaded[i][1].name)+' and '+esc(loaded[j][1].name)+' have identical contents. Uploading one export in two slots would double count it.</li>';
+    }
+  }
+  if(ok(a)&&ok(s)){
+    var wa=attribOf(a).label, wd=attribOf(s).label;
+    if(wa&&wd&&wa!==wd) issues+='<li class="info">Sponsored Products reports on a '+wa+' attribution window and Sponsored Display on a '+wd+' window. Ad Sales and Ad Orders add the two as each report states them. The expanded format keeps them separate.</li>';
+    else if(!wa||!wd) issues+='<li class="info">The attribution window is not stated in one of the advertising reports, so the two windows could not be compared.</li>';
+  }
+  var ci=crossInfo();
+  if(ci){
+    if(ci.dupAds){ blockers.push('Sponsored Display looks like a copy of Sponsored Products.'); issues+='<li class="bad">Most ASINs in the Sponsored Display report have exactly the same impressions, clicks and spend as in the Sponsored Products report. This looks like the same export uploaded twice. Check both files.</li>'; }
+    if(ci.both===0){ blockers.push('No advertised ASIN appears in the Business Report.'); issues+='<li class="bad">No advertised ASIN appears in the Business Report. Check that the advertising files are Advertised Product reports (Advertised ASIN) and the business file is the Child Item report (Child ASIN) for the same account.</li>'; }
+    else{
+      if(ci.adsOnly) issues+='<li class="info">'+fmtInt(ci.adsOnly)+' advertised ASIN'+(ci.adsOnly>1?'s are':' is')+' not in the Business Report. '+(ci.adsOnly>1?'They stay':'It stays')+' in the report with Total Sales and Total Orders greyed out as 0.</li>';
+      if(ci.bizOnly) issues+='<li class="info">'+fmtInt(ci.bizOnly)+' ASIN'+(ci.bizOnly>1?'s are':' is')+' in the Business Report with no advertising. '+(ci.bizOnly>1?'They stay':'It stays')+' in the report with ad metrics greyed out as 0.</li>';
+      if(state.sd&&ci.sdOnly) issues+='<li class="info">'+fmtInt(ci.sdOnly)+' ASIN'+(ci.sdOnly>1?'s are':' is')+' in the Sponsored Display report only, with no Sponsored Products row.</li>';
+    }
+    if(!state.bizOk) blockers.push('Confirm that the Business Report covers the same period.');
+  }
+  $('#runissues').innerHTML=issues?'<ul class="msgs">'+issues+'</ul>':'';
+  $('#gen').disabled=blockers.length>0;
+  $('#genHint').textContent=blockers.length?blockers[0]:'Ready. Everything is validated and checked.';
+}
+function refresh(){ KINDS.forEach(renderCard); renderRun(); }
+
+/* ---------- Build consolidated result ---------- */
+function buildRows(){
+  var P=state.ads.v.agg, D=state.sd?state.sd.v.agg:null, B=state.biz.v.agg, rows=[], keys=new Set();
+  P.forEach(function(_,k){keys.add(k)}); if(D) D.forEach(function(_,k){keys.add(k)}); B.forEach(function(_,k){keys.add(k)});
+  var c={asinsSP:P.size,asinsSD:D?D.size:0,asinsBiz:B.size,adsGt:0,matched:0,adsNoBiz:0,bizNoAds:0};
+  keys.forEach(function(asin){
+    var p=P.get(asin), d=D&&D.get(asin), b=B.get(asin);
+    var r={asin:asin,name:(b&&b.name)||(p&&p.name)||(d&&d.name)||'',inSP:!!p,inSD:!!d,inBiz:!!b,
+      spImp:p?p.imp:0,spClk:p?p.clk:0,spSpend:p?p.spend:0,spSales:p?p.sales:0,spOrders:p?p.orders:0,
+      sdImp:d?d.imp:0,sdClk:d?d.clk:0,sdSpend:d?d.spend:0,sdSales:d?d.sales:0,sdOrders:d?d.orders:0,
+      tSales:b?b.sales:0,tOrders:b?b.orders:0};
+    r.imp=r.spImp+r.sdImp; r.clk=r.spClk+r.sdClk; r.spend=r.spSpend+r.sdSpend; r.adSales=r.spSales+r.sdSales; r.adOrders=r.spOrders+r.sdOrders;
+    var div=function(x,y,m){return y>0?x/y*(m||1):null};
+    r.spCpc=div(r.spSpend,r.spClk); r.spCtr=div(r.spClk,r.spImp,100); r.spRoas=div(r.spSales,r.spSpend);
+    r.sdCpc=div(r.sdSpend,r.sdClk); r.sdCtr=div(r.sdClk,r.sdImp,100); r.sdRoas=div(r.sdSales,r.sdSpend);
+    r.cpc=div(r.spend,r.clk); r.ctr=div(r.clk,r.imp,100); r.roas=div(r.adSales,r.spend); r.troas=div(r.tSales,r.spend);
+    r.inAds=r.inSP||r.inSD;
+    if(r.inAds&&b){c.matched++; if(r.adSales>r.tSales+0.005) c.adsGt++;} else if(r.inAds) c.adsNoBiz++; else c.bizNoAds++;
+    rows.push(r);
+  });
+  var T={asins:rows.length,sp:{imp:0,clk:0,spend:0,sales:0,orders:0},sd:{imp:0,clk:0,spend:0,sales:0,orders:0},tSales:0,tOrders:0};
+  rows.forEach(function(r){
+    T.sp.imp+=r.spImp;T.sp.clk+=r.spClk;T.sp.spend+=r.spSpend;T.sp.sales+=r.spSales;T.sp.orders+=r.spOrders;
+    T.sd.imp+=r.sdImp;T.sd.clk+=r.sdClk;T.sd.spend+=r.sdSpend;T.sd.sales+=r.sdSales;T.sd.orders+=r.sdOrders;
+    T.tSales+=r.tSales;T.tOrders+=r.tOrders;
+  });
+  var rz=function(x,y,m){return y>0?x/y*(m||1):null};
+  T.sp.roas=rz(T.sp.sales,T.sp.spend); T.sp.acos=rz(T.sp.spend,T.sp.sales,100); T.sp.cpc=rz(T.sp.spend,T.sp.clk); T.sp.ctr=rz(T.sp.clk,T.sp.imp,100);
+  T.sd.roas=rz(T.sd.sales,T.sd.spend); T.sd.acos=rz(T.sd.spend,T.sd.sales,100); T.sd.cpc=rz(T.sd.spend,T.sd.clk); T.sd.ctr=rz(T.sd.clk,T.sd.imp,100);
+  T.spend=T.sp.spend+T.sd.spend; T.adSales=T.sp.sales+T.sd.sales; T.adOrders=T.sp.orders+T.sd.orders;
+  T.imp=T.sp.imp+T.sd.imp; T.clk=T.sp.clk+T.sd.clk;
+  T.roas=rz(T.adSales,T.spend); T.troas=rz(T.tSales,T.spend);
+  T.acos=rz(T.spend,T.adSales,100); T.tacos=rz(T.spend,T.tSales,100);
+  return {rows:rows,T:T,c:c,sdOn:!!state.sd,start:$('#d-start').value,end:$('#d-end').value,
+    spFile:state.ads.name,sdFile:state.sd?state.sd.name:'',bizFile:state.biz.name,
+    spAttrib:attribOf(state.ads),sdAttrib:state.sd?attribOf(state.sd):null};
+}
+
+/* ---------- Columns ---------- */
+var STD=[
+  {k:'asin',h:'ASIN',t:'text',w:130},{k:'name',h:'Product Name',t:'text',w:340},
+  {k:'imp',h:'Impression',t:'int',w:110,src:'ads',blend:1},{k:'clk',h:'Clicks',t:'int',w:90,src:'ads',blend:1},
+  {k:'cpc',h:'CPC',t:'money',w:90,src:'ads',blend:1},{k:'ctr',h:'CTR',t:'pct',w:85,src:'ads',blend:1},
+  {k:'spend',h:'Ad Spend',t:'money',w:115,src:'ads'},{k:'adSales',h:'Ad Sales',t:'money',w:115,src:'ads'},
+  {k:'roas',h:'ROAS',t:'ratio',w:85,src:'ads'},{k:'adOrders',h:'Ad Orders',t:'int',w:95,src:'ads'},
+  {k:'tSales',h:'Total Sales',t:'money',w:125,src:'biz'},{k:'tOrders',h:'Total Orders',t:'int',w:105,src:'biz'},{k:'troas',h:'TROAS',t:'ratio',w:85,src:'biz'}];
+var WBY={int:115,money:122,pct:92,ratio:100};
+function expCols(sdOn){
+  var c=[{k:'asin',h:'ASIN',t:'text',w:130},{k:'name',h:'Product Name',t:'text',w:340}];
+  var grp=function(p,P,src){ [['Imp','Impressions','int'],['Clk','Clicks','int'],['Cpc','CPC','money'],['Ctr','CTR','pct'],['Spend','Spend','money'],['Sales','Sales','money'],['Roas','ROAS','ratio'],['Orders','Orders','int']].forEach(function(x){
+    c.push({k:p+x[0],h:P+' '+x[1],t:x[2],w:WBY[x[2]]+8,src:src}); }); };
+  grp('sp','SP','sp'); if(sdOn) grp('sd','SD','sd');
+  c.push({k:'spend',h:'Total Ad Spend',t:'money',w:132,src:'ads'},{k:'adSales',h:'Total Ad Sales',t:'money',w:132,src:'ads'},{k:'adOrders',h:'Total Ad Orders',t:'int',w:132,src:'ads'},
+    {k:'roas',h:'Overall ROAS',t:'ratio',w:118,src:'ads'},{k:'tSales',h:'Total Sales',t:'money',w:125,src:'biz'},{k:'tOrders',h:'Total Orders',t:'int',w:115,src:'biz'},{k:'troas',h:'TROAS',t:'ratio',w:95,src:'biz'});
+  return c;
+}
+var cols=STD, fmt='std', ROW_H=32, view=[], sortK='spend', sortDir=-1, colF={}, searchQ='', matchF='all';
+function isNA(r,c){
+  if(c.src==='sp') return !r.inSP; if(c.src==='sd') return !r.inSD; if(c.src==='ads') return !r.inAds; if(c.src==='biz') return !r.inBiz; return false;
+}
+var SRC_TXT={sp:'Sponsored Products report',sd:'Sponsored Display report',ads:'advertising reports',biz:'Business Report'};
+function fmtCell(c,v){
+  if(v==null) return 'N/A';
+  if(c.t==='int') return fmtInt(v);
+  if(c.t==='money') return fmtMoney(v);
+  if(c.t==='pct') return v.toFixed(2)+'%';
+  if(c.t==='ratio') return v.toFixed(2);
+  return String(v);
+}
+
+/* ---------- Results UI ---------- */
+function tiles(a){ return '<div class="kpis">'+a.map(function(x){return '<div class="kpi'+(x[2]?' hl':'')+'"><small>'+x[0]+'</small><b title="'+esc(x[1])+'">'+esc(x[1])+'</b>'+(x[3]?'<span class="kpi-sub">'+esc(x[3])+'</span>':'')+'</div>'}).join('')+'</div>'; }
+function group(t,sub,body){ return '<div class="kgroup"><h3>'+t+(sub?'<span>'+esc(sub)+'</span>':'')+'</h3>'+body+'</div>'; }
+function adTiles(g){
+  var acosTxt=g.acos==null?'ACoS: N/A':'ACoS: '+g.acos.toFixed(2)+'%';
+  var cpcTxt=g.cpc==null?'CPC: N/A':'CPC: '+fmtMoney(g.cpc);
+  return tiles([
+    ['Impressions',fmtInt(g.imp),0,g.ctr==null?'':'CTR: '+g.ctr.toFixed(2)+'%'],
+    ['Clicks',fmtInt(g.clk),0,cpcTxt],
+    ['Spend',fmtMoney(g.spend)],
+    ['Sales',fmtMoney(g.sales)],
+    ['Orders',fmtInt(g.orders)],
+    ['ROAS',g.roas==null?'N/A':g.roas.toFixed(2),0,acosTxt]
+  ]);
+}
+function attribTxt(at){ return at&&at.sales?'Attribution: '+at.sales+(at.orders?' / '+at.orders:''):''; }
+function showResults(){
+  var R=state.result, T=R.T, h='';
+  h+=group('Sponsored Products',attribTxt(R.spAttrib),adTiles(T.sp));
+  if(R.sdOn) h+=group('Sponsored Display',attribTxt(R.sdAttrib),adTiles(T.sd));
+  var overallAcos=T.acos==null?'ACoS: N/A':'ACoS: '+T.acos.toFixed(2)+'%';
+  var overallTacos=T.tacos==null?'TACoS: N/A':'TACoS: '+T.tacos.toFixed(2)+'%';
+  h+=group('Combined advertising and business',R.sdOn?'Ad Spend, Ad Sales and Ad Orders add SP and SD. Total Sales and Orders come from the Business Report.':'',
+    tiles([
+      ['Total ASINs',fmtInt(T.asins)],
+      ['Total Ad Spend',fmtMoney(T.spend)],
+      ['Total Ad Sales',fmtMoney(T.adSales)],
+      ['Total Ad Orders',fmtInt(T.adOrders)],
+      ['Overall ROAS',T.roas==null?'N/A':T.roas.toFixed(2),1,overallAcos],
+      ['Total Business Sales',fmtMoney(T.tSales)],
+      ['Total Business Orders',fmtInt(T.tOrders)],
+      ['TROAS',T.troas==null?'N/A':T.troas.toFixed(2),1,overallTacos]
+    ]));
+  $('#kgroups').innerHTML=h;
+  fmt='std'; cols=STD; colF={}; searchQ=''; matchF='all'; sortK='spend'; sortDir=-1;
+  $('#q').value=''; $('#matchSel').value='all'; $('#fmtSel').value='std';
+  $('#fmtSel').querySelector('option[value="exp"]').disabled=false;
+  buildHead(); buildSortOptions();
+  var c=R.c, notes='';
+  notes+='<li class="info">'+fmtInt(T.asins)+' ASINs in total: '+fmtInt(c.matched)+' with advertising and business data, '+fmtInt(c.adsNoBiz)+' advertised but missing from the Business Report, '+fmtInt(c.bizNoAds)+' in the Business Report with no advertising.'+(R.sdOn?' '+fmtInt(c.asinsSP)+' ASINs in Sponsored Products, '+fmtInt(c.asinsSD)+' in Sponsored Display.':'')+'</li>';
+  if(c.adsGt) notes+='<li class="warn">'+fmtInt(c.adsGt)+' ASIN'+(c.adsGt>1?'s have':' has')+' Ad Sales higher than Total Sales. This can happen when the ad attribution window reaches into orders placed outside this period. Worth a look before sharing.</li>';
+  [state.ads,state.sd,state.biz].forEach(function(f){ if(f) f.v.warnings.forEach(function(w){notes+='<li class="warn">'+esc(SPECS[f.kind].short+': '+w)+'</li>'}); });
+  $('#resultNotes').innerHTML=notes;
+  $('#results').hidden=false;
+  updateBlendNote();
+  applyView();
+  updateArrows();
+}
+function updateBlendNote(){
+  var R=state.result;
+  $('#blendNote').innerHTML=(R&&R.sdOn&&fmt==='std')?'<li class="info">Impression, Clicks, CPC, CTR, Ad Spend, Ad Sales, Ad Orders and ROAS add Sponsored Products and Sponsored Display together. CPC and CTR are blended across both ad types. Use the expanded format to see SP and SD separately.</li>':'';
+  $('#exportNote').textContent='Downloads include all '+fmtInt(R.T.asins)+' ASINs in the current sort order.';
+  $('#fmtSel').querySelector('option[value="exp"]').disabled=false;
+}
+function buildHead(){
+  var R=state.result;
+  $('#grid colgroup').innerHTML=cols.map(function(c){return '<col style="width:'+c.w+'px">'}).join('');
+  $('#grid').style.width=cols.reduce(function(s,c){return s+c.w},0)+'px';
+  $('#grid thead').innerHTML='<tr class="h">'+cols.map(function(c){return '<th data-k="'+c.k+'" title="'+(c.blend&&R&&R.sdOn?'Blended: Sponsored Products + Sponsored Display. ':'')+'Click to sort">'+esc(c.h)+'<span class="arr" data-arr="'+c.k+'"></span></th>'}).join('')+'</tr>'+
+    '<tr class="f">'+cols.map(function(c){return '<th><input type="text" data-f="'+c.k+'" placeholder="'+(c.t==='text'?'Filter':'Min')+'" aria-label="Filter '+esc(c.h)+'" inputmode="'+(c.t==='text'?'text':'decimal')+'"></th>'}).join('')+'</tr>';
+}
+function sortChoices(){
+  var o=[['spend',fmt==='exp'?'Highest Total Ad Spend':'Highest Ad Spend'],['adSales',fmt==='exp'?'Highest Total Ad Sales':'Highest Ad Sales'],['tSales','Highest Total Sales'],['roas',fmt==='exp'?'Highest Overall ROAS':'Highest ROAS'],['troas','Highest TROAS']];
+  if(fmt==='std') o.push(['imp','Highest Impressions'],['clk','Highest Clicks']);
+  else{ o.push(['spSpend','Highest SP Spend'],['spSales','Highest SP Sales']); if(state.result&&state.result.sdOn) o.push(['sdSpend','Highest SD Spend'],['sdSales','Highest SD Sales']); }
+  o.push(['asin','ASIN A to Z']); return o;
+}
+function buildSortOptions(){
+  var ch=sortChoices();
+  $('#sortSel').innerHTML=ch.map(function(x){return '<option value="'+x[0]+'">Sort: '+x[1]+'</option>'}).join('')+'<option value="" hidden>Sort: custom column</option>';
+  if(!ch.some(function(x){return x[0]===sortK})&&!cols.some(function(c){return c.k===sortK})){sortK='spend';sortDir=-1;}
+}
+function updateFilterResetBtn(){
+  var hasColF=Object.keys(colF).some(function(k){return colF[k]&&colF[k].length>0;});
+  $('#resetFiltersBtn').hidden=!(searchQ||matchF!=='all'||hasColF);
+}
+function applyView(){
+  var R=state.result; if(!R) return;
+  var q=searchQ.toLowerCase();
+  view=R.rows.filter(function(r){
+    if(matchF==='both'&&!(r.inAds&&r.inBiz)) return false;
+    if(matchF==='ads'&&!(r.inAds&&!r.inBiz)) return false;
+    if(matchF==='biz'&&!(r.inBiz&&!r.inAds)) return false;
+    if(matchF==='sd'&&!r.inSD) return false;
+    if(q&&r.asin.toLowerCase().indexOf(q)<0&&r.name.toLowerCase().indexOf(q)<0) return false;
+    for(var i=0;i<cols.length;i++){
+      var c=cols[i], f=colF[c.k]; if(!f) continue;
+      if(c.t==='text'){ if(String(r[c.k]).toLowerCase().indexOf(f.toLowerCase())<0) return false; }
+      else{ var p=num(f); if(p.bad||p.blank) continue; if(r[c.k]==null||r[c.k]<p.v) return false; }
+    }
+    return true;
+  });
+  sortView();
+  $('#count').textContent='Showing '+fmtInt(view.length)+' of '+fmtInt(R.rows.length)+' ASINs';
+  updateFilterResetBtn();
+  $('#scroller').scrollTop=0; paint();
+}
+function sortRows(rows){
+  var k=sortK, d=sortDir;
+  rows.sort(function(a,b){
+    var x=a[k],y=b[k];
+    if(k==='asin'||k==='name'){ return d*String(x).localeCompare(String(y)); }
+    if(x==null&&y==null) return a.asin<b.asin?-1:1;
+    if(x==null) return 1; if(y==null) return -1;
+    return x===y?(a.asin<b.asin?-1:1):d*(x<y?-1:1);
+  });
+}
+function sortView(){ sortRows(view); }
+function rowHtml(r,i){
+  var h='<tr class="'+(i%2?'alt':'')+'">';
+  cols.forEach(function(c){
+    var na=isNA(r,c);
+    var cls=c.t==='text'?'t':'n'; if(c.k==='asin') cls+=' a';
+    if(na) cls+=' na';
+    var v=r[c.k], txt;
+    if(c.k==='name'){ txt=v?esc(v):'Name not in any report'; if(!v) cls+=' noname'; }
+    else txt=esc(fmtCell(c,v));
+    var title=na?'ASIN not found in the '+SRC_TXT[c.src]:(c.k==='name'&&v?esc(v):'');
+    h+='<td class="'+cls+'"'+(title?' title="'+title+'"':'')+'>'+txt+'</td>';
+  });
+  return h+'</tr>';
+}
+function paint(){
+  var sc=$('#scroller'), n=view.length, top=sc.scrollTop, vh=Math.max(sc.clientHeight,640), nc=cols.length;
+  var s=Math.max(0,Math.floor(top/ROW_H)-8), e=Math.min(n,Math.ceil((top+vh)/ROW_H)+8), h='';
+  if(!n){ $('#grid tbody').innerHTML='<tr class="spc"><td colspan="'+nc+'"><div class="empty">No ASINs match the current search or filters.</div></td></tr>'; return; }
+  if(s>0) h+='<tr class="spc"><td colspan="'+nc+'" style="height:'+(s*ROW_H)+'px"></td></tr>';
+  for(var i=s;i<e;i++) h+=rowHtml(view[i],i);
+  if(e<n) h+='<tr class="spc"><td colspan="'+nc+'" style="height:'+((n-e)*ROW_H)+'px"></td></tr>';
+  $('#grid tbody').innerHTML=h;
+}
+function updateArrows(){
+  document.querySelectorAll('[data-arr]').forEach(function(el){ el.textContent=el.getAttribute('data-arr')===sortK?(sortDir<0?'▼':'▲'):''; });
+  var sel=$('#sortSel'); var has=[].some.call(sel.options,function(o){return o.value===sortK&&o.value!==''}); sel.value=has?sortK:'';
+}
+function setFormat(f){
+  fmt=f; cols=f==='exp'?expCols(state.result.sdOn):STD; colF={};
+  buildHead(); buildSortOptions(); updateBlendNote(); applyView(); updateArrows();
+}
+
+/* ---------- Exports ---------- */
+function exportName(ext){
+  var R=state.result, base='ASIN_Wise_Report'+(fmt==='exp'?'_Expanded':'');
+  if(R.start&&R.end) base+='_'+R.start+'_to_'+R.end; else base+='_'+new Date().toISOString().slice(0,10);
+  return base+'.'+ext;
+}
+function download(blob,name){
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1500);
+}
+function orderedRows(){ var rows=state.result.rows.slice(); sortRows(rows); return rows; }
+function dlCsv(){
+  if(!state.result) return;
+  var rows=orderedRows(), out=[cols.map(function(c){return c.h}).join(',')];
+  var q=function(s){s=String(s==null?'':s); return /[",\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;};
+  rows.forEach(function(r){
+    out.push(cols.map(function(c){
+      var v=r[c.k]; if(c.k==='asin'||c.k==='name') return q(v);
+      if(v==null) return 'N/A';
+      if(c.t==='int') return String(Math.round(v));
+      if(c.t==='pct') return v.toFixed(2)+'%';
+      return v.toFixed(2);
+    }).join(','));
+  });
+  download(new Blob(['\uFEFF'+out.join('\r\n')],{type:'text/csv;charset=utf-8'}),exportName('csv'));
+}
+async function dlXlsx(){
+  if(!state.result) return;
+  if(typeof ExcelJS==='undefined'){ alert('Excel export library failed to load. Please check your connection or use Download CSV.'); return; }
+  showBusy('Building Excel report…'); await tick();
+  try{
+    var R=state.result, rows=orderedRows(), T=R.T, c0=R.c;
+    var wb=new ExcelJS.Workbook(); wb.creator='ASIN-Wise Report Generator · PPC Growth Expert'; wb.created=new Date();
+    var ws=wb.addWorksheet(fmt==='exp'?'ASIN-Wise Expanded':'ASIN-Wise Report',{views:[{state:'frozen',xSplit:0,ySplit:1}]});
+    var IN_INT='[>=10000000]##\\,##\\,##\\,##0;[>=100000]##\\,##\\,##0;##,##0';
+    var IN_MON='[>=10000000]##\\,##\\,##\\,##0.00;[>=100000]##\\,##\\,##0.00;##,##0.00';
+    var fmts={int:IN_INT,money:IN_MON,pct:'0.00%',ratio:'0.00',text:'@'};
+    var stdW={asin:14,name:58,imp:13,clk:10,cpc:10,ctr:9,spend:14,adSales:14,roas:9,adOrders:11,tSales:15,tOrders:12,troas:9};
+    var widthOf=function(c){ if(fmt==='std') return stdW[c.k]; return c.t==='text'?(c.k==='asin'?14:58):({int:14,money:15,pct:10,ratio:12}[c.t]); };
+    ws.columns=cols.map(function(c){return {header:c.h,key:c.k,width:widthOf(c)}});
+    var thin={style:'thin',color:{argb:'FF9A9A9A'}}, border={top:thin,left:thin,bottom:thin,right:thin};
+    var hr=ws.getRow(1); hr.height=28;
+    hr.eachCell(function(cell,ci){
+      cell.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FFFFFF00'}};
+      cell.font={bold:true,color:{argb:'FF000000'},size:11,name:'Calibri'};
+      cell.alignment={horizontal:'center',vertical:'middle',wrapText:true}; cell.border=border;
+      if(fmt==='std'&&R.sdOn&&cols[ci-1].blend) cell.note='Blended: Sponsored Products + Sponsored Display';
+    });
+    rows.forEach(function(r){
+      var vals=cols.map(function(c){
+        var v=r[c.k]; if(c.k==='asin') return String(v); if(c.k==='name') return v||'';
+        if(v==null) return 'N/A'; if(c.t==='pct') return v/100; return v;
+      });
+      var row=ws.addRow(vals);
+      row.eachCell({includeEmpty:true},function(cell,ci){
+        var c=cols[ci-1]; if(!c) return;
+        cell.border=border; cell.font={name:'Calibri',size:11,color:{argb:'FF000000'}};
+        if(c.t==='text'){ cell.alignment={horizontal:'left',vertical:'middle'}; cell.numFmt='@'; }
+        else{ cell.alignment={horizontal:'right',vertical:'middle'}; if(typeof cell.value==='number') cell.numFmt=fmts[c.t]; }
+        if(isNA(r,c)){ cell.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FFEFEFEF'}}; cell.font={name:'Calibri',size:11,color:{argb:'FF8A8F96'}}; }
+      });
+    });
+    ws.autoFilter={from:{row:1,column:1},to:{row:Math.max(2,rows.length+1),column:cols.length}};
+    ws.pageSetup={orientation:'landscape',fitToPage:true,fitToWidth:1,fitToHeight:0};
+    var ns=wb.addWorksheet('Notes');
+    ns.columns=[{width:46},{width:80}];
+    var L=function(a,b,bold){var r=ns.addRow([a,b]); if(bold){r.font={bold:true};} return r;};
+    L('ASIN-Wise Report: notes',null,true); L();
+    L('Report format',fmt==='exp'?'Expanded (separate Sponsored Products and Sponsored Display columns)':'Standard (13 columns)');
+    var stMs=parseIsoUtc(R.start), enMs=parseIsoUtc(R.end);
+    L('Reporting period',stMs!=null&&enMs!=null?fmtDate(stMs)+' to '+fmtDate(enMs):'Not specified');
+    L('Sponsored Products file',R.spFile); L('Sponsored Display file',R.sdOn?R.sdFile:'Not uploaded'); L('Business report file',R.bizFile); L('Generated',new Date().toLocaleString('en-IN')); L();
+    if(fmt==='std'&&R.sdOn){ L('Blended columns',null,true); L('Impression, Clicks, CPC, CTR','Add Sponsored Products and Sponsored Display. CPC and CTR are blended across both ad types. Use the expanded format to see them separately.'); L(); }
+    L('Attribution as reported',null,true);
+    L('Sponsored Products sales / orders',R.spAttrib.sales+' / '+R.spAttrib.orders);
+    if(R.sdOn) L('Sponsored Display sales / orders',R.sdAttrib.sales+' / '+R.sdAttrib.orders);
+    L('Note','Attribution windows are kept as each report states them. The two ad types may not use the same window.'); L();
+    L('Sponsored Products totals',null,true);
+    L('Impressions',T.sp.imp); L('Clicks',T.sp.clk); L('Spend',+T.sp.spend.toFixed(2)); L('Sales',+T.sp.sales.toFixed(2)); L('Orders',T.sp.orders); L('ROAS',T.sp.roas==null?'N/A':+T.sp.roas.toFixed(2)); L();
+    if(R.sdOn){ L('Sponsored Display totals',null,true);
+      L('Impressions',T.sd.imp); L('Clicks',T.sd.clk); L('Spend',+T.sd.spend.toFixed(2)); L('Sales',+T.sd.sales.toFixed(2)); L('Orders',T.sd.orders); L('ROAS',T.sd.roas==null?'N/A':+T.sd.roas.toFixed(2)); L(); }
+    L('Combined',null,true);
+    L('Total ASINs',T.asins); L('Total Ad Spend',+T.spend.toFixed(2)); L('Total Ad Sales',+T.adSales.toFixed(2)); L('Total Ad Orders',T.adOrders);
+    L('Overall ROAS',T.roas==null?'N/A':+T.roas.toFixed(2)); L('Total Business Sales',+T.tSales.toFixed(2)); L('Total Business Orders',T.tOrders); L('TROAS',T.troas==null?'N/A':+T.troas.toFixed(2)); L();
+    L('Coverage',null,true);
+    L('ASINs in Sponsored Products',c0.asinsSP); if(R.sdOn) L('ASINs in Sponsored Display',c0.asinsSD); L('ASINs in Business Report',c0.asinsBiz);
+    L('Advertised but not in Business Report',c0.adsNoBiz); L('In Business Report with no advertising',c0.bizNoAds);
+    L('Grey cells','The ASIN is missing from the source report behind that column. The 0 means no data, not a measured zero.'); L();
+    L('How the numbers are calculated',null,true);
+    L('CPC','Spend / Clicks'); L('CTR','Clicks / Impressions'); L('ROAS','Ad Sales / Ad Spend'); L('TROAS','Total Sales / Total Ad Spend');
+    L('Ratios','Calculated from summed totals, never averaged. N/A when the denominator is 0.');
+    L('Matching','Advertised ASIN (advertising reports) to Child ASIN (business report). Product names are never used to match. Each advertising report is summed per ASIN first, then SP and SD are added, so nothing is counted twice.');
+    L(); L('Columns used',null,true);
+    [[state.ads,'SP'],[state.sd,'SD'],[state.biz,'Business']].forEach(function(p){ if(!p[0]) return; SPECS[p[0].kind].fields.forEach(function(fld){ var i=p[0].map[fld.k]; L(p[1]+': '+fld.label,i==null?'(not in file)':p[0].headers[i]); }); });
+    var um=rows.filter(function(r){return !r.inBiz||!r.inAds});
+    if(um.length){ L(); L('ASINs missing from the Business Report or from all advertising reports',null,true); ns.addRow(['ASIN','Found in']).font={bold:true};
+      um.forEach(function(r){ns.addRow([r.asin,[r.inSP?'Sponsored Products':'',r.inSD?'Sponsored Display':'',r.inBiz?'Business Report':''].filter(Boolean).join(', ')]);}); }
+    var buf=await wb.xlsx.writeBuffer();
+    download(new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}),exportName('xlsx'));
+  }catch(e){ alert('Could not build the Excel file: '+(e.message||e)); }
+  hideBusy();
+}
+
+function showBusy(m){ $('#overlayMsg').textContent=m; $('#overlay').hidden=false; }
+function hideBusy(){ $('#overlay').hidden=true; }
+
+/* ---------- Events ---------- */
+KINDS.forEach(function(kind){
+  var card=$('#card-'+kind), dz=$('.drop',card), input=$('#file-'+kind);
+  dz.addEventListener('click',function(){input.click()});
+  dz.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();input.click();} });
+  ['dragenter','dragover'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();dz.classList.add('over')})});
+  ['dragleave','drop'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();dz.classList.remove('over')})});
+  dz.addEventListener('drop',function(e){ var f=e.dataTransfer&&e.dataTransfer.files[0]; if(f) take(kind,f); });
+  input.addEventListener('change',function(){ if(input.files[0]) take(kind,input.files[0]); input.value=''; });
+  card.addEventListener('change',function(e){
+    var t=e.target; if(!t.matches||!t.matches('select[data-key]')) return;
+    var f=state[kind], key=t.getAttribute('data-key'); f.map[key]=t.value===''?null:+t.value; f.touched=true; f.confirmed=true;
+    if(key==='asin') f.keyConfirmed=false;
+    validate(f); state.cross=null; applyDetectedDates(false); refresh();
+  });
+  card.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('[data-act]'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='confirm'){ state[kind].confirmed=true; refresh(); }
+    if(act==='confirmkey'){ state[kind].keyConfirmed=true; refresh(); }
+    if(act==='remove'){
+      state[kind]=null; state.err[kind]=null; state.cross=null; state.result=null; $('#results').hidden=true;
+      if(isAd(kind)&&state.dateAutoSet){ $('#d-start').value=''; $('#d-end').value=''; state.dateAutoSet=false; applyDetectedDates(false); }
+      refresh();
+    }
+  });
+});
+function take(kind,file){ state.result=null; $('#results').hidden=true; state.bizOk=false; $('#bizDateOk').checked=false; loadFile(kind,file); }
+$('#d-start').addEventListener('change',function(){state.dateAuto=false;state.dateAutoSet=false;renderRun()});
+$('#d-end').addEventListener('change',function(){state.dateAuto=false;state.dateAutoSet=false;renderRun()});
+$('#bizDateOk').addEventListener('change',function(e){state.bizOk=e.target.checked;renderRun()});
+document.addEventListener('click',function(e){ if(e.target&&e.target.id==='useDates'){ applyDetectedDates(true); renderRun(); } });
+$('#gen').addEventListener('click',async function(){
+  showBusy('Matching ASINs and calculating…'); await tick();
+  try{ state.result=buildRows(); showResults(); await tick(); $('#results').scrollIntoView({behavior:'smooth',block:'start'}); }
+  catch(e){ alert('Could not build the report: '+(e.message||e)); }
+  hideBusy();
+});
+
+var qT;
+$('#q').addEventListener('input',function(){
+  clearTimeout(qT);
+  qT=setTimeout(function(){ searchQ=$('#q').value.trim(); applyView(); },140);
+});
+$('#sortSel').addEventListener('change',function(){
+  if(!this.value||!state.result) return;
+  sortK=this.value;
+  sortDir=(sortK==='asin'||sortK==='name')?1:-1;
+  sortView();
+  $('#scroller').scrollTop=0;
+  paint();
+  updateArrows();
+});
+$('#fmtSel').addEventListener('change',function(){
+  if(!state.result) return;
+  setFormat(this.value);
+});
+$('#matchSel').addEventListener('change',function(){
+  matchF=this.value;
+  applyView();
+});
+$('#resetFiltersBtn').addEventListener('click',function(){
+  searchQ=''; matchF='all'; colF={};
+  $('#q').value=''; $('#matchSel').value='all';
+  document.querySelectorAll('#grid thead input[data-f]').forEach(function(inp){inp.value='';});
+  applyView();
+});
+$('#dlCsv').addEventListener('click',dlCsv);
+$('#dlXlsx').addEventListener('click',dlXlsx);
+$('#scroller').addEventListener('scroll',paint);
+window.addEventListener('resize',function(){ if(state.result) paint(); });
+$('#grid thead').addEventListener('click',function(e){
+  if(e.target.tagName==='INPUT') return;
+  var th=e.target.closest&&e.target.closest('th[data-k]'); if(!th||!state.result) return;
+  var k=th.getAttribute('data-k');
+  if(sortK===k) sortDir=-sortDir;
+  else { sortK=k; sortDir=(k==='asin'||k==='name')?1:-1; }
+  sortView();
+  $('#scroller').scrollTop=0;
+  paint();
+  updateArrows();
+});
+var fT;
+$('#grid thead').addEventListener('input',function(e){
+  var inp=e.target; if(!inp||!inp.matches||!inp.matches('input[data-f]')) return;
+  clearTimeout(fT);
+  fT=setTimeout(function(){
+    colF[inp.getAttribute('data-f')]=inp.value.trim();
+    applyView();
+  },140);
+});
+
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.addEventListener('toggle',function(){
+    if(!this.open) return;
+    document.querySelectorAll('.faq-item').forEach(function(other){ if(other!==item&&other.open) other.removeAttribute('open'); });
+  });
+});
+
+refresh();
+})();</script>
+</body>
+
+</html>

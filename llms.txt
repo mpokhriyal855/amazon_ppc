@@ -24,6 +24,7 @@
 - [Amazon FBA Fee Calculator India](https://ppcgrowthexpert.com/calculators/amazon-fba-fee-calculator.html): Calculate pick & pack, weight handling, and storage fee breakdowns.
 - [Amazon FBA Storage Fee Calculator](https://ppcgrowthexpert.com/calculators/amazon-fba-storage-fee-calculator.html): Estimate monthly inventory storage costs based on dimensions and sell-through velocity.
 - [Amazon Advertising ROI Calculator](https://ppcgrowthexpert.com/calculators/amazon-advertising-roi-calculator.html): Calculate net ROI after deducting ad spend, COGS, and marketplace fees.
+- [ASIN-Wise Report Generator](https://ppcgrowthexpert.com/calculators/asin-wise-report-generator.html): Combine Amazon Sponsored Products, Sponsored Display, and Business Reports by ASIN client-side with formatted Excel (.xlsx) and UTF-8 CSV exports.
 - [Free AI Amazon Listing Optimisation Tool](https://ppcgrowthexpert.com/free-amazon-listing-optimisation-tool.html): Create SEO-optimised Amazon product listings from product photos: keyword-rich titles, 5 benefit-led bullet points, structured descriptions, and 249-byte backend search terms.
 
 ## Case Studies & Results

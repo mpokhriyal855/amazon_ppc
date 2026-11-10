@@ -90,6 +90,12 @@ function initResourcesPage() {
             desc: "See how much attributed advertising revenue you generate for every ₹1 spent on PPC campaigns.",
             btnText: "Calculate ROAS →",
             url: "amazon-roas-calculator.html"
+        },
+        "asin-report": {
+            title: "ASIN-Wise Report Generator",
+            desc: "Merge Sponsored Products, Sponsored Display, and Child ASIN Business Reports directly in your browser and export formatted Excel (.xlsx) reports.",
+            btnText: "Open Report Generator →",
+            url: "asin-wise-report-generator.html"
         }
     };
 
