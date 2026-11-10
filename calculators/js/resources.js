@@ -96,6 +96,12 @@ function initResourcesPage() {
             desc: "Merge Sponsored Products, Sponsored Display, and Child ASIN Business Reports directly in your browser and export formatted Excel (.xlsx) reports.",
             btnText: "Open Report Generator →",
             url: "asin-wise-report-generator.html"
+        },
+        "ai-listing": {
+            title: "AI Amazon Listing Generator",
+            desc: "Upload product photos to generate SEO-optimized Amazon titles, 5 benefit-led bullets, product description, backend search terms, and compliance checks.",
+            btnText: "Generate Listing →",
+            url: "ai-amazon-listing-generator.html"
         }
     };
 

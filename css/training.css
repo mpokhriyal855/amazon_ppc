@@ -128,12 +128,14 @@
 .tr-h2-title .gradient-accent {
   background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #06b6d4 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .tr-section-dark .tr-h2-title .gradient-accent {
   background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #34d399 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -199,6 +201,7 @@
 .tr-hero-content h1 .hero-gradient-text {
   background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -542,17 +545,6 @@
   font-weight: 600;
   color: var(--tr-dark-800);
   line-height: 1.35;
-}
-
-.tr-pass-checklist li svg {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  color: var(--tr-emerald-500);
-}
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--tr-dark-800);
 }
 
 .tr-pass-checklist li svg {
@@ -2804,6 +2796,7 @@
 .tr-section-client-results .tr-h2-title .gradient-accent {
   background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #34d399 100%) !important;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 

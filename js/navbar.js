@@ -176,7 +176,7 @@
                     item.classList.add("active");
                 }
             } else if (pathname.includes("/calculators/") || currentPath.includes("calculator") || currentPath.includes("resources")) {
-                if (item.classList.contains("nav-dropdown-trigger") && (href.includes("calculators") || href.includes("resources"))) {
+                if (item.classList.contains("nav-dropdown-trigger") && (href.includes("calculators") || href.includes("resources") || item.textContent.toLowerCase().includes("resources"))) {
                     item.classList.add("active");
                 }
             } else if (pathname.includes("/blog/") || currentPath.includes("blog")) {
