@@ -1464,78 +1464,237 @@
             margin-top: auto;
         }
 
-        /* LIGHT FORMULA CARDS (METRICS & RECONCILIATION NOTES) */
-        .rep-formula-light {
+        /* LIGHT FORMULA CARDS & RECONCILIATION PANELS */
+        .rep-formula-card {
             background: #ffffff;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 22px;
-            padding: 28px 24px;
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+            border: 1.5px solid #dbe4f0;
+            border-radius: 20px;
+            padding: 26px 24px 22px 24px;
+            box-shadow: 0 10px 28px -6px rgba(15, 23, 42, 0.06);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
             transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .rep-formula-light:hover {
-            transform: translateY(-3px);
+        .rep-formula-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+            opacity: 0.85;
+        }
+
+        .rep-formula-card:hover {
+            transform: translateY(-4px);
             border-color: #2563eb;
-            box-shadow: 0 18px 40px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.14);
+        }
+
+        .rep-formula-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 14px;
         }
 
         .rep-formula-tag-light {
             font-family: var(--rep-mono);
             font-size: 10.5px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.9px;
             text-transform: uppercase;
             color: #1d4ed8;
             background: #eff6ff;
             border: 1px solid #bfdbfe;
-            padding: 4px 11px;
+            padding: 4px 10px;
             border-radius: 99px;
             display: inline-block;
-            margin-bottom: 12px;
         }
 
-        .rep-formula-light h3 {
-            margin: 0 0 12px 0;
+        .rep-formula-symbol {
+            font-family: var(--rep-mono);
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+
+        .rep-formula-card h3 {
+            margin: 0 0 14px 0;
             font-size: 18px;
             font-weight: 800;
             color: #0f172a;
+            letter-spacing: -0.2px;
         }
 
         .rep-formula-eq {
             font-family: var(--rep-mono);
-            font-size: 12px;
+            font-size: 12.5px;
             font-weight: 700;
-            color: #e9cd86;
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 11px 12px;
-            border-radius: 11px;
-            margin-bottom: 14px;
+            color: #0f172a;
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+            border: 1px solid #bfdbfe;
+            border-left: 3.5px solid #2563eb;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin-bottom: 16px;
             white-space: nowrap;
             overflow-x: auto;
         }
 
-        .rep-formula-light p {
+        .rep-formula-card p {
+            margin: 0 0 18px 0;
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.68;
+        }
+
+        .rep-formula-foot {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid #f1f5f9;
+            font-family: var(--rep-mono);
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .rep-formula-foot::before {
+            content: '↳';
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        /* STRUCTURED RECONCILIATION NOTE PANELS */
+        .rep-note-card {
+            background: #ffffff;
+            border: 1.5px solid #dbe4f0;
+            border-radius: 22px;
+            padding: 30px;
+            box-shadow: 0 12px 32px -6px rgba(15, 23, 42, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .rep-note-card:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 18px 40px -10px rgba(37, 99, 235, 0.1);
+        }
+
+        .rep-note-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .rep-note-head h3 {
+            margin: 10px 0 0 0;
+            font-size: 19px;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+        }
+
+        .rep-note-num {
+            flex: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1d4ed8;
+            font-family: var(--rep-mono);
+            font-size: 13px;
+            font-weight: 700;
+            display: grid;
+            place-items: center;
+        }
+
+        .rep-note-lead {
             margin: 0;
             font-size: 14.2px;
             color: #475569;
-            line-height: 1.72;
+            line-height: 1.68;
         }
 
-        .rep-formula-light strong {
+        .rep-note-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .rep-note-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 3px solid #2563eb;
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        .rep-note-item.warn-accent {
+            border-left-color: #d97706;
+            background: #fffdf7;
+            border-color: #fde68a;
+            border-left-width: 3px;
+        }
+
+        .rep-note-item strong {
+            display: block;
+            font-size: 13.5px;
+            font-weight: 800;
             color: #0f172a;
+            margin-bottom: 5px;
         }
 
-        .rep-formula-light code {
+        .rep-note-item p {
+            margin: 0;
+            font-size: 13.5px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .rep-note-item strong .rep-swatch-inline {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            background: #eef2f6;
+            border: 1px solid #94a3b8;
+            border-radius: 3px;
+            margin-right: 6px;
+            vertical-align: -1px;
+        }
+
+        .rep-mini-cols {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 9px;
+        }
+
+        .rep-mini-col {
             font-family: var(--rep-mono);
-            font-size: 12.5px;
-            background: #eff6ff;
-            color: #1d4ed8;
-            border: 1px solid #dbeafe;
-            padding: 1px 6px;
-            border-radius: 5px;
+            font-size: 11px;
             font-weight: 600;
+            color: #1e293b;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
         .rep-path-box-dark {
@@ -2386,60 +2545,121 @@
                 <div class="section-tag-eyebrow">METRICS &amp; FORMULAS</div>
                 <h2 class="rep-sec-title" style="color:#0f172a;">Column Definitions &amp; Ratio Formulas</h2>
                 <p class="rep-sec-sub" style="color:#475569;">
-                    Every ratio in both the dashboard and exported Excel sheet is computed from exact summed numerators and denominators (shown as <code style="background:#0f172a;color:#e9cd86;padding:2px 7px;border-radius:5px;font-family:var(--rep-mono);font-size:13px;">N/A</code> when the denominator is zero).
+                    Every ratio in both the dashboard and exported Excel sheet is computed from exact summed numerators and denominators (shown as <code style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;padding:2px 7px;border-radius:5px;font-family:var(--rep-mono);font-size:13px;font-weight:700;">N/A</code> when the denominator is zero).
                 </p>
             </div>
 
             <div class="rep-grid-4">
-                <div class="rep-formula-light">
-                    <span class="rep-formula-tag-light">TRAFFIC COST</span>
-                    <h3>CPC (Cost Per Click)</h3>
+                <div class="rep-formula-card">
+                    <div class="rep-formula-top">
+                        <span class="rep-formula-tag-light">TRAFFIC COST</span>
+                        <span class="rep-formula-symbol">CPC</span>
+                    </div>
+                    <h3>Cost Per Click</h3>
                     <div class="rep-formula-eq">Ad Spend ÷ Clicks</div>
-                    <p>Measures blended cost per click across SP (and SD if uploaded). Use Expanded mode to isolate SP CPC from SD CPC.</p>
+                    <p>Measures blended cost per click across Sponsored Products and Sponsored Display campaigns.</p>
+                    <div class="rep-formula-foot">Split SP vs. SD in Expanded mode</div>
                 </div>
 
-                <div class="rep-formula-light">
-                    <span class="rep-formula-tag-light">ENGAGEMENT</span>
-                    <h3>CTR (Click-Through Rate)</h3>
+                <div class="rep-formula-card">
+                    <div class="rep-formula-top">
+                        <span class="rep-formula-tag-light">ENGAGEMENT</span>
+                        <span class="rep-formula-symbol">CTR %</span>
+                    </div>
+                    <h3>Click-Through Rate</h3>
                     <div class="rep-formula-eq">(Clicks ÷ Impressions) × 100</div>
-                    <p>Percentage of ad impressions generating clicks. Note that SD view-optimized campaigns can have different baseline CTRs than SP.</p>
+                    <p>Percentage of ad impressions generating clicks. Accounts for view-optimized SD vs. click-driven SP traffic.</p>
+                    <div class="rep-formula-foot">Weighted by total ASIN impressions</div>
                 </div>
 
-                <div class="rep-formula-light">
-                    <span class="rep-formula-tag-light">AD EFFICIENCY</span>
+                <div class="rep-formula-card">
+                    <div class="rep-formula-top">
+                        <span class="rep-formula-tag-light">AD EFFICIENCY</span>
+                        <span class="rep-formula-symbol">ROAS</span>
+                    </div>
                     <h3>ROAS &amp; ACoS</h3>
-                    <div class="rep-formula-eq">ROAS = Ad Sales ÷ Ad Spend</div>
-                    <p>Measures direct attributed ad revenue per ₹1 spent. Equivalent ACoS (<code>Spend ÷ Ad Sales</code>) is displayed in the KPI cards above the table.</p>
+                    <div class="rep-formula-eq">Ad Sales ÷ Ad Spend</div>
+                    <p>Measures direct attributed ad revenue returned per unit of currency spent on ads.</p>
+                    <div class="rep-formula-foot">ACoS = Spend ÷ Ad Sales (in KPIs)</div>
                 </div>
 
-                <div class="rep-formula-light">
-                    <span class="rep-formula-tag-light">BUSINESS IMPACT</span>
+                <div class="rep-formula-card">
+                    <div class="rep-formula-top">
+                        <span class="rep-formula-tag-light">BUSINESS IMPACT</span>
+                        <span class="rep-formula-symbol">TROAS</span>
+                    </div>
                     <h3>TROAS &amp; TACoS</h3>
-                    <div class="rep-formula-eq">TROAS = Total Sales ÷ Ad Spend</div>
-                    <p>Compares Total Business Revenue (Paid + Organic) against Ad Spend. Equivalent TACoS (<code>Spend ÷ Total Sales</code>) tracks overall profitability.</p>
+                    <div class="rep-formula-eq">Total Sales ÷ Ad Spend</div>
+                    <p>Compares Total Business Revenue (Paid + Organic) against Ad Spend for true portfolio lift.</p>
+                    <div class="rep-formula-foot">TACoS = Spend ÷ Total Sales</div>
                 </div>
             </div>
 
             <div class="rep-grid-2" style="margin-top:32px;">
-                <div class="rep-formula-light">
-                    <span class="rep-formula-tag-light">RECONCILIATION NOTE 01</span>
-                    <h3>Standard vs. Expanded Formats &amp; Grey Cells</h3>
-                    <p>
-                        <strong>Standard format (13 columns)</strong> keeps the exact executive layout: <code>ASIN, Product Name, Impression, Clicks, CPC, CTR, Ad Spend, Ad Sales, ROAS, Ad Orders, Total Sales, Total Orders, TROAS</code>. When both SP and SD are loaded, advertising columns blend both channels.<br><br>
-                        <strong>Expanded format</strong> outputs separate 8-column blocks for <strong>SP</strong> and <strong>SD</strong> plus Combined Totals, so channel-level attribution differences remain visible.<br><br>
-                        <strong>Grey cells (0 / N/A):</strong> Shaded cells flag ASINs absent from that source file (for example, organic-only SKUs missing from the Ads report, or advertised ASINs with zero Business Report traffic) so you never confuse "no report row" with a measured zero.
-                    </p>
+                <div class="rep-note-card">
+                    <div class="rep-note-head">
+                        <div>
+                            <span class="rep-formula-tag-light">RECONCILIATION NOTE 01</span>
+                            <h3>Standard vs. Expanded Formats &amp; Grey Cells</h3>
+                        </div>
+                        <span class="rep-note-num">01</span>
+                    </div>
+                    <div class="rep-note-list">
+                        <div class="rep-note-item">
+                            <strong>Standard Format (13 Executive Columns)</strong>
+                            <p>Blends SP and SD metrics when both files are uploaded into one clean client-ready layout:</p>
+                            <div class="rep-mini-cols">
+                                <span class="rep-mini-col">ASIN</span>
+                                <span class="rep-mini-col">Product Name</span>
+                                <span class="rep-mini-col">Impression</span>
+                                <span class="rep-mini-col">Clicks</span>
+                                <span class="rep-mini-col">CPC</span>
+                                <span class="rep-mini-col">CTR</span>
+                                <span class="rep-mini-col">Ad Spend</span>
+                                <span class="rep-mini-col">Ad Sales</span>
+                                <span class="rep-mini-col">ROAS</span>
+                                <span class="rep-mini-col">Ad Orders</span>
+                                <span class="rep-mini-col">Total Sales</span>
+                                <span class="rep-mini-col">Total Orders</span>
+                                <span class="rep-mini-col">TROAS</span>
+                            </div>
+                        </div>
+                        <div class="rep-note-item">
+                            <strong>Expanded Format (Separate SP &amp; SD Blocks)</strong>
+                            <p>Outputs dedicated 8-column blocks for Sponsored Products and Sponsored Display alongside Combined Totals so channel attribution stays transparent.</p>
+                        </div>
+                        <div class="rep-note-item">
+                            <strong><span class="rep-swatch-inline" aria-hidden="true"></span>Grey-Shaded Cells (0 / N/A)</strong>
+                            <p>Flags ASINs absent from a source report (e.g. organic-only SKUs missing from Ads, or advertised SKUs missing from Business Reports) so absent rows are never mistaken for measured zeros.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="rep-formula-light">
-                    <span class="rep-formula-tag-light">RECONCILIATION NOTE 02</span>
-                    <h3>Why Ad Sales Can Exceed Total Business Sales</h3>
-                    <p>
-                        Occasionally, an individual ASIN shows higher <strong>Ad Sales</strong> than <strong>Total Ordered Product Sales</strong> for the same date range. Common causes flagged automatically by the generator include:<br><br>
-                        • <strong>Attribution Window Spillover:</strong> Amazon attributes 7-day / 14-day sales back to the click date, whereas Business Reports record order timestamps.<br>
-                        • <strong>Brand Halo / Other-SKU Conversions:</strong> Total Sales columns in SP &amp; SD reports include sibling ASINs bought by the shopper after clicking that ad.<br>
-                        • <strong>SP + SD Date Mismatch:</strong> Always keep both advertising files on the exact same date window; the validator blocks mismatched SP &amp; SD date ranges automatically.
+                <div class="rep-note-card">
+                    <div class="rep-note-head">
+                        <div>
+                            <span class="rep-formula-tag-light">RECONCILIATION NOTE 02</span>
+                            <h3>Why Ad Sales Can Exceed Total Business Sales</h3>
+                        </div>
+                        <span class="rep-note-num">02</span>
+                    </div>
+                    <p class="rep-note-lead">
+                        An ASIN can occasionally report higher <strong>Ad Sales</strong> than <strong>Total Ordered Product Sales</strong> for the same dates. The diagnostics panel automatically flags these common causes:
                     </p>
+                    <div class="rep-note-list">
+                        <div class="rep-note-item warn-accent">
+                            <strong>1. Attribution Window Spillover</strong>
+                            <p>Amazon Ads attribute 7-day / 14-day conversions back to the click date, whereas Business Reports record the exact calendar timestamp of checkout.</p>
+                        </div>
+                        <div class="rep-note-item warn-accent">
+                            <strong>2. Brand Halo &amp; Other-SKU Purchases</strong>
+                            <p>Total Sales in SP and SD reports include sibling ASINs purchased by shoppers after clicking the advertised product's ad.</p>
+                        </div>
+                        <div class="rep-note-item warn-accent">
+                            <strong>3. SP + SD Date Window Alignment</strong>
+                            <p>Both advertising reports must be exported over the identical calendar range — the validator blocks mismatched SP &amp; SD date periods automatically.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
