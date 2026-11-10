@@ -532,6 +532,21 @@
             }
         }
 
+        @media (min-width: 1061px) {
+            @supports (grid-template-rows: subgrid) {
+                .uploads > .rep-card {
+                    display: grid;
+                    grid-row: span 3;
+                    grid-template-rows: subgrid;
+                    row-gap: 16px;
+                    align-items: start;
+                }
+                .uploads > .rep-card .drop:not(.has) {
+                    align-self: stretch;
+                }
+            }
+        }
+
         .rep-card {
             background: #ffffff;
             border: 1.5px solid #cbd5e1;
@@ -580,8 +595,9 @@
         }
 
         .card-h p {
-            margin: 4px 0 0;
+            margin: 6px 0 0;
             font-size: 13px;
+            line-height: 1.55;
             color: #475569;
         }
 
@@ -2542,11 +2558,11 @@
                     <div class="card-h">
                         <span class="step">2</span>
                         <div>
-                            <h3>Sponsored Display Report<span class="opt">Optional</span></h3>
-                            <p>Advertised Product report · CSV or XLSX</p>
+                            <h3>Amazon Sponsored Display Advertising Report<span class="opt">Optional</span></h3>
+                            <p>Upload your Amazon Sponsored Display Advertised Product Report to include available product-level display advertising metrics in your combined ASIN-wise report. Supported formats: CSV and XLSX.</p>
                         </div>
                     </div>
-                    <div class="drop" tabindex="0" role="button" aria-label="Upload Sponsored Display Report"></div>
+                    <div class="drop" tabindex="0" role="button" aria-label="Upload Amazon Sponsored Display Advertising Report"></div>
                     <input type="file" id="file-sd" accept=".csv,.tsv,.txt,.xlsx,.xlsm,.xls" hidden>
                     <div class="cardbody"></div>
                 </section>
@@ -2555,11 +2571,11 @@
                     <div class="card-h">
                         <span class="step">3</span>
                         <div>
-                            <h3>Amazon Business Report</h3>
-                            <p>Detail Page Sales and Traffic by Child Item · CSV or XLSX</p>
+                            <h3>Amazon Seller Central Business Report</h3>
+                            <p>Upload your Amazon Seller Central Detail Page Sales and Traffic by Child Item report to analyze product-level business performance, including sessions, page views, units ordered, unit session percentage and total sales, where available.</p>
                         </div>
                     </div>
-                    <div class="drop" tabindex="0" role="button" aria-label="Upload Amazon Business Report"></div>
+                    <div class="drop" tabindex="0" role="button" aria-label="Upload Amazon Seller Central Business Report"></div>
                     <input type="file" id="file-biz" accept=".csv,.tsv,.txt,.xlsx,.xlsm,.xls" hidden>
                     <div class="cardbody"></div>
                 </section>
@@ -2649,16 +2665,16 @@
         <div class="rep-container">
             <div class="rep-sec-head">
                 <div class="section-tag-eyebrow dark">ACCURACY BY DESIGN</div>
-                <h2 class="rep-sec-title" style="color:#ffffff;">How the Reconciliation Engine Guarantees Clean ASIN Numbers</h2>
+                <h2 class="rep-sec-title" style="color:#ffffff;">How Our Amazon ASIN-Wise Report Generator Ensures Accurate Data Analysis</h2>
                 <p class="rep-sec-sub" style="color:#cbd5e1;">
-                    Manual Excel VLOOKUP sheets break on multi-campaign SKUs, duplicate rows, and averaged ratios. This engine follows strict accounting rules before calculating a single metric.
+                    Understand how product matching, duplicate handling and weighted calculations help deliver reliable Amazon advertising and sales reports.
                 </p>
             </div>
 
             <div class="rep-grid-3">
                 <div class="rep-info-card-dark">
                     <div class="rep-info-icon-dark">🔑</div>
-                    <h3>Strict ASIN-Key Matching</h3>
+                    <h3>Accurate ASIN-Level Product Matching</h3>
                     <p>
                         Advertising reports are matched using <strong>Advertised ASIN / Promoted ASIN</strong> directly against the Business Report’s <strong>Child ASIN</strong>.
                         Product titles are never used as join keys, and <em>Purchased ASIN</em> (cross-sell conversions) or <em>Parent ASIN</em> columns require explicit confirmation.
@@ -2667,7 +2683,7 @@
 
                 <div class="rep-info-card-dark">
                     <div class="rep-info-icon-dark">🧮</div>
-                    <h3>Per-ASIN Pre-Aggregation &amp; Dedup</h3>
+                    <h3>Duplicate Detection &amp; ASIN-Level Data Aggregation</h3>
                     <p>
                         A single ASIN often appears across dozens of campaigns, ad groups, dates, or Seller SKUs. Each report is deduplicated row-by-row for identical lines and summed per ASIN <em>before</em> SP, SD, and Business data are joined — preventing double counting.
                     </p>
@@ -2675,7 +2691,7 @@
 
                 <div class="rep-info-card-dark">
                     <div class="rep-info-icon-dark">📐</div>
-                    <h3>Weighted-Total Ratio Math</h3>
+                    <h3>Accurate Amazon PPC Metric Calculations</h3>
                     <p>
                         CPC, CTR, ROAS, and TROAS are never averaged across rows or campaigns. The generator sums Impressions, Clicks, Spend, Ad Sales, and Business Sales per ASIN (and for account totals) first, then divides numerators by summed denominators.
                     </p>
