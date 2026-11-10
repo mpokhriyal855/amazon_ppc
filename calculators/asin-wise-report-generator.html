@@ -1454,14 +1454,80 @@
         #export-guide .rep-info-card-dark {
             display: flex;
             flex-direction: column;
+            padding: 32px;
         }
 
-        #export-guide .rep-info-card-dark p {
+        .rep-export-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
             margin-bottom: 18px;
         }
 
+        .rep-export-top .rep-info-icon-dark {
+            margin-bottom: 0;
+        }
+
+        .rep-export-tag {
+            font-family: var(--rep-mono);
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 99px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.12);
+            color: #7dd3fc;
+            white-space: nowrap;
+        }
+
+        .rep-export-tag.req {
+            border-color: rgba(52, 211, 153, 0.35);
+            background: rgba(16, 185, 129, 0.14);
+            color: #6ee7b7;
+        }
+
+        #export-guide .rep-info-card-dark h3 {
+            margin: 0 0 12px 0;
+            font-size: 18.5px;
+            line-height: 1.3;
+        }
+
+        #export-guide .rep-info-card-dark p {
+            margin: 0 0 20px 0;
+            flex: 1;
+        }
+
         #export-guide .rep-path-box-dark {
-            margin-top: auto;
+            margin-top: 0;
+            margin-bottom: 18px;
+            padding: 15px 16px;
+        }
+
+        #export-guide .rep-badge-list {
+            margin-top: 0;
+            align-content: flex-start;
+        }
+
+        @media (min-width: 1021px) {
+            @supports (grid-template-rows: subgrid) {
+                #export-guide .rep-info-card-dark {
+                    display: grid;
+                    grid-row: span 5;
+                    grid-template-rows: subgrid;
+                    row-gap: 0;
+                    align-items: stretch;
+                }
+                #export-guide .rep-info-card-dark p {
+                    flex: none;
+                }
+                #export-guide .rep-path-box-dark {
+                    display: flex;
+                    align-items: center;
+                }
+            }
         }
 
         /* LIGHT FORMULA CARDS & RECONCILIATION PANELS */
@@ -2680,9 +2746,12 @@
 
             <div class="rep-grid-3">
                 <div class="rep-info-card-dark">
-                    <div class="rep-info-icon-dark">1️⃣</div>
+                    <div class="rep-export-top">
+                        <div class="rep-info-icon-dark">1️⃣</div>
+                        <span class="rep-export-tag req">Required · SP</span>
+                    </div>
                     <h3>Sponsored Products Report</h3>
-                    <p>Download at campaign-type level so every advertised ASIN, click, spend, and 7-day attributed sale is captured.</p>
+                    <p>Download at campaign-type level so every advertised ASIN, click, spend, and 7-day attributed sale is captured cleanly.</p>
                     <div class="rep-path-box-dark">
                         Amazon Ads Console → Measurement &amp; Reporting → Sponsored Ads Reports → Create Report → Category: Sponsored Products → Report Type: Advertised product
                     </div>
@@ -2696,8 +2765,11 @@
                 </div>
 
                 <div class="rep-info-card-dark">
-                    <div class="rep-info-icon-dark">2️⃣</div>
-                    <h3>Sponsored Display Report (Optional)</h3>
+                    <div class="rep-export-top">
+                        <div class="rep-info-icon-dark">2️⃣</div>
+                        <span class="rep-export-tag">Optional · SD</span>
+                    </div>
+                    <h3>Sponsored Display Report</h3>
                     <p>Add SD only if you actively run Display retargeting or product-targeting campaigns over the <strong>exact same date range</strong> as SP.</p>
                     <div class="rep-path-box-dark">
                         Amazon Ads Console → Measurement &amp; Reporting → Sponsored Ads Reports → Create Report → Category: Sponsored Display → Report Type: Advertised product
@@ -2710,9 +2782,12 @@
                 </div>
 
                 <div class="rep-info-card-dark">
-                    <div class="rep-info-icon-dark">3️⃣</div>
-                    <h3>Business Report (By Child ASIN)</h3>
-                    <p>Provides organic + paid total store sales and titles. Because Business Report exports omit a date column, double-check the date picker before exporting.</p>
+                    <div class="rep-export-top">
+                        <div class="rep-info-icon-dark">3️⃣</div>
+                        <span class="rep-export-tag req">Required · Business</span>
+                    </div>
+                    <h3>Business Report (Child ASIN)</h3>
+                    <p>Supplies total organic + paid store sales and titles. Set the date picker to match SP before exporting CSV.</p>
                     <div class="rep-path-box-dark">
                         Seller Central → Reports → Business Reports → By ASIN → Detail Page Sales and Traffic by Child Item → Download (.csv)
                     </div>
