@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+    <!-- SEO TITLE & METADATA -->
+    <title>Scaling Broad Match Without ACoS Spikes: Amazon PPC Guide (2027)</title>
+    <meta name="description"
+        content="Learn how to scale Amazon PPC broad match campaigns without runaway ACoS spikes. Discover root phrase modifiers, search term containment, negative fencing, and harvest SOPs.">
+    <meta name="keywords"
+        content="scaling broad match Amazon, Amazon PPC broad match strategy, control broad match ACoS, Amazon search term harvesting, broad modifier Amazon PPC, negative keyword fencing">
+    <meta name="author" content="Anmol Pokhriyal">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- CANONICAL URL & OPEN GRAPH -->
+    <link rel="canonical" href="https://ppcgrowthexpert.com/blog/scaling-broad-match-without-acos-spikes.html">
+    <meta property="og:title" content="Scaling Broad Match Without ACoS Spikes: The Amazon PPC Operator's Playbook">
+    <meta property="og:description" content="Discover how 7-figure Amazon sellers scale broad match discovery campaigns while strictly controlling ACoS using root phrase containment and negative fencing.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ppcgrowthexpert.com/blog/scaling-broad-match-without-acos-spikes.html">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../css/style.css?v=v41">
+    <link rel="stylesheet" href="../css/navbar.css?v=v52">
+    <link rel="stylesheet" href="css/blog.css?v=v42">
+    <link rel="stylesheet" href="../css/footer.css?v=v41">
+    <link rel="stylesheet" href="../css/whatsapp.css">
+
+    <!-- JSON-LD STRUCTURED DATA SCHEMA FOR SEO, AEO, GEO & AI ENGINES -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Scaling Broad Match Without ACoS Spikes: The Amazon PPC Operator's Playbook",
+      "description": "Tactical guide explaining how to expand Amazon PPC keyword reach using broad match targeting without suffering from search term leakage, semantic drift, and sudden ACoS spikes.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Anmol Pokhriyal",
+        "jobTitle": "Amazon PPC Growth Expert & Founder",
+        "url": "https://ppcgrowthexpert.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PPC Growth Expert",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ppcgrowthexpert.com/images/logo.png"
+        }
+      },
+      "datePublished": "2026-09-03",
+      "dateModified": "2026-09-03",
+      "mainEntityOfPage": "https://ppcgrowthexpert.com/blog/scaling-broad-match-without-acos-spikes.html"
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+</head>
+
+<body>
+
+    <!-- READING PROGRESS BAR -->
+    <div class="article-progress-bar" id="articleProgressBar"></div>
+
+    <!-- =========================================================
+         EXECUTIVE NAVBAR
+    ========================================================= -->
+    <div class="navbar-container" id="navbarContainer">
+        <header class="navbar">
+
+            <!-- LOGO -->
+            <a href="../index.html" class="logo">
+                <div class="logo-badge">
+                    <div class="logo-symbol"></div>
+                </div>
+                <span class="logo-text">PPC <span class="highlight">Growth</span> Expert</span>
+            </a>
+
+            <!-- NAVIGATION LINKS -->
+            <nav class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-item">Home</a>
+                
+                <!-- SERVICES MEGA DROPDOWN -->
+                <div class="nav-dropdown">
+                    <a href="../services/index.html" class="nav-item nav-dropdown-trigger">
+                        Services <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu services-mega-dropdown">
+                        <div class="services-menu-grid">
+                            
+                            <!-- AMAZON SPECIALIZED -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON SPECIALIZED</div>
+
+                                <a href="../services/amazon-ppc-management-services-india.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services India</span>
+                                        <span class="mega-item-desc">Turn ad spend into profitable growth</span>
+                                    </div>
+                                </a>
+
+                                <a href="../services/amazon-seller-account-management-services.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon Seller Account Management Services in India</span>
+                                        <span class="mega-item-desc">Full Seller Central operations</span>
+                                    </div>
+                                </a>
+
+                                <a href="../services/amazon-ppc-management-services-delhi.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services Delhi</span>
+                                        <span class="mega-item-desc">Data-driven ad scaling for Delhi brands</span>
+                                    </div>
+                                </a>
+
+                                <a href="../services/amazon-ppc-management-services-moradabad.html" class="services-menu-item">
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Management Services Moradabad</span>
+                                        <span class="mega-item-desc">Scale handicraft &amp; brassware export</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="mega-menu-footer">
+                            <div class="mega-menu-footer-content">
+                                <a href="../services/index.html" class="mega-footer-link">
+                                    <span>Explore All Marketplace Services</span>
+                                    <span class="footer-arrow">→</span>
+                                </a>
+                                <div class="mega-footer-tags">
+                                    <span class="footer-tag-label">REGIONAL HUBS</span>
+                                    <a href="../services/amazon-ppc-management-services-delhi.html" class="hub-pill">Delhi</a>
+                                    <a href="../services/amazon-ppc-management-services-noida.html" class="hub-pill">Noida</a>
+                                    <a href="../services/amazon-ppc-management-services-moradabad.html" class="hub-pill">Moradabad</a>
+                                    <a href="../services/ecommerce-ppc-services.html" class="hub-pill">Ecommerce PPC</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../case-studies.html" class="nav-item">Case Studies</a>
+                <a href="../amazon-ecommerce-training.html" class="nav-item">Amazon ATES</a>
+                <a href="../about.html" class="nav-item">About</a>
+                
+                <!-- RESOURCES MEGA DROPDOWN -->
+                <div class="nav-dropdown">
+                    <a href="../calculators/index.html" class="nav-item nav-dropdown-trigger">
+                        Resources <span class="dropdown-arrow" onclick="event.preventDefault(); event.stopPropagation(); this.closest('.nav-dropdown').classList.toggle('is-open');">▾</span>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu">
+                        <div class="mega-menu-grid">
+                            
+                            <!-- 1. PPC PERFORMANCE -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC PERFORMANCE</div>
+                                <a href="../calculators/amazon-acos-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📊</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">ACoS Calculator</span>
+                                        <span class="mega-item-desc">Calculate advertising cost of sales</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-roas-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🚀</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">ROAS Calculator</span>
+                                        <span class="mega-item-desc">Calculate return on ad spend</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-ppc-conversion-rate-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">⚡</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Conversion Rate Calculator</span>
+                                        <span class="mega-item-desc">Measure clicks turning into orders</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 2. COST & TRAFFIC -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">COST &amp; TRAFFIC</div>
+                                <a href="../calculators/amazon-cpc-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">💵</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">CPC Calculator</span>
+                                        <span class="mega-item-desc">Calculate average cost per click</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-ctr-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🎯</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">CTR Calculator</span>
+                                        <span class="mega-item-desc">Measure ad click-through rate</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-tacos-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📈</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">TACoS Calculator</span>
+                                        <span class="mega-item-desc">Compare ad spend vs total sales</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 3. PPC OPTIMIZATION -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">PPC OPTIMIZATION</div>
+                                <a href="../calculators/ai-amazon-listing-generator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🪄</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">AI Amazon Listing Generator</span>
+                                        <span class="mega-item-desc">Turn product photos into SEO listings</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-ppc-waste-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🧯</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Amazon PPC Waste Calculator</span>
+                                        <span class="mega-item-desc">Find inefficient ad spend</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-keyword-profitability-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🔑</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Keyword Profitability Calculator</span>
+                                        <span class="mega-item-desc">Analyze keyword net margin &amp; ROI</span>
+                                    </div>
+                                </a>
+                                <a href="../amazon-ecommerce-training.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🎓</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">E-Commerce Training</span>
+                                        <span class="mega-item-desc">Live 1-on-1 Amazon Course · ₹4,999</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 4. AMAZON INDIA TOOLS -->
+                            <div class="mega-menu-col">
+                                <div class="mega-col-title">AMAZON INDIA TOOLS</div>
+                                <a href="../calculators/amazon-profit-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">📦</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Profit Calculator</span>
+                                        <span class="mega-item-desc">Amazon India net margin &amp; profit</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-fba-fee-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🚚</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">FBA Fee Calculator</span>
+                                        <span class="mega-item-desc">Fulfilment &amp; referral breakdown</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-fba-storage-fee-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">🏢</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">FBA Storage Calculator</span>
+                                        <span class="mega-item-desc">Monthly inventory storage cost</span>
+                                    </div>
+                                </a>
+                                <a href="../calculators/amazon-advertising-roi-calculator.html" class="mega-menu-item">
+                                    <span class="mega-item-icon">💸</span>
+                                    <div class="mega-item-text">
+                                        <span class="mega-item-title">Ad ROI Calculator</span>
+                                        <span class="mega-item-desc">Net profit return after PPC</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="mega-menu-footer">
+                            <a href="../calculators/index.html" class="mega-footer-link">View All Calculators &amp; Resources <span>→</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html" class="nav-item">Blog</a>
+                <a href="../contact.html" class="nav-item">Contact</a>
+            </nav>
+
+            <!-- RIGHT ACTION BUTTONS -->
+            <div class="nav-actions">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    Audit Open
+                </div>
+
+                <a href="../contact.html" class="nav-btn">
+                    <span>Free Audit</span>
+                    <span class="nav-btn-arrow">→</span>
+                </a>
+
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav(event)" aria-label="Toggle navigation">
+                    ☰
+                </button>
+            </div>
+
+        </header>
+    </div>
+
+    <!-- =========================================================
+         ARTICLE CONTAINER & HEADER
+    ========================================================= -->
+    <div class="article-page-container">
+
+        <!-- BREADCRUMBS -->
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a> / 
+            <a href="index.html">Blog</a> / 
+            <a href="index.html">PPC Optimization</a> / 
+            <span>Scaling Broad Match</span>
+        </nav>
+
+        <!-- ARTICLE HEADER -->
+        <header class="article-header">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                <span class="category-pill">PPC OPTIMIZATION</span>
+                <span style="font-family: 'DM Mono', monospace; font-size: 11px; color: #f59e0b; font-weight: 700; background: rgba(245, 158, 11, 0.12); padding: 4px 12px; border-radius: 50px;">OPERATOR PLAYBOOK</span>
+                <span class="read-time" style="font-weight: 600; color: #64748b;">17 min read</span>
+            </div>
+
+            <h1 class="article-main-title">
+                Scaling Broad Match Without ACoS Spikes: The Amazon PPC Operator's Playbook
+            </h1>
+
+            <p class="article-lead">
+                Broad match targeting is the fastest way to discover high-converting customer queries—and the fastest way to obliterate profit margins if left unconstrained. When you increase budget on broad campaigns without safeguards, Amazon's algorithm matches your ads to high-volume, low-intent terms, causing severe semantic drift and sudden ACoS spikes. Here is the exact system elite brand managers use to <strong>scale broad match traffic while locking in profitable target ACoS</strong>.
+            </p>
+
+            <div class="article-meta-bar">
+                <div class="article-author-box">
+                    <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-img">
+                    <div class="article-author-details">
+                        <strong>Anmol Pokhriyal</strong>
+                        <span>Amazon PPC Growth Expert · Updated September 2026</span>
+                    </div>
+                </div>
+
+                <div class="article-actions-row">
+                    <button class="btn-action-icon" id="saveArticleBtn">♡ Save</button>
+                    <button class="btn-action-icon" id="copyLinkBtn">🔗 Copy Link</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO VISUAL SVG ILLUSTRATION: BROAD MATCH CONTAINMENT -->
+        <div class="article-hero-graphic">
+            <svg viewBox="0 0 800 280" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="280" rx="16" fill="#0f172a" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+                
+                <!-- UNCONTROLLED BROAD VS CONTAINED BROAD -->
+                <!-- LEFT BOX: UNCONTROLLED (ACOS SPIKE) -->
+                <rect x="35" y="55" width="340" height="115" rx="10" fill="rgba(239, 68, 68, 0.08)" stroke="#ef4444" stroke-width="1.5"/>
+                <text x="205" y="82" text-anchor="middle" fill="#ef4444" font-family="Plus Jakarta Sans" font-size="13" font-weight="800">❌ UNCONTROLLED BROAD MATCH</text>
+                <text x="55" y="110" fill="#94a3b8" font-family="DM Mono" font-size="11">Single-word roots ("shoes", "bottle")</text>
+                <text x="55" y="130" fill="#94a3b8" font-family="DM Mono" font-size="11">Zero negative keyword fencing</text>
+                <text x="55" y="150" fill="#dc2626" font-family="DM Mono" font-size="11" font-weight="700">Result: 58% ACoS · Runaway Spend Leaks</text>
+
+                <!-- RIGHT BOX: CONTAINED (PROFITABLE SCALE) -->
+                <rect x="425" y="55" width="340" height="115" rx="10" fill="rgba(16, 185, 129, 0.08)" stroke="#10b981" stroke-width="1.5"/>
+                <text x="595" y="82" text-anchor="middle" fill="#10b981" font-family="Plus Jakarta Sans" font-size="13" font-weight="800">✅ CONTAINED BROAD PLAYBOOK</text>
+                <text x="445" y="110" fill="#94a3b8" font-family="DM Mono" font-size="11">3-word root phrases + Broad Modifiers</text>
+                <text x="445" y="130" fill="#94a3b8" font-family="DM Mono" font-size="11">Pre-emptive negative phrase fencing</text>
+                <text x="445" y="150" fill="#10b981" font-family="DM Mono" font-size="11" font-weight="700">Result: 21% ACoS · Constant Search Term Harvest</text>
+
+                <!-- BOTTOM SUMMARY BAR -->
+                <rect x="35" y="195" width="730" height="52" rx="10" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.3)"/>
+                <text x="400" y="227" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="12.5" font-weight="700">
+                    The Golden Rule: Never scale broad match budget without simultaneously tightening negative keyword boundaries.
+                </text>
+            </svg>
+            <div style="text-align: center; margin-top: 10px; font-weight: 700; color: #38bdf8; font-size: 15px;">
+                💡 Broad match is a search discovery engine, not a bottom-of-funnel conversion silo.
+            </div>
+        </div>
+
+        <!-- TL;DR SUMMARY BOX -->
+        <div class="tldr-box">
+            <div class="tldr-title">✦ TL;DR — 5 CORE RULES TO SCALE BROAD MATCH SAFELY</div>
+            <ul class="tldr-list">
+                <li><strong>The 3-Word Root Rule:</strong> Never target single or two-word root keywords on broad match (e.g., target <code>stainless steel water bottle</code>, never just <code>water bottle</code>).</li>
+                <li><strong>Pre-Emptive Negative Phrase Fencing:</strong> Before turning on a broad match campaign, add 20+ universal negative phrases (e.g. <code>free</code>, <code>cheap</code>, <code>used</code>, <code>diy</code>, <code>how to</code>, <code>parts</code>) to block low-intent clicks.</li>
+                <li><strong>The 48-Hour Harvest Funnel:</strong> As soon as a broad search term generates 3 orders at target ACoS, add it as a Negative Exact in the broad campaign and graduate it into an isolated Exact SKAG.</li>
+                <li><strong>De-Escalate Base Bids:</strong> Set broad match base bids 30% to 45% lower than your exact match bids. Broad traffic has lower average intent; your CPC must reflect that discount.</li>
+                <li><strong>Enforce Spend Caps with Portfolio Budgets:</strong> Group broad discovery campaigns into a dedicated Portfolio with monthly spend limits to prevent unexpected overnight budget blowouts.</li>
+            </ul>
+        </div>
+
+        <!-- KEY NUMBERS HIGHLIGHT CARDS -->
+        <div class="key-numbers-grid">
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #0284c7;">-38%</div>
+                <div class="stat-card-label">AVERAGE ACOS REDUCTION</div>
+            </div>
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #059669;">3+ Words</div>
+                <div class="stat-card-label">MINIMUM ROOT LENGTH</div>
+            </div>
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #d97706;">20% Max</div>
+                <div class="stat-card-label">BROAD BUDGET SHARE</div>
+            </div>
+            <div class="stat-card-box">
+                <div class="stat-card-value" style="color: #7c3aed;">10 Clicks</div>
+                <div class="stat-card-label">NEGATIVE PRUNING TRIGGER</div>
+            </div>
+        </div>
+
+        <!-- MAIN ARTICLE LAYOUT (GRID: TOC + PROSE + SIDEBAR) -->
+        <div class="article-layout-grid">
+
+            <!-- LEFT STICKY TABLE OF CONTENTS -->
+            <aside class="article-toc-col">
+                <div class="article-toc-box">
+                    <div class="toc-title">ON THIS PAGE</div>
+                    <ul class="toc-links">
+                        <li><a href="#sec-why-broad-spikes">Why Broad Match Spikes ACoS</a></li>
+                        <li><a href="#sec-semantic-drift">The Mechanics of Semantic Drift</a></li>
+                        <li><a href="#sec-rule-1-root">1. The 3-Word Minimum Root Rule</a></li>
+                        <li><a href="#sec-rule-2-modifiers">2. Broad Match Modifiers</a></li>
+                        <li><a href="#sec-rule-3-budget">3. The 70/20/10 Budget Rule</a></li>
+                        <li><a href="#sec-rule-4-fencing">4. Pre-Emptive Negative Fencing</a></li>
+                        <li><a href="#sec-rule-5-bids">5. Bid Discounting &amp; Placements</a></li>
+                        <li><a href="#sec-rule-6-harvest">6. The 48-Hour Harvest Routine</a></li>
+                        <li><a href="#sec-rule-7-clustering">7. Ad Group Thematic Clustering</a></li>
+                        <li><a href="#sec-rule-8-rufus">8. Rufus AI Semantic Guardrails</a></li>
+                        <li><a href="#sec-rule-9-portfolios">9. Portfolio Circuit Breakers</a></li>
+                        <li><a href="#sec-calculator">Interactive Waste &amp; Harvest Calculator</a></li>
+                        <li><a href="#sec-checklist">Weekly Broad Maintenance Checklist</a></li>
+                        <li><a href="#sec-our-process">How PPC Growth Expert Audits Broad Campaigns</a></li>
+                        <li><a href="#sec-faqs">Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- CENTER MAIN ARTICLE BODY -->
+            <main class="article-body-prose">
+
+                <!-- SECTION: WHY BROAD MATCH SPIKES ACOS -->
+                <section id="sec-why-broad-spikes">
+                    <h2>Why Broad Match Spikes ACoS: The Unseen Budget Bleed</h2>
+                    <p>
+                        Broad match is designed by Amazon to maximize ad impressions. Unlike Exact match (which only triggers when someone searches your specific keyword phrase), Broad match allows Amazon's matching algorithm to show your ad for any search query containing your words in any order, along with synonyms, singular/plurals, related products, and tangential topics.
+                    </p>
+                    <p>
+                        When sellers see early success on broad match and decide to scale up budget from $30/day to $150/day, catastrophic ACoS inflation occurs:
+                    </p>
+
+                    <div style="background: rgba(239, 68, 68, 0.04); border-left: 4px solid #dc2626; border: 1px solid rgba(239, 68, 68, 0.2); border-left-width: 4px; padding: 18px; border-radius: 0 10px 10px 0; margin: 20px 0;">
+                        <strong style="color: #dc2626; font-size: 14.5px;">THE RUNAWAY BROAD MATCH DEATH SPIRAL</strong>
+                        <div style="font-size: 13.5px; color: #334155; margin-top: 6px; line-height: 1.7;">
+                            1. Seller increases broad campaign daily budget to capture more sales.<br>
+                            2. Amazon quickly exhausts the high-intent queries available for that keyword.<br>
+                            3. To spend the remaining daily budget, Amazon broadens semantic matching to tangentially related, low-intent queries.<br>
+                            4. Click volume surges, conversion rate plunges from 16% to 4%, and campaign ACoS spikes past 60%.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION: SEMANTIC DRIFT -->
+                <section id="sec-semantic-drift">
+                    <h2>Understanding Semantic Drift in Amazon's Modern Ad Engine</h2>
+                    <p>
+                        With the rollout of Amazon's AI assistant (Rufus) and modernized vector embeddings, Amazon's broad match algorithm increasingly matches by <em>conceptual intent</em> rather than lexical strings.
+                    </p>
+                    <p>
+                        Consider this real-world example:
+                    </p>
+                    <div style="background: #0f172a; border-radius: 10px; padding: 18px; margin: 18px 0; border: 1px solid rgba(56, 189, 248, 0.3);">
+                        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: #38bdf8; font-weight: 700; margin-bottom: 8px;">SEMANTIC DRIFT CASE STUDY</div>
+                        <div style="color: #cbd5e1; font-size: 13.5px; line-height: 1.8;">
+                            • Targeted Broad Keyword: <code>organic baby shampoo</code><br>
+                            • Intended Customer Search: <em>"tear free organic baby shampoo for sensitive scalp"</em><br>
+                            • Actual Queries Triggered by Amazon: <em>"adult organic conditioner", "dog tearless wash", "empty shampoo dispenser bottles", "diy baby soap recipe book"</em>
+                        </div>
+                    </div>
+                    <p>
+                        Without proactive constraints, <strong>over 45% of broad match ad spend leaks into queries that never had a chance of converting</strong>.
+                    </p>
+                </section>
+
+                <!-- STRATEGY 1: THE 3-WORD MINIMUM ROOT RULE -->
+                <section id="sec-rule-1-root">
+                    <h2>Strategy 1: The 3-Word Minimum Root Rule</h2>
+                    <p>
+                        The most common cause of high ACoS is bidding on single-word or generic two-word broad keywords. Bidding on <code>shoes</code> or <code>wireless headphones</code> gives Amazon blanket permission to display your ads across thousands of unrelated product niches.
+                    </p>
+
+                    <div class="callout-box callout-takeaway">
+                        <div class="callout-title">📐 THE 3-WORD RULE OF THUMB</div>
+                        <p style="margin: 0; font-size: 14.5px;">
+                            Never enter a keyword into a Broad match campaign with fewer than <strong>three descriptive words</strong>. Your keyword must include: <code>[Feature/Attribute] + [Material/Specification] + [Core Product]</code>.
+                        </p>
+                    </div>
+
+                    <div style="overflow-x: auto; margin: 20px 0;">
+                        <table style="width: 100%; border-collapse: collapse; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                            <thead>
+                                <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; color: #0284c7; text-align: left; font-size: 13px;">
+                                    <th style="padding: 14px 16px;">Dangerous Generic Broad</th>
+                                    <th style="padding: 14px 16px;">Contained High-Intent Broad</th>
+                                    <th style="padding: 14px 16px;">Why It Protects ACoS</th>
+                                </tr>
+                            </thead>
+                            <tbody style="color: #334155; font-size: 13px;">
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 12px 16px; color: #dc2626; font-weight: 700;">yoga mat</td>
+                                    <td style="padding: 12px 16px; color: #059669; font-weight: 700;">thick non slip yoga mat</td>
+                                    <td style="padding: 12px 16px;">Anchors search intent to thickness and grip specifications.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0; background: #f8fafc;">
+                                    <td style="padding: 12px 16px; color: #dc2626; font-weight: 700;">coffee grinder</td>
+                                    <td style="padding: 12px 16px; color: #059669; font-weight: 700;">manual burr coffee grinder</td>
+                                    <td style="padding: 12px 16px;">Eliminates electric espresso machines and replacement blades.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 16px; color: #dc2626; font-weight: 700;">desk lamp</td>
+                                    <td style="padding: 12px 16px; color: #059669; font-weight: 700;">rechargeable led desk lamp clamp</td>
+                                    <td style="padding: 12px 16px;">Locks the customer to cordless, clamp-on lighting fixtures.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- STRATEGY 2: BROAD MATCH MODIFIERS -->
+                <section id="sec-rule-2-modifiers">
+                    <h2>Strategy 2: Broad Match Modifiers &amp; Syntactic Anchors</h2>
+                    <p>
+                        Broad match modifiers allow advertisers to anchor mandatory words within a broad search. By putting a plus sign (<code>+</code>) directly in front of essential terms, you instruct the algorithm: <em>"The shopper can add words before, between, or after, but this anchored word MUST be present in their search."</em>
+                    </p>
+                    <p>
+                        <em>Example:</em> <code>+travel +duffle bag</code> guarantees that every triggered query contains the word "travel", eliminating generic searches for gym bags or laundry duffles.
+                    </p>
+                </section>
+
+                <!-- STRATEGY 3: THE 70/20/10 BUDGET RULE -->
+                <section id="sec-rule-3-budget">
+                    <h2>Strategy 3: The 70/20/10 PPC Budget Allocation Model</h2>
+                    <p>
+                        A common trap is letting discovery campaigns consume 50% or more of your total advertising budget. When broad campaigns dominate your ad spend, your overall account ACoS is vulnerable to wild volatility.
+                    </p>
+
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                        <h4 style="color: #0284c7; margin-top: 0; font-size: 16px; font-weight: 800;">The Golden Budget Allocation Ratio</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+                            <div style="background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; padding: 12px 16px; border-radius: 0 6px 6px 0;">
+                                <strong style="color: #059669;">70% SCALING BUDGET:</strong> Allocated to Tier 3 Exact Single-Keyword Ad Groups (SKAGs) and proven high-converting keywords with &gt; 3.5x ROAS.
+                            </div>
+                            <div style="background: rgba(56, 189, 248, 0.08); border-left: 4px solid #0284c7; padding: 12px 16px; border-radius: 0 6px 6px 0;">
+                                <strong style="color: #0284c7;">20% DISCOVERY BUDGET:</strong> Split between Broad match and Auto discovery campaigns with strict negative keyword fencing.
+                            </div>
+                            <div style="background: rgba(168, 85, 247, 0.08); border-left: 4px solid #a855f7; padding: 12px 16px; border-radius: 0 6px 6px 0;">
+                                <strong style="color: #9333ea;">10% DEFENSE &amp; EXPERIMENTAL:</strong> Dedicated to brand detail page protection, Sponsored Brands Video, and seasonal tests.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- STRATEGY 4: PRE-EMPTIVE NEGATIVE FENCING -->
+                <section id="sec-rule-4-fencing">
+                    <h2>Strategy 4: Pre-Emptive Negative Keyword Fencing</h2>
+                    <p>
+                        Most sellers wait for broad campaigns to waste money on irrelevant terms before adding them as negatives. Elite operators practice <strong>Pre-Emptive Negative Fencing</strong>: adding negative phrase lists <em>before</em> launching the campaign.
+                    </p>
+
+                    <div style="background: #0f172a; border-radius: 10px; padding: 20px; margin: 20px 0; border: 1px solid rgba(56, 189, 248, 0.3);">
+                        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: #38bdf8; font-weight: 700; margin-bottom: 10px;">UNIVERSAL PRE-EMPTIVE NEGATIVE PHRASE LIST</div>
+                        <div style="color: #cbd5e1; font-size: 13px; line-height: 1.8;">
+                            <code>free</code> · <code>cheap</code> · <code>used</code> · <code>refurbished</code> · <code>second hand</code> · <code>diy</code> · <code>how to</code> · <code>pdf</code> · <code>manual</code> · <code>repair</code> · <code>replacement parts</code> · <code>pattern</code> · <code>tutorial</code> · <code>wholesale</code> · <code>dropshipping</code> · <code>bulk cheap</code>
+                        </div>
+                    </div>
+                    <p>
+                        Adding these 16 negative phrases on day one eliminates roughly 15% to 25% of wasted broad match spend before a single ad impression is served.
+                    </p>
+                </section>
+
+                <!-- STRATEGY 5: BID DISCOUNTING & PLACEMENTS -->
+                <section id="sec-rule-5-bids">
+                    <h2>Strategy 5: Bid De-Escalation &amp; Placement Modifiers</h2>
+                    <p>
+                        Because Broad match traffic has lower average conversion intent than Exact match traffic, your default base CPC bid should be discounted accordingly.
+                    </p>
+                    <div class="callout-box callout-quickwin">
+                        <div class="callout-title">💡 THE 35% BID DISCOUNT RULE</div>
+                        <p style="margin: 0; font-size: 14px;">
+                            If your exact match bid for a keyword is <strong>$1.80</strong>, set your broad match base bid at <strong>$1.10 to $1.25</strong> (30% to 40% discount). Then, apply a +40% Top-of-Search placement modifier. This prevents runaway click costs while allowing you to compete for high-intent search page impressions.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- STRATEGY 6: THE 48-HOUR HARVEST ROUTINE -->
+                <section id="sec-rule-6-harvest">
+                    <h2>Strategy 6: The 48-Hour Harvest &amp; Isolate SOP</h2>
+                    <p>
+                        The true purpose of broad match is to act as an automated search laboratory. When a customer search term proves it can convert profitably, you must graduate it out of broad match immediately.
+                    </p>
+                    
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                        <h4 style="color: #0284c7; margin-top: 0; font-size: 16px; font-weight: 800;">The 3-Step Harvesting Protocol</h4>
+                        <ol style="color: #334155; font-size: 13.5px; line-height: 1.8; margin-bottom: 0;">
+                            <li><strong style="color: #0f172a;">Step 1: Identify Winners:</strong> Audit the Search Term Report every 48 to 72 hours. Filter for queries with <strong>&ge; 3 orders and ACoS &le; Target ACoS</strong>.</li>
+                            <li><strong style="color: #0f172a;">Step 2: Graduate to Exact:</strong> Add the query as an Exact match keyword in your Tier 3 Scaling campaign with a competitive bid.</li>
+                            <li><strong style="color: #0f172a;">Step 3: Negative Isolate:</strong> Add that exact search term as a <strong>Negative Exact</strong> inside the broad match campaign. This closes the loop and forces the broad campaign to explore fresh uncharted search terms.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- STRATEGY 7: AD GROUP THEMATIC CLUSTERING -->
+                <section id="sec-rule-7-clustering">
+                    <h2>Strategy 7: Ad Group Thematic Clustering (Never Mix Themes)</h2>
+                    <p>
+                        Never dump 20 diverse broad keywords into a single ad group. Group broad keywords tightly by customer use-case or physical attribute:
+                    </p>
+                    <ul>
+                        <li><strong>Ad Group A (Material Theme):</strong> <code>bamboo cutting board</code>, <code>wooden cutting board</code>, <code>hardwood butcher block</code></li>
+                        <li><strong>Ad Group B (Size/Use Theme):</strong> <code>large carving board</code>, <code>extra large meat cutting board with groove</code></li>
+                        <li><strong>Ad Group C (Gifting Theme):</strong> <code>housewarming cutting board gift</code>, <code>personalized charcuterie board gift</code></li>
+                    </ul>
+                    <p>
+                        Clustering keeps search term reports clean and allows you to apply targeted negative keywords to specific ad groups without harming related product angles.
+                    </p>
+                </section>
+
+                <!-- STRATEGY 8: RUFUS AI SEMANTIC GUARDRAILS -->
+                <section id="sec-rule-8-rufus">
+                    <h2>Strategy 8: Rufus AI Conversational Semantic Guardrails</h2>
+                    <p>
+                        With conversational AI search, customer searches on Amazon frequently include comparative questions: <em>"is this cutting board dishwasher safe"</em> or <em>"best board for raw chicken"</em>.
+                    </p>
+                    <p>
+                        If your product is <strong>hand-wash only</strong>, broad match will happily match your ad to <em>"dishwasher safe wood cutting board"</em>. The customer clicks, discovers in bullet point 3 that it cannot be machine washed, and bounces. You pay for the click; the customer never buys.
+                    </p>
+                    <div class="callout-box callout-warning">
+                        <div class="callout-title">⚠️ NEGATIVE SPECIFICATION AUDIT</div>
+                        <p style="margin: 0; font-size: 14px;">
+                            List every feature your product DOES NOT possess (e.g. <code>dishwasher safe</code>, <code>cordless</code>, <code>battery operated</code>, <code>waterproof</code>, <code>vegan</code>, <code>sugar free</code>). Add them immediately as negative phrase targets in all broad match campaigns.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- STRATEGY 9: PORTFOLIO CIRCUIT BREAKERS -->
+                <section id="sec-rule-9-portfolios">
+                    <h2>Strategy 9: Portfolio Budget Caps &amp; Circuit Breakers</h2>
+                    <p>
+                        Never let broad match campaigns share unrestricted campaign-level budgets. If an unexpected seasonal trend or competitor stockout occurs, Amazon’s algorithm can blow through $300 in a few hours on broad match discovery.
+                    </p>
+                    <p>
+                        Create an <strong>Amazon Campaign Portfolio</strong> titled <em>"Research &amp; Broad Discovery"</em>. Set a fixed monthly portfolio cap. Once the discovery allocation is reached, Amazon automatically pauses broad campaigns until the next billing cycle, protecting your account profitability.
+                    </p>
+                </section>
+
+                <!-- INTERACTIVE CALCULATOR SECTION -->
+                <section id="sec-calculator">
+                    <h2>Interactive Broad Match Waste &amp; Harvest Estimator</h2>
+                    <p>
+                        Estimate your potential wasted ad spend and calculate ideal target ACoS using this interactive tool:
+                    </p>
+
+                    <div class="mini-calc-card">
+                        <div class="mini-calc-title">📊 Broad Campaign Efficiency Calculator</div>
+                        <div class="mini-calc-desc">Input your monthly broad match ad spend and sales to analyze efficiency:</div>
+
+                        <div class="mini-calc-grid">
+                            <div class="calc-input-group">
+                                <label for="miniCalcSpend">BROAD AD SPEND ($)</label>
+                                <input type="number" id="miniCalcSpend" value="1200" min="0" step="50">
+                            </div>
+                            <div class="calc-input-group">
+                                <label for="miniCalcSales">BROAD AD SALES ($)</label>
+                                <input type="number" id="miniCalcSales" value="4800" min="0" step="100">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="calc-result-box">
+                                <div style="font-size: 11px; font-family: 'DM Mono', monospace; color: #64748b; font-weight: 700;">BROAD ACOS</div>
+                                <div id="miniCalcResultAcos" style="font-size: 26px; font-weight: 800; color: #0284c7; font-family: 'DM Mono', monospace; margin-top: 4px;">25.0%</div>
+                            </div>
+                            <div class="calc-result-box">
+                                <div style="font-size: 11px; font-family: 'DM Mono', monospace; color: #64748b; font-weight: 700;">RETURN ON AD SPEND (ROAS)</div>
+                                <div id="miniCalcResultRoas" style="font-size: 26px; font-weight: 800; color: #059669; font-family: 'DM Mono', monospace; margin-top: 4px;">4.00x</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WEEKLY BROAD MAINTENANCE CHECKLIST -->
+                <section id="sec-checklist">
+                    <h2>Weekly Broad Match Maintenance Checklist</h2>
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+                        <ul style="color: #334155; font-size: 13.5px; line-height: 2; margin-bottom: 0; list-style: none; padding-left: 0;">
+                            <li>☑️ <strong>Monday:</strong> Filter search terms with &gt; 10 clicks and 0 sales over the last 14 days → Add as Negative Exact.</li>
+                            <li>☑️ <strong>Wednesday:</strong> Identify queries with &ge; 3 orders and &le; 25% ACoS → Promote to Exact SKAG + Add as Negative Exact in Broad.</li>
+                            <li>☑️ <strong>Friday:</strong> Review top-of-search placement share. If broad match CPC is creeping up, lower base bids by 10%.</li>
+                            <li>☑️ <strong>Sunday:</strong> Confirm broad match spend does not exceed 20% of your total account advertising budget.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- OUR PROCESS -->
+                <section id="sec-our-process">
+                    <h2>How PPC Growth Expert Audits Broad Match Campaigns</h2>
+                    <p>
+                        At <strong>PPC Growth Expert</strong>, we turn broad match from an unpredictable money pit into a high-converting search term machine. We audit existing campaigns for negative keyword leaks, build semantic guardrails, configure automated harvesting rules, and scale ad spend with surgical precision to maximize brand profit.
+                    </p>
+                </section>
+
+                <!-- CONTEXTUAL SERVICE CTA -->
+                <div class="service-cta-card">
+                    <h3 class="service-cta-title">ARE YOUR BROAD CAMPAIGNS BLEEDING AD BUDGET?</h3>
+                    <p class="service-cta-desc">
+                        Get a comprehensive Amazon PPC Audit. We diagnose search term leaks, negative keyword fencing gaps, and build an automated harvesting pipeline tailored to your catalog.
+                    </p>
+                    <a href="../contact.html" class="service-cta-btn">
+                        <span>Request Free PPC Audit</span> →
+                    </a>
+                </div>
+
+                <!-- SECTION: FAQS ACCORDION -->
+                <section id="sec-faqs">
+                    <h2>Frequently Asked Questions About Broad Match</h2>
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin: 24px 0;">
+                        <details name="faq-accordion" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; cursor: pointer;">
+                            <summary style="font-size: 15px; font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Should I turn off Broad match completely if ACoS is high?
+                                <span class="faq-icon" style="color: #0284c7; font-size: 18px; font-weight: 700; transition: transform 0.3s ease;">+</span>
+                            </summary>
+                            <p style="margin: 10px 0 0; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                                No. Turning off broad match chokes off your search term discovery pipeline. Instead of turning it off, prune non-converting search terms, add negative phrase lists, lower base bids by 35%, and limit daily budgets until ACoS stabilizes.
+                            </p>
+                        </details>
+
+                        <details name="faq-accordion" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; cursor: pointer;">
+                            <summary style="font-size: 15px; font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                What is the difference between Broad match and Phrase match?
+                                <span class="faq-icon" style="color: #0284c7; font-size: 18px; font-weight: 700; transition: transform 0.3s ease;">+</span>
+                            </summary>
+                            <p style="margin: 10px 0 0; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                                Phrase match requires your keywords to appear in the exact specified order (though words can appear before or after). Broad match allows words to appear in any order, interspersed with other words and synonyms.
+                            </p>
+                        </details>
+
+                        <details name="faq-accordion" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; cursor: pointer;">
+                            <summary style="font-size: 15px; font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Why do I need to add harvested keywords as Negative Exact in Broad?
+                                <span class="faq-icon" style="color: #0284c7; font-size: 18px; font-weight: 700; transition: transform 0.3s ease;">+</span>
+                            </summary>
+                            <p style="margin: 10px 0 0; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                                If you don't negative-isolate harvested terms, your Broad campaign will continue bidding on them, competing against your newly created Exact campaign. Adding Negative Exact eliminates internal bid cannibalization and forces the Broad campaign to explore new terms.
+                            </p>
+                        </details>
+
+                        <details name="faq-accordion" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; cursor: pointer;">
+                            <summary style="font-size: 15px; font-weight: 700; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                How many clicks before I should add a negative keyword?
+                                <span class="faq-icon" style="color: #0284c7; font-size: 18px; font-weight: 700; transition: transform 0.3s ease;">+</span>
+                            </summary>
+                            <p style="margin: 10px 0 0; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                                We recommend the 10-click rule for mid-priced items ($20–$50). If a search term accumulates 10 to 12 clicks without a single order, negate it immediately as Negative Exact. For expensive items ($100+), you may allow 15 clicks.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- AUTHOR BIO CARD -->
+                <div class="author-bio-card">
+                    <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="author-bio-img">
+                    <div>
+                        <h4 class="author-bio-name">Anmol Pokhriyal</h4>
+                        <div class="author-bio-role">Amazon PPC Growth Expert &amp; Founder</div>
+                        <p class="author-bio-text">
+                            Anmol specializes in data-driven Amazon advertising, helping marketplace brands reduce wasted ad spend, optimize ACoS and ROAS, and build scalable Amazon growth strategies.
+                        </p>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- RIGHT STICKY SIDEBAR -->
+            <aside class="article-sidebar">
+
+                <!-- RECOMMENDATIONS WIDGET -->
+                <div class="sidebar-widget">
+                    <div class="sidebar-widget-title">RECOMMENDED FOR YOU</div>
+                    <div class="rec-list">
+                        <a href="amazon-ppc-strategy-guide.html" class="rec-item">
+                            <span class="rec-cat">PPC STRATEGY 2027</span>
+                            <span class="rec-title">Amazon PPC Strategy: Complete Guide to Building Profitable Campaigns</span>
+                            <span class="rec-date">20 min read</span>
+                        </a>
+                        <a href="how-to-increase-sales-on-amazon.html" class="rec-item">
+                            <span class="rec-cat">SALES GROWTH</span>
+                            <span class="rec-title">How to Increase Sales on Amazon: 12 Proven Strategies for Sellers</span>
+                            <span class="rec-date">18 min read</span>
+                        </a>
+                        <a href="reduce-amazon-acos.html" class="rec-item">
+                            <span class="rec-cat">ACOS REDUCTION</span>
+                            <span class="rec-title">Why Is My Amazon PPC ACoS So High and How Can I Reduce It?</span>
+                            <span class="rec-date">16 min read</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NEWSLETTER WIDGET -->
+                <div class="sidebar-widget newsletter-widget">
+                    <div class="sidebar-widget-title">GET AMAZON GROWTH INSIGHTS</div>
+                    <p class="newsletter-text">
+                        One practical Amazon PPC strategy in your inbox every week. No spam. Just actionable growth insights.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm" action="javascript:void(0);" method="POST">
+                        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Your work email address..." required aria-label="Work email address">
+                        <button type="submit" class="newsletter-btn" id="newsletterBtn">Subscribe →</button>
+                    </form>
+                    <div id="newsletterSuccess" style="display: none; color: #10b981; font-weight: 700; font-size: 13px; margin-top: 10px; text-align: center;"></div>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================================
+         EXECUTIVE FOOTER
+    ========================================================= -->
+    <footer class="site-footer" id="footer" role="contentinfo" itemscope itemtype="http://schema.org/Organization">
+
+        <div class="footer-container">
+
+            <!-- TOP GRID -->
+            <div class="footer-grid">
+
+                <!-- COL 1: BRAND GLASS CARD -->
+                <div class="footer-col brand-col">
+                    <div class="brand-card">
+                        <a href="/" class="footer-logo">
+                            <div class="logo-badge">
+                                <div class="logo-symbol"></div>
+                            </div>
+                            <span class="logo-text">
+                                PPC <span class="highlight">Growth</span> Expert
+                            </span>
+                        </a>
+
+                        <p class="footer-sub-tagline">
+                            Independent Amazon PPC consultancy founded by Anmol Pokhriyal.
+                        </p>
+
+                        <p class="footer-tagline" itemprop="description">
+                            PPCGrowthExpert is an independent Amazon PPC specialist helping brands in India improve advertising performance, optimize ROAS and ACOS, and scale profitably through data-driven Amazon advertising.
+                        </p>
+
+                        <div class="footer-socials" aria-label="Social Media Links">
+                            <a href="https://wa.me/918433232647" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/anmol_pokhriyal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/anmol-pokhriyal-a4046a211?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/share/1E5RjgBYTS/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="https://pin.it/NXDO8kbgw" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z"/></svg>
+                            </a>
+                            <a href="https://medium.com/@anmolpokhriyal3200" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="social-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42s-3.38-2.88-3.38-6.42 1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COL 2: SERVICES -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">SERVICES</h3>
+                    <ul class="footer-links">
+                        <li><a href="../services.html#service-ppc-management">Amazon PPC Management Services</a></li>
+                        <li><a href="../services.html#service-listing-optimization">Amazon Listing Optimization</a></li>
+                        <li><a href="../services.html#service-image-aplus">Amazon A+ Content &amp; Image Design</a></li>
+                        <li><a href="../services.html#service-keyword-research">Amazon Keyword Research</a></li>
+                        <li><a href="../services.html#service-product-research">Amazon Product Research</a></li>
+                        <li><a href="../services.html#service-review-growth">Amazon Review Growth Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: CONTACT US -->
+                <div class="footer-col contact-col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <div class="contact-icon-pill">📍</div>
+                            <div>
+                                <span itemprop="addressLocality">Noida</span>,<br>
+                                <span itemprop="addressRegion">Uttar Pradesh</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">📞</div>
+                            <a href="tel:+918433232647" itemprop="telephone">+91 84332 32647</a>
+                        </li>
+                        <li>
+                            <div class="contact-icon-pill">✉️</div>
+                            <a href="mailto:anmolpokhriyal3200@gmail.com" itemprop="email">anmolpokhriyal3200@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: COMPANY -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../about.html#founder">Our Founder</a></li>
+                        <li><a href="../case-studies.html">Case Studies</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- MIDDLE BAR -->
+            <div class="footer-middle">
+                <p class="footer-meta-info">© 2026 PPC Growth Expert · Noida, Uttar Pradesh, India · +91 84332 32647 · anmolpokhriyal3200@gmail.com</p>
+                <div class="footer-legal-links">
+                    <a href="../privacy-policy.html" class="legal-pill">Privacy Policy</a>
+                    <a href="../terms.html" class="legal-pill">Terms &amp; Conditions</a>
+                </div>
+            </div>
+
+            <!-- BOTTOM COPYRIGHT BAR -->
+            <div class="footer-bottom">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="scroll-top-btn" aria-label="Scroll to top">
+                    ↑
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../js/script.js?v=v27"></script>
+    <script src="../js/navbar.js?v=v41"></script>
+    <script src="js/blog.js?v=v46"></script>
+
+</body>
+
+</html>
