@@ -490,7 +490,7 @@
 
 
 /* LAPTOP & INTERMEDIATE DESKTOP SCREEN ADAPTATION */
-@media (max-width: 1380px) and (min-width: 901px) {
+@media (max-width: 1380px) and (min-width: 1081px) {
     .navbar-container {
         width: calc(100% - 24px);
     }
@@ -507,7 +507,7 @@
     }
 }
 
-@media (max-width: 1120px) and (min-width: 901px) {
+@media (max-width: 1180px) and (min-width: 1081px) {
     .navbar-container {
         width: calc(100% - 16px);
     }
@@ -527,7 +527,7 @@
 
 /* RESPONSIVE */
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
 
     .nav-links,
     .status-pill {
@@ -870,7 +870,7 @@
     transform: translateX(0);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
     .nav-dropdown {
         width: 100%;
         flex-direction: column;
@@ -1108,7 +1108,7 @@
     font-weight: 700;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
     .dropdown-menu.mega-dropdown-menu {
         min-width: unset;
         width: 100%;
@@ -1361,7 +1361,7 @@
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
     .dropdown-menu.services-mega-dropdown {
         min-width: unset;
         width: 100%;

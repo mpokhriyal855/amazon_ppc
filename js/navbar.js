@@ -79,7 +79,7 @@
 
         // 2. On mobile: dropdown trigger click toggles submenu accordion
         const dropdownTrigger = e.target.closest('.nav-dropdown-trigger');
-        if (dropdownTrigger && window.innerWidth <= 900) {
+        if (dropdownTrigger && window.innerWidth <= 1080) {
             e.preventDefault();
             e.stopPropagation();
             const parentDropdown = dropdownTrigger.closest('.nav-dropdown');
@@ -94,7 +94,7 @@
         }
 
         // 3. Close open desktop dropdowns when clicking outside
-        if (window.innerWidth > 900) {
+        if (window.innerWidth > 1080) {
             document.querySelectorAll('.nav-dropdown.is-open').forEach(d => {
                 if (!d.contains(e.target)) {
                     d.classList.remove('is-open');
@@ -171,20 +171,25 @@
 
         navItems.forEach(item => {
             const href = (item.getAttribute("href") || "").toLowerCase();
-            if (href === currentPath || (currentPath !== "index.html" && href.endsWith("/" + currentPath))) {
-                item.classList.add("active");
-            } else if (pathname.includes("/services/") || currentPath.includes("services")) {
-                if (href.includes("services")) {
+            const text = item.textContent.trim().toLowerCase();
+            if (pathname.includes("/knowledge-hub/") || currentPath.includes("knowledge-hub")) {
+                if (!item.classList.contains("nav-dropdown-trigger") && (href.includes("knowledge-hub") || text === "knowledge hub")) {
                     item.classList.add("active");
                 }
-            } else if (pathname.includes("/calculators/") || pathname.includes("/knowledge-hub/") || currentPath.includes("calculator") || currentPath.includes("resources") || currentPath.includes("knowledge-hub")) {
-                if (item.classList.contains("nav-dropdown-trigger") && (href.includes("calculators") || href.includes("resources") || item.textContent.toLowerCase().includes("resources"))) {
+            } else if (pathname.includes("/services/") || currentPath.includes("services")) {
+                if (href.includes("services") || text.startsWith("services")) {
+                    item.classList.add("active");
+                }
+            } else if (pathname.includes("/calculators/") || currentPath.includes("calculator") || currentPath.includes("resources")) {
+                if (item.classList.contains("nav-dropdown-trigger") && (href.includes("calculators") || href.includes("resources") || text.includes("resources"))) {
                     item.classList.add("active");
                 }
             } else if (pathname.includes("/blog/") || currentPath.includes("blog")) {
-                if (href.includes("blog")) {
+                if (href.includes("blog") || text === "blog") {
                     item.classList.add("active");
                 }
+            } else if (href === currentPath || (currentPath !== "index.html" && href.endsWith("/" + currentPath))) {
+                item.classList.add("active");
             }
         });
     });
