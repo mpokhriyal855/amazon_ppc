@@ -44,7 +44,7 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="../../css/style.css?v=v41">
     <link rel="stylesheet" href="../../css/navbar.css?v=v52">
-    <link rel="stylesheet" href="../css/knowledge-hub.css?v=v3">
+    <link rel="stylesheet" href="../css/knowledge-hub.css?v=v4">
     <link rel="stylesheet" href="../../css/footer.css?v=v41">
     <link rel="stylesheet" href="../../css/whatsapp.css">
     <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
@@ -65,7 +65,7 @@
           "dateModified": "2026-11-12T12:00:00+05:30",
           "proficiencyLevel": "Beginner to Advanced",
           "articleSection": "Amazon India Knowledge Hub",
-          "wordCount": 4731,
+          "wordCount": 4935,
           "author": {
             "@type": "Person",
             "name": "Anmol Pokhriyal",
@@ -699,11 +699,11 @@
     </header>
 
     <!-- =========================================================
-         2-COLUMN HANDBOOK WORKSPACE
+         CENTERED HANDBOOK WORKSPACE (SIDEBAR RAIL HIDDEN FOR NOW)
     ========================================================= -->
     <div class="kh-doc-workspace">
 
-        <!-- LEFT STICKY CHAPTER NAVIGATION -->
+        <!-- HIDDEN FOR NOW: LEFT STICKY CHAPTER NAVIGATION
         <aside class="kh-toc-rail" aria-label="Guide Chapters Navigation">
             <div class="kh-toc-card">
                 <div class="kh-toc-head">
@@ -754,12 +754,13 @@
                 </div>
             </div>
         </aside>
+        -->
 
         <div style="min-width: 0;">
 
-            <!-- MOBILE COLLAPSED CHAPTER DRAWER -->
+            <!-- COLLAPSED CHAPTER JUMP DRAWER -->
             <details class="kh-mobile-toc">
-                <summary>Jump to Any Chapter (20 Sections + Glossary &amp; FAQs)</summary>
+                <summary>Handbook Index · Jump to Any Chapter (20 Chapters + Glossary &amp; FAQs)</summary>
                 <div class="kh-mobile-toc-grid">
                     <a href="#sec-what-is">1. What Is Selling on Amazon.in?</a>
                     <a href="#sec-who-can-sell">2. Who Can Sell on Amazon.in?</a>
@@ -835,66 +836,71 @@
                     </ul>
 
                     <div class="kh-diagram-wrap">
-                        <svg viewBox="0 0 760 235" role="img" aria-label="Amazon India Seller to Customer Order and Settlement Flow">
-                            <rect width="760" height="235" rx="14" fill="#0b1120" />
-                            <text x="380" y="28" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">END-TO-END SELLER-TO-CUSTOMER FLOW ON AMAZON.IN</text>
+                        <svg viewBox="0 0 760 240" role="img" aria-label="Amazon India Seller to Customer Order and Settlement Flow">
+                            <rect width="760" height="240" rx="14" fill="#f4f8ff" />
+                            <text x="380" y="28" text-anchor="middle" fill="#1d4ed8" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">END-TO-END SELLER-TO-CUSTOMER FLOW ON AMAZON.IN</text>
 
-                            <rect x="22" y="52" width="128" height="106" rx="10" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.5" />
-                            <text x="86" y="76" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 01</text>
-                            <text x="86" y="96" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Catalog &amp; Offer</text>
-                            <text x="86" y="116" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Seller sets price,</text>
-                            <text x="86" y="130" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">stock &amp; SEO copy</text>
-                            <text x="86" y="146" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="9">Seller Central</text>
+                            <rect x="20" y="48" width="128" height="114" rx="12" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.6" />
+                            <rect x="20" y="48" width="128" height="24" rx="10" fill="#eff6ff" />
+                            <text x="84" y="64" text-anchor="middle" fill="#2563eb" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 01</text>
+                            <text x="84" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Catalog &amp; Offer</text>
+                            <text x="84" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Seller sets price,</text>
+                            <text x="84" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">stock &amp; SEO copy</text>
+                            <text x="84" y="148" text-anchor="middle" fill="#2563eb" font-family="DM Mono, monospace" font-size="9" font-weight="700">Seller Central</text>
 
-                            <path d="M 154 105 L 172 105" stroke="#38bdf8" stroke-width="2" />
-                            <polygon points="175,105 169,101 169,109" fill="#38bdf8" />
+                            <path d="M 152 105 L 170 105" stroke="#2563eb" stroke-width="2" />
+                            <polygon points="173,105 167,101 167,109" fill="#2563eb" />
 
-                            <rect x="178" y="52" width="128" height="106" rx="10" fill="rgba(129, 140, 248, 0.12)" stroke="#818cf8" stroke-width="1.5" />
-                            <text x="242" y="76" text-anchor="middle" fill="#a5b4fc" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 02</text>
-                            <text x="242" y="96" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Buyer Checkout</text>
-                            <text x="242" y="116" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Search / PPC click</text>
-                            <text x="242" y="130" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">+ UPI / Card / COD</text>
-                            <text x="242" y="146" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="9">Featured Offer</text>
+                            <rect x="176" y="48" width="128" height="114" rx="12" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.6" />
+                            <rect x="176" y="48" width="128" height="24" rx="10" fill="#eef2ff" />
+                            <text x="240" y="64" text-anchor="middle" fill="#4f46e5" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 02</text>
+                            <text x="240" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Buyer Checkout</text>
+                            <text x="240" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Search / PPC click</text>
+                            <text x="240" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">+ UPI / Card / COD</text>
+                            <text x="240" y="148" text-anchor="middle" fill="#4f46e5" font-family="DM Mono, monospace" font-size="9" font-weight="700">Featured Offer</text>
 
-                            <path d="M 310 105 L 328 105" stroke="#818cf8" stroke-width="2" />
-                            <polygon points="331,105 325,101 325,109" fill="#818cf8" />
+                            <path d="M 308 105 L 326 105" stroke="#4f46e5" stroke-width="2" />
+                            <polygon points="329,105 323,101 323,109" fill="#4f46e5" />
 
-                            <rect x="334" y="52" width="128" height="106" rx="10" fill="rgba(16, 185, 129, 0.12)" stroke="#10b981" stroke-width="1.5" />
-                            <text x="398" y="76" text-anchor="middle" fill="#34d399" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 03</text>
-                            <text x="398" y="96" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Fulfilment</text>
-                            <text x="398" y="116" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">FBA (Amazon packs)</text>
-                            <text x="398" y="130" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">or Easy / Self-Ship</text>
-                            <text x="398" y="146" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="9">GST Buyer Invoice</text>
+                            <rect x="332" y="48" width="128" height="114" rx="12" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.6" />
+                            <rect x="332" y="48" width="128" height="24" rx="10" fill="#ecfdf5" />
+                            <text x="396" y="64" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 03</text>
+                            <text x="396" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Fulfilment</text>
+                            <text x="396" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">FBA (Amazon packs)</text>
+                            <text x="396" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">or Easy / Self-Ship</text>
+                            <text x="396" y="148" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="9" font-weight="700">GST Buyer Invoice</text>
 
-                            <path d="M 466 105 L 484 105" stroke="#10b981" stroke-width="2" />
-                            <polygon points="487,105 481,101 481,109" fill="#10b981" />
+                            <path d="M 464 105 L 482 105" stroke="#059669" stroke-width="2" />
+                            <polygon points="485,105 479,101 479,109" fill="#059669" />
 
-                            <rect x="490" y="52" width="114" height="106" rx="10" fill="rgba(251, 191, 36, 0.12)" stroke="#fbbf24" stroke-width="1.5" />
-                            <text x="547" y="76" text-anchor="middle" fill="#fbbf24" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 04</text>
-                            <text x="547" y="96" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Delivery</text>
-                            <text x="547" y="116" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Verified pincode</text>
-                            <text x="547" y="130" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">delivery &amp; return</text>
-                            <text x="547" y="146" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="9">window tracking</text>
+                            <rect x="488" y="48" width="116" height="114" rx="12" fill="#ffffff" stroke="#fde68a" stroke-width="1.6" />
+                            <rect x="488" y="48" width="116" height="24" rx="10" fill="#fffbeb" />
+                            <text x="546" y="64" text-anchor="middle" fill="#b45309" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 04</text>
+                            <text x="546" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Delivery</text>
+                            <text x="546" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Verified pincode</text>
+                            <text x="546" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">delivery &amp; return</text>
+                            <text x="546" y="148" text-anchor="middle" fill="#b45309" font-family="DM Mono, monospace" font-size="9" font-weight="700">window tracking</text>
 
-                            <path d="M 608 105 L 624 105" stroke="#fbbf24" stroke-width="2" />
-                            <polygon points="627,105 621,101 621,109" fill="#fbbf24" />
+                            <path d="M 608 105 L 624 105" stroke="#0284c7" stroke-width="2" />
+                            <polygon points="627,105 621,101 621,109" fill="#0284c7" />
 
-                            <rect x="630" y="52" width="108" height="106" rx="10" fill="rgba(56, 189, 248, 0.16)" stroke="#38bdf8" stroke-width="1.5" />
-                            <text x="684" y="76" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 05</text>
-                            <text x="684" y="96" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Settlement</text>
-                            <text x="684" y="116" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Sale minus fees,</text>
-                            <text x="684" y="130" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10">18% GST &amp; TCS/TDS</text>
-                            <text x="684" y="146" text-anchor="middle" fill="#34d399" font-family="DM Mono, monospace" font-size="9">NEFT to Bank</text>
+                            <rect x="630" y="48" width="110" height="114" rx="12" fill="#ffffff" stroke="#bae6fd" stroke-width="1.6" />
+                            <rect x="630" y="48" width="110" height="24" rx="10" fill="#f0f9ff" />
+                            <text x="685" y="64" text-anchor="middle" fill="#0284c7" font-family="DM Mono, monospace" font-size="10" font-weight="700">STEP 05</text>
+                            <text x="685" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Settlement</text>
+                            <text x="685" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Sale minus fees,</text>
+                            <text x="685" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10">18% GST &amp; TCS/TDS</text>
+                            <text x="685" y="148" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="9" font-weight="700">NEFT to Bank</text>
 
-                            <rect x="22" y="176" width="716" height="40" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(148, 163, 184, 0.25)" />
-                            <text x="380" y="200" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Feedback Loop: Reviews, Return Rate (NCX), and Order Defect Rate shape future Buy Box share &amp; rank.</text>
+                            <rect x="20" y="180" width="720" height="42" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" />
+                            <text x="380" y="205" text-anchor="middle" fill="#1e293b" font-family="Plus Jakarta Sans, sans-serif" font-size="11.2" font-weight="600">Feedback Loop: Reviews, Return Rate (NCX), and Order Defect Rate shape future Buy Box share &amp; organic rank.</text>
                         </svg>
                         <div class="kh-diagram-caption">Figure 1: Amazon India Seller-to-Customer Transaction &amp; Settlement Lifecycle</div>
                     </div>
                 </section>
 
                 <!-- SECTION 2 -->
-                <section id="sec-who-can-sell" class="kh-chapter-card">
+                <section id="sec-who-can-sell" class="kh-chapter-card kh-band-emerald">
                     <div class="kh-chapter-kicker">CHAPTER 02 · ELIGIBILITY</div>
                     <h2>2. Who Can Sell on Amazon India?</h2>
                     <p>
@@ -936,7 +942,7 @@
                 </section>
 
                 <!-- SECTION 3 -->
-                <section id="sec-requirements" class="kh-chapter-card">
+                <section id="sec-requirements" class="kh-chapter-card kh-band-blue">
                     <div class="kh-chapter-kicker">CHAPTER 03 · GST &amp; KYC DOCUMENTS</div>
                     <h2>3. Requirements to Start Selling on Amazon India</h2>
                     <p>
@@ -973,7 +979,7 @@
                 </section>
 
                 <!-- SECTION 4 -->
-                <section id="sec-registration" class="kh-chapter-card kh-chapter-card--tinted">
+                <section id="sec-registration" class="kh-chapter-card kh-band-indigo">
                     <div class="kh-chapter-kicker">CHAPTER 04 · STEP-BY-STEP ONBOARDING</div>
                     <h2>4. Seller Registration Process (13 Steps)</h2>
                     <p>
@@ -991,53 +997,58 @@
                     </ol>
 
                     <div class="kh-diagram-wrap">
-                        <svg viewBox="0 0 760 190" role="img" aria-label="Amazon India Seller Registration Flowchart from KYC to Live Catalog">
-                            <rect width="760" height="190" rx="12" fill="#0f172a" />
-                            <text x="380" y="28" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.8">AMAZON.IN ONBOARDING &amp; VERIFICATION PATHWAY</text>
+                        <svg viewBox="0 0 760 198" role="img" aria-label="Amazon India Seller Registration Flowchart from KYC to Live Catalog">
+                            <rect width="760" height="198" rx="14" fill="#f4f8ff" />
+                            <text x="380" y="28" text-anchor="middle" fill="#1d4ed8" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.8">AMAZON.IN ONBOARDING &amp; VERIFICATION PATHWAY</text>
 
-                            <rect x="20" y="52" width="128" height="92" rx="8" fill="rgba(20, 184, 166, 0.14)" stroke="#14b8a6" stroke-width="1.4" />
-                            <text x="84" y="75" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 01</text>
-                            <text x="84" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Docs &amp; Pincode</text>
-                            <text x="84" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">PAN, GST REG-06</text>
-                            <text x="84" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">&amp; Bank Proof Ready</text>
+                            <rect x="20" y="48" width="128" height="104" rx="10" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.6" />
+                            <rect x="20" y="48" width="128" height="24" rx="8" fill="#ecfdf5" />
+                            <text x="84" y="64" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 01</text>
+                            <text x="84" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Docs &amp; Pincode</text>
+                            <text x="84" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">PAN, GST REG-06</text>
+                            <text x="84" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">&amp; Bank Proof Ready</text>
 
-                            <path d="M 152 98 L 168 98" stroke="#2dd4bf" stroke-width="2" />
-                            <polygon points="171,98 165,94 165,102" fill="#2dd4bf" />
+                            <path d="M 152 100 L 168 100" stroke="#059669" stroke-width="2" />
+                            <polygon points="171,100 165,96 165,104" fill="#059669" />
 
-                            <rect x="172" y="52" width="128" height="92" rx="8" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.4" />
-                            <text x="236" y="75" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 02</text>
-                            <text x="236" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Account &amp; GSTIN</text>
-                            <text x="236" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">sell.amazon.in</text>
-                            <text x="236" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">OTP &amp; Legal Match</text>
+                            <rect x="172" y="48" width="128" height="104" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.6" />
+                            <rect x="172" y="48" width="128" height="24" rx="8" fill="#eff6ff" />
+                            <text x="236" y="64" text-anchor="middle" fill="#2563eb" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 02</text>
+                            <text x="236" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Account &amp; GSTIN</text>
+                            <text x="236" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">sell.amazon.in</text>
+                            <text x="236" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">OTP &amp; Legal Match</text>
 
-                            <path d="M 304 98 L 320 98" stroke="#38bdf8" stroke-width="2" />
-                            <polygon points="323,98 317,94 317,102" fill="#38bdf8" />
+                            <path d="M 304 100 L 320 100" stroke="#2563eb" stroke-width="2" />
+                            <polygon points="323,100 317,96 317,104" fill="#2563eb" />
 
-                            <rect x="324" y="52" width="128" height="92" rx="8" fill="rgba(251, 191, 36, 0.12)" stroke="#fbbf24" stroke-width="1.4" />
-                            <text x="388" y="75" text-anchor="middle" fill="#fbbf24" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 03</text>
-                            <text x="388" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Bank &amp; PTC Tax</text>
-                            <text x="388" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">IFSC Verification &amp;</text>
-                            <text x="388" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Signature Upload</text>
+                            <rect x="324" y="48" width="128" height="104" rx="10" fill="#ffffff" stroke="#fde68a" stroke-width="1.6" />
+                            <rect x="324" y="48" width="128" height="24" rx="8" fill="#fffbeb" />
+                            <text x="388" y="64" text-anchor="middle" fill="#b45309" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 03</text>
+                            <text x="388" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Bank &amp; PTC Tax</text>
+                            <text x="388" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">IFSC Verification &amp;</text>
+                            <text x="388" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Signature Upload</text>
 
-                            <path d="M 456 98 L 472 98" stroke="#fbbf24" stroke-width="2" />
-                            <polygon points="475,98 469,94 469,102" fill="#fbbf24" />
+                            <path d="M 456 100 L 472 100" stroke="#b45309" stroke-width="2" />
+                            <polygon points="475,100 469,96 469,104" fill="#b45309" />
 
-                            <rect x="476" y="52" width="128" height="92" rx="8" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.4" />
-                            <text x="540" y="75" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 04</text>
-                            <text x="540" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Video Identity KYC</text>
-                            <text x="540" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Live Original PAN</text>
-                            <text x="540" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">&amp; ID Inspection</text>
+                            <rect x="476" y="48" width="128" height="104" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.6" />
+                            <rect x="476" y="48" width="128" height="24" rx="8" fill="#eef2ff" />
+                            <text x="540" y="64" text-anchor="middle" fill="#4f46e5" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 04</text>
+                            <text x="540" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Video Identity KYC</text>
+                            <text x="540" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Live Original PAN</text>
+                            <text x="540" y="126" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">&amp; ID Inspection</text>
 
-                            <path d="M 608 98 L 624 98" stroke="#2dd4bf" stroke-width="2" />
-                            <polygon points="627,98 621,94 621,102" fill="#2dd4bf" />
+                            <path d="M 608 100 L 624 100" stroke="#059669" stroke-width="2" />
+                            <polygon points="627,100 621,96 621,104" fill="#059669" />
 
-                            <rect x="628" y="52" width="112" height="92" rx="8" fill="rgba(20, 184, 166, 0.2)" stroke="#14b8a6" stroke-width="1.6" />
-                            <text x="684" y="75" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 05</text>
-                            <text x="684" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Account Active</text>
-                            <text x="684" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">2–7 Working Days</text>
-                            <text x="684" y="128" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9">List First ASIN</text>
+                            <rect x="628" y="48" width="112" height="104" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="1.8" />
+                            <rect x="628" y="48" width="112" height="24" rx="8" fill="#ecfdf5" />
+                            <text x="684" y="64" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 05</text>
+                            <text x="684" y="92" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Account Active</text>
+                            <text x="684" y="112" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">2–7 Working Days</text>
+                            <text x="684" y="132" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="9" font-weight="700">List First ASIN</text>
 
-                            <text x="380" y="170" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="9.5">Official onboarding instructions: sell.amazon.in/sell-online/seller-registration-guide</text>
+                            <text x="380" y="178" text-anchor="middle" fill="#475569" font-family="DM Mono, monospace" font-size="9.5">Official onboarding instructions: sell.amazon.in/sell-online/seller-registration-guide</text>
                         </svg>
                         <div class="kh-diagram-caption">Figure 2: Amazon India Seller Registration &amp; Video KYC Workflow</div>
                     </div>
@@ -1079,7 +1090,7 @@
                 </section>
 
                 <!-- SECTION 6 -->
-                <section id="sec-what-to-sell" class="kh-chapter-card">
+                <section id="sec-what-to-sell" class="kh-chapter-card kh-band-emerald">
                     <div class="kh-chapter-kicker">CHAPTER 06 · PRODUCT SELECTION &amp; SOURCING</div>
                     <h2>6. Choosing What to Sell &amp; Sourcing Strategy</h2>
                     <ul>
@@ -1166,7 +1177,7 @@
                 </section>
 
                 <!-- SECTION 8 -->
-                <section id="sec-fulfilment" class="kh-chapter-card kh-chapter-card--tinted">
+                <section id="sec-fulfilment" class="kh-chapter-card kh-band-cyan">
                     <div class="kh-chapter-kicker">CHAPTER 08 · LOGISTICS &amp; PRIME SPEED</div>
                     <h2>8. Fulfilment Models: FBA vs Easy Ship vs Self-Ship</h2>
                     <div class="kh-table-wrap">
@@ -1203,27 +1214,30 @@
                     </div>
 
                     <div class="kh-diagram-wrap">
-                        <svg viewBox="0 0 760 220" role="img" aria-label="FBA vs Easy Ship vs Self-Ship Operational Comparison Diagram">
-                            <rect width="760" height="220" rx="14" fill="#0b1120" />
-                            <text x="380" y="28" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">FULFILMENT PATHWAYS ON AMAZON INDIA</text>
+                        <svg viewBox="0 0 760 226" role="img" aria-label="FBA vs Easy Ship vs Self-Ship Operational Comparison Diagram">
+                            <rect width="760" height="226" rx="14" fill="#f4f8ff" />
+                            <text x="380" y="28" text-anchor="middle" fill="#1d4ed8" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">FULFILMENT PATHWAYS ON AMAZON INDIA</text>
 
-                            <rect x="24" y="48" width="712" height="46" rx="8" fill="rgba(16, 185, 129, 0.12)" stroke="#10b981" stroke-width="1.4" />
-                            <text x="40" y="76" fill="#34d399" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">1. FBA (PRIME)</text>
-                            <text x="154" y="75" fill="#e2e8f0" font-family="DM Mono, monospace" font-size="9.5">Bulk Inbound → Amazon FC Storage → Amazon Packs &amp; Delivers (1–2d)</text>
-                            <rect x="642" y="59" width="84" height="24" rx="12" fill="rgba(16, 185, 129, 0.25)" />
-                            <text x="684" y="75" text-anchor="middle" fill="#34d399" font-family="DM Mono, monospace" font-size="9" font-weight="700">HIGHEST CVR</text>
+                            <rect x="22" y="46" width="716" height="48" rx="10" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.6" />
+                            <rect x="22" y="46" width="8" height="48" rx="4" fill="#059669" />
+                            <text x="44" y="75" fill="#059669" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">1. FBA (PRIME)</text>
+                            <text x="164" y="74" fill="#334155" font-family="DM Mono, monospace" font-size="9.5" font-weight="500">Bulk Inbound → Amazon FC Storage → Amazon Packs &amp; Delivers (1–2d)</text>
+                            <rect x="638" y="58" width="86" height="24" rx="12" fill="#ecfdf5" stroke="#a7f3d0" />
+                            <text x="681" y="74" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="9" font-weight="700">HIGHEST CVR</text>
 
-                            <rect x="24" y="104" width="712" height="46" rx="8" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.4" />
-                            <text x="40" y="132" fill="#38bdf8" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">2. EASY SHIP</text>
-                            <text x="154" y="131" fill="#e2e8f0" font-family="DM Mono, monospace" font-size="9.5">Order Arrives → Seller Packs Box → Amazon Courier Delivers (3–6d)</text>
-                            <rect x="642" y="115" width="84" height="24" rx="12" fill="rgba(56, 189, 248, 0.25)" />
-                            <text x="684" y="131" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9" font-weight="700">LOW CAPEX</text>
+                            <rect x="22" y="104" width="716" height="48" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.6" />
+                            <rect x="22" y="104" width="8" height="48" rx="4" fill="#2563eb" />
+                            <text x="44" y="133" fill="#2563eb" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">2. EASY SHIP</text>
+                            <text x="164" y="132" fill="#334155" font-family="DM Mono, monospace" font-size="9.5" font-weight="500">Order Arrives → Seller Packs Box → Amazon Courier Delivers (3–6d)</text>
+                            <rect x="638" y="116" width="86" height="24" rx="12" fill="#eff6ff" stroke="#bfdbfe" />
+                            <text x="681" y="132" text-anchor="middle" fill="#2563eb" font-family="DM Mono, monospace" font-size="9" font-weight="700">LOW CAPEX</text>
 
-                            <rect x="24" y="160" width="712" height="46" rx="8" fill="rgba(148, 163, 184, 0.12)" stroke="#94a3b8" stroke-width="1.4" />
-                            <text x="40" y="188" fill="#e2e8f0" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">3. SELF-SHIP</text>
-                            <text x="154" y="187" fill="#cbd5e1" font-family="DM Mono, monospace" font-size="9.5">Seller Packs → 3PL Courier → Tracking ID Upload (VTR &gt; 95%)</text>
-                            <rect x="642" y="171" width="84" height="24" rx="12" fill="rgba(148, 163, 184, 0.22)" />
-                            <text x="684" y="187" text-anchor="middle" fill="#e2e8f0" font-family="DM Mono, monospace" font-size="9" font-weight="700">HEAVY / NICHE</text>
+                            <rect x="22" y="162" width="716" height="48" rx="10" fill="#ffffff" stroke="#c7d2fe" stroke-width="1.6" />
+                            <rect x="22" y="162" width="8" height="48" rx="4" fill="#4f46e5" />
+                            <text x="44" y="191" fill="#4f46e5" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">3. SELF-SHIP</text>
+                            <text x="164" y="190" fill="#334155" font-family="DM Mono, monospace" font-size="9.5" font-weight="500">Seller Packs → 3PL Courier → Tracking ID Upload (VTR &gt; 95%)</text>
+                            <rect x="638" y="174" width="86" height="24" rx="12" fill="#eef2ff" stroke="#c7d2fe" />
+                            <text x="681" y="190" text-anchor="middle" fill="#4f46e5" font-family="DM Mono, monospace" font-size="9" font-weight="700">HEAVY / NICHE</text>
                         </svg>
                         <div class="kh-diagram-caption">Figure 3: Fulfilment Control, Courier Ownership &amp; Prime Conversion Impact</div>
                     </div>
@@ -1244,7 +1258,7 @@
                 </section>
 
                 <!-- SECTION 10 -->
-                <section id="sec-pricing-buybox" class="kh-chapter-card">
+                <section id="sec-pricing-buybox" class="kh-chapter-card kh-band-blue">
                     <div class="kh-chapter-kicker">CHAPTER 10 · BUY BOX DISCIPLINE</div>
                     <h2>10. Pricing Strategy &amp; Winning the Featured Offer</h2>
                     <ul>
@@ -1255,7 +1269,7 @@
                 </section>
 
                 <!-- SECTION 11 -->
-                <section id="sec-fees-pricing" class="kh-chapter-card kh-chapter-card--tinted">
+                <section id="sec-fees-pricing" class="kh-chapter-card kh-band-emerald">
                     <div class="kh-chapter-kicker">CHAPTER 11 · UNIT ECONOMICS ENGINE</div>
                     <h2>11. Amazon India Selling Fees &amp; ₹799 Profit Math</h2>
                     <p>
@@ -1356,7 +1370,7 @@
                 </section>
 
                 <!-- SECTION 13 -->
-                <section id="sec-orders-inventory-returns" class="kh-chapter-card">
+                <section id="sec-orders-inventory-returns" class="kh-chapter-card kh-band-blue">
                     <div class="kh-chapter-kicker">CHAPTER 13 · ORDERS, INVENTORY &amp; RETURNS</div>
                     <h2>13. Managing Orders, Inventory and Returns</h2>
                     <ul>
@@ -1377,7 +1391,7 @@
                 </section>
 
                 <!-- SECTION 14 -->
-                <section id="sec-account-health" class="kh-chapter-card kh-chapter-card--tinted">
+                <section id="sec-account-health" class="kh-chapter-card kh-band-indigo">
                     <div class="kh-chapter-kicker">CHAPTER 14 · ACCOUNT HEALTH BENCHMARKS</div>
                     <h2>14. Account Health and Amazon Policies</h2>
                     <p>
@@ -1424,7 +1438,7 @@
                 </section>
 
                 <!-- SECTION 15 -->
-                <section id="sec-scale-sales" class="kh-chapter-card">
+                <section id="sec-scale-sales" class="kh-chapter-card kh-band-emerald">
                     <div class="kh-chapter-kicker">CHAPTER 15 · SCALING PLAYBOOK</div>
                     <h2>15. How to Increase Sales on Amazon India</h2>
                     <p>
@@ -1460,7 +1474,7 @@
                 </section>
 
                 <!-- SECTION 16 -->
-                <section id="sec-ppc" class="kh-chapter-card kh-chapter-card--tinted">
+                <section id="sec-ppc" class="kh-chapter-card kh-band-cyan">
                     <div class="kh-chapter-kicker">CHAPTER 16 · ADVERTISING &amp; TACOS ENGINE</div>
                     <h2>16. Introduction to Amazon Advertising (Amazon PPC)</h2>
                     <p>
@@ -1492,36 +1506,39 @@
 
                     <!-- SVG DIAGRAM 4: AMAZON PPC LAUNCH FUNNEL -->
                     <div class="kh-diagram-wrap">
-                        <svg viewBox="0 0 760 220" role="img" aria-label="Controlled Amazon PPC Launch and Graduation Funnel">
-                            <rect width="760" height="220" rx="12" fill="#070d1e" />
-                            <text x="380" y="28" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">PROFIT-CONTROLLED AMAZON PPC LAUNCH &amp; SCALING ARCHITECTURE</text>
+                        <svg viewBox="0 0 760 228" role="img" aria-label="Controlled Amazon PPC Launch and Graduation Funnel">
+                            <rect width="760" height="228" rx="14" fill="#f4f8ff" />
+                            <text x="380" y="28" text-anchor="middle" fill="#1d4ed8" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">PROFIT-CONTROLLED AMAZON PPC LAUNCH &amp; SCALING ARCHITECTURE</text>
 
-                            <rect x="26" y="54" width="212" height="106" rx="10" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.5" />
-                            <text x="132" y="78" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 01 · DISCOVERY</text>
-                            <text x="132" y="99" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Auto &amp; Broad Research</text>
-                            <text x="132" y="120" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Low controlled bids uncover</text>
-                            <text x="132" y="136" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">real customer &amp; Hinglish terms</text>
+                            <rect x="24" y="48" width="214" height="118" rx="12" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.6" />
+                            <rect x="24" y="48" width="214" height="26" rx="10" fill="#eff6ff" />
+                            <text x="131" y="65" text-anchor="middle" fill="#2563eb" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 01 · DISCOVERY</text>
+                            <text x="131" y="96" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Auto &amp; Broad Research</text>
+                            <text x="131" y="118" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Low controlled bids uncover</text>
+                            <text x="131" y="135" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">real customer &amp; Hinglish terms</text>
 
-                            <path d="M 244 107 L 266 107" stroke="#38bdf8" stroke-width="2" />
-                            <polygon points="270,107 263,103 263,111" fill="#38bdf8" />
+                            <path d="M 244 107 L 266 107" stroke="#2563eb" stroke-width="2" />
+                            <polygon points="270,107 263,103 263,111" fill="#2563eb" />
 
-                            <rect x="274" y="54" width="212" height="106" rx="10" fill="rgba(245, 158, 11, 0.12)" stroke="#fbbf24" stroke-width="1.5" />
-                            <text x="380" y="78" text-anchor="middle" fill="#fbbf24" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 02 · PRUNING</text>
-                            <text x="380" y="99" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Weekly Search Term Audit</text>
-                            <text x="380" y="120" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Block zero-sale bleeders via</text>
-                            <text x="380" y="136" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Negative Exact &amp; Phrase match</text>
+                            <rect x="273" y="48" width="214" height="118" rx="12" fill="#ffffff" stroke="#fde68a" stroke-width="1.6" />
+                            <rect x="273" y="48" width="214" height="26" rx="10" fill="#fffbeb" />
+                            <text x="380" y="65" text-anchor="middle" fill="#b45309" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 02 · PRUNING</text>
+                            <text x="380" y="96" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Weekly Search Term Audit</text>
+                            <text x="380" y="118" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Block zero-sale bleeders via</text>
+                            <text x="380" y="135" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Negative Exact &amp; Phrase match</text>
 
-                            <path d="M 492 107 L 514 107" stroke="#10b981" stroke-width="2" />
-                            <polygon points="518,107 511,103 511,111" fill="#10b981" />
+                            <path d="M 493 107 L 515 107" stroke="#059669" stroke-width="2" />
+                            <polygon points="519,107 512,103 512,111" fill="#059669" />
 
-                            <rect x="522" y="54" width="212" height="106" rx="10" fill="rgba(20, 184, 166, 0.14)" stroke="#14b8a6" stroke-width="1.5" />
-                            <text x="628" y="78" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 03 · HARVEST &amp; SCALE</text>
-                            <text x="628" y="99" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Exact Hero Campaigns</text>
-                            <text x="628" y="120" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Graduate proven keywords to</text>
-                            <text x="628" y="136" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Exact bids capped by Break-Even</text>
+                            <rect x="522" y="48" width="214" height="118" rx="12" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.6" />
+                            <rect x="522" y="48" width="214" height="26" rx="10" fill="#ecfdf5" />
+                            <text x="629" y="65" text-anchor="middle" fill="#059669" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 03 · HARVEST &amp; SCALE</text>
+                            <text x="629" y="96" text-anchor="middle" fill="#0f172a" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800">Exact Hero Campaigns</text>
+                            <text x="629" y="118" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Graduate proven keywords to</text>
+                            <text x="629" y="135" text-anchor="middle" fill="#475569" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Exact bids capped by Break-Even</text>
 
-                            <rect x="26" y="176" width="708" height="30" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(148, 163, 184, 0.25)" />
-                            <text x="380" y="195" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="10">Rule: Never scale clicks on a weak listing—fix CTR &amp; CVR first, then scale exact winners under TACoS targets.</text>
+                            <rect x="24" y="182" width="712" height="32" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" />
+                            <text x="380" y="202" text-anchor="middle" fill="#1d4ed8" font-family="DM Mono, monospace" font-size="10" font-weight="700">Rule: Never scale clicks on a weak listing—fix CTR &amp; CVR first, then scale exact winners under TACoS targets.</text>
                         </svg>
                         <div class="kh-diagram-caption">Figure 4: Three-Layer PPC Workflow Connecting Search Term Discovery, Negative Pruning, and Exact Scale</div>
                     </div>
@@ -1545,7 +1562,7 @@
                 </section>
 
                 <!-- SECTION 18 -->
-                <section id="sec-mistakes" class="kh-chapter-card">
+                <section id="sec-mistakes" class="kh-chapter-card kh-band-blue">
                     <div class="kh-chapter-kicker">CHAPTER 18 · PITFALLS TO AVOID</div>
                     <h2>18. Common Mistakes Beginners Must Avoid</h2>
                     <div class="kh-table-wrap">
@@ -1594,7 +1611,7 @@
                 </section>
 
                 <!-- SECTION 19 -->
-                <section id="sec-budget" class="kh-chapter-card kh-chapter-card--tinted">
+                <section id="sec-budget" class="kh-chapter-card kh-band-emerald">
                     <div class="kh-chapter-kicker">CHAPTER 19 · STARTUP CAPITAL</div>
                     <h2>19. How Much Investment Is Required to Start Selling on Amazon India?</h2>
                     <p>
@@ -1796,7 +1813,7 @@
                 </section>
 
                 <!-- GLOSSARY SECTION (24 ESSENTIAL TERMS) -->
-                <section id="sec-glossary" class="kh-chapter-card">
+                <section id="sec-glossary" class="kh-chapter-card kh-band-indigo">
                     <div class="kh-chapter-kicker">REFERENCE · SELLER GLOSSARY</div>
                     <h2>Amazon India Seller Glossary (Key Terms Explained)</h2>
                     <div class="kh-glossary-grid">
@@ -1895,7 +1912,7 @@
                 </section>
 
                 <!-- CONCLUSION & ACTION STEPS -->
-                <section id="sec-conclusion" class="kh-chapter-card kh-chapter-card--tinted">
+                <section id="sec-conclusion" class="kh-chapter-card kh-band-blue">
                     <div class="kh-chapter-kicker">SUMMARY · NEXT STEPS</div>
                     <h2>Conclusion: Build Economics First, Scale Velocity Second</h2>
                     <p>
@@ -2053,7 +2070,7 @@
     <!-- SCRIPTS -->
     <script src="../../js/script.js?v=v27"></script>
     <script src="../../js/navbar.js?v=v27"></script>
-    <script src="../js/knowledge-hub.js?v=v3"></script>
+    <script src="../js/knowledge-hub.js?v=v4"></script>
 </body>
 
 </html>
