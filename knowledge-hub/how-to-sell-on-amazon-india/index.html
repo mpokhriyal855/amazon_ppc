@@ -44,475 +44,10 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="../../css/style.css?v=v41">
     <link rel="stylesheet" href="../../css/navbar.css?v=v52">
-    <link rel="stylesheet" href="../../blog/css/blog.css?v=v50">
+    <link rel="stylesheet" href="../css/knowledge-hub.css?v=v1">
     <link rel="stylesheet" href="../../css/footer.css?v=v41">
     <link rel="stylesheet" href="../../css/whatsapp.css">
     <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
-
-    <style>
-        /* Scoped Knowledge Hub Pillar Guide Styles */
-        .article-body-prose ul {
-            list-style: disc;
-            padding-left: 24px;
-            margin: 12px 0 22px;
-        }
-
-        .article-body-prose ol {
-            list-style: decimal;
-            padding-left: 24px;
-            margin: 12px 0 22px;
-        }
-
-        .article-body-prose ul li,
-        .article-body-prose ol li {
-            display: list-item;
-            padding-left: 4px;
-            margin-bottom: 10px;
-        }
-
-        .article-body-prose code {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.87em;
-            background: #f1f5f9;
-            color: #0f172a;
-            padding: 2px 6px;
-            border-radius: 5px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .checklist-item code {
-            background: #ffffff;
-            font-size: 0.85em;
-        }
-
-        .kh-verified-banner {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.35);
-            color: #065f46;
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 50px;
-        }
-
-        .kh-table-wrap {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            border: 1px solid #cbd5e1;
-            border-radius: 14px;
-            margin: 22px 0;
-            background: #ffffff;
-            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-        }
-
-        .kh-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 560px;
-            font-size: 13.5px;
-            text-align: left;
-        }
-
-        .kh-table thead {
-            background: #0f172a;
-            color: #ffffff;
-        }
-
-        .kh-table th {
-            padding: 13px 16px;
-            font-weight: 700;
-            font-size: 12.5px;
-            letter-spacing: 0.3px;
-            border-bottom: 2px solid #1e293b;
-            white-space: nowrap;
-        }
-
-        .kh-table td {
-            padding: 13px 16px;
-            color: #334155;
-            line-height: 1.55;
-            border-bottom: 1px solid #e2e8f0;
-            vertical-align: top;
-        }
-
-        .kh-table tbody tr:nth-child(even) {
-            background: #f8fafc;
-        }
-
-        .kh-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .kh-diagram-wrap {
-            margin: 26px 0;
-            text-align: center;
-        }
-
-        .kh-diagram-wrap svg {
-            width: 100%;
-            max-width: 760px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 14px;
-            background: #0b1120;
-            border: 1px solid rgba(56, 189, 248, 0.28);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
-        }
-
-        .kh-diagram-caption {
-            font-size: 12px;
-            color: #64748b;
-            margin-top: 8px;
-            font-family: 'DM Mono', monospace;
-        }
-
-        .article-toc-box {
-            max-height: calc(100vh - 125px);
-            overflow-y: auto;
-        }
-
-        .kh-sidebar-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .kh-sidebar-links a {
-            font-size: 13px;
-            color: #334155;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 6px 10px;
-            border-radius: 8px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            transition: all 0.2s ease;
-        }
-
-        .kh-sidebar-links a:hover {
-            border-color: #1877ff;
-            color: #1877ff;
-            background: rgba(24, 119, 255, 0.06);
-        }
-
-        .kh-preset-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 18px;
-        }
-
-        .kh-preset-btn {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            color: #334155;
-            font-size: 12.5px;
-            font-weight: 700;
-            padding: 7px 14px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .kh-preset-btn:hover {
-            border-color: #0284c7;
-            color: #0284c7;
-        }
-
-        .kh-preset-btn.active {
-            background: #0284c7;
-            border-color: #0284c7;
-            color: #ffffff;
-        }
-
-        .calc-input-group select {
-            width: 100%;
-            padding: 12px 14px;
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            color: #0f172a;
-            font-size: 15px;
-            font-weight: 600;
-            outline: none;
-        }
-
-        .calc-input-group select:focus {
-            border-color: #0284c7;
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-        }
-
-        .kh-results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-top: 8px;
-        }
-
-        .kh-results-grid .calc-result-box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .kh-sim-note {
-            margin-top: 16px;
-            padding: 14px 16px;
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-left: 4px solid #0284c7;
-            border-radius: 10px;
-            font-size: 13.5px;
-            color: #334155;
-            line-height: 1.6;
-        }
-
-        .kh-step-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
-
-        .kh-step-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 18px;
-        }
-
-        .kh-step-card h4 {
-            margin: 0 0 8px;
-            font-size: 15.5px;
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .kh-step-card p {
-            margin: 0 !important;
-            font-size: 13.5px !important;
-            color: #475569 !important;
-            line-height: 1.6 !important;
-        }
-
-        .kh-proof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 14px;
-            margin: 22px 0;
-        }
-
-        .kh-proof-card {
-            background: #0f172a;
-            border: 1px solid rgba(56, 189, 248, 0.35);
-            border-radius: 14px;
-            padding: 18px;
-            color: #ffffff;
-        }
-
-        .kh-proof-metric {
-            font-family: 'DM Mono', monospace;
-            font-size: 22px;
-            font-weight: 800;
-            color: #34d399;
-            margin-bottom: 4px;
-        }
-
-        .kh-proof-cat {
-            font-size: 12px;
-            font-weight: 700;
-            color: #38bdf8;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 6px;
-        }
-
-        .kh-proof-note {
-            font-size: 12.5px;
-            color: #cbd5e1;
-            line-height: 1.5;
-        }
-
-        .kh-glossary-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            margin: 22px 0;
-        }
-
-        .kh-glossary-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 15px 16px;
-        }
-
-        .kh-glossary-term {
-            font-size: 14.5px;
-            font-weight: 800;
-            color: #0284c7;
-            margin-bottom: 5px;
-        }
-
-        .kh-glossary-def {
-            font-size: 13px;
-            color: #334155;
-            line-height: 1.55;
-        }
-
-        .kh-cta-actions {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .kh-cta-btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #ffffff;
-            color: #0284c7;
-            border: 1.5px solid #0284c7;
-            font-size: 14px;
-            font-weight: 700;
-            padding: 11px 22px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .kh-cta-btn-secondary:hover {
-            background: #f0f9ff;
-            transform: translateY(-2px);
-        }
-
-        .kh-checklist-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 14px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #cbd5e1;
-        }
-
-        .kh-checklist-count {
-            font-family: 'DM Mono', monospace;
-            font-size: 12px;
-            font-weight: 700;
-            color: #059669;
-            background: rgba(16, 185, 129, 0.12);
-            padding: 4px 12px;
-            border-radius: 50px;
-        }
-
-        .kh-checklist-reset {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            color: #475569;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 5px 12px;
-            border-radius: 50px;
-            cursor: pointer;
-        }
-
-        .kh-sources-box {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 20px 22px;
-            margin: 28px 0;
-        }
-
-        .kh-sources-box h3 {
-            margin-top: 0 !important;
-            color: #0f172a !important;
-            font-size: 16.5px !important;
-        }
-
-        .kh-sources-list {
-            margin: 10px 0 0;
-            padding-left: 18px;
-        }
-
-        .kh-sources-list li {
-            font-size: 13.5px !important;
-            margin-bottom: 8px !important;
-        }
-
-        .kh-share-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 14px;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 16px 0;
-            margin: 28px 0;
-        }
-
-        .helpful-response {
-            margin-top: 12px;
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #059669;
-        }
-
-        @media (max-width: 900px) {
-            .article-page-container {
-                padding: 96px 16px 60px !important;
-            }
-        }
-
-        @media (max-width: 800px) {
-            .article-sidebar-col {
-                position: static !important;
-            }
-        }
-
-        @media (max-width: 720px) {
-            .kh-results-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .kh-glossary-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .mini-calc-grid {
-                grid-template-columns: 1fr !important;
-            }
-
-            .kh-results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .author-bio-card {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
 
     <!-- STRUCTURED DATA SCHEMA -->
     <script type="application/ld+json">
@@ -530,7 +65,7 @@
           "dateModified": "2026-11-12T12:00:00+05:30",
           "proficiencyLevel": "Beginner to Advanced",
           "articleSection": "Amazon India Knowledge Hub",
-          "wordCount": 6977,
+          "wordCount": 7913,
           "author": {
             "@type": "Person",
             "name": "Anmol Pokhriyal",
@@ -691,10 +226,7 @@
     </script>
 </head>
 
-<body>
-
-    <!-- READING PROGRESS BAR -->
-    <div class="article-progress-bar" id="articleProgressBar"></div>
+<body class="kh-page">
 
     <!-- NAVBAR -->
 <div class="navbar-container" id="navbarContainer">
@@ -1108,135 +640,155 @@
 
 
     <!-- =========================================================
-         KNOWLEDGE HUB PILLAR GUIDE CONTAINER
+         HANDBOOK BANNER HEADER
     ========================================================= -->
-    <div class="article-page-container">
+    <header class="kh-doc-banner">
+        <div class="kh-doc-banner-inner">
+            <nav class="kh-breadcrumb" aria-label="Breadcrumb">
+                <a href="../../index.html">Home</a>
+                <span class="kh-breadcrumb-sep">/</span>
+                <a href="../../calculators/index.html">Resources</a>
+                <span class="kh-breadcrumb-sep">/</span>
+                <a href="../index.html">Knowledge Hub</a>
+                <span class="kh-breadcrumb-sep">/</span>
+                <span class="kh-breadcrumb-current">How to Sell on Amazon India</span>
+            </nav>
 
-        <!-- BREADCRUMBS -->
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-            <a href="../../index.html">Home</a> /
-            <a href="../../calculators/index.html">Resources</a> /
-            <a href="../index.html">Knowledge Hub</a> /
-            <span>How to Sell on Amazon India</span>
-        </nav>
-
-        <!-- ARTICLE HEADER -->
-        <header class="article-header">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;">
-                <span class="category-pill">KNOWLEDGE HUB · PILLAR GUIDE</span>
-                <span class="kh-verified-banner">✓ Last Verified: November 2026</span>
-                <span class="read-time" style="font-weight: 700; color: #475569;">25 min deep study · 20 Chapters</span>
+            <div class="kh-doc-tag-row">
+                <span class="kh-meta-tag">KNOWLEDGE HUB HANDBOOK · 2027 EDITION</span>
+                <span class="kh-meta-tag">20 CHAPTERS + 24 GLOSSARY TERMS</span>
+                <span class="kh-meta-verified">Last Verified: November 2026</span>
             </div>
 
-            <h1 class="article-main-title">
+            <h1 class="kh-doc-title">
                 How to Sell on Amazon India: Complete Seller Guide (2027)
             </h1>
 
-            <p class="article-lead">
-                Starting and scaling a profitable business on Amazon India (Amazon.in) requires far more than uploading product photos and waiting for orders. Whether you are a first-time entrepreneur, an offline wholesaler, a domestic manufacturer, or an established D2C brand, this complete Seller Guide walks you through GST compliance, step-by-step registration, Seller Central workflows, FBA vs Easy Ship economics, fee math, payments, SEO, Amazon PPC, Brand Registry, and a practical 2027 scaling roadmap.
+            <p class="kh-doc-lead">
+                Starting and scaling a profitable business on Amazon India (Amazon.in) requires structured execution across legal compliance, unit economics, catalog quality, and paid visibility. Whether you are a first-time entrepreneur, an offline wholesaler, a manufacturer, or an established D2C brand, this complete Seller Guide walks you step-by-step through GST rules, onboarding, Seller Central workflows, FBA vs Easy Ship, fee math, payments, SEO, Amazon PPC, and Brand Registry.
             </p>
 
-            <!-- AUTHOR & ACTION BAR -->
-            <div class="article-meta-bar">
-                <div class="article-author-box">
-                    <img src="../../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-img" width="44" height="44">
-                    <div class="article-author-details">
-                        <strong>Anmol Pokhriyal</strong>
-                        <span>Founder &amp; Amazon Growth Consultant · Verified Nov 2026</span>
-                    </div>
+            <div class="kh-doc-meta-line">
+                <div class="kh-doc-author-inline">
+                    <img src="../../images/founder-avatar.png" alt="Anmol Pokhriyal" width="28" height="28">
+                    <span>Written by Anmol Pokhriyal · Founder, PPC Growth Expert</span>
                 </div>
-                <div class="article-actions-row">
-                    <button type="button" class="btn-action-icon" id="saveArticleBtn">♡ Save Guide</button>
-                    <button type="button" class="btn-action-icon" id="copyLinkBtn">🔗 Copy Link</button>
-                </div>
-            </div>
-        </header>
-
-        <!-- CONCISE QUICK ANSWER (FEATURED SNIPPET / AI ANSWER BLOCK) -->
-        <div class="callout-box callout-takeaway">
-            <div class="callout-title">⚡ QUICK ANSWER: HOW TO START SELLING ON AMAZON INDIA</div>
-            <p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.7; color: #1e293b;">
-                To sell on Amazon India (Amazon.in), gather your <strong>PAN card</strong>, an active <strong>GSTIN</strong> (mandatory for most taxable goods; limited exemptions apply for 100% GST-exempt items and eligible intra-state non-GST sellers per platform rules), an active <strong>bank account matching your legal entity name</strong>, a phone number, email address, and a physical pickup address. Register for ₹0 monthly subscription fee at <strong>sell.amazon.in</strong>, complete document and video KYC verification, list products via existing ASIN matching or GTIN/GTIN exemption, pick a fulfilment mode (<strong>FBA</strong>, <strong>Easy Ship</strong>, or <strong>Self-Ship</strong>), price after accounting for Referral, Closing, Weight Handling, and 18% GST on fees, and begin fulfilling orders via Seller Central.
-            </p>
-        </div>
-
-        <!-- OFFICIAL VERIFICATION & EDITORIAL STANDARDS NOTICE -->
-        <div class="callout-box callout-quickwin">
-            <div class="callout-title">📋 FACTUAL VERIFICATION &amp; EDITORIAL STANDARDS (LAST VERIFIED: NOVEMBER 2026)</div>
-            <p style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.65; color: #78350f;">
-                <strong>What is verified vs. illustrative:</strong> Platform registration procedures, fulfilment definitions, and tax frameworks in this guide reflect official documentation on <strong>sell.amazon.in</strong>, <strong>sellercentral.amazon.in</strong>, <strong>gst.gov.in</strong>, and <strong>advertising.amazon.com</strong> verified as of <strong>November 2026</strong>. Amazon India revises category referral percentages, closing slabs, and promotional eligibility periodically; unannounced 2027 fee changes are <em>not</em> assumed or invented here. All worked rupee calculations and startup budget ranges are clearly marked as <em>illustrative planning scenarios</em>, while case-study benchmarks reflect documented anonymised client engagements at PPC Growth Expert. <strong>Tax &amp; Legal Notice:</strong> This resource is educational and is not a substitute for advice from a qualified Chartered Accountant (CA) or legal counsel.
-            </p>
-        </div>
-
-        <!-- KEY TAKEAWAYS DARK BOX -->
-        <div class="tldr-box">
-            <div class="tldr-title">✦ KEY TAKEAWAYS FOR NEW &amp; GROWING SELLERS</div>
-            <ul class="tldr-list">
-                <li><strong>Registration Has Zero Fixed Monthly Fee:</strong> Amazon.in charges per-order fees (Referral, Closing, Shipping) plus 18% GST only when you make a sale (optional storage fees apply if you stock inventory in FBA).</li>
-                <li><strong>Unit Margin Math Before Sourcing Saves Capital:</strong> Always compute pre-ad contribution margin—subtracting COGS, output GST impact, Referral %, Closing/Weight Handling fees, and a 5–10% return buffer—before ordering bulk inventory.</li>
-                <li><strong>Fulfilment Choice Controls Conversion Rate:</strong> FBA provides automatic Prime badges and fast regional delivery, while Easy Ship lets startups test product-market fit without warehousing prep upfront.</li>
-                <li><strong>Organic SEO and PPC Work Together:</strong> Well-structured mobile titles, clean images, and 249-byte backend keywords ensure indexation; disciplined Sponsored Products campaigns supply early order velocity.</li>
-                <li><strong>Account Health &amp; Stock Consistency Protect Rank:</strong> Keeping Order Defect Rate under 1% and avoiding 14+ day stockouts preserves Buy Box ownership and search placement.</li>
-            </ul>
-        </div>
-
-        <!-- 4 KEY NUMBERS GRID -->
-        <div class="key-numbers-grid">
-            <div class="number-card">
-                <div class="number-card-val">₹0</div>
-                <div class="number-card-lbl">MONTHLY SUBSCRIPTION FEE</div>
-            </div>
-            <div class="number-card">
-                <div class="number-card-val">7 Days</div>
-                <div class="number-card-lbl">STANDARD SETTLEMENT CYCLE</div>
-            </div>
-            <div class="number-card">
-                <div class="number-card-val">&lt; 1.0%</div>
-                <div class="number-card-lbl">MAX ORDER DEFECT RATE (ODR)</div>
-            </div>
-            <div class="number-card">
-                <div class="number-card-val">18%</div>
-                <div class="number-card-lbl">GST ON AMAZON SELLER FEES</div>
+                <span>Audience: Beginners, Manufacturers, Wholesalers &amp; D2C Brands</span>
+                <span>Estimated Study Time: ~25 minutes</span>
             </div>
         </div>
+    </header>
 
-        <!-- THREE-COLUMN ARTICLE LAYOUT -->
-        <div class="article-layout-grid">
+    <!-- =========================================================
+         2-COLUMN HANDBOOK WORKSPACE
+    ========================================================= -->
+    <div class="kh-doc-workspace">
 
-            <!-- LEFT STICKY TABLE OF CONTENTS -->
-            <aside class="article-toc-col" aria-label="Table of Contents">
-                <div class="article-toc-box">
-                    <div class="toc-title">GUIDE CHAPTERS (20)</div>
-                    <ul class="toc-links">
-                        <li><a href="#sec-what-is">1. What Is Selling on Amazon India?</a></li>
-                        <li><a href="#sec-who-can-sell">2. Who Can Sell on Amazon.in?</a></li>
-                        <li><a href="#sec-requirements">3. Registration &amp; GST Requirements</a></li>
-                        <li><a href="#sec-registration">4. 13-Step Registration Process</a></li>
-                        <li><a href="#sec-seller-central">5. Mastering Seller Central</a></li>
-                        <li><a href="#sec-what-to-sell">6. Choosing What to Sell</a></li>
-                        <li><a href="#sec-listing-products">7. How to List Products</a></li>
-                        <li><a href="#sec-fulfilment">8. FBA vs Easy Ship vs Self-Ship</a></li>
-                        <li><a href="#sec-seo-content">9. Amazon SEO &amp; Listing CRO</a></li>
-                        <li><a href="#sec-pricing-buybox">10. Pricing &amp; Featured Offer (Buy Box)</a></li>
-                        <li><a href="#sec-fees-pricing">11. Selling Fees &amp; Profit Simulator</a></li>
-                        <li><a href="#sec-payments">12. Seller Payments &amp; Settlements</a></li>
-                        <li><a href="#sec-orders-inventory-returns">13. Orders, Inventory &amp; Returns</a></li>
-                        <li><a href="#sec-account-health">14. Account Health &amp; Policies</a></li>
-                        <li><a href="#sec-scale-sales">15. How to Increase Sales</a></li>
-                        <li><a href="#sec-ppc">16. Amazon PPC Advertising</a></li>
-                        <li><a href="#sec-brand-protection">17. Brand Registry &amp; Protection</a></li>
-                        <li><a href="#sec-mistakes">18. Beginner Mistakes to Avoid</a></li>
-                        <li><a href="#sec-budget">19. Startup Investment Guide</a></li>
-                        <li><a href="#sec-growth-roadmap">20. Roadmap, Proof &amp; Checklist</a></li>
-                        <li><a href="#sec-glossary">Glossary (24 Terms)</a></li>
-                        <li><a href="#sec-faqs">12 Essential FAQs</a></li>
-                        <li><a href="#sec-sources">Official Sources</a></li>
+        <!-- LEFT STICKY CHAPTER NAVIGATION -->
+        <aside class="kh-toc-rail" aria-label="Guide Chapters Navigation">
+            <div class="kh-toc-card">
+                <div class="kh-toc-title">HANDBOOK CHAPTERS</div>
+                <ul class="kh-toc-links">
+                    <li><a href="#sec-what-is">1. What Is Selling on Amazon India?</a></li>
+                    <li><a href="#sec-who-can-sell">2. Who Can Sell on Amazon.in?</a></li>
+                    <li><a href="#sec-requirements">3. Registration &amp; GST Rules</a></li>
+                    <li><a href="#sec-registration">4. 13-Step Registration Process</a></li>
+                    <li><a href="#sec-seller-central">5. Mastering Seller Central</a></li>
+                    <li><a href="#sec-what-to-sell">6. Choosing What to Sell &amp; Sourcing</a></li>
+                    <li><a href="#sec-listing-products">7. How to List Products</a></li>
+                    <li><a href="#sec-fulfilment">8. FBA vs Easy Ship vs Self-Ship</a></li>
+                    <li><a href="#sec-seo-content">9. Amazon SEO &amp; Listing CRO</a></li>
+                    <li><a href="#sec-pricing-buybox">10. Pricing &amp; Featured Offer</a></li>
+                    <li><a href="#sec-fees-pricing">11. Selling Fees &amp; Profit Math</a></li>
+                    <li><a href="#sec-payments">12. Seller Payments &amp; Taxes</a></li>
+                    <li><a href="#sec-orders-inventory-returns">13. Orders, Inventory &amp; Returns</a></li>
+                    <li><a href="#sec-account-health">14. Account Health Benchmarks</a></li>
+                    <li><a href="#sec-scale-sales">15. Increasing Sales &amp; 30-Day Plan</a></li>
+                    <li><a href="#sec-ppc">16. Amazon PPC Advertising</a></li>
+                    <li><a href="#sec-brand-protection">17. Brand Registry &amp; Protection</a></li>
+                    <li><a href="#sec-mistakes">18. Common Beginner Mistakes</a></li>
+                    <li><a href="#sec-budget">19. Startup Investment Guide</a></li>
+                    <li><a href="#sec-growth-roadmap">20. Roadmap, Proof &amp; Support</a></li>
+                    <li><a href="#sec-glossary">Glossary (24 Key Terms)</a></li>
+                    <li><a href="#sec-faqs">Frequently Asked Questions (12)</a></li>
+                    <li><a href="#sec-sources">Official Sources</a></li>
+                </ul>
+
+                <div class="kh-rail-tools">
+                    <div class="kh-rail-tools-title">SELLER CALCULATORS</div>
+                    <ul class="kh-rail-tools-list">
+                        <li><a href="../../calculators/amazon-profit-calculator.html"><span>Profit Calculator</span><span>→</span></a></li>
+                        <li><a href="../../calculators/amazon-fba-fee-calculator.html"><span>FBA Fee Calculator</span><span>→</span></a></li>
+                        <li><a href="../../calculators/amazon-break-even-acos-calculator.html"><span>Break-Even ACoS</span><span>→</span></a></li>
+                        <li><a href="../../calculators/asin-wise-report-generator.html"><span>ASIN Report Builder</span><span>→</span></a></li>
+                        <li><a href="../../contact.html"><span>Request Account Audit</span><span>→</span></a></li>
                     </ul>
                 </div>
-            </aside>
+            </div>
+        </aside>
 
-            <!-- CENTER PROSE COLUMN -->
-            <main class="article-body-prose">
+        <div style="min-width: 0;">
+
+            <!-- MOBILE COLLAPSED CHAPTER DRAWER -->
+            <details class="kh-mobile-toc">
+                <summary>Jump to Any Chapter (20 Sections + Glossary &amp; FAQs)</summary>
+                <div class="kh-mobile-toc-grid">
+                    <a href="#sec-what-is">1. What Is Selling on Amazon.in?</a>
+                    <a href="#sec-who-can-sell">2. Who Can Sell on Amazon.in?</a>
+                    <a href="#sec-requirements">3. Registration &amp; GST Rules</a>
+                    <a href="#sec-registration">4. 13-Step Registration Process</a>
+                    <a href="#sec-seller-central">5. Mastering Seller Central</a>
+                    <a href="#sec-what-to-sell">6. Choosing What to Sell &amp; Sourcing</a>
+                    <a href="#sec-listing-products">7. How to List Products</a>
+                    <a href="#sec-fulfilment">8. FBA vs Easy Ship vs Self-Ship</a>
+                    <a href="#sec-seo-content">9. Amazon SEO &amp; Listing CRO</a>
+                    <a href="#sec-pricing-buybox">10. Pricing &amp; Featured Offer</a>
+                    <a href="#sec-fees-pricing">11. Selling Fees &amp; Profit Math</a>
+                    <a href="#sec-payments">12. Seller Payments &amp; Taxes</a>
+                    <a href="#sec-orders-inventory-returns">13. Orders, Inventory &amp; Returns</a>
+                    <a href="#sec-account-health">14. Account Health Benchmarks</a>
+                    <a href="#sec-scale-sales">15. Increasing Sales &amp; 30-Day Plan</a>
+                    <a href="#sec-ppc">16. Amazon PPC Advertising</a>
+                    <a href="#sec-brand-protection">17. Brand Registry &amp; Protection</a>
+                    <a href="#sec-mistakes">18. Common Beginner Mistakes</a>
+                    <a href="#sec-budget">19. Startup Investment Guide</a>
+                    <a href="#sec-growth-roadmap">20. Roadmap, Proof &amp; Support</a>
+                    <a href="#sec-glossary">Glossary (24 Terms)</a>
+                    <a href="#sec-faqs">12 Essential FAQs</a>
+                    <a href="#sec-sources">Official Sources</a>
+                </div>
+            </details>
+
+            <!-- MAIN HANDBOOK CONTENT SHEET -->
+            <main class="kh-doc-content">
+
+                <!-- CONCISE QUICK ANSWER -->
+                <div class="kh-callout kh-callout-primary">
+                    <div class="kh-callout-label">QUICK ANSWER · HOW TO START SELLING ON AMAZON INDIA</div>
+                    <p>
+                        To sell on Amazon India (Amazon.in), gather your <strong>PAN card</strong>, an active <strong>GSTIN</strong> (mandatory for most taxable goods; limited exceptions apply for 100% GST-exempt items and qualifying intra-state micro-sellers per platform rules), an active <strong>bank account matching your legal entity name</strong>, a mobile number, email address, and a serviceable pickup address. Register for ₹0 monthly subscription fee at <strong>sell.amazon.in</strong>, complete document and Video KYC verification, list products via existing ASIN matching or GTIN/GTIN exemption, pick a fulfilment mode (<strong>FBA</strong>, <strong>Easy Ship</strong>, or <strong>Self-Ship</strong>), price after Referral, Closing, Shipping fees, and 18% fee GST, and start fulfilling orders via Seller Central.
+                    </p>
+                </div>
+
+                <!-- VERIFICATION & LEGAL DISCLAIMER -->
+                <div class="kh-callout kh-callout-note">
+                    <div class="kh-callout-label">VERIFICATION &amp; EDITORIAL STANDARDS (LAST VERIFIED: NOVEMBER 2026)</div>
+                    <p>
+                        Registration requirements, fulfilment rules, and tax references in this handbook reflect official documentation on <strong>sell.amazon.in</strong>, <strong>sellercentral.amazon.in</strong>, <strong>gst.gov.in</strong>, and <strong>advertising.amazon.com</strong> verified in <strong>November 2026</strong>. Amazon India adjusts category referral rates, closing fee slabs, and program criteria periodically; unannounced 2027 changes are not assumed here. All worked rupee breakdowns and capital ranges are clearly marked as <em>illustrative scenarios</em>. <strong>Tax &amp; Legal Notice:</strong> This content is educational and does not replace advice from a qualified Chartered Accountant (CA) or legal counsel.
+                    </p>
+                </div>
+
+                <!-- KEY TAKEAWAYS -->
+                <div class="kh-callout kh-callout-takeaways">
+                    <div class="kh-callout-label">KEY TAKEAWAYS BEFORE YOU BEGIN</div>
+                    <ul>
+                        <li><strong>₹0 Fixed Monthly Subscription Fee:</strong> Amazon.in charges per-order fees (Referral, Closing, Shipping) plus 18% fee GST only when orders sell (optional FBA storage fees apply if inventory rests in Amazon warehouses).</li>
+                        <li><strong>Model Unit Economics Before Ordering Inventory:</strong> Compute pre-ad contribution margin after COGS, product GST, Referral %, Closing/Weight Handling fees, and a 5–10% return buffer before locking capital.</li>
+                        <li><strong>Fulfilment Controls Trust &amp; Conversion:</strong> FBA delivers automatic Prime badges and 1–2 day metro speed, while Easy Ship lets startups test demand without bulk warehouse transfers upfront.</li>
+                        <li><strong>Organic SEO and PPC Compound Each Other:</strong> Clear mobile titles, compliant white-background images, and 249-byte backend terms establish indexation; margin-capped Sponsored Products drive early sales velocity.</li>
+                        <li><strong>Account Health &amp; Stock Consistency Safeguard Rank:</strong> Keeping Order Defect Rate strictly below 1% and reordering before stockouts protects Featured Offer eligibility and search placement.</li>
+                    </ul>
+                </div>
 
                 <!-- SECTION 1 -->
                 <section id="sec-what-is">
@@ -1453,6 +1005,63 @@
                         <li><strong>Complete Seller Identity &amp; Video Verification:</strong> Join Amazon’s scheduled or instant browser video KYC call in good lighting with your original PAN and identity card on hand.</li>
                         <li><strong>List Your First Product &amp; Verify Two-Factor Backup:</strong> Once Seller Central shows your account status as Active, add your first compliant listing and configure a secondary backup phone for uninterrupted login access.</li>
                     </ol>
+
+                    <!-- SVG DIAGRAM 2: REGISTRATION FLOWCHART -->
+                    <div class="kh-diagram-wrap">
+                        <svg viewBox="0 0 760 190" role="img" aria-label="Amazon India Seller Registration Flowchart from KYC to Live Catalog">
+                            <rect width="760" height="190" rx="12" fill="#0f172a" />
+                            <text x="380" y="28" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.8">AMAZON.IN ONBOARDING &amp; VERIFICATION PATHWAY</text>
+
+                            <rect x="20" y="52" width="128" height="92" rx="8" fill="rgba(20, 184, 166, 0.14)" stroke="#14b8a6" stroke-width="1.4" />
+                            <text x="84" y="75" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 01</text>
+                            <text x="84" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Docs &amp; Pincode</text>
+                            <text x="84" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">PAN, GST REG-06</text>
+                            <text x="84" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">&amp; Bank Proof Ready</text>
+
+                            <path d="M 152 98 L 168 98" stroke="#2dd4bf" stroke-width="2" />
+                            <polygon points="171,98 165,94 165,102" fill="#2dd4bf" />
+
+                            <rect x="172" y="52" width="128" height="92" rx="8" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.4" />
+                            <text x="236" y="75" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 02</text>
+                            <text x="236" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Account &amp; GSTIN</text>
+                            <text x="236" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">sell.amazon.in</text>
+                            <text x="236" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">OTP &amp; Legal Match</text>
+
+                            <path d="M 304 98 L 320 98" stroke="#38bdf8" stroke-width="2" />
+                            <polygon points="323,98 317,94 317,102" fill="#38bdf8" />
+
+                            <rect x="324" y="52" width="128" height="92" rx="8" fill="rgba(251, 191, 36, 0.12)" stroke="#fbbf24" stroke-width="1.4" />
+                            <text x="388" y="75" text-anchor="middle" fill="#fbbf24" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 03</text>
+                            <text x="388" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Bank &amp; PTC Tax</text>
+                            <text x="388" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">IFSC Verification &amp;</text>
+                            <text x="388" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Signature Upload</text>
+
+                            <path d="M 456 98 L 472 98" stroke="#fbbf24" stroke-width="2" />
+                            <polygon points="475,98 469,94 469,102" fill="#fbbf24" />
+
+                            <rect x="476" y="52" width="128" height="92" rx="8" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.4" />
+                            <text x="540" y="75" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 04</text>
+                            <text x="540" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Video Identity KYC</text>
+                            <text x="540" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Live Original PAN</text>
+                            <text x="540" y="128" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">&amp; ID Inspection</text>
+
+                            <path d="M 608 98 L 624 98" stroke="#2dd4bf" stroke-width="2" />
+                            <polygon points="627,98 621,94 621,102" fill="#2dd4bf" />
+
+                            <rect x="628" y="52" width="112" height="92" rx="8" fill="rgba(20, 184, 166, 0.2)" stroke="#14b8a6" stroke-width="1.6" />
+                            <text x="684" y="75" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">STAGE 05</text>
+                            <text x="684" y="95" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">Account Active</text>
+                            <text x="684" y="114" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">2–7 Working Days</text>
+                            <text x="684" y="128" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9">List First ASIN</text>
+
+                            <text x="380" y="170" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="9.5">Official onboarding instructions: sell.amazon.in/sell-online/seller-registration-guide</text>
+                        </svg>
+                        <div class="kh-diagram-caption">Figure 2: Step-by-Step Amazon India Seller Registration &amp; Video KYC Workflow</div>
+                    </div>
+
+                    <p>
+                        Always double-check Amazon’s current onboarding screen notices at the official <a href="https://sell.amazon.in/sell-online/seller-registration-guide" target="_blank" rel="noopener noreferrer">Amazon Seller Registration Guide</a> before submitting scans.
+                    </p>
                 </section>
 
                 <!-- SECTION 5 -->
@@ -1499,7 +1108,7 @@
 
                 <!-- SECTION 6 -->
                 <section id="sec-what-to-sell">
-                    <h2>6. Choosing What to Sell on Amazon India</h2>
+                    <h2>6. Choosing What to Sell on Amazon India &amp; Sourcing Strategy</h2>
                     <p>
                         Product selection decides roughly 70% of your profitability before you launch a single ad. New sellers frequently pick trendy gadgets with brutal competition, heavy shipping slabs, or wafer-thin margins after GST and returns.
                     </p>
@@ -1511,8 +1120,57 @@
                         <li><strong>Open vs Gated / Regulated Categories:</strong> Open categories let compliant sellers publish swiftly, whereas Packaged Foods/Supplements require <strong>FSSAI</strong> licenses, Toys and covered Electronics require <strong>BIS</strong> registration, Cosmetics may require <strong>CDSCO</strong>/manufacturing credentials, and branded reselling demands authentic GST distribution invoices.</li>
                         <li><strong>Legal Metrology Declarations:</strong> Packaged consumer goods sold in India must comply with Legal Metrology rules (MRP, net quantity, country of origin, month/year of manufacture/import, packer/importer details, and customer care contact).</li>
                     </ul>
+
+                    <h3>Sourcing Strategy Options in India</h3>
                     <p>
-                        Before locking in an inventory PO, stress-test every candidate SKU inside our <a href="../../calculators/amazon-profit-calculator.html">Amazon India Profit Calculator</a> or review our <a href="../../services/index.html#service-product-research">Product Research Service</a>.
+                        Once a category looks viable, match your sourcing pathway to your capital and differentiation plan:
+                    </p>
+                    <ul>
+                        <li><strong>Own Manufacturing Workshop:</strong> Strongest long-term pricing power if you control production tolerances, raw material consistency, and barcode-ready outer packaging from Day 1.</li>
+                        <li><strong>Domestic Factory / OEM Contracting (Private Label):</strong> Source custom-branded variations from Indian manufacturing hubs (e.g., Delhi NCR, Moradabad, Surat, Rajkot, Tiruppur, Ludhiana) with proper GST tax invoices and custom master cartons.</li>
+                        <li><strong>Authorised Brand Distributorship (Reselling):</strong> Buy established consumer brands directly from company distributors—always retaining GST tax invoices and Letters of Authorisation so you can resolve authenticity reviews immediately.</li>
+                    </ul>
+
+                    <h3>Illustrative Product Viability Comparison (Hypothetical Scenario)</h3>
+                    <p>
+                        <em>Note: Both examples below are illustrative screening comparisons to demonstrate how selling price, fragility, and parcel weight shape viability before ordering stock.</em>
+                    </p>
+                    <div class="kh-table-wrap">
+                        <table class="kh-table">
+                            <thead>
+                                <tr>
+                                    <th>Screening Metric</th>
+                                    <th>Weak Candidate: Fragile Glass Pitcher</th>
+                                    <th>Viable Candidate: Compact Steel Pantry Organiser</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Target Selling Price (Incl. GST)</strong></td>
+                                    <td>₹399</td>
+                                    <td>₹799</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Packaged Shipping Slab</strong></td>
+                                    <td>1.1 kg volumetric foam box (higher zone shipping)</td>
+                                    <td>440 g nested carton (under 500 g slab)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Damage &amp; Return Risk</strong></td>
+                                    <td>High transit breakage + negative ratings risk</td>
+                                    <td>Non-fragile steel body; low size/breakage return risk</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pre-Ad Cushion After Fees &amp; Tax</strong></td>
+                                    <td>Often under 12%—cannot absorb PPC bids</td>
+                                    <td>~41% pre-ad cushion (absorbs ads + leaves net profit)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Before locking in a factory PO, stress-test candidate SKUs inside our <a href="../../calculators/amazon-profit-calculator.html">Amazon India Profit Calculator</a> or review our <a href="../../services/index.html#service-product-research">Product Research Service</a>.
                     </p>
                 </section>
 
@@ -1554,9 +1212,22 @@
                         <li><strong>Secondary Images (5–6 Slots):</strong> Dimensions graphic, close-up quality/material shot, lifestyle usage photo, packaging/what’s-in-the-box frame, and comparison chart.</li>
                         <li><strong>Variations (Parent-Child):</strong> Group genuinely identical sizes, weights, or colours into one variation family so customer reviews aggregate cleanly—never attach unrelated products just to borrow reviews.</li>
                     </ul>
-                    <p>
-                        Draft compliant titles, bullets, and backend fields quickly using our <a href="../../calculators/ai-amazon-listing-generator.html">AI Amazon Listing Generator</a> and audit listing readiness with the <a href="../../calculators/amazon-listing-seo-score-calculator.html">Listing SEO Score Calculator</a>.
-                    </p>
+
+                    <div class="kh-checklist-box">
+                        <div class="kh-checklist-heading">Listing Creation &amp; Policy Quality Check (Before Publishing)</div>
+                        <ul class="kh-static-checklist">
+                            <li><span class="kh-check-box-icon">✓</span><span>Verified GS1 EAN/UPC barcode or approved GTIN Exemption</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Most specific Browse Node &amp; accurate HSN tax code assigned</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Pure white RGB(255,255,255) main photo with ≥1000px zoom resolution</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Mobile-readable dimensions &amp; box-contents infographic uploaded</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Primary root keyword placed cleanly in first 70 title characters</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Legal Metrology MRP, Country of Origin &amp; Net Qty filled accurately</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="kh-context-note">
+                        <span><strong>Need help structuring high-converting catalog pages?</strong> Generate SEO titles and bullets with our <a href="../../calculators/ai-amazon-listing-generator.html">AI Amazon Listing Generator</a>, score readiness via the <a href="../../calculators/amazon-listing-seo-score-calculator.html">Listing SEO Score Calculator</a>, or explore <a href="../../services/index.html#service-listing-optimization">Catalog &amp; A+ Optimisation</a>.</span>
+                    </div>
                 </section>
 
                 <!-- SECTION 8 -->
@@ -1644,7 +1315,7 @@
                             <rect x="642" y="171" width="84" height="24" rx="12" fill="rgba(148, 163, 184, 0.22)" />
                             <text x="684" y="187" text-anchor="middle" fill="#e2e8f0" font-family="DM Mono, monospace" font-size="9" font-weight="700">HEAVY / NICHE</text>
                         </svg>
-                        <div class="kh-diagram-caption">Figure 2: Comparing Fulfilment Control, Courier Ownership, and Prime Conversion Impact</div>
+                        <div class="kh-diagram-caption">Figure 3: Comparing Fulfilment Control, Courier Ownership, and Prime Conversion Impact</div>
                     </div>
                 </section>
 
@@ -1683,14 +1354,32 @@
                 <section id="sec-fees-pricing">
                     <h2>11. Amazon India Selling Fees &amp; Profit Calculation</h2>
                     <p>
-                        Amazon India charges fees primarily when an order is placed or when FBA stores your goods. Under verified schedules published on <strong>sell.amazon.in/fees-and-pricing</strong>, every seller’s unit economics combine four core Amazon charges plus tax and return reality:
+                        Amazon India charges fees primarily when an order is placed or when FBA stores your goods. Under schedules published on <a href="https://sell.amazon.in/fees-and-pricing" target="_blank" rel="noopener noreferrer">sell.amazon.in/fees-and-pricing</a>, every seller’s unit economics combine four core Amazon charges plus product GST and return reality:
                     </p>
                     <ul>
-                        <li><strong>1. Referral Fee:</strong> A category- and price-band percentage applied on the total selling price paid by the buyer (typically spanning roughly 2% to ~17%+ across categories, with specific low-ASP waivers or tiered percentages periodically announced by Amazon—always check Seller Central’s live Revenue Calculator for exact active category percentages).</li>
-                        <li><strong>2. Closing Fee:</strong> A fixed rupee fee per item determined by selling-price brackets (e.g., ₹0–₹300, ₹301–₹500, ₹501–₹1,000, above ₹1,000) and fulfilment program (FBA, Easy Ship, Self-Ship).</li>
+                        <li><strong>1. Referral Fee:</strong> A category- and price-band percentage applied on the total selling price paid by the buyer (typically spanning roughly 2% to ~17%+ across categories, with specific low-ASP fee waivers periodically notified by Amazon—always confirm live category percentages in Seller Central’s Revenue Calculator).</li>
+                        <li><strong>2. Closing Fee:</strong> A fixed rupee fee per item determined by selling-price brackets (₹0–₹300, ₹301–₹500, ₹501–₹1,000, above ₹1,000) and fulfilment program (FBA, Easy Ship, Self-Ship).</li>
                         <li><strong>3. Weight Handling / Shipping Fee:</strong> Charged per unit based on Local (same city), Regional (same zone), or National shipping distance and slab weight—calculated using the <strong>greater</strong> of Dead Weight or Volumetric Weight (<code>Length × Breadth × Height in cm ÷ 5000</code>).</li>
-                        <li><strong>4. Storage &amp; Pick-Pack (FBA Only) + 18% GST on Amazon Fees:</strong> FBA items incur monthly cubic-foot storage charges (plus aged-inventory surcharges if unsold too long). Crucially, Amazon adds <strong>18% GST on all its service fees</strong>; regular GST-registered sellers can normally offset that 18% fee GST via Input Tax Credit (ITC) against output tax liability (consult your CA).</li>
+                        <li><strong>4. Storage &amp; Pick-Pack (FBA Only) + 18% GST on Amazon Fees:</strong> FBA items incur monthly cubic-foot storage charges (plus aged-inventory surcharges if unsold too long). Crucially, Amazon adds <strong>18% GST on all its service fees</strong>; regular GST-registered sellers can normally offset that 18% fee GST via Input Tax Credit (ITC) against output tax liability (confirm with your CA).</li>
                     </ul>
+
+                    <div class="kh-formula-grid">
+                        <div class="kh-formula-card">
+                            <div class="kh-formula-name">NET UNIT PROFIT</div>
+                            <div class="kh-formula-eq">Pre-GST Revenue − COGS − Amazon Fees − Return Buffer − Ad Spend</div>
+                            <p class="kh-formula-desc">Set aside buyer output GST first (<code>Selling Price ÷ (1 + GST%)</code>) before comparing against landed COGS.</p>
+                        </div>
+                        <div class="kh-formula-card">
+                            <div class="kh-formula-name">BREAK-EVEN ACOS</div>
+                            <div class="kh-formula-eq">(Pre-Ad Contribution ÷ Selling Price) × 100</div>
+                            <p class="kh-formula-desc">Maximum campaign ACoS ceiling before an ad-driven unit loses contribution cash.</p>
+                        </div>
+                        <div class="kh-formula-card">
+                            <div class="kh-formula-name">VOLUMETRIC WEIGHT (KG)</div>
+                            <div class="kh-formula-eq">(Length × Breadth × Height cm) ÷ 5000</div>
+                            <p class="kh-formula-desc">Amazon charges weight handling on the higher of actual parcel weight or volumetric weight.</p>
+                        </div>
+                    </div>
 
                     <h3>Illustrative Worked Example: ₹799 Home &amp; Kitchen Organiser (Hypothetical Scenario)</h3>
                     <p>
@@ -1701,7 +1390,7 @@
                             <thead>
                                 <tr>
                                     <th>Line Item</th>
-                                    <th>Illustrative Basis (GST-Registered Seller)</th>
+                                    <th>Illustrative Basis (Regular GST Seller)</th>
                                     <th>Amount / Result</th>
                                 </tr>
                             </thead>
@@ -1724,124 +1413,35 @@
                                 <tr>
                                     <td><strong>Illustrative Amazon Fees (Base)</strong></td>
                                     <td>8% Referral (₹63.92) + Closing/Weight Handling (₹76.00) pre-GST = ₹139.92</td>
-                                    <td>-₹140 <em>(₹165 incl. 18% GST debit)</em></td>
+                                    <td>-₹140 <em>(₹165 incl. 18% fee GST debit)</em></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Return / RTO Cost Reserve (5%)</strong></td>
-                                    <td>Amortised forward/return loss &amp; repackaging allowance (₹13.79/unit)</td>
+                                    <td>5% return incidence × ~₹276 average unrecoverable logistics/repack cost</td>
                                     <td>-₹14</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Pre-Ad Profit Contribution (Max CPA)</strong></td>
-                                    <td>Unrounded cushion ₹329.69 before advertising (Break-Even ACoS = 41.3%)</td>
+                                    <td>Unrounded cushion ₹329.69 before ads (Break-Even ACoS = 41.3%)</td>
                                     <td><strong>₹330 / unit</strong></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Blended Ad Spend (10% Target TACoS)</strong></td>
-                                    <td>10% × ₹799 across total orders (₹79.90/unit)</td>
+                                    <td>10% × ₹799 across total paid + organic orders (₹79.90/unit)</td>
                                     <td>-₹80</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Estimated Net Operating Profit</strong></td>
                                     <td>Unrounded ₹249.79 assuming regular GST Input Tax Credit offsets 18% fee GST</td>
-                                    <td><strong style="color: #059669;">₹250 / unit (31.3%)</strong></td>
+                                    <td><strong style="color: #0f766e;">₹250 / unit (31.3%)</strong></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <!-- INTERACTIVE SIMULATOR -->
-                    <div class="mini-calc-card" id="khProfitSimulator">
-                        <div class="mini-calc-title">🧮 Interactive Amazon.in Unit Profit, Break-Even ACoS &amp; Reorder Simulator</div>
-                        <div class="mini-calc-desc">
-                            Stress-test your real unit economics and inventory replenishment trigger. Choose a category preset or enter your own numbers below (illustrative planning estimator).
-                        </div>
-
-                        <div class="kh-preset-bar">
-                            <button type="button" class="kh-preset-btn active" data-preset="home">Home &amp; Kitchen (₹799)</button>
-                            <button type="button" class="kh-preset-btn" data-preset="electronics">Electronics Accessory (₹1,299)</button>
-                            <button type="button" class="kh-preset-btn" data-preset="beauty">Personal Care / Beauty (₹499)</button>
-                        </div>
-
-                        <div class="mini-calc-grid">
-                            <div class="calc-input-group">
-                                <label for="khPrice">SELLING PRICE INCL. GST (₹)</label>
-                                <input type="number" id="khPrice" value="799" min="1" step="1">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khCogs">LANDED COGS EX-GST (₹)</label>
-                                <input type="number" id="khCogs" value="230" min="0" step="1">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khRefPct">ESTIMATED REFERRAL FEE (%)</label>
-                                <input type="number" id="khRefPct" value="8" min="0" max="45" step="0.5">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khShipFee">CLOSING + SHIPPING FEE PRE-GST (₹)</label>
-                                <input type="number" id="khShipFee" value="76" min="0" step="1">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khGstRate">PRODUCT GST SLAB (%)</label>
-                                <select id="khGstRate">
-                                    <option value="12" selected>12% GST</option>
-                                    <option value="18">18% GST</option>
-                                    <option value="5">5% GST</option>
-                                    <option value="0">0% (GST-Exempt Books/Agri)</option>
-                                </select>
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khReturnRate">EXPECTED RETURN / RTO RATE (%)</label>
-                                <input type="number" id="khReturnRate" value="5" min="0" max="60" step="1">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khTargetTacos">TARGET BLENDED TACOS (%)</label>
-                                <input type="number" id="khTargetTacos" value="10" min="0" max="60" step="1">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khDailyUnits">ESTIMATED DAILY SALES (UNITS)</label>
-                                <input type="number" id="khDailyUnits" value="18" min="0" step="1">
-                            </div>
-                            <div class="calc-input-group">
-                                <label for="khLeadDays">SUPPLIER + FBA INBOUND LEAD TIME (DAYS)</label>
-                                <input type="number" id="khLeadDays" value="20" min="1" step="1">
-                            </div>
-                        </div>
-
-                        <div class="kh-results-grid">
-                            <div class="calc-result-box">
-                                <div class="calc-result-val" id="khResNetProfit">₹250</div>
-                                <div class="calc-result-lbl">EST. NET PROFIT / UNIT</div>
-                            </div>
-                            <div class="calc-result-box">
-                                <div class="calc-result-val" id="khResNetMargin">31.3%</div>
-                                <div class="calc-result-lbl">NET MARGIN AFTER ADS</div>
-                            </div>
-                            <div class="calc-result-box">
-                                <div class="calc-result-val" id="khResBreakEvenAcos">41.3%</div>
-                                <div class="calc-result-lbl">BREAK-EVEN ACOS</div>
-                            </div>
-                            <div class="calc-result-box">
-                                <div class="calc-result-val" id="khResMaxCpa">₹330</div>
-                                <div class="calc-result-lbl">PRE-AD MAX CPA</div>
-                            </div>
-                            <div class="calc-result-box">
-                                <div class="calc-result-val" id="khResFeesTotal">₹165</div>
-                                <div class="calc-result-lbl">AMAZON FEE DEBIT (INCL. GST)</div>
-                            </div>
-                            <div class="calc-result-box">
-                                <div class="calc-result-val" id="khResRopUnits">540 units</div>
-                                <div class="calc-result-lbl">REORDER POINT (INCL. 10D SAFETY)</div>
-                            </div>
-                        </div>
-
-                        <div class="kh-sim-note" id="khSimNote">
-                            Adjust any input above to model net unit profitability and reorder point thresholds in real time.
-                        </div>
+                    <div class="kh-context-note">
+                        <span><strong>Calculate your live SKU numbers:</strong> Model category referral rates, FBA weight slabs, storage fees, and max ACoS using our <a href="../../calculators/amazon-profit-calculator.html">Amazon Profit Calculator</a>, <a href="../../calculators/amazon-fba-fee-calculator.html">FBA Fee Calculator</a>, <a href="../../calculators/amazon-fba-storage-fee-calculator.html">FBA Storage Calculator</a>, and <a href="../../calculators/amazon-break-even-acos-calculator.html">Break-Even ACoS Calculator</a>.</span>
                     </div>
-
-                    <p>
-                        Need slab-specific dimensional weight, FBA cubic storage, or break-even modelling? Use our standalone <a href="../../calculators/amazon-profit-calculator.html">Amazon Profit Calculator</a>, <a href="../../calculators/amazon-fba-fee-calculator.html">FBA Fee Calculator</a>, <a href="../../calculators/amazon-fba-storage-fee-calculator.html">FBA Storage Calculator</a>, and <a href="../../calculators/amazon-break-even-acos-calculator.html">Break-Even ACoS Calculator</a>.
-                    </p>
                 </section>
 
                 <!-- SECTION 12 -->
@@ -1866,9 +1466,19 @@
                     </p>
                     <ul>
                         <li><strong>Order Dispatch Routine (Easy Ship / Self-Ship):</strong> Print packing slips and GST buyer invoices cleanly, seal corrugated boxes with corner protection to survive regional transit, and hand packages over inside the scheduled Easy Ship pickup slot to avoid Late Dispatch Rate penalties.</li>
-                        <li><strong>Stockout Prevention:</strong> Running completely out of stock damages organic keyword history. Track daily sales velocity against supplier manufacturing plus FBA check-in lead time, reordering at <code>Reorder Point = (Daily Sales × Total Lead Days) + 10–15 Days Safety Buffer</code>. Maintain an Inventory Performance Index (IPI) comfortably above 400 to preserve warehouse storage headroom.</li>
-                        <li><strong>Handling Returns, COD RTO &amp; SAFE-T Claims:</strong> Cash-on-Delivery orders increase conversion in Tier-2/3 markets but elevate Return-to-Origin (RTO) rejections. Track <em>Voice of the Customer</em> (NCX) feedback weekly to fix misleading listing claims or fragile packaging. When an Easy Ship or Self-Ship order comes back damaged, used, or missing parts, photograph unboxing evidence and file a <strong>SAFE-T claim</strong> immediately within Amazon’s eligible window.</li>
+                        <li><strong>Stockout Prevention:</strong> Running completely out of stock erases organic keyword velocity. Track daily sales speed against supplier manufacturing plus FBA check-in lead time, keeping an Inventory Performance Index (IPI) comfortably above 400 to preserve warehouse storage headroom.</li>
+                        <li><strong>Handling Returns, COD RTO &amp; SAFE-T Claims:</strong> Cash-on-Delivery orders expand reach across Tier-2/3 cities but increase Return-to-Origin (RTO) rejections. Track <em>Voice of the Customer</em> (NCX) feedback weekly to fix unclear product specs or weak packaging. When an Easy Ship or Self-Ship order returns damaged, used, or missing components, capture unboxing photographs immediately and file a <strong>SAFE-T claim</strong> inside Seller Central’s eligible claim window.</li>
                     </ul>
+
+                    <div class="kh-formula-grid" style="grid-template-columns: 1fr;">
+                        <div class="kh-formula-card">
+                            <div class="kh-formula-name">REORDER POINT FORMULA &amp; ILLUSTRATIVE WORKED EXAMPLE</div>
+                            <div class="kh-formula-eq">Reorder Point = (Average Daily Units Sold × Total Lead Time in Days) + Safety Buffer Stock</div>
+                            <p class="kh-formula-desc">
+                                <strong>Hypothetical Example:</strong> If an FBA hero SKU averages <strong>15 units/day</strong>, supplier production plus Amazon inbound check-in takes <strong>20 days</strong>, and you hold a <strong>10-day safety buffer</strong> (150 units), your reorder threshold is <code>(15 × 20) + 150 = 450 units</code>. Place your next factory purchase order the day remaining sellable stock hits 450 units.
+                            </p>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- SECTION 14 -->
@@ -1930,6 +1540,26 @@
                         <li><strong>Regional FBA Distribution:</strong> Placing inventory across North, West, and South fulfillment nodes cuts national shipping weight fees while shrinking delivery promises to 1–2 days for urban shoppers.</li>
                         <li><strong>Full-Funnel Search + Off-Amazon Traffic:</strong> Pair intent-driven PPC with creator/Google campaigns tagged via Amazon Attribution so external conversions compound your organic ranking—detailed further in <a href="../../blog/how-to-increase-sales-on-amazon.html">How to Increase Sales on Amazon</a>.</li>
                     </ol>
+
+                    <h3>30-Day Existing Seller Optimisation Plan</h3>
+                    <div class="kh-step-grid">
+                        <div class="kh-step-card">
+                            <h4>Week 1 · Unit Margin &amp; ASIN Triage</h4>
+                            <p>Audit Seller Central <em>Business Reports</em> and split catalog into high-session/low-CVR leaks vs low-impression winners; trim unprofitable SKU sizes.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>Week 2 · Main Image, Title &amp; A+ Upgrade</h4>
+                            <p>Rebuild mobile main photos for higher CTR, inject missing Hindi/English backend terms (&lt;249 bytes), and fix NCX return causes.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>Week 3 · Search Term Pruning &amp; Isolation</h4>
+                            <p>Strip zero-order bleeding queries via Negative Exact, split winning ASINs into margin-tiered campaigns, and enforce Break-Even ACoS bid caps.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>Week 4 · FBA Regional Stock &amp; Coupon Test</h4>
+                            <p>Shift top 20% velocity SKUs into regional FBA nodes for Prime speed and activate targeted 5%–10% Coupons on proven listings.</p>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- SECTION 16 -->
@@ -1943,14 +1573,33 @@
                         <li><strong>Sponsored Brands (Brand Registered Sellers):</strong> Top-of-search banner and video ads showcasing your brand logo and multiple catalog items—powerful for capturing category-level search intent and defending your brand name.</li>
                         <li><strong>Sponsored Display:</strong> Retargets shoppers who viewed your listing without buying, or defends your own product pages against rival cross-sell placements.</li>
                     </ul>
+
+                    <div class="kh-formula-grid">
+                        <div class="kh-formula-card">
+                            <div class="kh-formula-name">ACoS (AD COST OF SALES)</div>
+                            <div class="kh-formula-eq">(Ad Spend ÷ Ad Revenue) × 100</div>
+                            <p class="kh-formula-desc">Lower ACoS means stronger direct campaign efficiency. Always benchmark against unit Break-Even ACoS.</p>
+                        </div>
+                        <div class="kh-formula-card">
+                            <div class="kh-formula-name">ROAS (RETURN ON AD SPEND)</div>
+                            <div class="kh-formula-eq">Ad Revenue ÷ Ad Spend</div>
+                            <p class="kh-formula-desc">Measures gross revenue generated per ₹1 spent on ads (e.g., 4.0x ROAS equals 25% ACoS).</p>
+                        </div>
+                        <div class="kh-formula-card">
+                            <div class="kh-formula-name">TACoS (TOTAL ACOS)</div>
+                            <div class="kh-formula-eq">(Ad Spend ÷ Total Business Sales) × 100</div>
+                            <p class="kh-formula-desc">Reveals whether advertising lifts organic rank and overall catalog profitability—not just paid clicks.</p>
+                        </div>
+                    </div>
+
                     <p>
-                        Manage spend against profitability rather than clicks alone: track <strong>ACoS</strong> (<code>Ad Spend ÷ Ad Revenue</code>), <strong>ROAS</strong> (<code>Ad Revenue ÷ Ad Spend</code>), and <strong>TACoS</strong> (<code>Ad Spend ÷ Total Sales</code>). When high-converting search terms emerge in Auto or Broad campaigns, graduate them into dedicated Exact Match campaigns and negate zero-order cash-burn queries weekly.
+                        Manage spend against profitability rather than clicks alone. When high-converting search terms emerge in Auto or Broad campaigns, graduate them into dedicated Exact Match campaigns and negate zero-order cash-burn queries weekly.
                     </p>
 
-                    <!-- SVG DIAGRAM 3: AMAZON PPC LAUNCH FUNNEL -->
+                    <!-- SVG DIAGRAM 4: AMAZON PPC LAUNCH FUNNEL -->
                     <div class="kh-diagram-wrap">
                         <svg viewBox="0 0 760 220" role="img" aria-label="Controlled Amazon PPC Launch and Graduation Funnel">
-                            <rect width="760" height="220" rx="14" fill="#0b1120" />
+                            <rect width="760" height="220" rx="12" fill="#0f172a" />
                             <text x="380" y="28" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="0.8">PROFIT-CONTROLLED AMAZON PPC LAUNCH &amp; SCALING ARCHITECTURE</text>
 
                             <!-- Stage 1 -->
@@ -1974,21 +1623,21 @@
                             <polygon points="518,107 511,103 511,111" fill="#10b981" />
 
                             <!-- Stage 3 -->
-                            <rect x="522" y="54" width="212" height="106" rx="10" fill="rgba(16, 185, 129, 0.14)" stroke="#10b981" stroke-width="1.5" />
-                            <text x="628" y="78" text-anchor="middle" fill="#34d399" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 03 · HARVEST &amp; SCALE</text>
+                            <rect x="522" y="54" width="212" height="106" rx="10" fill="rgba(20, 184, 166, 0.14)" stroke="#14b8a6" stroke-width="1.5" />
+                            <text x="628" y="78" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="10" font-weight="700">LAYER 03 · HARVEST &amp; SCALE</text>
                             <text x="628" y="99" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="800">Exact Hero Campaigns</text>
                             <text x="628" y="120" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Graduate proven keywords to</text>
                             <text x="628" y="136" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5">Exact bids capped by Break-Even</text>
 
                             <rect x="26" y="176" width="708" height="30" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(148, 163, 184, 0.25)" />
-                            <text x="380" y="195" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="10">Rule: Never scale clicks on a weak listing—fix CTR &amp; CVR first, then scale exact winners under TACoS targets.</text>
+                            <text x="380" y="195" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="10">Rule: Never scale clicks on a weak listing—fix CTR &amp; CVR first, then scale exact winners under TACoS targets.</text>
                         </svg>
-                        <div class="kh-diagram-caption">Figure 3: Three-Layer PPC Workflow Connecting Search Term Discovery, Negative Pruning, and Profitable Exact Scale</div>
+                        <div class="kh-diagram-caption">Figure 4: Three-Layer PPC Workflow Connecting Search Term Discovery, Negative Pruning, and Profitable Exact Scale</div>
                     </div>
 
-                    <p>
-                        Explore our complete <a href="../../blog/amazon-ppc-strategy-guide.html">Amazon PPC Strategy Guide</a> or audit your ASIN economics with our <a href="../../calculators/amazon-acos-calculator.html">ACoS Calculator</a>, <a href="../../calculators/amazon-tacos-calculator.html">TACoS Calculator</a>, and <a href="../../calculators/asin-wise-report-generator.html">ASIN-Wise Report Generator</a>.
-                    </p>
+                    <div class="kh-context-note">
+                        <span><strong>Audit or scale your Amazon Ads:</strong> Read our <a href="../../blog/amazon-ppc-strategy-guide.html">Amazon PPC Strategy Guide</a> &amp; <a href="../../blog/reduce-amazon-ppc-wasted-spend.html">Wasted Ad Spend Playbook</a>, run numbers with our <a href="../../calculators/amazon-acos-calculator.html">ACoS</a>, <a href="../../calculators/amazon-tacos-calculator.html">TACoS</a>, &amp; <a href="../../calculators/asin-wise-report-generator.html">ASIN Report Generator</a> tools, or partner via <a href="../../services/amazon-ppc-management-services-india.html">Amazon PPC Management Services</a> (<a href="../../contact.html">Request PPC Audit</a>).</span>
+                    </div>
                 </section>
 
                 <!-- SECTION 17 -->
@@ -2118,76 +1767,93 @@
                         Already live with flat sales or rising ACoS? Follow this sequential diagnostic order: (1) Audit Seller Central <em>Business Reports</em> to separate low-impression SKUs (traffic/SEO issue) from high-session, low-CVR SKUs (image/price/rating issue); (2) Upgrade main images and pricing competitiveness before raising bids; (3) Download Search Term Reports and strip zero-order spend into Negative Exact; (4) Graduate winning keywords into controlled Exact campaigns aligned to Break-Even ACoS; and (5) Expand top 20% velocity SKUs into FBA regional hubs to improve delivery speed and organic rank.
                     </p>
 
-                    <h3>C. Interactive Amazon India Seller Launch Readiness Checklist</h3>
-                    <div class="checklist-card" id="khLaunchChecklist">
-                        <div class="kh-checklist-bar">
-                            <div class="checklist-title" style="margin-bottom: 0 !important;">Pre-Launch &amp; Scaling Verification Checklist (Saved Locally)</div>
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <span class="kh-checklist-count" id="checklistProgressCount">0 / 16 steps completed</span>
-                                <button type="button" class="kh-checklist-reset" id="resetChecklistBtn">Reset</button>
-                            </div>
-                        </div>
-                        <div class="checklist-items">
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Legal Name on PAN, GSTIN, and Bank Account matches letter-for-letter</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>GST state code matches primary pickup warehouse / FBA dispatch state</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Seller Central registration and Video KYC Identity Verification approved</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Two-Factor Authentication (2FA) and backup mobile configured safely</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Category gating &amp; statutory compliance (FSSAI / BIS / Legal Metrology) verified</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>GS1 EAN/UPC barcode or GTIN Exemption approved before ASIN creation</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Trademark filed / Brand Registry enrolled (for private-label &amp; D2C brands)</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Unit margin modelled with Referral, Closing, Shipping, 18% fee GST &amp; Return reserve</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Pure white-background main image + 5 mobile-clear infographic/lifestyle slides uploaded</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Title, bullets &amp; 249-byte backend search terms (incl. vernacular phrases) indexed</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Fulfilment selected (FBA Prime node or Easy Ship packaging/pickup SOP tested)</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Shipping box dimensions minimised to avoid unnecessary volumetric weight slab jumps</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Reorder Point calculated (<code>Daily Sales × Lead Time + 10–15d Safety</code>) to avoid OOS</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Launch Sponsored Products split cleanly into Auto Discovery &amp; Manual Exact Hero sets</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Weekly calendar set for Search Term pruning, Voice of Customer checks &amp; SAFE-T claims</span></div>
-                            <div class="checklist-item"><div class="checklist-checkbox"></div><span>Monthly GST/TCS/194-O TDS reconciliation folder shared with your Chartered Accountant</span></div>
-                        </div>
+                    <h3>C. Pre-Launch &amp; Scaling Verification Checklist</h3>
+                    <div class="kh-checklist-box">
+                        <div class="kh-checklist-heading">16-Point Amazon India Seller Launch Readiness Checklist</div>
+                        <ul class="kh-static-checklist">
+                            <li><span class="kh-check-box-icon">✓</span><span>Legal Name on PAN, GSTIN, and Bank Account matches letter-for-letter</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>GST state code matches primary pickup warehouse / FBA dispatch state</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Seller Central registration and Video KYC Identity Verification approved</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Two-Factor Authentication (2FA) and backup mobile configured safely</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Category gating &amp; statutory compliance (FSSAI / BIS / Legal Metrology) verified</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>GS1 EAN/UPC barcode or GTIN Exemption approved before ASIN creation</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Trademark filed / Brand Registry enrolled (for private-label &amp; D2C brands)</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Unit margin modelled with Referral, Closing, Shipping, 18% fee GST &amp; Return reserve</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Pure white-background main image + 5 mobile-clear infographic/lifestyle slides uploaded</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Title, bullets &amp; 249-byte backend search terms (incl. vernacular phrases) indexed</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Fulfilment selected (FBA Prime node or Easy Ship packaging/pickup SOP tested)</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Shipping box dimensions minimised to avoid unnecessary volumetric weight slab jumps</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Reorder Point calculated (<code>Daily Sales × Lead Time + Safety Stock</code>) to prevent stockouts</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Launch Sponsored Products split cleanly into Auto Discovery &amp; Manual Exact Hero sets</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Weekly calendar set for Search Term pruning, Voice of Customer checks &amp; SAFE-T claims</span></li>
+                            <li><span class="kh-check-box-icon">✓</span><span>Monthly GST/TCS/194-O TDS reconciliation folder shared with your Chartered Accountant</span></li>
+                        </ul>
                     </div>
 
                     <h3>D. Real Amazon Brand Growth: Experience and Results</h3>
                     <p>
-                        The methodologies outlined in this guide are grounded in real marketplace execution managed by PPC Growth Expert across Indian and cross-border brand portfolios. Across anonymised client engagements documented in our <a href="../../case-studies.html">Case Studies portfolio</a>:
+                        The frameworks documented in this guide come directly from hands-on marketplace execution managed by PPC Growth Expert across Indian consumer brands and manufacturer accounts. Across anonymised client engagements published in our <a href="../../case-studies.html">Case Studies portfolio</a>:
                     </p>
                     <div class="kh-proof-grid">
                         <div class="kh-proof-card">
                             <div class="kh-proof-cat">Featured Scale Study (90 Days)</div>
                             <div class="kh-proof-metric">₹60.4L → ₹2.78Cr/mo</div>
-                            <div class="kh-proof-note">TACoS cut 18.4% → 9.2%; CVR lifted 11.2% → 17.8% via A+ CRO &amp; Top-of-Search PPC (<a href="../../blog/how-amazon-brand-scaled-60l-to-2cr-case-study.html" style="color: #38bdf8;">Full teardown →</a>)</div>
+                            <div class="kh-proof-note">TACoS reduced 18.4% → 9.2%; CVR lifted 11.2% → 17.8% across 45 restructured campaigns (<a href="../../blog/how-amazon-brand-scaled-60l-to-2cr-case-study.html">Full teardown →</a>)</div>
                         </div>
                         <div class="kh-proof-card">
-                            <div class="kh-proof-cat">Gaming Accessories</div>
+                            <div class="kh-proof-cat">Gaming Peripherals</div>
                             <div class="kh-proof-metric">42% → 14% ACoS</div>
-                            <div class="kh-proof-note">+78% category revenue growth achieved across 45+ restructured Sponsored campaigns.</div>
+                            <div class="kh-proof-note">+78% sales growth achieved within 90 days through bid restructuring and 320+ negative exact targets.</div>
                         </div>
                         <div class="kh-proof-card">
-                            <div class="kh-proof-cat">Office &amp; Stationery (120+ SKUs)</div>
+                            <div class="kh-proof-cat">Office Products</div>
                             <div class="kh-proof-metric">2.6x → 5.3x ROAS</div>
-                            <div class="kh-proof-note">+78% total sales growth driven by SKU profitability segmentation and negative keyword hygiene.</div>
+                            <div class="kh-proof-note">+78% total sales growth and +54% ad orders via SKU profitability segmentation and keyword pruning.</div>
                         </div>
                         <div class="kh-proof-card">
-                            <div class="kh-proof-cat">Home, Kitchen &amp; Grocery</div>
+                            <div class="kh-proof-cat">Daily Grocery &amp; Home Kitchen</div>
                             <div class="kh-proof-metric">+86% to +94% Lift</div>
-                            <div class="kh-proof-note">+86% sales growth in Daily Grocery and +94% ad sales lift in Home &amp; Kitchen catalogs.</div>
+                            <div class="kh-proof-note">+86% sales growth (+63% new orders) in Grocery &amp; Gourmet and +94% ad sales growth in Home &amp; Kitchen.</div>
                         </div>
                     </div>
                     <p style="font-size: 13px; color: #64748b;">
-                        <em>Portfolio note: Outcomes reflect historical baselines vs post-optimisation periods on accounts that had product-market fit, steady inventory, and disciplined margin controls. Marketplace results vary by category demand, pricing, and stock availability.</em>
+                        <em>Portfolio note: Outcomes reflect documented pre-engagement vs post-optimisation client accounts where inventory availability and product-market fit held steady. Marketplace outcomes depend on category competition, pricing, and stock continuity.</em>
                     </p>
 
-                    <h3>E. When Do Sellers Need an Amazon Growth Partner?</h3>
+                    <h3>E. How PPC Growth Expert Helps Sellers Succeed</h3>
                     <p>
-                        Early-stage sellers testing 1 to 3 SKUs with tight cash flow should run Seller Central themselves first—learning how orders, buyer questions, returns, and search terms behave firsthand prevents costly delegation mistakes later. Once monthly revenue scales, however, catalog maintenance, FBA node replenishment, hourly bid elasticity, and creative testing quickly consume founder bandwidth.
+                        Early-stage sellers testing 1 to 3 SKUs with tight capital should operate Seller Central directly first so they understand buyer feedback and margin dynamics firsthand. When rising ad inefficiency, catalog conversion leaks, or multi-SKU complexity limit growth, <strong>PPC Growth Expert</strong> serves as an independent Amazon growth partner and specialist consultancy across six pillars:
                     </p>
-                    <p>
-                        When rising ad costs squeeze profit or account bottlenecks stall growth, partnering with an experienced <strong>Amazon growth partner and specialist consultancy</strong> turns scattered effort into measurable operational leverage. At <strong>PPC Growth Expert</strong>, we support manufacturers, D2C founders, and private-label brands across <a href="../../services/amazon-seller-account-management-services.html">Full Seller Account Management</a>, <a href="../../services/index.html#service-listing-optimization">Catalog &amp; A+ CRO</a>, and <a href="../../services/amazon-ppc-management-services-india.html">Margin-Led Amazon PPC Management</a>.
-                    </p>
+                    <div class="kh-step-grid">
+                        <div class="kh-step-card">
+                            <h4>Product &amp; Category Strategy</h4>
+                            <p>Unit economics screening, GST/margin validation, competitor gap mapping, and catalog prioritisation via our <a href="../../services/index.html#service-product-research">Product Research Service</a>.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>Listing SEO &amp; Conversion Assets</h4>
+                            <p>Title/bullet architecture, 249-byte Hinglish/English keyword indexing, white-background imaging, and <a href="../../services/index.html#service-image-aplus">A+ Content CRO</a>.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>Account Architecture &amp; Protection</h4>
+                            <p>Structured <a href="../../services/amazon-seller-account-management-services.html">Seller Account Management</a>, health metric safeguards (ODR/LDR), SAFE-T claim hygiene, and Brand Registry workflows.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>Profit-First Amazon PPC</h4>
+                            <p>Marginal ACoS segmentation, weekly bleed-term negation, and TACoS-governed <a href="../../services/amazon-ppc-management-services-india.html">Amazon PPC Management Services</a>.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>FBA &amp; Multi-Channel Scaling</h4>
+                            <p>Regional FBA inventory expansion planning, festive readiness, and omnichannel <a href="../../services/ecommerce-ppc-services.html">Ecommerce PPC growth</a>.</p>
+                        </div>
+                        <div class="kh-step-card">
+                            <h4>Ongoing Analytics &amp; Training</h4>
+                            <p>ASIN-level profitability tracking and live 1-on-1 team upskilling through <a href="../../amazon-ecommerce-training.html">Amazon ATES Training</a>.</p>
+                        </div>
+                    </div>
 
                     <h3>F. Verified Free Tools &amp; Calculators Directory</h3>
                     <p>
-                        Bookmark these 100% browser-based calculators and listing tools built specifically for Indian marketplace math:
+                        Bookmark these 100% browser-based calculators and listing utilities built for Indian marketplace unit math:
                     </p>
                     <div class="kh-table-wrap">
                         <table class="kh-table">
@@ -2228,15 +1894,14 @@
                         </table>
                     </div>
 
-                    <h3>G. Ready to Build or Audit Your Amazon India Account?</h3>
-                    <div class="service-cta-card">
-                        <h3 class="service-cta-title">Turn Your Amazon.in Setup Into a Profitable Growth System</h3>
-                        <p class="service-cta-desc">
-                            Whether you want a forensic audit of existing campaigns and listings or hands-on training to run Seller Central yourself, choose the next step that matches your stage.
+                    <div class="kh-end-cta">
+                        <h3>Ready to Build or Audit Your Amazon India Account?</h3>
+                        <p>
+                            Whether you want a forensic audit of existing listings, margins, and ad campaigns or guided 1-on-1 Seller Central coaching, choose the support track that fits your stage.
                         </p>
-                        <div class="kh-cta-actions">
-                            <a href="../../contact.html" class="service-cta-btn">Book Free Account &amp; PPC Audit →</a>
-                            <a href="../../amazon-ecommerce-training.html" class="kh-cta-btn-secondary">Explore Live 1-on-1 Seller Training</a>
+                        <div class="kh-end-cta-actions">
+                            <a href="../../contact.html" class="kh-btn-teal-light">Book Free Account &amp; PPC Audit →</a>
+                            <a href="../../amazon-ecommerce-training.html" class="kh-btn-outline-light">Explore Live 1-on-1 Seller Training</a>
                         </div>
                     </div>
                 </section>
@@ -2279,66 +1944,66 @@
                 <section id="sec-faqs">
                     <h2>Frequently Asked Questions (FAQs)</h2>
                     <p>
-                        Clear, practical answers to the top questions searches raise around selling on Amazon India:
+                        Clear, practical answers to the top questions founders raise around selling on Amazon India:
                     </p>
-                    <div style="display: flex; flex-direction: column; gap: 12px; margin: 22px 0;">
-                        <details name="faq-accordion">
-                            <summary>1. Can I sell on Amazon India without GST? <span class="faq-icon">+</span></summary>
+                    <div class="kh-faq-stack">
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>1. Can I sell on Amazon India without GST?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Generally, selling taxable commercial goods on Amazon.in requires a valid GSTIN because marketplaces deduct TCS under Section 52 of the CGST Act. Limited exceptions exist only if your entire catalog consists of 100% GST-exempt items (such as printed books or eligible unbranded agricultural goods) or qualifies under specific Enrolment ID rules for restricted intra-state non-GST suppliers permitted during onboarding. Always verify your exact business case with a Chartered Accountant.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>2. How much investment is required to start selling on Amazon India? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>2. How much investment is required to start selling on Amazon India?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Creating an Amazon India seller account costs ₹0 in fixed monthly subscription charges. Real startup capital goes toward GST/trademark setup, sample testing, initial stock, packaging, and launch ads. Illustratively, micro resellers often start with ₹20,000–₹45,000, while focused single-SKU private-label brands usually budget ₹75,000–₹1,75,000 to hold clean inventory plus a 60-day PPC runway.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>3. What documents are required to register as an Amazon seller in India? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>3. What documents are required to register as an Amazon seller in India?</span><span class="kh-faq-icon">+</span></summary>
                             <p>You need an active PAN card, an active GSTIN certificate matching your pickup state (unless selling exclusively exempt goods), an active bank account statement or cancelled cheque matching your legal entity name, identity proof for Video KYC (Aadhaar/Passport/Voter ID), a business email ID, mobile number, and a serviceable physical pickup address.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>4. How does Amazon FBA work compared to Easy Ship in India? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>4. How does Amazon FBA work compared to Easy Ship in India?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Under Easy Ship, you store stock at your home/office, pack orders daily, and hand them to an Amazon courier at your doorstep. Under Fulfillment by Amazon (FBA), you ship stock in bulk to Amazon warehouses so Amazon stores, packs, delivers, and handles customer service—earning the Prime delivery badge that drives higher conversion rates.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>5. How long does Amazon seller registration and verification take? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>5. How long does Amazon seller registration and verification take?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Filling out the onboarding form on sell.amazon.in takes 20–30 minutes. Automated checks plus Seller Identity Video Verification normally conclude within 2 to 7 working days when document legal names, bank account holders, and addresses align without discrepancies.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>6. Can I sell products on Amazon India without owning a trademark or brand? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>6. Can I sell products on Amazon India without owning a trademark or brand?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Yes. You can resell genuine existing brands (keeping valid GST distributor invoices on file) or launch generic/unbranded items using a GTIN Exemption. However, filing an Indian trademark and enrolling in Amazon Brand Registry is essential if you want to protect private-label products and unlock A+ Content and Brand Stores.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>7. How and when do Amazon India sellers receive payments? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>7. How and when do Amazon India sellers receive payments?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Net proceeds from delivered orders are credited directly to your verified bank account via NEFT/RTGS on a regular payout cycle (typically every 7 days for eligible funds), subject to delivery/return reserve periods and deductions for referral/closing/shipping fees, 18% fee GST, Section 52 TCS, and Section 194-O TDS.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>8. What is Amazon India’s total selling fee percentage? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>8. What is Amazon India’s total selling fee percentage?</span><span class="kh-faq-icon">+</span></summary>
                             <p>There is no single flat percentage—your deduction combines a category-based Referral Fee, a selling-price Closing Fee, and a zone/weight-based Shipping Fee (plus FBA cubic storage if stocked in FBA), all attracting 18% GST on seller fees. Depending on price point and box size, combined Amazon charges commonly range from ~18% to ~32%+ of selling price; check Seller Central’s Fee Preview for exact live rates.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>9. Do beginners need Amazon PPC ads from Day 1? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>9. Do beginners need Amazon PPC ads from Day 1?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Paid ads are optional, not mandatory. However, new ASINs start without historical sales velocity, so top organic slots go to established sellers. Investing a controlled daily budget into Sponsored Products Exact Match and Auto discovery accelerates initial orders and keyword relevance much faster than waiting passively.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>10. What is the difference between ACoS, ROAS, and TACoS? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>10. What is the difference between ACoS, ROAS, and TACoS?</span><span class="kh-faq-icon">+</span></summary>
                             <p>ACoS measures Ad Spend ÷ Ad Sales (cost ratio of paid campaigns alone). ROAS is the inverse (Ad Sales ÷ Ad Spend). TACoS measures Ad Spend ÷ Total Business Sales (paid plus organic), revealing whether ad spend is compounding organic sales and overall business profit.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>11. What happens when a buyer cancels Cash-on-Delivery or returns a damaged item? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>11. What happens when a buyer cancels Cash-on-Delivery or returns a damaged item?</span><span class="kh-faq-icon">+</span></summary>
                             <p>Customer-cancelled or undeliverable COD (RTO) parcels return to your warehouse or FBA node and reverse the order credit; certain logistics fees may apply depending on return reason. If an Easy Ship or Self-Ship item returns damaged or switched, document unboxing photos/video and submit a SAFE-T reimbursement claim before the deadline in Seller Central.</p>
                         </details>
 
-                        <details name="faq-accordion">
-                            <summary>12. How can PPC Growth Expert help new or established Amazon India sellers? <span class="faq-icon">+</span></summary>
+                        <details class="kh-faq-item" name="faq-accordion">
+                            <summary><span>12. How can PPC Growth Expert help new or established Amazon India sellers?</span><span class="kh-faq-icon">+</span></summary>
                             <p>PPC Growth Expert operates as an independent Amazon growth partner and specialist consultancy, helping sellers structure compliant Seller Central operations, engineer high-converting listings and A+ Content, model break-even SKU economics, and manage profitable Sponsored Products, Brands, and Display campaigns across India.</p>
                         </details>
                     </div>
@@ -2358,7 +2023,7 @@
                 <!-- OFFICIAL SOURCES BOX -->
                 <section id="sec-sources" class="kh-sources-box">
                     <h3>Official Documentation &amp; Verification Sources (Verified November 2026)</h3>
-                    <ul class="kh-sources-list">
+                    <ul>
                         <li>Amazon India Official Beginner’s Guide: <a href="https://sell.amazon.in/beginners-guide" target="_blank" rel="noopener noreferrer">sell.amazon.in/beginners-guide</a></li>
                         <li>Amazon India Seller Registration &amp; Document Requirements: <a href="https://sell.amazon.in/sell-online/seller-registration-guide" target="_blank" rel="noopener noreferrer">sell.amazon.in/sell-online/seller-registration-guide</a></li>
                         <li>Amazon India Pricing, Referral, Closing &amp; Fulfilment Fees: <a href="https://sell.amazon.in/fees-and-pricing" target="_blank" rel="noopener noreferrer">sell.amazon.in/fees-and-pricing</a></li>
@@ -2369,113 +2034,23 @@
                     </ul>
                 </section>
 
-                <!-- AUTHOR BIO CARD -->
-                <div class="author-bio-card">
-                    <img src="../../images/founder-avatar.png" alt="Anmol Pokhriyal" class="author-bio-img" width="64" height="64">
+                <!-- CLEAN SINGLE AUTHOR BLOCK -->
+                <div class="kh-author-end">
+                    <img src="../../images/founder-avatar.png" alt="Anmol Pokhriyal" width="56" height="56">
                     <div>
-                        <div class="author-bio-name">Written by Anmol Pokhriyal</div>
-                        <div class="author-bio-role">Founder &amp; Amazon Marketplace Specialist · PPC Growth Expert</div>
-                        <p class="author-bio-text">
+                        <div class="kh-author-end-name">Written by Anmol Pokhriyal</div>
+                        <div class="kh-author-end-role">Founder &amp; Amazon Marketplace Specialist · PPC Growth Expert</div>
+                        <p>
                             Anmol Pokhriyal is an independent Amazon growth consultant helping Indian manufacturers, D2C brands, and emerging sellers structure compliant Seller Central operations, unit-profitable catalogs, and data-driven Amazon Ads architectures across Amazon.in and international marketplaces.
                         </p>
-                        <div style="display: flex; gap: 16px; margin-top: 10px; font-size: 13px; flex-wrap: wrap;">
-                            <a href="../../about.html#founder" style="color: #0284c7; font-weight: 700; text-decoration: none;">View Founder Profile →</a>
-                            <a href="../../case-studies.html" style="color: #0f172a; font-weight: 700; text-decoration: none;">Explore Verified Results</a>
+                        <div class="kh-author-end-links">
+                            <a href="../../about.html#founder">View Founder Profile →</a>
+                            <a href="../../case-studies.html">Explore Verified Results →</a>
                         </div>
-                    </div>
-                </div>
-
-                <!-- WAS THIS HELPFUL FEEDBACK -->
-                <div class="was-helpful-box">
-                    <div class="was-helpful-title">Was this Amazon India Knowledge Hub guide helpful?</div>
-                    <div class="helpful-btn-group">
-                        <button type="button" class="helpful-btn" data-vote="yes">👍 Yes, very clear</button>
-                        <button type="button" class="helpful-btn" data-vote="no">💡 Could add more detail</button>
-                    </div>
-                    <div id="helpfulResponse" class="helpful-response" style="display: none;"></div>
-                </div>
-
-                <!-- SHARE BAR -->
-                <div class="kh-share-row">
-                    <div style="font-weight: 700; font-size: 14px; color: #0f172a;">Share this Seller Guide:</div>
-                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                        <a href="https://twitter.com/intent/tweet?text=How%20to%20Sell%20on%20Amazon%20India%3A%20Complete%20Seller%20Guide%20(2027)&amp;url=https://ppcgrowthexpert.com/knowledge-hub/how-to-sell-on-amazon-india/" target="_blank" rel="noopener noreferrer" style="background: #0f172a; color: #ffffff; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;">Share on X</a>
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://ppcgrowthexpert.com/knowledge-hub/how-to-sell-on-amazon-india/" target="_blank" rel="noopener noreferrer" style="background: #0a66c2; color: #ffffff; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;">LinkedIn</a>
-                        <a href="https://api.whatsapp.com/send?text=How%20to%20Sell%20on%20Amazon%20India%3A%20Complete%20Seller%20Guide%20https://ppcgrowthexpert.com/knowledge-hub/how-to-sell-on-amazon-india/" target="_blank" rel="noopener noreferrer" style="background: #25d366; color: #ffffff; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;">WhatsApp</a>
                     </div>
                 </div>
 
             </main>
-
-            <!-- RIGHT STICKY SIDEBAR -->
-            <aside class="article-sidebar-col" aria-label="Related Tools and Guides">
-
-                <!-- FREE SELLER CALCULATORS -->
-                <div class="sidebar-widget">
-                    <div class="sidebar-widget-title">ESSENTIAL SELLER TOOLS</div>
-                    <ul class="kh-sidebar-links">
-                        <li><a href="../../calculators/amazon-profit-calculator.html"><span>Amazon Profit Calculator</span><span>→</span></a></li>
-                        <li><a href="../../calculators/amazon-fba-fee-calculator.html"><span>FBA Fee Calculator</span><span>→</span></a></li>
-                        <li><a href="../../calculators/amazon-break-even-acos-calculator.html"><span>Break-Even ACoS Tool</span><span>→</span></a></li>
-                        <li><a href="../../calculators/ai-amazon-listing-generator.html"><span>AI Listing Generator</span><span>→</span></a></li>
-                        <li><a href="../../calculators/asin-wise-report-generator.html"><span>ASIN Report Generator</span><span>→</span></a></li>
-                    </ul>
-                </div>
-
-                <!-- RELATED KNOWLEDGE RESOURCES -->
-                <div class="related-posts-widget">
-                    <div class="sidebar-widget-title">COMPANION PLAYBOOKS</div>
-                    <div class="related-posts-list">
-                        <a href="../index.html" class="related-post-item">
-                            <span class="related-post-badge">HUB DIRECTORY</span>
-                            <h4 class="related-post-title">Explore All Knowledge Hub Playbooks</h4>
-                            <span class="related-post-date">Main Hub Index</span>
-                        </a>
-                        <a href="../../blog/how-amazon-brand-scaled-60l-to-2cr-case-study.html" class="related-post-item">
-                            <span class="related-post-badge">CASE STUDY · PROOF</span>
-                            <h4 class="related-post-title">Scaling ₹60.4L to ₹2.78Cr/Month on Amazon India</h4>
-                            <span class="related-post-date">18 min read · Verified Numbers</span>
-                        </a>
-                        <a href="../../blog/amazon-algorithm-explained-indian-sellers-guide-2027.html" class="related-post-item">
-                            <span class="related-post-badge">AMAZON SEO</span>
-                            <h4 class="related-post-title">Amazon Algorithm Explained for Indian Sellers (2027)</h4>
-                            <span class="related-post-date">28 min read · A10 &amp; COSMO</span>
-                        </a>
-                        <a href="../../blog/amazon-great-indian-festival-sale-2027.html" class="related-post-item">
-                            <span class="related-post-badge">FESTIVE SCALE</span>
-                            <h4 class="related-post-title">How to Prepare for Amazon Great Indian Festival 2027</h4>
-                            <span class="related-post-date">26 min read · 90-Day Plan</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- AUDIT CTA WIDGET -->
-                <div class="audit-cta-widget">
-                    <span class="audit-widget-badge">GROWTH PARTNER SUPPORT</span>
-                    <h3 class="audit-widget-title">Need Expert Help Launching or Scaling?</h3>
-                    <p class="audit-widget-desc">
-                        Get a practical review of your category margin, listings, FBA setup, and PPC strategy directly with our team.
-                    </p>
-                    <a href="../../contact.html" class="audit-widget-btn">Request Free Consultation →</a>
-                </div>
-
-                <!-- AUTHOR CARD WIDGET -->
-                <div class="author-card-widget">
-                    <div class="sidebar-author-header">
-                        <img src="../../images/founder-avatar.png" alt="Anmol Pokhriyal" class="sidebar-author-avatar" width="48" height="48">
-                        <div>
-                            <h4 class="sidebar-author-name">Anmol Pokhriyal</h4>
-                            <p class="sidebar-author-title">Amazon Growth Specialist</p>
-                        </div>
-                    </div>
-                    <p class="sidebar-author-bio">
-                        Helping Indian brands master Seller Central operations, unit economics, and margin-first Amazon Ads.
-                    </p>
-                    <a href="../../about.html#founder" class="sidebar-author-link">About PPC Growth Expert →</a>
-                </div>
-
-            </aside>
-
         </div>
     </div>
 

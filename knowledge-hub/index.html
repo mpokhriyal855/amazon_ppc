@@ -44,145 +44,9 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="../css/style.css?v=v41">
     <link rel="stylesheet" href="../css/navbar.css?v=v52">
-    <link rel="stylesheet" href="../blog/css/blog.css?v=v50">
+    <link rel="stylesheet" href="css/knowledge-hub.css?v=v1">
     <link rel="stylesheet" href="../css/footer.css?v=v41">
     <link rel="stylesheet" href="../css/whatsapp.css">
-
-    <style>
-        /* Scoped Knowledge Hub refinements on top of blog.css */
-        .featured-hero-card .featured-visual {
-            padding: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), #090e1a 72%);
-        }
-
-        .featured-hero-card .featured-visual svg {
-            width: 100%;
-            height: auto;
-            max-width: 440px;
-            display: block;
-        }
-
-        .kh-grid-meta-bar {
-            max-width: 1320px;
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .kh-count-pill {
-            font-family: 'DM Mono', monospace;
-            font-size: 12px;
-            font-weight: 700;
-            color: #0284c7;
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            padding: 6px 14px;
-            border-radius: 50px;
-        }
-
-        .kh-roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .kh-roadmap-item {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 18px;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .kh-roadmap-status {
-            display: inline-block;
-            align-self: flex-start;
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            font-weight: 700;
-            color: #d97706;
-            background: rgba(245, 158, 11, 0.12);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            padding: 3px 10px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-        }
-
-        .kh-roadmap-title {
-            font-size: 15.5px;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 0;
-            line-height: 1.35;
-        }
-
-        .kh-roadmap-desc {
-            font-size: 13px;
-            color: #475569;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .kh-roadmap-link {
-            font-size: 12.5px;
-            font-weight: 700;
-            color: #0284c7;
-            text-decoration: none;
-        }
-
-        .kh-roadmap-link:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 960px) {
-            .kh-roadmap-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 900px) {
-            .featured-hero-card {
-                grid-template-columns: 1fr !important;
-                min-height: auto !important;
-                padding: 0 !important;
-                gap: 0 !important;
-            }
-
-            .featured-hero-card .featured-visual {
-                margin: 0 !important;
-                border-radius: 18px 18px 0 0 !important;
-                min-height: 210px !important;
-                padding: 20px !important;
-            }
-
-            .featured-hero-card .featured-content {
-                padding: 22px 20px 26px !important;
-            }
-
-            .featured-hero-card .featured-author-row {
-                flex-wrap: wrap;
-                gap: 14px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .kh-roadmap-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 
     <!-- STRUCTURED DATA SCHEMA -->
     <script type="application/ld+json">
@@ -249,7 +113,7 @@
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 </head>
 
-<body class="blog-page-body">
+<body class="kh-page">
 
     <!-- NAVBAR -->
 <div class="navbar-container" id="navbarContainer">
@@ -663,583 +527,349 @@
 
 
     <!-- =========================================================
-         KNOWLEDGE HUB HERO HEADER
+         KNOWLEDGE HUB DOCUMENTATION PORTAL HEADER
     ========================================================= -->
-    <header class="blog-hero">
-        <div class="case-grid-bg"></div>
-        <div class="case-orb-1"></div>
-
-        <div class="blog-hero-container">
-
-            <div class="blog-hero-top-wrapper" style="max-width: 960px; margin: 0 auto;">
-                <!-- BREADCRUMBS -->
-                <nav class="breadcrumbs-bar" aria-label="Breadcrumb" style="margin-bottom: 20px;">
-                    <a href="../index.html" style="color: #94a3b8;">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                        Home
-                    </a>
-                    <span class="breadcrumb-sep" style="color: #475569;">&gt;</span>
-                    <a href="../calculators/index.html" style="color: #94a3b8;">Resources</a>
-                    <span class="breadcrumb-sep" style="color: #475569;">&gt;</span>
-                    <span class="breadcrumb-active" style="color: #ffffff;">Knowledge Hub</span>
+    <header class="kh-portal-hero">
+        <div class="kh-portal-container">
+            <div class="kh-portal-hero-inner">
+                <nav class="kh-breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="kh-breadcrumb-sep">/</span>
+                    <a href="../calculators/index.html">Resources</a>
+                    <span class="kh-breadcrumb-sep">/</span>
+                    <span class="kh-breadcrumb-current">Knowledge Hub</span>
                 </nav>
 
-                <!-- HERO TOP -->
-                <div class="blog-hero-top">
-                    <div>
-                        <div class="blog-badge-tag">
-                            ✦ AMAZON INDIA KNOWLEDGE HUB
-                        </div>
-                    </div>
+                <div class="kh-eyebrow">AMAZON INDIA SELLER DOCUMENTATION</div>
 
-                    <h1 class="blog-hero-title">
-                        Master Every Stage of <span class="gradient-text">Selling on Amazon India</span>
-                    </h1>
-                    <p class="blog-hero-subtitle">
-                        Structured, practitioner-verified reference manuals covering seller registration, GST compliance, Seller Central workflows, unit economics, SEO, and profitable PPC scaling.
-                    </p>
-
-                    <!-- STATS ROW -->
-                    <div class="blog-stats-row">
-                        <div class="blog-stat-item">
-                            <span class="blog-stat-num">20</span> Complete Chapters
-                        </div>
-                        <div class="blog-stat-item">
-                            <span class="blog-stat-num">3</span> Interactive Diagrams
-                        </div>
-                        <div class="blog-stat-item">
-                            <span class="blog-stat-num">Nov 2026</span> Official Fact-Check
-                        </div>
-                    </div>
-                </div>
+                <h1 class="kh-portal-title">
+                    Amazon India <span class="kh-accent-ink">Knowledge Hub</span>
+                </h1>
+                <p class="kh-portal-lead">
+                    Structured, practitioner-verified reference manuals for launching, managing, and scaling an Amazon.in seller business—covering GST rules, Seller Central setup, FBA vs Easy Ship, fee math, SEO, and profitable PPC systems.
+                </p>
             </div>
-
-            <!-- FEATURED FLAGSHIP PILLAR GUIDE CARD -->
-            <div class="featured-hero-wrapper">
-                <article class="featured-hero-card"
-                    id="featuredHeroCard"
-                    data-category="getting-started seller-setup compliance fulfilment listings-seo amazon-ppc scaling"
-                    data-tags="how to sell on amazon india, complete seller guide 2027, amazon seller registration, gst, fba vs easy ship, amazon selling fees, seller central, a10 seo, amazon ppc, brand registry"
-                    data-title="How to Sell on Amazon India: Complete Seller Guide (2027)">
-
-                    <div class="featured-badge-overlay">FLAGSHIP PILLAR GUIDE</div>
-
-                    <div class="featured-visual">
-                        <svg viewBox="0 0 420 260" role="img" aria-label="Amazon India Seller Growth System Diagram">
-                            <defs>
-                                <linearGradient id="khHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.24" />
-                                    <stop offset="100%" stop-color="#10b981" stop-opacity="0.18" />
-                                </linearGradient>
-                            </defs>
-                            <rect width="420" height="260" rx="14" fill="#0b1120" />
-                            <text x="210" y="28" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="10" font-weight="700" letter-spacing="1.2">AMAZON.IN END-TO-END SELLER ROADMAP</text>
-
-                            <!-- Step 1 -->
-                            <rect x="20" y="48" width="118" height="72" rx="10" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.5" />
-                            <text x="79" y="72" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">01 · SETUP</text>
-                            <text x="79" y="90" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">KYC &amp; GSTIN</text>
-                            <text x="79" y="106" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="8.5">PAN · Bank · Pickup</text>
-
-                            <path d="M 142 84 L 156 84" stroke="#38bdf8" stroke-width="2" />
-                            <polygon points="159,84 153,80 153,88" fill="#38bdf8" />
-
-                            <!-- Step 2 -->
-                            <rect x="162" y="48" width="118" height="72" rx="10" fill="rgba(129, 140, 248, 0.14)" stroke="#818cf8" stroke-width="1.5" />
-                            <text x="221" y="72" text-anchor="middle" fill="#a5b4fc" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">02 · CATALOG</text>
-                            <text x="221" y="90" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Sourcing &amp; SEO</text>
-                            <text x="221" y="106" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="8.5">A10 · COSMO · Margin</text>
-
-                            <path d="M 284 84 L 298 84" stroke="#10b981" stroke-width="2" />
-                            <polygon points="301,84 295,80 295,88" fill="#10b981" />
-
-                            <!-- Step 3 -->
-                            <rect x="304" y="48" width="96" height="72" rx="10" fill="rgba(16, 185, 129, 0.14)" stroke="#10b981" stroke-width="1.5" />
-                            <text x="352" y="72" text-anchor="middle" fill="#34d399" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">03 · SCALE</text>
-                            <text x="352" y="90" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">FBA &amp; PPC</text>
-                            <text x="352" y="106" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="8.5">Prime · TACoS</text>
-
-                            <!-- Bottom highlight strip -->
-                            <rect x="20" y="138" width="380" height="102" rx="12" fill="url(#khHeroGrad)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" />
-                            <text x="210" y="162" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800">Complete 2027 Seller Guide</text>
-                            <text x="210" y="182" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Registration · Seller Central · Fees · Settlements · Ads</text>
-
-                            <rect x="44" y="198" width="96" height="26" rx="13" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.45)" />
-                            <text x="92" y="215" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">Profit Simulator</text>
-
-                            <rect x="156" y="198" width="108" height="26" rx="13" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(52, 211, 153, 0.45)" />
-                            <text x="210" y="215" text-anchor="middle" fill="#34d399" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">24-Term Glossary</text>
-
-                            <rect x="280" y="198" width="96" height="26" rx="13" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(251, 191, 36, 0.45)" />
-                            <text x="328" y="215" text-anchor="middle" fill="#fbbf24" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">SOP Checklists</text>
-                        </svg>
-                    </div>
-
-                    <div class="featured-content">
-                        <div>
-                            <div class="featured-meta-top">
-                                <span class="category-pill">PILLAR GUIDE · AMAZON INDIA</span>
-                                <span class="publish-date">Verified Nov 2026</span>
-                            </div>
-
-                            <h2 class="featured-title">
-                                <a href="how-to-sell-on-amazon-india/index.html">How to Sell on Amazon India: Complete Seller Guide (2027)</a>
-                            </h2>
-
-                            <p class="featured-description">
-                                Start, manage, and scale profitably on Amazon.in. Covers GST rules &amp; exemptions, 13-step registration, Seller Central mastery, FBA vs Easy Ship, referral/closing fee math, settlement cycles, SEO, PPC architecture, and execution checklists.
-                            </p>
-                        </div>
-
-                        <div class="featured-author-row">
-                            <div class="author-info">
-                                <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="author-avatar" width="38" height="38">
-                                <div>
-                                    <span class="author-name">Anmol Pokhriyal</span>
-                                    <span class="read-time">25 min deep study · 20 Sections</span>
-                                </div>
-                            </div>
-
-                            <a href="how-to-sell-on-amazon-india/index.html" class="read-article-btn">
-                                <span>Read Complete Guide</span> →
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
         </div>
     </header>
 
     <!-- =========================================================
-         SEARCH & TOPIC FILTER BAR
+         KNOWLEDGE HUB MAIN DIRECTORY
     ========================================================= -->
-    <section class="blog-controls-section">
-        <div class="blog-controls-container">
+    <main class="kh-portal-main">
 
-            <div class="search-box-wrapper">
-                <span class="search-icon" aria-hidden="true">🔍</span>
-                <input type="text" id="hubSearchInput" class="search-input"
-                    placeholder="Search Knowledge Hub chapters, GST rules, FBA, fees, PPC, or checklists..."
-                    aria-label="Search Knowledge Hub guides">
-            </div>
-
-            <div class="categories-scroll-wrapper" id="categoryChipsWrapper">
-                <button class="category-chip active" data-category="all">All Guides</button>
-                <button class="category-chip" data-category="getting-started">Getting Started</button>
-                <button class="category-chip" data-category="compliance">GST &amp; Registration</button>
-                <button class="category-chip" data-category="fulfillment">FBA &amp; Logistics</button>
-                <button class="category-chip" data-category="listings-seo">SEO &amp; Listings</button>
-                <button class="category-chip" data-category="amazon-ppc">Amazon PPC</button>
-                <button class="category-chip" data-category="scaling">Scaling &amp; Proof</button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =========================================================
-         STAGE / GOAL SELECTOR
-    ========================================================= -->
-    <section class="goals-section">
-        <div class="goals-container">
-            <div class="section-heading-sm">NAVIGATE BY SELLER STAGE</div>
-            <h2 class="section-title">What stage is your Amazon business in?</h2>
-            <div class="goals-grid">
-                <div class="goal-card" data-goal-category="getting-started">🧭 Starting From Zero</div>
-                <div class="goal-card" data-goal-category="compliance">🧾 GST &amp; KYC Setup</div>
-                <div class="goal-card" data-goal-category="fulfillment">📦 FBA vs Easy Ship</div>
-                <div class="goal-card" data-goal-category="listings-seo">⚡ Optimizing Listings &amp; SEO</div>
-                <div class="goal-card" data-goal-category="amazon-ppc">🎯 Launching Amazon PPC</div>
-                <div class="goal-card" data-goal-category="scaling">📈 Scaling Margin &amp; Brand</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================
-         KNOWLEDGE HUB CHAPTERS & COMPANION PLAYBOOKS
-    ========================================================= -->
-    <main class="blog-content-area" id="knowledgeGrid">
-
-        <div class="kh-grid-meta-bar">
+        <!-- FLAGSHIP SELLER MANUAL -->
+        <article class="kh-flagship-card">
             <div>
-                <div class="section-heading-sm" style="margin-bottom: 4px;">CURATED REFERENCE MODULES</div>
-                <h2 class="section-title" style="margin: 0;">Explore Pillar Chapters, Deep Dives &amp; Calculators</h2>
+                <div class="kh-flagship-meta">
+                    <span class="kh-meta-tag">FLAGSHIP MANUAL · 2027 EDITION</span>
+                    <span class="kh-meta-tag">20 CHAPTERS + GLOSSARY</span>
+                    <span class="kh-meta-verified">Verified Nov 2026</span>
+                </div>
+
+                <h2 class="kh-flagship-title">
+                    <a href="how-to-sell-on-amazon-india/index.html">How to Sell on Amazon India: Complete Seller Guide (2027)</a>
+                </h2>
+
+                <p class="kh-flagship-desc">
+                    An end-to-end operational handbook built for beginners, domestic manufacturers, wholesalers, and D2C brands. Covers GST and exemption rules, 13-step account onboarding, sourcing viability, ASIN creation, FBA vs Easy Ship trade-offs, unit margin math, settlement deductions (TCS/194-O TDS), Amazon PPC, and Brand Registry.
+                </p>
+
+                <div class="kh-flagship-footer">
+                    <div class="kh-byline">
+                        <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" width="36" height="36">
+                        <div class="kh-byline-text">
+                            <strong>Anmol Pokhriyal</strong>
+                            <span>Founder &amp; Amazon Growth Consultant · Verified Nov 2026</span>
+                        </div>
+                    </div>
+
+                    <a href="how-to-sell-on-amazon-india/index.html" class="kh-btn-primary">
+                        <span>Read Complete Seller Guide</span> →
+                    </a>
+                </div>
             </div>
-            <span class="kh-count-pill" id="hubVisibleCount">8 guides</span>
-        </div>
 
-        <!-- EMPTY SEARCH STATE -->
-        <div class="empty-search-state" id="emptySearchState" style="display: none;">
-            <div class="empty-search-title">No Knowledge Hub resource matched that search.</div>
-            <div class="empty-search-sub">Reset filters to view our complete Amazon India seller guide and companion tools.</div>
-            <button type="button" id="resetHubFilterBtn" class="read-article-btn" style="border: none; cursor: pointer;">Reset Filters →</button>
-        </div>
+            <div class="kh-flagship-visual">
+                <svg viewBox="0 0 420 260" role="img" aria-label="Amazon India Seller Growth Lifecycle Schematic">
+                    <rect width="420" height="260" rx="10" fill="#0f172a" />
+                    <text x="210" y="28" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="10" font-weight="700" letter-spacing="1">AMAZON.IN HANDBOOK ARCHITECTURE</text>
 
-        <div class="articles-grid" id="articlesGrid">
+                    <rect x="18" y="48" width="118" height="72" rx="8" fill="rgba(20, 184, 166, 0.14)" stroke="#14b8a6" stroke-width="1.5" />
+                    <text x="77" y="72" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">PHASE 01</text>
+                    <text x="77" y="90" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">KYC &amp; GSTIN</text>
+                    <text x="77" y="106" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="8.5">PAN · Bank · Pickup</text>
 
-            <!-- CARD 1: REGISTRATION, GST & ACCOUNT SETUP -->
-            <article class="article-card"
-                data-article-item="true"
-                data-category="compliance getting-started seller-setup"
-                data-tags="gst registration pan card bank account verification documents kyc enrolment id books exempt"
-                data-title="GST, Documents & Step-by-Step Amazon India Seller Registration">
-                <div class="article-card-image">
-                    <svg viewBox="0 0 320 160" width="100%" height="100%" aria-hidden="true">
-                        <rect width="320" height="160" fill="#0b1120" />
-                        <rect x="26" y="34" width="76" height="60" rx="8" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="1.5" />
-                        <text x="64" y="61" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="10" font-weight="800">PAN &amp; KYC</text>
-                        <text x="64" y="77" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">Entity ID</text>
-                        <path d="M 106 64 L 122 64" stroke="#818cf8" stroke-width="2" />
-                        <rect x="124" y="34" width="76" height="60" rx="8" fill="rgba(129, 140, 248, 0.14)" stroke="#818cf8" stroke-width="1.5" />
-                        <text x="162" y="61" text-anchor="middle" fill="#a5b4fc" font-family="Plus Jakarta Sans" font-size="10" font-weight="800">GSTIN</text>
-                        <text x="162" y="77" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">State Match</text>
-                        <path d="M 204 64 L 220 64" stroke="#10b981" stroke-width="2" />
-                        <rect x="222" y="34" width="76" height="60" rx="8" fill="rgba(16, 185, 129, 0.14)" stroke="#10b981" stroke-width="1.5" />
-                        <text x="260" y="61" text-anchor="middle" fill="#34d399" font-family="Plus Jakarta Sans" font-size="10" font-weight="800">LIVE</text>
-                        <text x="260" y="77" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">Seller Central</text>
-                        <text x="160" y="126" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">Chapters 2–4 · Eligibility &amp; Registration</text>
-                        <text x="160" y="143" text-anchor="middle" fill="#38bdf8" font-family="DM Mono" font-size="9">Tax Rules · Exemption Nuance · Video KYC</text>
-                    </svg>
-                </div>
-                <div class="article-card-body">
-                    <div>
-                        <span class="article-card-badge">Pillar Chapter · Sec 2–4</span>
-                        <h3 class="article-card-title">
-                            <a href="how-to-sell-on-amazon-india/index.html#sec-requirements">GST Rules, Documents &amp; Amazon Seller Registration Process</a>
-                        </h3>
-                        <p class="article-card-excerpt">
-                            Exact GST mandates under Section 52 CGST, 100% GST-exempt goods vs Enrolment ID nuance, PAN/bank matching rules, and the 13-step registration walkthrough.
-                        </p>
-                    </div>
-                    <div class="article-card-footer">
-                        <div class="article-author-mini">
-                            <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-avatar-mini" width="26" height="26">
-                            <span class="publish-date">Pillar Sec 2–4 · Verified</span>
-                        </div>
-                        <a href="how-to-sell-on-amazon-india/index.html#sec-requirements" class="article-card-link">Open Section <span>→</span></a>
-                    </div>
-                </div>
-            </article>
+                    <path d="M 140 84 L 154 84" stroke="#2dd4bf" stroke-width="2" />
+                    <polygon points="157,84 151,80 151,88" fill="#2dd4bf" />
 
-            <!-- CARD 2: FEES, PRICING, SETTLEMENTS & SIMULATOR -->
-            <article class="article-card"
-                data-article-item="true"
-                data-category="getting-started compliance fulfillment"
-                data-tags="amazon selling fees referral fee closing fee weight handling fba fees profit margin break even acos settlements tds tcs"
-                data-title="Amazon.in Fees, Profit Math & 7-Day Settlements">
-                <div class="article-card-image">
-                    <svg viewBox="0 0 320 160" width="100%" height="100%" aria-hidden="true">
-                        <rect width="320" height="160" fill="#0b1120" />
-                        <circle cx="70" cy="66" r="28" fill="rgba(245, 158, 11, 0.14)" stroke="#f59e0b" stroke-width="1.5" />
-                        <text x="70" y="64" text-anchor="middle" fill="#fbbf24" font-family="Plus Jakarta Sans" font-size="9.5" font-weight="800">FEES</text>
-                        <text x="70" y="78" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="7.5">+18% GST</text>
-                        <circle cx="160" cy="66" r="28" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="1.5" />
-                        <text x="160" y="64" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="9.5" font-weight="800">MARGIN</text>
-                        <text x="160" y="78" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="7.5">Max CPA</text>
-                        <circle cx="250" cy="66" r="28" fill="rgba(16, 185, 129, 0.14)" stroke="#10b981" stroke-width="1.5" />
-                        <text x="250" y="64" text-anchor="middle" fill="#34d399" font-family="Plus Jakarta Sans" font-size="9.5" font-weight="800">PAYOUT</text>
-                        <text x="250" y="78" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="7.5">7-Day Cycle</text>
-                        <text x="160" y="126" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">Chapters 11–12 · Unit Economics</text>
-                        <text x="160" y="143" text-anchor="middle" fill="#fbbf24" font-family="DM Mono" font-size="9">Includes Interactive Profit &amp; Reorder Calculator</text>
-                    </svg>
-                </div>
-                <div class="article-card-body">
-                    <div>
-                        <span class="article-card-badge">Pillar Chapter · Sec 11–12</span>
-                        <h3 class="article-card-title">
-                            <a href="how-to-sell-on-amazon-india/index.html#sec-fees-pricing">Amazon India Selling Fees, Unit Margin Math &amp; Payment Settlements</a>
-                        </h3>
-                        <p class="article-card-excerpt">
-                            Referral, closing, weight-handling, and storage fee mechanics, plus our interactive unit profit, break-even ACoS, and inventory reorder point simulator.
-                        </p>
-                    </div>
-                    <div class="article-card-footer">
-                        <div class="article-author-mini">
-                            <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-avatar-mini" width="26" height="26">
-                            <span class="publish-date">Pillar Sec 11–12 · Interactive</span>
-                        </div>
-                        <a href="how-to-sell-on-amazon-india/index.html#sec-fees-pricing" class="article-card-link">Open Calculator <span>→</span></a>
-                    </div>
-                </div>
-            </article>
+                    <rect x="160" y="48" width="118" height="72" rx="8" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.5" />
+                    <text x="219" y="72" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">PHASE 02</text>
+                    <text x="219" y="90" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Catalog &amp; FBA</text>
+                    <text x="219" y="106" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="8.5">A10 SEO · Sourcing</text>
 
-            <!-- CARD 3: FBA vs EASY SHIP vs SELF-SHIP -->
-            <article class="article-card"
-                data-article-item="true"
-                data-category="fulfillment getting-started scaling"
-                data-tags="fba fulfillment by amazon easy ship self ship prime badge apob vpob inventory returns safe-t"
-                data-title="Fulfilment Models Compared: FBA vs Easy Ship vs Self-Ship">
-                <div class="article-card-image">
-                    <svg viewBox="0 0 320 160" width="100%" height="100%" aria-hidden="true">
-                        <rect width="320" height="160" fill="#0b1120" />
-                        <rect x="22" y="34" width="84" height="62" rx="8" fill="rgba(16, 185, 129, 0.14)" stroke="#10b981" stroke-width="1.5" />
-                        <text x="64" y="60" text-anchor="middle" fill="#34d399" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">FBA</text>
-                        <text x="64" y="77" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">Prime Badge</text>
-                        <rect x="118" y="34" width="84" height="62" rx="8" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="1.5" />
-                        <text x="160" y="60" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="800">EASY SHIP</text>
-                        <text x="160" y="77" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">Amazon Pickup</text>
-                        <rect x="214" y="34" width="84" height="62" rx="8" fill="rgba(148, 163, 184, 0.14)" stroke="#94a3b8" stroke-width="1.5" />
-                        <text x="256" y="60" text-anchor="middle" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="800">SELF-SHIP</text>
-                        <text x="256" y="77" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">3PL Courier</text>
-                        <text x="160" y="126" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">Chapters 8 &amp; 13 · Fulfilment &amp; Returns</text>
-                        <text x="160" y="143" text-anchor="middle" fill="#34d399" font-family="DM Mono" font-size="9">APOB/VPOB · Regional Hubs · SAFE-T Claims</text>
-                    </svg>
-                </div>
-                <div class="article-card-body">
-                    <div>
-                        <span class="article-card-badge">Pillar Chapter · Sec 8 &amp; 13</span>
-                        <h3 class="article-card-title">
-                            <a href="how-to-sell-on-amazon-india/index.html#sec-fulfilment">Amazon FBA vs Easy Ship vs Self-Ship in India: Which Should You Pick?</a>
-                        </h3>
-                        <p class="article-card-excerpt">
-                            Side-by-side comparison of storage, pickup, Prime badge qualification, zonal shipping costs, multi-state APOB/VPOB compliance, and return recovery.
-                        </p>
-                    </div>
-                    <div class="article-card-footer">
-                        <div class="article-author-mini">
-                            <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-avatar-mini" width="26" height="26">
-                            <span class="publish-date">Pillar Sec 8 · Matrix Included</span>
-                        </div>
-                        <a href="how-to-sell-on-amazon-india/index.html#sec-fulfilment" class="article-card-link">Compare Models <span>→</span></a>
-                    </div>
-                </div>
-            </article>
+                    <path d="M 282 84 L 296 84" stroke="#38bdf8" stroke-width="2" />
+                    <polygon points="299,84 293,80 293,88" fill="#38bdf8" />
 
-            <!-- CARD 4: COMPANION DEEP DIVE - AMAZON ALGORITHM 2027 -->
-            <article class="article-card"
-                data-article-item="true"
-                data-category="listings-seo scaling"
-                data-tags="amazon algorithm a10 cosmo rufus ai seo organic rank hinglish pincode velocity"
-                data-title="Amazon Algorithm Explained for Indian Sellers – Complete Guide 2027">
-                <div class="article-card-image">
-                    <svg viewBox="0 0 320 160" width="100%" height="100%" aria-hidden="true">
-                        <rect width="320" height="160" fill="#0b1120" />
-                        <circle cx="65" cy="70" r="26" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="2" />
-                        <text x="65" y="68" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="9" font-weight="800">A10 CORE</text>
-                        <text x="65" y="81" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="7">Velocity</text>
-                        <path d="M 96 70 L 130 70" stroke="#a855f7" stroke-width="2" stroke-dasharray="3,3" />
-                        <circle cx="160" cy="70" r="22" fill="rgba(168, 85, 247, 0.15)" stroke="#a855f7" stroke-width="1.5" />
-                        <text x="160" y="73" text-anchor="middle" fill="#c084fc" font-family="Plus Jakarta Sans" font-size="8.5" font-weight="800">COSMO</text>
-                        <path d="M 186 70 L 220 70" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3" />
-                        <circle cx="255" cy="70" r="26" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2" />
-                        <text x="255" y="68" text-anchor="middle" fill="#10b981" font-family="Plus Jakarta Sans" font-size="9" font-weight="800">RANK #1</text>
-                        <text x="255" y="81" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="7">Amazon.in</text>
-                        <text x="160" y="128" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">Companion Playbook · Organic Ranking</text>
-                        <text x="160" y="144" text-anchor="middle" fill="#c084fc" font-family="DM Mono" font-size="9">A10 · COSMO Intent · Pincode Speed</text>
-                    </svg>
-                </div>
-                <div class="article-card-body">
-                    <div>
-                        <span class="article-card-badge">Companion Deep Dive · SEO</span>
-                        <h3 class="article-card-title">
-                            <a href="../blog/amazon-algorithm-explained-indian-sellers-guide-2027.html">Amazon Algorithm Explained for Indian Sellers – Complete Guide (2027)</a>
-                        </h3>
-                        <p class="article-card-excerpt">
-                            How Amazon.in indexes Hindi/Hinglish search queries, weights pincode delivery speed, and connects Sponsored Products velocity with long-term organic ranking.
-                        </p>
-                    </div>
-                    <div class="article-card-footer">
-                        <div class="article-author-mini">
-                            <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-avatar-mini" width="26" height="26">
-                            <span class="publish-date">Anmol P. · 28 min read</span>
-                        </div>
-                        <a href="../blog/amazon-algorithm-explained-indian-sellers-guide-2027.html" class="article-card-link">Read Guide <span>→</span></a>
-                    </div>
-                </div>
-            </article>
+                    <rect x="302" y="48" width="100" height="72" rx="8" fill="rgba(20, 184, 166, 0.14)" stroke="#14b8a6" stroke-width="1.5" />
+                    <text x="352" y="72" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9.5" font-weight="700">PHASE 03</text>
+                    <text x="352" y="90" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Margin &amp; PPC</text>
+                    <text x="352" y="106" text-anchor="middle" fill="#94a3b8" font-family="DM Mono, monospace" font-size="8.5">ACoS · TACoS</text>
 
-            <!-- CARD 5: COMPANION CASE STUDY & PROOF -->
-            <article class="article-card"
-                data-article-item="true"
-                data-category="amazon-ppc scaling"
-                data-tags="case study 60l to 2.78cr tacos reduction top of search ppc harvesting proof results"
-                data-title="Case Study: How an Indian Brand Scaled ₹60L to ₹2.78Cr/Month on Amazon">
-                <div class="article-card-image">
-                    <svg viewBox="0 0 320 160" width="100%" height="100%" aria-hidden="true">
-                        <rect width="320" height="160" fill="#0b1120" />
-                        <rect x="28" y="34" width="112" height="62" rx="10" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.5" />
-                        <text x="84" y="60" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="9">BASELINE</text>
-                        <text x="84" y="80" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="14" font-weight="800">₹60.4L/mo</text>
-                        <path d="M 146 65 L 174 65" stroke="#10b981" stroke-width="2" />
-                        <polygon points="178,65 170,60 170,70" fill="#10b981" />
-                        <rect x="180" y="34" width="112" height="62" rx="10" fill="rgba(16, 185, 129, 0.16)" stroke="#10b981" stroke-width="1.5" />
-                        <text x="236" y="60" text-anchor="middle" fill="#34d399" font-family="DM Mono" font-size="9">90 DAYS</text>
-                        <text x="236" y="80" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="14" font-weight="800">₹2.78Cr/mo</text>
-                        <text x="160" y="128" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">Documented Portfolio Evidence</text>
-                        <text x="160" y="144" text-anchor="middle" fill="#34d399" font-family="DM Mono" font-size="9">TACoS 18.4% → 9.2% · CVR 11.2% → 17.8%</text>
-                    </svg>
-                </div>
-                <div class="article-card-body">
-                    <div>
-                        <span class="article-card-badge">Case Study · Proof</span>
-                        <h3 class="article-card-title">
-                            <a href="../blog/how-amazon-brand-scaled-60l-to-2cr-case-study.html">Case Study: Scaling an Amazon India Brand From ₹60L to ₹2.78Cr/Month</a>
-                        </h3>
-                        <p class="article-card-excerpt">
-                            Step-by-step execution teardown of wasted ad pruning, main-image and A+ conversion engineering, and Sponsored Products Top-of-Search isolation.
-                        </p>
-                    </div>
-                    <div class="article-card-footer">
-                        <div class="article-author-mini">
-                            <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-avatar-mini" width="26" height="26">
-                            <span class="publish-date">Anmol P. · 18 min read</span>
-                        </div>
-                        <a href="../blog/how-amazon-brand-scaled-60l-to-2cr-case-study.html" class="article-card-link">View Case Study <span>→</span></a>
-                    </div>
-                </div>
-            </article>
+                    <rect x="18" y="138" width="384" height="102" rx="10" fill="rgba(30, 41, 59, 0.85)" stroke="#334155" stroke-width="1" />
+                    <text x="210" y="164" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="800">Complete 2027 Seller Guide</text>
+                    <text x="210" y="184" text-anchor="middle" fill="#cbd5e1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Registration · Seller Central · Fees · Settlements · Ads</text>
 
-            <!-- CARD 6: FESTIVE PLAYBOOK & ELIGIBILITY -->
-            <article class="article-card"
-                data-article-item="true"
-                data-category="scaling amazon-ppc compliance"
-                data-tags="great indian festival 2027 eligibility lightning deals prime coupons festive scaling inventory"
-                data-title="Amazon Great Indian Festival 2027 Playbook & Eligibility Guide">
-                <div class="article-card-image">
-                    <svg viewBox="0 0 320 160" width="100%" height="100%" aria-hidden="true">
-                        <rect width="320" height="160" fill="#0b1120" />
-                        <circle cx="84" cy="68" r="28" fill="rgba(245, 158, 11, 0.14)" stroke="#f59e0b" stroke-width="1.8" />
-                        <text x="84" y="65" text-anchor="middle" fill="#fbbf24" font-family="Plus Jakarta Sans" font-size="10" font-weight="800">90-DAY</text>
-                        <text x="84" y="79" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="7.5">Festive Prep</text>
-                        <path d="M 118 68 L 198 68" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,3" />
-                        <circle cx="236" cy="68" r="28" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="1.8" />
-                        <text x="236" y="65" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="10" font-weight="800">5-PHASE</text>
-                        <text x="236" y="79" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="7.5">PPC Surge</text>
-                        <text x="160" y="128" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">Peak Season Scaling · Great Indian Festival</text>
-                        <text x="160" y="144" text-anchor="middle" fill="#fbbf24" font-family="DM Mono" font-size="9">Deal Eligibility · ROP Buffer · Surge Bids</text>
-                    </svg>
-                </div>
-                <div class="article-card-body">
-                    <div>
-                        <span class="article-card-badge">Companion Deep Dive · Events</span>
-                        <h3 class="article-card-title">
-                            <a href="../blog/amazon-great-indian-festival-sale-2027.html">How to Prepare &amp; Win in Amazon Great Indian Festival (2027)</a>
-                        </h3>
-                        <p class="article-card-excerpt">
-                            90-day preparation timeline, FBA stock lock-in deadlines, Lightning Deal price rules, and hourly festive PPC bid controls for maximum net margin.
-                        </p>
-                    </div>
-                    <div class="article-card-footer">
-                        <div class="article-author-mini">
-                            <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-avatar-mini" width="26" height="26">
-                            <span class="publish-date">Anmol P. · 26 min read</span>
-                        </div>
-                        <a href="../blog/amazon-great-indian-festival-sale-2027.html" class="article-card-link">Read Playbook <span>→</span></a>
-                    </div>
-                </div>
-            </article>
+                    <rect x="38" y="199" width="102" height="24" rx="6" fill="#0f172a" stroke="#14b8a6" stroke-opacity="0.6" />
+                    <text x="89" y="215" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="9" font-weight="700">GST &amp; KYC SOP</text>
 
-            <!-- CARD 7: INTERACTIVE FEE & PROFIT TOOLBOX -->
-            <article class="article-card"
-                data-article-item="true"
-                data-category="getting-started fulfillment amazon-ppc"
-                data-tags="amazon profit calculator india fba fee calculator acos calculator ai listing generator tools"
-                data-title="Amazon India Profit, FBA Fee & Listing Generator Toolbox">
-                <div class="article-card-image">
-                    <svg viewBox="0 0 320 160" width="100%" height="100%" aria-hidden="true">
-                        <rect width="320" height="160" fill="#0b1120" />
-                        <rect x="26" y="34" width="124" height="58" rx="8" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="1.5" />
-                        <text x="88" y="60" text-anchor="middle" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="800">₹ PROFIT ENGINE</text>
-                        <text x="88" y="76" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">Referral · FBA · GST</text>
-                        <rect x="170" y="34" width="124" height="58" rx="8" fill="rgba(16, 185, 129, 0.14)" stroke="#10b981" stroke-width="1.5" />
-                        <text x="232" y="60" text-anchor="middle" fill="#34d399" font-family="Plus Jakarta Sans" font-size="10.5" font-weight="800">AI SEO LISTING</text>
-                        <text x="232" y="76" text-anchor="middle" fill="#94a3b8" font-family="DM Mono" font-size="8">Photos → Copy</text>
-                        <text x="160" y="128" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="11" font-weight="800">Free Client-Side Seller Calculators</text>
-                        <text x="160" y="144" text-anchor="middle" fill="#38bdf8" font-family="DM Mono" font-size="9">Profit · FBA Fees · ACoS · ASIN Report Builder</text>
-                    </svg>
-                </div>
-                <div class="article-card-body">
-                    <div>
-                        <span class="article-card-badge">Interactive Utility · Tools</span>
-                        <h3 class="article-card-title">
-                            <a href="../calculators/amazon-profit-calculator.html">Amazon India Profit Calculator &amp; Seller Economics Toolkit</a>
-                        </h3>
-                        <p class="article-card-excerpt">
-                            Model net margin after referral fees, weight handling, FBA storage, returns, and 18% GST—plus generate SEO listings and combine ASIN reports free.
-                        </p>
-                    </div>
-                    <div class="article-card-footer">
-                        <div class="article-author-mini">
-                            <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" class="article-author-avatar-mini" width="26" height="26">
-                            <span class="publish-date">100% Free Browser Tools</span>
-                        </div>
-                        <a href="../calculators/amazon-profit-calculator.html" class="article-card-link">Launch Tool <span>→</span></a>
-                    </div>
-                </div>
-            </article>
+                    <rect x="154" y="199" width="112" height="24" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.6" />
+                    <text x="210" y="215" text-anchor="middle" fill="#38bdf8" font-family="DM Mono, monospace" font-size="9" font-weight="700">Unit Margin Math</text>
 
-        </div>
+                    <rect x="280" y="199" width="102" height="24" rx="6" fill="#0f172a" stroke="#94a3b8" stroke-opacity="0.6" />
+                    <text x="331" y="215" text-anchor="middle" fill="#e2e8f0" font-family="DM Mono, monospace" font-size="9" font-weight="700">24-Term Glossary</text>
+                </svg>
+            </div>
+        </article>
 
-        <!-- =========================================================
-             KNOWLEDGE HUB CLUSTER ROADMAP (PLANNED EXPANSIONS)
-        ========================================================= -->
-        <section class="topic-recommendation-box" id="hubRoadmap">
-            <div class="topic-rec-header">
-                <div class="section-heading-sm" style="color: #0284c7;">KNOWLEDGE HUB EDITORIAL ROADMAP</div>
-                <h2 class="topic-rec-title">Upcoming Deep-Dive Cluster Guides</h2>
-                <p class="topic-rec-desc">
-                    Each topic below expands a core chapter from our flagship Amazon India Seller Guide into a standalone specialist manual.
+        <!-- STRUCTURED 4-PHASE HANDBOOK SYLLABUS -->
+        <section id="khSyllabus" aria-labelledby="khSyllabusTitle">
+            <div class="kh-section-header">
+                <div class="kh-section-kicker">HANDBOOK SYLLABUS</div>
+                <h2 class="kh-section-heading" id="khSyllabusTitle">Jump Directly to Any Section of the Guide</h2>
+                <p class="kh-section-sub">
+                    All 20 chapters, operational checklists, 24 glossary definitions, 12 FAQs, and official source links organised in sequence.
                 </p>
             </div>
 
-            <div class="kh-roadmap-grid">
-                <div class="kh-roadmap-item">
-                    <div>
-                        <span class="kh-roadmap-status">Planned Cluster</span>
-                        <h3 class="kh-roadmap-title" style="margin-top: 8px;">GST Rules, Exemption &amp; APOB Compliance for Amazon.in Sellers</h3>
-                        <p class="kh-roadmap-desc" style="margin-top: 6px;">Deep breakdown of state-level GSTIN matching, TCS credit reconciliation, and multi-state FBA APOB setup.</p>
+            <div class="kh-syllabus-grid">
+
+                <!-- MODULE 1 -->
+                <div class="kh-module-card">
+                    <div class="kh-module-header">
+                        <span class="kh-module-badge">MODULE 01</span>
+                        <span class="kh-module-scope">Chapters 01 – 05</span>
                     </div>
-                    <a href="how-to-sell-on-amazon-india/index.html#sec-requirements" class="kh-roadmap-link">Covered in Pillar Sec 3 →</a>
+                    <h3 class="kh-module-title">Foundation, Compliance &amp; Seller Central</h3>
+                    <ul class="kh-chapter-list">
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-what-is" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">01</span>What Is Selling on Amazon India?</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-who-can-sell" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">02</span>Who Can Sell on Amazon.in? (Entity Types)</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-requirements" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">03</span>GST, PAN, Bank &amp; KYC Requirements</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-registration" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">04</span>13-Step Registration &amp; Video Verification</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-seller-central" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">05</span>Understanding Seller Central Modules</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="kh-roadmap-item">
-                    <div>
-                        <span class="kh-roadmap-status">Planned Cluster</span>
-                        <h3 class="kh-roadmap-title" style="margin-top: 8px;">Amazon India Fee Tiers: Referral, Closing &amp; Weight Handling</h3>
-                        <p class="kh-roadmap-desc" style="margin-top: 6px;">Slab-by-slab margin modelling including low-ASP referral exemptions and volumetric weight optimization.</p>
+                <!-- MODULE 2 -->
+                <div class="kh-module-card">
+                    <div class="kh-module-header">
+                        <span class="kh-module-badge">MODULE 02</span>
+                        <span class="kh-module-scope">Chapters 06 – 10</span>
                     </div>
-                    <a href="how-to-sell-on-amazon-india/index.html#sec-fees-pricing" class="kh-roadmap-link">Covered in Pillar Sec 11 →</a>
+                    <h3 class="kh-module-title">Sourcing, Listings, Fulfilment &amp; SEO</h3>
+                    <ul class="kh-chapter-list">
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-what-to-sell" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">06</span>Choosing What to Sell &amp; Sourcing Strategy</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-listing-products" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">07</span>How to List Products &amp; Listing Checklist</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-fulfilment" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">08</span>FBA vs Easy Ship vs Self-Ship Matrix</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-seo-content" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">09</span>Amazon SEO, 249-Byte Terms &amp; A+ CRO</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-pricing-buybox" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">10</span>Pricing Discipline &amp; Featured Offer (Buy Box)</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="kh-roadmap-item">
-                    <div>
-                        <span class="kh-roadmap-status">Planned Cluster</span>
-                        <h3 class="kh-roadmap-title" style="margin-top: 8px;">Amazon Brand Registry, Trademark Classes &amp; Hijacker Defence</h3>
-                        <p class="kh-roadmap-desc" style="margin-top: 6px;">Trademark filing strategy for Indian D2C brands, pending-mark enrollment, A+ Content, and Buy Box protection.</p>
+                <!-- MODULE 3 -->
+                <div class="kh-module-card">
+                    <div class="kh-module-header">
+                        <span class="kh-module-badge">MODULE 03</span>
+                        <span class="kh-module-scope">Chapters 11 – 15</span>
                     </div>
-                    <a href="how-to-sell-on-amazon-india/index.html#sec-brand-protection" class="kh-roadmap-link">Covered in Pillar Sec 17 →</a>
+                    <h3 class="kh-module-title">Unit Economics, Payouts &amp; Operations</h3>
+                    <ul class="kh-chapter-list">
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-fees-pricing" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">11</span>Selling Fees, 18% Fee GST &amp; ₹799 Profit Math</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-payments" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">12</span>7-Day Settlements, TCS &amp; Section 194-O TDS</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-orders-inventory-returns" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">13</span>Orders, Reorder Points, RTO &amp; SAFE-T Claims</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-account-health" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">14</span>Account Health Benchmarks (ODR, LDR, VTR)</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-scale-sales" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">15</span>How to Increase Sales &amp; 30-Day Growth Plan</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="kh-roadmap-item">
-                    <div>
-                        <span class="kh-roadmap-status">Planned Cluster</span>
-                        <h3 class="kh-roadmap-title" style="margin-top: 8px;">FBA vs Easy Ship Cost &amp; Prime Conversion Playbook</h3>
-                        <p class="kh-roadmap-desc" style="margin-top: 6px;">When to switch SKUs from Easy Ship to regional FBA nodes based on dimensions, velocity, and RTO rates.</p>
+                <!-- MODULE 4 -->
+                <div class="kh-module-card">
+                    <div class="kh-module-header">
+                        <span class="kh-module-badge">MODULE 04</span>
+                        <span class="kh-module-scope">Chapters 16 – 20 &amp; Reference</span>
                     </div>
-                    <a href="how-to-sell-on-amazon-india/index.html#sec-fulfilment" class="kh-roadmap-link">Covered in Pillar Sec 8 →</a>
+                    <h3 class="kh-module-title">PPC Advertising, Brands &amp; Verification</h3>
+                    <ul class="kh-chapter-list">
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-ppc" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">16</span>Amazon PPC, ACoS/ROAS/TACoS &amp; Ad Funnel</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-brand-protection" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">17</span>Trademark, Brand Registry &amp; IP Protection</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-mistakes" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">18</span>Common Mistakes Beginners Must Avoid</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-budget" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">19</span>Startup Investment &amp; Capital Tracks</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-growth-roadmap" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">20</span>6-Week Roadmap, Proof &amp; Checklist</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-to-sell-on-amazon-india/index.html#sec-glossary" class="kh-chapter-link">
+                                <span class="kh-chapter-left"><span class="kh-chapter-num">REF</span>24-Term Glossary, 12 FAQs &amp; Official Sources</span>
+                                <span>→</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="kh-roadmap-item">
-                    <div>
-                        <span class="kh-roadmap-status">Planned Cluster</span>
-                        <h3 class="kh-roadmap-title" style="margin-top: 8px;">Amazon India Settlement Reports, TDS 194-O &amp; SAFE-T Claims</h3>
-                        <p class="kh-roadmap-desc" style="margin-top: 6px;">Auditing post-delivery disbursement holds, damaged return reimbursements, and monthly CA ledger matching.</p>
-                    </div>
-                    <a href="how-to-sell-on-amazon-india/index.html#sec-payments" class="kh-roadmap-link">Covered in Pillar Sec 12–13 →</a>
-                </div>
+            </div>
+        </section>
 
-                <div class="kh-roadmap-item">
+        <!-- COMPANION SITE RESOURCES -->
+        <section aria-labelledby="khCompanionsTitle">
+            <div class="kh-section-header">
+                <div class="kh-section-kicker">COMPANION RESOURCES</div>
+                <h2 class="kh-section-heading" id="khCompanionsTitle">Specialist Deep Dives &amp; Free Calculators</h2>
+            </div>
+
+            <div class="kh-companion-grid">
+                <a href="../blog/amazon-algorithm-explained-indian-sellers-guide-2027.html" class="kh-companion-card">
                     <div>
-                        <span class="kh-roadmap-status">Planned Cluster</span>
-                        <h3 class="kh-roadmap-title" style="margin-top: 8px;">Zero-to-Scale Amazon PPC Blueprint for New Product Launches</h3>
-                        <p class="kh-roadmap-desc" style="margin-top: 6px;">Structuring Auto discovery, Exact hero isolation, negative pruning, and TACoS guardrails in your first 90 days.</p>
+                        <div class="kh-companion-type">SEO &amp; RANKING PLAYBOOK</div>
+                        <h3 class="kh-companion-title">Amazon Algorithm Explained for Indian Sellers (2027)</h3>
+                        <p class="kh-companion-desc">
+                            How Amazon.in indexes Hinglish queries, weighs pincode delivery speed, and connects Sponsored velocity to organic rank.
+                        </p>
                     </div>
-                    <a href="how-to-sell-on-amazon-india/index.html#sec-ppc" class="kh-roadmap-link">Covered in Pillar Sec 15–16 →</a>
-                </div>
+                    <span class="kh-companion-go">Read Ranking Deep Dive →</span>
+                </a>
+
+                <a href="../blog/how-amazon-brand-scaled-60l-to-2cr-case-study.html" class="kh-companion-card">
+                    <div>
+                        <div class="kh-companion-type">VERIFIED CASE STUDY</div>
+                        <h3 class="kh-companion-title">Scaling an Indian Brand From ₹60.4L to ₹2.78Cr/Month</h3>
+                        <p class="kh-companion-desc">
+                            Full breakdown of wasted ad spend pruning, listing CVR improvement (11.2% → 17.8%), and TACoS reduction.
+                        </p>
+                    </div>
+                    <span class="kh-companion-go">Inspect Case Study →</span>
+                </a>
+
+                <a href="../calculators/index.html" class="kh-companion-card">
+                    <div>
+                        <div class="kh-companion-type">FREE CALCULATORS DIRECTORY</div>
+                        <h3 class="kh-companion-title">Amazon Profit, FBA Fee &amp; Break-Even ACoS Tools</h3>
+                        <p class="kh-companion-desc">
+                            Run slab-level net margin, cubic storage cost, break-even ACoS, and AI listing generation directly in your browser.
+                        </p>
+                    </div>
+                    <span class="kh-companion-go">Open Calculators Directory →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- BOTTOM CONSULT CALLOUT -->
+        <section class="kh-portal-cta" aria-label="Growth Support">
+            <div>
+                <h2>Need Expert Review of Your Amazon India Account or Launch Plan?</h2>
+                <p>
+                    Partner directly with PPC Growth Expert for catalog SEO audits, unit economics modelling, full Seller Central operations, or profit-led Amazon PPC management.
+                </p>
+            </div>
+            <div class="kh-portal-cta-actions">
+                <a href="../contact.html" class="kh-btn-primary">Request Free Account Audit →</a>
+                <a href="../services/index.html" class="kh-btn-secondary">Explore Services</a>
             </div>
         </section>
 
