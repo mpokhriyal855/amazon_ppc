@@ -641,8 +641,8 @@ body.kh-page .background-glow {
 
 .kh-syllabus-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .kh-module-card {
@@ -669,7 +669,7 @@ body.kh-page .background-glow {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 15px 24px;
+    padding: 14px 20px;
 }
 
 .kh-module-badge {
@@ -691,15 +691,70 @@ body.kh-page .background-glow {
 }
 
 .kh-module-body {
-    padding: 22px 24px 24px;
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .kh-module-title {
-    font-size: 18.5px;
+    font-size: 17.5px;
     font-weight: 800;
     color: var(--kh-ink);
     margin: 0 0 14px;
     letter-spacing: -0.015em;
+    line-height: 1.35;
+}
+
+.kh-module-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+
+.kh-module-title a:hover {
+    color: #38bdf8;
+}
+
+.kh-guide-excerpt {
+    font-size: 13.8px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    margin: 0 0 18px;
+    flex: 1;
+}
+
+.kh-guide-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 14px;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kh-guide-meta {
+    font-family: var(--kh-mono);
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.kh-guide-read-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.kh-guide-read-link:hover {
+    color: #7dd3fc;
+    transform: translateX(3px);
 }
 
 .kh-chapter-list {
@@ -789,8 +844,15 @@ body.kh-page .background-glow {
 }
 
 .kh-sec-dark .kh-module-title,
-.kh-sec-dark-alt .kh-module-title {
+.kh-sec-dark-alt .kh-module-title,
+.kh-sec-dark .kh-module-title a,
+.kh-sec-dark-alt .kh-module-title a {
     color: #ffffff;
+}
+
+.kh-sec-dark .kh-module-title a:hover,
+.kh-sec-dark-alt .kh-module-title a:hover {
+    color: #38bdf8;
 }
 
 .kh-sec-dark .kh-chapter-link,
@@ -1963,7 +2025,7 @@ body.kh-page .background-glow {
     }
 
     .kh-syllabus-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1977,6 +2039,7 @@ body.kh-page .background-glow {
     .kh-proof-grid,
     .kh-glossary-grid,
     .kh-companion-grid,
+    .kh-syllabus-grid,
     .kh-doc-content ul.kh-static-checklist,
     .kh-mobile-toc-grid {
         grid-template-columns: 1fr;
