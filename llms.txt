@@ -31,6 +31,8 @@
 - [Case Studies Overview](https://ppcgrowthexpert.com/case-studies.html): Real performance benchmarks showing up to 5.3x ROAS lift, 42% to 14% ACoS reduction, and +94% ad sales growth across Gaming, Office, Grocery, and Home categories.
 
 ## Knowledge & Strategy Articles
+- [Amazon Knowledge Hub](https://ppcgrowthexpert.com/knowledge-hub/): Structured, practitioner-verified playbooks for starting, managing, and scaling on Amazon India.
+- [How to Sell on Amazon India: Complete Seller Guide (2027)](https://ppcgrowthexpert.com/knowledge-hub/how-to-sell-on-amazon-india/): Complete 20-chapter Seller Central, GST compliance, FBA vs Easy Ship, unit profit simulator, SEO, and PPC launch guide.
 - [Blog & Growth Hub](https://ppcgrowthexpert.com/blog/): Actionable Amazon PPC strategy guides, diagnostic walkthroughs, and case breakdowns.
 - [Why Are My Amazon PPC Impressions and Clicks Low?](https://ppcgrowthexpert.com/blog/amazon-ppc-impressions-clicks-low.html)
 - [Why Is My Amazon PPC CPC Increasing and How Can I Control It?](https://ppcgrowthexpert.com/blog/amazon-ppc-cpc-increasing.html)

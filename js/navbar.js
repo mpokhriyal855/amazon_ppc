@@ -4,11 +4,11 @@
    Works on all pages: index, services, case-studies, about, contact
 ========================================================= */
 
-(function() {
+(function () {
     let lastToggleTime = 0;
 
     // Global toggle function
-    window.toggleMobileNav = function(e) {
+    window.toggleMobileNav = function (e) {
         if (e) {
             if (e._navToggleDone) return;
             e._navToggleDone = true;
@@ -21,7 +21,7 @@
 
         const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
-        
+
         if (!navLinks) return;
 
         const isOpen = navLinks.classList.contains("mobile-open") || navLinks.classList.contains("active");
@@ -32,7 +32,7 @@
         }
     };
 
-    window.openMobileNav = function() {
+    window.openMobileNav = function () {
         const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         if (!navLinks) return;
@@ -46,7 +46,7 @@
         }
     };
 
-    window.closeMobileNav = function() {
+    window.closeMobileNav = function () {
         const mobileToggle = document.getElementById("mobileToggle") || document.querySelector(".mobile-toggle");
         const navLinks = document.getElementById("navLinks") || document.querySelector(".nav-links");
         if (!navLinks) return;
@@ -65,7 +65,7 @@
     };
 
     // Global Event Delegation for clicks and mobile navigation
-    document.addEventListener("click", function(e) {
+    document.addEventListener("click", function (e) {
         // 1. Mobile toggle button click
         const toggleBtn = e.target.closest("#mobileToggle, .mobile-toggle");
         if (toggleBtn) {
@@ -121,7 +121,7 @@
 
 
     // Dynamic Navbar Sync & Active State Controller
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         // 1. Ensure PPC OPTIMIZATION & Quick Commerce items are present in mega-menu-grid
         const megaGrid = document.querySelector(".mega-menu-grid");
         /* Hidden for now from universal navbar
@@ -168,7 +168,7 @@
         const pathname = window.location.pathname.toLowerCase();
         const currentPath = pathname.split("/").pop() || "index.html";
         const navItems = document.querySelectorAll(".nav-links > .nav-item, .nav-dropdown-trigger");
-        
+
         navItems.forEach(item => {
             const href = (item.getAttribute("href") || "").toLowerCase();
             if (href === currentPath || (currentPath !== "index.html" && href.endsWith("/" + currentPath))) {
@@ -177,7 +177,7 @@
                 if (href.includes("services")) {
                     item.classList.add("active");
                 }
-            } else if (pathname.includes("/calculators/") || currentPath.includes("calculator") || currentPath.includes("resources")) {
+            } else if (pathname.includes("/calculators/") || pathname.includes("/knowledge-hub/") || currentPath.includes("calculator") || currentPath.includes("resources") || currentPath.includes("knowledge-hub")) {
                 if (item.classList.contains("nav-dropdown-trigger") && (href.includes("calculators") || href.includes("resources") || item.textContent.toLowerCase().includes("resources"))) {
                     item.classList.add("active");
                 }

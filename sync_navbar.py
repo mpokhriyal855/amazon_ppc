@@ -33,7 +33,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 NAVBAR_SOURCE = os.path.join(ROOT_DIR, "navbar.html")
 
 # Directories to scan for HTML files (relative to ROOT_DIR)
-SCAN_DIRS = [".", "services", "calculators", "blog", "amazon-ecommerce-training"]
+SCAN_DIRS = [".", "services", "calculators", "blog", "knowledge-hub", "amazon-ecommerce-training"]
 
 # Files to skip
 SKIP_FILES = {
@@ -239,15 +239,21 @@ def find_html_files():
         
         if not os.path.isdir(full_dir):
             continue
-        
-        for filename in os.listdir(full_dir):
-            if not filename.endswith(".html"):
-                continue
-            if filename in SKIP_FILES:
-                continue
-            
-            filepath = os.path.join(full_dir, filename)
-            
+
+        if scan_dir == ".":
+            candidate_paths = [
+                os.path.join(full_dir, filename)
+                for filename in os.listdir(full_dir)
+                if filename.endswith(".html") and filename not in SKIP_FILES
+            ]
+        else:
+            candidate_paths = []
+            for root, _, files in os.walk(full_dir):
+                for filename in files:
+                    if filename.endswith(".html") and filename not in SKIP_FILES:
+                        candidate_paths.append(os.path.join(root, filename))
+
+        for filepath in candidate_paths:
             # Quick check: does this file contain navbar-container?
             try:
                 content = read_file(filepath)

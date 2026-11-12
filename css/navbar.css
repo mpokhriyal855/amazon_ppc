@@ -604,14 +604,12 @@
         top: 58px;
         left: 12px;
         right: 12px;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(25px) saturate(190%);
-        -webkit-backdrop-filter: blur(25px) saturate(190%);
-        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: #ffffff;
+        border: 1px solid rgba(226, 232, 240, 0.98);
         border-radius: 20px;
         padding: 14px 12px;
         gap: 4px;
-        box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+        box-shadow: 0 24px 48px -10px rgba(15, 23, 42, 0.24), 0 0 0 1px rgba(15, 23, 42, 0.04);
         animation: mobileNavSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         z-index: 99998 !important;
         max-height: calc(100vh - 80px);
@@ -709,6 +707,56 @@
         color: #2563eb;
     }
 
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        height: 50px;
+        padding: 0 8px 0 12px;
+    }
+
+    .logo {
+        gap: 7px;
+    }
+
+    .logo-badge {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+    }
+
+    .logo-symbol {
+        width: 12px;
+        height: 12px;
+    }
+
+    .logo-text {
+        font-size: 13.5px;
+        letter-spacing: -0.3px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-btn {
+        padding: 6px 10px !important;
+        font-size: 10.5px !important;
+    }
+
+    .mobile-toggle {
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+        border-radius: 10px;
+    }
+
+    .nav-links.mobile-open,
+    .nav-links.active {
+        top: 56px;
+        left: 10px;
+        right: 10px;
+    }
 }
 
 /* NAVBAR DROPDOWN STYLES */

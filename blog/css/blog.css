@@ -1835,8 +1835,6 @@ body.blog-page-body {
 
 /* FAQ ACCORDION TRANSITIONS */
 details summary {
-/* FAQ Accordion Styling & Transitions */
-details summary {
     list-style: none !important;
 }
 details summary::-webkit-details-marker {
