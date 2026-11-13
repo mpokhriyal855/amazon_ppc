@@ -1,0 +1,46 @@
+# =========================================================
+# PPC Growth Expert - Server Configuration (.htaccess)
+# =========================================================
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+</IfModule>
+
+# =========================================================
+# 1. 301 PERMANENT REDIRECTS (Live Matching Targets)
+# =========================================================
+
+# Consolidated Training Folder Standard
+Redirect 301 /amazon-ecommerce-training.html /amazon-ecommerce-training/
+
+# Legal & Policy URLs
+Redirect 301 /privacy.html /privacy-policy.html
+Redirect 301 /disclaimer.html /terms.html
+
+# Service Slugs & Variations
+Redirect 301 /services/amazon-ppc-management.html /services/amazon-ppc-management-services.html
+Redirect 301 /services/amazon-account-management.html /services/amazon-account-management-services-india.html
+Redirect 301 /amazon-ppc-management-services-delhi /services/amazon-ppc-management-services-delhi.html
+
+# Calculators
+Redirect 301 /calculators/amazon-conversion-rate-calculator.html /calculators/amazon-ppc-conversion-rate-calculator.html
+
+
+# =========================================================
+# 2. 410 GONE (Permanently Deleted / Will Not Go Live)
+# Informs Google crawler to drop dead URLs from index immediately
+# =========================================================
+
+Redirect gone /services/amazon-advertising-audit.html
+Redirect gone /services/amazon-listing-optimization.html
+Redirect gone /services/amazon-seller-central-audit.html
+Redirect gone /services/amazon-dsp-advertising.html
+Redirect gone /services/international-marketplace-expansion.html
+
+
+# =========================================================
+# 3. Custom 404 Error Page Handler
+# =========================================================
+ErrorDocument 404 /404.html
+
