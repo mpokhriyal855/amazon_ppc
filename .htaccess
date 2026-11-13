@@ -23,6 +23,8 @@ Redirect 301 /privacy.html /privacy-policy.html
 Redirect 301 /disclaimer.html /terms.html
 
 # Service Slugs & Variations
+Redirect 301 /services.html /services/
+Redirect 301 /services/services.html /services/
 Redirect 301 /services/amazon-ppc-management.html /services/amazon-ppc-management-services.html
 Redirect 301 /services/amazon-account-management.html /services/amazon-account-management-services-india.html
 Redirect 301 /amazon-ppc-management-services-delhi /services/amazon-ppc-management-services-delhi.html
