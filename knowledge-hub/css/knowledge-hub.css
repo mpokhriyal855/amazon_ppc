@@ -760,10 +760,10 @@ body.kh-page .background-glow {
 .kh-chapter-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 12px 0 18px 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
 }
 
 .kh-chapter-link {
@@ -771,11 +771,11 @@ body.kh-page .background-glow {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 9px 12px;
-    border-radius: 10px;
+    padding: 8px 12px;
+    border-radius: 9px;
     text-decoration: none;
     color: var(--kh-body);
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 600;
     border: 1px solid transparent;
     transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
@@ -858,18 +858,21 @@ body.kh-page .background-glow {
 .kh-sec-dark .kh-chapter-link,
 .kh-sec-dark-alt .kh-chapter-link {
     color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .kh-sec-dark .kh-chapter-num,
 .kh-sec-dark-alt .kh-chapter-num {
     background: rgba(255, 255, 255, 0.08);
     color: #7dd3fc;
+    border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .kh-sec-dark .kh-chapter-link:hover,
 .kh-sec-dark-alt .kh-chapter-link:hover {
     background: rgba(56, 189, 248, 0.12);
-    border-color: rgba(56, 189, 248, 0.32);
+    border-color: rgba(56, 189, 248, 0.35);
     color: #ffffff;
 }
 
@@ -877,6 +880,7 @@ body.kh-page .background-glow {
 .kh-sec-dark-alt .kh-chapter-link:hover .kh-chapter-num {
     background: #38bdf8;
     color: #080d1a;
+    border-color: #38bdf8;
 }
 
 .kh-companion-grid {
