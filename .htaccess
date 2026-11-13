@@ -5,6 +5,10 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
+# Enforce Non-WWW Canonical Domain
+RewriteCond %{HTTP_HOST} ^www\.ppcgrowthexpert\.com$ [NC]
+RewriteRule ^(.*)$ https://ppcgrowthexpert.com/$1 [L,R=301]
 </IfModule>
 
 # =========================================================
