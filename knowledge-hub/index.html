@@ -44,7 +44,7 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="../css/style.css?v=v41">
     <link rel="stylesheet" href="../css/navbar.css?v=v53">
-    <link rel="stylesheet" href="css/knowledge-hub.css?v=v8">
+    <link rel="stylesheet" href="css/knowledge-hub.css?v=v9">
     <link rel="stylesheet" href="../css/footer.css?v=v41">
     <link rel="stylesheet" href="../css/whatsapp.css">
 
@@ -687,19 +687,22 @@
         </article>
         </section>
 
-        <!-- STRUCTURED HANDBOOK SYLLABUS & PREVIOUS MODULES (3 PER ROW) -->
-        <section id="khSyllabus" class="kh-portal-section kh-sec-dark" aria-labelledby="khSyllabusTitle">
+        <!-- ALL PREVIOUS GUIDES & PLAYBOOKS SECTION (3 BOXES IN ONE ROW) -->
+        <!-- Automatically stays hidden when only 1 topic exists; unhides and populates in 3 columns when new topics are added -->
+        <section id="khSyllabus" class="kh-portal-section kh-sec-dark" aria-labelledby="khSyllabusTitle" style="display: none;">
             <div class="kh-section-header">
-                <div class="kh-section-kicker">HANDBOOK SYLLABUS</div>
-                <h2 class="kh-section-heading" id="khSyllabusTitle">Jump Directly to Any Section of the Guide</h2>
+                <div class="kh-section-kicker">KNOWLEDGE HUB LIBRARY</div>
+                <h2 class="kh-section-heading" id="khSyllabusTitle">Previous Guides &amp; Playbooks</h2>
                 <p class="kh-section-sub">
-                    All 20 chapters, operational checklists, 24 glossary definitions, 12 FAQs, and official source links organised in sequence.
+                    Explore all published Amazon India seller playbooks, operational frameworks, and strategic deep dives.
                 </p>
             </div>
 
             <div class="kh-syllabus-grid" id="khSyllabusGrid">
 
-                <!-- ARCHIVED GUIDE ENTRY (Automatically stays hidden while newest, moves here in 3-col grid when a newer module is added) -->
+                <!-- HOW TO SELL ON AMAZON INDIA GUIDE CARD
+                     (Stays hidden while it is the newest/only topic; as soon as a newer guide is added,
+                      this card automatically appears here in the 3-column grid) -->
                 <article class="kh-module-card kh-guide-card"
                     data-kh-guide="true"
                     data-date="2026-11-11"
@@ -765,184 +768,6 @@
                         </svg>
                     </template>
                 </article>
-
-                <!-- MODULE 1 -->
-                <div class="kh-module-card">
-                    <div class="kh-module-header">
-                        <span class="kh-module-badge">MODULE 01</span>
-                        <span class="kh-module-scope">Chapters 01 – 05</span>
-                    </div>
-                    <div class="kh-module-body">
-                        <h3 class="kh-module-title">Foundation, Compliance &amp; Seller Central</h3>
-                        <ul class="kh-chapter-list">
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-what-is" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">01</span>What Is Selling on Amazon India?</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-who-can-sell" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">02</span>Who Can Sell on Amazon.in? (Entity Types)</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-requirements" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">03</span>GST, PAN, Bank &amp; KYC Requirements</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-registration" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">04</span>13-Step Registration &amp; Video Verification</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-seller-central" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">05</span>Understanding Seller Central Modules</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- MODULE 2 -->
-                <div class="kh-module-card">
-                    <div class="kh-module-header">
-                        <span class="kh-module-badge">MODULE 02</span>
-                        <span class="kh-module-scope">Chapters 06 – 10</span>
-                    </div>
-                    <div class="kh-module-body">
-                        <h3 class="kh-module-title">Sourcing, Listings, Fulfilment &amp; SEO</h3>
-                        <ul class="kh-chapter-list">
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-what-to-sell" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">06</span>Choosing What to Sell &amp; Sourcing Strategy</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-listing-products" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">07</span>How to List Products &amp; Listing Checklist</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-fulfilment" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">08</span>FBA vs Easy Ship vs Self-Ship Matrix</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-seo-content" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">09</span>Amazon SEO, 249-Byte Terms &amp; A+ CRO</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-pricing-buybox" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">10</span>Pricing Discipline &amp; Featured Offer (Buy Box)</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- MODULE 3 -->
-                <div class="kh-module-card">
-                    <div class="kh-module-header">
-                        <span class="kh-module-badge">MODULE 03</span>
-                        <span class="kh-module-scope">Chapters 11 – 15</span>
-                    </div>
-                    <div class="kh-module-body">
-                        <h3 class="kh-module-title">Unit Economics, Payouts &amp; Operations</h3>
-                        <ul class="kh-chapter-list">
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-fees-pricing" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">11</span>Selling Fees, 18% Fee GST &amp; ₹799 Profit Math</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-payments" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">12</span>7-Day Settlements, TCS &amp; Section 194-O TDS</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-orders-inventory-returns" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">13</span>Orders, Reorder Points, RTO &amp; SAFE-T Claims</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-account-health" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">14</span>Account Health Benchmarks (ODR, LDR, VTR)</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-scale-sales" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">15</span>How to Increase Sales &amp; 30-Day Growth Plan</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- MODULE 4 -->
-                <div class="kh-module-card">
-                    <div class="kh-module-header">
-                        <span class="kh-module-badge">MODULE 04</span>
-                        <span class="kh-module-scope">Chapters 16 – 20 &amp; Reference</span>
-                    </div>
-                    <div class="kh-module-body">
-                        <h3 class="kh-module-title">PPC Advertising, Brands &amp; Verification</h3>
-                        <ul class="kh-chapter-list">
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-ppc" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">16</span>Amazon PPC, ACoS/ROAS/TACoS &amp; Ad Funnel</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-brand-protection" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">17</span>Trademark, Brand Registry &amp; IP Protection</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-mistakes" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">18</span>Common Mistakes Beginners Must Avoid</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-budget" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">19</span>Startup Investment &amp; Capital Tracks</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-growth-roadmap" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">20</span>6-Week Roadmap, Proof &amp; Checklist</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="how-to-sell-on-amazon-india/index.html#sec-glossary" class="kh-chapter-link">
-                                    <span class="kh-chapter-left"><span class="kh-chapter-num">REF</span>24-Term Glossary, 12 FAQs &amp; Official Sources</span>
-                                    <span>→</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
             </div>
         </section>
@@ -1120,7 +945,7 @@
     <!-- SCRIPTS -->
     <script src="../js/script.js?v=v27"></script>
     <script src="../js/navbar.js?v=v53"></script>
-    <script src="js/knowledge-hub.js?v=v6"></script>
+    <script src="js/knowledge-hub.js?v=v7"></script>
 </body>
 
 </html>

@@ -160,20 +160,28 @@ document.addEventListener("DOMContentLoaded", function () {
         // Keep newest module hidden from #khSyllabus archive grid; show previous modules in 3-col grid
         newest.style.display = "none";
 
-        const firstStaticCard = Array.from(syllabusGrid.children).find(function (el) {
-            return el.nodeType === 1 && !el.hasAttribute("data-kh-guide");
-        }) || null;
+        const syllabusSection = document.getElementById("khSyllabus");
+        const previousModules = allModules.slice(1);
 
-        for (let i = 1; i < allModules.length; i++) {
-            const prevCard = allModules[i];
-            prevCard.style.display = "flex";
-            const pDate = prevCard.getAttribute("data-date") || "";
-            const pAuthor = prevCard.getAttribute("data-author") || "Anmol Pokhriyal";
-            const metaEl = prevCard.querySelector(".kh-guide-meta");
-            if (metaEl && !metaEl.textContent.trim()) {
-                metaEl.textContent = pAuthor + " · " + formatKhDate(pDate);
+        if (previousModules.length === 0) {
+            if (syllabusSection) syllabusSection.style.display = "none";
+        } else {
+            if (syllabusSection) syllabusSection.style.display = "";
+            const firstStaticCard = Array.from(syllabusGrid.children).find(function (el) {
+                return el.nodeType === 1 && !el.hasAttribute("data-kh-guide");
+            }) || null;
+
+            for (let i = 0; i < previousModules.length; i++) {
+                const prevCard = previousModules[i];
+                prevCard.style.display = "flex";
+                const pDate = prevCard.getAttribute("data-date") || "";
+                const pAuthor = prevCard.getAttribute("data-author") || "Anmol Pokhriyal";
+                const metaEl = prevCard.querySelector(".kh-guide-meta");
+                if (metaEl && !metaEl.textContent.trim()) {
+                    metaEl.textContent = pAuthor + " · " + formatKhDate(pDate);
+                }
+                syllabusGrid.insertBefore(prevCard, firstStaticCard);
             }
-            syllabusGrid.insertBefore(prevCard, firstStaticCard);
         }
     }
 
