@@ -691,17 +691,17 @@ body.kh-page .background-glow {
 }
 
 .kh-module-body {
-    padding: 20px 20px 22px;
+    padding: 16px 18px 18px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
 .kh-module-title {
-    font-size: 17.5px;
+    font-size: 16px;
     font-weight: 800;
     color: var(--kh-ink);
-    margin: 0 0 14px;
+    margin: 0 0 8px;
     letter-spacing: -0.015em;
     line-height: 1.35;
 }
@@ -717,38 +717,37 @@ body.kh-page .background-glow {
 }
 
 .kh-guide-excerpt {
-    font-size: 13.8px;
-    line-height: 1.65;
+    font-size: 13px;
+    line-height: 1.5;
     color: #cbd5e1;
-    margin: 0 0 18px;
-    flex: 1;
+    margin: 0 0 10px;
 }
 
 .kh-guide-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
-    padding-top: 14px;
+    padding-top: 12px;
     margin-top: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .kh-guide-meta {
     font-family: var(--kh-mono);
-    font-size: 11px;
+    font-size: 10.5px;
     color: #94a3b8;
 }
 
 .kh-guide-read-link {
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
     color: #38bdf8;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
     transition: transform 0.18s ease, color 0.18s ease;
 }
 
@@ -760,22 +759,22 @@ body.kh-page .background-glow {
 .kh-chapter-list {
     list-style: none;
     padding: 0;
-    margin: 12px 0 18px 0;
+    margin: 4px 0 12px 0;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 5px;
 }
 
 .kh-chapter-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    padding: 8px 12px;
-    border-radius: 9px;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
     text-decoration: none;
     color: var(--kh-body);
-    font-size: 13.5px;
+    font-size: 12.5px;
     font-weight: 600;
     border: 1px solid transparent;
     transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
@@ -790,18 +789,18 @@ body.kh-page .background-glow {
 .kh-chapter-left {
     display: flex;
     align-items: center;
-    gap: 11px;
+    gap: 8px;
 }
 
 .kh-chapter-num {
     font-family: var(--kh-mono);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: var(--kh-muted);
     background: #f1f5f9;
-    padding: 3px 8px;
-    border-radius: 6px;
-    min-width: 30px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    min-width: 24px;
     text-align: center;
 }
 
