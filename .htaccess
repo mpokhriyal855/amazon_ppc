@@ -39,9 +39,12 @@ Redirect 301 /free-amazon-listing-optimisation-tool.html /calculators/ai-amazon-
 
 # Blog & Knowledge Hub Aliases
 Redirect 301 /blog/blog.html /blog/
-Redirect 301 /blog/how-to-sell-on-amazon-india.html /blog/how-to-sell-on-amazon-india/
-Redirect 301 /blog/amazon-seller-central-tutorial.html /blog/amazon-seller-central-tutorial/
-Redirect 301 /knowledge-hub/amazon-seller-central-tutorial.html /knowledge-hub/amazon-seller-central-tutorial/
+Redirect 301 /blog/how-to-sell-on-amazon-india/ /blog/how-to-sell-on-amazon-india.html
+Redirect 301 /blog/amazon-seller-central-tutorial/ /blog/amazon-seller-central-tutorial.html
+Redirect 301 /knowledge-hub/amazon-ppc-guide/ /knowledge-hub/amazon-ppc-guide.html
+Redirect 301 /knowledge-hub/how-to-learn-amazon-selling-in-india/ /knowledge-hub/how-to-learn-amazon-selling-in-india.html
+Redirect 301 /knowledge-hub/how-to-sell-on-amazon-india/ /knowledge-hub/how-to-sell-on-amazon-india.html
+Redirect 301 /knowledge-hub/amazon-seller-central-tutorial/ /knowledge-hub/amazon-seller-central-tutorial.html
 
 
 # =========================================================

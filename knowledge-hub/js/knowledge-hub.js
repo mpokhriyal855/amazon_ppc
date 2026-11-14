@@ -255,4 +255,29 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    // --- 3. FIXED NAVBAR SCROLL LISTENER ---
+    const navContainer = document.getElementById('navbarContainer') || document.querySelector('.navbar-container');
+    if (navContainer) {
+        function checkNavbarScroll() {
+            if (window.scrollY > 20) {
+                navContainer.classList.add('navbar-scrolled');
+            } else {
+                navContainer.classList.remove('navbar-scrolled');
+            }
+        }
+        window.addEventListener('scroll', checkNavbarScroll, { passive: true });
+        checkNavbarScroll();
+    }
+
+    // --- 4. FIXED FOOTER BAR ACTIVE STATE ---
+    const fixedBarLinks = document.querySelectorAll('.kh-fixed-footer-link');
+    const currentLoc = window.location.pathname.split('/').pop() || 'index.html';
+    fixedBarLinks.forEach(function (l) {
+        const h = l.getAttribute('href') || '';
+        if (h === currentLoc || (currentLoc === '' && h === 'index.html')) {
+            l.classList.add('active');
+        }
+    });
+
 });
