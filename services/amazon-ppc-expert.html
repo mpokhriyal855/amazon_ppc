@@ -600,6 +600,7 @@
             border-color: rgba(56, 189, 248, 0.4);
             box-shadow: 0 30px 60px -12px rgba(37, 99, 235, 0.3);
         }
+        .sp-img-frame picture,
         .sp-img-frame img {
             width: 100%;
             height: auto;
@@ -2056,7 +2057,12 @@
 
                 <!-- RIGHT: RELEVANT DIAGNOSTIC IMAGE WITH HOVER TRANSITION -->
                 <div class="sp-img-frame">
-                    <img src="../images/Click_coming_in_sales_missing.png" alt="Clicks coming in, sales missing analytics diagnostic banner">
+                    <picture>
+                        <source type="image/webp" srcset="../images/Click_coming_in_sales_missing.webp">
+                        <img src="../images/Click_coming_in_sales_missing.png"
+                            alt="Clicks coming in, sales missing analytics diagnostic banner"
+                            width="1422" height="1106" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
 
@@ -2695,7 +2701,12 @@
 
                 <!-- RELEVANT IMAGE WITH SMOOTH TRANSITION -->
                 <div class="sp-img-frame">
-                    <img src="../images/LowerACoSHigherProfit.png" alt="Lower ACoS Higher Profit Performance Dashboard">
+                    <picture>
+                        <source type="image/webp" srcset="../images/LowerACoSHigherProfit.webp">
+                        <img src="../images/LowerACoSHigherProfit.png"
+                            alt="Lower ACoS Higher Profit Performance Dashboard"
+                            width="1422" height="1106" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
 

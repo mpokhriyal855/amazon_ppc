@@ -705,6 +705,7 @@
             box-shadow: 0 30px 60px -12px rgba(37, 99, 235, 0.3);
         }
 
+        .sp-img-frame picture,
         .sp-img-frame img {
             width: 100%;
             height: auto;
@@ -2414,10 +2415,15 @@
     <section class="sp-section sp-hero-banner-section" id="growth-framework"
         style="width: 100% !important; max-width: 100% !important; margin: 0 0 45px 0 !important; padding: 0 !important;"
         aria-label="Amazon PPC Management Framework">
-        <img src="../images/services_amaonppc_management4.png"
-            alt="Amazon PPC Management Services India - Drive Profitable Growth Framework" width="1672" height="941"
-            loading="eager"
-            style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block !important; margin: 0 !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important;">
+        <picture>
+            <source type="image/webp"
+                    srcset="../images/services_amaonppc_management4-800.webp 800w, ../images/services_amaonppc_management4-1335.webp 1335w, ../images/services_amaonppc_management4.webp 1672w"
+                    sizes="(max-width: 800px) 100vw, (max-width: 1335px) 100vw, 1335px">
+            <img src="../images/services_amaonppc_management4.png"
+                alt="Amazon PPC Management Services India - Drive Profitable Growth Framework" width="1672" height="941"
+                loading="eager"
+                style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block !important; margin: 0 !important; padding: 0 !important; border: none !important; border-radius: 0 !important; box-shadow: none !important;">
+        </picture>
     </section>
 
     <!-- SECTION 1: WHAT IS AMAZON PPC MANAGEMENT (TRANSPARENT OVER GRID) -->
@@ -3110,8 +3116,12 @@
 
                 <!-- RIGHT: RELEVANT DIAGNOSTIC IMAGE WITH HOVER TRANSITION -->
                 <div class="sp-img-frame">
-                    <img src="../images/Click_coming_in_sales_missing.png"
-                        alt="Clicks coming in, sales missing analytics diagnostic banner">
+                    <picture>
+                        <source type="image/webp" srcset="../images/Click_coming_in_sales_missing.webp">
+                        <img src="../images/Click_coming_in_sales_missing.png"
+                            alt="Clicks coming in, sales missing analytics diagnostic banner"
+                            width="1422" height="1106" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
 
@@ -4138,7 +4148,12 @@
 
                 <!-- RELEVANT IMAGE WITH SMOOTH TRANSITION -->
                 <div class="sp-img-frame">
-                    <img src="../images/LowerACoSHigherProfit.png" alt="Lower ACoS Higher Profit Performance Dashboard">
+                    <picture>
+                        <source type="image/webp" srcset="../images/LowerACoSHigherProfit.webp">
+                        <img src="../images/LowerACoSHigherProfit.png"
+                            alt="Lower ACoS Higher Profit Performance Dashboard"
+                            width="1422" height="1106" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
 
