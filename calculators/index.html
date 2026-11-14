@@ -41,16 +41,24 @@
     <!-- FONTS & ICONS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    </noscript>
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="../css/style.css?v=v41">
+    <link rel="stylesheet" href="../css/style.css?v=v42">
     <link rel="stylesheet" href="../css/navbar.css?v=v53">
     <link rel="stylesheet" href="css/resources.css?v=v19">
-    <link rel="stylesheet" href="../css/footer.css?v=v41">
-    <link rel="stylesheet" href="../css/whatsapp.css">
+    <link rel="stylesheet" href="../css/footer.css?v=v41" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/footer.css?v=v41"></noscript>
+    <link rel="stylesheet" href="../css/whatsapp.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/whatsapp.css"></noscript>
 
     <!-- STRUCTURED DATA (SCHEMA.ORG FOR SEO RICH RESULTS) -->
     <script type="application/ld+json">
@@ -1319,9 +1327,9 @@
     </footer>
 
     <!-- JAVASCRIPT LIBRARIES & CONTROLLERS -->
-    <script src="../js/navbar.js?v=v53"></script>
-    <script src="../js/whatsapp.js"></script>
-    <script src="js/resources.js?v=v11"></script>
+    <script defer src="../js/navbar.js?v=v53"></script>
+    <script defer src="../js/whatsapp.js"></script>
+    <script defer src="js/resources.js?v=v11"></script>
 
 </body>
 
