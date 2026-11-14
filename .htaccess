@@ -31,8 +31,14 @@ Redirect 301 /amazon-ppc-management-services-delhi /services/amazon-ppc-manageme
 Redirect 301 /amazon-ppc-management-services-delhi/ /services/amazon-ppc-management-services-delhi.html
 Redirect 301 /services/amazon-ppc-management-services-delhi /services/amazon-ppc-management-services-delhi.html
 
-# Calculators
+# Calculators & Resources
 Redirect 301 /calculators/amazon-conversion-rate-calculator.html /calculators/amazon-ppc-conversion-rate-calculator.html
+Redirect 301 /resources.html /calculators/
+Redirect 301 /calculators/resources.html /calculators/
+Redirect 301 /free-amazon-listing-optimisation-tool.html /calculators/ai-amazon-listing-generator.html
+
+# Blog Aliases
+Redirect 301 /blog/blog.html /blog/
 
 
 # =========================================================
