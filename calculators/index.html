@@ -51,14 +51,49 @@
             href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
     </noscript>
 
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="../css/style.css?v=v42">
+    <!-- PRELOAD CRITICAL CSS -->
+    <link rel="preload" href="../css/navbar.css?v=v53" as="style">
+    <link rel="preload" href="css/resources.css?v=v19" as="style">
+
+    <!-- CRITICAL STYLESHEETS -->
     <link rel="stylesheet" href="../css/navbar.css?v=v53">
     <link rel="stylesheet" href="css/resources.css?v=v19">
+
+    <!-- NON-CRITICAL STYLESHEETS (ASYNC) -->
+    <link rel="preload" href="../css/style.css?v=v42" as="style">
+    <link rel="stylesheet" href="../css/style.css?v=v42" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="../css/style.css?v=v42"></noscript>
+
     <link rel="stylesheet" href="../css/footer.css?v=v41" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="../css/footer.css?v=v41"></noscript>
+
     <link rel="stylesheet" href="../css/whatsapp.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="../css/whatsapp.css"></noscript>
+
+    <!-- INLINE ESSENTIAL BACKGROUND RULES (PREVENTS FOUC) -->
+    <style>
+        .background-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            background-image:
+                linear-gradient(rgba(216, 223, 233, 0.55) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(216, 223, 233, 0.55) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+        }
+        .background-glow {
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            top: 50px;
+            right: -200px;
+            background: radial-gradient(circle, rgba(70, 130, 255, 0.10), transparent 70%);
+            pointer-events: none;
+            z-index: -4;
+        }
+    </style>
 
     <!-- STRUCTURED DATA (SCHEMA.ORG FOR SEO RICH RESULTS) -->
     <script type="application/ld+json">
