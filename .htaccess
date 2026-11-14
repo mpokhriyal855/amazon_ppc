@@ -37,10 +37,11 @@ Redirect 301 /resources.html /calculators/
 Redirect 301 /calculators/resources.html /calculators/
 Redirect 301 /free-amazon-listing-optimisation-tool.html /calculators/ai-amazon-listing-generator.html
 
-# Blog Aliases
+# Blog & Knowledge Hub Aliases
 Redirect 301 /blog/blog.html /blog/
 Redirect 301 /blog/how-to-sell-on-amazon-india.html /blog/how-to-sell-on-amazon-india/
 Redirect 301 /blog/amazon-seller-central-tutorial.html /blog/amazon-seller-central-tutorial/
+Redirect 301 /knowledge-hub/amazon-seller-central-tutorial.html /knowledge-hub/amazon-seller-central-tutorial/
 
 
 # =========================================================
