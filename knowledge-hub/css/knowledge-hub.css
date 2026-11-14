@@ -2075,4 +2075,195 @@ body.kh-page .background-glow {
     .kh-author-end {
         flex-direction: column;
     }
+
+    .kh-mid-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 26px 20px;
+        gap: 20px;
+    }
+
+    .kh-mid-cta-title {
+        font-size: 20px;
+    }
+
+    .kh-mid-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================
+   MID-ARTICLE HIGH-CONVERTING CTA & REALISTIC BUSINESS FIGURES
+   ========================================================= */
+.kh-mid-cta {
+    position: relative;
+    margin: 44px 0;
+    padding: 34px 38px;
+    background: linear-gradient(135deg, #0b1329 0%, #111d40 100%);
+    border: 1.5px solid rgba(59, 130, 246, 0.35);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px -15px rgba(2, 6, 23, 0.45);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.kh-mid-cta::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.kh-mid-cta-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.kh-mid-cta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--kh-mono, monospace);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.kh-mid-cta-title {
+    font-family: var(--kh-display, "Outfit", sans-serif);
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.kh-mid-cta-title span {
+    background: linear-gradient(135deg, #38bdf8 0%, #a7f3d0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.kh-mid-cta-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.kh-mid-cta-actions {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.kh-mid-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+    color: #ffffff !important;
+    font-family: var(--kh-sans, sans-serif);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.kh-mid-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+    background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
+}
+
+.kh-mid-cta-badge {
+    font-family: var(--kh-mono, monospace);
+    font-size: 11px;
+    color: #94a3b8;
+    padding-left: 4px;
+}
+
+/* Realistic Business Figure & Analytics Screenshots */
+.kh-figure {
+    margin: 36px 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1.5px solid var(--kh-border-strong, #cbd5e1);
+    box-shadow: 0 16px 36px -12px rgba(15, 23, 42, 0.12);
+}
+
+.kh-sec-dark .kh-figure,
+.kh-sec-dark-alt .kh-figure {
+    background: #0d172e;
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 20px 42px -12px rgba(0, 0, 0, 0.45);
+}
+
+.kh-figure-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.kh-figure-caption {
+    padding: 14px 20px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    font-size: 13.5px;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.kh-sec-dark .kh-figure-caption,
+.kh-sec-dark-alt .kh-figure-caption {
+    background: #111c38;
+    border-top-color: rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+}
+
+.kh-figure-badge {
+    font-family: var(--kh-mono, monospace);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 2px 8px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.kh-sec-dark .kh-figure-badge,
+.kh-sec-dark-alt .kh-figure-badge {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border-color: rgba(56, 189, 248, 0.28);
 }
