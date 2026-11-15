@@ -134,6 +134,8 @@ Redirect 301 /blog-amazon-warehousing-and-distribution-awd-2027.html /blog/amazo
 Redirect 301 /cdn-cgi/l/email-protection /contact.html
 
 # Blog & Knowledge Hub Aliases
+Redirect 301 /blog.html /blog/
+Redirect 301 /blog.html/ /blog/
 Redirect 301 /blog/blog.html /blog/
 Redirect 301 /blog/how-to-sell-on-amazon-india/ /blog/how-to-sell-on-amazon-india.html
 Redirect 301 /blog/amazon-seller-central-tutorial/ /blog/amazon-seller-central-tutorial.html
