@@ -11,6 +11,7 @@ Disallow: /.htaccess
 Disallow: /config/
 Disallow: /node_modules/
 Disallow: /*.log$
+Disallow: /cdn-cgi/
 
 # Explicitly Allow AI & LLM Search Crawlers for Maximum GEO / AEO Visibility
 User-agent: GPTBot

@@ -9,6 +9,13 @@ RewriteBase /
 # Enforce Non-WWW Canonical Domain
 RewriteCond %{HTTP_HOST} ^www\.ppcgrowthexpert\.com$ [NC]
 RewriteRule ^(.*)$ https://ppcgrowthexpert.com/$1 [L,R=301]
+
+# Dynamic Blog Hyphenated Prefix Redirect (/blog-xyz.html -> /blog/xyz.html)
+RewriteRule ^blog-(.*)\.html$ /blog/$1.html [R=301,L]
+RewriteRule ^blog-(.*)/?$ /blog/$1.html [R=301,L]
+
+# Cloudflare Email Protection Redirect
+RewriteRule ^cdn-cgi/l/email-protection /contact.html [R=301,L]
 </IfModule>
 
 # =========================================================
@@ -29,7 +36,30 @@ Redirect 301 /services/amazon-ppc-management.html /services/amazon-ppc-managemen
 Redirect 301 /services/amazon-account-management.html /services/amazon-account-management-services-india.html
 Redirect 301 /amazon-ppc-management-services-delhi /services/amazon-ppc-management-services-delhi.html
 Redirect 301 /amazon-ppc-management-services-delhi/ /services/amazon-ppc-management-services-delhi.html
+Redirect 301 /amazon-ppc-management-services-delhi.html /services/amazon-ppc-management-services-delhi.html
 Redirect 301 /services/amazon-ppc-management-services-delhi /services/amazon-ppc-management-services-delhi.html
+Redirect 301 /amazon-ppc-management-services-noida /services/amazon-ppc-management-services-noida.html
+Redirect 301 /amazon-ppc-management-services-noida/ /services/amazon-ppc-management-services-noida.html
+Redirect 301 /amazon-ppc-management-services-noida.html /services/amazon-ppc-management-services-noida.html
+Redirect 301 /amazon-ppc-management-services-moradabad /services/amazon-ppc-management-services-moradabad.html
+Redirect 301 /amazon-ppc-management-services-moradabad/ /services/amazon-ppc-management-services-moradabad.html
+Redirect 301 /amazon-ppc-management-services-moradabad.html /services/amazon-ppc-management-services-moradabad.html
+Redirect 301 /amazon-ppc-management-services-india /services/amazon-ppc-management-services-india.html
+Redirect 301 /amazon-ppc-management-services-india/ /services/amazon-ppc-management-services-india.html
+Redirect 301 /amazon-ppc-management-services-india.html /services/amazon-ppc-management-services-india.html
+Redirect 301 /amazon-account-management-services-india /services/amazon-account-management-services-india.html
+Redirect 301 /amazon-account-management-services-india/ /services/amazon-account-management-services-india.html
+Redirect 301 /amazon-account-management-services-india.html /services/amazon-account-management-services-india.html
+Redirect 301 /amazon-seller-account-management-services /services/amazon-seller-account-management-services.html
+Redirect 301 /amazon-seller-account-management-services.html /services/amazon-seller-account-management-services.html
+Redirect 301 /amazon-ppc-management-services /services/amazon-ppc-management-services.html
+Redirect 301 /amazon-ppc-management-services.html /services/amazon-ppc-management-services.html
+Redirect 301 /amazon-advertising-india /services/amazon-advertising-india.html
+Redirect 301 /amazon-advertising-india.html /services/amazon-advertising-india.html
+Redirect 301 /amazon-ppc-expert /services/amazon-ppc-expert.html
+Redirect 301 /amazon-ppc-expert.html /services/amazon-ppc-expert.html
+Redirect 301 /ecommerce-ppc-services /services/ecommerce-ppc-services.html
+Redirect 301 /ecommerce-ppc-services.html /services/ecommerce-ppc-services.html
 
 # Calculators & Resources
 Redirect 301 /calculators/amazon-conversion-rate-calculator.html /calculators/amazon-ppc-conversion-rate-calculator.html
@@ -37,16 +67,71 @@ Redirect 301 /resources.html /calculators/
 Redirect 301 /calculators/resources.html /calculators/
 Redirect 301 /free-amazon-listing-optimisation-tool.html /calculators/ai-amazon-listing-generator.html
 
-# Consolidate Root URLs to Canonical /calculators/ Paths (Resolves GSC 404s)
-Redirect 301 /amazon-fba-storage-fee-calculator.html /calculators/amazon-fba-storage-fee-calculator.html
-Redirect 301 /amazon-fba-fee-calculator.html /calculators/amazon-fba-fee-calculator.html
-Redirect 301 /amazon-advertising-roi-calculator.html /calculators/amazon-advertising-roi-calculator.html
+# Consolidate Root Calculator URLs to Canonical /calculators/ Paths (Resolves GSC 404s)
+Redirect 301 /flipkart-profit-calculator.html /calculators/flipkart-profit-calculator.html
+Redirect 301 /meesho-profit-calculator.html /calculators/meesho-profit-calculator.html
+Redirect 301 /zepto-profit-calculator.html /calculators/zepto-profit-calculator.html
+Redirect 301 /swiggy-instamart-profit-calculator.html /calculators/swiggy-instamart-profit-calculator.html
+Redirect 301 /blinkit-profit-calculator.html /calculators/blinkit-profit-calculator.html
+Redirect 301 /blinkit-cpm-calculator.html /calculators/blinkit-cpm-calculator.html
 Redirect 301 /amazon-profit-calculator.html /calculators/amazon-profit-calculator.html
+Redirect 301 /amazon-fba-fee-calculator.html /calculators/amazon-fba-fee-calculator.html
+Redirect 301 /amazon-fba-storage-fee-calculator.html /calculators/amazon-fba-storage-fee-calculator.html
+Redirect 301 /amazon-advertising-roi-calculator.html /calculators/amazon-advertising-roi-calculator.html
 Redirect 301 /amazon-acos-calculator.html /calculators/amazon-acos-calculator.html
 Redirect 301 /amazon-roas-calculator.html /calculators/amazon-roas-calculator.html
 Redirect 301 /amazon-cpc-calculator.html /calculators/amazon-cpc-calculator.html
+Redirect 301 /amazon-ctr-calculator.html /calculators/amazon-ctr-calculator.html
+Redirect 301 /amazon-tacos-calculator.html /calculators/amazon-tacos-calculator.html
+Redirect 301 /amazon-break-even-acos-calculator.html /calculators/amazon-break-even-acos-calculator.html
+Redirect 301 /amazon-coupon-roi-calculator.html /calculators/amazon-coupon-roi-calculator.html
+Redirect 301 /amazon-keyword-profitability-calculator.html /calculators/amazon-keyword-profitability-calculator.html
+Redirect 301 /amazon-listing-quality-grader.html /calculators/amazon-listing-quality-grader.html
+Redirect 301 /amazon-listing-seo-score-calculator.html /calculators/amazon-listing-seo-score-calculator.html
+Redirect 301 /amazon-marketing-budget-planner.html /calculators/amazon-marketing-budget-planner.html
+Redirect 301 /amazon-ppc-budget-calculator.html /calculators/amazon-ppc-budget-calculator.html
+Redirect 301 /amazon-ppc-conversion-rate-calculator.html /calculators/amazon-ppc-conversion-rate-calculator.html
+Redirect 301 /amazon-ppc-waste-calculator.html /calculators/amazon-ppc-waste-calculator.html
+Redirect 301 /amazon-product-launch-budget-calculator.html /calculators/amazon-product-launch-budget-calculator.html
+Redirect 301 /amazon-rank-review-analyzer.html /calculators/amazon-rank-review-analyzer.html
+Redirect 301 /amazon-super-url-creator.html /calculators/amazon-super-url-creator.html
+Redirect 301 /amazon-target-acos-bid-calculator.html /calculators/amazon-target-acos-bid-calculator.html
+Redirect 301 /asin-image-grabber.html /calculators/asin-image-grabber.html
+Redirect 301 /asin-wise-report-generator.html /calculators/asin-wise-report-generator.html
+Redirect 301 /ai-amazon-listing-generator.html /calculators/ai-amazon-listing-generator.html
 Redirect 301 /calculators/amazon-fba-storage-fee-calculator/ /calculators/amazon-fba-storage-fee-calculator.html
 Redirect 301 /calculators/amazon-fba-fee-calculator/ /calculators/amazon-fba-fee-calculator.html
+
+# Blog Hyphenated Aliases (Fix GSC 404s for /blog-xyz.html)
+Redirect 301 /blog-amazon-ppc-impressions-clicks-low.html /blog/amazon-ppc-impressions-clicks-low.html
+Redirect 301 /blog-improve-amazon-ppc-roas.html /blog/improve-amazon-ppc-roas.html
+Redirect 301 /blog-amazon-ppc-clicks-no-sales.html /blog/amazon-ppc-clicks-no-sales.html
+Redirect 301 /blog-amazon-ppc-spending-no-orders.html /blog/amazon-ppc-spending-no-orders.html
+Redirect 301 /blog-amazon-ads-not-converting.html /blog/amazon-ads-not-converting.html
+Redirect 301 /blog-amazon-ppc-cpc-increasing.html /blog/amazon-ppc-cpc-increasing.html
+Redirect 301 /blog-reduce-amazon-acos.html /blog/reduce-amazon-acos.html
+Redirect 301 /blog-reduce-amazon-ppc-wasted-spend.html /blog/reduce-amazon-ppc-wasted-spend.html
+Redirect 301 /blog-scaling-broad-match-without-acos-spikes.html /blog/scaling-broad-match-without-acos-spikes.html
+Redirect 301 /blog-how-to-increase-sales-on-amazon.html /blog/how-to-increase-sales-on-amazon.html
+Redirect 301 /blog-how-to-reduce-amazon-ppc-acos-2027.html /blog/how-to-reduce-amazon-ppc-acos-2027.html
+Redirect 301 /blog-amazon-ppc-strategy-guide.html /blog/amazon-ppc-strategy-guide.html
+Redirect 301 /blog-how-amazon-brand-scaled-60l-to-2cr-case-study.html /blog/how-amazon-brand-scaled-60l-to-2cr-case-study.html
+Redirect 301 /blog-top-ecommerce-agencies-india-2027.html /blog/top-ecommerce-agencies-india-2027.html
+Redirect 301 /blog-automated-search-term-harvesting-amazon-ppc.html /blog/automated-search-term-harvesting-amazon-ppc.html
+Redirect 301 /blog-branded-vs-non-branded-amazon-ppc-campaign-architecture.html /blog/branded-vs-non-branded-amazon-ppc-campaign-architecture.html
+Redirect 301 /blog-amazon-algorithm-explained-indian-sellers-guide-2027.html /blog/amazon-algorithm-explained-indian-sellers-guide-2027.html
+Redirect 301 /blog-amazon-great-indian-festival-sale-2027.html /blog/amazon-great-indian-festival-sale-2027.html
+Redirect 301 /blog-amazon-great-indian-festival-seller-eligibility-2027.html /blog/amazon-great-indian-festival-seller-eligibility-2027.html
+Redirect 301 /blog-amazon-great-indian-festival-seller-preparation-2027.html /blog/amazon-great-indian-festival-seller-preparation-2027.html
+Redirect 301 /blog-amazon-rufus-ai-powered-shopping-product-discovery-2027.html /blog/amazon-rufus-ai-powered-shopping-product-discovery-2027.html
+Redirect 301 /blog-how-ai-agents-amc-data-transforming-bidding-2027.html /blog/how-ai-agents-amc-data-transforming-bidding-2027.html
+Redirect 301 /blog-amazon-marketing-cloud-vs-traditional-attribution-models.html /blog/amazon-marketing-cloud-vs-traditional-attribution-models.html
+Redirect 301 /blog-amazon-marketing-cloud-high-value-audiences.html /blog/amazon-marketing-cloud-high-value-audiences.html
+Redirect 301 /blog-amazon-seller-incentives-india-2027.html /blog/amazon-seller-incentives-india-2027.html
+Redirect 301 /blog-amazon-warehousing-and-distribution-awd-2027.html /blog/amazon-warehousing-and-distribution-awd-2027.html
+
+# Cloudflare Email Protection Redirect
+Redirect 301 /cdn-cgi/l/email-protection /contact.html
 
 # Blog & Knowledge Hub Aliases
 Redirect 301 /blog/blog.html /blog/
