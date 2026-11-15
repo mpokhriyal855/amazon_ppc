@@ -221,7 +221,7 @@
     </script>
 </head>
 
-<body>
+<body class="kh-page">
     <!-- READING PROGRESS BAR -->
     <div id="khReadingProgressBar" style="position: fixed; top: 0; left: 0; height: 3px; background: #38bdf8; width: 0%; z-index: 9999; transition: width 0.1s ease;"></div>
 
@@ -286,72 +286,81 @@
     </section>
 
     <!-- ARTICLE LAYOUT GRID -->
-    <div class="kh-article-wrapper" style="max-width: 1200px; margin: 0 auto; padding: 2.5rem 1rem;">
-        <div class="kh-layout-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start;">
+    <div class="kh-doc-workspace">
 
             <!-- DESKTOP STICKY CHAPTER TOC RAIL -->
-            <aside class="kh-toc-rail" style="position: sticky; top: 90px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 12px; padding: 1.25rem; max-height: calc(100vh - 110px); overflow-y: auto;">
-                <div class="kh-toc-head" style="margin-bottom: 0.75rem;">
-                    <div style="font-size: 0.75rem; color: #38bdf8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;" id="khRailBadge">CHAPTER 01 OF 18</div>
-                    <div style="font-size: 0.95rem; color: #f8fafc; font-weight: 700; margin-top: 2px;">Table of Contents</div>
+            <aside class="kh-toc-rail" aria-label="Article Sections Navigation">
+            <div class="kh-toc-card">
+                <div class="kh-toc-head">
+                    <span class="kh-toc-title">ARTICLE NAVIGATION</span>
+                    <span class="kh-toc-badge" id="khRailBadge">01 / 18</span>
                 </div>
-                <div class="kh-toc-progress-track" style="height: 3px; background: rgba(148, 163, 184, 0.2); border-radius: 2px; margin-bottom: 1rem; overflow: hidden;">
-                    <div class="kh-toc-progress-fill" id="khRailProgress" style="height: 100%; width: 5%; background: #38bdf8; transition: width 0.15s ease;"></div>
+                <div class="kh-toc-progress-track">
+                    <div class="kh-toc-progress-fill" id="khRailProgress"></div>
                 </div>
                 <div class="kh-toc-inner">
-                    <ul class="kh-toc-links" style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; line-height: 1.45;">
-                        <li style="margin-bottom: 8px;"><a href="#sec-quick-answer" class="active">01 · Quick Answer: 3P vs 1P</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-what-is-seller-central">02 · What Is Seller Central?</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-what-is-vendor-central">03 · What Is Vendor Central?</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-comparison-table">04 · Master Comparison Table</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-pricing-profitability">05 · Pricing &amp; Profitability</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-inventory-fulfilment">06 · Inventory &amp; Fulfilment Flow</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-payments-cash-flow">07 · Payments &amp; Cash Flow Terms</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-advertising-marketing">08 · Advertising &amp; Marketing</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-seller-central-advantages">09 · Seller Central Advantages</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-seller-central-disadvantages">10 · Seller Central Disadvantages</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-vendor-central-advantages">11 · Vendor Central Advantages</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-vendor-central-disadvantages">12 · Vendor Central Disadvantages</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-business-type-fit">13 · Best Model by Business Type</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-hybrid-model">14 · Can You Use Both? (Hybrid)</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-switching-models">15 · Can You Switch Models?</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-decision-framework">16 · Practical Decision Framework</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-agency-support">17 · Scaling with PPC Growth Expert</a></li>
-                        <li style="margin-bottom: 8px;"><a href="#sec-faqs">18 · Frequently Asked Questions</a></li>
+                    <ul class="kh-toc-links">
+                        <li><a href="#sec-quick-answer" class="active">01 · Quick Answer: 3P vs 1P</a></li>
+                        <li><a href="#sec-what-is-seller-central">02 · What Is Seller Central?</a></li>
+                        <li><a href="#sec-what-is-vendor-central">03 · What Is Vendor Central?</a></li>
+                        <li><a href="#sec-comparison-table">04 · Master Comparison Table</a></li>
+                        <li><a href="#sec-pricing-profitability">05 · Pricing &amp; Profitability</a></li>
+                        <li><a href="#sec-inventory-fulfilment">06 · Inventory &amp; Fulfilment Flow</a></li>
+                        <li><a href="#sec-payments-cash-flow">07 · Payments &amp; Cash Flow Terms</a></li>
+                        <li><a href="#sec-advertising-marketing">08 · Advertising &amp; Marketing</a></li>
+                        <li><a href="#sec-seller-central-advantages">09 · Seller Central Advantages</a></li>
+                        <li><a href="#sec-seller-central-disadvantages">10 · Seller Central Disadvantages</a></li>
+                        <li><a href="#sec-vendor-central-advantages">11 · Vendor Central Advantages</a></li>
+                        <li><a href="#sec-vendor-central-disadvantages">12 · Vendor Central Disadvantages</a></li>
+                        <li><a href="#sec-business-type-fit">13 · Best Model by Business Type</a></li>
+                        <li><a href="#sec-hybrid-model">14 · Can You Use Both? (Hybrid)</a></li>
+                        <li><a href="#sec-switching-models">15 · Can You Switch Models?</a></li>
+                        <li><a href="#sec-decision-framework">16 · Practical Decision Framework</a></li>
+                        <li><a href="#sec-agency-support">17 · Scaling with PPC Growth Expert</a></li>
+                        <li><a href="#sec-faqs">18 · Frequently Asked Questions</a></li>
                     </ul>
-                </div>
-            </aside>
 
-            <!-- MAIN ARTICLE BODY COLUMN -->
-            <div class="kh-main-column">
+                    <div class="kh-rail-tools">
+                        <div class="kh-rail-tools-title">SELLER TOOLS &amp; AUDITS</div>
+                        <ul class="kh-rail-tools-list">
+                            <li><a href="../calculators/amazon-profit-calculator.html">Amazon Net Profit Calculator →</a></li>
+                            <li><a href="../calculators/amazon-fba-fee-calculator.html">FBA Fee &amp; Weight Calculator →</a></li>
+                            <li><a href="how-much-money-required-to-start-selling-on-amazon.html">Amazon Investment Guide →</a></li>
+                            <li><a href="documents-required-amazon-seller-account-india.html">Documents Required Checklist →</a></li>
+                            <li><a href="../services/amazon-ppc-management-services-india.html">PPC Growth Management →</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CENTER MAIN ARTICLE CONTENT -->
+        <main class="kh-doc-content" id="khDocContent">
 
                 <!-- MOBILE ACCORDION TOC -->
-                <details class="kh-mobile-toc" style="margin-bottom: 2rem; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 0.85rem 1rem;">
-                    <summary style="font-weight: 700; color: #38bdf8; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                        <span>Jump to Section (18 Chapters)</span>
-                        <span>▾</span>
-                    </summary>
-                    <div class="kh-mobile-toc-grid" style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 1rem; font-size: 0.9rem;">
-                        <a href="#sec-quick-answer" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">01 · Quick Answer: 3P vs 1P</a>
-                        <a href="#sec-what-is-seller-central" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">02 · What Is Seller Central?</a>
-                        <a href="#sec-what-is-vendor-central" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">03 · What Is Vendor Central?</a>
-                        <a href="#sec-comparison-table" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">04 · Master Comparison Table</a>
-                        <a href="#sec-pricing-profitability" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">05 · Pricing &amp; Profitability</a>
-                        <a href="#sec-inventory-fulfilment" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">06 · Inventory &amp; Fulfilment Flow</a>
-                        <a href="#sec-payments-cash-flow" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">07 · Payments &amp; Cash Flow Terms</a>
-                        <a href="#sec-advertising-marketing" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">08 · Advertising &amp; Marketing</a>
-                        <a href="#sec-seller-central-advantages" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">09 · Seller Central Advantages</a>
-                        <a href="#sec-seller-central-disadvantages" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">10 · Seller Central Disadvantages</a>
-                        <a href="#sec-vendor-central-advantages" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">11 · Vendor Central Advantages</a>
-                        <a href="#sec-vendor-central-disadvantages" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">12 · Vendor Central Disadvantages</a>
-                        <a href="#sec-business-type-fit" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">13 · Best Model by Business Type</a>
-                        <a href="#sec-hybrid-model" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">14 · Can You Use Both? (Hybrid)</a>
-                        <a href="#sec-switching-models" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">15 · Can You Switch Models?</a>
-                        <a href="#sec-decision-framework" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">16 · Practical Decision Framework</a>
-                        <a href="#sec-agency-support" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">17 · Scaling with PPC Growth Expert</a>
-                        <a href="#sec-faqs" style="color: #cbd5e1; text-decoration: none; padding: 4px 0;">18 · Frequently Asked Questions</a>
-                    </div>
-                </details>
+                <details class="kh-mobile-toc">
+                <summary>Jump to Section (18 Chapters) <span>▾</span></summary>
+                <div class="kh-mobile-toc-grid">
+                    <a href="#sec-quick-answer">01 · Quick Answer: 3P vs 1P</a>
+                    <a href="#sec-what-is-seller-central">02 · What Is Seller Central?</a>
+                    <a href="#sec-what-is-vendor-central">03 · What Is Vendor Central?</a>
+                    <a href="#sec-comparison-table">04 · Master Comparison Table</a>
+                    <a href="#sec-pricing-profitability">05 · Pricing &amp; Profitability</a>
+                    <a href="#sec-inventory-fulfilment">06 · Inventory &amp; Fulfilment Flow</a>
+                    <a href="#sec-payments-cash-flow">07 · Payments &amp; Cash Flow Terms</a>
+                    <a href="#sec-advertising-marketing">08 · Advertising &amp; Marketing</a>
+                    <a href="#sec-seller-central-advantages">09 · Seller Central Advantages</a>
+                    <a href="#sec-seller-central-disadvantages">10 · Seller Central Disadvantages</a>
+                    <a href="#sec-vendor-central-advantages">11 · Vendor Central Advantages</a>
+                    <a href="#sec-vendor-central-disadvantages">12 · Vendor Central Disadvantages</a>
+                    <a href="#sec-business-type-fit">13 · Best Model by Business Type</a>
+                    <a href="#sec-hybrid-model">14 · Can You Use Both? (Hybrid)</a>
+                    <a href="#sec-switching-models">15 · Can You Switch Models?</a>
+                    <a href="#sec-decision-framework">16 · Practical Decision Framework</a>
+                    <a href="#sec-agency-support">17 · Scaling with PPC Growth Expert</a>
+                    <a href="#sec-faqs">18 · Frequently Asked Questions</a>
+                </div>
+            </details>
 
             <!-- =========================================================
                  SECTION 01: QUICK ANSWER (3P VS 1P)
@@ -402,18 +411,18 @@
                     </div>
                 </div>
 
-                <div class="kh-callout kh-callout-info" style="margin: 1.5rem 0; padding: 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 4px solid #38bdf8; border-radius: 6px;">
-                    <strong style="color: #38bdf8; font-size: 1.05rem;">Critical Distinction: FBA Is NOT Vendor Central</strong>
-                    <p style="margin: 0.5rem 0 0; color: #e2e8f0; font-size: 0.95rem;">
+                <div class="kh-callout kh-callout-takeaways">
+                    <span class="kh-callout-label">Critical Distinction: FBA Is NOT Vendor Central</span>
+                    <p style="margin: 6px 0 0; color: #cbd5e1; font-size: 13.5px; line-height: 1.6;">
                         A widespread misconception among new e-commerce founders is assuming that using <strong>Fulfillment by Amazon (FBA)</strong> converts their business into an Amazon Vendor. This is completely false. Under FBA, you remain a <strong>third-party seller</strong> on Seller Central; you continue to own the inventory, set your own selling price, and pay Amazon fees for warehousing and delivery. In contrast, under Vendor Central, Amazon literally issues purchase orders to buy your stock in bulk at wholesale rates.
                     </p>
                 </div>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">What You Will Master in This Guide</h3>
+                <h3>What You Will Master in This Guide</h3>
                 <p>
                     Whether you are an established brand facing an official Vendor invitation or an ambitious manufacturer weighing where to deploy your capital, this operational guide breaks down:
                 </p>
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <ul class="kh-bullet-list">
                     <li>How Seller Central and Vendor Central operate behind the login screen.</li>
                     <li>The reality of Vendor Central's invite-only gatekeeping on the official Indian portal (<a href="https://www.vendorcentral.in/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: underline;">vendorcentral.in</a>).</li>
                     <li>Unit economic models comparing 3P marketplace margins against 1P wholesale purchase order pricing.</li>
@@ -438,7 +447,7 @@
                     In industry terminology, this is known as the <strong>Third-Party (3P) selling model</strong>. When a customer purchases your product on Amazon, the commercial sales contract is executed between you (the seller) and the consumer. Amazon acts as the digital marketplace operator, providing the search engine, payment gateway, fraud detection, and customer traffic in exchange for performance-based commissions.
                 </p>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">Core Operational Decks Managed in Seller Central</h3>
+                <h3>Core Operational Decks Managed in Seller Central</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0;">
                     <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; padding: 1.1rem;">
                         <h4 style="color: #38bdf8; margin: 0 0 0.35rem; font-size: 1rem;">1. Catalog &amp; Listing Control</h4>
@@ -458,11 +467,11 @@
                     </div>
                 </div>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">Fulfilment Flexibility Within Seller Central</h3>
+                <h3>Fulfilment Flexibility Within Seller Central</h3>
                 <p>
                     One of Seller Central's greatest assets is logistics choice. As detailed in our companion architectural manual, <a href="what-is-amazon-seller-central-and-how-it-works.html" style="color: #38bdf8; text-decoration: underline;">What Is Amazon Seller Central and How Does It Work?</a>, 3P sellers can fulfill orders using three distinct pathways:
                 </p>
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <ul class="kh-bullet-list">
                     <li><strong>Fulfillment by Amazon (FBA):</strong> You send inventory to Amazon's regional fulfillment centers (FCs). Amazon handles pick, pack, 1-to-2 day delivery under the <em>Prime badge</em>, and customer returns. You retain product ownership throughout.</li>
                     <li><strong>Amazon Easy Ship:</strong> You store goods at your own facility or warehouse. When orders arrive, you pack them, and an Amazon Logistics courier collects the package from your doorstep.</li>
                     <li><strong>Self Ship (Merchant Fulfilled):</strong> You store, pack, and ship using approved third-party couriers (such as BlueDart, Delhivery, or DTDC), maintaining manual tracking updates.</li>
@@ -488,7 +497,7 @@
                     Under the 1P model, your commercial transaction is <strong>not</strong> with the individual consumer who buys the product on Amazon.in. Your buyer is Amazon itself.
                 </p>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">How the Vendor Central Workflow Operates</h3>
+                <h3>How the Vendor Central Workflow Operates</h3>
                 <ol class="kh-numbered-list" style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.8;">
                     <li>
                         <strong>Wholesale Agreement &amp; Terms:</strong> You negotiate wholesale cost prices, co-op marketing allowances, freight terms, and return allowances with an Amazon Vendor Manager.
@@ -512,7 +521,7 @@
 
                 <div class="kh-callout kh-callout-warning" style="margin: 1.5rem 0; padding: 1.25rem; background: rgba(245, 158, 11, 0.08); border-left: 4px solid #f59e0b; border-radius: 6px;">
                     <strong style="color: #fbbf24; font-size: 1.05rem;">Is Vendor Central Open for Public Registration?</strong>
-                    <p style="margin: 0.5rem 0 0; color: #e2e8f0; font-size: 0.95rem;">
+                    <p style="margin: 6px 0 0; color: #cbd5e1; font-size: 13.5px; line-height: 1.6;">
                         <strong>No. Vendor Central is strictly invitation-only.</strong> There is no public registration form, sign-up button, or fee you can pay to open an account. Amazon's internal category merchant teams identify high-performing brands—frequently observing massive organic search volume, existing bestselling 3P Seller Central metrics, or prominent national retail market share—and reach out directly to corporate leadership. If any agency or consultant promises they can "register you for Vendor Central" for a fee, exercise extreme caution.
                     </p>
                 </div>
@@ -533,115 +542,115 @@
                     To provide a single authoritative reference, the table below compares every commercial, operational, financial, and strategic parameter across both platforms:
                 </p>
 
-                <div class="kh-table-responsive" style="overflow-x: auto; margin: 1.5rem 0;">
-                    <table class="kh-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left;">
+                <div class="kh-table-responsive" style="margin: 24px 0;">
+                    <table class="kh-table">
                         <thead>
-                            <tr style="background: rgba(30, 41, 59, 0.85); color: #38bdf8; border-bottom: 2px solid rgba(56, 189, 248, 0.3);">
-                                <th style="padding: 12px 14px; width: 22%;">Comparison Dimension</th>
-                                <th style="padding: 12px 14px; width: 39%; color: #38bdf8;">Seller Central (3P Marketplace)</th>
-                                <th style="padding: 12px 14px; width: 39%; color: #34d399;">Vendor Central (1P Wholesale)</th>
+                            <tr>
+                                <th style="width: 22%;">Comparison Dimension</th>
+                                <th style="width: 39%;">Seller Central (3P Marketplace)</th>
+                                <th style="width: 39%;">Vendor Central (1P Wholesale)</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">1. Business Model</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Third-Party (3P) Direct-to-Consumer selling.</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">First-Party (1P) Wholesale B2B supply.</td>
+                            <tr>
+                                <td>1. Business Model</td>
+                                <td>Third-Party (3P) Direct-to-Consumer selling.</td>
+                                <td>First-Party (1P) Wholesale B2B supply.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">2. Commercial Counterparty</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">You sell directly to the end Amazon customer.</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">You sell to Amazon; Amazon sells to the customer.</td>
+                            <tr>
+                                <td>2. Commercial Counterparty</td>
+                                <td>You sell directly to the end Amazon customer.</td>
+                                <td>You sell to Amazon; Amazon sells to the customer.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">3. Product Page Byline</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;"><em>"Sold by [Brand] and Fulfilled by Amazon"</em></td>
-                                <td style="padding: 11px 13px; color: #34d399; font-weight: 600;"><em>"Ships from and sold by Amazon.in"</em></td>
+                            <tr>
+                                <td>3. Product Page Byline</td>
+                                <td><em>"Sold by [Brand] and Fulfilled by Amazon"</em></td>
+                                <td style="color: #059669; font-weight: 600;"><em>"Ships from and sold by Amazon.in"</em></td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">4. Platform Accessibility</td>
-                                <td style="padding: 11px 13px; color: #38bdf8; font-weight: 600;">Open self-registration for all eligible entities.</td>
-                                <td style="padding: 11px 13px; color: #fbbf24; font-weight: 600;">Strictly invitation-only by Amazon Vendor Managers.</td>
+                            <tr>
+                                <td>4. Platform Accessibility</td>
+                                <td style="color: #0284c7; font-weight: 600;">Open self-registration for all eligible entities.</td>
+                                <td style="color: #d97706; font-weight: 600;">Strictly invitation-only by Amazon Vendor Managers.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">5. Inventory Ownership</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Seller owns inventory until customer delivery.</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Amazon owns inventory upon delivery acceptance.</td>
+                            <tr>
+                                <td>5. Inventory Ownership</td>
+                                <td>Seller owns inventory until customer delivery.</td>
+                                <td>Amazon owns inventory upon delivery acceptance.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">6. Retail Pricing Control</td>
-                                <td style="padding: 11px 13px; color: #38bdf8; font-weight: 600;">Full autonomy. Seller changes prices dynamically.</td>
-                                <td style="padding: 11px 13px; color: #f87171;">Zero control. Amazon algorithm sets consumer price.</td>
+                            <tr>
+                                <td>6. Retail Pricing Control</td>
+                                <td style="color: #0284c7; font-weight: 600;">Full autonomy. Seller changes prices dynamically.</td>
+                                <td style="color: #dc2626; font-weight: 600;">Zero control. Amazon algorithm sets consumer price.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">7. Wholesale Price Structure</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">N/A (Seller sets retail price directly).</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Negotiated wholesale supply price per SKU.</td>
+                            <tr>
+                                <td>7. Wholesale Price Structure</td>
+                                <td>N/A (Seller sets retail price directly).</td>
+                                <td>Negotiated wholesale supply price per SKU.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">8. Order Mechanics</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Individual customer orders (1 to 5 units).</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Bulk Purchase Orders (POs) issued by Amazon.</td>
+                            <tr>
+                                <td>8. Order Mechanics</td>
+                                <td>Individual customer orders (1 to 5 units).</td>
+                                <td>Bulk Purchase Orders (POs) issued by Amazon.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">9. Fulfilment Channels</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">FBA (Prime), Easy Ship, or Self Ship.</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Amazon Retail Fulfilment (FC bulk inbounding).</td>
+                            <tr>
+                                <td>9. Fulfilment Channels</td>
+                                <td>FBA (Prime), Easy Ship, or Self Ship.</td>
+                                <td>Amazon Retail Fulfilment (FC bulk inbounding).</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">10. Customer Support</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Handled by Amazon for FBA; by seller for MFN.</td>
-                                <td style="padding: 11px 13px; color: #34d399;">100% managed by Amazon customer service.</td>
+                            <tr>
+                                <td>10. Customer Support</td>
+                                <td>Handled by Amazon for FBA; by seller for MFN.</td>
+                                <td style="color: #059669; font-weight: 600;">100% managed by Amazon customer service.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">11. Payment Terms &amp; Cycle</td>
-                                <td style="padding: 11px 13px; color: #38bdf8; font-weight: 600;">Rolling 7 to 14 days after customer delivery.</td>
-                                <td style="padding: 11px 13px; color: #fbbf24;">Net 30, Net 60, or Net 90 days after invoice.</td>
+                            <tr>
+                                <td>11. Payment Terms &amp; Cycle</td>
+                                <td style="color: #0284c7; font-weight: 600;">Rolling 7 to 14 days after customer delivery.</td>
+                                <td style="color: #d97706; font-weight: 600;">Net 30, Net 60, or Net 90 days after invoice.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">12. Fee Architecture</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Referral (2%–22%) + Closing + Shipping + 18% GST.</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Wholesale margin, co-op allowances, damage reserves, chargebacks.</td>
+                            <tr>
+                                <td>12. Fee Architecture</td>
+                                <td>Referral (2%–22%) + Closing + Shipping + 18% GST.</td>
+                                <td>Wholesale margin, co-op allowances, damage reserves, chargebacks.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">13. Advertising Engine</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Self-serve Amazon Ads (SP, SB, SD).</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Amazon Ads + potential enterprise retail media &amp; DSP.</td>
+                            <tr>
+                                <td>13. Advertising Engine</td>
+                                <td>Self-serve Amazon Ads (SP, SB, SD).</td>
+                                <td>Amazon Ads + potential enterprise retail media &amp; DSP.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">14. Promotional Tools</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Self-serve Coupons, Prime Discounts, Deals.</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Vendor-funded promotions, subject to contract agreements.</td>
+                            <tr>
+                                <td>14. Promotional Tools</td>
+                                <td>Self-serve Coupons, Prime Discounts, Deals.</td>
+                                <td>Vendor-funded promotions, subject to contract agreements.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">15. Content &amp; A+ Management</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Direct upload via Brand Registry (Basic &amp; Premium A+).</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Vendor catalog contributions; updates can take days to index.</td>
+                            <tr>
+                                <td>15. Content &amp; A+ Management</td>
+                                <td>Direct upload via Brand Registry (Basic &amp; Premium A+).</td>
+                                <td>Vendor catalog contributions; updates can take days to index.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">16. Unsold Inventory Risk</td>
-                                <td style="padding: 11px 13px; color: #f87171;">Seller absorbs storage and liquidation risk.</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Amazon owns stock, but contract may enforce buybacks.</td>
+                            <tr>
+                                <td>16. Unsold Inventory Risk</td>
+                                <td style="color: #dc2626; font-weight: 600;">Seller absorbs storage and liquidation risk.</td>
+                                <td style="color: #059669; font-weight: 600;">Amazon owns stock, but contract may enforce buybacks.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">17. Buy Box Dominance</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Must compete algorithmically against other sellers.</td>
-                                <td style="padding: 11px 13px; color: #34d399; font-weight: 600;">Amazon retail offers almost always win the Buy Box.</td>
+                            <tr>
+                                <td>17. Buy Box Dominance</td>
+                                <td>Must compete algorithmically against other sellers.</td>
+                                <td style="color: #059669; font-weight: 600;">Amazon retail offers almost always win the Buy Box.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">18. Chargeback Penalties</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Account health warnings / performance flags.</td>
-                                <td style="padding: 11px 13px; color: #f87171; font-weight: 600;">Strict financial chargebacks for ASN, barcode, or prep errors.</td>
+                            <tr>
+                                <td>18. Chargeback Penalties</td>
+                                <td>Account health warnings / performance flags.</td>
+                                <td style="color: #dc2626; font-weight: 600;">Strict financial chargebacks for ASN, barcode, or prep errors.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">19. Customer Data Access</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Full Brand Analytics, search term reports, repeat rate.</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Amazon Retail Analytics (ARA Basic / Premium).</td>
+                            <tr>
+                                <td>19. Customer Data Access</td>
+                                <td>Full Brand Analytics, search term reports, repeat rate.</td>
+                                <td>Amazon Retail Analytics (ARA Basic / Premium).</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">20. Ideal Business Fit</td>
-                                <td style="padding: 11px 13px; color: #38bdf8; font-weight: 600;">D2C brands, private labels, SMBs, nimble retailers.</td>
-                                <td style="padding: 11px 13px; color: #34d399; font-weight: 600;">Tier-1 FMCG enterprises, high-capacity industrial plants.</td>
+                            <tr>
+                                <td>20. Ideal Business Fit</td>
+                                <td style="color: #0284c7; font-weight: 600;">D2C brands, private labels, SMBs, nimble retailers.</td>
+                                <td style="color: #059669; font-weight: 600;">Tier-1 FMCG enterprises, high-capacity industrial plants.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -659,14 +668,14 @@
                     The financial architecture of Seller Central and Vendor Central represents fundamentally different commercial business models. A business owner cannot simply compare top-line turnover; you must model <strong>net cash retained per unit sold</strong>.
                 </p>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">How Pricing Operates Across Both Models</h3>
+                <h3>How Pricing Operates Across Both Models</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.25rem 0;">
                     <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 1.25rem;">
-                        <h4 style="color: #38bdf8; margin: 0 0 0.5rem; font-size: 1.1rem;">Seller Central (3P) Pricing Mechanics</h4>
-                        <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.75rem;">
+                        <h4>Seller Central (3P) Pricing Mechanics</h4>
+                        <p>
                             As a 3P seller, you set the consumer-facing retail price on Amazon.in. Your revenue is the final selling price paid by the customer, from which Amazon deducts:
                         </p>
-                        <ul style="color: #cbd5e1; font-size: 0.88rem; margin-left: 1.1rem; padding: 0;">
+                        <ul class="kh-bullet-list">
                             <li><strong>Category Referral Fee:</strong> 2% to 22% commission (<a href="https://sell.amazon.in/fees-and-pricing" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: underline;">Amazon India Fees</a>).</li>
                             <li><strong>Closing Fee:</strong> Slab-based fee (₹5 to ₹61+ per order).</li>
                             <li><strong>Shipping &amp; Fulfilment:</strong> FBA or Easy Ship weight handling fees.</li>
@@ -675,11 +684,11 @@
                     </div>
 
                     <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 8px; padding: 1.25rem;">
-                        <h4 style="color: #34d399; margin: 0 0 0.5rem; font-size: 1.1rem;">Vendor Central (1P) Pricing Mechanics</h4>
-                        <p style="color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.75rem;">
+                        <h4>Vendor Central (1P) Pricing Mechanics</h4>
+                        <p>
                             As a 1P vendor, your revenue is the negotiated <strong>wholesale cost price</strong> at which you sell to Amazon. You do not collect customer payments. However, vendor agreements typically incorporate contractual deductions:
                         </p>
-                        <ul style="color: #cbd5e1; font-size: 0.88rem; margin-left: 1.1rem; padding: 0;">
+                        <ul class="kh-bullet-list">
                             <li><strong>Co-Op Marketing Allowance:</strong> 4% to 12% deducted for Amazon promotional placement.</li>
                             <li><strong>Freight &amp; Damage Allowance:</strong> 2% to 5% deducted for handling and customer returns.</li>
                             <li><strong>Retail Pricing Exposure:</strong> Amazon sets consumer prices. If Amazon discounts retail prices to match competitors, they may request cost concessions on future purchase orders.</li>
@@ -687,89 +696,89 @@
                     </div>
                 </div>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.75rem;">Worked Unit Economics: Comparing a ₹1,000 Retail Product</h3>
+                <h3>Worked Unit Economics: Comparing a ₹1,000 Retail Product</h3>
                 <p>
                     Consider an Indian consumer brand producing a Premium Stainless Steel Insulated Flask with a landed manufacturing cost of <strong>₹320</strong>. Here is the realistic financial comparison between selling directly on Seller Central at ₹1,000 versus selling wholesale to Amazon via Vendor Central at ₹550 (45% wholesale discount):
                 </p>
 
-                <div class="kh-table-responsive" style="overflow-x: auto; margin: 1.25rem 0 1.5rem;">
-                    <table class="kh-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left;">
+                <div class="kh-table-responsive" style="margin: 24px 0;">
+                    <table class="kh-table">
                         <thead>
-                            <tr style="background: rgba(30, 41, 59, 0.85); color: #38bdf8; border-bottom: 2px solid rgba(56, 189, 248, 0.3);">
-                                <th style="padding: 12px 14px;">Financial Breakdown Step</th>
-                                <th style="padding: 12px 14px; text-align: right; color: #38bdf8;">Seller Central (3P)</th>
-                                <th style="padding: 12px 14px; text-align: right; color: #34d399;">Vendor Central (1P)</th>
-                                <th style="padding: 12px 14px;">Operational Rationale</th>
+                            <tr>
+                                <th>Financial Breakdown Step</th>
+                                <th style="text-align: right;">Seller Central (3P)</th>
+                                <th style="text-align: right;">Vendor Central (1P)</th>
+                                <th>Operational Rationale</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 700; color: #f8fafc;">Top-Line Invoiced Revenue</td>
-                                <td style="padding: 11px 13px; text-align: right; font-weight: 700; color: #38bdf8;">₹1,000.00</td>
-                                <td style="padding: 11px 13px; text-align: right; font-weight: 700; color: #34d399;">₹550.00</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Customer retail price (3P) vs Wholesale PO price (1P)</td>
+                            <tr>
+                                <td>Top-Line Invoiced Revenue</td>
+                                <td style="text-align: right; color: #0284c7; font-weight: 600;">₹1,000.00</td>
+                                <td style="text-align: right; color: #059669; font-weight: 600;">₹550.00</td>
+                                <td>Customer retail price (3P) vs Wholesale PO price (1P)</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Landed Manufacturing Cost (COGS)</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹320.00</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹320.00</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Identical manufacturing and raw material cost</td>
+                            <tr>
+                                <td>Landed Manufacturing Cost (COGS)</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹320.00</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹320.00</td>
+                                <td>Identical manufacturing and raw material cost</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Amazon Marketplace Commissions &amp; Fees</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹260.00</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #cbd5e1;">₹0.00</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">13% Referral + Closing + FBA Pick/Pack + 18% GST</td>
+                            <tr>
+                                <td>Amazon Marketplace Commissions &amp; Fees</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹260.00</td>
+                                <td style="text-align: right;">₹0.00</td>
+                                <td>13% Referral + Closing + FBA Pick/Pack + 18% GST</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Contractual Co-Op Allowances (8%)</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #cbd5e1;">₹0.00</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹44.00</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Vendor co-op and promotional platform deduction</td>
+                            <tr>
+                                <td>Contractual Co-Op Allowances (8%)</td>
+                                <td style="text-align: right;">₹0.00</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹44.00</td>
+                                <td>Vendor co-op and promotional platform deduction</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Damage &amp; Defective Reserve Allowance (3%)</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #cbd5e1;">₹0.00</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹16.50</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Standard vendor contractual return buffer</td>
+                            <tr>
+                                <td>Damage &amp; Defective Reserve Allowance (3%)</td>
+                                <td style="text-align: right;">₹0.00</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹16.50</td>
+                                <td>Standard vendor contractual return buffer</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Bulk Freight to Amazon FC</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹20.00</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹25.00</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Palletizing and inbound transport freight</td>
+                            <tr>
+                                <td>Bulk Freight to Amazon FC</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹20.00</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹25.00</td>
+                                <td>Palletizing and inbound transport freight</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Retail Packaging &amp; Labeling</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹30.00</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹15.00</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Master carton prep vs individual consumer mailer</td>
+                            <tr>
+                                <td>Retail Packaging &amp; Labeling</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹30.00</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹15.00</td>
+                                <td>Master carton prep vs individual consumer mailer</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Amazon Sponsored Ads / Marketing (13%)</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #fca5a5;">-₹130.00</td>
-                                <td style="padding: 11px 13px; text-align: right; color: #cbd5e1;">₹0.00*</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Direct PPC spend to generate consumer conversion</td>
+                            <tr>
+                                <td>Amazon Sponsored Ads / Marketing (13%)</td>
+                                <td style="text-align: right; color: #dc2626; font-weight: 600;">-₹130.00</td>
+                                <td style="text-align: right;">₹0.00*</td>
+                                <td>Direct PPC spend to generate consumer conversion</td>
                             </tr>
                             <tr style="background: rgba(56, 189, 248, 0.1); border-top: 2px solid #38bdf8;">
-                                <td style="padding: 13px; font-weight: 700; color: #f8fafc; font-size: 1rem;">NET CLEAN PROFIT PER UNIT</td>
-                                <td style="padding: 13px; text-align: right; font-weight: 700; color: #34d399; font-size: 1.15rem;">₹240.00</td>
-                                <td style="padding: 13px; text-align: right; font-weight: 700; color: #38bdf8; font-size: 1.15rem;">₹129.50</td>
-                                <td style="padding: 13px; color: #f8fafc; font-weight: 600;">Net cash retained in business bank account</td>
+                                <td>NET CLEAN PROFIT PER UNIT</td>
+                                <td style="text-align: right; color: #059669; font-weight: 600;">₹240.00</td>
+                                <td style="text-align: right; color: #0284c7; font-weight: 600;">₹129.50</td>
+                                <td>Net cash retained in business bank account</td>
                             </tr>
                             <tr style="background: rgba(15, 23, 42, 0.6);">
-                                <td style="padding: 10px 13px; font-weight: 600; color: #94a3b8;">Effective Net Margin (%)</td>
-                                <td style="padding: 10px 13px; text-align: right; color: #34d399; font-weight: 700;">24.0% of Retail</td>
-                                <td style="padding: 10px 13px; text-align: right; color: #38bdf8; font-weight: 700;">23.5% of Wholesale</td>
-                                <td style="padding: 10px 13px; color: #94a3b8;">Margin calculated against recognized top-line</td>
+                                <td>Effective Net Margin (%)</td>
+                                <td style="text-align: right; color: #059669; font-weight: 600;">24.0% of Retail</td>
+                                <td style="text-align: right; color: #0284c7; font-weight: 600;">23.5% of Wholesale</td>
+                                <td>Margin calculated against recognized top-line</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="kh-callout kh-callout-info" style="margin: 1.5rem 0; padding: 1.25rem; background: rgba(56, 189, 248, 0.08); border-left: 4px solid #38bdf8; border-radius: 6px;">
-                    <strong style="color: #38bdf8; font-size: 1.05rem;">The Profitability Verdict:</strong>
-                    <p style="margin: 0.5rem 0 0; color: #e2e8f0; font-size: 0.95rem;">
+                <div class="kh-callout kh-callout-takeaways">
+                    <span class="kh-callout-label">The Profitability Verdict:</span>
+                    <p style="margin: 6px 0 0; color: #cbd5e1; font-size: 13.5px; line-height: 1.6;">
                         As demonstrated, <strong>Seller Central delivers almost double the absolute rupee profit per unit sold (₹240 vs ₹129.50)</strong>. However, Vendor Central allows a manufacturer to move 5,000 units in a single bulk Purchase Order without fulfilling 5,000 individual customer parcels. To calculate your exact Seller Central margins and fee structures, test our free <a href="../calculators/amazon-profit-calculator.html" style="color: #38bdf8; text-decoration: underline;">Amazon Profit Margin Calculator</a>.
                     </p>
                 </div>
@@ -825,8 +834,8 @@
                     </div>
                 </div>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">Fulfilment Nuances Explained</h3>
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <h3>Fulfilment Nuances Explained</h3>
+                <ul class="kh-bullet-list">
                     <li><strong>Seller Central Storage Risk:</strong> If your product does not sell in FBA, you are billed monthly inventory storage fees (~₹45/cu.ft/month) and aged inventory surcharges. To simulate your monthly storage liability, utilize our <a href="../calculators/amazon-fba-storage-fee-calculator.html" style="color: #38bdf8; text-decoration: underline;">Amazon FBA Storage Fee Calculator</a>. You can inspect exact FBA pick-and-pack fee tiers using our <a href="../calculators/amazon-fba-fee-calculator.html" style="color: #38bdf8; text-decoration: underline;">Amazon FBA Fee Calculator</a>.</li>
                     <li><strong>Vendor Central Unsold Inventory:</strong> Once Amazon scans and accepts your purchase order, the physical storage burden belongs to Amazon. However, vendor contracts frequently contain <em>Return to Vendor (RTV)</em> clauses where Amazon reserves the right to return unsold seasonal stock or debit markdowns if sell-through rates fall below agreed thresholds.</li>
                 </ul>
@@ -846,7 +855,7 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.25rem 0;">
                     <!-- Seller Central Cash Flow -->
                     <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 1.25rem;">
-                        <h4 style="color: #38bdf8; margin: 0 0 0.5rem; font-size: 1.1rem;">Seller Central: 7 to 14-Day Rolling Deposits</h4>
+                        <h4>Seller Central: 7 to 14-Day Rolling Deposits</h4>
                         <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
                             Amazon India disburses sales proceeds on a <strong>rolling 7-day to 14-day schedule</strong> following customer delivery. While Amazon maintains an Account Level Reserve to protect against customer returns, net funds are wired directly into your current account weekly or bi-weekly. This rapid cash conversion cycle enables fast inventory replenishment.
                         </p>
@@ -861,11 +870,11 @@
                     </div>
                 </div>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">The Hidden Friction of Vendor Central Chargebacks</h3>
+                <h3>The Hidden Friction of Vendor Central Chargebacks</h3>
                 <p>
                     In Vendor Central, Amazon enforces ruthless automated operational compliance. If your warehouse makes minor routing or labeling errors, Amazon’s systems automatically deduct financial penalties known as <strong>Chargebacks</strong> from your invoice payouts:
                 </p>
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <ul class="kh-bullet-list">
                     <li><strong>ASN Non-Compliance:</strong> Advanced Shipping Notices transmitted late or containing mismatched carton counts.</li>
                     <li><strong>Barcode Scannability Issues:</strong> Missing or unscannable GS1-128 shipping container labels.</li>
                     <li><strong>Late Delivery / Window Mismatch:</strong> Trucks arriving at Amazon FCs outside the scheduled freight appointment window.</li>
@@ -891,45 +900,45 @@
                     Through the unified <a href="https://advertising.amazon.com/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: underline;">Amazon Ads platform</a> and <a href="https://brandservices.amazon.in/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: underline;">Amazon Brand Registry</a>, both 3P sellers and 1P vendors have access to the primary retail media formats:
                 </p>
 
-                <div class="kh-table-responsive" style="overflow-x: auto; margin: 1.25rem 0 1.5rem;">
-                    <table class="kh-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left;">
+                <div class="kh-table-responsive" style="margin: 24px 0;">
+                    <table class="kh-table">
                         <thead>
-                            <tr style="background: rgba(30, 41, 59, 0.85); color: #38bdf8; border-bottom: 2px solid rgba(56, 189, 248, 0.3);">
-                                <th style="padding: 11px 13px;">Advertising Tool / Program</th>
-                                <th style="padding: 11px 13px; color: #38bdf8;">Seller Central (3P) Access</th>
-                                <th style="padding: 11px 13px; color: #34d399;">Vendor Central (1P) Access</th>
+                            <tr>
+                                <th>Advertising Tool / Program</th>
+                                <th>Seller Central (3P) Access</th>
+                                <th>Vendor Central (1P) Access</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Sponsored Products (Search Ads)</td>
-                                <td style="padding: 11px 13px; color: #34d399; font-weight: 600;">Full self-serve access (exact, phrase, broad)</td>
-                                <td style="padding: 11px 13px; color: #34d399; font-weight: 600;">Full access via Amazon Advertising console</td>
+                            <tr>
+                                <td>Sponsored Products (Search Ads)</td>
+                                <td style="color: #059669; font-weight: 600;">Full self-serve access (exact, phrase, broad)</td>
+                                <td style="color: #059669; font-weight: 600;">Full access via Amazon Advertising console</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Sponsored Brands &amp; Video Ads</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Full access (requires Brand Registry)</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Full access across eligible brand catalogs</td>
+                            <tr>
+                                <td>Sponsored Brands &amp; Video Ads</td>
+                                <td style="color: #059669; font-weight: 600;">Full access (requires Brand Registry)</td>
+                                <td style="color: #059669; font-weight: 600;">Full access across eligible brand catalogs</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Sponsored Display (Retargeting)</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Full access across on-Amazon &amp; off-Amazon</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Full access with contextual targeting</td>
+                            <tr>
+                                <td>Sponsored Display (Retargeting)</td>
+                                <td style="color: #059669; font-weight: 600;">Full access across on-Amazon &amp; off-Amazon</td>
+                                <td style="color: #059669; font-weight: 600;">Full access with contextual targeting</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Amazon DSP (Demand-Side Platform)</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Available via specialized agencies</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Direct managed-service access or via agencies</td>
+                            <tr>
+                                <td>Amazon DSP (Demand-Side Platform)</td>
+                                <td>Available via specialized agencies</td>
+                                <td style="color: #059669; font-weight: 600;">Direct managed-service access or via agencies</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">A+ Content &amp; Brand Story Modules</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Basic &amp; Premium A+ (Brand Registry)</td>
-                                <td style="padding: 11px 13px; color: #34d399;">Standard A+ Content access</td>
+                            <tr>
+                                <td>A+ Content &amp; Brand Story Modules</td>
+                                <td style="color: #059669; font-weight: 600;">Basic &amp; Premium A+ (Brand Registry)</td>
+                                <td style="color: #059669; font-weight: 600;">Standard A+ Content access</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Amazon Vine Review Program</td>
-                                <td style="padding: 11px 13px; color: #38bdf8;">Pay-per-ASIN enrollment fee</td>
-                                <td style="padding: 11px 13px; color: #38bdf8;">Enterprise tiered enrollment fees</td>
+                            <tr>
+                                <td>Amazon Vine Review Program</td>
+                                <td style="color: #0284c7; font-weight: 600;">Pay-per-ASIN enrollment fee</td>
+                                <td style="color: #0284c7; font-weight: 600;">Enterprise tiered enrollment fees</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1010,7 +1019,7 @@
                     While Seller Central provides unmatched autonomy, it demands rigorous operational competence. As a 3P seller, the full operational burden of retail e-commerce rests on your shoulders:
                 </p>
 
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <ul class="kh-bullet-list">
                     <li><strong>Inventory &amp; Dead-Stock Liability:</strong> You bear 100% of physical inventory risk. If products do not sell, Amazon bills you monthly storage fees and aged inventory surcharges until you pay to remove or liquidate them.</li>
                     <li><strong>Direct Customer Return Management:</strong> You absorb customer return shipping costs and RTO freight on cash-on-delivery orders. You must inspect damaged returns and repackage salvageable stock.</li>
                     <li><strong>Buy Box Competition:</strong> If authorized or unauthorized resellers list on your ASIN, you must compete algorithmically for the Buy Box based on price, Prime delivery speed, and seller metrics.</li>
@@ -1069,7 +1078,7 @@
                     Many brands that eagerly accepted a Vendor Central invitation later regret the transition due to loss of commercial control. Consider these serious operational risks:
                 </p>
 
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <ul class="kh-bullet-list">
                     <li><strong>Total Loss of Consumer Pricing Control:</strong> Amazon’s pricing bots scour the internet 24/7. If a third-party seller discounts your item on Flipkart, JioMart, or Blinkit, Amazon automatically drops the retail price on Amazon.in. This creates severe channel conflict with your physical distributor network who accuse your brand of predatory online pricing.</li>
                     <li><strong>Extended Cash Flow Floats:</strong> Waiting Net 60 or Net 90 days for invoice settlement forces suppliers to tie up enormous working capital in raw materials and manufacturing lines.</li>
                     <li><strong>Punitive Automated Chargebacks:</strong> Mislabeled pallets, packaging tape deviations, or missed dock delivery appointments trigger non-negotiable chargeback penalties that can wipe out 5% or more of invoice value.</li>
@@ -1146,45 +1155,45 @@
                     Yes, operating a <strong>Hybrid Selling Model (simultaneously managing both 1P Vendor Central and 3P Seller Central)</strong> has emerged as the premier strategy for sophisticated marketplace brands in India.
                 </p>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">How to Architect an ASIN-Segmented Hybrid Strategy</h3>
+                <h3>How to Architect an ASIN-Segmented Hybrid Strategy</h3>
                 <p>
                     The fatal error in a hybrid model is listing the exact same product on both portals without segmentation, which causes internal pricing cannibalization and algorithmic Buy Box chaos. Instead, top brands segment their product portfolio:
                 </p>
 
-                <div class="kh-table-responsive" style="overflow-x: auto; margin: 1.25rem 0 1.5rem;">
-                    <table class="kh-table" style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left;">
+                <div class="kh-table-responsive" style="margin: 24px 0;">
+                    <table class="kh-table">
                         <thead>
-                            <tr style="background: rgba(30, 41, 59, 0.85); color: #38bdf8; border-bottom: 2px solid rgba(56, 189, 248, 0.3);">
-                                <th style="padding: 11px 13px;">Product Category / SKU Type</th>
-                                <th style="padding: 11px 13px; text-align: center;">Recommended Channel</th>
-                                <th style="padding: 11px 13px;">Strategic Business Justification</th>
+                            <tr>
+                                <th>Product Category / SKU Type</th>
+                                <th>Recommended Channel</th>
+                                <th>Strategic Business Justification</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Top-Selling Core Hero SKUs (High Velocity)</td>
-                                <td style="padding: 11px 13px; text-align: center; color: #34d399; font-weight: 700;">Vendor Central (1P)</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Move truckload bulk volume, guarantee Prime availability, and leverage Amazon retail trust.</td>
+                            <tr>
+                                <td>Top-Selling Core Hero SKUs (High Velocity)</td>
+                                <td style="color: #059669; font-weight: 600;">Vendor Central (1P)</td>
+                                <td>Move truckload bulk volume, guarantee Prime availability, and leverage Amazon retail trust.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">New Product Innovations &amp; Launches</td>
-                                <td style="padding: 11px 13px; text-align: center; color: #38bdf8; font-weight: 700;">Seller Central (3P)</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Amazon algorithms will not issue POs for unproven items. Launch on 3P to build sales history and reviews.</td>
+                            <tr>
+                                <td>New Product Innovations &amp; Launches</td>
+                                <td style="color: #0284c7; font-weight: 600;">Seller Central (3P)</td>
+                                <td>Amazon algorithms will not issue POs for unproven items. Launch on 3P to build sales history and reviews.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">High-Margin Niche Variations (Colors / Sizes)</td>
-                                <td style="padding: 11px 13px; text-align: center; color: #38bdf8; font-weight: 700;">Seller Central (3P)</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Avoid 1P CRaP (Can't Realize a Profit) status. Retain direct pricing control to preserve healthy margins.</td>
+                            <tr>
+                                <td>High-Margin Niche Variations (Colors / Sizes)</td>
+                                <td style="color: #0284c7; font-weight: 600;">Seller Central (3P)</td>
+                                <td>Avoid 1P CRaP (Can't Realize a Profit) status. Retain direct pricing control to preserve healthy margins.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Seasonal Bundles &amp; Multi-Packs</td>
-                                <td style="padding: 11px 13px; text-align: center; color: #38bdf8; font-weight: 700;">Seller Central (3P)</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">Create unique virtual or physical bundles (Festival gift packs) without formal B2B vendor onboarding.</td>
+                            <tr>
+                                <td>Seasonal Bundles &amp; Multi-Packs</td>
+                                <td style="color: #0284c7; font-weight: 600;">Seller Central (3P)</td>
+                                <td>Create unique virtual or physical bundles (Festival gift packs) without formal B2B vendor onboarding.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 11px 13px; font-weight: 600; color: #f8fafc;">Out-of-Stock Fallback (Emergency Backup)</td>
-                                <td style="padding: 11px 13px; text-align: center; color: #fbbf24; font-weight: 700;">Seller Central (3P)</td>
-                                <td style="padding: 11px 13px; color: #cbd5e1;">If Amazon FCs run out of 1P inventory and fail to issue a PO in time, switch on your 3P FBA offer to prevent lost BSR rank.</td>
+                            <tr>
+                                <td>Out-of-Stock Fallback (Emergency Backup)</td>
+                                <td style="color: #d97706; font-weight: 600;">Seller Central (3P)</td>
+                                <td>If Amazon FCs run out of 1P inventory and fail to issue a PO in time, switch on your 3P FBA offer to prevent lost BSR rank.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1202,21 +1211,21 @@
                     Transitioning between marketplace models is not an automatic toggle switch; it represents a major commercial pivot requiring contractual and logistical restructuring:
                 </p>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">Transitioning from 3P (Seller) to 1P (Vendor)</h3>
+                <h3>Transitioning from 3P (Seller) to 1P (Vendor)</h3>
                 <p>
                     You cannot simply click a button in Seller Central to convert to Vendor Central. An Amazon Vendor Manager must formally reach out, evaluate your catalog demand, and issue a Vendor Agreement. If you decide to accept:
                 </p>
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <ul class="kh-bullet-list">
                     <li>Do <strong>not</strong> abruptly close or delete your Seller Central account. Keep it active as an emergency fallback channel.</li>
                     <li>Carefully model the proposed wholesale cost prices against co-op marketing deductions, return allowances, and Net 60/90 payment terms.</li>
                     <li>Ensure your warehouse management system (WMS) supports Electronic Data Interchange (EDI) and automated ASN barcode generation to avoid chargebacks.</li>
                 </ul>
 
-                <h3 style="color: #f8fafc; font-size: 1.15rem; margin-top: 1.5rem;">Transitioning from 1P (Vendor) Back to 3P (Seller)</h3>
+                <h3>Transitioning from 1P (Vendor) Back to 3P (Seller)</h3>
                 <p>
                     Over the past three years, dozens of prominent brands have voluntarily exited Vendor Central to reclaim retail pricing control on Seller Central. However, transitioning back from 1P to 3P involves distinct hurdles:
                 </p>
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
+                <ul class="kh-bullet-list">
                     <li><strong>Residual Amazon Inventory:</strong> Amazon will continue selling down whatever remaining inventory it owns in its FCs. Until that stock clears, Amazon will dominate the Buy Box.</li>
                     <li><strong>Historic Price Matching Memory:</strong> If Amazon heavily discounted your ASIN while acting as the 1P retailer, Amazon’s automated Fair Pricing Algorithm may temporarily flag your new 3P retail price as "too high" if you attempt to restore original MRP.</li>
                 </ul>
@@ -1233,65 +1242,65 @@
                     To select the optimal selling path without costly trial and error, evaluate your organization against this 10-point strategic diagnostic framework:
                 </p>
 
-                <div class="kh-table-responsive" style="overflow-x: auto; margin: 1.25rem 0 1.5rem;">
-                    <table class="kh-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem; text-align: left;">
+                <div class="kh-table-responsive" style="margin: 24px 0;">
+                    <table class="kh-table">
                         <thead>
-                            <tr style="background: rgba(30, 41, 59, 0.85); color: #38bdf8; border-bottom: 2px solid rgba(56, 189, 248, 0.3);">
-                                <th style="padding: 10px 12px; width: 45%;">Strategic Evaluation Question</th>
-                                <th style="padding: 10px 12px; width: 27%; color: #38bdf8;">Choose Seller Central (3P) If...</th>
-                                <th style="padding: 10px 12px; width: 28%; color: #34d399;">Choose Vendor Central (1P) If...</th>
+                            <tr>
+                                <th style="width: 45%;">Strategic Evaluation Question</th>
+                                <th style="width: 27%;">Choose Seller Central (3P) If...</th>
+                                <th style="width: 28%;">Choose Vendor Central (1P) If...</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">1. What is your access status?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">You want to start selling immediately.</td>
-                                <td style="padding: 10px 12px; color: #34d399;">You have received an official Amazon invite.</td>
+                            <tr>
+                                <td>1. What is your access status?</td>
+                                <td style="color: #0284c7; font-weight: 600;">You want to start selling immediately.</td>
+                                <td style="color: #059669; font-weight: 600;">You have received an official Amazon invite.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">2. How critical is retail pricing control?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Strict MAP enforcement is mandatory.</td>
-                                <td style="padding: 10px 12px; color: #cbd5e1;">You accept algorithmic retail pricing.</td>
+                            <tr>
+                                <td>2. How critical is retail pricing control?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Strict MAP enforcement is mandatory.</td>
+                                <td>You accept algorithmic retail pricing.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">3. What are your cash flow requirements?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Need rapid 7–14 day liquidity.</td>
-                                <td style="padding: 10px 12px; color: #cbd5e1;">Have working capital to float Net 60/90 days.</td>
+                            <tr>
+                                <td>3. What are your cash flow requirements?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Need rapid 7–14 day liquidity.</td>
+                                <td>Have working capital to float Net 60/90 days.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">4. What are your operational capabilities?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Comfortable with e-com order fulfillment / FBA.</td>
-                                <td style="padding: 10px 12px; color: #34d399;">Factory setup for bulk pallet shipments.</td>
+                            <tr>
+                                <td>4. What are your operational capabilities?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Comfortable with e-com order fulfillment / FBA.</td>
+                                <td style="color: #059669; font-weight: 600;">Factory setup for bulk pallet shipments.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">5. What are your unit profit margins?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Aim to maximize net cash per unit.</td>
-                                <td style="padding: 10px 12px; color: #cbd5e1;">Prioritize high wholesale unit volume.</td>
+                            <tr>
+                                <td>5. What are your unit profit margins?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Aim to maximize net cash per unit.</td>
+                                <td>Prioritize high wholesale unit volume.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">6. How agile is your product catalog?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Frequent launches, design updates, variations.</td>
-                                <td style="padding: 10px 12px; color: #cbd5e1;">Stable staple products with steady demand.</td>
+                            <tr>
+                                <td>6. How agile is your product catalog?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Frequent launches, design updates, variations.</td>
+                                <td>Stable staple products with steady demand.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">7. How important is consumer data?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Demand direct search analytics &amp; buyer trends.</td>
-                                <td style="padding: 10px 12px; color: #cbd5e1;">Satisfied with aggregate B2B sell-in reports.</td>
+                            <tr>
+                                <td>7. How important is consumer data?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Demand direct search analytics &amp; buyer trends.</td>
+                                <td>Satisfied with aggregate B2B sell-in reports.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">8. What is your brand equity stage?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Emerging D2C or challenger private label.</td>
-                                <td style="padding: 10px 12px; color: #34d399;">Dominant legacy brand with national recall.</td>
+                            <tr>
+                                <td>8. What is your brand equity stage?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Emerging D2C or challenger private label.</td>
+                                <td style="color: #059669; font-weight: 600;">Dominant legacy brand with national recall.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">9. How do you handle compliance risks?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Prefer avoiding strict automated chargebacks.</td>
-                                <td style="padding: 10px 12px; color: #cbd5e1;">Equipped with enterprise EDI &amp; ASN protocols.</td>
+                            <tr>
+                                <td>9. How do you handle compliance risks?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Prefer avoiding strict automated chargebacks.</td>
+                                <td>Equipped with enterprise EDI &amp; ASN protocols.</td>
                             </tr>
-                            <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.1);">
-                                <td style="padding: 10px 12px; font-weight: 600; color: #f8fafc;">10. What is your long-term vision?</td>
-                                <td style="padding: 10px 12px; color: #38bdf8;">Building an independent, defensible D2C brand.</td>
-                                <td style="padding: 10px 12px; color: #34d399;">Supplying mass retail distribution pipelines.</td>
+                            <tr>
+                                <td>10. What is your long-term vision?</td>
+                                <td style="color: #0284c7; font-weight: 600;">Building an independent, defensible D2C brand.</td>
+                                <td style="color: #059669; font-weight: 600;">Supplying mass retail distribution pipelines.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1302,221 +1311,163 @@
                  SECTION 17: SCALING WITH PPC GROWTH EXPERT
             ========================================================= -->
             <section id="sec-agency-support" class="kh-chapter-card kh-sec-pure">
-                <div class="kh-chapter-kicker">SECTION 17 · ACCELERATION &amp; PARTNERSHIP</div>
-                <h2>17. How PPC Growth Expert Helps Your Amazon Business Scale Profitably</h2>
+                <div class="kh-chapter-kicker">SECTION 17 · STRATEGIC GROWTH PARTNER</div>
+                <h2>17. How PPC Growth Expert Helps You Win on Either Model</h2>
 
                 <p>
-                    Navigating the complexities of Amazon's ecosystem requires deep marketplace experience. Whether your brand sells directly on Seller Central, manages enterprise Vendor Central purchase orders, or operates a complex Hybrid model, <strong>PPC Growth Expert</strong> provides the strategic horsepower to protect your margins and accelerate market share.
+                    Whether your brand chooses third-party retail control on Seller Central, high-volume wholesale via Vendor Central, or an agile hybrid architecture, executing profitably requires specialized marketplace capability.
                 </p>
 
                 <p>
-                    Led by Amazon ATES Certified Specialist <strong>Anmol Pokhriyal</strong>, our senior consulting team partners with manufacturers, consumer brands, and distributors across India:
+                    At <strong>PPC Growth Expert</strong>, led by Amazon ATES Certified Specialist <strong>Anmol Pokhriyal</strong>, we partner with manufacturers, distributors, and direct-to-consumer brands across India to optimize advertising efficiency, protect Buy Box margins, and scale multi-crore marketplace revenue.
                 </p>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin: 1.5rem 0;">
-                    <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 1.25rem;">
-                        <h4 style="color: #38bdf8; margin: 0 0 0.5rem; font-size: 1.05rem;">Data-Driven PPC Management</h4>
-                        <p style="color: #cbd5e1; font-size: 0.88rem; margin: 0;">We ruthlessly eliminate wasted ad spend, engineer high-converting keyword hierarchies, and scale profitable market share via our <a href="../services/amazon-ppc-management-services-india.html" style="color: #38bdf8; text-decoration: underline;">Amazon PPC Management Services</a>.</p>
-                    </div>
-                    <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 1.25rem;">
-                        <h4 style="color: #38bdf8; margin: 0 0 0.5rem; font-size: 1.05rem;">Full Marketplace Management</h4>
-                        <p style="color: #cbd5e1; font-size: 0.88rem; margin: 0;">From catalog health and Brand Registry defense to Buy Box monitoring and inventory forecasting, explore our comprehensive <a href="../services/amazon-account-management-services-india.html" style="color: #38bdf8; text-decoration: underline;">Amazon Account Management Services</a>.</p>
-                    </div>
-                    <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 1.25rem;">
-                        <h4 style="color: #38bdf8; margin: 0 0 0.5rem; font-size: 1.05rem;">Listing Optimization &amp; A+ Content</h4>
-                        <p style="color: #cbd5e1; font-size: 0.88rem; margin: 0;">Maximize organic click-through and customer conversion rates with keyword-engineered copywriting and premium visual storytelling through our <a href="../services/index.html#service-listing-optimization" style="color: #38bdf8; text-decoration: underline;">Listing Optimization Services</a>.</p>
-                    </div>
-                    <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 1.25rem;">
-                        <h4 style="color: #38bdf8; margin: 0 0 0.5rem; font-size: 1.05rem;">ATES Mentorship &amp; Training</h4>
-                        <p style="color: #cbd5e1; font-size: 0.88rem; margin: 0;">Build elite in-house marketplace operations. Train your executive team directly under Amazon ATES Specialist Anmol Pokhriyal in our practical <a href="../amazon-ecommerce-training/index.html" style="color: #38bdf8; text-decoration: underline;">Amazon ATES Seller Training Course 2027</a>.</p>
-                    </div>
+                <div class="kh-table-responsive" style="margin: 24px 0;">
+                    <table class="kh-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%;">Practice Area</th>
+                                <th style="width: 45%;">How PPC Growth Expert Delivers Value</th>
+                                <th style="width: 25%;">Direct Service Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Amazon PPC &amp; DSP Advertising</strong></td>
+                                <td>Programmatic ad architecture across Sponsored Products, Brands, and Display. Search term harvesting, bid automation, and negative keyword pruning for 3P and 1P brands.</td>
+                                <td><a href="../services/amazon-ppc-management-services-india.html" style="color: #38bdf8; font-weight: 600;">Explore PPC Services →</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Full Seller &amp; Vendor Management</strong></td>
+                                <td>Purchase order management, chargeback mitigation, shortage claim resolution, and Seller Central operational governance.</td>
+                                <td><a href="../services/amazon-account-management-services-india.html" style="color: #38bdf8; font-weight: 600;">Account Management →</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Listing SEO &amp; A+ Content (EBC)</strong></td>
+                                <td>High-converting copywriting, brand story design, A+ Content layouts, and backend keyword indexing to maximize click-to-order conversions.</td>
+                                <td><a href="../services/index.html#service-listing-optimization" style="color: #38bdf8; font-weight: 600;">Listing Optimization →</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ATES Mentorship &amp; Seller Training</strong></td>
+                                <td>Hands-on training covering Amazon Seller Central navigation, FBA logistics, cataloging, and advertising strategy for business owners and teams.</td>
+                                <td><a href="../amazon-ecommerce-training/index.html" style="color: #38bdf8; font-weight: 600;">ATES Training →</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <p>
-                    We actively support regional manufacturing and distribution clusters across Northern India:
-                </p>
-                <ul style="color: #cbd5e1; margin-left: 1.25rem; line-height: 1.7;">
-                    <li><strong>Moradabad Brass &amp; Metalcraft Hub:</strong> Accelerate global direct sales with our <a href="../services/amazon-ppc-management-services-moradabad.html" style="color: #38bdf8; text-decoration: underline;">Amazon PPC Management Services in Moradabad</a>.</li>
-                    <li><strong>Noida &amp; Greater Noida D2C Brands:</strong> Scale profitably with our <a href="../services/amazon-ppc-management-services-noida.html" style="color: #38bdf8; text-decoration: underline;">Amazon PPC Management Services in Noida</a>.</li>
-                    <li><strong>Delhi Wholesale &amp; Retail Powerhouses:</strong> Modernize distribution through our <a href="../services/amazon-ppc-management-services-delhi.html" style="color: #38bdf8; text-decoration: underline;">Amazon PPC Management Services in Delhi</a>.</li>
-                </ul>
+                <div class="kh-callout kh-callout-takeaways" style="margin-top: 24px;">
+                    <span class="kh-callout-label">EVALUATING YOUR AMAZON OPERATIONAL MODEL?</span>
+                    <p style="margin: 6px 0 14px; color: #cbd5e1; font-size: 14px; line-height: 1.6;">
+                        Whether evaluating a Vendor Central invitation, scaling a 3P Seller Central brand, or designing a dual hybrid model, our team provides data-backed, bespoke growth strategies.
+                    </p>
+                    <a href="../contact.html" style="display: inline-flex; align-items: center; gap: 8px; background: #38bdf8; color: #080d1a; padding: 10px 22px; border-radius: 6px; font-weight: 700; font-size: 13.5px; text-decoration: none;">
+                        Schedule a Free Strategy Consultation <span>→</span>
+                    </a>
+                </div>
             </section>
 
             <!-- =========================================================
                  SECTION 18: FREQUENTLY ASKED QUESTIONS
             ========================================================= -->
             <section id="sec-faqs" class="kh-chapter-card kh-sec-pure">
-                <div class="kh-chapter-kicker">SECTION 18 · KNOWLEDGE ARCHIVE &amp; ANSWERS</div>
-                <h2>18. Frequently Asked Questions: Seller Central vs Vendor Central</h2>
+                <div class="kh-chapter-kicker">SECTION 18 · STRATEGIC FAQ ARCHIVE</div>
+                <h2>18. Frequently Asked Questions (15 Direct Answers)</h2>
 
                 <p>
-                    Here are clear, definitive answers to the 15 most common strategic and commercial questions regarding Amazon 3P vs 1P selling:
+                    Here are straightforward, verified answers to the 15 most common questions business owners ask regarding Seller Central versus Vendor Central:
                 </p>
 
-                <div class="kh-faq-accordion" style="margin-top: 1.5rem;">
-                    <!-- FAQ 1 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>1. What is the difference between Amazon Seller Central and Vendor Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                <div class="kh-faq-stack" style="display: flex; flex-direction: column; gap: 14px; margin-top: 24px;">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">1. What is the difference between Amazon Seller Central and Vendor Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Seller Central is a third-party (3P) retail model where your business sells products directly to Amazon shoppers, setting retail prices and retaining inventory ownership. Vendor Central is a first-party (1P) wholesale model where your business acts as a manufacturer or distributor supplying goods wholesale to Amazon via purchase orders (POs), and Amazon resells those products as the retailer.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>2. Which is better, Seller Central or Vendor Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">2. Which is better, Seller Central or Vendor Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Neither platform is universally superior; each serves distinct commercial operating models. Seller Central is ideal for brand owners, D2C companies, and retailers who demand complete control over retail pricing, listing content, customer feedback, and unit profit margins. Vendor Central suits large manufacturers, FMCG brands, and high-volume industrial suppliers equipped to handle bulk B2B purchase orders without managing consumer retail operations.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>3. Is Amazon Vendor Central invitation-only?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">3. Is Amazon Vendor Central invitation-only?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Yes. Amazon Vendor Central is strictly invitation-only. You cannot register or apply publicly on your own. Amazon's internal category merchant teams initiate invitations based on proprietary market share data, brand search volume, and catalog demand. Be cautious of third-party agencies claiming to sell guaranteed Vendor Central accounts.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>4. Can I create a Vendor Central account in India?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">4. Can I create a Vendor Central account in India?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             You cannot self-register or create a Vendor Central account in India independently. The official Indian portal (vendorcentral.in) is accessible only to suppliers who have received an official onboarding invitation and contract from an Amazon India Vendor Manager.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>5. Can a small business use Amazon Seller Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">5. Can a small business use Amazon Seller Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Yes, absolutely. Seller Central is universally open to Indian sole proprietorships, partnerships, LLPs, and private limited companies. Anyone with a valid PAN, GST registration, active bank account, and pickup address can register for free on sell.amazon.in and start selling directly.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 6 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>6. Who owns inventory in Seller Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">6. Who owns inventory in Seller Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             The seller owns 100% of the inventory at all times until it is purchased by the final customer. Even when utilizing Fulfillment by Amazon (FBA), Amazon merely acts as a third-party warehousing and logistics service provider; Amazon never takes legal title to your products.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 7 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>7. Who owns inventory in Vendor Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">7. Who owns inventory in Vendor Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Amazon owns the inventory once it is delivered and accepted at their fulfillment centers pursuant to a Purchase Order. Amazon takes legal ownership and assumes the physical inventory risk, although vendors remain bound by contractual return and defective inventory terms.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 8 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>8. Who controls product pricing in Vendor Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">8. Who controls product pricing in Vendor Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Amazon has complete algorithmic and commercial control over consumer-facing retail prices in Vendor Central. While you agree on a wholesale supply price with Amazon, Amazon can discount, match competitor prices, or adjust consumer prices without your consent.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 9 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>9. Who controls pricing in Seller Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">9. Who controls pricing in Seller Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             The seller retains complete control over retail offer pricing, subject only to marketplace Fair Pricing Policies. You can raise, lower, run coupon discounts, or modify product prices in real time directly from your Seller Central dashboard.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 10 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>10. Is FBA the same as Vendor Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">10. Is FBA the same as Vendor Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             No. FBA (Fulfillment by Amazon) is a logistics fulfillment service available within Seller Central. Under FBA, you remain the third-party seller, retain inventory ownership, set retail prices, and pay Amazon a fee to store, pick, pack, and deliver. In Vendor Central, Amazon purchases the inventory wholesale and resells it as the retailer.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 11 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>11. Can I use Seller Central and Vendor Central at the same time?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">11. Can I use Seller Central and Vendor Central at the same time?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Yes, many established brands operate a selective hybrid model. Brands frequently use Vendor Central for core high-volume staple products while retaining Seller Central for new product launches, seasonal variations, direct pricing control, and clearing excess stock.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 12 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>12. How does Amazon pay Seller Central sellers?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">12. How does Amazon pay Seller Central sellers?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Amazon disburses marketplace sales proceeds on a rolling 7-day to 14-day settlement cycle after customer delivery, directly wiring net funds (after deducting referral, closing, and shipping fees) into the seller's verified Indian bank account.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 13 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>13. How does Amazon pay Vendor Central suppliers?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">13. How does Amazon pay Vendor Central suppliers?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             Vendors are paid based on negotiated B2B credit terms typically ranging from Net 30, Net 60, to Net 90 days following invoice submission. In some agreements, Amazon offers early payment discounts (such as a 2% discount for payment within 30 days).
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 14 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>14. Can I switch from Seller Central to Vendor Central?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">14. Can I switch from Seller Central to Vendor Central?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             You cannot arbitrarily switch from Seller Central to Vendor Central on your own. You can only transition to Vendor Central if Amazon approaches your brand with an official vendor invitation and you mutually negotiate wholesale terms.
-                        </div>
+                        </p>
                     </div>
-
-                    <!-- FAQ 15 -->
-                    <div class="kh-faq-item" style="border: 1px solid rgba(56, 189, 248, 0.15); border-radius: 8px; margin-bottom: 0.75rem; background: rgba(15, 23, 42, 0.4);">
-                        <button class="kh-faq-q" style="width: 100%; text-align: left; padding: 1.1rem 1.25rem; background: none; border: none; color: #f8fafc; font-weight: 600; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                            <span>15. Which Amazon model is better for manufacturers and wholesalers?</span>
-                            <span class="kh-faq-icon" style="color: #38bdf8; font-size: 1.2rem; transition: transform 0.2s;">+</span>
-                        </button>
-                        <div class="kh-faq-a" style="display: none; padding: 0 1.25rem 1.1rem; color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; border-top: 1px solid rgba(148, 163, 184, 0.1);">
+                    <div class="kh-faq-card" style="background: #0b1220; border: 1px solid #1e293b; border-radius: 8px; padding: 18px 22px;">
+                        <h3 style="color: #38bdf8; font-size: 15.5px; margin: 0 0 8px;">15. Which Amazon model is better for manufacturers and wholesalers?</h3>
+                        <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin: 0;">
                             If a manufacturer has existing B2B production lines and lacks an in-house e-commerce team, Vendor Central provides hands-off wholesale scale. However, many modern manufacturers choose Seller Central (or partner with specialized agencies like PPC Growth Expert) to capture 20% to 35% higher gross margins and maintain direct brand control.
-                        </div>
+                        </p>
                     </div>
                 </div>
             </section>
@@ -1524,54 +1475,49 @@
             <!-- =========================================================
                  AUTHOR BIO CARD
             ========================================================= -->
-            <div class="kh-author-box" style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 2rem; margin: 3rem 0; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
-                <div style="flex-shrink: 0;">
-                    <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0284c7, #38bdf8); display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: #0f172a; border: 3px solid #38bdf8;">
-                        AP
+            <div class="kh-author-box" style="margin-top: 48px; padding: 28px; background: #0b1220; border: 1px solid #1e293b; border-radius: 12px; display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+                <img src="../images/founder-avatar.png" alt="Anmol Pokhriyal" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #38bdf8; flex-shrink: 0;">
+                <div style="flex: 1; min-width: 260px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+                        <h3 style="margin: 0; color: #ffffff; font-size: 18px;">Anmol Pokhriyal</h3>
+                        <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-family: var(--kh-mono);">FOUNDER &amp; AMAZON STRATEGIST</span>
                     </div>
-                </div>
-                <div style="flex: 1; min-width: 250px;">
-                    <div style="font-size: 0.85rem; color: #38bdf8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Published by Expert Author</div>
-                    <h3 style="color: #f8fafc; margin: 0.25rem 0 0.5rem; font-size: 1.35rem;">Anmol Pokhriyal</h3>
-                    <p style="color: #cbd5e1; font-size: 0.92rem; margin: 0 0 0.75rem; line-height: 1.6;">
-                        Amazon Marketplace Consultant, Amazon ATES Certified Specialist, and Founder of <strong>PPC Growth Expert</strong>. Anmol has architected 1P wholesale and 3P marketplace growth strategies for over 250+ consumer brands, manufacturers, and direct-to-consumer businesses across India and global marketplaces.
+                    <p style="color: #94a3b8; font-size: 13.5px; line-height: 1.6; margin: 0 0 10px;">
+                        Anmol Pokhriyal has spent over five years managing Amazon advertising architectures, marketplace onboarding, and profitability governance for Indian and global brands. At PPC Growth Expert, he oversees campaign scaling, Buy Box mechanics, and data-driven marketplace growth across Amazon India, North America, and Europe.
                     </p>
-                    <div style="display: flex; gap: 1rem; font-size: 0.85rem;">
-                        <a href="../amazon-ecommerce-training/index.html" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">ATES Mentorship Program</a>
-                        <span style="color: #64748b;">•</span>
-                        <a href="../services/amazon-ppc-management-services-india.html" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">Agency Services</a>
+                    <div style="display: flex; gap: 14px; font-size: 12.5px;">
+                        <a href="../about.html#founder" style="color: #38bdf8; text-decoration: underline;">Read Full Profile →</a>
+                        <a href="https://www.linkedin.com/in/anmol-pokhriyal-9831a2216/" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; text-decoration: underline;">Connect on LinkedIn ↗</a>
                     </div>
                 </div>
             </div>
 
             <!-- =========================================================
-                 END CTA BANNER
+                 END CTA CARD
             ========================================================= -->
-            <div class="kh-end-cta" style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.15), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
-                <div style="font-size: 0.85rem; color: #38bdf8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.5rem;">Need Help Growing Your Amazon Business?</div>
-                <h3 style="color: #f8fafc; font-size: 1.85rem; font-weight: 700; margin: 0 0 1rem;">Architect the Right Selling &amp; Advertising Strategy Today</h3>
-                <p style="color: #cbd5e1; max-width: 650px; margin: 0 auto 1.75rem; font-size: 1rem; line-height: 1.6;">
-                    Whether your business sells directly through Seller Central or is evaluating its Amazon growth strategy, PPC Growth Expert can help with relevant advertising, catalog optimization, and unit profitability engineering.
+            <div class="kh-end-cta" style="margin-top: 40px; padding: 36px; background: linear-gradient(135deg, #0f1c3f, #080d1a); border: 1.5px solid #2563eb; border-radius: 14px; text-align: center;">
+                <span style="font-family: var(--kh-mono); font-size: 11px; font-weight: 700; color: #38bdf8; letter-spacing: 1px; text-transform: uppercase;">READY TO OPTIMIZE YOUR AMAZON DISTRIBUTION?</span>
+                <h3 style="color: #ffffff; font-size: 24px; margin: 10px 0 14px;">Master Seller Central &amp; Vendor Central with Expert Support</h3>
+                <p style="color: #94a3b8; max-width: 640px; margin: 0 auto 24px; font-size: 14.5px; line-height: 1.6;">
+                    Whether you are selling directly via Seller Central, managing purchase orders on Vendor Central, or executing a hybrid distribution strategy, get expert support to maximize profitability and Buy Box dominance.
                 </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://calendly.com/anmolpokhriyal/audit" target="_blank" rel="noopener noreferrer" style="background: #38bdf8; color: #0f172a; padding: 12px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4);">
-                        <span>Claim Free Marketplace Audit</span>
-                        <span>→</span>
+                <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                    <a href="../contact.html" style="background: #38bdf8; color: #080d1a; padding: 12px 28px; border-radius: 6px; font-weight: 800; font-size: 14px; text-decoration: none;">
+                        Request Free Strategy Audit →
                     </a>
-                    <a href="https://wa.me/919310444312?text=Hi%20Anmol,%20I%20read%20your%20Seller%20Central%20vs%20Vendor%20Central%20guide%20and%20want%20to%20discuss%20my%20marketplace%20strategy" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.8); color: #38bdf8; border: 1px solid #38bdf8; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-                        <span>Chat on WhatsApp</span>
+                    <a href="how-much-money-required-to-start-selling-on-amazon.html" style="background: transparent; color: #ffffff; border: 1px solid #475569; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; text-decoration: none;">
+                        View Amazon Investment Guide →
                     </a>
                 </div>
             </div>
 
-        </div><!-- /.kh-main-column -->
-    </div><!-- /.kh-layout-grid -->
-</div><!-- /.kh-article-wrapper -->
+        </main>
+    </div>
 
-<!-- =========================================================
-     SITE FOOTER
-========================================================= -->
-<footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+    <!-- =========================================================
+         UNIVERSAL FOOTER
+    ========================================================= -->
+    <footer class="footer"  itemscope itemtype="http://schema.org/WPFooter">
     <div class="footer-container">
 
         <!-- TOP GRID -->
@@ -1701,26 +1647,6 @@
     <script src="../js/script.js?v=v27"></script>
     <script src="../js/navbar.js?v=v53"></script>
     <script src="js/knowledge-hub.js?v=v7"></script>
-    <script>
-    // FAQ Accordion functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        var faqButtons = document.querySelectorAll('.kh-faq-q');
-        faqButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                var answer = this.nextElementSibling;
-                var icon = this.querySelector('.kh-faq-icon');
-                var isOpen = answer.style.display === 'block';
-
-                document.querySelectorAll('.kh-faq-a').forEach(function(a) { a.style.display = 'none'; });
-                document.querySelectorAll('.kh-faq-icon').forEach(function(i) { i.textContent = '+'; });
-
-                if (!isOpen) {
-                    answer.style.display = 'block';
-                    if (icon) icon.textContent = '−';
-                }
-            });
-        });
-    });
-    </script>
+    
 </body>
 </html>
