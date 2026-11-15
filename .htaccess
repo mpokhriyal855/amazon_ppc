@@ -37,6 +37,17 @@ Redirect 301 /resources.html /calculators/
 Redirect 301 /calculators/resources.html /calculators/
 Redirect 301 /free-amazon-listing-optimisation-tool.html /calculators/ai-amazon-listing-generator.html
 
+# Consolidate Root URLs to Canonical /calculators/ Paths (Resolves GSC 404s)
+Redirect 301 /amazon-fba-storage-fee-calculator.html /calculators/amazon-fba-storage-fee-calculator.html
+Redirect 301 /amazon-fba-fee-calculator.html /calculators/amazon-fba-fee-calculator.html
+Redirect 301 /amazon-advertising-roi-calculator.html /calculators/amazon-advertising-roi-calculator.html
+Redirect 301 /amazon-profit-calculator.html /calculators/amazon-profit-calculator.html
+Redirect 301 /amazon-acos-calculator.html /calculators/amazon-acos-calculator.html
+Redirect 301 /amazon-roas-calculator.html /calculators/amazon-roas-calculator.html
+Redirect 301 /amazon-cpc-calculator.html /calculators/amazon-cpc-calculator.html
+Redirect 301 /calculators/amazon-fba-storage-fee-calculator/ /calculators/amazon-fba-storage-fee-calculator.html
+Redirect 301 /calculators/amazon-fba-fee-calculator/ /calculators/amazon-fba-fee-calculator.html
+
 # Blog & Knowledge Hub Aliases
 Redirect 301 /blog/blog.html /blog/
 Redirect 301 /blog/how-to-sell-on-amazon-india/ /blog/how-to-sell-on-amazon-india.html
