@@ -10,8 +10,10 @@ RewriteBase /
 RewriteCond %{HTTP_HOST} ^www\.ppcgrowthexpert\.com$ [NC]
 RewriteRule ^(.*)$ https://ppcgrowthexpert.com/$1 [L,R=301]
 
-# Dynamic Blog Hyphenated Prefix Redirect (/blog-xyz.html -> /blog/xyz.html)
+# Dynamic Blog Hyphenated Prefix Redirect (/blog-xyz.html -> /blog/xyz.html, only if file does not exist)
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^blog-(.*)\.html$ /blog/$1.html [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^blog-(.*)/?$ /blog/$1.html [R=301,L]
 
 # Cloudflare Email Protection Redirect
@@ -82,7 +84,6 @@ Redirect 301 /amazon-acos-calculator.html /calculators/amazon-acos-calculator.ht
 Redirect 301 /amazon-roas-calculator.html /calculators/amazon-roas-calculator.html
 Redirect 301 /amazon-cpc-calculator.html /calculators/amazon-cpc-calculator.html
 Redirect 301 /amazon-ctr-calculator.html /calculators/amazon-ctr-calculator.html
-Redirect 301 /amazon-tacos-calculator.html /calculators/amazon-tacos-calculator.html
 Redirect 301 /amazon-break-even-acos-calculator.html /calculators/amazon-break-even-acos-calculator.html
 Redirect 301 /amazon-coupon-roi-calculator.html /calculators/amazon-coupon-roi-calculator.html
 Redirect 301 /amazon-keyword-profitability-calculator.html /calculators/amazon-keyword-profitability-calculator.html
@@ -90,7 +91,6 @@ Redirect 301 /amazon-listing-quality-grader.html /calculators/amazon-listing-qua
 Redirect 301 /amazon-listing-seo-score-calculator.html /calculators/amazon-listing-seo-score-calculator.html
 Redirect 301 /amazon-marketing-budget-planner.html /calculators/amazon-marketing-budget-planner.html
 Redirect 301 /amazon-ppc-budget-calculator.html /calculators/amazon-ppc-budget-calculator.html
-Redirect 301 /amazon-ppc-conversion-rate-calculator.html /calculators/amazon-ppc-conversion-rate-calculator.html
 Redirect 301 /amazon-ppc-waste-calculator.html /calculators/amazon-ppc-waste-calculator.html
 Redirect 301 /amazon-product-launch-budget-calculator.html /calculators/amazon-product-launch-budget-calculator.html
 Redirect 301 /amazon-rank-review-analyzer.html /calculators/amazon-rank-review-analyzer.html
@@ -109,7 +109,6 @@ Redirect 301 /blog-amazon-ppc-clicks-no-sales.html /blog/amazon-ppc-clicks-no-sa
 Redirect 301 /blog-amazon-ppc-spending-no-orders.html /blog/amazon-ppc-spending-no-orders.html
 Redirect 301 /blog-amazon-ads-not-converting.html /blog/amazon-ads-not-converting.html
 Redirect 301 /blog-amazon-ppc-cpc-increasing.html /blog/amazon-ppc-cpc-increasing.html
-Redirect 301 /blog-reduce-amazon-acos.html /blog/reduce-amazon-acos.html
 Redirect 301 /blog-reduce-amazon-ppc-wasted-spend.html /blog/reduce-amazon-ppc-wasted-spend.html
 Redirect 301 /blog-scaling-broad-match-without-acos-spikes.html /blog/scaling-broad-match-without-acos-spikes.html
 Redirect 301 /blog-how-to-increase-sales-on-amazon.html /blog/how-to-increase-sales-on-amazon.html
