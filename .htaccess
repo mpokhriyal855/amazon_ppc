@@ -77,6 +77,8 @@ Redirect 301 /swiggy-instamart-profit-calculator.html /calculators/swiggy-instam
 Redirect 301 /blinkit-profit-calculator.html /calculators/blinkit-profit-calculator.html
 Redirect 301 /blinkit-cpm-calculator.html /calculators/blinkit-cpm-calculator.html
 Redirect 301 /amazon-profit-calculator.html /calculators/amazon-profit-calculator.html
+Redirect 301 /amazon-profit-calculator /calculators/amazon-profit-calculator.html
+Redirect 301 /calculators/amazon-profit-calculator /calculators/amazon-profit-calculator.html
 Redirect 301 /amazon-fba-fee-calculator.html /calculators/amazon-fba-fee-calculator.html
 Redirect 301 /amazon-fba-storage-fee-calculator.html /calculators/amazon-fba-storage-fee-calculator.html
 Redirect 301 /amazon-advertising-roi-calculator.html /calculators/amazon-advertising-roi-calculator.html
